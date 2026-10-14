@@ -1,0 +1,67 @@
+# AGENTS.md — Frontend (React)
+
+Complementa al [`AGENTS.md` raíz](../AGENTS.md). Léelo primero.
+
+## Stack
+
+React 19 · TypeScript 6 (estricto) · Vite 8 · Tailwind CSS 4 · React Router 8 · TanStack Query 5 ·
+`@supabase/supabase-js` (solo autenticación) · Vitest + Testing Library · oxlint.
+
+## Comandos
+
+```bash
+npm run dev        # http://localhost:5173 (proxy /api → http://localhost:8080)
+npm run lint       # oxlint
+npm test           # vitest run
+npm run build      # tsc -b && vite build  ← obligatorio antes de terminar
+```
+
+## Estructura
+
+```text
+src/
+├── app/            App.tsx (providers) y router.tsx (todas las rutas)
+├── config/env.ts   variables de entorno tipadas
+├── lib/
+│   ├── api/        cliente HTTP único (cliente.ts), ApiError (RFC 9457), tipos de paginación
+│   └── supabase.ts cliente de Supabase SOLO para auth
+├── components/ui/  componentes base del sistema de diseño (Button, …)
+├── layouts/        PublicLayout (portal) e InternalLayout (aplicación interna)
+├── features/       un directorio por módulo M-xx (ver features/README.md)
+├── pages/          páginas genéricas (404, en construcción)
+├── styles/         index.css con los tokens de diseño (@theme)
+└── test/           configuración de Vitest
+```
+
+## Reglas
+
+- **Datos:** siempre a través de `api` (`@/lib/api/cliente`) y hooks de TanStack Query
+  (`useQuery`/`useMutation`) definidos en `features/<modulo>/api.ts`. Nunca `fetch` dentro de un
+  componente ni `supabase.from(...)`.
+- **Errores:** captura `ApiError` y muestra `error.problema.detail` al usuario (ya viene en español
+  y explica la causa). Para conflictos de programación muestra el motivo junto al campo.
+- **Rutas:** el portal público cuelga de `/` (`PublicLayout`); la aplicación interna de `/app`
+  (`RutaProtegida` + `InternalLayout`). Registra rutas nuevas solo en `src/app/router.tsx`.
+- **Permisos:** el backend decide (VAL-015). El frontend oculta lo que el usuario no puede hacer,
+  pero nunca es la única barrera.
+- **Estilos:** solo utilidades de Tailwind con los tokens de `styles/index.css`
+  (`bg-primary`, `text-text-muted`, `border-border`, `bg-surface-dark`…). **Prohibido** escribir
+  colores HEX en componentes o crear archivos `.css` por componente.
+- **Diseño:** sigue [`docs/diseno-ui/`](../docs/diseno-ui/README.md), pero respeta la tabla de
+  conflictos C-01 a C-08: sin buscador global, sin estadísticas de jugador, sin "Portal Delegados".
+- **Estados visibles (ERS 3.1.1):** muestra el estado del partido y las acciones permitidas,
+  distingue Borrador/Revisión/Publicado y diferencia dato oficial de indicador calculado.
+- **Accesibilidad (WCAG 2.1 AA):** `<label>` asociado a cada input, foco visible, `aria-hidden`
+  en iconos decorativos, mensajes de error con `role="alert"`. Navegable con teclado.
+- **Responsive:** móvil primero; breakpoints `sm` 640 px y `lg` 1024 px. Tablas anchas → tarjetas
+  en móvil cuando sea necesario.
+- **Tipos:** sin `any`. Los tipos de DTO van en `features/<modulo>/tipos.ts` con los mismos
+  nombres camelCase del API. Importa con el alias `@/`.
+- **Componentes:** funciones con props tipadas; un componente por archivo con su mismo nombre.
+- **Iconos:** la librería está pendiente (P-02 en `open-design-decisions.md`); no agregues una sin acordarlo.
+
+## Pruebas
+
+Junto al archivo probado (`Button.test.tsx`). Prueba comportamiento visible para el usuario con
+Testing Library (`getByRole`, `userEvent`), no detalles de implementación. Simula el API con
+`vi.mock('@/lib/api/cliente')`.
