@@ -29,12 +29,18 @@ No leas todo en cada tarea: localiza el módulo (M-xx) y los RF de la tarea y le
 menor autoridad: ver los conflictos C-01 a C-08 en
 [`docs/diseno-ui/open-design-decisions.md`](docs/diseno-ui/open-design-decisions.md).
 
-> ⚠️ `docs/requisitos/ERS.md` se extrajo de un PDF y **sus tablas perdieron la estructura** (el
-> texto de las columnas aparece intercalado). Lee con cuidado los RF/RN/CU y, si un requisito es
-> ambiguo por el formato, pregunta en lugar de suponer.
-> `docs/base-de-datos/historico/` contiene diseños **reemplazados**: nunca los uses.
+> `docs/requisitos/ERS.md` es la Rev. 0.3 con sus tablas completas. Si un requisito es ambiguo,
+> pregunta en lugar de suponer.
+> Las carpetas `historico/` (en `docs/requisitos/` y `docs/base-de-datos/`) contienen versiones **reemplazadas**,
+> y `docs/requisitos/fuentes/` el levantamiento original: nunca los uses para implementar.
 
 ## 3. Reglas de alcance (las más importantes)
+
+> ⚠️ **Alcance en revisión (19-oct-2026).** El equipo recuperó los 12 roles y su funcionalidad
+> (árbitros, cédula, disciplina, transferencias, liguillas, ascensos, tesorería, reportes, entre otros).
+> Las decisiones están en [`docs/requisitos/decisiones/registro-de-decisiones.md`](docs/requisitos/decisiones/registro-de-decisiones.md)
+> y prevalecen sobre el ERS Rev. 0.3 en lo que tratan. **No implementes nada** hasta que exista el
+> ERS Rev. 0.4 y el backlog v4; las reglas de esta sección se actualizarán con ellos.
 
 1. **Implementa solo lo que el ERS incluye en la entrega**: estado `I` (incluido) o `S`
    (simplificado). Lo simplificado se implementa en su versión simplificada, no en la completa.

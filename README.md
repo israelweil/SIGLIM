@@ -33,10 +33,10 @@ La Liga Municipal de Futbol Amateur Morelia organiza su operación en
 **Temporada → Categoría → Grupo → Equipos → Partidos**. SIGLIM digitaliza ese flujo en una
 sola aplicación web con **dos caras**:
 
-|              | Aplicación interna                             | Portal público                                       |
-| ------------ | ---------------------------------------------- | ---------------------------------------------------- |
-| **Quién**    | Administración, programación y captura         | Cualquier visitante                                  |
-| **Acceso**   | Inicio de sesión y permisos por rol            | Sin cuenta, solo lectura                             |
+| | Aplicación interna | Portal público |
+| --- | --- | --- |
+| **Quién** | Administración, programación y captura | Cualquier visitante |
+| **Acceso** | Inicio de sesión y permisos por rol | Sin cuenta, solo lectura |
 | **Qué hace** | Configura, programa, captura, valida y publica | Consulta programación, resultados y tabla publicados |
 
 La información interna **solo llega al portal después de un flujo de aprobación**
@@ -61,17 +61,17 @@ Cada cambio crítico queda registrado con **usuario, fecha y motivo** (auditorí
 
 ## 🧩 Módulos
 
-| ID   | Módulo                       | Qué cubre                                                          | Entrega             |
-| ---- | ---------------------------- | ------------------------------------------------------------------ | ------------------- |
-| M-01 | Administración y seguridad   | Inicio de sesión, roles, permisos por acción y auditoría           | Esencial            |
-| M-02 | Temporadas y normativa       | Temporada, convocatoria, categorías, grupos y referencia de reglas | Esencial            |
-| M-03 | Organización deportiva       | Clubes, equipos y personas                                         | Esencial            |
-| M-04 | Registros y elegibilidad     | Alta y baja de jugadores con historial                             | Conveniente         |
-| M-06 | Canchas y recursos           | Catálogo, disponibilidad y bloqueos                                | Esencial            |
-| M-07 | Programación manual          | Jornadas, partidos y detección de conflictos                       | Esencial            |
-| M-08 | Partidos y resultados        | Estados del partido, marcador, validación y tabla                  | Esencial            |
-| M-11 | Portal público y publicación | Flujo de publicación y consultas públicas con filtros              | Esencial            |
-| M-09 | Disciplina reducida          | Incidentes y resoluciones manuales                                 | ⏸️ Pendiente (Q-05) |
+| ID | Módulo | Qué cubre | Entrega |
+| --- | --- | --- | --- |
+| M-01 | Administración y seguridad | Inicio de sesión, roles, permisos por acción y auditoría | Esencial |
+| M-02 | Temporadas y normativa | Temporada, convocatoria, categorías, grupos y referencia de reglas | Esencial |
+| M-03 | Organización deportiva | Clubes, equipos y personas | Esencial |
+| M-04 | Registros y elegibilidad | Alta y baja de jugadores con historial | Conveniente |
+| M-06 | Canchas y recursos | Catálogo, disponibilidad y bloqueos | Esencial |
+| M-07 | Programación manual | Jornadas, partidos y detección de conflictos | Esencial |
+| M-08 | Partidos y resultados | Estados del partido, marcador, validación y tabla | Esencial |
+| M-11 | Portal público y publicación | Flujo de publicación y consultas públicas con filtros | Esencial |
+| M-09 | Disciplina reducida | Incidentes y resoluciones manuales | ⏸️ Pendiente (Q-05) |
 
 > Lo que queda fuera de esta entrega (árbitros, programación automática, liguillas, reportes,
 > integraciones) está en la sección 2.6 del [ERS](docs/requisitos/ERS.md).
@@ -117,8 +117,8 @@ siglim/
 ├── CONTRIBUTING.md           ← ramas, commits, PR y Definición de Terminado
 │
 ├── docs/                     ← fuente de verdad del proyecto
-│   ├── requisitos/           ← ERS (IEEE 830)
-│   ├── arquitectura/         ← arquitectura, HIPO, convenciones de API y ADR
+│   ├── requisitos/           ← ERS (IEEE 830), BPMN, decisiones, fuentes e histórico
+│   ├── arquitectura/         ← arquitectura, HIPO, figuras, convenciones de API y ADR
 │   ├── base-de-datos/        ← diccionario de datos (+ histórico)
 │   └── diseno-ui/            ← sistema de diseño, tokens, componentes, accesibilidad
 │
@@ -133,11 +133,11 @@ siglim/
 
 ### Requisitos previos
 
-| Herramienta        | Versión                                                          |
-| ------------------ | ---------------------------------------------------------------- |
-| Node.js            | 22 LTS o superior                                                |
-| JDK                | 21 (Temurin recomendado)                                         |
-| Git                | 2.40+                                                            |
+| Herramienta | Versión |
+| --- | --- |
+| Node.js | 22 LTS o superior |
+| JDK | 21 (Temurin recomendado) |
+| Git | 2.40+ |
 | Cuenta de Supabase | Proyecto creado con el esquema de `supabase/migrations` aplicado |
 
 ### 1. Clonar
@@ -182,13 +182,13 @@ orden de prioridad de los documentos y lo que **no** se debe implementar todaví
 
 ## 👥 Equipo
 
-| Integrante                      | Rol Scrum                         | Responsabilidad principal                                  |
-| ------------------------------- | --------------------------------- | ---------------------------------------------------------- |
-| **Olvera Lobato David Geovani** | Product Owner                     | Backlog, historias de usuario y validación de requisitos   |
-| **López Meza Leonardo**         | Scrum Master                      | Ceremonias, tablero, pruebas y verificación de entregables |
-| **Olvera Bucio Jose Israel**    | Desarrollo · Arquitectura y datos | Arquitectura, diseño de datos, repositorio y entorno       |
+| Integrante | Rol Scrum | Responsabilidad principal |
+| --- | --- | --- |
+| **Olvera Lobato David Geovani** | Product Owner | Backlog, historias de usuario y validación de requisitos |
+| **López Meza Leonardo** | Scrum Master | Ceremonias, tablero, pruebas y verificación de entregables |
+| **Olvera Bucio Jose Israel** | Desarrollo · Arquitectura y datos | Arquitectura, diseño de datos, repositorio y entorno |
 
-**Profesor:** Claudio Ernesto Florian Arenas — Ingeniería de Software
+**Profesor:** Claudio Ernesto Florian Arenas — Fundamentos de Ingeniería de Software
 
 ## 📄 Estado del proyecto
 

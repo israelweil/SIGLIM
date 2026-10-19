@@ -1,0 +1,142 @@
+# Registro de decisiones de requisitos — SIGLIM
+
+> **Propósito.** Concentrar, con identificador y trazabilidad, las decisiones tomadas después del ERS
+> Rev. 0.3, para que la Rev. 0.4, el BPMN, la arquitectura, el modelo de datos y el backlog se
+> actualicen contra una sola fuente.
+>
+> **Vigencia.** Este registro **prevalece sobre el ERS Rev. 0.3** en los puntos que trata, hasta que la
+> Rev. 0.4 los incorpore. A partir de entonces el ERS vuelve a ser la fuente principal y este archivo
+> queda como evidencia de origen.
+>
+> **Fecha de corte:** 19 de octubre de 2026.
+
+## 1. Convenciones
+
+| Campo | Significado |
+| --- | --- |
+| **Origen** | `R2` = respuesta del cliente en el levantamiento ([transcripción](../fuentes/levantamiento-audio-r2-transcripcion.md)). `EQ` = decisión del equipo de trabajo (sesión de análisis del 19-oct-2026). `FMT` = [formatos de carta](../fuentes/formatos-carta-cancha.md) entregados por el cliente. `EST` = el equipo indicó «apegarse al estándar»; se adoptó la práctica recomendada. |
+| **Estado** | **Aprobada (equipo)**: la decidió el equipo. **Adoptada por estándar**: el equipo delegó la elección en la práctica recomendada. **Valor de demostración**: configurable y rotulado «no oficial» hasta que la Liga lo confirme. En todos los casos falta la validación formal de la Liga. |
+| **Afecta** | Elementos del ERS Rev. 0.3 o de los documentos técnicos que deberán cambiar. |
+
+Ninguna decisión de este registro se presenta como aprobada por la Liga.
+
+## 2. Alcance, roles y permisos
+
+| ID | Decisión | Origen | Estado | Afecta |
+| --- | --- | --- | --- | --- |
+| DEC-01 | Se recuperan los **12 tipos de usuario** de la fuente (R3 §2.1) **con su funcionalidad**. Todos existen desde el inicio; cada uno recibe un **núcleo funcional comprometido** en los Sprints y el resto de su funcionalidad queda priorizado en el Product Backlog sin Sprint asignado. Se revierte la reducción de perfiles de la Rev. 0.3. | EQ | Aprobada (equipo) | ERS 2.3, 2.6, 4.1; Apéndice D S-04; AGENTS.md §3 |
+| DEC-02 | Los 12 roles son: Administrador general, Presidente del Comité Ejecutivo, Secretario (liga), Tesorero (liga), Comisión Disciplinaria, Comisión de Arbitraje, Programador de partidos, **Directiva de club**, Árbitro, Capturista, Jugador y Usuario público. | EQ | Aprobada (equipo) | ERS 2.3; semilla de roles |
+| DEC-03 | Secretario y Tesorero existen **en la liga y en el club**, con permisos distintos. La Directiva de club es un solo rol con cuatro **cargos** (presidente, secretario, tesorero y delegado) y **ámbito limitado a su club**. | EQ, R2 | Aprobada (equipo) | ERS 2.3; modelo RBAC (ámbito) |
+| DEC-04 | La matriz rol → módulo → acción propuesta (sección 7) es la **configuración inicial**. El Administrador general puede modificar los permisos de los roles, con tres límites: no puede modificar los de su propio rol; todo cambio se audita (quién, cuándo, qué y por qué); y asignar a un mismo rol un **par de permisos incompatibles** queda pendiente hasta que lo aprueba el **Presidente del Comité Ejecutivo** (control dual). | EQ | Aprobada (equipo) | ERS 2.3, PEN-010, PEN-029, DD-009; RLS; diccionario |
+| DEC-05 | Se incluyen M-12 (reportes y exportación PDF/Excel), el portal ampliado (noticias, comunicados, calendario, consulta de equipos y competencias) y las estadísticas de jugador. Quedan priorizados; solo se compromete en Sprint lo que forma parte del núcleo de cada rol (DEC-01). | EQ | Aprobada (equipo) | ERS 2.2, 2.6; RF-051, RF-054, RF-085 a RF-092 |
+| DEC-06 | **No hay programación automática.** El programador arma la jornada manualmente. Siguen fuera RF-034, RF-035, RF-037, RF-038, RF-041 y RF-042, y se descarta DD-005. | EQ | Aprobada (equipo) | ERS 2.6, DD-005, P-03 |
+| DEC-07 | El sistema administra **una sola liga**, pero el diseño no debe impedir varias: identificador de liga en las entidades raíz y unicidad de nombres por liga. | R2, EQ | Aprobada (equipo) | Modelo de datos; RNF-005 |
+| DEC-08 | Calendario del proyecto: **8 semanas**, 4 Sprints de 2 semanas, equipo de 3 personas. | EQ | Aprobada (equipo) | ERS 2.4, Q-24, S-01; AGENTS.md; ADR-0001 |
+
+## 3. Personas, clubes y registro
+
+| ID | Decisión | Origen | Estado | Afecta |
+| --- | --- | --- | --- | --- |
+| DEC-09 | **Afiliación por temporada (tarjetón):** nombre del club; presidente, secretario y tesorero del club; colores del uniforme; categorías en que se inscribe; firmas de los tres cargos; folio de registro. | R2 | Aprobada (equipo) | RF nuevo; M-03 |
+| DEC-10 | **Identidad:** la **CURP** es la clave única de toda persona. Adultos: INE. Menores: CURP más INE del tutor. Nivel de validación 2: unicidad entre todos los clubes, más documentos y fotos resguardados. Documentos por categoría según R2: infantiles (constancia de estudios, identificación, fotos); veteranos (INE, comprobante de domicilio, fotos); libre (identificación y dos fotos). | R2, EQ | Aprobada (equipo) | RF-010, RF-013, PEN-018, PEN-019; personas |
+| DEC-11 | **Menores de edad:** se usan el correo y el consentimiento expreso del tutor. Por estándar, el **tutor tiene una cuenta** desde la que gestiona a sus menores; el menor queda registrado como persona vinculada al tutor, sin credenciales propias mientras sea menor. Así se resuelve que un tutor con varios hijos no puede repetir el mismo correo. Se registra el consentimiento: tutor, fecha, versión del aviso de privacidad y finalidades. | EQ, EST | Adoptada por estándar | RNF-012; PEN-013, PEN-019 |
+| DEC-12 | Un jugador pertenece a **un solo equipo por temporada**. Solo puede alinearse en la categoría **inmediata superior** de su mismo club, nunca dos niveles arriba, y puede jugar ambos partidos el mismo día. La alineación en categoría superior es una entidad distinta del registro. | R2 | Aprobada (equipo) | RN-009, RN-010; registros_jugador |
+| DEC-13 | **Transferencias:** nunca dentro de una temporada. Entre temporadas, la restricción es **configurable** según las reglas de la liga y no impide de forma permanente que un jugador cambie de club. Se conserva el historial de clubes de cada jugador. | R2, EQ | Aprobada (equipo) | RF-015, RF-016, RF-018 (se reincorporan) |
+| DEC-14 | **Venta de equipo:** el cambio de propietario es una operación distinta de las transferencias de jugadores. La conservación de la categoría y de la plaza deportiva es otra operación independiente. Ambas las autoriza la directiva de la liga (Presidente del Comité Ejecutivo) y surten efecto **al cierre de la temporada**. Se conserva el historial de propietarios con fechas y autorizaciones. | R2, EQ | Aprobada (equipo) | RF-008, RF-009; equipos |
+| DEC-15 | Si un club **cambia de nombre**, pierde su historial: se registra como club nuevo y el anterior queda cerrado. | R2, EQ | Aprobada (equipo) | RN-005 (excepción explícita) |
+| DEC-16 | **Categorías:** estructura Temporada → Categoría → Grupo → Equipos → Partidos. Las programaciones observadas incluyen Primera Especial, Primera Fuerza, Reserva, Intermedia, Segunda, Tercera, Juvenil, Cuarta y Veteranos. Una categoría puede tener uno o varios grupos y un equipo pertenece a una categoría y grupo durante una temporada. El **orden y la jerarquía** de las categorías son configurables y no están fijos en el código, de modo que se pueden agregar categorías sin rediseñar la base de datos. | EQ | Aprobada (equipo) | RF-004, RF-005, RN-003, RNF-005 |
+
+## 4. Árbitros, cédula y resultados
+
+| ID | Decisión | Origen | Estado | Afecta |
+| --- | --- | --- | --- | --- |
+| DEC-17 | Cada club presenta **1 árbitro por cada 4 equipos**, redondeando hacia arriba (5 equipos → 2 árbitros). La Directiva de club registra a sus árbitros y la Comisión de Arbitraje los valida. | R2, EQ | Aprobada (equipo) | RF-021; M-05 |
+| DEC-18 | El programador arma la jornada y la **Comisión de Arbitraje designa** a los árbitros sobre ella. **Restricción dura:** un árbitro no puede pitar partidos de su propio club. | R2, EQ | Aprobada (equipo) | RF-023; P-03; VAL nueva |
+| DEC-19 | **Cédula:** el Capturista registra marcador, alineación, goles, tarjetas, incidencias, sustituciones y observaciones según el reglamento. Estados: `EN_CAPTURA` → `PENDIENTE_VALIDACION`, y de ahí a `APROBADA` o a `DEVUELTA` (que regresa a `EN_CAPTURA`). El árbitro asignado aprueba o devuelve con observaciones. | EQ | Aprobada (equipo) | RF-025, RF-026; CU-010; P-06 |
+| DEC-20 | Si el árbitro no responde en el **plazo configurado (48 h de demostración)**, la cédula la aprueba la **Comisión de Arbitraje**. El capturista nunca aprueba su propia captura. | EQ | Aprobada (equipo) · plazo: valor de demostración | DD-010 (separación de funciones) |
+| DEC-21 | Una cédula aprobada vuelve **oficial** el resultado, actualiza la tabla y se **publica automáticamente** en el portal, sin pasar por Borrador → Revisión. La programación sí conserva la aprobación del Presidente antes de publicarse. | EQ | Aprobada (equipo) | RF-048, RF-056, RF-090, P-05, P-09; BUG-001 del backlog v3 queda sin efecto |
+| DEC-22 | Las incidencias abren expediente para la Comisión Disciplinaria **según un catálogo de tipos de incidencia** configurable por el Administrador; cada tipo indica si abre expediente (por ejemplo: expulsión y riña sí; amonestación no). | EQ | Aprobada (equipo) | RF-057, RF-058; P-06 |
+| DEC-23 | **Estados del partido:** Programado, En curso, Finalizado, Suspendido, Reprogramado y Cancelado. Transiciones: Programado → En curso → Finalizado; Programado → Reprogramado; En curso → Suspendido → Reprogramado; Reprogramado → En curso; Programado o Suspendido → Cancelado. El partido pasa a En curso automáticamente en su fecha y hora, y a Finalizado al aprobarse su cédula. El programador cambia a Suspendido, Reprogramado o Cancelado siempre con motivo. | EQ | Aprobada (equipo) | RF-043, P-04, Q-13, PEN-008; enum estado_partido |
+| DEC-24 | **No presentación:** se registra en la cédula y se asigna el marcador por default (3-0 de demostración, configurable). **Sanción retroactiva:** el partido sigue Finalizado, su resultado se modifica por resolución disciplinaria, queda trazado y la tabla se recalcula. | EQ | Aprobada (equipo) · marcador: valor de demostración | RF-052, RN-024 |
+| DEC-25 | **Duración:** 90 minutos de juego como dato base, sin contar tiempo extra. Por estándar se distingue el **bloque de cancha** (120 min de demostración, configurable por categoría), que es el que usa la detección de choques de horario; coincide con los bloques de 2 h descritos en R2. | EQ, R2, EST | Adoptada por estándar | RF-039, VAL-003, VAL-004; fin_programado |
+
+## 5. Reglas deportivas y disciplina
+
+| ID | Decisión | Origen | Estado | Afecta |
+| --- | --- | --- | --- | --- |
+| DEC-26 | **Puntuación:** victoria 3, empate 1, derrota 0. Configurable por temporada. | EQ | Aprobada (equipo) | RF-049, Q-10 |
+| DEC-27 | **Desempate:** orden configurable por temporada. Valor de demostración: puntos → diferencia de goles → goles a favor → resultado entre los empatados → menos expulsiones → sorteo registrado por el Presidente. El nombre del equipo nunca decide una posición. | EQ | Valor de demostración | RF-050, VAL-011, RN-023; BUG-002 del backlog v3 sigue vigente |
+| DEC-28 | **Liguilla:** clasifican 8 equipos por grupo a eliminación directa (cuartos, semifinal y final) a partido único, con penales registrados en la cédula si hay empate. Número de clasificados, ida y vuelta y criterio de empate son configurables. | EQ | Valor de demostración | RF-076 a RF-081; P-08 |
+| DEC-29 | **Ascenso y descenso:** por categoría, N equipos suben y N bajan entre categorías adyacentes (2 y 2 de demostración). No asciende un equipo con adeudos, con sanción de baja o cuyo club ya tenga equipo en la categoría superior. El sistema genera una **propuesta** que siempre valida el Presidente (RN-035). | EQ | Valor de demostración | RF-069 a RF-075; P-07 |
+| DEC-30 | **Catálogo de artículos y sanciones:** configurable. Cada artículo tiene número, descripción, tipo de sanción (partidos de suspensión, multa, pérdida de puntos, pérdida del partido o baja), a quién aplica (jugador, equipo o club), efecto (hacia adelante o retroactivo) y una marca «aplica automáticamente». Una multa genera un cobro. La semilla solo contiene las causas de baja de R2: riña, 5 partidos perdidos por default y falta de pago. | R2, EQ | Aprobada (equipo) · catálogo: valor de demostración | RF-060 a RF-064; PEN-021 |
+| DEC-31 | La **baja automática** se aplica a los artículos marcados como automáticos (5 partidos perdidos por default y falta de pago) y queda auditada. Riña y demás causas requieren resolución de la Comisión Disciplinaria. Recurso de inconformidad: lo resuelve el Presidente como segunda instancia. | EQ | Aprobada (equipo) | RF-062, RF-067 |
+| DEC-32 | **Partidos restantes de un equipo dado de baja:** por estándar, se otorgan **por default al rival** con el marcador configurado; es configurable por artículo. Si la baja es retroactiva (cachirul), el equipo además pierde los partidos donde jugó la persona sancionada. | R2, EST | Adoptada por estándar | P-06; tabla |
+
+## 6. Canchas, tesorería y comunicación
+
+| ID | Decisión | Origen | Estado | Afecta |
+| --- | --- | --- | --- | --- |
+| DEC-33 | **Canchas:** la liga registra sus canchas (40 en la unidad deportiva de referencia). Un club puede **ofrecer** su cancha con horarios por categoría, que se usa solo cuando ese club es local; o tener una cancha de la unidad deportiva **en comodato** por temporada. | R2 | Aprobada (equipo) | RF-027 a RF-030; canchas |
+| DEC-34 | **Localía:** si un rival no tiene cancha, se juega en la del que sí tiene. En las **últimas 10 fechas** se evitan canchas fuera de la unidad deportiva. | R2 | Aprobada (equipo) | RN nueva; P-03 |
+| DEC-35 | **Cartas:** préstamo y comodato con el **Formato 1** (dirigido a la liga o a dueños externos; estados Pendiente, Aprobada, No aprobada). Oferta con el **Formato 2** (estados Pendiente de negociación, Aceptada, Rechazada); si el oferente es externo y no tiene cuenta, la captura el Secretario de la liga. El sistema genera la carta con número de oficio. | FMT, R2, EQ | Aprobada (equipo) | RF nuevos; M-06 |
+| DEC-36 | **Tesorería (módulo nuevo M-13):** cobros a club o a equipo con concepto, monto y periodo de pago. Cobros **automáticos** por partido al publicarse la jornada, con tarifas de arbitraje y cancha por temporada y categoría (sin cobro de cancha si el equipo juega en la propia). El Tesorero de la liga también crea cobros manuales y registra pagos hechos fuera del sistema. | R2, EQ | Aprobada (equipo) | Módulo nuevo; P nuevo |
+| DEC-37 | **Pago en línea simulado:** existen los campos y estados (`PENDIENTE` → `PAGADO` / `RECHAZADO` / `VENCIDO`) con referencia ficticia; no hay pasarela real. | EQ | Aprobada (equipo) | M-13 |
+| DEC-38 | **Notificaciones** dentro del sistema y por correo electrónico. El proveedor de correo se justificará por costo, seguridad y necesidad en una ADR (PEN-033, PEN-034). | EQ | Aprobada (equipo) | ERS 3.1.3; integraciones |
+
+## 7. Matriz inicial rol → módulo → acción
+
+Configuración inicial de DEC-04. **C** crear/registrar · **L** consultar · **E** editar · **A** aprobar, validar o resolver · **P** publicar · **X** exportar · **(\*)** solo su ámbito (su club, sus partidos o sus datos).
+
+| # | Rol | Permisos por módulo |
+| --- | --- | --- |
+| 1 | Administrador general | M-01 C L E (usuarios, roles, permisos, auditoría) · M-02 C L E (temporadas, categorías y jerarquía) · M-03 L E · M-06 C L E (catálogo de canchas) · M-12 L X. No aprueba decisiones del negocio. |
+| 2 | Presidente del Comité Ejecutivo | M-02 A (reglas de temporada) · M-03 A (afiliaciones, cambios de directiva, venta de equipo, conservación de plaza) · M-06 A (préstamos, ofertas, comodatos) · M-07 A (programación) · M-08 A (corrección de resultado oficial) · M-09 A (recursos) · M-10 A (ascensos y descensos) · M-11 A (publicaciones) · M-01 A (pares de permisos incompatibles), L (auditoría) · M-12 L X |
+| 3 | Secretario (liga) | M-02 C E (convocatoria y documentos) · M-03 C L E (tarjetones) · M-04 L A (documentos e identidad) · M-06 C (oficios con folio; captura de ofertas externas) · M-11 C E P (comunicados aprobados) · M-12 L X |
+| 4 | Tesorero (liga) | M-13 C L E A (cobros, pagos, adeudos) · M-06 L (costos de cancha) · M-12 L X |
+| 5 | Comisión Disciplinaria | M-09 C L E A (expediente, artículo, resolución, sanción, baja, sanción retroactiva) · M-08 L (cédulas aprobadas e incidencias) · M-04 L (elegibilidad) · M-12 L X |
+| 6 | Comisión de Arbitraje | M-05 C L E A (catálogo, validación, disponibilidad, designaciones) · M-08 A (cédula al vencer el plazo) · M-07 L · M-12 L X |
+| 7 | Programador de partidos | M-07 C L E (programación manual, ajustes, envío a aprobación) · M-08 E (Suspendido, Reprogramado, Cancelado) · M-10 C E (fases y llaves) · M-05 L · M-06 L |
+| 8 | Directiva de club (presidente, secretario, tesorero y delegado del club) | M-03 C\* E\* (tarjetón y equipos; solo el presidente del club lo firma) · M-04 C\* E\* (alta y baja de jugadores con documentos) · M-05 C\* (árbitros que presenta el club) · M-06 C\* (solicitud de préstamo y oferta de cancha) · M-09 C\* L\* (recursos, sanciones del club) · M-13 L\* y pago simulado\* (cargo tesorero) · M-07 y M-08 L\* · M-12 L X\* |
+| 9 | Árbitro | M-05 L\* E\* (designaciones y disponibilidad propias) · M-08 A\* (aprobar o devolver la cédula de sus partidos) |
+| 10 | Capturista | M-08 C E (cédula completa y envío a validación) |
+| 11 | Jugador | M-04 L\* (registro, elegibilidad y documentos) · M-08 L\* (partidos y estadísticas propias) · M-09 L\* (sanciones propias). El de un menor lo consulta su tutor (DEC-11). |
+| 12 | Usuario público | M-11 L (solo información publicada) |
+
+Separación de funciones verificada: captura (Capturista) ≠ validación de la cédula (Árbitro o Comisión de Arbitraje); programación (Programador) ≠ aprobación (Presidente); resolución disciplinaria (Comisión) ≠ recurso (Presidente); redacción (Secretario) ≠ aprobación de publicaciones (Presidente). Riesgo aceptado: el Tesorero crea el cobro y confirma el pago simulado.
+
+## 8. Requisitos no funcionales y marco legal
+
+| ID | Decisión | Origen | Estado | Afecta |
+| --- | --- | --- | --- | --- |
+| DEC-39 | **Metas de los RNF** dimensionadas con el volumen de R2 (cerca de 200 clubes, más de 600 equipos, 40 canchas, 5,000 a 6,000 asistentes por fin de semana): disponibilidad 99 % los sábados y domingos de 7:00 a 21:00 (RNF-001); portal con p95 < 2 s y 300 usuarios simultáneos (RNF-002); operaciones internas con p95 < 3 s y exportación < 10 s; WCAG 2.1 AA (RNF-008); respaldo diario con 7 días de retención, RPO 24 h y RTO 4 h (RNF-010); bitácora estructurada y verificación de salud (RNF-011); tareas clave en 3 pasos o menos (RNF-006) y módulos sin dependencias cíclicas (RNF-009). | R2, EST | Adoptada por estándar | ERS 3.3; Q-19, Q-21 |
+| DEC-40 | **Datos personales:** el sistema se diseña conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (DOF 20-mar-2025): aviso de privacidad integral y simplificado, consentimiento expreso para datos sensibles y de menores (otorgado por el tutor), finalidades separadas y atención de derechos ARCO. La naturaleza jurídica de la Liga sigue **[PENDIENTE]**: si fuera un organismo público municipal, aplicaría la Ley General de Protección de Datos Personales en Posesión de Sujetos Obligados. | EST | Adoptada por estándar | ERS 3.4.4; PEN-019, PEN-032; RNF-012 |
+
+## 9. Documentación y gestión del trabajo
+
+| ID | Decisión | Origen | Estado | Afecta |
+| --- | --- | --- | --- | --- |
+| DEC-41 | La base documental es el ERS Rev. 0.3 convertido del Word (tablas completas) **más las ediciones del equipo** del PDF entregado (nombre SIGLIM, aprobaciones del 07/10/26, perfiles de usuario y ligas). Se conserva la numeración **0.3** del historial; el encabezado «Rev. 1.3» del PDF se trata como error. | EQ, EST | Adoptada por estándar | docs/requisitos/ERS.md |
+| DEC-42 | La migración inicial **no se ha aplicado** en ningún entorno. La regla de la ADR-0004 («una migración aplicada no se edita») todavía no aplica: el esquema se **reescribe** como nueva migración inicial y la actual pasa a `docs/base-de-datos/historico/`. | EQ | Aprobada (equipo) | supabase/migrations; diccionario |
+| DEC-43 | Se mantiene el stack: React (TypeScript) + Spring Boot (Java, Spring JDBC) + PostgreSQL en Supabase + Supabase Auth. No existe código implementado todavía. | EQ | Aprobada (equipo) | ADR-0001 a 0005 |
+| DEC-44 | El backlog v3 y los 81 issues de Jira se reemplazarán **después** de aprobar el ERS Rev. 0.4. BUG-002 se conserva; BUG-001 se descarta por DEC-21. | EQ | Aprobada (equipo) | Backlog v3; Jira |
+
+## 10. Pendientes que siguen abiertos
+
+No bloquean la Rev. 0.4; se registran como **[PENDIENTE]** y se resuelven como valores configurables.
+
+| Pendiente | Quién debe resolverlo |
+| --- | --- |
+| Naturaleza jurídica de la Liga (marco legal aplicable) | Liga |
+| Reglamento y Convocatoria 2025–2026: catálogo real de artículos, sanciones, desempates y reglas de ascenso y descenso (R4, Q-03) | Liga |
+| Tarifas reales de arbitraje y cancha | Liga |
+| Duración de juego y bloque de cancha por categoría | Liga |
+| Validación formal de la matriz de permisos | Liga y profesor |
+
+## 11. Orden de actualización de documentos
+
+1. ERS Rev. 0.4 (incorpora DEC-01 a DEC-41) y AGENTS.md / README en el mismo cambio.
+2. BPMN v2.0.
+3. Arquitectura, diseño jerárquico y ADR nuevas (autorización por permiso y ámbito, almacenamiento de documentos, tareas programadas, correo, preparación multiliga, pago simulado; aceptación de ADR-0003 y ADR-0005).
+4. Diccionario de datos y nueva migración inicial (DEC-42).
+5. Convenciones de API y diseño UI (reabrir C-03 y C-04).
+6. Backlog v4 y reemplazo de Jira (DEC-44).
