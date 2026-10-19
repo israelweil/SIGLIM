@@ -1,0 +1,22 @@
+# Normaliza finales de línea a LF en el repositorio (Windows y Linux en el mismo equipo).
+* text=auto eol=lf
+
+# Scripts de Windows con CRLF
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Binarios
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.docx binary
+*.xlsx binary
+*.pptx binary
+*.jar binary
+*.woff2 binary
+
+# Estadísticas de lenguaje en GitHub: los documentos no cuentan como código
+docs/** linguist-documentation

@@ -1,0 +1,43 @@
+# ── Sistema operativo / editores ──────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.swp
+
+# ── Secretos ──────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ── Frontend (Node / Vite) ────────────────────────────────
+node_modules/
+frontend/dist/
+frontend/coverage/
+*.tsbuildinfo
+npm-debug.log*
+.vite/
+
+# ── Backend (Java / Maven) ────────────────────────────────
+backend/target/
+!backend/.mvn/wrapper/maven-wrapper.jar
+*.class
+hs_err_pid*
+.classpath
+.project
+.settings/
+.factorypath
+.apt_generated/
+
+# ── Supabase CLI ──────────────────────────────────────────
+supabase/.branches/
+supabase/.temp/
+
+# ── Office (archivos temporales de Word) ──────────────────
+~$*

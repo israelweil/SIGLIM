@@ -1,8 +1,9 @@
 > [!NOTE]
-> Versión de texto extraída del PDF. Los bloques `<!-- Start of picture text -->` son texto
-> reconocido de las **figuras** (HIPO, IPO, componentes) y no son legibles; la información de cada
-> figura está también en las tablas y descripciones. Para ver las figuras, consulta el PDF
-> original o exporta los diagramas a `docs/arquitectura/figuras/` y enlázalos aquí.
+> Versión de texto extraída del PDF. Las **figuras** (HIPO, IPO y componentes) están enlazadas
+> desde [`figuras/`](figuras/), exportadas del documento original
+> ([`originales/arquitectura-diseno-jerarquico.docx`](originales/arquitectura-diseno-jerarquico.docx)).
+> Los bloques `<!-- Start of picture text -->` son el texto que el OCR reconoció en cada figura; ignóralos y
+> usa la imagen.
 > Decisiones posteriores a este documento: [ADR](adr/README.md) · Contrato REST: [convenciones de API](convenciones-api.md).
 
 Arquitectura y Diseño Jerárquico · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
@@ -23,6 +24,8 @@ Arquitectura y Diseño Jerárquico · Sistema de Gestión de la Liga Municipal d
 
 <!-- Start of picture text -->
 Sistema de Gestion de la Liga Municipal<br>de Futbol Amateur Morelia<br>M-01 prrsseeo<br>lAdministracién|y seguridad |TemporadasnormativaM-02  y | | OrganizaciéndeportivaM-03 | | elegibilidadRegistrosM-04  y CanchasrecursosM-06  y ProgramaciénmanualM-07 resultadosPartidosM-08  y | | Portaly publicaciénM-11publico| | 1|| reducidaDisciplinaM09 [P] ||1<br>L--------!<br>H<br>Hloe<br>M-01.1 i M-02.1 M-03.1 M-04.1 CatalogoM-06.1 de RegistroM-07.1manuall EstadoM-08.1del FlujoM-11.1de loHrH RegistrodeM091 ||<br>(Mie Tua lines Fed Uy canchas de partidos partido publicacin | 1) incidente 1<br>Hoot<br>M-01.2 M-02.2 M-07.2 M-08.2 M-11.2 i M0920 1|<br>Perfiles,y permisosroles Convocatoria(referencia) EquiposM-03.2 Bajaan deM-04.2 jugador) |} DisponibilidadpeleM-06.2. Asignaciéncancha de Capturaresultado de Programaciénpublica u| ResolucionVigencia y |<br>nena<br>AuditoriaM-01,34 de M-02.3 M-03.3 M-04.3 M-06.3 M-07.3 M-0M0 8 .32 M-11.3<br>SES; Cagaibi Personas elegibilidadEstado de(P] Bloqueos Validaciénconflictosde Validaciéncorrecciény Resultadospublicos<br>M-08.4<br>M-02.4 wie Tabla y M-11.4<br>Grupos one estoditicas da Tabla publica<br>M-02.5 M-11.5<br>Referencia de Filtros de<br>reglas consulta<br>Linea continua: médulo de la entrega. Linea discontinua / [P]: pendiente de decisién (Q-05, Q-16)<br><!-- End of picture text -->
+
+![Figura 1](figuras/figura-01-jerarquia-modulos.png)
 
 **Figura 1.** Diagrama de jerarquía de módulos (structure chart) de la entrega. 
 
@@ -108,6 +111,8 @@ Arquitectura y Diseño Jerárquico · Sistema de Gestión de la Liga Municipal d
 <!-- Start of picture text -->
 ENTRADAS PROCESO SALIDAS<br>+ Credenciales del usuario * Autenticar mediante Supabasq + Sesién autenticada o rechazo<br>interno Auth * Acceso concedido o denegado}<br>* Token de sesién (JWT) * Verificar rol y permiso por * Registro de auditoria<br>* Acci6n solicitada médulo/accién<br>(médulo/accién) + Denegar por defecto<br>* Datos de la operacién —p| (vALo15) —<br>critica + Registrar usuario, fecha,<br>accién y motivo (RF-093)<br><!-- End of picture text -->
 
+![Figura 2](figuras/figura-02-ipo-m01-administracion-seguridad.png)
+
 **Figura 2.** Diagrama IPO del módulo M-01 Administración y seguridad. 
 
 ### **1.3.2 M-02 Temporadas y normativa** 
@@ -118,6 +123,8 @@ Prepara el marco deportivo y normativo sobre el que operan los demás módulos (
 
 <!-- Start of picture text -->
 ENTRADAS PROCESO SALIDAS<br>* Datos de la temporada + Registrar la temporada sin + Temporada configurada<br>(nombre, fechas) sobrescribir hist6ricos + Estructura categoria/grupo<br>+ Referencia de la * Asociar la convocatoria de disponible<br>* Categoriasconvocatoriay grupos * Configurarreferencia categoria + grupo + Referenciaregistrada de reglas<br>* Version de reglas y<br>puntuacién =>| + Marcarcomo pendientes reglas interpretadas(RF-007) |=><br><!-- End of picture text -->
+
+![Figura 3](figuras/figura-03-ipo-m02-temporadas-normativa.png)
 
 **Figura 3.** Diagrama IPO del módulo M-02 Temporadas y normativa. 
 
@@ -134,6 +141,8 @@ Arquitectura y Diseño Jerárquico · Sistema de Gestión de la Liga Municipal d
 <!-- Start of picture text -->
 ENTRADAS PROCESO SALIDAS<br>+ Persona (identidad existente + Identificar o reutilizar la * Registro de jugador ACTIVO o<br>© nueva) persona BAJA<br>+ Equipo de la temporada * Validar que no exista * Historial de pertenencia<br>* Operacién: alta o baja registro activo duplicado + Rechazo con causa<br>+ Fechas y motivo de baja + Registrar alta o baja<br>==} conservando historial —><br>+ [P] Evaluar elegibilidad<br>(RF-017, RF-019)<br><!-- End of picture text -->
 
+![Figura 4](figuras/figura-04-ipo-m04-registros-elegibilidad.png)
+
 **Figura 4.** Diagrama IPO del módulo M-04 Registros y elegibilidad. 
 
 ### **1.3.4 M-07 Programación manual** 
@@ -144,6 +153,8 @@ Registra y ajusta manualmente los partidos de una jornada sin conflictos duros (
 
 <!-- Start of picture text -->
 ENTRADAS PROCESO SALIDAS<br>+ Jornada del grupo + Registrar el partido en la + Jornada en borrador o<br>+ Equipos local y visitante jornada (borrador) revision<br>* Cancha, inicio y fin + Validar conflictos duros: + Rechazo con el conflicto<br>programados equipo duplicado, cancha explicado<br>+ Motivo del ajuste ocupada, cancha no + Registro de auditoria<br>—>|} disponible —<br>+ Trazar el ajuste manual<br>(RN-018)<br>* Enviar la jornada a revision<br><!-- End of picture text -->
+
+![Figura 5](figuras/figura-05-ipo-m07-programacion-manual.png)
 
 **Figura 5.** Diagrama IPO del módulo M-07 Programación manual. 
 
@@ -160,6 +171,8 @@ Arquitectura y Diseño Jerárquico · Sistema de Gestión de la Liga Municipal d
 <!-- Start of picture text -->
 ENTRADAS PROCESO SALIDAS<br>* Partido y transicién + Permitir solo transiciones + Resultado oficial<br>solicitada validas (RF-046) + Historial de estados y de<br>+ Motivo de la transicién + Guardar historial de estados resultados<br>+ Marcador capturado (RF-045) * Tabla: PJ, PG, PE, PP, GF,<br>* Validacién 0 correccién + Validar resultado como GC, DG, Pts, posicién<br>autorizada ——>| oficial (RF-048) —><br>+ Versionar correcciones y<br>recalcular tabla (RF-052)<br><!-- End of picture text -->
 
+![Figura 6](figuras/figura-06-ipo-m08-partidos-resultados.png)
+
 **Figura 6.** Diagrama IPO del módulo M-08 Partidos y resultados. 
 
 **1.3.6 M-11 Portal público y publicación** 
@@ -170,6 +183,8 @@ Gobierna el paso de la información interna al portal de solo lectura (proceso P
 
 <!-- Start of picture text -->
 ENTRADAS PROCESO SALIDAS<br>* Jornada, resultado o tabla * Aplicar flujo Borrador > + Programacién semanal<br>en revision Revisién - Publicado publicada<br>+ Aprobacién del usuario (RF-090) + Resultados publicados<br>* autorizadoFiltros publicos: fecha, + Exponervalidada soloy publicada informacion * Tablalectura)publicada (solo<br>categoria/grupo, equipo ——p} (RF-056) —><br>* Aplicar filtros de consulta<br>(RF-089)<br><!-- End of picture text -->
+
+![Figura 7](figuras/figura-07-ipo-m11-portal-publico.png)
 
 **Figura 7.** Diagrama IPO del módulo M-11 Portal público y publicación. 
 
@@ -187,6 +202,8 @@ Se adopta una arquitectura cliente-servidor de tres niveles: un cliente web (Rea
 
 <!-- Start of picture text -->
 ee 4 Zo<br>«device» Navegador web (escritorio / movil) «node» Supabase (nube)<br>«component» = «component» =<br>React SPA React SPA HTTPS nico desesin,<br>Portal publico Aplicacién interna emision de JWT)<br>(solo lectura) (autenticada)<br>a]<br>«component»<br>HTTPS / REST (SON) HTTPS / REST + JWT Supabaseatientsers)Auth<br>TE, ee Sn4<br>«executionEnvironment» Spring Boot (JVM) _—<br>Filtro de seguridad:component»validacién de JWT y RBAC FTV LAT veceshen<br>Capa de controladores«component»REST (@RestController) a) =]<br>component»<br>PostgreSQL<br>«component» o {esquema public)<br>Capa de servicios: reglas de negocio, transacciones, auditoria J08¢ Prot co opr o toco l tablas - RLS-<br>PostgreSQL (TLS) triggerscalcular_tabla()- funciones<br>consultar_*publica()<br>component» a<br>Capa de repositorios: acceso a datos (JDBC) ]<br>Linea discontinua: mecanismo de validacién del token [PROPUESTAI, pendiente de definir (PEN-030).<br><!-- End of picture text -->
+
+![Figura 8](figuras/figura-08-componentes-despliegue.png)
 
 **Figura 8.** Diagrama de componentes y despliegue (UML) de la arquitectura propuesta. 
 
