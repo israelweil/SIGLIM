@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+  xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+  xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+  xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+  id="Definiciones_P10" targetNamespace="https://github.com/israelweil/SIGLIM/bpmn"
+  exporter="SIGLIM generar_bpmn.py" exporterVersion="2.0">
+  <bpmn:collaboration id="Colaboracion_P10">
+    <bpmn:documentation>P-10 Préstamo, comodato y oferta de cancha. Tramitar el uso o la oferta de canchas con los formatos del cliente.</bpmn:documentation>
+    <bpmn:participant id="Pool_P10" name="Liga Municipal de Futbol Amateur Morelia — SIGLIM" processRef="Proceso_P10"/>
+  </bpmn:collaboration>
+  <bpmn:process id="Proceso_P10" name="P-10 Préstamo, comodato y oferta de cancha" isExecutable="false">
+    <bpmn:laneSet id="Carriles_P10"><bpmn:lane id="Carril_sol" name="Directiva de club o Secretario"><bpmn:flowNodeRef>P10_i</bpmn:flowNodeRef><bpmn:flowNodeRef>P10_g0</bpmn:flowNodeRef><bpmn:flowNodeRef>P10_t1</bpmn:flowNodeRef><bpmn:flowNodeRef>P10_t2</bpmn:flowNodeRef><bpmn:flowNodeRef>P10_j0</bpmn:flowNodeRef></bpmn:lane><bpmn:lane id="Carril_pre" name="Presidente del Comité Ejecutivo"><bpmn:flowNodeRef>P10_p1</bpmn:flowNodeRef><bpmn:flowNodeRef>P10_g1</bpmn:flowNodeRef></bpmn:lane><bpmn:lane id="Carril_sis" name="Sistema"><bpmn:flowNodeRef>P10_s1</bpmn:flowNodeRef><bpmn:flowNodeRef>P10_s2</bpmn:flowNodeRef><bpmn:flowNodeRef>P10_s3</bpmn:flowNodeRef><bpmn:flowNodeRef>P10_f1</bpmn:flowNodeRef><bpmn:flowNodeRef>P10_f2</bpmn:flowNodeRef></bpmn:lane></bpmn:laneSet>
+        <bpmn:startEvent id="P10_i" name="Trámite de cancha"><bpmn:outgoing>Flujo_1</bpmn:outgoing></bpmn:startEvent>
+    <bpmn:exclusiveGateway id="P10_g0" name="¿Tipo de trámite?"><bpmn:incoming>Flujo_1</bpmn:incoming><bpmn:outgoing>Flujo_2</bpmn:outgoing><bpmn:outgoing>Flujo_3</bpmn:outgoing></bpmn:exclusiveGateway>
+    <bpmn:userTask id="P10_t1" name="Capturar Formato 1 (préstamo o comodato)"><bpmn:incoming>Flujo_2</bpmn:incoming><bpmn:outgoing>Flujo_4</bpmn:outgoing></bpmn:userTask>
+    <bpmn:userTask id="P10_t2" name="Capturar Formato 2 (oferta)"><bpmn:incoming>Flujo_3</bpmn:incoming><bpmn:outgoing>Flujo_5</bpmn:outgoing></bpmn:userTask>
+    <bpmn:exclusiveGateway id="P10_j0" name=""><bpmn:incoming>Flujo_4</bpmn:incoming><bpmn:incoming>Flujo_5</bpmn:incoming><bpmn:outgoing>Flujo_6</bpmn:outgoing></bpmn:exclusiveGateway>
+    <bpmn:serviceTask id="P10_s1" name="Generar carta con número de oficio"><bpmn:incoming>Flujo_6</bpmn:incoming><bpmn:outgoing>Flujo_7</bpmn:outgoing></bpmn:serviceTask>
+    <bpmn:userTask id="P10_p1" name="Evaluar trámite"><bpmn:incoming>Flujo_7</bpmn:incoming><bpmn:outgoing>Flujo_8</bpmn:outgoing></bpmn:userTask>
+    <bpmn:exclusiveGateway id="P10_g1" name="¿Aprueba o acepta?"><bpmn:incoming>Flujo_8</bpmn:incoming><bpmn:outgoing>Flujo_9</bpmn:outgoing><bpmn:outgoing>Flujo_10</bpmn:outgoing></bpmn:exclusiveGateway>
+    <bpmn:serviceTask id="P10_s2" name="Registrar cancha, horarios o comodato"><bpmn:incoming>Flujo_9</bpmn:incoming><bpmn:outgoing>Flujo_11</bpmn:outgoing></bpmn:serviceTask>
+    <bpmn:serviceTask id="P10_s3" name="Registrar rechazo"><bpmn:incoming>Flujo_10</bpmn:incoming><bpmn:outgoing>Flujo_12</bpmn:outgoing></bpmn:serviceTask>
+    <bpmn:endEvent id="P10_f1" name="Trámite aprobado"><bpmn:incoming>Flujo_11</bpmn:incoming></bpmn:endEvent>
+    <bpmn:endEvent id="P10_f2" name="Trámite rechazado"><bpmn:incoming>Flujo_12</bpmn:incoming></bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flujo_1" sourceRef="P10_i" targetRef="P10_g0"/>
+    <bpmn:sequenceFlow id="Flujo_2" name="Préstamo o comodato" sourceRef="P10_g0" targetRef="P10_t1"/>
+    <bpmn:sequenceFlow id="Flujo_3" name="Oferta" sourceRef="P10_g0" targetRef="P10_t2"/>
+    <bpmn:sequenceFlow id="Flujo_4" sourceRef="P10_t1" targetRef="P10_j0"/>
+    <bpmn:sequenceFlow id="Flujo_5" sourceRef="P10_t2" targetRef="P10_j0"/>
+    <bpmn:sequenceFlow id="Flujo_6" sourceRef="P10_j0" targetRef="P10_s1"/>
+    <bpmn:sequenceFlow id="Flujo_7" sourceRef="P10_s1" targetRef="P10_p1"/>
+    <bpmn:sequenceFlow id="Flujo_8" sourceRef="P10_p1" targetRef="P10_g1"/>
+    <bpmn:sequenceFlow id="Flujo_9" name="Sí" sourceRef="P10_g1" targetRef="P10_s2"/>
+    <bpmn:sequenceFlow id="Flujo_10" name="No" sourceRef="P10_g1" targetRef="P10_s3"/>
+    <bpmn:sequenceFlow id="Flujo_11" sourceRef="P10_s2" targetRef="P10_f1"/>
+    <bpmn:sequenceFlow id="Flujo_12" sourceRef="P10_s3" targetRef="P10_f2"/>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="Diagrama_P10">
+    <bpmndi:BPMNPlane id="Plano_P10" bpmnElement="Colaboracion_P10">
+      <bpmndi:BPMNShape id="Pool_P10_di" bpmnElement="Pool_P10" isHorizontal="true"><dc:Bounds x="20" y="20" width="1670" height="685"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Carril_sol_di" bpmnElement="Carril_sol" isHorizontal="true"><dc:Bounds x="50" y="20" width="1640" height="270"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Carril_pre_di" bpmnElement="Carril_pre" isHorizontal="true"><dc:Bounds x="50" y="290" width="1640" height="145"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Carril_sis_di" bpmnElement="Carril_sis" isHorizontal="true"><dc:Bounds x="50" y="435" width="1640" height="270"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P10_i_di" bpmnElement="P10_i"><dc:Bounds x="162" y="74" width="36" height="36"/><bpmndi:BPMNLabel><dc:Bounds x="105.0" y="114.5" width="150" height="28"/></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P10_g0_di" bpmnElement="P10_g0"><dc:Bounds x="325" y="68" width="50" height="50"/><bpmndi:BPMNLabel><dc:Bounds x="285.0" y="33.5" width="130" height="28"/></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P10_t1_di" bpmnElement="P10_t1"><dc:Bounds x="460" y="52" width="120" height="80"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P10_t2_di" bpmnElement="P10_t2"><dc:Bounds x="460" y="178" width="120" height="80"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P10_j0_di" bpmnElement="P10_j0"><dc:Bounds x="665" y="68" width="50" height="50"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P10_s1_di" bpmnElement="P10_s1"><dc:Bounds x="800" y="468" width="120" height="80"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P10_p1_di" bpmnElement="P10_p1"><dc:Bounds x="970" y="322" width="120" height="80"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P10_g1_di" bpmnElement="P10_g1"><dc:Bounds x="1175" y="338" width="50" height="50"/><bpmndi:BPMNLabel><dc:Bounds x="1135.0" y="303.5" width="130" height="28"/></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P10_s2_di" bpmnElement="P10_s2"><dc:Bounds x="1310" y="468" width="120" height="80"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P10_s3_di" bpmnElement="P10_s3"><dc:Bounds x="1310" y="592" width="120" height="80"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P10_f1_di" bpmnElement="P10_f1"><dc:Bounds x="1522" y="490" width="36" height="36"/><bpmndi:BPMNLabel><dc:Bounds x="1465.0" y="529.5" width="150" height="28"/></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P10_f2_di" bpmnElement="P10_f2"><dc:Bounds x="1522" y="614" width="36" height="36"/><bpmndi:BPMNLabel><dc:Bounds x="1465.0" y="654.5" width="150" height="28"/></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flujo_1_di" bpmnElement="Flujo_1"><di:waypoint x="198" y="92"/><di:waypoint x="325" y="92"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_2_di" bpmnElement="Flujo_2"><di:waypoint x="375" y="92"/><di:waypoint x="460" y="92"/><bpmndi:BPMNLabel><dc:Bounds x="387" y="60" width="80" height="28"/></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_3_di" bpmnElement="Flujo_3"><di:waypoint x="350" y="118"/><di:waypoint x="350" y="218"/><di:waypoint x="460" y="218"/><bpmndi:BPMNLabel><dc:Bounds x="356" y="122" width="42" height="14"/></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_4_di" bpmnElement="Flujo_4"><di:waypoint x="580" y="92"/><di:waypoint x="665" y="92"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_5_di" bpmnElement="Flujo_5"><di:waypoint x="580" y="218"/><di:waypoint x="640" y="218"/><di:waypoint x="640" y="92"/><di:waypoint x="665" y="92"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_6_di" bpmnElement="Flujo_6"><di:waypoint x="690" y="118"/><di:waypoint x="690" y="508"/><di:waypoint x="800" y="508"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_7_di" bpmnElement="Flujo_7"><di:waypoint x="920" y="508"/><di:waypoint x="945" y="508"/><di:waypoint x="945" y="362"/><di:waypoint x="970" y="362"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_8_di" bpmnElement="Flujo_8"><di:waypoint x="1090" y="362"/><di:waypoint x="1175" y="362"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_9_di" bpmnElement="Flujo_9"><di:waypoint x="1200" y="388"/><di:waypoint x="1200" y="508"/><di:waypoint x="1310" y="508"/><bpmndi:BPMNLabel><dc:Bounds x="1214" y="490" width="30" height="14"/></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_10_di" bpmnElement="Flujo_10"><di:waypoint x="1200" y="388"/><di:waypoint x="1200" y="632"/><di:waypoint x="1310" y="632"/><bpmndi:BPMNLabel><dc:Bounds x="1212" y="614" width="30" height="14"/></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_11_di" bpmnElement="Flujo_11"><di:waypoint x="1430" y="508"/><di:waypoint x="1522" y="508"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_12_di" bpmnElement="Flujo_12"><di:waypoint x="1430" y="632"/><di:waypoint x="1522" y="632"/></bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+  xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+  xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+  xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+  id="Definiciones_P06" targetNamespace="https://github.com/israelweil/SIGLIM/bpmn"
+  exporter="SIGLIM generar_bpmn.py" exporterVersion="2.0">
+  <bpmn:collaboration id="Colaboracion_P06">
+    <bpmn:documentation>P-06 Expediente, resolución y sanción. Convertir las incidencias en una resolución trazable conforme al reglamento.</bpmn:documentation>
+    <bpmn:participant id="Pool_P06" name="Liga Municipal de Futbol Amateur Morelia — SIGLIM" processRef="Proceso_P06"/>
+  </bpmn:collaboration>
+  <bpmn:process id="Proceso_P06" name="P-06 Expediente, resolución y sanción" isExecutable="false">
+    <bpmn:laneSet id="Carriles_P06"><bpmn:lane id="Carril_sis" name="Sistema"><bpmn:flowNodeRef>P06_i</bpmn:flowNodeRef><bpmn:flowNodeRef>P06_s1</bpmn:flowNodeRef><bpmn:flowNodeRef>P06_g2</bpmn:flowNodeRef><bpmn:flowNodeRef>P06_s2</bpmn:flowNodeRef><bpmn:flowNodeRef>P06_s3</bpmn:flowNodeRef><bpmn:flowNodeRef>P06_s4</bpmn:flowNodeRef><bpmn:flowNodeRef>P06_j1</bpmn:flowNodeRef><bpmn:flowNodeRef>P06_s5</bpmn:flowNodeRef></bpmn:lane><bpmn:lane id="Carril_cdi" name="Comisión Disciplinaria"><bpmn:flowNodeRef>P06_d1</bpmn:flowNodeRef><bpmn:flowNodeRef>P06_g1</bpmn:flowNodeRef><bpmn:flowNodeRef>P06_d0</bpmn:flowNodeRef><bpmn:flowNodeRef>P06_d2</bpmn:flowNodeRef></bpmn:lane><bpmn:lane id="Carril_dir" name="Directiva de club"><bpmn:flowNodeRef>P06_r0</bpmn:flowNodeRef><bpmn:flowNodeRef>P06_r1</bpmn:flowNodeRef></bpmn:lane><bpmn:lane id="Carril_pre" name="Presidente del Comité Ejecutivo"><bpmn:flowNodeRef>P06_p1</bpmn:flowNodeRef><bpmn:flowNodeRef>P06_f1</bpmn:flowNodeRef></bpmn:lane></bpmn:laneSet>
+        <bpmn:startEvent id="P06_i" name="Expediente abierto"><bpmn:outgoing>Flujo_1</bpmn:outgoing><bpmn:messageEventDefinition/></bpmn:startEvent>
+    <bpmn:userTask id="P06_d1" name="Revisar incidencias y evidencias"><bpmn:incoming>Flujo_1</bpmn:incoming><bpmn:incoming>Flujo_4</bpmn:incoming><bpmn:outgoing>Flujo_2</bpmn:outgoing></bpmn:userTask>
+    <bpmn:exclusiveGateway id="P06_g1" name="¿Artículo identificado?"><bpmn:incoming>Flujo_2</bpmn:incoming><bpmn:outgoing>Flujo_3</bpmn:outgoing><bpmn:outgoing>Flujo_5</bpmn:outgoing></bpmn:exclusiveGateway>
+    <bpmn:userTask id="P06_d0" name="Dejar en revisión y solicitar información"><bpmn:incoming>Flujo_3</bpmn:incoming><bpmn:outgoing>Flujo_4</bpmn:outgoing></bpmn:userTask>
+    <bpmn:userTask id="P06_d2" name="Resolver sanción"><bpmn:incoming>Flujo_5</bpmn:incoming><bpmn:outgoing>Flujo_6</bpmn:outgoing></bpmn:userTask>
+    <bpmn:serviceTask id="P06_s1" name="Calcular vigencia"><bpmn:incoming>Flujo_6</bpmn:incoming><bpmn:outgoing>Flujo_7</bpmn:outgoing></bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="P06_g2" name="¿Tipo de sanción?"><bpmn:incoming>Flujo_7</bpmn:incoming><bpmn:outgoing>Flujo_8</bpmn:outgoing><bpmn:outgoing>Flujo_9</bpmn:outgoing><bpmn:outgoing>Flujo_10</bpmn:outgoing></bpmn:exclusiveGateway>
+    <bpmn:serviceTask id="P06_s2" name="Suspender elegibilidad del jugador"><bpmn:incoming>Flujo_8</bpmn:incoming><bpmn:outgoing>Flujo_11</bpmn:outgoing></bpmn:serviceTask>
+    <bpmn:serviceTask id="P06_s3" name="Dar de baja y resolver partidos restantes"><bpmn:incoming>Flujo_9</bpmn:incoming><bpmn:outgoing>Flujo_12</bpmn:outgoing></bpmn:serviceTask>
+    <bpmn:serviceTask id="P06_s4" name="Generar cobro por multa"><bpmn:incoming>Flujo_10</bpmn:incoming><bpmn:outgoing>Flujo_13</bpmn:outgoing></bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="P06_j1" name=""><bpmn:incoming>Flujo_11</bpmn:incoming><bpmn:incoming>Flujo_12</bpmn:incoming><bpmn:incoming>Flujo_13</bpmn:incoming><bpmn:outgoing>Flujo_14</bpmn:outgoing></bpmn:exclusiveGateway>
+    <bpmn:serviceTask id="P06_s5" name="Recalcular tabla y notificar"><bpmn:incoming>Flujo_14</bpmn:incoming><bpmn:outgoing>Flujo_15</bpmn:outgoing></bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="P06_r0" name="¿Interpone recurso?"><bpmn:incoming>Flujo_15</bpmn:incoming><bpmn:outgoing>Flujo_16</bpmn:outgoing><bpmn:outgoing>Flujo_17</bpmn:outgoing></bpmn:exclusiveGateway>
+    <bpmn:userTask id="P06_r1" name="Interponer recurso"><bpmn:incoming>Flujo_16</bpmn:incoming><bpmn:outgoing>Flujo_18</bpmn:outgoing></bpmn:userTask>
+    <bpmn:userTask id="P06_p1" name="Resolver recurso"><bpmn:incoming>Flujo_18</bpmn:incoming><bpmn:outgoing>Flujo_19</bpmn:outgoing></bpmn:userTask>
+    <bpmn:endEvent id="P06_f1" name="Expediente cerrado"><bpmn:incoming>Flujo_17</bpmn:incoming><bpmn:incoming>Flujo_19</bpmn:incoming></bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flujo_1" sourceRef="P06_i" targetRef="P06_d1"/>
+    <bpmn:sequenceFlow id="Flujo_2" sourceRef="P06_d1" targetRef="P06_g1"/>
+    <bpmn:sequenceFlow id="Flujo_3" name="No" sourceRef="P06_g1" targetRef="P06_d0"/>
+    <bpmn:sequenceFlow id="Flujo_4" sourceRef="P06_d0" targetRef="P06_d1"/>
+    <bpmn:sequenceFlow id="Flujo_5" name="Sí" sourceRef="P06_g1" targetRef="P06_d2"/>
+    <bpmn:sequenceFlow id="Flujo_6" sourceRef="P06_d2" targetRef="P06_s1"/>
+    <bpmn:sequenceFlow id="Flujo_7" sourceRef="P06_s1" targetRef="P06_g2"/>
+    <bpmn:sequenceFlow id="Flujo_8" name="Suspensión" sourceRef="P06_g2" targetRef="P06_s2"/>
+    <bpmn:sequenceFlow id="Flujo_9" name="Baja" sourceRef="P06_g2" targetRef="P06_s3"/>
+    <bpmn:sequenceFlow id="Flujo_10" name="Multa" sourceRef="P06_g2" targetRef="P06_s4"/>
+    <bpmn:sequenceFlow id="Flujo_11" sourceRef="P06_s2" targetRef="P06_j1"/>
+    <bpmn:sequenceFlow id="Flujo_12" sourceRef="P06_s3" targetRef="P06_j1"/>
+    <bpmn:sequenceFlow id="Flujo_13" sourceRef="P06_s4" targetRef="P06_j1"/>
+    <bpmn:sequenceFlow id="Flujo_14" sourceRef="P06_j1" targetRef="P06_s5"/>
+    <bpmn:sequenceFlow id="Flujo_15" sourceRef="P06_s5" targetRef="P06_r0"/>
+    <bpmn:sequenceFlow id="Flujo_16" name="Sí" sourceRef="P06_r0" targetRef="P06_r1"/>
+    <bpmn:sequenceFlow id="Flujo_17" name="No" sourceRef="P06_r0" targetRef="P06_f1"/>
+    <bpmn:sequenceFlow id="Flujo_18" sourceRef="P06_r1" targetRef="P06_p1"/>
+    <bpmn:sequenceFlow id="Flujo_19" sourceRef="P06_p1" targetRef="P06_f1"/>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="Diagrama_P06">
+    <bpmndi:BPMNPlane id="Plano_P06" bpmnElement="Colaboracion_P06">
+      <bpmndi:BPMNShape id="Pool_P06_di" bpmnElement="Pool_P06" isHorizontal="true"><dc:Bounds x="20" y="20" width="2350" height="955"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Carril_sis_di" bpmnElement="Carril_sis" isHorizontal="true"><dc:Bounds x="50" y="20" width="2320" height="395"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Carril_cdi_di" bpmnElement="Carril_cdi" isHorizontal="true"><dc:Bounds x="50" y="415" width="2320" height="270"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Carril_dir_di" bpmnElement="Carril_dir" isHorizontal="true"><dc:Bounds x="50" y="685" width="2320" height="145"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Carril_pre_di" bpmnElement="Carril_pre" isHorizontal="true"><dc:Bounds x="50" y="830" width="2320" height="145"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P06_i_di" bpmnElement="P06_i"><dc:Bounds x="162" y="74" width="36" height="36"/><bpmndi:BPMNLabel><dc:Bounds x="105.0" y="114.5" width="150" height="28"/></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P06_d1_di" bpmnElement="P06_d1"><dc:Bounds x="290" y="448" width="120" height="80"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P06_g1_di" bpmnElement="P06_g1"><dc:Bounds x="495" y="462" width="50" height="50"/><bpmndi:BPMNLabel><dc:Bounds x="455.0" y="428.5" width="130" height="28"/></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P06_d0_di" bpmnElement="P06_d0"><dc:Bounds x="630" y="448" width="120" height="80"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P06_d2_di" bpmnElement="P06_d2"><dc:Bounds x="630" y="572" width="120" height="80"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P06_s1_di" bpmnElement="P06_s1"><dc:Bounds x="800" y="52" width="120" height="80"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P06_g2_di" bpmnElement="P06_g2"><dc:Bounds x="1005" y="68" width="50" height="50"/><bpmndi:BPMNLabel><dc:Bounds x="965.0" y="33.5" width="130" height="28"/></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P06_s2_di" bpmnElement="P06_s2"><dc:Bounds x="1140" y="52" width="120" height="80"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P06_s3_di" bpmnElement="P06_s3"><dc:Bounds x="1140" y="178" width="120" height="80"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P06_s4_di" bpmnElement="P06_s4"><dc:Bounds x="1140" y="302" width="120" height="80"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P06_j1_di" bpmnElement="P06_j1"><dc:Bounds x="1345" y="68" width="50" height="50"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P06_s5_di" bpmnElement="P06_s5"><dc:Bounds x="1480" y="52" width="120" height="80"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P06_r0_di" bpmnElement="P06_r0"><dc:Bounds x="1685" y="732" width="50" height="50"/><bpmndi:BPMNLabel><dc:Bounds x="1645.0" y="698.5" width="130" height="28"/></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P06_r1_di" bpmnElement="P06_r1"><dc:Bounds x="1820" y="718" width="120" height="80"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P06_p1_di" bpmnElement="P06_p1"><dc:Bounds x="1990" y="862" width="120" height="80"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="P06_f1_di" bpmnElement="P06_f1"><dc:Bounds x="2202" y="884" width="36" height="36"/><bpmndi:BPMNLabel><dc:Bounds x="2145.0" y="924.5" width="150" height="28"/></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flujo_1_di" bpmnElement="Flujo_1"><di:waypoint x="198" y="92"/><di:waypoint x="265" y="92"/><di:waypoint x="265" y="488"/><di:waypoint x="290" y="488"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_2_di" bpmnElement="Flujo_2"><di:waypoint x="410" y="488"/><di:waypoint x="495" y="488"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_3_di" bpmnElement="Flujo_3"><di:waypoint x="545" y="488"/><di:waypoint x="630" y="488"/><bpmndi:BPMNLabel><dc:Bounds x="557" y="470" width="30" height="14"/></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_4_di" bpmnElement="Flujo_4"><di:waypoint x="750" y="488"/><di:waypoint x="763" y="488"/><di:waypoint x="763" y="554"/><di:waypoint x="350" y="554"/><di:waypoint x="350" y="528"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_5_di" bpmnElement="Flujo_5"><di:waypoint x="520" y="512"/><di:waypoint x="520" y="612"/><di:waypoint x="630" y="612"/><bpmndi:BPMNLabel><dc:Bounds x="526" y="516" width="30" height="14"/></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_6_di" bpmnElement="Flujo_6"><di:waypoint x="750" y="612"/><di:waypoint x="775" y="612"/><di:waypoint x="775" y="92"/><di:waypoint x="800" y="92"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_7_di" bpmnElement="Flujo_7"><di:waypoint x="920" y="92"/><di:waypoint x="1005" y="92"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_8_di" bpmnElement="Flujo_8"><di:waypoint x="1055" y="92"/><di:waypoint x="1140" y="92"/><bpmndi:BPMNLabel><dc:Bounds x="1067" y="74" width="70" height="14"/></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_9_di" bpmnElement="Flujo_9"><di:waypoint x="1030" y="118"/><di:waypoint x="1030" y="218"/><di:waypoint x="1140" y="218"/><bpmndi:BPMNLabel><dc:Bounds x="1044" y="200" width="30" height="14"/></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_10_di" bpmnElement="Flujo_10"><di:waypoint x="1030" y="118"/><di:waypoint x="1030" y="342"/><di:waypoint x="1140" y="342"/><bpmndi:BPMNLabel><dc:Bounds x="1042" y="324" width="35" height="14"/></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_11_di" bpmnElement="Flujo_11"><di:waypoint x="1260" y="92"/><di:waypoint x="1345" y="92"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_12_di" bpmnElement="Flujo_12"><di:waypoint x="1260" y="218"/><di:waypoint x="1320" y="218"/><di:waypoint x="1320" y="92"/><di:waypoint x="1345" y="92"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_13_di" bpmnElement="Flujo_13"><di:waypoint x="1260" y="342"/><di:waypoint x="1320" y="342"/><di:waypoint x="1320" y="92"/><di:waypoint x="1345" y="92"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_14_di" bpmnElement="Flujo_14"><di:waypoint x="1395" y="92"/><di:waypoint x="1480" y="92"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_15_di" bpmnElement="Flujo_15"><di:waypoint x="1600" y="92"/><di:waypoint x="1660" y="92"/><di:waypoint x="1660" y="758"/><di:waypoint x="1685" y="758"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_16_di" bpmnElement="Flujo_16"><di:waypoint x="1735" y="758"/><di:waypoint x="1820" y="758"/><bpmndi:BPMNLabel><dc:Bounds x="1751" y="740" width="30" height="14"/></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_17_di" bpmnElement="Flujo_17"><di:waypoint x="1735" y="758"/><di:waypoint x="1783" y="758"/><di:waypoint x="1783" y="816"/><di:waypoint x="2177" y="816"/><di:waypoint x="2177" y="902"/><di:waypoint x="2202" y="902"/><bpmndi:BPMNLabel><dc:Bounds x="1795" y="798" width="30" height="14"/></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_18_di" bpmnElement="Flujo_18"><di:waypoint x="1940" y="758"/><di:waypoint x="1965" y="758"/><di:waypoint x="1965" y="902"/><di:waypoint x="1990" y="902"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flujo_19_di" bpmnElement="Flujo_19"><di:waypoint x="2110" y="902"/><di:waypoint x="2202" y="902"/></bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
