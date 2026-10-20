@@ -1,0 +1,14 @@
+{
+  "name": "siglim-bpmn-figuras",
+  "private": true,
+  "description": "Valida los archivos BPMN 2.0 de SIGLIM y genera sus figuras SVG y PNG con bpmn-js.",
+  "type": "module",
+  "scripts": {
+    "figuras": "node render.mjs ../procesos ../figuras"
+  },
+  "dependencies": {
+    "bpmn-js": "18.6.3",
+    "bpmn-moddle": "9.0.1",
+    "playwright-core": "1.48.2"
+  }
+}

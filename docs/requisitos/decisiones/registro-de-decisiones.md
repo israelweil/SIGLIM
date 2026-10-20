@@ -133,8 +133,8 @@ No bloquean la Rev. 0.4; se registran como **[PENDIENTE]** y se resuelven como v
 
 ## 11. Orden de actualización de documentos
 
-1. ERS Rev. 0.4 (incorpora DEC-01 a DEC-41) y AGENTS.md / README en el mismo cambio.
-2. BPMN v2.0.
+1. ERS Rev. 0.4 (incorpora DEC-01 a DEC-41) y AGENTS.md / README en el mismo cambio. **Hecho.**
+2. BPMN v2.0 ([`../bpmn/bpmn-procesos-del-sistema.md`](../bpmn/bpmn-procesos-del-sistema.md)). **Hecho.**
 3. Arquitectura, diseño jerárquico y ADR nuevas (autorización por permiso y ámbito, almacenamiento de documentos, tareas programadas, correo, preparación multiliga, pago simulado; aceptación de ADR-0003 y ADR-0005).
 4. Diccionario de datos y nueva migración inicial (DEC-42).
 5. Convenciones de API y diseño UI (reabrir C-03 y C-04).
