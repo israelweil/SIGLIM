@@ -4,10 +4,11 @@
 > Rev. 0.3, para que la Rev. 0.4, el BPMN, la arquitectura, el modelo de datos y el backlog se
 > actualicen contra una sola fuente.
 >
-> **Vigencia.** Las decisiones están **integradas en el ERS Rev. 0.4** ([`../ERS.md`](../ERS.md)), que
-> vuelve a ser la fuente principal. Este archivo queda como evidencia de origen de cada requisito.
+> **Vigencia.** Las decisiones DEC-01 a DEC-44 están **integradas en el ERS Rev. 0.4**, y DEC-45 y
+> DEC-46 en la Rev. 0.4.1 ([`../ERS.md`](../ERS.md)), que vuelve a ser la fuente principal. Este
+> archivo queda como evidencia de origen de cada requisito.
 >
-> **Fecha de corte:** 19 de octubre de 2026.
+> **Fecha de corte:** 20 de octubre de 2026.
 
 ## 1. Convenciones
 
@@ -118,6 +119,8 @@ Separación de funciones verificada: captura (Capturista) ≠ validación de la 
 | DEC-42 | La migración inicial **no se ha aplicado** en ningún entorno. La regla de la ADR-0004 («una migración aplicada no se edita») todavía no aplica: el esquema se **reescribe** como nueva migración inicial y la actual pasa a `docs/base-de-datos/historico/`. | EQ | Aprobada (equipo) | supabase/migrations; diccionario |
 | DEC-43 | Se mantiene el stack: React (TypeScript) + Spring Boot (Java, Spring JDBC) + PostgreSQL en Supabase + Supabase Auth. No existe código implementado todavía. | EQ | Aprobada (equipo) | ADR-0001 a 0005 |
 | DEC-44 | El backlog v3 y los 81 issues de Jira se reemplazarán **después** de aprobar el ERS Rev. 0.4. BUG-002 se conserva; BUG-001 se descarta por DEC-21. | EQ | Aprobada (equipo) | Backlog v3; Jira |
+| DEC-45 | **Almacenamiento de archivos:** los datos se guardan en Supabase (PostgreSQL) y las **imágenes y documentos en AWS S3**; en Supabase se guarda la URL de cada archivo. Por estándar (RNF-018), el bucket es privado y la URL guardada no es pública: se lee con una URL prefirmada de vigencia corta. | EQ, EST | Aprobada (equipo) | ADR-0013 (reemplaza ADR-0008); tabla `documentos` |
+| DEC-46 | **Correo:** por ahora el volumen será bajo. La elección del proveedor de correo queda **pendiente** (PEN-034) hasta más adelante; se mantiene el mecanismo de ADR-0010 (SMTP y bandeja de salida). | EQ | Aprobada (equipo) · proveedor pendiente | ADR-0010; PEN-034 |
 
 ## 10. Pendientes que siguen abiertos
 
@@ -130,12 +133,14 @@ No bloquean la Rev. 0.4; se registran como **[PENDIENTE]** y se resuelven como v
 | Tarifas reales de arbitraje y cancha | Liga |
 | Duración de juego y bloque de cancha por categoría | Liga |
 | Validación formal de la matriz de permisos | Liga y profesor |
+| Proveedor de correo (PEN-034) | Equipo, más adelante (DEC-46) |
+| Ambientes, alojamiento y dominio (PEN-036, PEN-037) | Liga y equipo |
 
 ## 11. Orden de actualización de documentos
 
 1. ERS Rev. 0.4 (incorpora DEC-01 a DEC-41) y AGENTS.md / README en el mismo cambio. **Hecho.**
 2. BPMN v2.0 ([`../bpmn/bpmn-procesos-del-sistema.md`](../bpmn/bpmn-procesos-del-sistema.md)). **Hecho.**
 3. Arquitectura, diseño jerárquico y ADR nuevas (autorización por permiso y ámbito, almacenamiento de documentos, tareas programadas, correo, preparación multiliga, pago simulado; aceptación de ADR-0003 y ADR-0005) ([`../../arquitectura/arquitectura-y-diseno-jerarquico.md`](../../arquitectura/arquitectura-y-diseno-jerarquico.md), ADR-0003 y ADR-0005 a ADR-0012). **Hecho.**
-4. Diccionario de datos y nueva migración inicial (DEC-42).
+4. Diccionario de datos y nueva migración inicial (DEC-42) ([`../../base-de-datos/diccionario-de-datos.md`](../../base-de-datos/diccionario-de-datos.md), `supabase/migrations/20261020090000_esquema_inicial.sql`, ADR-0013 y ADR-0014). **Hecho.**
 5. Convenciones de API y diseño UI (reabrir C-03 y C-04).
 6. Backlog v4 y reemplazo de Jira (DEC-44).

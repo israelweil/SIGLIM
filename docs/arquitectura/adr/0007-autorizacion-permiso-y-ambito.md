@@ -1,6 +1,6 @@
 # ADR-0007: Autorizar cada operación por permiso y ámbito, con RLS como defensa en profundidad
 
-- **Estado:** Aceptada
+- **Estado:** Aceptada · el punto 4 (RLS) lo precisa [ADR-0014](0014-esquema-propio-y-roles-de-base-de-datos.md)
 - **Fecha:** 2026-10-19
 - **Responsables:** Equipo SIGLIM
 - **Trazabilidad:** DD-009, DP-008, RNF-003, RNF-012, RN-053, RN-054, VAL-015, VAL-021 a VAL-024, RF-094 a RF-096, RF-144, Apéndice E del ERS

@@ -1,7 +1,7 @@
 # Arquitectura y diseño jerárquico
 
 **SIGLIM · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia**  
-Versión 2.0 · 19 de octubre de 2026 · Alineado con el [ERS Rev. 0.4](../requisitos/ERS.md) y el
+Versión 2.1 · 20 de octubre de 2026 · Alineado con el [ERS Rev. 0.4.1](../requisitos/ERS.md) y el
 [BPMN v2.0](../requisitos/bpmn/bpmn-procesos-del-sistema.md)
 
 > [!NOTE]
@@ -15,6 +15,7 @@ Versión 2.0 · 19 de octubre de 2026 · Alineado con el [ERS Rev. 0.4](../requi
 | --- | --- | --- |
 | 1.0 | 7 de octubre de 2026 | HIPO de 8 módulos, componentes y despliegue, decisiones de la Rev. 0.3. |
 | 2.0 | 19 de octubre de 2026 | HIPO de los 14 módulos de la Rev. 0.4; vistas de contenedores, componentes, dinámica, datos, seguridad y despliegue; ADR-0006 a ADR-0012; aceptación de ADR-0003 y ADR-0005. |
+| 2.1 | 20 de octubre de 2026 | Documentos e imágenes en AWS S3 (ADR-0013, reemplaza ADR-0008); esquema `siglim` y roles `siglim_app` y `siglim_publico` (ADR-0014); proveedor de correo pendiente (PEN-034). |
 
 ## 1. Propósito, alcance y referencias
 
@@ -239,7 +240,7 @@ de entrega N o B del ERS; los seis RF de programación automática (F) no se asi
 | **M-04 Registros y elegibilidad** | | | | |
 | M-04.1 Alta y baja de jugador | Alta pendiente de validación; baja con motivo e historial. | RF-013, RF-014 | N | P-02 |
 | M-04.2 Unicidad por CURP | Un registro activo por CURP y temporada en toda la liga. | RF-107 | N | P-02 |
-| M-04.3 Documentos y validación | Resguardo privado de documentos y fotos; validación por el Secretario (ADR-0008). | RF-108, RF-109 | N | P-02 |
+| M-04.3 Documentos y validación | Resguardo privado de documentos y fotos; validación por el Secretario (ADR-0013). | RF-108, RF-109 | N | P-02 |
 | M-04.4 Renovación y transferencia | Renovación y cambio de club entre temporadas según configuración. | RF-015, RF-016, RF-111 | B | P-02 |
 | M-04.5 Estados y elegibilidad | Estados del registro, elegibilidad, categoría superior, bloqueo por sanción; historial. | RF-017, RF-019, RF-020, RF-110 · RF-018 | N · B | P-05 |
 | M-04.6 Consulta propia | Información del jugador o del menor para su tutor. | RF-144 | N | — |
@@ -413,10 +414,12 @@ flowchart TB
     end
     subgraph SB[Supabase]
         AUTH[Supabase Auth<br/>identidad y JWT]
-        DB[(PostgreSQL<br/>esquema, RLS, vistas públicas)]
-        ST[(Storage<br/>bucket privado)]
+        DB[(PostgreSQL · esquema siglim<br/>RLS, vistas públicas,<br/>URL de documentos)]
     end
-    SMTP[[Proveedor SMTP<br/>Brevo]]
+    subgraph AWS[AWS]
+        ST[(S3<br/>bucket privado)]
+    end
+    SMTP[[Proveedor SMTP<br/>por definir, PEN-034]]
     U --> SPA
     P --> SPA
     SPA -- "HTTPS · inicio de sesión" --> AUTH
@@ -424,7 +427,7 @@ flowchart TB
     API -- "HTTPS · JWKS" --> AUTH
     API -- "HTTPS · API de administración<br/>invitaciones" --> AUTH
     API -- "JDBC sobre TLS" --> DB
-    API -- "HTTPS · REST con clave secreta" --> ST
+    API -- "HTTPS · AWS SDK<br/>usuario IAM" --> ST
     API -- "SMTP con TLS" --> SMTP
     AUTH -- "SMTP: invitación y recuperación" --> SMTP
 ```
@@ -434,11 +437,11 @@ flowchart TB
 | Contenedor | Tecnología | Responsabilidad | Decisiones |
 | --- | --- | --- | --- |
 | SPA | React 19, TypeScript, Vite, Tailwind CSS 4, TanStack Query | Portal público (`/`) y aplicación interna (`/app`). Usa Supabase solo para iniciar sesión; todos los datos los pide a la API. | ADR-0001, ADR-0003 |
-| API | Spring Boot 4.1, Java 21, Spring Security (Resource Server), Spring JDBC | Reglas de negocio, autorización, transacciones, auditoría, eventos, tareas programadas e integraciones. | ADR-0002, ADR-0005 a ADR-0012 |
+| API | Spring Boot 4.1, Java 21, Spring Security (Resource Server), Spring JDBC | Reglas de negocio, autorización, transacciones, auditoría, eventos, tareas programadas e integraciones. | ADR-0002, ADR-0005 a ADR-0014 |
 | Supabase Auth | Servicio administrado | Credenciales, sesiones y emisión del JWT; nunca se guardan contraseñas en SIGLIM. | ADR-0003 |
-| PostgreSQL | Supabase (PostgreSQL) | Datos, restricciones, triggers de historial, función de tabla, vistas de datos publicados y RLS. | ADR-0004, ADR-0007, ADR-0011 |
-| Storage | Supabase Storage | Documentos, fotos, evidencias y comprobantes en un bucket privado. | ADR-0008 |
-| Proveedor SMTP | Brevo (demostración) | Entrega de correos de la API y de Supabase Auth. | ADR-0010 |
+| PostgreSQL | Supabase (PostgreSQL), esquema `siglim` no expuesto | Datos, restricciones, triggers de historial, función de tabla, vistas de datos publicados, RLS y la referencia (bucket, clave y URL) de cada documento. | ADR-0004, ADR-0007, ADR-0011, ADR-0014 |
+| S3 | AWS S3 | Imágenes, documentos, evidencias y comprobantes en un bucket privado; se leen con URL prefirmadas. | ADR-0013 |
+| Proveedor SMTP | Por definir (PEN-034, DEC-46) | Entrega de correos de la API y de Supabase Auth. | ADR-0010 |
 
 No existe flujo inverso del portal hacia la API de escritura: las rutas públicas son de solo
 lectura (`/api/v1/publico/**`).
@@ -516,12 +519,12 @@ flowchart BT
 | Componente | Paquete | Función | Decisión |
 | --- | --- | --- | --- |
 | Filtro de seguridad | `compartido` | Valida el JWT y rechaza peticiones sin token en rutas internas (401). | ADR-0003 |
-| Contexto de usuario | `compartido` | Fija `request.jwt.claims` y el rol `authenticated` en cada transacción. | ADR-0005 |
+| Contexto de usuario | `compartido` | Fija `request.jwt.claims` (con `perfil_id`), `siglim.motivo` y el rol `siglim_app` en cada transacción. | ADR-0005, ADR-0014 |
 | Autorización | `seguridad` | `exigir(permiso, objetivo)` con ámbito; control dual. | ADR-0007 |
 | Auditoría | `auditoria` | Registro de acción crítica con usuario, fecha, módulo, acción, registro y motivo. | RF-093 |
 | Eventos de dominio | cada módulo (`eventos/`) | `ApplicationEventPublisher`; oyentes síncronos o bandeja de salida. | ADR-0006 |
 | Tareas programadas | módulo dueño | Inicio de partidos, plazo de cédula, vencimiento de cobros, envío de correos. | ADR-0009 |
-| Almacenamiento | `compartido` | Carga validada y URL firmadas de Supabase Storage. | ADR-0008 |
+| Almacenamiento | `compartido` | Carga validada a S3 y URL prefirmadas de lectura. | ADR-0013 |
 | Correo | `notificaciones` | Plantillas y envío SMTP desde la bandeja de salida. | ADR-0010 |
 | Pasarela de pago | `tesoreria` | `PasarelaDePago` con implementación simulada. | ADR-0012 |
 | Manejo de errores | `compartido` | Respuestas RFC 9457 con `codigo` del ERS (VAL-xxx). | Convenciones de API |
@@ -552,7 +555,7 @@ sequenceDiagram
     F->>F: Valida firma, emisor y expiración (JWKS)
     F->>C: Petición autenticada
     C->>S: aprobar(id)
-    S->>BD: BEGIN · set_config(claims) · SET LOCAL ROLE authenticated
+    S->>BD: BEGIN · set_config(claims, motivo) · SET LOCAL ROLE siglim_app
     S->>Z: exigir("partidos.cedula:APROBAR", árbitro designado)
     Z-->>S: Permitido
     S->>BD: Cédula Pendiente de validación y aprobador ≠ capturista (VAL-021)
@@ -583,25 +586,25 @@ sequenceDiagram
     participant S as DocumentoService
     participant Z as Autorización
     participant BD as PostgreSQL
-    participant ST as Supabase Storage
+    participant ST as AWS S3
     D->>SPA: Adjunta el INE del tutor
     SPA->>S: POST /api/v1/registros/{id}/documentos (multipart)
     S->>Z: exigir("registros.documento:CREAR", club del registro)
     S->>S: Valida firma binaria y tamaño
-    S->>ST: Sube el objeto con la clave secreta
-    S->>BD: Fila documento + auditoría (misma transacción)
+    S->>ST: PutObject con el usuario IAM del backend
+    S->>BD: Fila documento (bucket, clave, URL) + auditoría
     S-->>SPA: 201 Created
     Note over SPA,ST: Más tarde, el Secretario revisa el documento
     SPA->>S: GET /api/v1/documentos/{id}/enlace
     S->>Z: exigir("registros.documento:CONSULTAR", ámbito)
-    S->>ST: Solicita URL firmada (60 s)
-    S-->>SPA: URL firmada
+    S->>S: Genera URL prefirmada de GET (60 s)
+    S-->>SPA: URL prefirmada
     SPA->>ST: Descarga directa con la URL
 ```
 
 *Figura 14. Secuencia de carga y consulta de un documento (RF-108, RF-109, RNF-018).*
 
-Si la subida a Storage tiene éxito pero la transacción falla, queda un objeto sin fila; una tarea de
+Si la subida a S3 tiene éxito pero la transacción falla, queda un objeto sin fila; una tarea de
 limpieza lo detecta comparando el bucket con la tabla. El caso inverso no ocurre porque la fila se
 escribe después de la subida.
 
@@ -630,8 +633,8 @@ sequenceDiagram
 ## 6. Vista de datos
 
 El modelo conceptual está en el ERS (§4.4) y el físico en el
-[diccionario de datos](../base-de-datos/diccionario-de-datos.md), que se reescribe en el paso 4
-junto con la nueva migración inicial (DEC-42). La arquitectura le impone estos principios:
+[diccionario de datos](../base-de-datos/diccionario-de-datos.md) v2.0, generado a partir de la nueva
+migración inicial (DEC-42). La arquitectura le impone estos principios:
 
 | Principio | Aplicación | Origen |
 | --- | --- | --- |
@@ -652,9 +655,10 @@ junto con la nueva migración inicial (DEC-42). La arquitectura le impone estos 
 | Amenaza o requisito | Control | Origen |
 | --- | --- | --- |
 | Suplantación | Supabase Auth; JWT firmado con claves asimétricas y validado por JWKS; alta solo por invitación; contraseña de 15 caracteres mínimo. | ADR-0003, RNF-013, RNF-014 |
-| Escalamiento de privilegios | Permiso y ámbito en cada servicio; RLS en tablas sensibles; nunca por nombre de rol; control dual de pares incompatibles. | ADR-0007, RNF-003, RN-053 |
+| Escalamiento de privilegios | Permiso y ámbito en cada servicio; RLS por ámbito; nunca por nombre de rol; control dual de pares incompatibles. | ADR-0007, RNF-003, RN-053 |
+| Acceso directo a la base con la llave pública de Supabase | Esquema `siglim` no expuesto en la API de Supabase; sin privilegios para `anon` ni `authenticated`; roles propios `siglim_app` y `siglim_publico`. | ADR-0014 |
 | Acceso a datos de otro club | Listados filtrados por ámbito; 404 fuera de ámbito; RLS. | RN-054, VAL-024 |
-| Fuga de documentos | Bucket privado sin acceso del cliente; URL firmadas de 60 s; rutas sin datos personales. | ADR-0008, RNF-018 |
+| Fuga de documentos | Bucket S3 privado con *Block Public Access*, cifrado y usuario IAM de mínimo privilegio; URL prefirmadas de 60 s; claves sin datos personales. | ADR-0013, RNF-018 |
 | Exposición en el portal | Solo vistas de datos publicados; estadísticas con nombre solo con consentimiento de difusión. | DP-006, RNF-012, RF-145 |
 | Manipulación de la auditoría | Tabla solo de inserción; la escriben servicios y triggers. | RNF-015 |
 | Intercepción | HTTPS en navegador y API; JDBC con `sslmode=require`; SMTP con TLS. | RNF-019 |
@@ -684,8 +688,8 @@ depende de la naturaleza jurídica de la Liga (PEN-039) y la retención, de PEN-
 | RNF-013, RNF-014 | Sin contraseñas propias; sesiones seguras | ADR-0003. | N |
 | RNF-015 Auditoría | Inalterable | Tabla solo de inserción. | N |
 | RNF-016 Operaciones internas | p95 < 3 s; reporte < 10 s | Índices por liga, temporada y club; paginación; exportación por *streaming*. | N |
-| RNF-017 Volumen | 250 clubes, 800 equipos, 15,000 personas | Índices y paginación; capacidad de Storage según ADR-0008. | N |
-| RNF-018 Documentos | Repositorio privado y URL firmadas | ADR-0008. | N |
+| RNF-017 Volumen | 250 clubes, 800 equipos, 15,000 personas | Índices y paginación; archivos en S3 (ADR-0013). | N |
+| RNF-018 Documentos | Repositorio privado y URL firmadas | ADR-0013. | N |
 | RNF-019 Cifrado en tránsito | TLS en todo | HTTPS, JDBC con TLS, SMTP con TLS. | N |
 | RNF-006 a RNF-008 | Usabilidad, responsive, WCAG 2.1 AA | Sistema de diseño del frontend (paso 5). | N |
 
@@ -706,8 +710,8 @@ CI/CD y contenedores están fuera del alcance (ERS §2.6); el despliegue de demo
 - **Plan gratuito:** no incluye respaldos automáticos. Mientras se use, se ejecuta
   `supabase db dump` (esquema y datos) antes de cada demostración y al cierre de cada Sprint, y el
   archivo se guarda fuera del repositorio porque contiene datos personales.
-- Los respaldos de la base **no incluyen los archivos de Storage**: los documentos se copian aparte
-  con un script que descarga el bucket mediante la API.
+- Los respaldos de la base **no incluyen los archivos**: los documentos están en S3, con versionado
+  activado (ADR-0013); si la Liga lo pide, se replica el bucket a otra región.
 - **Prueba de restauración:** una vez por entrega, restaurar el último respaldo en un proyecto vacío,
   aplicar la configuración y comprobar inicio de sesión, consulta de tabla y descarga de un
   documento; registrar el tiempo para verificar el RTO de 4 h.
@@ -721,9 +725,10 @@ CI/CD y contenedores están fuera del alcance (ERS §2.6); el despliegue de demo
 | PEN-036 | Ambientes de desarrollo, pruebas y producción | Dónde corre la API (debe estar siempre encendida por ADR-0009) y el frontend. | Equipo |
 | PEN-037 | Dominio y alojamiento | Dominio para el correo (SPF, DKIM, DMARC) y para la SPA. | Liga y equipo |
 | PEN-039 | Naturaleza jurídica de la Liga | Ley de datos personales aplicable; aviso de privacidad. | Liga |
-| PEN-040 | Retención de datos, documentos y auditoría | Tareas de depuración y borrado definitivo en Storage. | Liga y equipo |
-| — | Plan de Supabase | El plan gratuito no cumple RNF-001 ni RNF-010 y su capacidad de archivos (1 GB) no alcanza para una temporada real (ADR-0008). | Liga |
-| — | Volumen de correo | Los planes gratuitos no alcanzan para la operación real (ADR-0010). | Liga |
+| PEN-034 | Proveedor de correo | El mecanismo está decidido (ADR-0010); el proveedor se elige más adelante porque el volumen inicial es bajo (DEC-46). | Equipo |
+| PEN-040 | Retención de datos, documentos y auditoría | Tareas de depuración y reglas de ciclo de vida en S3. | Liga y equipo |
+| — | Plan de Supabase | El plan gratuito no cumple RNF-001 ni RNF-010 (pausa por inactividad y sin respaldos automáticos). | Liga |
+| — | Cuenta de AWS | Se necesita una cuenta de AWS de la Liga o del equipo para el bucket de S3 (ADR-0013). | Liga y equipo |
 | RSK-009 | 83 RF de núcleo en 8 semanas | La arquitectura prioriza lo transversal (seguridad, auditoría, eventos) en el Sprint 1 para no bloquear a los módulos. | Equipo |
 
 ## 10. Decisiones arquitectónicas
@@ -736,11 +741,12 @@ CI/CD y contenedores están fuera del alcance (ERS §2.6); el despliegue de demo
 | Acceso a datos | Spring JDBC con SQL explícito; sin JPA | Enumeraciones, rangos, RLS y funciones del esquema. | 0002 |
 | Esquema | Solo migraciones versionadas | Trazabilidad del esquema; DD-003. | 0004 |
 | Identidad | Supabase Auth, JWT con JWKS, alta por invitación | DD-012, RNF-013, RNF-014; PEN-030. | 0003 |
-| Contexto en la base | Claims y rol `authenticated` por transacción | Historial con usuario y RLS efectivo. | 0005 |
+| Contexto en la base | Claims con `perfil_id`, motivo y rol `siglim_app` por transacción | Historial con usuario y RLS efectivo. | 0005, 0014 |
+| Exposición de datos | Esquema `siglim` no expuesto por la API de Supabase | Ningún dato accesible con la llave pública. | 0014 |
 | Autorización | Permiso y ámbito en servicios; RLS como defensa | DD-009, DP-008, RN-053, RN-054. | 0007 |
-| Documentos | Supabase Storage privado por el backend; URL firmadas | RNF-018, DEC-10. | 0008 |
+| Documentos | AWS S3 privado por el backend; URL en Supabase; lectura con URL prefirmada | RNF-018, DEC-10, DEC-45. | 0013 |
 | Procesos por tiempo | `@Scheduled` idempotente por estado | DP-007; RF-124, RF-127, RF-141. | 0009 |
-| Avisos y correo | Avisos en la base; correo SMTP con bandeja de salida | RF-142, RF-143, PEN-034. | 0010 |
+| Avisos y correo | Avisos en la base; correo SMTP con bandeja de salida; proveedor pendiente | RF-142, RF-143, PEN-034, DEC-46. | 0010 |
 | Varias ligas | Una liga con `liga_id` en entidades raíz | DD-011, DEC-07. | 0011 |
 | Pagos | Pasarela simulada detrás de una interfaz | DEC-37. | 0012 |
 | Integraciones fuera | Sin WhatsApp/SMS, mapas, API pública ni proveedores externos de identidad | ERS §2.6. | — |
@@ -754,4 +760,4 @@ CI/CD y contenedores están fuera del alcance (ERS §2.6); el despliegue de demo
 | Autorización | Rol y acción; RLS por nombre de rol. | Permiso y ámbito como datos; control dual; RLS con las mismas reglas. |
 | Componentes | Filtro, controladores, servicios, repositorios. | Además: eventos de dominio, tareas programadas, almacenamiento, correo y pasarela simulada. |
 | Vistas | Componentes y despliegue. | Contenedores, componentes, dependencias, secuencias, datos, seguridad, calidad y respaldo. |
-| Decisiones | Tabla con [PROPUESTA] y pendientes PEN-024 a PEN-030. | ADR-0001 a ADR-0012; PEN-024 a PEN-026, PEN-030, PEN-031 y PEN-034 resueltos. |
+| Decisiones | Tabla con [PROPUESTA] y pendientes PEN-024 a PEN-030. | ADR-0001 a ADR-0014; PEN-024 a PEN-026, PEN-030 y PEN-031 resueltos; PEN-034 pendiente. |

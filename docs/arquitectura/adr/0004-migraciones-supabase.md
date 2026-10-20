@@ -13,8 +13,9 @@ esquema real y el documentado divergen.
 ## Decisión
 - `supabase/migrations/` es la **única fuente** del esquema. Formato de nombre de la CLI de
   Supabase: `AAAAMMDDHHMMSS_descripcion.sql`.
-- La migración inicial es el `database.sql` del diseño de BD
-  (`20261007000000_esquema_inicial.sql`).
+- La migración inicial es `20261020090000_esquema_inicial.sql` (Rev. 0.4.1). Por DEC-42 sustituyó
+  a la de la Rev. 0.3 (`20261007000000_esquema_inicial.sql`, movida a
+  `docs/base-de-datos/historico/`), que nunca se aplicó a un entorno compartido.
 - **Una migración aplicada no se edita.** Cualquier cambio es una migración nueva.
 - Cada migración nueva actualiza el [diccionario de datos](../../base-de-datos/diccionario-de-datos.md)
   en el mismo PR.

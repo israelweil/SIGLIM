@@ -1,6 +1,6 @@
 # ADR-0005: Propagar el usuario autenticado a PostgreSQL en cada transacción
 
-- **Estado:** Aceptada
+- **Estado:** Aceptada · el punto 1 (rol `authenticated` y `auth.uid()`) lo reemplaza [ADR-0014](0014-esquema-propio-y-roles-de-base-de-datos.md)
 - **Fecha:** 2026-10-13 (propuesta) · 2026-10-19 (aceptada)
 - **Responsables:** Equipo SIGLIM
 - **Trazabilidad:** RF-045, RF-093, RN-021, RN-054, RNF-003, RNF-015, DD-006, ADR-0007

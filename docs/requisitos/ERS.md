@@ -1,6 +1,6 @@
 > [!NOTE]
-> **ERS Rev. 0.4.** Integra el registro de decisiones
-> [`decisiones/registro-de-decisiones.md`](decisiones/registro-de-decisiones.md) (DEC-01 a DEC-44):
+> **ERS Rev. 0.4.1.** Integra el registro de decisiones
+> [`decisiones/registro-de-decisiones.md`](decisiones/registro-de-decisiones.md) (DEC-01 a DEC-46):
 > recupera los 12 tipos de usuario con su funcionalidad y redefine el alcance de entrega. Sustituye a la
 > Rev. 0.3, que se conserva en [`historico/ERS-rev0.3.md`](historico/ERS-rev0.3.md). Los diagramas están en
 > Mermaid; la versión en Word se genera a partir de este archivo.
@@ -8,7 +8,7 @@
 # Especificación de requisitos de software
 
 **Proyecto:** SIGLIM — Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia
-**Revisión:** 0.4 (alcance integral con núcleo comprometido)
+**Revisión:** 0.4.1 (alcance integral con núcleo comprometido)
 **Estado:** borrador para seguimiento académico; pendiente de validación por la Liga y el profesor.
 
 Instituto Tecnológico de Morelia (TecNM) · Ingeniería en Sistemas Computacionales · Fundamentos de Ingeniería de Software
@@ -24,7 +24,7 @@ Instituto Tecnológico de Morelia (TecNM) · Ingeniería en Sistemas Computacion
 | --- | --- |
 | Proyecto | SIGLIM — Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia. Nombre definitivo del proyecto: **SIGLIM**. |
 | Documento | Especificación de requisitos de software (ERS), estructurada según IEEE Std 830-1998. |
-| Revisión | 0.4. Versiones previas: 0.1, 0.2 y 0.3. |
+| Revisión | 0.4.1. Versiones previas: 0.1, 0.2, 0.3 y 0.4. |
 | Fecha | Octubre de 2026 |
 | Elaborado por | López Meza Leonardo, por encargo del equipo de trabajo (véase 1.2). |
 | Seguimiento | Profesor de Fundamentos de Ingeniería de Software: Claudio Ernesto Florian Arenas. |
@@ -38,6 +38,7 @@ Instituto Tecnológico de Morelia (TecNM) · Ingeniería en Sistemas Computacion
 | 0.2 | Octubre de 2026 | López Meza Leonardo | Etiquetado de estado y prioridad de entrega sobre el contenido integral (versión intermedia). |
 | 0.3 | Octubre de 2026 | López Meza Leonardo | Reducción al alcance de entrega propuesto para un equipo de tres personas; sección 2.6 y Apéndices C y D. Aprobada parcialmente por el profesor y el equipo el 07/10/26. |
 | 0.4 | 19 de octubre de 2026 | López Meza Leonardo | Se recuperan los 12 tipos de usuario y su funcionalidad (DEC-01). Se incorporan las respuestas del cliente en el levantamiento (R2), los formatos de carta (R8) y las decisiones del equipo (R9), sobre la base del ERS 0.3 con las ediciones del equipo (DEC-41): cédula con validación arbitral, disciplina, tesorería, canchas de club, transferencias entre temporadas, liguilla, ascensos y descensos, reportes, portal ampliado y notificaciones. Nuevos RF-094 a RF-145, RNF-016 a RNF-019, RN-037 a RN-058, VAL-017 a VAL-028, CA-009 a CA-014, CU-017 a CU-029, P-10 a P-13, UI-023 a UI-034, REP-012 a REP-014, DD-011, DD-012, DP-007, DP-008, PEN-039 a PEN-043 y los módulos M-13 y M-14. Se sustituye la clasificación I/S/P por N/B/F (véase Convenciones). Se resuelven los pendientes que respondió el cliente o el equipo (Apéndices A y C). |
+| 0.4.1 | 20 de octubre de 2026 | López Meza Leonardo | Ajuste de referencias: arquitectura v2.1, BPMN v2.0 y diccionario de datos v2.0 ya actualizados a la Rev. 0.4. Almacenamiento de imágenes y documentos en AWS S3 con la referencia en Supabase (DEC-45, ADR-0013). Proveedor de correo pendiente (DEC-46, PEN-034). PEN-030 resuelto en ADR-0003. Sin cambios en requisitos. |
 
 ### Registro de aprobaciones
 
@@ -177,7 +178,7 @@ El capítulo 2 describe el producto, sus módulos, usuarios, restricciones y dep
 
 SIGLIM es una plataforma web independiente con dos caras: una **aplicación interna**, a la que cada usuario accede según su rol y su ámbito, y un **portal público** de solo consulta. Ambas comparten un backend modular y una base de datos relacional dentro de una sola aplicación. La información interna solo llega al portal por un flujo autorizado y no existe flujo inverso desde el portal para editar datos.
 
-El sistema se relaciona con tres servicios externos: el servicio de identidad que emite las sesiones, un servicio de almacenamiento privado para documentos y fotos (DEC-10) y un servicio de correo para las notificaciones (DEC-38). Los proveedores concretos se justifican en las decisiones de arquitectura.
+El sistema se relaciona con tres servicios externos: el servicio de identidad que emite las sesiones, un servicio de almacenamiento privado para documentos y fotos (AWS S3; DEC-10, DEC-45) y un servicio de correo para las notificaciones (DEC-38). Los proveedores concretos se justifican en las decisiones de arquitectura.
 
 ```mermaid
 flowchart LR
@@ -199,7 +200,7 @@ flowchart LR
     PUB[Usuario público]
     SIS(("SIGLIM<br/>aplicación interna<br/>+ portal público"))
     IDP[[Servicio de identidad]]
-    ALM[[Almacenamiento de documentos]]
+    ALM[[Almacenamiento de documentos<br/>AWS S3]]
     COR[[Servicio de correo]]
     Liga --> SIS
     Club --> SIS
@@ -211,7 +212,7 @@ flowchart LR
 
 *Figura 1. Contexto del sistema.*
 
-La arquitectura y el diseño jerárquico detallados están en [`../arquitectura/arquitectura-y-diseno-jerarquico.md`](../arquitectura/arquitectura-y-diseno-jerarquico.md); su copia en PDF se encuentra en [OneDrive](https://itecm-my.sharepoint.com/:b:/g/personal/l24120356_morelia_tecnm_mx/IQDJlksHByLHR6OTzFSXRQSVAUigyqzW2snfk5ciVYfrWVU?e=Xcwb0G). Ambos deberán actualizarse a esta revisión.
+La arquitectura y el diseño jerárquico detallados (versión 2.1, alineada con esta revisión) están en [`../arquitectura/arquitectura-y-diseno-jerarquico.md`](../arquitectura/arquitectura-y-diseno-jerarquico.md), con su versión en PDF junto al Markdown, y las decisiones técnicas en los ADR ([`../arquitectura/adr/`](../arquitectura/adr/README.md)).
 
 ### 2.2 Funcionalidad del producto
 
@@ -300,7 +301,7 @@ Decisiones de diseño que el equipo debe respetar (R3 §18.1 y R9):
 Otras restricciones:
 
 - Proyecto académico de **8 semanas** (4 Sprints de 2 semanas) con un equipo de tres personas (DEC-08).
-- El stack elegido por el equipo es React con TypeScript, Spring Boot con Java y Spring JDBC, PostgreSQL en Supabase y Supabase Auth (DEC-43). Su justificación está en la arquitectura y en los ADR.
+- El stack elegido por el equipo es React con TypeScript, Spring Boot con Java y Spring JDBC, PostgreSQL en Supabase, Supabase Auth y AWS S3 para imágenes y documentos (DEC-43, DEC-45). Su justificación está en la arquitectura y en los ADR.
 - No existe flujo inverso desde el portal público para editar información.
 - Los datos personales se tratan conforme a la sección 3.4.4.
 - El sistema refleja los procesos reales de la Liga; lo que no esté respaldado por las fuentes debe validarse antes de convertirse en requisito definitivo.
@@ -398,11 +399,11 @@ No aplica. El acceso es mediante navegador web desde equipos de escritorio y mó
 | Interfaz | Propósito | Datos | Entrega |
 | --- | --- | --- | --- |
 | Servicio de identidad (Supabase Auth) | Autenticación y emisión de sesiones; el sistema no guarda contraseñas | Credenciales, token de sesión | N |
-| Almacenamiento privado de archivos | Documentos de identidad y fotos de jugadores; evidencias disciplinarias | Archivos, identificadores, URL firmadas temporales | N |
+| Almacenamiento privado de archivos (AWS S3; la referencia se guarda en Supabase) | Documentos de identidad y fotos de jugadores; evidencias disciplinarias | Archivos, identificadores, URL firmadas temporales | N |
 | Servicio de correo transaccional | Notificaciones por correo (RF-143) | Destinatario, asunto, contenido | B |
 | Exportación PDF/Excel | Reportes (RF-092) | Datos tabulares | B |
 
-Cada integración se justifica por costo, seguridad y necesidad en una decisión de arquitectura (PEN-033, PEN-034). El diccionario de datos y el script SQL vigentes se enlazan desde la documentación técnica del repositorio; su copia previa está en OneDrive ([diccionario](https://itecm-my.sharepoint.com/:b:/g/personal/l24120356_morelia_tecnm_mx/IQCzMefLsnvMS6fRWMhs3da1Af0Bkpxt7vIjWf2IgmIU-hw?e=jDG3Ne), [script SQL](https://itecm-my.sharepoint.com/:u:/g/personal/l24120356_morelia_tecnm_mx/IQDvro8mXY5pSZJ3D3LUadWjAZiVS9JHpOUPktLOPQxK8zA?e=qO5cHm)) y debe actualizarse a esta revisión.
+Cada integración se justifica por costo, seguridad y necesidad en una decisión de arquitectura (PEN-033, PEN-034). El diccionario de datos v2.0 ([`../base-de-datos/diccionario-de-datos.md`](../base-de-datos/diccionario-de-datos.md)) y el script SQL ([`../../supabase/migrations/`](../../supabase/migrations/)) están alineados con esta revisión.
 
 #### 3.1.4 Interfaces de comunicación
 
@@ -1002,7 +1003,7 @@ flowchart LR
 
 ### 4.2 Modelo de procesos
 
-Los procesos se resumen con diagramas de flujo por carril (un subgrupo por participante). La notación BPMN 2.0 completa (R7) se desarrolla en el documento de BPMN, que debe actualizarse a esta revisión (versión 2.0). Inicio y fin se representan con círculos, decisiones con rombos.
+Los procesos se resumen con diagramas de flujo por carril (un subgrupo por participante). La notación BPMN 2.0 completa (R7) se desarrolla en el documento de BPMN v2.0 ([`bpmn/bpmn-procesos-del-sistema.md`](bpmn/bpmn-procesos-del-sistema.md)). Inicio y fin se representan con círculos, decisiones con rombos.
 
 #### 4.2.1 P-01 Configuración de temporada
 
@@ -1368,7 +1369,7 @@ Otros estados: temporada (Configuración, Activa, Cerrada); afiliación (Solicit
 
 ### 4.4 Modelo de datos conceptual
 
-Modelo conceptual. Las entidades provienen de la fuente (R3 §11) y de las decisiones (R9); las auxiliares son **[PROPUESTA]**. Los atributos, tipos e índices se definen en el diccionario de datos, que debe actualizarse a esta revisión (DEC-42).
+Modelo conceptual. Las entidades provienen de la fuente (R3 §11) y de las decisiones (R9); las auxiliares son **[PROPUESTA]**. Los atributos, tipos e índices se definen en el diccionario de datos v2.0 ([`../base-de-datos/diccionario-de-datos.md`](../base-de-datos/diccionario-de-datos.md)), generado a partir de la nueva migración inicial (DEC-42).
 
 | Entidad | Propósito | Atributos clave | Origen | Entrega |
 | --- | --- | --- | --- | --- |
@@ -1464,7 +1465,7 @@ erDiagram
 
 ### 4.5 Estructura modular y arquitectura conceptual
 
-Arquitectura cliente-servidor de tres niveles **[PROPUESTA]** justificada en el documento de arquitectura y los ADR: una aplicación web de una sola página (React) con el portal público y la aplicación interna; un backend monolítico modular en capas (Spring Boot), con un paquete por módulo M-xx; y servicios administrados de datos, identidad y almacenamiento (Supabase). Componentes adicionales que exige esta revisión:
+Arquitectura cliente-servidor de tres niveles **[PROPUESTA]** justificada en el documento de arquitectura y los ADR: una aplicación web de una sola página (React) con el portal público y la aplicación interna; un backend monolítico modular en capas (Spring Boot), con un paquete por módulo M-xx; servicios administrados de datos e identidad (Supabase); y almacenamiento de archivos en AWS S3 (DEC-45). Componentes adicionales que exige esta revisión:
 
 - **Tareas programadas** para el cambio automático de estado del partido, el vencimiento del plazo de la cédula y de los cobros (RF-124, RF-127, RF-141).
 - **Autorización por permiso y ámbito** en la capa de servicios, con políticas de seguridad a nivel de fila como defensa adicional (RN-054).
@@ -1535,16 +1536,16 @@ Se conservan los identificadores PEN de la fuente. **Estado:** Resuelto (con la 
 | PEN-020 | Estructura de cédula e incidencias | Resuelto | DEC-19 y R2 |
 | PEN-021 | Catálogo de artículos, infracciones y sanciones | Demo | Semilla con las tres causas de baja de R2 (DEC-30); catálogo real del Reglamento (R4) |
 | PEN-022 | Modelo de disponibilidad de canchas | Resuelto | DEC-25, DEC-33 |
-| PEN-023 | Documentos y evidencias | Resuelto | Almacenamiento privado (DEC-10, RNF-018) |
+| PEN-023 | Documentos y evidencias | Resuelto | Almacenamiento privado en AWS S3 (DEC-10, DEC-45, RNF-018, ADR-0013) |
 | PEN-024 a PEN-026 | Stack, frontend y base de datos | Resuelto | DEC-43 |
 | PEN-027 | Estrategia del motor de reglas | Resuelto | Reglas por configuración y catálogos (DD-004) |
 | PEN-028 | Algoritmo de programación | Fuera | DEC-06 |
 | PEN-029 | Matriz de permisos detallada | Resuelto | Apéndice E |
-| PEN-030 | Políticas de sesión y contraseñas | Abierto | Equipo, en la ADR de autenticación |
+| PEN-030 | Políticas de sesión y contraseñas | Resuelto | ADR-0003; los valores [PROPUESTA] se confirman con la Liga |
 | PEN-031 | Política de respaldo y recuperación | Resuelto | Metas de RNF-010; procedimiento en la arquitectura |
 | PEN-032 | Datos públicos y restringidos | Resuelto | RNF-012, RF-145 |
 | PEN-033 | Integraciones necesarias | Resuelto | Identidad, almacenamiento y correo (3.1.3) |
-| PEN-034 | Proveedor de correo | Abierto | Equipo, en una ADR (costo, seguridad y necesidad) |
+| PEN-034 | Proveedor de correo | Abierto | Equipo, más adelante (DEC-46): el volumen inicial es bajo; el mecanismo está en ADR-0010 |
 | PEN-035 | Mapas, API pública y autenticación externa | Fuera | 2.6 |
 | PEN-036 | Ambientes de desarrollo, pruebas y producción | Abierto | Equipo |
 | PEN-037 | Dominio y alojamiento | Abierto | Liga y equipo |

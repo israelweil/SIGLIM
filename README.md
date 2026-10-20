@@ -87,7 +87,8 @@ pago real, integraciones no aprobadas).
 ## 🏗️ Arquitectura
 
 Cliente-servidor de tres niveles: **SPA en React**, **monolito modular en Spring Boot** con un
-paquete por módulo, y **PostgreSQL, Auth y Storage administrados por Supabase**.
+paquete por módulo, **PostgreSQL y Auth administrados por Supabase** y **AWS S3** para imágenes y
+documentos.
 
 ```mermaid
 flowchart TB
@@ -103,16 +104,16 @@ flowchart TB
     end
     subgraph SB["☁️ Supabase"]
         AUTH[Auth<br/>emite JWT]
-        DB[(PostgreSQL<br/>RLS · historial · vistas públicas)]
-        ST[(Storage privado<br/>documentos)]
+        DB[(PostgreSQL · esquema siglim<br/>RLS · historial · vistas públicas)]
     end
+    ST[(AWS S3 privado<br/>imágenes y documentos)]
     MAIL[[Correo SMTP]]
     I -- login --> AUTH
     P -- HTTPS / REST --> C
     I -- HTTPS / REST + JWT --> S
     S -. valida firma con JWKS .-> AUTH
     R -- JDBC / TLS --> DB
-    SV -- URL firmadas --> ST
+    SV -- carga y URL prefirmadas --> ST
     SV -- bandeja de salida --> MAIL
 ```
 
@@ -162,8 +163,9 @@ cd siglim
 
 ### 2. Base de datos
 
-Ejecuta `supabase/migrations/20261007000000_esquema_inicial.sql` en el **SQL Editor** de tu
-proyecto de Supabase (o `supabase db push` si usan la CLI). Detalles en
+Ejecuta `supabase/migrations/20261020090000_esquema_inicial.sql` en el **SQL Editor** de tu
+proyecto de Supabase (o `supabase db push` si usan la CLI) y registra al administrador inicial
+con `siglim.registrar_administrador_inicial('correo')`. Detalles en
 [`supabase/README.md`](supabase/README.md).
 
 ### 3. Backend

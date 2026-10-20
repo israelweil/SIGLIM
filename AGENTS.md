@@ -30,17 +30,17 @@ No leas todo en cada tarea: localiza el módulo (M-xx) y los RF de la tarea y le
 menor autoridad: ver los conflictos C-01 a C-08 en
 [`docs/diseno-ui/open-design-decisions.md`](docs/diseno-ui/open-design-decisions.md).
 
-> `docs/requisitos/ERS.md` es la **Rev. 0.4** (integra el registro de decisiones DEC-01 a DEC-44).
+> `docs/requisitos/ERS.md` es la **Rev. 0.4.1** (integra el registro de decisiones DEC-01 a DEC-46).
 > Si un requisito es ambiguo, pregunta en lugar de suponer.
 > Las carpetas `historico/` (en `docs/requisitos/`, `docs/requisitos/bpmn/`, `docs/arquitectura/` y `docs/base-de-datos/`) contienen versiones **reemplazadas**,
 > y `docs/requisitos/fuentes/` el levantamiento original: nunca los uses para implementar.
 
 ## 3. Reglas de alcance (las más importantes)
 
-> ⚠️ **Antes de programar:** la arquitectura y los ADR ya reflejan la Rev. 0.4, pero el diccionario de
-> datos, la migración y las convenciones de API todavía reflejan el alcance de la Rev. 0.3. **No
-> implementes código** hasta que se actualicen (orden en el §11 del registro de decisiones) y exista
-> el backlog v4.
+> ⚠️ **Antes de programar:** la arquitectura, los ADR, el diccionario de datos y la migración ya
+> reflejan la Rev. 0.4.1, pero las convenciones de API y el diseño UI todavía reflejan la Rev. 0.3.
+> **No implementes código** hasta que se actualicen (orden en el §11 del registro de decisiones) y
+> exista el backlog v4.
 
 1. **Entrega `N`** (núcleo comprometido): se implementa en los Sprints. **Entrega `B`** (backlog
    priorizado): solo cuando su historia entre a un Sprint. **Entrega `F`** (ERS §2.6): nunca, aunque
@@ -85,27 +85,34 @@ reporta el resultado real. Si no pudiste ejecutarla, dilo.
 
 ## 6. Modelo de dominio (resumen)
 
-> Este resumen describe la migración **actual** (alcance Rev. 0.3). El modelo de la Rev. 0.4 (ERS §4.4)
-> agrega persona con CURP, tutela, afiliación, directiva, árbitros, cédula, disciplina, cobros y
-> notificaciones; se aplicará con la nueva migración inicial (DEC-42).
+Esquema `siglim` de la migración `20261020090000_esquema_inicial.sql` (72 tablas; detalle en el
+[diccionario de datos](docs/base-de-datos/diccionario-de-datos.md)). No está expuesto por la API de
+Supabase: solo lo usa el backend con los roles `siglim_app` y `siglim_publico` (ADR-0014).
 
 ```text
-Temporada ─< Categoría ─< Grupo ─< Equipo >─ Club
-                              │        └─< RegistroJugador >─ Persona
-                              └─< Jornada ─< Partido >─ Cancha ─< DisponibilidadCancha
-                                               └── Resultado (1:1) ─< ResultadoHistorial
-Partido ─< PartidoEstadoHistorial        Publicacion (JORNADA | RESULTADO | TABLA)
-Perfil (= auth.users) ─< PerfilRol >─ Rol ─< RolPermiso >─ Permiso        Auditoria
+Liga ─< Temporada ─< CategoríaTemporada ─< Grupo ─< Equipo >─ Club ─< Afiliación, CargoDirectiva
+            │                                 │       └─< RegistroJugador >─ Persona (CURP) ─< Tutela
+            └─< ParámetrosTemporada (versión)  └─< Jornada ─< Partido >─ Cancha ─< DisponibilidadCancha
+Partido ─ Cédula ─< Alineación, EventoCédula, Incidencia ─ Expediente ─< Resolución ─< Sanción
+Partido ─< Resultado (versionado, uno vigente) · Designación >─ Árbitro · Cobro ─< IntentoPago, Pago
+Perfil (auth.users) ─< AsignaciónRol (ámbito) >─ Rol ─< RolPermiso >─ Permiso · Auditoría · Notificación
+Documento (bucket, clave y URL en AWS S3) → registro, persona, afiliación, expediente o pago
 ```
 
 | Enum (BD) | Valores |
 | --- | --- |
 | `estado_temporada` | `CONFIGURACION`, `ACTIVA`, `CERRADA` |
-| `estado_partido` | `PROGRAMADO`, `EN_JUEGO`, `FINALIZADO`, `SUSPENDIDO`, `CANCELADO`, `REPROGRAMADO`, `NO_PROGRAMADO`, `RESUELTO_ADMINISTRATIVAMENTE` (transiciones exactas pendientes: Q-13) |
-| `estado_resultado` | `CAPTURADO`, `VALIDADO`, `CORREGIDO` |
+| `estado_partido` | `PROGRAMADO`, `EN_CURSO`, `FINALIZADO`, `SUSPENDIDO`, `REPROGRAMADO`, `CANCELADO` (DEC-23) |
+| `estado_cedula` | `EN_CAPTURA`, `PENDIENTE_VALIDACION`, `DEVUELTA`, `APROBADA` |
+| `estado_registro` | `PENDIENTE_VALIDACION`, `ACTIVO`, `SUSPENDIDO`, `BAJA`, `RECHAZADO` |
+| `estado_expediente` | `ABIERTO`, `EN_REVISION`, `RESUELTO`, `EN_RECURSO`, `CERRADO` |
+| `estado_cobro` | `PENDIENTE`, `PAGADO`, `RECHAZADO`, `VENCIDO` |
 | `estado_publicacion` | `BORRADOR`, `REVISION`, `PUBLICADO` |
-| `estado_registro_jugador` | `ACTIVO`, `BAJA` |
-| Roles semilla | `ADMINISTRADOR`, `PROGRAMADOR`, `CAPTURISTA` |
+| `ambito` | `LIGA`, `CLUB`, `PROPIO` |
+| Roles semilla | 12 tipos de usuario del ERS §2.3 (11 con cuenta) + `SISTEMA` |
+
+Los triggers validan las transiciones y lanzan errores con el código del ERS en `HINT`
+(`VAL-003`, `RN-021`…); el servicio valida antes y explica (§7).
 
 ## 7. Invariantes que el código nunca debe romper
 
@@ -143,7 +150,7 @@ Perfil (= auth.users) ─< PerfilRol >─ Rol ─< RolPermiso >─ Permiso      
 - **Nunca** escribas secretos en el código ni en archivos versionados. Las credenciales van en
   `backend/.env` y `frontend/.env.local` (ignorados por git); documenta cada variable nueva en el
   `.env.example` correspondiente.
-- La clave `service_role`/`secret` de Supabase **jamás** va en el frontend.
+- La clave `service_role`/`secret` de Supabase y las credenciales de AWS **jamás** van en el frontend.
 - El frontend usa Supabase **solo para iniciar sesión**; todos los datos pasan por el backend.
 - No registres en logs contraseñas, tokens ni datos personales.
 - SQL siempre parametrizado (`:parametro` con `JdbcClient`); nunca concatenes entradas del usuario.

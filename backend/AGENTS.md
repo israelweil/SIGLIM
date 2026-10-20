@@ -71,8 +71,16 @@ repositorio + prueba del servicio).
 - **SQL:** solo nombres del diccionario de datos; columnas `snake_case` se mapean a campos
   `camelCase` del `record` automáticamente (`query(MiDto.class)`). Fechas con `OffsetDateTime`
   (`timestamptz`) o `LocalDate` (`date`).
-- **Funciones del esquema:** úsalas en lugar de reimplementarlas: `calcular_tabla(grupo)`,
-  `consultar_programacion_publica`, `consultar_resultados_publicos`, `consultar_tabla_publica`.
+- **Esquema y conexión:** las tablas están en el esquema `siglim` (URL de JDBC con
+  `currentSchema=siglim`). Cada transacción fija el contexto y adopta `siglim_app` (o
+  `siglim_publico` en el portal) como indica [ADR-0014](../docs/arquitectura/adr/0014-esquema-propio-y-roles-de-base-de-datos.md);
+  se implementa una sola vez en `compartido`.
+- **Funciones y vistas del esquema:** úsalas en lugar de reimplementarlas: `calcular_tabla(grupo)` y
+  las vistas `v_publica_*` para el portal. Los triggers ya validan transiciones y conflictos y
+  responden con el código del ERS en `HINT`: tradúcelo a RFC 9457, pero valida antes en el servicio
+  para dar un mensaje claro.
+- **Documentos:** se suben a AWS S3 desde `compartido.almacenamiento` y se leen con URL prefirmadas
+  de 60 s (ADR-0013); en la tabla `documentos` se guardan bucket, clave y URL.
 - **Autorización:** cada método público de servicio empieza con
   `autorizacion.exigir("modulo.recurso:ACCION", objetivo)` (ADR-0007). Nunca compares nombres de rol.
 - **Estados:** las transiciones se validan en el servicio con una máquina de estados explícita
@@ -81,9 +89,9 @@ repositorio + prueba del servicio).
   transacción; correo → bandeja de salida (ADR-0006, ADR-0010).
 - **Tareas programadas:** `@Scheduled` con actualización condicional idempotente y usuario Sistema
   (ADR-0009). Usa el `Clock` inyectable, nunca `now()` directo en Java.
-- **Usuario actual:** `UsuarioActual.idRequerido()` (UUID = `perfiles.id`). Llena `created_by`,
-  `updated_by`, `validado_por`, etc. explícitamente. Lee [ADR-0005](../docs/arquitectura/adr/0005-contexto-usuario-rls-jdbc.md)
-  antes de implementar el primer endpoint de escritura.
+- **Usuario actual:** `UsuarioActual.idRequerido()` (UUID = `perfiles.id`, que también va en el claim
+  `perfil_id`). Llena `creado_por`, `validado_por`, etc. explícitamente; los historiales los llenan
+  los triggers. En cambios de estado fija `siglim.motivo` (RN-021).
 - **Configuración:** variables nuevas en `application.yml` con `${VARIABLE}` y documentadas en
   `.env.example`. Propiedades propias bajo el prefijo `siglim.`.
 - **Sin** JPA, Lombok, `ddl-auto`, Flyway ni dependencias nuevas sin justificar.
