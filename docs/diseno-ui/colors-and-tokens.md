@@ -12,4 +12,5 @@
 | `--color-border` | `#e2e8f0` (Slate 200) | Separadores de tablas, bordes de tarjetas y campos de entrada | Observado |
 | `--color-success` | `#10b981` (Emerald 500) | Indicadores de partidos en vivo, victorias (V), estados completados | Observado |
 | `--color-danger` | `#ef4444` (Red 500) | Derrotas (D), alertas de error y validaciones fallidas | Observado |
-| `--color-warning` | `#f59e0b` (Amber 500) | Empates (E), advertencias y estados intermedios | Observado |
+| `--color-warning` | `#f59e0b` (Amber 500) | Empates (E), advertencias, estados intermedios e insignia «No oficial» de valores [DEMO] | Observado |
+| `--color-info` | `#2563eb` (Blue 600) | Estados en proceso: Programado, En curso, Pendiente de validación, En revisión | Propuesto (prompts de Stitch) |

@@ -37,10 +37,11 @@ menor autoridad: ver los conflictos C-01 a C-08 en
 
 ## 3. Reglas de alcance (las más importantes)
 
-> ⚠️ **Antes de programar:** la arquitectura, los ADR, el diccionario de datos y la migración ya
-> reflejan la Rev. 0.4.1, pero las convenciones de API y el diseño UI todavía reflejan la Rev. 0.3.
-> **No implementes código** hasta que se actualicen (orden en el §11 del registro de decisiones) y
-> exista el backlog v4.
+> ⚠️ **Antes de programar:** la arquitectura, los ADR, el diccionario de datos, la migración y las
+> convenciones de API ya reflejan la Rev. 0.4.1. El diseño UI está en transición: las pantallas se
+> generan con [`docs/diseno-ui/prompts-stitch.md`](docs/diseno-ui/prompts-stitch.md) y el prototipo
+> falta aprobarse (PEN-014). **No implementes código** hasta que exista el backlog v4 (orden en el
+> §11 del registro de decisiones).
 
 1. **Entrega `N`** (núcleo comprometido): se implementa en los Sprints. **Entrega `B`** (backlog
    priorizado): solo cuando su historia entre a un Sprint. **Entrega `F`** (ERS §2.6): nunca, aunque
