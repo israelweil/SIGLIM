@@ -18,7 +18,7 @@ requisitos en IEEE 830 **todavía no aprobados por la Liga**.
 | Orden | Documento | Por qué |
 | --- | --- | --- |
 | 1 | [`docs/requisitos/ERS.md`](docs/requisitos/ERS.md) | Qué hace el sistema, qué **no** hace (§2.6) y qué está pendiente |
-| 2 | [`docs/arquitectura/arquitectura-y-diseno-jerarquico.md`](docs/arquitectura/arquitectura-y-diseno-jerarquico.md) | Módulos M-xx, RF de cada uno, capas |
+| 2 | [`docs/arquitectura/arquitectura-y-diseno-jerarquico.md`](docs/arquitectura/arquitectura-y-diseno-jerarquico.md) | Módulos y submódulos M-xx con sus RF, dependencias entre módulos, capas |
 | 3 | [`docs/arquitectura/adr/`](docs/arquitectura/adr/README.md) | Decisiones técnicas vigentes |
 | 4 | [`docs/arquitectura/convenciones-api.md`](docs/arquitectura/convenciones-api.md) | Contrato REST, errores, paginación |
 | 5 | [`docs/base-de-datos/diccionario-de-datos.md`](docs/base-de-datos/diccionario-de-datos.md) + [`supabase/migrations/`](supabase/migrations/) | Tablas, columnas, triggers, RLS |
@@ -32,14 +32,15 @@ menor autoridad: ver los conflictos C-01 a C-08 en
 
 > `docs/requisitos/ERS.md` es la **Rev. 0.4** (integra el registro de decisiones DEC-01 a DEC-44).
 > Si un requisito es ambiguo, pregunta en lugar de suponer.
-> Las carpetas `historico/` (en `docs/requisitos/` y `docs/base-de-datos/`) contienen versiones **reemplazadas**,
+> Las carpetas `historico/` (en `docs/requisitos/`, `docs/requisitos/bpmn/`, `docs/arquitectura/` y `docs/base-de-datos/`) contienen versiones **reemplazadas**,
 > y `docs/requisitos/fuentes/` el levantamiento original: nunca los uses para implementar.
 
 ## 3. Reglas de alcance (las más importantes)
 
-> ⚠️ **Antes de programar:** la arquitectura, los ADR, el diccionario de datos, la migración y las
-> convenciones de API todavía reflejan el alcance de la Rev. 0.3. **No implementes código** hasta que
-> se actualicen (orden en el §11 del registro de decisiones) y exista el backlog v4.
+> ⚠️ **Antes de programar:** la arquitectura y los ADR ya reflejan la Rev. 0.4, pero el diccionario de
+> datos, la migración y las convenciones de API todavía reflejan el alcance de la Rev. 0.3. **No
+> implementes código** hasta que se actualicen (orden en el §11 del registro de decisiones) y exista
+> el backlog v4.
 
 1. **Entrega `N`** (núcleo comprometido): se implementa en los Sprints. **Entrega `B`** (backlog
    priorizado): solo cuando su historia entre a un Sprint. **Entrega `F`** (ERS §2.6): nunca, aunque
@@ -53,8 +54,9 @@ menor autoridad: ver los conflictos C-01 a C-08 en
    el código, y se rotulan «no oficial» en la interfaz.
 4. **No inventes reglas de negocio** (RN-006, RN-035). Si una regla no está escrita, usa un valor
    configurable, márcalo `[PROPUESTA]` en un comentario y menciónalo en tu respuesta.
-5. **Permisos:** nunca decidas por el nombre del rol; usa permiso `modulo:ACCION` más el **ámbito**
-   (liga, club o propio). La matriz inicial está en el Apéndice E del ERS y es configurable.
+5. **Permisos:** nunca decidas por el nombre del rol; usa el permiso `modulo.recurso:ACCION` más el
+   **ámbito** (liga, club o propio) con `autorizacion.exigir(...)` (ADR-0007). La matriz inicial está
+   en el Apéndice E del ERS y es configurable.
 6. Los datos de las capturas de diseño ("Liga Apex", "Temporada 2024/25", "Primera División") son
    de ejemplo, no requisitos.
 

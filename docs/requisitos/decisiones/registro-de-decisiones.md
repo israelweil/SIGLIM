@@ -135,7 +135,7 @@ No bloquean la Rev. 0.4; se registran como **[PENDIENTE]** y se resuelven como v
 
 1. ERS Rev. 0.4 (incorpora DEC-01 a DEC-41) y AGENTS.md / README en el mismo cambio. **Hecho.**
 2. BPMN v2.0 ([`../bpmn/bpmn-procesos-del-sistema.md`](../bpmn/bpmn-procesos-del-sistema.md)). **Hecho.**
-3. Arquitectura, diseño jerárquico y ADR nuevas (autorización por permiso y ámbito, almacenamiento de documentos, tareas programadas, correo, preparación multiliga, pago simulado; aceptación de ADR-0003 y ADR-0005).
+3. Arquitectura, diseño jerárquico y ADR nuevas (autorización por permiso y ámbito, almacenamiento de documentos, tareas programadas, correo, preparación multiliga, pago simulado; aceptación de ADR-0003 y ADR-0005) ([`../../arquitectura/arquitectura-y-diseno-jerarquico.md`](../../arquitectura/arquitectura-y-diseno-jerarquico.md), ADR-0003 y ADR-0005 a ADR-0012). **Hecho.**
 4. Diccionario de datos y nueva migración inicial (DEC-42).
 5. Convenciones de API y diseño UI (reabrir C-03 y C-04).
 6. Backlog v4 y reemplazo de Jira (DEC-44).
