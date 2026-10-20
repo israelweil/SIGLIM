@@ -1,1789 +1,1661 @@
 > [!NOTE]
-> **ERS Rev. 0.3 (alcance de entrega acotado)** convertido desde el documento de Word, con las tablas
-> de RF, RNF, RN, CU y apéndices conservadas. Los bloques `<!-- Start of picture text -->` marcan
-> imágenes (logotipo y diagramas). Los procesos BPMN (P-xx) están en [`bpmn/`](bpmn/).
-> La versión anterior de este archivo, extraída del PDF, está en [`historico/`](historico/).
->
-> **Sincronización (19-oct-2026):** se incorporaron las ediciones que el equipo hizo en el PDF entregado
-> (nombre SIGLIM, registro de aprobaciones, aprobación del personal, perfiles de los usuarios y ligas a
-> Figma y SharePoint). El encabezado del PDF decía «Rev. 1.3»; se conserva **0.3**, que es la numeración
-> del historial de revisiones. Las decisiones posteriores al levantamiento están en
-> [`decisiones/registro-de-decisiones.md`](decisiones/registro-de-decisiones.md) y se integrarán en la Rev. 0.4.
+> **ERS Rev. 0.4.** Integra el registro de decisiones
+> [`decisiones/registro-de-decisiones.md`](decisiones/registro-de-decisiones.md) (DEC-01 a DEC-44):
+> recupera los 12 tipos de usuario con su funcionalidad y redefine el alcance de entrega. Sustituye a la
+> Rev. 0.3, que se conserva en [`historico/ERS-rev0.3.md`](historico/ERS-rev0.3.md). Los diagramas están en
+> Mermaid; la versión en Word se genera a partir de este archivo.
+
+# Especificación de requisitos de software
+
+**Proyecto:** SIGLIM — Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia
+**Revisión:** 0.4 (alcance integral con núcleo comprometido)
+**Estado:** borrador para seguimiento académico; pendiente de validación por la Liga y el profesor.
+
+Instituto Tecnológico de Morelia (TecNM) · Ingeniería en Sistemas Computacionales · Fundamentos de Ingeniería de Software
+
+**Presentan:** López Meza Leonardo · Olvera Bucio Jose Israel · Olvera Lobato David Geovani
+**Profesor:** Claudio Ernesto Florian Arenas
+
+## Control del documento
+
+### Información del documento
 
-# **Especificación de requisitos de software** 
-
-**Proyecto: SIGLIM — Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia** Revisión 0.3 (alcance de entrega acotado) 
-
-Estado: borrador para seguimiento académico (sin aprobación formal); alcance de entrega propuesto, pendiente de validación 
-
-
-
-<!-- Start of picture text -->
-Logo<br><!-- End of picture text -->
-
-Octubre de 2026 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 2 
-
-## **Control del documento** 
-
-#### **Información del documento** 
-
-|**Proyecto**|Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia.<br>Nombre definitivo del proyecto: **SIGLIM**.|
-|---|---|
-|**Documento**|Especificación de requisitos de software (ERS), estructurada según IEEE<br>Std 830-1998.|
-|**Revisión**|0.3 (alcance de entrega acotado). Versiones previas: 0.1 y 0.2.|
-|**Fecha**|Octubre de 2026|
-|**Elaborado por**|López Meza Leonardo, por encargo del equipo de trabajo (véase 1.2).|
-|**Seguimiento**|Profesor de Fundamentos de Ingeniería de Software. Nombre:Claudio<br>Ernesto Florian Arenas|
-|**Estado**|Borrador para seguimiento. Los requisitos aún no han sido aprobados por<br>la Liga ni validados formalmente; el documento se actualizará durante el<br>semestre.La revisión 0.3 acota el documento a la entrega propuesta<br>para un equipo de tres personas; ese alcance no está aprobado por<br>la Liga, el profesor ni el equipo.|
-
-
-
-#### **Historial de revisiones** 
-
-|**Revisión**|**Fecha**|**Autor**|**Descripción**|
-|---|---|---|---|
-|0.1|Octubre de 2026|López Meza Leonardo|Primera versión. Se organiza la<br>documentación técnica base de la Liga<br>en la estructura IEEE 830, con<br>prioridades propuestas y pendientes<br>señalados.|
-|0.2|Octubre de 2026|López Meza Leonardo|Etiquetado de estado y prioridad de<br>entrega sobre el contenido integral<br>(versión intermedia).|
-|0.3|Octubre de 2026|López Meza Leonardo|Reducción del documento al alcance<br>de entrega propuesto: se retiran del<br>cuerpo, casos de uso, procesos,<br>modelos y criterios las funciones<br>aplazadas; se agrega la sección 2.6<br>«Fuera del alcance de esta entrega» y<br>las preguntas y supuestos pendientes<br>(Apéndices C y D). Propuesta<br>pendiente de validación.|
-
-
-
-#### **Registro de aprobaciones** 
-
-|**Parte**|**Nombre**|**Fecha**|**Estado**|
-|---|---|---|---|
-|Representante de la Liga Municipal<br>(cliente)|Claudio Ernesto Florian<br>Arenas|**[PENDIENTE]**|Sin aprobar|
-|Profesor de Fundamentos de<br>Ingeniería de Software|Claudio Ernesto Florian<br>Arenas|07/10/26|Aprobado<br>parcialmente|
-|Equipo de desarrollo|Olvera Bucio Jose Israel;<br>Olvera Lobato David Geovani;<br>López Meza Leonardo|07/10/26|Aprobado<br>parcialmente|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 3 
-
-#### **Convenciones de este documento** 
-
-|**Marca**|**Significado**|
-|---|---|
-|**[PENDIENTE]**|Dato o decisión aún no definido o por confirmar. No debe tomarse como<br>requisito aprobado. El detalle de cada pendiente está en el Apéndice A.|
-|**[PROPUESTA]**|Propuesta del equipo que requiere validación. En este documento se aplica,<br>sobre todo, a las prioridades de los requisitos y a las entidades, pantallas y<br>asignaciones de carril que no vienen de la fuente.|
-|Sin marca|Contenido respaldado por las fuentes del proyecto (R1 y R3, véase 1.4). Aun<br>así sigue sujeto a validación con la Liga, como indica la propia fuente.|
-|Identificadores|Se conservan los de la fuente: RF (requisito funcional), RNF (no funcional), RN<br>(regla de negocio), CU (caso de uso), P (proceso), M (módulo), UI (pantalla),<br>VAL (validación), REP (reporte), CA (criterio de aceptación), DD y DP<br>(decisiones y propuestas de diseño), PEN, AMB y RSK (pendientes,<br>ambigüedades y riesgos).|
-|Estado de entrega (I, S,<br>P)|**[PROPUESTA]**Disposición de cada elemento retenido en la entrega: I Incluido, S<br>Simplificado, P Pendiente de decisión. Lo aplazado (A) solo aparece en 2.6.|
-|Prioridad de entrega (E,<br>C, O)|**[PROPUESTA]**Esencial, Conveniente u Opcional para esta entrega; independiente de la<br>prioridad de producto (Alta/Media/Baja).|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 4 
-
-## **Contenido** 
-
-|1 Introducción.................................................................................................................................6|
-|---|
-|1.1 Alcance.................................................................................................................................6|
-|1.2 Personal involucrado............................................................................................................6|
-|1.3 Definiciones, acrónimos y abreviaturas................................................................................7|
-|1.4 Referencias...........................................................................................................................8|
-|1.5 Visión general del documento..............................................................................................8|
-|2 Descripción general.....................................................................................................................9|
-|2.1 Perspectiva del producto......................................................................................................9|
-|2.2 Funcionalidad del producto...................................................................................................9|
-|2.3 Características de los usuarios..........................................................................................10|
-|2.4 Restricciones......................................................................................................................11|
-|2.5 Suposiciones y dependencias............................................................................................11|
-|2.6 Fuera del alcance de esta entrega [PROPUESTA]............................................................12|
-|3 Requisitos específicos...............................................................................................................14|
-|3.1 Requisitos comunes de los interfaces................................................................................14|
-|3.1.1 Interfaces de usuario....................................................................................................14|
-|3.1.2 Interfaces de hardware................................................................................................15|
-|3.1.3 Interfaces de software..................................................................................................15|
-|3.1.4 Interfaces de comunicación.........................................................................................15|
-|3.2 Requisitos funcionales........................................................................................................16|
-|3.2.1 Gestión de temporadas, convocatorias y configuración deportiva..............................16|
-|3.2.2 Clubes, equipos y personas.........................................................................................17|
-|3.2.3 Registro y elegibilidad de jugadores............................................................................17|
-|3.2.4 Canchas y sedes..........................................................................................................18|
-|3.2.5 Programación...............................................................................................................18|
-|3.2.6 Partidos y ciclo de vida................................................................................................19|
-|3.2.7 Resultados, tablas y estadísticas.................................................................................19|
-|3.2.8 Disciplina reducida (pendiente de decisión)................................................................20|
-|3.2.9 Portal público y auditoría..............................................................................................21|
-|3.2.10 Validaciones y manejo de errores..............................................................................21|
-|3.2.11 Consultas y listados requeridos.................................................................................22|
-|3.3 Requisitos no funcionales...................................................................................................23|
-|3.3.1 Requisitos de rendimiento............................................................................................23|
-|3.3.2 Seguridad.....................................................................................................................23|
-|3.3.3 Fiabilidad......................................................................................................................24|
-|3.3.4 Disponibilidad...............................................................................................................24|
-|3.3.5 Mantenibilidad..............................................................................................................25|
-|3.3.6 Portabilidad..................................................................................................................25|
-|3.3.7 Usabilidad y accesibilidad............................................................................................25|
-|3.4 Otros requisitos...................................................................................................................26|
-|3.4.1 Reglas de negocio.......................................................................................................26|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 5 
-
-|3.4.2 Requisitos de datos......................................................................................................28|
-|---|
-|3.4.3 Criterios de aceptación preliminares............................................................................28|
-|3.4.4 Requisitos legales y normativos..................................................................................29|
-|4 Modelado del Sistema...............................................................................................................30|
-|4.1 Modelo de casos de uso.....................................................................................................30|
-|4.2 Modelo de procesos (BPMN)..............................................................................................33|
-|4.2.1 P-01 Configuración de temporada...............................................................................33|
-|4.2.2 P-02 Registro de clubes, equipos y jugadores............................................................34|
-|4.2.3 P-03 Programación manual y publicación...................................................................35|
-|4.2.4 P-04 Ciclo de vida del partido......................................................................................36|
-|4.2.5 P-05 Registro de resultado y actualización de tabla...................................................38|
-|4.2.6 P-06 Disciplina reducida (pendiente de decisión)........................................................39|
-|4.2.7 P-09 Flujo de publicación del portal.............................................................................40|
-|4.3 Modelo de datos conceptual...............................................................................................41|
-|4.4 Estructura modular y arquitectura conceptual....................................................................44|
-|4.5 Flujo de información...........................................................................................................46|
-|4.6 Matriz de trazabilidad..........................................................................................................46|
-|Apéndice A. Pendientes por definir..............................................................................................48|
-|Apéndice B. Ambigüedades, riesgos y verificación de fuentes...................................................51|
-|Apéndice C. Preguntas pendientes para el equipo, el profesor y la Liga....................................51|
-|Apéndice D. Supuestos inevitables [PROPUESTA]....................................................................53|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 6 
-
-## **1 Introducción** 
-
-Este documento es la Especificación de Requisitos de Software (ERS) del **Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia** . Describe qué debe hacer el sistema y bajo qué restricciones, sin definir todavía cómo se implementará. Está estructurado según IEEE Std 830-1998 y sigue la plantilla de ERS del curso. 
-
-Está dirigido al equipo de desarrollo, que lo usará como base para el diseño, el backlog y las pruebas; al profesor de Fundamentos de Ingeniería de Software, que da seguimiento al proyecto durante el semestre; y a los representantes de la Liga, que deberán validar los requisitos, los procesos y las reglas en caso de ser lanzada al público. 
-
-El proyecto es real y el documento es de seguimiento. Se actualizará conforme se definan nuevos detalles. Por eso se conserva la información respaldada por las fuentes, se señalan con **[PENDIENTE]** los aspectos por definir y se marcan con **[PROPUESTA]** las sugerencias del equipo, de modo que ninguna suposición se presente como requisito aprobado. Esta revisión especifica únicamente la entrega acotada para un equipo de tres personas (véase 1.1); lo que queda fuera se lista en 2.6. 
-
-### **1.1 Alcance** 
-
-**Contexto operativo.** La operación se organiza en la estructura Temporada → Categoría → Grupo → Equipos → Partidos. Las programaciones observadas incluyen categorías como Primera Especial, Primera Fuerza, Reserva, Intermedia, Segunda, Tercera, Juvenil, Cuarta y Veteranos. Una categoría puede tener uno o varios grupos, y el modelo debe admitir nuevas categorías sin rediseño. 
-
-### **1.2 Personal involucrado** 
-
-Equipo de trabajo del proyecto. 
-
-|**Nombre**|Olvera Bucio Jose Israel|
-|---|---|
-|**Rol**|Desarrollador responsable de arquitectura y datos|
-|**Categoría profesional**|Estudiante de Ingeniería en Sistemas Computacionales|
-|**Responsabilidades**|Coordinar la arquitectura y el diseño lógico de datos; preparar el repositorio y el<br>entorno de desarrollo; documentar decisiones técnicas; colaborar en desarrollo,<br>integración y revisión.|
-|**Información de contacto**|l24120356@morelia.tecnm.mx|
-|**Aprobación**|Ing. López Meza Leonardo, Scrum Master.|
-
-
-
-|**Nombre**|Olvera Lobato David Geovani|
-|---|---|
-|**Rol**|Product Owner y analista de requisitos|
-|**Categoría profesional**|Estudiante de Ingeniería en Sistemas Computacionales|
-|**Responsabilidades**|Mantener y priorizar el Product Backlog; elaborar historias de usuario y criterios<br>de aceptación; coordinar el ERS y el análisis de procesos; consultar y validar<br>requisitos con la Liga o el asesor.|
-|**Información de contacto**|l24120339@morelia.tecnm.mx|
-|**Aprobación**|Ing. Claudio Ernesto Florian Arenas, Representante del Cliente.|
-|**Nombre**|López Meza Leonardo|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 7 
-
-|**Rol**|Scrum Master y responsable de calidad|
-|---|---|
-|**Categoría profesional**|Estudiante de Ingeniería en Sistemas Computacionales|
-|**Responsabilidades**|Facilitar Sprint Planning, Daily Scrum, Sprint Review y Sprint Retrospective;<br>mantener actualizado el tablero; dar seguimiento a impedimentos; coordinar<br>pruebas y verificar los entregables.|
-|**Información de contacto**|l24120362@morelia.tecnm.mx|
-|**Aprobación**|Ing. Olvera Lobato David Geovani, Product Owner.|
-
-
-
-#### **Otras partes interesadas** 
-
-|**Parte**|**Nombre**|**Participación**|
-|---|---|---|
-|Liga Municipal de Futbol<br>Amateur Morelia|**[PENDIENTE]**|Cliente y fuente de los procesos y reglas.<br>Valida requisitos, procesos y reglas.|
-|Profesor de Fundamentos de<br>Ingeniería de Software|Claudio Ernesto Florian<br>Arenas|Seguimiento académico del proyecto<br>durante el semestre.|
-
-
-
-### **1.3 Definiciones, acrónimos y abreviaturas** 
-
-|**Término**|**Definición**|
-|---|---|
-|**ERS / SRS**|Especificación de requisitos de software.|
-|**RF / RNF**|Requisito funcional / requisito no funcional.|
-|**RN**|Regla de negocio.|
-|**CU**|Caso de uso.|
-|**RBAC**|Control de acceso basado en roles.|
-|**BPMN**|Notación para el modelado de procesos de negocio (OMG).|
-|**API**|Interfaz de programación de aplicaciones.|
-|**Liga**|Liga Municipal de Futbol Amateur Morelia.|
-|**Temporada**|Periodo deportivo en que se desarrolla una competencia. Tiene una<br>convocatoria asociada.|
-|**Convocatoria**|Documento normativo de una temporada, del cual se derivan sus reglas<br>de operación.|
-|**Categoría / Grupo**|Nivel deportivo / agrupación de equipos dentro de una categoría.|
-|**Competencia / Fase**|Estructura de competencia de una temporada y su fase. El formato exacto<br>lo define el usuario programador de partidos.|
-|**Programación / Jornada**|Organización de partidos con fecha, hora y cancha o sede asignadas.|
-|**Incidente**|Hecho disciplinario registrado manualmente solo si se valida la disciplina reducida.|
-|Sanción|Consecuencia disciplinaria con vigencia. Solo se registra, de forma manual, si se<br>valida la disciplina reducida.|
-|**Elegibilidad**|Condición que determina si una persona o un equipo puede participar.|
-|Restricción dura|Condición que no puede violarse en la programación (equipo duplicado, cancha<br>ocupada, cancha no disponible).|
-|**Portal público**|Parte del sistema, sin privilegios de edición, que muestra solo la<br>información publicada.|
-|**Publicación**|Flujo Borrador → Revisión → Publicado aplicado a la información pública.|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 8 
-
-|**Término**|**Definición**|
-|---|---|
-|**PEN / AMB / RSK**|Pendiente / ambigüedad / riesgo identificados en la fuente (Apéndices A y<br>B).|
-
-
-
-### **1.4 Referencias** 
-
-|**Código**|**Referencia**|
-|---|---|
-|**R1**|Presentación<br>«Sistema_Gestion_Liga_Municipal_Morelia_Base_Ingenieria_Software(2).pptx»: visión,<br>alcance y requerimientos preliminares. Es el documento base del proyecto.|
-|**R2**|Audio de levantamiento «PREGUNTAS - PROY LIGAS DEPORTIVAS (2).m4a». No transcrito<br>de forma confiable; pendiente de verificación.|
-|**R3**|Documentación técnica base para ERS/SRS del Sistema de Gestión de la Liga<br>(«Sistema_Gestion_Liga_Municipal_Morelia_Documentacion_Tecnica_Base_ERS.md»),<br>derivada de R1. Las citas «R3 §n» remiten a sus secciones.|
-|**R4**|Fuentes de fondo citadas por R1, no consultadas directamente en esta revisión: Reglamento<br>de la Liga, Convocatoria 2025–2026 y programaciones oficiales de las Fechas 32 y 33 (11–12<br>y 18–19 de julio de 2026).|
-|**R5**|IEEE Std 830-1998, Recommended Practice for Software Requirements Specifications.|
-|**R6**|Plantilla «ERS_simplificado» (formato de ERS basado en IEEE 830) proporcionada para el<br>curso.|
-|**R7**|OMG, Business Process Model and Notation (BPMN) 2.0 (ISO/IEC 19510:2013); notación<br>usada en los diagramas de proceso de 4.2.|
-
-
-
-### **1.5 Visión general del documento** 
-
-El capítulo 2 describe el producto, sus funciones, usuarios, restricciones y dependencias. El capítulo 3 contiene los requisitos específicos: interfaces, requisitos funcionales (RF), no funcionales (RNF) y otros requisitos, entre ellos las reglas de negocio. El capítulo 4 reúne el modelado: casos de uso, procesos en BPMN, estados del partido, datos, arquitectura conceptual y trazabilidad. La sección 2.6 lista lo que queda fuera de esta entrega. El Apéndice A concentra los pendientes de la fuente, el Apéndice B las ambigüedades, riesgos y verificación de fuentes, el Apéndice C las preguntas para el equipo, el profesor y la Liga, y el Apéndice D los supuestos propuestos. 
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 9 
-
-## **2 Descripción general** 
-
-### **2.1 Perspectiva del producto** 
-
-El sistema es una plataforma web independiente con dos caras: una aplicación interna para los usuarios de la Liga, con acceso según perfil, y una vista pública de solo consulta. Ambas comparten un backend modular y una base de datos relacional dentro de una sola aplicación **[PROPUESTA]** . La información interna solo llega al portal después de un flujo de validación y autorización, y no existe flujo inverso desde el portal para editar datos. 
-
-Esta entrega no incluye integraciones con servicios externos. Los sistemas o archivos que la Liga usa hoy y los datos históricos por importar siguen por definir **[PENDIENTE]** (PEN-003) y no forman parte de la entrega. 
-
-
-
-<!-- Start of picture text -->
-1“ iariog interes (penies(PENDIENTE)<br>H ‘<br>=<br>i Programadorde partidos 1 vesptaracresitados ericaSistema de es eisaol Gestin Aeneas de a Liga Morea) Peresultadonysae tablaos Usuario piblico<br>H Copturista : Aplicacién web responsive:<br>' | fegistra resoluciones -- P| grea interna + vista publica de consulta<br>i ( Comisién biscipiinaria ~~~<br><!-- End of picture text -->
-
-_Figura 1. Contexto del sistema de la entrega. Los perfiles internos se detallan en 2.3._ 
-
-A continuación se adjunta la liga de acceso al documento PDF, cargado en OneDrive, que contiene a detalle la arquitectura y el diseño jerárquico:
-
-- [Arquitectura y diseño jerárquico (OneDrive)](https://itecm-my.sharepoint.com/:b:/g/personal/l24120356_morelia_tecnm_mx/IQDJlksHByLHR6OTzFSXRQSVAUigyqzW2snfk5ciVYfrWVU?e=Xcwb0G)
-
-### **2.2 Funcionalidad del producto** 
-
-En esta entrega el sistema se organiza en 8 módulos funcionales (M-01 a M-04, M-06 a M-08 y M-11), más M-09 como módulo condicionado y pendiente de decisión. El detalle está en los requisitos de la sección 3.2 y en los casos de uso de la sección 4.1. Los módulos y requisitos que no forman parte de la entrega se listan en 2.6; no se exige una interfaz o servicio independiente por módulo. 
-
-|**Mód**<br>**ulo**|**Nombre**|**Propósito**|**Entrega[PROPUESTA]**|
-|---|---|---|---|
-|M-01|Administración y<br>seguridad|Autenticación, perfiles mínimos, permisos por<br>acción y auditoría de acciones críticas.|**S · E**<br>Autenticación, pocos perfiles,<br>denegación por defecto y auditoría<br>mínima. (Q-07)|
-|M-02|Temporadas y<br>normativa|Administrar una temporada de trabajo, su<br>convocatoria de referencia y la versión de las<br>reglas usadas.|**S · E**<br>Una temporada, categoría/grupo y<br>referencia de reglas.|
-|M-03|Organización<br>deportiva|Administrar clubes, equipos, personas,<br>categorías y grupos.|**S · E**<br>Club/equipo para una temporada y<br>grupo.|
-|M-04|Registros y<br>elegibilidad|Registrar altas y bajas de jugadores y su estado<br>de participación.|**S · C**<br>Alta/baja y estado vigente; sin<br>renovación ni transferencia. (Q-01)|
-|M-06|Canchas y recursos|Administrar canchas, su disponibilidad temporal y<br>bloqueos.|**S · E**<br>Catálogo, disponibilidad y bloqueo<br>mínimos.|
-|M-07|Programación|Registrar y ajustar manualmente partidos y<br>jornadas y detectar conflictos duros.|**S · E**<br>Programación manual con conflictos<br>duros básicos. (Q-04)|
-|M-08|Partidos y<br>resultados|Controlar estados del partido, resultados, tabla y<br>estadísticas de equipo.|**I · E**<br>Núcleo del flujo; sin histórico de<br>tabla ni estadísticas de jugador.|
-|M-09|Disciplina|Registro manual reducido de incidentes y<br>resoluciones, solo si se valida**[PENDIENTE]**<br>(Q-05).|**P · C**<br>Registro mínimo manual si se<br>valida; resto aplazado. (Q-05)|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 10 
-
-
-
-<!-- Start of picture text -->
-Mód Nombre Propósito Entrega [PROPUESTA]<br>ulo<br>M-11 Portal público y  Publicar solo información autorizada y permitir la  S · E<br>publicación consulta de programación, resultados y tabla. Consulta pública mínima de<br>contenido publicado.<br>1. Configurar temporada,<br>Categoria y grupo (M-02) 5.programacionAprobary publicar(M-11) la<br>2. Registrar clubes, equipos y 6. Registrar y validar el<br>jugadores (M-03, M-04) resultado (M-08)<br>3. Registrar canchas y 7. Calcular la tabla de<br>disponibilidad (M-06) posiciones (M-08)<br>4. Programar partidos de forma ' ey<br>manual y validar conflictos 8. Publicar resultados y tabla 1<br>(M-07) é 1<br>“Transversal (M-O1, RF-093): autenticacién y permisos minimos, erasSe<<br>proteccién de datos, integridad transaccional, historial ; cae 4<br>y auditoria de acciones criticas ee ee<br><!-- End of picture text -->
-
-_Figura 2. Flujo vertical de la entrega [PROPUESTA]. La disciplina reducida solo se incluye si se valida (Q-05)._ 
-
-**Cadena de trazabilidad de la entrega.** Temporada → Categoría → Grupo → Equipo → Jornada/Partido (programación manual) → Resultado → Tabla → Publicación, con auditoría de las acciones críticas. Cada cambio crítico debe poder rastrearse hasta el usuario, la fecha y el motivo. 
-
-### **2.3 Características de los usuarios** 
-
-En esta entrega se consideran perfiles mínimos: administración, operación (programación y captura), disciplina solo si se valida, y usuario público. El acceso se controla con permisos por acción y el portal público no tiene privilegios de edición. 
-
-|**Tipo de usuario**|**Formación y**<br>**habilidades**|**Descripción y responsabilidades**|**Acciones y permisos**|
-|---|---|---|---|
-|**Administrador**<br>**general**|Presente ante problemáticas que<br>surjan en campo.|Usuario con control administrativo<br>del sistema. Administración global<br>del sistema.|Debe definirse el<br>catálogo exacto de acciones.|
-|**Comisión**<br>**Disciplinaria**|Dominio de las reglas a seguir<br>y de la plataforma.|Autoridad que registra la resolución y<br>la sanción. Solo se incluye si se<br>valida la disciplina reducida (Q-05).|Registrar resolución y vigencia.|
-|**Programador de**<br>**partidos**|Disponer de horarios y<br>dominar la plataforma.|Responsable de programación.<br>Registrar, revisar y ajustar la<br>programación de forma manual.|Registro y ajuste manual de<br>programación.|
-|**Capturista**|Noción del entorno de la<br>plataforma.|Usuario operativo de captura.<br>Registrar información operativa.|Capturar información operativa<br>autorizada, por ejemplo resultados.|
-|**Usuario público**|Conocimiento y manejo básico<br>de ordenador y/o teléfono móvil.|Visitante sin privilegios de edición.<br>Consultar información publicada.|Consultar programación,<br>resultados y tabla publicados|
-
-
-
-Los demás tipos de usuario de la fuente (presidente del Comité Ejecutivo, secretario, tesorero, Comisión de Arbitraje, presidente o delegado de club, árbitro y jugador) no se modelan en esta entrega y se listan en 2.6. La matriz de permisos perfil → módulo → acción debe formalizarse con el profesor y la Liga (PEN-010, PEN-029, Q-07). Si se valida la disciplina, la captura se mantiene separada de la resolución (DD-010). 
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 11 
-
-### **2.4 Restricciones** 
-
-Decisiones de diseño respaldadas por la fuente (R3 §18.1), que el equipo debe respetar: 
-
-|**ID**|**Restricción**|**Entrega[PROPUESTA]**|
-|---|---|---|
-|DD-0<br>01|El sistema será una aplicación web responsive|**I · E**|
-|DD-0<br>02|Debe existir backend/API modular|**S · E**<br>Backend modular dentro de una<br>sola aplicación; sin API pública.|
-|DD-0<br>03|Se utilizará una base de datos relacional|**I · E**|
-|DD-0<br>06|Debe existir trazabilidad de cambios y decisiones críticas|**I · E**|
-|DD-0<br>07|Las temporadas históricas no deben sobrescribirse|**I · E**|
-|DD-0<br>08|La publicación requiere control y aprobación|**I · E**|
-|DD-0<br>09|Los permisos se basan en roles y acciones|**S · E**<br>RBAC con pocos perfiles hasta<br>validar la matriz. (Q-07)|
-|DD-0<br>10|La lógica disciplinaria debe separar captura y resolución|**P · C**<br>Aplica solo si se incluye disciplina.<br>(Q-05)|
-
-
-
-**Restricciones DD-004 y DD-005.** Las decisiones de la fuente sobre un motor de reglas desacoplado y un servicio específico de programación no se incluyen como componentes de esta entrega (la programación es manual y las reglas se limitan a una referencia por temporada). Su interpretación queda pendiente de confirmar con el profesor (sección 2.6, Q-04). 
-
-Otras restricciones: 
-
-- Proyecto académico con desarrollo planificado en 10 semanas. La fuente propone un plan de referencia que no sustituye el Scrum que debe construir el equipo. Que esas 10 semanas sean el calendario aplicable a esta entrega y cuáles entregables se evaluarán sigue [PENDIENTE] (Q-24). 
-
-- El equipo debe justificar el stack tecnológico y la arquitectura elegidos (PEN-024 a PEN-027). 
-
-- Esta entrega no incluye integraciones externas. 
-
-- No debe existir flujo inverso desde el portal público para editar información. 
-
-- Lo que no esté expresamente respaldado por las fuentes debe validarse con la Liga antes de convertirse en requisito definitivo. 
-
-- El sistema debe reflejar los procesos reales de la Liga, no imponer primero una estructura de pantallas. 
-
-### **2.5 Suposiciones y dependencias** 
-
-Este documento no asume reglas de negocio sin respaldo. Cuando una regla requiere interpretación, se marca como pendiente y debe pasar por validación humana (RN-006, RN-035). 
-
-#### **Dependencias:** 
-
-- La validación de requisitos, procesos, interfaces, modelo de datos y reglas de la demostración con la Liga y el profesor. 
-
-- El Reglamento y la Convocatoria vigentes de la Liga como base de las reglas configurables por temporada. 
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 12 
-
-- La resolución de los pendientes del Apéndice A que aplican a la entrega, en particular las prioridades (PEN-001) y la matriz de permisos (PEN-010). 
-
-- La verificación del audio del levantamiento (R2) contra las definiciones de este documento. 
-
-- La rúbrica y las indicaciones escritas del profesor sobre las funciones obligatorias (Q-02) y el calendario y los entregables a evaluar (Q-24). Este ERS no asume que el alcance propuesto prevalezca sobre ellos. 
-
-### **2.6 Fuera del alcance de esta entrega [PROPUESTA]** 
-
-Los siguientes elementos de la fuente se conservan solo por su identificador, para trazabilidad. **No son trabajo obligatorio de diseño, implementación ni aceptación de esta entrega.** «A» significa aplazado y «P» pendiente de decisión. Esta delimitación proviene de la propuesta de alcance para un equipo de tres personas; **no está aprobada** por el profesor, la rúbrica, la Liga ni el equipo, y debe validarse (Apéndice C). Si alguno resulta obligatorio, deberá reincorporarse al cuerpo del ERS. 
-
-|**Capacidad**|**Identificadores de la fuente**|**Estado**|**Pregunta**|
-|---|---|---|---|
-|Árbitros, designaciones y<br>cédula integral|RF-021 a RF-026; M-05; UI-007, UI-014; entidades<br>Árbitro, Designación arbitral y Cédula; RN-026|A|Q-06|
-|Programación automática|RF-034, RF-035, RF-037, RF-038, RF-041, RF-042;<br>RN-016, RN-017; VAL-007|A|Q-04|
-|Renovación, transferencia e<br>historial detallado de registro|RF-015, RF-016, RF-018|A|Q-01|
-|Sede independiente,<br>mantenimiento y partidos<br>consecutivos|RF-028, RF-031, RF-032|A|—|
-|Histórico de tabla y<br>estadísticas de jugador|RF-051, RF-054; UI-013|A|—|
-|Disciplina avanzada|RF-059, RF-060, RF-061, RF-066, RF-067, RF-068;<br>RN-027, RN-028, RN-031, RN-032; CU-012, CU-013;<br>UI-016, UI-017; entidades Artículo/Infracción, Expediente<br>y Recurso|A|Q-05|
-|Bloqueo derivado de sanción|RF-064; RN-015|P<br>(AMB-00<br>1)|Q-17|
-|Ascensos, descensos, liguilla y<br>fases finales|RF-069 a RF-081; RN-004, RN-033, RN-034, RN-036;<br>M-10; CU-014, CU-015; P-07, P-08; UI-018, UI-019|A|Q-18|
-|Portal ampliado|RF-085 a RF-088; entidad Documento/Comunicado<br>(noticias, comunicados y buscador general)|A|—|
-|Reportes y exportación|RF-091, RF-092; REP-004 a REP-009, REP-011; M-12;<br>UI-021|A|Q-09|
-|Integraciones y plataforma|Correo, WhatsApp/SMS, almacenamiento documental,<br>mapas, CSV/Excel, API pública y autenticación externa;<br>CI/CD y contenedores (PEN-033 a PEN-035, PEN-038)|A|Q-09|
-|Perfiles de usuario no<br>modelados|Presidente del Comité Ejecutivo, Secretario, Tesorero,<br>Comisión de Arbitraje, Presidente/delegado de club,<br>Árbitro y Jugador (PEN-011 a PEN-013)|A|Q-07|
-|Restricciones DD-004 y<br>DD-005|Motor de reglas desacoplado y servicio específico de<br>programación como componentes separados|P|Q-04|
-
-
-
-La reducción proviene de limitar funciones, dependencias y decisiones sin validar; este ERS no presume que el uso de herramientas de IA reduzca el esfuerzo de análisis, integración, pruebas o mantenimiento. 
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 13 
-
-## **3 Requisitos específicos** 
-
-Este capítulo contiene los requisitos con el detalle necesario para diseñar y probar el sistema. Cada requisito tiene identificador, nombre, tipo, fuente y prioridad. La fuente indica el origen del requisito (R1, R3, véase 1.4), y las prioridades son propuestas del equipo, como se explica en 3.2. 
-
-### **3.1 Requisitos comunes de los interfaces** 
-
-#### **3.1.1 Interfaces de usuario** 
-
-El sistema es una aplicación web responsive (RNF-007) con una aplicación interna de acceso autenticado y un portal público. La fuente no define colores, tipografías ni estilos visuales. Las pantallas siguientes se identificaron a partir de funcionalidades explícitas, por lo que son una **[PROPUESTA]** cuya composición y nomenclatura deben validarse en un prototipo (PEN-014). 
-
-|**ID**<br>UI-00<br>1|**Pantalla**<br>Inicio/Login interno|**Actor**<br>Usuarios<br>internos|**Objetivo**<br>Autenticarse|**Acciones**<br>Iniciar sesión|**Entrega[PROPUESTA]**<br>**I · E**|
-|---|---|---|---|---|---|
-|UI-00<br>2|Inicio y<br>navegación|Usuarios<br>internos|Acceder a<br>funciones<br>autorizadas|Navegar|**S · C**<br>Puede integrarse en el inicio.|
-|UI-00<br>3|Gestión de<br>temporadas|Administración|Administrar<br>temporadas|Crear, consultar,<br>editar|**S · E**<br>Una temporada.|
-|UI-00<br>4|Configuración de<br>categorías/grupos|Administración|Estructurar<br>temporada|Crear, editar,<br>consultar|**S · E**<br>Una vista puede cubrir varias<br>pantallas.|
-|UI-00<br>5|Gestión de<br>clubes/equipos|Administración|Administrar<br>organizaciones<br>deportivas|Registrar,<br>consultar,<br>actualizar|**S · E**<br>Una vista puede cubrir varias<br>pantallas.|
-|UI-00<br>6|Registro de<br>jugadores|Usuarios<br>autorizados|Gestionar registros|Alta, baja|**S · E**<br>Alta/baja básica.|
-|UI-00<br>8|Gestión de<br>canchas|Usuarios<br>autorizados|Administrar<br>recursos|Registrar,<br>bloquear|**S · E**<br>Una vista puede cubrir varias<br>pantallas.|
-|UI-00<br>9|Programación|Programador|Registrar y revisar<br>jornada|Crear, ajustar,<br>validar conflictos,<br>enviar a revisión|**S · E**<br>Programación manual. (Q-04)|
-|UI-01<br>0|Detalle de partido|Usuarios<br>internos|Consultar ciclo del<br>partido|Cambiar estado<br>según permiso|**S · E**<br>Una vista puede cubrir varias<br>pantallas.|
-|UI-01<br>1|Captura de<br>resultado|Usuario<br>autorizado|Registrar marcador|Capturar, validar,<br>corregir|**S · E**<br>Una vista puede cubrir varias<br>pantallas.|
-|UI-01<br>2|Tabla de<br>posiciones|Interno /<br>público|Consultar<br>clasificación|Consultar|**I · E**|
-|UI-01<br>5|Expediente<br>disciplinario|Comisión /<br>autoridad|Resolver<br>expediente|Revisar, resolver|**P · C**<br>Solo si se valida disciplina.<br>(Q-05)|
-|UI-02<br>0|Portal público|Usuario público|Consultar<br>información<br>publicada|Filtrar y consultar<br>programación,<br>resultados y tabla|**S · E**<br>Consulta de solo lectura.|
-|UI-02<br>2|Auditoría|Administrador /<br>autoridad|Revisar trazabilidad|Consultar, filtrar|**P · C**<br>Consulta de auditoría:<br>¿requerida? (Q-15)|
-
-
-
-**Pantallas de la entrega [PROPUESTA].** No se requiere una interfaz independiente por cada identificador UI; una misma vista puede cubrir varias funciones si es clara. UI-015 y UI-022 están pendientes de decisión (Q-05, Q-15). 
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 14 
-
-#### **Comportamientos que la interfaz debe reflejar:** 
-
-- Mostrar la causa de bloqueo cuando una persona o un equipo no puede participar. 
-
-- Mostrar los conflictos de programación y su motivo. 
-
-- Mostrar el estado del partido y las acciones permitidas en ese estado. 
-
-- Diferenciar los datos oficiales de los indicadores calculados. 
-
-- Diferenciar borrador, revisión y publicado en el contenido público. 
-
-- Evitar que usuarios sin autorización vean o ejecuten acciones administrativas. 
-
-Navegación. Aplicación interna: inicio de sesión → panel con acceso a Temporadas y normativa, Organización deportiva, Registros y elegibilidad, Canchas, Programación, Partidos y resultados, Tablas y Administración (seguridad, historial y auditoría). Portal público: Programación, Resultados y Tabla, con filtros por fecha, categoría/grupo y equipo. La navegación final queda por validar **[PENDIENTE]** (PEN-014). 
-
-A continuación se adjunta la liga de acceso a Figma, donde se puede visualizar la propuesta de las interfaces:
-
-- [Prototipo de interfaces (Figma)](https://www.figma.com/design/kxtW96Gd0FNxdwmvSk6S4t/Untitled?node-id=0-1&t=VymLfyImOGjy1T3f-1)
-
-#### **3.1.2 Interfaces de hardware** 
-
-No aplica. La fuente no identifica ningún dispositivo de hardware con el que el sistema deba comunicarse; el acceso es mediante navegador web desde equipos de escritorio y móviles (RNF-007). Esta sección se revisará si se define lo contrario. 
-
-#### **3.1.3 Interfaces de software** 
-
-Esta entrega no incluye interfaces con software externo (correo, mensajería, almacenamiento documental, mapas, importación o exportación de archivos, API pública ni autenticación externa); véase 2.6. 
-
-Las integraciones con sistemas externos son potenciales y ninguna está aprobada. Cada una debe justificarse por costo, seguridad y necesidad (PEN-033 a PEN-035). Hasta definirlas, sus datos y proveedores quedan pendientes. 
-
-A continuación se adjuntan las ligas de acceso al diccionario de la base de datos propuesta y a su script SQL:
-
-- [Diccionario de datos (OneDrive)](https://itecm-my.sharepoint.com/:b:/g/personal/l24120356_morelia_tecnm_mx/IQCzMefLsnvMS6fRWMhs3da1Af0Bkpxt7vIjWf2IgmIU-hw?e=jDG3Ne)
-- [Script SQL de la base de datos (OneDrive)](https://itecm-my.sharepoint.com/:u:/g/personal/l24120356_morelia_tecnm_mx/IQDvro8mXY5pSZJ3D3LUadWjAZiVS9JHpOUPktLOPQxK8zA?e=qO5cHm)
-
-#### **3.1.4 Interfaces de comunicación** 
-
-La arquitectura de la entrega prevé que el usuario público acceda a la vista de consulta por HTTPS. Los protocolos y formatos de comunicación de las demás interfaces siguen sin definirse **[PENDIENTE]** . 
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 15 
-
-### **3.2 Requisitos funcionales** 
-
-Los requisitos funcionales (RF) convierten el alcance de la entrega en comportamientos verificables del sistema. No definen implementación interna. Se agrupan por módulo funcional y conservan el identificador de la fuente; por eso la numeración tiene huecos: los RF que no forman parte de la entrega se listan en 2.6. Todos tienen tipo «Requisito» y como fuente R1 formalizada en la sección indicada de R3. 
-
-**Prioridad.** La fuente no define prioridades (PEN-001). Las que aparecen son una **[PROPUESTA]** del equipo, calculada con los criterios de la tabla, y deberán validarse con la Liga y el profesor antes de ordenar el backlog. 
-
-|**Prioridad propuesta**|**Criterio**|
-|---|---|
-|**Alta / Esencial**|Indispensable para el flujo operativo central (configuración → programación → resultado → tabla), para la disciplina o para la integridad,<br>trazabilidad y seguridad. Sin él el sistema no cumple su propósito.|
-|**Media / Deseado**|Necesario para la operación completa, pero puede entregarse en una iteración posterior sin invalidar el flujo central.|
-|**Baja / Opcional**|Complementario. Puede posponerse sin afectar la operación esencial.|
-
-
-
-**Prioridad de entrega y estado de entrega [PROPUESTA].** La columna «Prioridad» es la prioridad del producto integral (revisión 0.1) y no cambia. La columna «Entrega» indica el estado (I incluido, S simplificado, P pendiente de decisión) y la prioridad de entrega (E esencial, C conveniente, O opcional) para esta entrega, con un motivo breve cuando el texto se ajustó o el requisito depende de una decisión (Q-nn, Apéndice C). Un requisito pendiente no es compromiso hasta que se resuelva. 
-
-#### **3.2.1 Gestión de temporadas, convocatorias y configuración deportiva** 
-
-|**ID**|**Requisito**|**Descripción**|**Actor**|**Tipo**|**Fuente**|**Prioridad**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|---|---|
-|RF-001|Gestionar temporadas|El sistema debe permitir registrar y administrar una<br>temporada de trabajo como periodo deportivo.|Administrador general /<br>autoridad autorizada|Requisit<br>o|R1<br>R3 §3.2|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**S · E**<br>Se gestiona una temporada de trabajo<br>(no múltiples simultáneas). (Q-11)|
-|RF-002|Asociar convocatoria a<br>temporada|El sistema debe asociar el documento normativo<br>correspondiente a una temporada.|Usuario autorizado|Requisit<br>o|R1<br>R3 §3.2|**Media /**<br>**Deseado**<br>**[PROPUESTA]**|**S · C**<br>Solo referencia a la convocatoria;<br>fuente aún no validada. (Q-03)|
-|RF-003|Conservar histórico de<br>temporadas|El sistema debe conservar información histórica sin<br>sobrescribir temporadas anteriores.|Usuario autorizado|Requisit<br>o|R1<br>R3 §3.2|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**I · E**|
-|RF-004|Gestionar categorías por<br>temporada|El sistema debe permitir registrar la categoría de la<br>temporada de trabajo; el modelo no debe impedir que<br>las categorías varíen entre temporadas.|Usuario autorizado|Requisit<br>o|R1<br>R3 §3.2|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**S · E**<br>Una categoría de demostración; el<br>modelo no debe impedir otras. (Q-11)|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 16 
-
-|**ID**|**Requisito**|**Descripción**|**Actor**|**Tipo**|**Fuente**|**Prioridad**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|---|---|
-|RF-005|Gestionar grupos por<br>categoría y temporada|El sistema debe permitir registrar el grupo (o los<br>grupos) de la categoría de la temporada de trabajo.|Usuario autorizado|Requisit<br>o|R1<br>R3 §3.2|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**S · E**<br>Un grupo de demostración; el modelo<br>no debe impedir otros. (Q-11)|
-|RF-006|Configurar reglas<br>versionables|El sistema debe registrar la referencia o versión de las<br>reglas usadas en la temporada/convocatoria<br>(puntuación y desempates de la tabla). No incluye un<br>motor genérico de reglas.|Usuario autorizado|Requisit<br>o|R1<br>R3 §3.2|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**S · C**<br>Se registra la versión/referencia de la<br>regla usada; sin motor genérico.<br>(Q-03)|
-|RF-007|Registrar reglas<br>interpretadas como<br>pendientes de validación|El sistema no debe convertir automáticamente una<br>interpretación administrativa en una regla permanente;<br>debe permitir su validación/autorización.|Autoridad autorizadora|Requisit<br>o|R1<br>R3 §3.2|**Media /**<br>**Deseado**<br>**[PROPUESTA]**|**S · C**<br>Se registra como pendiente de<br>validación; no se automatiza. (Q-03)|
-
-
-
-#### **3.2.2 Clubes, equipos y personas** 
-
-|**ID**|**Requisito**|**Descripción**|**Actor**|**Tipo**|**Fuente**|**Prioridad**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|---|---|
-|RF-008|Gestionar clubes|El sistema debe registrar y administrar clubes afiliados.|Administrador / usuario<br>autorizado|Requisit<br>o|R1<br>R3 §3.3|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**S · E**<br>Registro básico de clubes necesarios<br>para la demostración.|
-|RF-009|Gestionar equipos|El sistema debe registrar equipos como<br>representación deportiva de un club dentro de<br>categoría/grupo/temporada.|Administrador / usuario<br>autorizado|Requisit<br>o|R1<br>R3 §3.3|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**S · E**<br>Registro básico de equipos de la<br>temporada/grupo.|
-|RF-010|Reutilizar identidad de<br>persona|El sistema debe mantener una identidad de persona<br>reutilizable en diferentes roles.|Usuario autorizado|Requisit<br>o|R1<br>R3 §3.3|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**S · C**<br>Se mantiene solo lo necesario para<br>evitar duplicidad y conservar el<br>vínculo por temporada.|
-|RF-011|Mantener roles de<br>persona separados de su<br>identidad|El sistema debe mantener la identidad de una persona<br>separada de sus roles, sin duplicarla.|Usuario autorizado|Requisit<br>o|R1<br>R3 §3.3|**Media /**<br>**Deseado**<br>**[PROPUESTA]**|**S · C**<br>Se mantiene solo lo necesario para<br>evitar duplicidad y conservar el<br>vínculo por temporada.|
-|RF-012|Mantener historial de<br>pertenencia|El sistema debe conservar el historial de un jugador<br>por temporadas/equipos.|Usuario autorizado|Requisit<br>o|R1<br>R3 §3.3|**Media /**<br>**Deseado**<br>**[PROPUESTA]**|**S · C**<br>Se mantiene solo lo necesario para<br>evitar duplicidad y conservar el<br>vínculo por temporada.|
-
-
-
-#### **3.2.3 Registro y elegibilidad de jugadores** 
-
-|**ID**|**Requisito**|**Descripción**|**Actor**|**Tipo**|**Fuente**|**Prioridad**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|---|---|
-|RF-013|Dar de alta jugador|El sistema debe registrar el alta de un jugador<br>conforme a las reglas de la Liga.|Usuario autorizado|Requisit<br>o|R1<br>R3 §3.4|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**S · E**<br>Alta básica; reglas de alta no<br>validadas. (Q-03, Q-16)|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 17 
-
-|**ID**|**Requisito**|**Descripción**|**Actor**|**Tipo**|**Fuente**|**Prioridad**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|---|---|
-|RF-014|Dar de baja jugador|El sistema debe registrar la baja de un jugador<br>conservando su historial.|Usuario autorizado|Requisit<br>o|R1<br>R3 §3.4|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**S · E**<br>Baja básica conservando historial.|
-|RF-017|Registrar estado de<br>elegibilidad|El sistema debe manejar estados como activo,<br>suspendido, baja e inelegible.|Usuario autorizado|Requisit<br>o|R1<br>R3 §3.4|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**P · C**<br>Solo estados cuyas reglas la Liga<br>confirme. (Q-16)|
-|RF-019|Validar elegibilidad antes<br>de participación|El sistema debe comprobar la elegibilidad antes de<br>permitir una participación cuando la regla así lo exija.|Sistema / usuario<br>autorizado|Requisit<br>o|R1<br>R3 §3.4|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**P · C**<br>Se incluye solo con reglas de<br>elegibilidad confirmadas. (Q-16)|
-|RF-020|Bloquear participación<br>por sanción vigente|Cuando una sanción vigente impida participar, el<br>sistema debe impedir la acción correspondiente y<br>explicar el motivo.|Sistema|Requisit<br>o|R1<br>R3 §3.4|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**P · C**<br>Depende de disciplina (Q-05) y de<br>AMB-001. (Q-05, Q-17)|
-
-
-
-#### **3.2.4 Canchas y sedes** 
-
-|**ID**|**Requisito**|**Descripción**|**Actor**|**Tipo**|**Fuente**|**Prioridad**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|---|---|
-|RF-027|Gestionar catálogo de<br>canchas|El sistema debe registrar canchas y sus características<br>conocidas.|Usuario autorizado|Requisit<br>o|R1<br>R3 §3.6|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**S · E**<br>Catálogo mínimo de canchas.|
-|RF-029|Registrar disponibilidad<br>temporal|El sistema debe administrar disponibilidad por<br>fecha/hora.|Usuario autorizado|Requisit<br>o|R1<br>R3 §3.6|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**S · E**<br>Disponibilidad mínima para validar<br>asignaciones. (Q-24)|
-|RF-030|Bloquear cancha|El sistema debe permitir bloquear una cancha cuando<br>corresponda.|Usuario autorizado|Requisit<br>o|R1<br>R3 §3.6|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**S · E**<br>Bloqueo por intervalo; formalidad<br>(PEN-007) pendiente.|
-
-
-
-#### **3.2.5 Programación** 
-
-|**ID**|**Requisito**|**Descripción**|**Actor**|**Tipo**|**Fuente**|**Prioridad**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|---|---|
-|RF-033|Registrar programación|El sistema debe permitir registrar manualmente la<br>programación por categoría, grupo, equipos, cancha,<br>fecha y hora.|Programador / usuario<br>autorizado|Requisit<br>o|R1<br>R3 §3.7|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**S · E**<br>Captura manual de jornadas/partidos.<br>(Q-04)|
-|RF-036|Asignar canchas|El sistema debe permitir asignar manualmente una<br>cancha disponible a un partido y rechazar la<br>asignación si genera un conflicto duro.|Programador / usuario<br>autorizado|Requisit<br>o|R1<br>R3 §3.7|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**S · E**<br>Asignación manual de cancha con<br>validación de conflictos.|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 18 
-
-|**ID**|**Requisito**|**Descripción**|**Actor**|**Tipo**|**Fuente**|**Prioridad**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|---|---|
-|RF-039|Detectar conflictos de<br>programación|El sistema debe detectar, al crear o ajustar una<br>asignación manual, conflictos como equipo duplicado,<br>cancha ocupada o cancha no disponible. El conflicto<br>por sanción depende de AMB-001**[PENDIENTE]**.|Sistema|Requisit<br>o|R1<br>R3 §3.7|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**I · E**<br>Conflictos duros básicos: equipo<br>duplicado, cancha ocupada, cancha<br>no disponible.|
-|RF-040|Permitir ajuste manual<br>autorizado|El sistema debe permitir crear y modificar<br>manualmente la programación a usuarios autorizados,<br>con traza del cambio (RN-018).|Programador / usuario<br>autorizado|Requisit<br>o|R1<br>R3 §3.7|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**S · E**<br>Limitado a ajuste manual autorizado<br>con traza (RN-018). (Q-07)|
-
-
-
-#### **3.2.6 Partidos y ciclo de vida** 
-
-|**ID**|**Requisito**|**Descripción**|**Actor**|**Tipo**|**Fuente**|**Prioridad**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|---|---|
-|RF-043|Gestionar estado del<br>partido|El sistema debe manejar los estados del ciclo de vida<br>del partido.|Usuario autorizado /<br>sistema|Requisit<br>o|R1<br>R3 §3.8|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**S · E**<br>Estados mínimos de partido por<br>confirmar. (Q-13)|
-|RF-044|Mantener historial del<br>partido|El sistema no debe eliminar partidos con historial.|Sistema|Requisit<br>o|R1<br>R3 §3.8|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**I · E**|
-|RF-045|Auditar transiciones de<br>estado|Cada transición debe conservar usuario, fecha y<br>motivo.|Sistema|Requisit<br>o|R1<br>R3 §3.8|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**I · E**|
-|RF-046|Restringir acciones por<br>estado|El estado del partido debe determinar las acciones<br>permitidas.|Sistema|Requisit<br>o|R1<br>R3 §3.8|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**I · E**|
-
-
-
-#### **3.2.7 Resultados, tablas y estadísticas** 
-
-|**ID**|**Requisito**|**Descripción**|**Actor**|**Tipo**|**Fuente**|**Prioridad**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|---|---|
-|RF-047|Capturar marcador|El sistema debe permitir registrar el marcador y estado<br>del resultado.|Usuario autorizado|Requisit<br>o|R1<br>R3 §3.9|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**I · E**|
-|RF-048|Validar resultado|El sistema debe permitir identificar cuándo un<br>resultado queda validado/oficial.|Usuario/autoridad<br>autorizada|Requisit<br>o|R1<br>R3 §3.9|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**I · E**|
-|RF-049|Calcular tabla<br>automáticamente|El sistema debe calcular PJ, resultados, goles y<br>puntos según reglas configuradas.|Sistema|Requisit<br>o|R1<br>R3 §3.9|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**I · E**<br>Con reglas de puntos de<br>demostración si no hay regla oficial<br>validada. (Q-10)|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 19 
-
-|**ID**|**Requisito**|**Descripción**|**Actor**|**Tipo**|**Fuente**|**Prioridad**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|---|---|
-|RF-050|Parametrizar<br>desempates|El sistema debe soportar criterios de desempate<br>configurables.|Usuario autorizado|Requisit<br>o|R1<br>R3 §3.9|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**P · E**<br>Criterios de desempate de<br>demostración hasta validación oficial.<br>(Q-10)|
-|RF-052|Recalcular tras<br>corrección autorizada|El sistema debe recalcular las tablas cuando se corrija<br>un resultado de forma autorizada.|Sistema|Requisit<br>o|R1<br>R3 §3.9|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**I · E**|
-|RF-053|Calcular estadísticas de<br>equipo|El sistema debe producir PJ, PG, PE, PP, GF, GC,<br>DG, puntos y posición.|Sistema|Requisit<br>o|R1<br>R3 §3.9|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**S · E**<br>Solo estadísticas de equipo<br>necesarias para la tabla.|
-|RF-055|Separar dato oficial de<br>indicador calculado|El sistema debe distinguir información oficial de<br>métricas derivadas.|Sistema|Requisit<br>o|R1<br>R3 §3.9|**Media /**<br>**Deseado**<br>**[PROPUESTA]**|**I · E**<br>Depende de definir resultado oficial.<br>(Q-12)|
-|RF-056|Publicar sólo información<br>validada|El portal sólo debe mostrar resultados y datos que<br>hayan sido validados y publicados.|Usuario autorizado /<br>sistema|Requisit<br>o|R1<br>R3 §3.9|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**I · E**|
-
-
-
-#### **3.2.8 Disciplina reducida (pendiente de decisión)** 
-
-|**ID**|**Requisito**|**Descripción**|**Actor**|**Tipo**|**Fuente**|**Prioridad**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|---|---|
-|RF-057|Generar expediente<br>disciplinario|El sistema debe permitir registrar manualmente un<br>caso disciplinario a partir de un incidente.<br>**[PENDIENTE]**Solo si se valida la disciplina.|Sistema|Requisit<br>o|R1<br>R3 §3.10|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**P · C**<br>Solo registro manual mínimo de<br>incidente/resolución si se valida.<br>(Q-05)|
-|RF-058|Relacionar incidentes<br>con personas/equipos|Cada incidente debe quedar relacionado con las<br>personas y/o equipos involucrados.|Sistema / usuario<br>autorizado|Requisit<br>o|R1<br>R3 §3.10|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**P · C**<br>Relación mínima<br>incidente–persona/equipo si se valida.<br>(Q-05)|
-|RF-062|Validar y resolver<br>sanción|El sistema debe permitir que una autoridad registre la<br>resolución y la sanción correspondiente.|Autoridad competente|Requisit<br>o|R1<br>R3 §3.10|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**P · C**<br>Resolución manual por autoridad, solo<br>si se valida disciplina. (Q-05, Q-07)|
-|RF-063|Calcular vigencia de<br>sanción|El sistema debe permitir registrar y conservar la<br>vigencia indicada en la resolución; el cálculo<br>automático queda fuera de la entrega.|Autoridad competente|Requisit<br>o|R1<br>R3 §3.10|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**P · C**<br>Vigencia capturada manualmente, no<br>calculada automáticamente. (Q-05)|
-|RF-065|Mantener resolución<br>inmutable|El historial de resolución debe conservarse sin<br>alteración destructiva.|Sistema|Requisit<br>o|R1<br>R3 §3.10|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**P · C**<br>Condicionado a RF-062; inmutabilidad<br>de la resolución. (Q-05)|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 20 
-
-#### **3.2.9 Portal público y auditoría** 
-
-|**ID**|**Requisito**|**Descripción**|**Actor**|**Tipo**|**Fuente**|**Prioridad**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|---|---|
-|RF-082|Consultar programación<br>semanal|El portal debe mostrar la programación semanal<br>publicada.|Usuario público|Requisit<br>o|R1<br>R3 §3.12|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**I · E**|
-|RF-083|Consultar resultados|El portal debe mostrar resultados<br>validados/publicados.|Usuario público|Requisit<br>o|R1<br>R3 §3.12|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**I · E**|
-|RF-084|Consultar tablas|El portal debe mostrar tablas publicadas.|Usuario público|Requisit<br>o|R1<br>R3 §3.12|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**I · E**|
-|RF-089|Buscar por<br>fecha/categoría/equipo|El portal debe permitir filtrar las consultas públicas por<br>fecha, categoría/grupo y equipo; no incluye buscador<br>general.|Usuario público|Requisit<br>o|R1<br>R3 §3.12|**Media /**<br>**Deseado**<br>**[PROPUESTA]**|**S · C**<br>Solo filtros básicos por<br>temporada/grupo/equipo; sin<br>buscador general.|
-|RF-090|Gestionar flujo de<br>publicación|La información pública debe seguir un flujo de<br>borrador → revisión → publicado.|Usuario autorizado|Requisit<br>o|R1<br>R3 §3.12|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**I · E**<br>Flujo Borrador → Revisión →<br>Publicado; detalle PEN-009. (Q-07)|
-|RF-093|Auditar acciones críticas|El sistema debe registrar acciones críticas con<br>trazabilidad suficiente para revisión posterior.|Sistema|Requisit<br>o|R1<br>R3 §3.12|**Alta /**<br>**Esencial**<br>**[PROPUESTA]**|**S · E**<br>Auditoría mínima de acciones críticas.<br>(Q-15)|
-
-
-
-#### **3.2.10 Validaciones y manejo de errores** 
-
-Validaciones que el sistema debe aplicar y comportamiento ante su fallo. Los mensajes exactos de interfaz y los códigos técnicos de error están por definir **[PENDIENTE]** (PEN-016). 
-
-|**ID**|**Elemento**|**Validación**|**Comportamiento si falla**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|
-|VAL-00<br>1|Registro de jugador|Cumplimiento de reglas de alta y baja|No completar operación; informar causa|**S · E**<br>Solo alta/baja;<br>renovación/transferencia aplazadas.<br>(Q-01)|
-|VAL-00<br>2|Elegibilidad|Jugador no suspendido/inelegible cuando la regla impida<br>participación|Bloquear participación y explicar motivo|**P · C**<br>Reglas de elegibilidad no validadas.<br>(Q-16)|
-|VAL-00<br>3|Programación|Equipo duplicado|Rechazar asignación y explicar conflicto|**I · E**|
-|VAL-00<br>4|Programación|Cancha ocupada|Rechazar asignación y explicar conflicto|**I · E**|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 21 
-
-|**ID**|**Elemento**|**Validación**|**Comportamiento si falla**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|
-|VAL-00<br>5|Programación|Cancha no disponible|Rechazar asignación y explicar conflicto|**I · E**|
-|VAL-00<br>6|Programación|Restricción disciplinaria aplicable|Impedir programación cuando corresponda|**P · C**<br>Depende de disciplina/AMB-001.<br>(Q-17)|
-|VAL-00<br>8|Estado de partido|Acción no permitida por el estado|Rechazar la acción|**I · E**|
-|VAL-00<br>9|Resultado|Resultado no validado|No convertir en información oficial/publicada|**I · E**|
-|VAL-01<br>0|Corrección de resultado|Corrección no autorizada|Rechazar y conservar dato oficial previo|**I · E**|
-|VAL-01<br>1|Desempate|Igualdad|Aplicar criterios configurados|**P · E**<br>Criterios de demostración hasta<br>validación oficial. (Q-10)|
-|VAL-01<br>2|Disciplina|Artículo/infracción no identificado|Dejar caso en revisión|**P · C**<br>Solo si se valida disciplina. (Q-05)|
-|VAL-01<br>3|Sanción|Excepción no formalmente definida|No automatizarla como regla general; requerir validación|**P · C**<br>Solo si se valida disciplina. (Q-05)|
-|VAL-01<br>4|Publicación|Información en borrador/revisión|No mostrarla como pública|**I · E**|
-|VAL-01<br>5|Acceso|Rol sin permiso|Denegar acción|**I · E**|
-|VAL-01<br>6|Auditoría|Operación crítica|Debe registrarse usuario, fecha y motivo/contexto|**I · E**|
-
-
-
-#### **3.2.11 Consultas y listados requeridos** 
-
-Consultas y listados de programación, resultados, tabla y auditoría que forman parte del flujo de la entrega; no incluyen exportación a PDF/Excel ni reportes generalizados (véase 2.6). Los filtros marcados como pendientes deben confirmarse **[PENDIENTE]** . 
-
-|**ID**|Consulta o listado|**Filtros o alcance conocido**|**Prioridad**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|
-|REP-00<br>1|Programación|Fecha / categoría / cancha|**Media / Deseado**<br>**[PROPUESTA]**|**S · E**<br>Como consulta/listado del flujo, no<br>como reporte generalizado.|
-|REP-00|Resultados|Temporada / competencia**[PENDIENTE]**|**Media / Deseado**|**S · E**|
-|2|||**[PROPUESTA]**|Como consulta/listado del flujo.|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 22 
-
-|**ID**|Consulta o listado|**Filtros o alcance conocido**|**Prioridad**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|
-|REP-00<br>3|Tabla de posiciones|Categoría / grupo|**Media / Deseado**<br>**[PROPUESTA]**|**S · E**<br>Como consulta de tabla (M-08/M-11).|
-|REP-01<br>0|Auditoría|Usuario / operación / fecha**[PENDIENTE]**|**Media / Deseado**<br>**[PROPUESTA]**|**P · C**<br>Consulta de auditoría: ¿requerida?<br>(Q-15)|
-
-
-
-### **3.3 Requisitos no funcionales** 
-
-Los requisitos no funcionales (RNF) conservan el identificador de la fuente. Los valores cuantitativos (porcentaje de disponibilidad, tiempos de respuesta, nivel de accesibilidad, políticas de respaldo) no están definidos y quedan como **[PENDIENTE]** ; mientras no se fijen, estos requisitos no son verificables. Las prioridades son una **[PROPUESTA]** del equipo. 
-
-#### **3.3.1 Requisitos de rendimiento** 
-
-|**ID**|**Requisito**|**Descripción y criterio**|**Tipo**|**Fuente**|**Prioridad**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|---|
-|RNF-00<br>2|Rendimiento de consultas<br>públicas|Las consultas del portal deben responder adecuadamente; tiempo objetivo<br>**[PENDIENTE]**.|Requisit<br>o|R1<br>R3 §4|**Media /**<br>**Deseado**<br>**[PROPUESTA**<br>**]**|**P · C**<br>Sin métrica acordada; no es criterio de<br>aceptación. (Q-19)|
-
-
-
-#### **3.3.2 Seguridad** 
-
-|**ID**|**Requisito**|**Descripción y criterio**|**Tipo**|**Fuente**|**Prioridad**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|---|
-|RNF-00<br>3|Seguridad y mínimo<br>privilegio|El acceso debe limitarse a las capacidades necesarias por rol/contexto.|Requisit<br>o|R1<br>R3 §4|**Alta /**<br>**Esencial**<br>**[PROPUESTA**<br>**]**|**I · E**<br>Mínimo privilegio sobre los pocos perfiles<br>de la demostración. (Q-07)|
-|RNF-01<br>2|Protección de datos<br>personales|La información personal debe protegerse y separarse adecuadamente de la<br>información pública.|Requisit<br>o|R1<br>R3 §4|**Alta /**<br>**Esencial**<br>**[PROPUESTA**<br>**]**|**I · E**<br>Separar datos personales de públicos.<br>(Q-08)|
-|RNF-01<br>3|Hash seguro de<br>contraseñas|Las contraseñas no deben almacenarse en texto plano.|Requisit<br>o|R1<br>R3 §4|**Alta /**<br>**Esencial**<br>**[PROPUESTA**<br>**]**|**S · E**<br>Aplica si se manejan contraseñas<br>propias.|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 23 
-
-|**ID**|**Requisito**|**Descripción y criterio**|**Tipo**|**Fuente**|**Prioridad**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|---|
-|RNF-01<br>4|Gestión segura de<br>sesiones|Deben existir sesiones y controles antiabuso.|Requisit<br>o|R1<br>R3 §4|**Alta /**<br>**Esencial**<br>**[PROPUESTA**<br>**]**|**S · E**<br>Acorde a la solución adoptada<br>(PEN-030).|
-|RNF-01<br>5|Auditoría|Las acciones relevantes deben ser trazables.|Requisit<br>o|R1<br>R3 §4|**Alta /**<br>**Esencial**<br>**[PROPUESTA**<br>**]**|**S · E**<br>Trazabilidad mínima de acciones críticas.<br>(Q-15)|
-
-
-
-Requisitos de seguridad respaldados por la fuente (R3 §15.1): autenticación segura; autorización por rol y contexto (RBAC); permisos por módulo y acción; separación de funciones; separación de los datos internos y públicos; respaldo y recuperación. 
-
-**Controles por definir [PENDIENTE]:** política de contraseñas; duración y renovación de sesión; recuperación de acceso; bloqueo o límite de intentos; matriz de permisos por rol; datos personales visibles para cada rol; retención de auditoría; política de respaldo y recuperación; tratamiento de evidencias disciplinarias; protección de la información en tránsito y en almacenamiento (PEN-029 a PEN-032). 
-
-#### **3.3.3 Fiabilidad** 
-
-|**ID**|**Requisito**|**Descripción y criterio**|**Tipo**|**Fuente**|**Prioridad**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|---|
-|RNF-00<br>4|Integridad transaccional|Las operaciones críticas deben preservar consistencia e integridad de datos.|Requisit<br>o|R1<br>R3 §4|**Alta /**<br>**Esencial**<br>**[PROPUESTA**<br>**]**|**I · E**|
-
-
-
-#### **3.3.4 Disponibilidad** 
-
-|**ID**|**Requisito**|**Descripción y criterio**|**Tipo**|**Fuente**|**Prioridad**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|---|
-|RNF-00<br>1|Disponibilidad durante<br>jornadas|El sistema debe estar disponible durante las jornadas; porcentaje y tolerancia de<br>indisponibilidad**[PENDIENTE]**.|Requisit<br>o|R1<br>R3 §4|**Alta /**<br>**Esencial**<br>**[PROPUESTA**<br>**]**|**P · C**<br>Sin métrica acordada; no es criterio de<br>aceptación. (Q-19)|
-|RNF-01<br>0|Respaldo y recuperación|Deben existir mecanismos de respaldo y recuperación; política exacta<br>**[PENDIENTE]**.|Requisit<br>o|R1<br>R3 §4|**Alta /**<br>**Esencial**<br>**[PROPUESTA**<br>**]**|**P · O**<br>Respaldo/recuperación: política y entorno<br>no definidos (PEN-031). (Q-19)|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 24 
-
-#### **3.3.5 Mantenibilidad** 
-
-|**ID**|**Requisito**|**Descripción y criterio**|**Tipo**|**Fuente**|**Prioridad**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|---|
-|RNF-00<br>5|Escalabilidad|El diseño debe soportar nuevas temporadas y nuevas categorías sin rediseño del<br>dominio.|Requisit<br>o|R1<br>R3 §4|**Media /**<br>**Deseado**<br>**[PROPUESTA**<br>**]**|**S · C**<br>Permite nuevas temporadas/categorías;<br>sin exigir plataforma de producción.|
-|RNF-00<br>9|Mantenibilidad|Debe facilitar evolución de reglas, temporadas y módulos.|Requisit<br>o|R1<br>R3 §4|**Media /**<br>**Deseado**<br>**[PROPUESTA**<br>**]**|**P · C**<br>Sin criterio medible definido. (Q-21)|
-|RNF-01<br>1|Observabilidad|Deben existir mecanismos para observar el comportamiento del sistema; detalle<br>técnico**[PENDIENTE]**.|Requisit<br>o|R1<br>R3 §4|**Media /**<br>**Deseado**<br>**[PROPUESTA**<br>**]**|**P · O**<br>Observabilidad: sin acuerdo; no<br>obligatorio. (Q-19)|
-
-
-
-#### **3.3.6 Portabilidad** 
-
-La fuente no define requisitos de portabilidad específicos. El único requisito relacionado es que la aplicación web sea responsive (RNF-007, en Usabilidad). Los requisitos de portabilidad entre plataformas, motores de base de datos o entornos de despliegue dependen del stack y la infraestructura, por definir **[PENDIENTE]** (PEN-024 a PEN-026). 
-
-#### **3.3.7 Usabilidad y accesibilidad** 
-
-Subsección añadida a la plantilla porque la fuente incluye requisitos de este tipo. 
-
-|**ID**|**Requisito**|**Descripción y criterio**|**Tipo**|**Fuente**|**Prioridad**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|---|
-|RNF-00<br>6|Usabilidad|El sistema debe ser utilizable por actores con funciones distintas.|Requisit<br>o|R1<br>R3 §4|**Media /**<br>**Deseado**<br>**[PROPUESTA**<br>**]**|**P · C**<br>Sin criterio medible definido. (Q-21)|
-|RNF-00<br>7|Responsive|La aplicación web debe ser responsive.|Requisit<br>o|R1<br>R3 §4|**Alta /**<br>**Esencial**<br>**[PROPUESTA**<br>**]**|**I · E**|
-|RNF-00<br>8|Accesibilidad|Debe contemplarse accesibilidad; estándar/nivel**[PENDIENTE]**.|Requisit<br>o|R1<br>R3 §4|**Media /**<br>**Deseado**<br>**[PROPUESTA**<br>**]**|**P · C**<br>Nivel de accesibilidad no acordado.<br>(Q-19)|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 25 
-
-### **3.4 Otros requisitos** 
-
-#### **3.4.1 Reglas de negocio** 
-
-Las reglas de negocio (RN) establecen condiciones del dominio que el sistema debe respetar. Las reglas deportivas y disciplinarias provienen de la convocatoria de cada temporada y deben versionarse. Si una regla no es explícita, su interpretación requiere validación y autorización (RN-006); no se convierte en regla permanente. 
-
-#### **Reglas de temporada y configuración** 
-
-|**ID**|**Regla**|**Condición**|**Comportamiento esperado**|**Actores afectados**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|
-|RN-001|La temporada representa un periodo<br>deportivo|Cuando se gestione una<br>competencia|La información debe quedar asociada a su<br>temporada|Todos los usuarios<br>administrativos|**I · E**|
-|RN-002|La convocatoria es normativa|Una temporada tiene una<br>convocatoria asociada|Las reglas de operación deben poder<br>vincularse a su documento normativo|Autoridades / usuarios<br>administrativos|**S · C**<br>Convocatoria como referencia;<br>contenido aún no validado. (Q-03)|
-|RN-003|Las categorías/grupos pueden variar<br>por temporada|Al abrir una nueva temporada|No debe asumirse una estructura fija heredada<br>sin configuración|Administración|**I · E**|
-|RN-005|El histórico no se sobrescribe|Al modificar una temporada nueva o<br>actual|Los datos históricos deben conservarse|Todos|**I · E**|
-|RN-006|Las interpretaciones requieren<br>validación|Cuando una regla no sea explícita|Debe pasar por validación/autorización|Autoridades|**I · E**|
-
-
-
-#### **Reglas deportivas y de registro** 
-
-|**ID**|**Regla**|**Condición**|**Comportamiento esperado**|**Actores afectados**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|
-|RN-007|Un equipo pertenece a una<br>categoría/grupo durante una<br>temporada|Durante su participación|La relación deportiva debe poder identificarse<br>por temporada|Administración|**I · E**|
-|RN-008|Una persona es una identidad<br>reutilizable|Cuando tenga uno o más roles|No debe duplicarse la identidad para cada rol|Administración|**S · C**<br>Identidad reutilizable solo si se<br>necesita.|
-|RN-009|El registro del jugador está sujeto a<br>reglas|Alta, baja, renovación o<br>transferencia|La operación debe validarse conforme a la<br>temporada|Jugadores / clubes|**P · C**<br>Reglas de registro no validadas.<br>(Q-16)|
-|RN-010|La elegibilidad debe comprobarse<br>antes de participar|Antes de una acción que habilite<br>participación|El sistema debe bloquear cuando exista<br>impedimento|Sistema / usuarios<br>operativos|**P · C**<br>Reglas de elegibilidad no validadas.<br>(Q-16)|
-|RN-011|La sanción vigente puede impedir<br>participación|Cuando la norma lo establezca|El sistema debe impedir la participación<br>correspondiente|Jugador / equipo /<br>administración|**P · C**<br>Depende de disciplina y AMB-001.<br>(Q-05, Q-17)|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 26 
-
-#### **Reglas de programación** 
-
-|**ID**|**Regla**|**Condición**|**Comportamiento esperado**|**Actores afectados**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|
-|RN-012|Un equipo no puede aparecer<br>duplicado en conflicto|Generación/edición de jornada|Debe detectarse como conflicto duro|Programador|**I · E**|
-|RN-013|Una cancha ocupada no puede<br>reutilizarse en el mismo intervalo|Generación de jornada|Debe bloquearse la asignación conflictiva|Programador|**I · E**|
-|RN-014|Una cancha no disponible no puede<br>asignarse|Existe bloqueo/mantenimiento/no<br>disponibilidad|El sistema debe impedir la asignación|Programador|**I · E**|
-|RN-018|Los cambios manuales autorizados<br>deben quedar trazados|Al modificar una programación|Registrar usuario, fecha y motivo|Programador /<br>administración|**I · E**|
-
-
-
-#### **Reglas de partidos y resultados** 
-
-|**ID**|**Regla**|**Condición**|**Comportamiento esperado**|**Actores afectados**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|
-|RN-019|El estado del partido controla<br>acciones|En cualquier momento del ciclo|Sólo deben permitirse acciones válidas para el<br>estado|Todos los usuarios<br>internos|**I · E**|
-|RN-020|Los partidos históricos no se eliminan|Un partido posee historial|Debe conservarse|Administración|**I · E**|
-|RN-021|Cada transición de estado es<br>auditable|Cambio de estado|Registrar usuario, fecha y motivo|Usuarios internos|**I · E**|
-|RN-022|La tabla se deriva de resultados<br>validados|Se oficializa un resultado|Debe actualizarse el cálculo de la tabla|Sistema / administración|**I · E**|
-|RN-023|Los desempates dependen de reglas<br>configuradas|Existe igualdad de posiciones|Se deben aplicar los criterios configurados para<br>la temporada|Sistema|**S · E**<br>Desempates de demostración hasta<br>validar los oficiales. (Q-10)|
-|RN-024|Una corrección autorizada puede<br>requerir recálculo|Se corrige un resultado oficial|La tabla debe recalcularse y quedar trazada|Administración|**I · E**|
-|RN-025|Sólo información validada se publica|Un dato aún no es oficial|No debe mostrarse como oficial en el portal|Sistema / publicación|**I · E**|
-
-
-
-#### **Reglas disciplinarias** 
-
-|**ID**|**Regla**|**Condición**|**Comportamiento esperado**|**Actores afectados**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|
-|RN-029|La resolución genera vigencia<br>verificable|Se aprueba una sanción|Debe conservarse el periodo de vigencia|Sistema / disciplina|**P · C**<br>Vigencia registrada manualmente si<br>se valida disciplina. (Q-05)|
-|RN-030|El historial de resolución es inmutable|Resolución generada|No debe alterarse destructivamente|Autoridades|**P · C**<br>Condicionado a registro de resolución.<br>(Q-05)|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 27 
-
-#### **Reglas de promoción y fases finales** 
-
-|**ID**|**Regla**|**Condición**|**Comportamiento esperado**|**Actores afectados**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|
-|RN-035|Los casos no automáticos requieren|Regla ambigua/no automatizada|Generar propuesta y solicitar autorización|Autoridades|**I · C**|
-||validación||||Principio transversal: lo ambiguo pasa<br>a validación humana.|
-
-
-
-#### **3.4.2 Requisitos de datos** 
-
-Principios de diseño de datos respaldados por la fuente: 
-
-- Usar catálogos e identificadores para resolver abreviaturas, nombres variables y formatos no uniformes. 
-
-- Validar duplicados y ambigüedades. 
-
-- No sobrescribir históricos. 
-
-- Separar la identidad de la persona de sus roles. 
-
-- Separar los datos oficiales de los indicadores calculados. 
-
-- Proteger los datos personales. 
-
-- Mantener la trazabilidad de configuraciones y reglas utilizadas. 
-
-Atributos que requieren definición **[PENDIENTE]** : identificador exacto y claves naturales de cada entidad; datos personales obligatorios del jugador; datos específicos del club y el equipo; datos de convocatoria y versionado; campos del resultado; variables de disponibilidad de cancha; auditoría detallada (PEN-018, PEN-019, PEN-022). 
-
-**Datos [PROPUESTA].** La entrega se limita a las entidades de la sección 4.3. Los atributos, cardinalidades y retención siguen **[PENDIENTE]** hasta validar reglas y datos (PEN-018, PEN-019, AMB-005). 
-
-#### **3.4.3 Criterios de aceptación preliminares** 
-
-Criterios iniciales de aceptación que deberán completarse por requisito (historias de usuario y pruebas) en el diseño detallado. 
-
-|**ID**|**Criterio**|**Entrega[PROPUESTA]**|
-|---|---|---|
-|CA-0<br>01|Las temporadas históricas no se alteran.|**I · E**|
-|CA-0<br>02|La programación manual no acepta asignaciones con conflicto duro detectable (equipo duplicado, cancha ocupada o<br>cancha no disponible).|**S · E**<br>Se aplica a la captura manual: no se acepta una asignación con conflicto duro<br>detectable (RF-039). (Q-04)|
-|CA-0<br>03|Un resultado validado actualiza la tabla.|**I · E**|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 28 
-
-|**ID**|**Criterio**|**Entrega[PROPUESTA]**|
-|---|---|---|
-|CA-0<br>04|Una sanción vigente bloquea cuando corresponda.|**P · C**<br>Solo si se valida disciplina y AMB-001. (Q-17)|
-|CA-0<br>05|Una resolución genera vigencia verificable.|**P · C**<br>Vigencia registrada manualmente, si se valida. (Q-05)|
-|CA-0<br>06|El sistema explica por qué un equipo/persona no puede participar.|**P · C**<br>Depende de reglas de elegibilidad validadas. (Q-16)|
-|CA-0<br>07|El portal muestra sólo información publicada.|**I · E**|
-|CA-0<br>08|Los cambios críticos quedan auditados.|**I · E**|
-
-
-
-**Criterios de la entrega [PROPUESTA].** CA-001, CA-002, CA-003, CA-007 y CA-008 aplican a la entrega. CA-004, CA-005 y CA-006 están pendientes porque dependen de la disciplina reducida, de AMB-001 y de reglas de elegibilidad confirmadas. Los valores cuantitativos de los requisitos no funcionales siguen **[PENDIENTE]** y no son criterios de aceptación (Q-19). 
-
-#### **3.4.4 Requisitos legales y normativos** 
-
-La fuente exige proteger los datos personales (RNF-012) pero no identifica el marco legal aplicable ni las obligaciones concretas, como avisos de privacidad o plazos de conservación. Este marco queda por definir **[PENDIENTE]** (PEN-019, PEN-032). La normativa deportiva proviene del Reglamento y la Convocatoria de la Liga (R4), que deben consultarse para validar las reglas. 
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 29 
-
-## **4 Modelado del Sistema** 
-
-Este capítulo reúne los modelos que complementan los requisitos: casos de uso, procesos, estados, datos, estructura modular y trazabilidad. Los modelos se derivan de la fuente; cuando el equipo agregó un elemento propio (por ejemplo, la asignación de tareas a carriles en los procesos), se marca como **[PROPUESTA]** . 
-
-### **4.1 Modelo de casos de uso** 
-
-La entrega comprende 10 casos de uso incluidos o simplificados (CU-001 a CU-009 y CU-016) y 2 condicionados y pendientes de decisión (CU-010 y CU-011). Los demás casos de uso de la fuente se listan en 2.6. «Usuario autorizado» representa a cualquier usuario interno con el permiso correspondiente; los roles concretos dependen de la matriz de permisos **[PENDIENTE]** (PEN-010). La línea punteada de CU-001 indica al actor secundario. 
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 30 
-
-
-
-<!-- Start of picture text -->
-( Estado de entrega [PROPUESTA] »)<br>eteneeeen<br>Autoridad competente af cu-01L oo<br>(solosi se valida) \__ Registrarresoluciny vigencia 7<br>aan cu-010 te.<br>T_esistarincdente (manual)?<br><!-- End of picture text -->
-
-_Figura 3. Diagrama de casos de uso de la entrega. Discontinuo: pendiente de decisión._ 
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 31 
-
-|**Caso de uso**|**Actores**|**Objetivo y precondiciones**|**Flujo principal**|**Alternativas, excepciones**<br>**y postcondición**|**Requisitos**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|---|
-|**CU-001**<br>Registrar temporada|**Principal:**<br>Administrador<br>general / usuario<br>autorizado.<br>**Secundario:**<br>Autoridad<br>responsable de<br>validación.|**Objetivo:**Crear y configurar un periodo<br>deportivo.<br>**Precondiciones:**Usuario autenticado y<br>autorizado.|registrar temporada → asociar<br>convocatoria → guardar.|**Alternativas:**convocatoria<br>no disponible → dejar<br>configuración pendiente.<br>**Excepciones:**datos<br>incompletos.<br>**Postcondición:**temporada<br>registrada con histórico<br>preservado.|RF-001,<br>RF-002,<br>RF-003.|**S · E**<br>Una temporada de trabajo. (Q-11)|
-|**CU-002**<br>Configurar<br>categoría/grupo|**Principal:**<br>Usuario<br>autorizado.|**Objetivo:**Definir estructura deportiva de la<br>temporada.<br>**Precondiciones:**temporada existente.|seleccionar temporada → crear<br>categoría → crear uno o más<br>grupos → guardar.|**Postcondición:**estructura<br>disponible para registrar<br>equipos.|RF-004,<br>RF-005.|**I · E**|
-|**CU-003**<br>Registrar club/equipo|**Principal:**<br>Usuario<br>autorizado.|**Objetivo:**Incorporar un club y su<br>representación deportiva.|registrar club → registrar equipo →<br>asociar<br>categoría/grupo/temporada.|—|RF-008,<br>RF-009.|**I · E**|
-|**CU-004**<br>Registrar jugador|**Principal:**<br>Usuario<br>autorizado.|**Objetivo:**Incorporar o actualizar el registro<br>competitivo de una persona.|identificar persona → asociar<br>equipo → solicitar alta o baja →<br>validar reglas confirmadas →<br>guardar conservando el historial.|**Alternativas:**datos<br>incompletos; regla no<br>satisfecha.|RF-010 a<br>RF-014;<br>RF-017 y<br>RF-019<br>**[PENDIENT**<br>**E]**.|**S · E**<br>Solo alta/baja básica.|
-|**CU-005**<br>Registrar cancha|CU-005 /<br>Registrar cancha|Objetivo: Incorporar una cancha y su<br>disponibilidad.|registrar cancha →<br>características → disponibilidad<br>→ bloqueos.|—|RF-027,<br>RF-029,<br>RF-030.|**S · E**<br>Catálogo mínimo.|
-|CU-006 / Registrar y<br>ajustar programación<br>manual|Principal:<br>Programador de<br>partidos [perfil<br>PENDIENTE].|Objetivo: Registrar o ajustar manualmente<br>los partidos de la jornada sin conflictos<br>duros. / Precondiciones: temporada,<br>categoría, grupo, equipos y canchas con<br>disponibilidad registrados.|crear o ajustar el partido<br>(equipos, fecha, hora, cancha)<br>→ validar conflictos duros →<br>guardar en borrador con traza →<br>enviar a revisión.|Alternativas: ajuste<br>posterior autorizado. /<br>Excepciones: conflicto<br>(equipo duplicado,<br>cancha ocupada o<br>cancha no disponible) →<br>rechazar la asignación y<br>explicar el conflicto. /<br>Postcondición:<br>programación en<br>borrador con traza.|RF-033,<br>RF-036,<br>RF-039,<br>RF-040.|**S · E**<br>Captura manual con validación de<br>conflictos; se aplaza la generación<br>automática. (Q-04)|
-|**CU-007**<br>Publicar programación|**Principal:**<br>Usuario<br>autorizado.|**Objetivo:**Pasar una programación de<br>revisión a publicación.|seleccionar propuesta → revisar →<br>aprobar → publicar.|—|RF-040,<br>RF-056,<br>RF-090.|**I · E**<br>Aprobación/publicación; quién<br>aprueba: pendiente. (Q-07)|
-|**CU-008**<br>Registrar/confirmar<br>resultado|**Principal:**<br>Usuario<br>autorizado.|**Objetivo:**Registrar un resultado y convertirlo<br>en dato oficial cuando corresponda.|capturar marcador → validar →<br>actualizar tabla/estadísticas →<br>conservar histórico.|**Alternativas:**corrección<br>autorizada → recalcular.|RF-047 a<br>RF-050,<br>RF-052,<br>RF-053,<br>RF-055,<br>RF-056.|**I · E**|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 32 
-
-|**Caso de uso**|**Actores**|**Objetivo y precondiciones**|**Flujo principal**|**Alternativas, excepciones**<br>**y postcondición**|**Requisitos**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|---|
-|**CU-009**<br>Calcular tabla|**Principal:**<br>Sistema.|**Objetivo:**Calcular posiciones con las reglas<br>configuradas.<br>**Precondiciones:**resultados válidos.|recuperar resultados validados<br>→ calcular estadísticas de<br>equipo → aplicar puntos →<br>aplicar desempates → guardar<br>el resultado de la tabla.|—|RF-049,<br>RF-050,<br>RF-052,<br>RF-053,<br>RF-055.|**I · E**|
-|CU-010 / Registrar<br>incidente (manual)<br>**[PENDIENTE]**|Principal:<br>Capturista o<br>usuario<br>autorizado<br>**[PENDIENTE]**.|Objetivo: Registrar manualmente un<br>incidente. Solo si se valida la disciplina<br>reducida (Q-05).|identificar partido → registrar<br>incidente y personas o equipos<br>involucrados → guardar.|—|RF-057,<br>RF-058.|**P · C**<br>Solo si el curso la exige y se valida el<br>alcance manual. (Q-05, Q-06)|
-|CU-011 / Registrar<br>resolución y vigencia<br>**[PENDIENTE]**|Principal:<br>Autoridad<br>competente<br>**[PENDIENTE]**.|Objetivo: Registrar la resolución de un<br>caso y su vigencia. Solo si se valida la<br>disciplina reducida (Q-05).|abrir caso → revisar → registrar<br>resolución → registrar vigencia.|Alternativas: devolver a<br>revisión. / Excepciones:<br>alcance de la sanción sin<br>definir → caso en revisión<br>(AMB-001).|RF-062,<br>RF-063,<br>RF-065.|**P · C**<br>Solo si se valida disciplina manual<br>acotada. (Q-05)|
-|**CU-016**<br>Consultar portal público|**Principal:**<br>Usuario público.|**Objetivo:**Consultar información publicada.|elegir fecha/categoría/equipo →<br>consultar programación,<br>resultados o tabla publicados →<br>filtrar → visualizar.|—|RF-082 a<br>RF-084,<br>RF-089,<br>RF-090.|**S · E**<br>Tres consultas principales con filtros<br>básicos.|
-
-
-
-### **4.2 Modelo de procesos (BPMN)** 
-
-Los procesos se modelan con BPMN 2.0 (R7): círculo verde de borde fino para el inicio, círculo de borde grueso rojo para el fin, círculo doble para un evento de enlace entre partes de un diagrama, rectángulo redondeado para una tarea, rombo con × para una decisión exclusiva y carriles para los actores bajo el pool «Liga». Los procesos largos se dividen en partes enlazadas para que el texto sea legible. 
-
-La fuente describe los pasos, las decisiones y los actores principales de cada proceso. La asignación de cada tarea a un carril se tomó del actor indicado en los RF y los CU y es una **[PROPUESTA]** que debe validarse con la Liga (PEN-005, PEN-010). Se modelan los procesos de la entrega; P-07 y P-08 se listan en 2.6. P-04 (ciclo de vida del partido) se modela como máquina de estados. 
-
-#### **4.2.1 P-01 Configuración de temporada** 
-
-|**Objetivo**|Preparar el marco deportivo y normativo de una temporada.|
-|---|---|
-|**Inicio y actor iniciador**|Decisión de crear o configurar una nueva temporada. Inicia un usuario autorizado; participan administración y autoridades según sus facultades.|
-|**Entradas**|Temporada, convocatoria, categorías, grupos y reglas.|
-|**Decisiones**|¿La regla es explícita? ¿Está sujeta a validación?|
-|**Salida**|Temporada configurada y versionada.|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 33 
-
-|**Excepciones**|Información incompleta; regla no validada (queda pendiente).|
-|---|---|
-|**Requisitos y casos de uso**|RF-001 a RF-007; CU-001, CU-002.|
-
-
-
-
-
-<!-- Start of picture text -->
-©<br>6<br>3 Continua en parte B<br>S|S| 25s C) temporadaRegistrar; convocatoAsocia r ia eieetayConfigurares Configurarreglas; O<br>E Inicio<br><!-- End of picture text -->
-
-_Figura 4. P-01 Configuración de temporada, parte A de 2._ 
-
-
-
-<!-- Start of picture text -->
-©<br>s<br>3 Viene de parte A<br>5 Enviar a Marcar regla Versionar<br>2 autorizacién como pendiente configuracién<br>rr Temporada configurada<br>3 éLa regiavalidaci6n?requiere y versionada<br>=oc<br>—<br>z Revisar y<br>2 autorizar 0<br>8 rechazar la<br>FI< reglag Autorizada?.<br><!-- End of picture text -->
-
-_Figura 5. P-01 Configuración de temporada, parte B de 2._ 
-
-#### **4.2.2 P-02 Registro de clubes, equipos y jugadores** 
-
-|**Objetivo**|Mantener la estructura de participantes y el registro de jugadores.|
-|---|---|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 34 
-
-|**Inicio**|Alta o modificación de club, equipo o jugador.|
-|---|---|
-|**Entradas**|Identificación de la persona, datos administrativos, club, equipo, categoría, temporada y operación solicitada.|
-|**Decisiones**|¿Datos completos? ¿Registro permitido por las reglas confirmadas? ¿Persona elegible (solo con reglas confirmadas)?|
-|**Salida**|Registro válido o solicitud rechazada con causa; el historial se conserva.|
-|**Requisitos y casos de uso**|RF-008 a RF-014, RF-017, RF-019, RF-020; CU-003, CU-004.|
-
-
-
-
-
-<!-- Start of picture text -->
-8 eT<br>aE23 Ineo seleecionar club Ja temporada y grupo |] seleccionar persona del jugador registroi yVcanedconservar fysae(Solo conrelas, I1>)| Registro vaso<br>si<br>eal<br>No, | Rechazory mosraria ia solctus causa O<br>Solicitud rechazada<br>Las reglas de alta, baja y legibilidad estén pencientes de volidacién con la Liga (Q-03, @-16).<br><!-- End of picture text -->
-
-_Figura 6. P-02 Registro de clubes, equipos y jugadores (alta y baja básicas) [PROPUESTA]._ 
-
-#### **4.2.3 P-03 Programación manual y publicación** 
-
-|**Objetivo**|Registrar manualmente una programación sin conflictos duros y publicarla tras su aprobación.|
-|---|---|
-|**Actor iniciador**|Programador de partidos o usuario autorizado [perfil PENDIENTE].|
-|**Entradas**|Temporada, categoría, grupo, equipos, canchas y disponibilidad.|
-|**Decisiones**|¿Hay conflicto duro? ¿Requiere ajuste manual autorizado? ¿Está aprobada?|
-|**Salidas**|Programación en borrador o ajustada, o rechazo con el conflicto explicado; programación publicada.|
-|**Restricciones duras**|Equipo duplicado; cancha ocupada; cancha no disponible. La restricción por sanción depende de AMB-001**[PENDIENTE]**.|
-|**Requisitos y casos de uso**|RF-033, RF-036, RF-039, RF-040, RF-056, RF-090; CU-006, CU-007.|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 35 
-
-
-
-<!-- Start of picture text -->
-#é£ O partido manuavponosh tech, a imente: oe baieccoad etersra<br>EB]Z| sepaequposy cencnasope vem we<br>EL “esas<br>i le<br>a3id& portRevisor 90 ia si<br>| onecad, caere =teoesn pontlasserrst)<br>intae029 “var ico,oy rr bicas) |<br>i const<br>ai bitteprogramacion, ©<br>i ™<br><!-- End of picture text -->
-
-_Figura 7. P-03 Programación manual y publicación [PROPUESTA]._ 
-
-#### **4.2.4 P-04 Ciclo de vida del partido** 
-
-El estado del partido controla las acciones permitidas. Los estados base son BORRADOR → PROGRAMADO → CONFIRMADO → EN JUEGO → FINALIZADO; los estados alternativos son SUSPENDIDO, CANCELADO, REPROGRAMADO, NO PROGRAMADO y RESUELTO ADMINISTRATIVAMENTE. Los eventos y las transiciones exactas deben validarse con la Liga **[PENDIENTE]** (PEN-008), por lo que el diagrama es preliminar. Los estados mínimos de la entrega están pendientes de decisión (Q-13); la columna «Entrega» de la tabla lo indica. 
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 36 
-
-
-
-<!-- Start of picture text -->
-rosie<br>ata et<br>©<br><!-- End of picture text -->
-
-_Figura 8. Estados y transiciones preliminares del partido._ 
-
-|**Estado**|**Tipo**|**Implicación**|**Entrega[PROPUESTA]**|
-|---|---|---|---|
-|**BORRADOR**|Principal|Se puede preparar información antes de programación definitiva|**P · E**<br>Probable necesario para preparar la<br>programación. (Q-13)|
-|**PROGRAMADO**|Principal|Existe una asignación de jornada|**P · E**<br>Probable necesario para publicar la<br>programación. (Q-13)|
-|**CONFIRMADO**|Principal|Programación/partido confirmado|**P · C**<br>Estados alternativos por definir. (Q-13)|
-|**EN JUEGO**|Principal|Partido en ejecución|**P · C**<br>Estados alternativos por definir. (Q-13)|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 37 
-
-|**Estado**|**Tipo**|**Implicación**|**Entrega[PROPUESTA]**|
-|---|---|---|---|
-|**FINALIZADO**|Principal|Partido concluyó|**P · E**<br>Necesario para registrar el resultado. (Q-13)|
-|**SUSPENDIDO**|Alternativo|Interrupción que puede requerir reprogramación|**P · C**<br>Estados alternativos por definir. (Q-13)|
-|**CANCELADO**|Alternativo|Partido no se realizará en la programación vigente|**P · C**<br>Estados alternativos por definir. (Q-13)|
-|**REPROGRAMADO**|Alternativo|Partido cambia de fecha/hora/sede según reglas|**P · C**<br>Estados alternativos por definir. (Q-13)|
-|**NO PROGRAMADO**|Alternativo|Sin programación válida|**P · C**<br>Estados alternativos por definir. (Q-13)|
-|**RESUELTO**<br>**ADMINISTRATIVAMENTE**|Alternativo|Resultado/estado resuelto fuera del flujo deportivo normal|**P · C**<br>Estados alternativos por definir. (Q-13)|
-
-
-
-**Reglas del proceso:** no se eliminan partidos con historial (RN-020); toda transición registra usuario, fecha y motivo (RN-021); el estado controla las acciones permitidas (RN-019, VAL-008). Requisitos: RF-043 a RF-046. 
-
-#### **4.2.5 P-05 Registro de resultado y actualización de tabla** 
-
-|**Inicio y actor**|Partido finalizado con resultado disponible. Actúa un usuario autorizado.|
-|---|---|
-|**Entradas**|Marcador, estado y datos oficiales disponibles.|
-|**Decisiones**|¿Resultado validado? ¿Es una corrección? ¿Hay empate en la clasificación?|
-|**Salida**|Resultado oficial y tabla actualizada; se conserva el histórico.|
-|**Requisitos y casos de uso**|RF-047 a RF-050, RF-052, RF-053, RF-055, RF-056; CU-008, CU-009.|
-
-
-
-
-
-<!-- Start of picture text -->
-<Resultado valido?<br>Continua en parte B<br>of C) Capturar si confirmarresultadoMarcar 0 O<br>o| <8 Inicio<br>By) ss No<br>7) 38<br>&<br>Corregir captura<br><!-- End of picture text -->
-
-_Figura 9. P-05 Registro de resultado y actualización de tabla, parte A de 2._ 
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 38 
-
-
-
-<!-- Start of picture text -->
-Aplicar<br>criterios de<br>¢Hay empate? desempate<br>Viene de parte A =<br>O Calcular No.7 Guardar<br>estadisticas Caledets ro histérico<br>Conservar<br>posicion<br>=Cc<br>=|<br>Publicar cuando<br>esté autorizado<br>Resultado oficial y<br>tabla actualizada<br><!-- End of picture text -->
-
-_Figura 10. P-05 Registro de resultado y actualización de tabla, parte B de 2._ 
-
-#### **4.2.6 P-06 Disciplina reducida (pendiente de decisión)** 
-
-|Flujo reducido**[PENDIENTE]**|Solo si se valida: un usuario autorizado registra manualmente un incidente y lo relaciona con la persona o el equipo; una autoridad competente registra la resolución y<br>su vigencia; el sistema conserva la resolución sin alteración destructiva.|
-|---|---|
-|**Separación de funciones**|La captura (capturista) está separada de la resolución (autoridad competente), DD-010; aplica solo si se valida la disciplina reducida (Q-05).|
-|**Decisiones**|¿La autoridad registra la resolución? ¿Está definido el alcance de la sanción?|
-|**Alcance de la sanción**|Sobre si afecta la participación, la programación o ambas hay una ambigüedad abierta (AMB-001).|
-|**Requisitos y casos de uso**|RF-057, RF-058, RF-062, RF-063, RF-065; CU-010, CU-011.|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 39 
-
-
-
-<!-- Start of picture text -->
-ay (C77 Regarer<br>BZ ~~)<br>se I incidente de forma |<br>4 (rani{con partidoy reacionaro y persona ||<br>28 Incidente en un aaron eee!<br>= Partido (si se valida<br>< 2-05)<br>8 eAlcance de la sancién<br>ge33HeFe i|TGece T TT TTTTTS1 definido? (AMB-001),No,!‘TTT— DejarelcasopendientedeTES5 y||<br>85 ea | validacién (VAL-012, ——O<br>23 { H 1 _VAL-OT3) "| caso envevisién<br>i<br>|| eH 1 resoluciénegistrar sinla 1 O<br>t auditoria (RF-093) 1! 1{ alteraciénposibilidad(RN-030) def| Resolucién registrada<br>Flujo reducido y condicionado: solo si se valida la disciplina (Q-05). El bloqueo derivado de la sancién depende de aclarar AMB-001 (Q-17).<br><!-- End of picture text -->
-
-_Figura 11. P-06 Disciplina reducida y condicionada [PROPUESTA]; solo si se valida (Q-05)._ 
-
-#### **4.2.7 P-09 Flujo de publicación del portal** 
-
-La información pública sigue el flujo Borrador → Revisión → Publicado. En la entrega aplica a la programación, los resultados y la tabla. Solo se publica información validada (RN-025). El flujo exacto de revisión (quién crea y quién aprueba) está por definir **[PENDIENTE]** (PEN-009, Q-07). Requisitos: RF-056, RF-082 a RF-084, RF-089, RF-090; CU-007, CU-016. 
-
-
-
-_Figura 12. Estados de publicación de la información del portal._ 
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 40 
-
-### **4.3 Modelo de datos conceptual** 
-
-Modelo conceptual preliminar. Las entidades de la tabla provienen de la fuente, salvo las marcadas como **[PROPUESTA]** , que son entidades auxiliares o nombres deducidos del flujo para normalizar el modelo. Las cardinalidades se presentaron como hipótesis y deben validarse antes del diseño lógico (AMB-005). Los atributos exactos están por definir (véase 3.4). 
-
-|**Entidad**|**Propósito**|**Atributos conocidos**|**Origen**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|
-|**Persona**|Identidad reutilizable|Datos de identidad/administrativos; detalles exactos<br>**[PENDIENTE]**|Definida en la fuente|**S · E**<br>Atributos mínimos.|
-|**Club**|Entidad afiliada|Identificación del club; detalle**[PENDIENTE]**|Definida en la fuente|**I · E**|
-|**Equipo**|Representación deportiva de club|Club, categoría, grupo, temporada|Definida en la fuente|**I · E**|
-|**Temporada**|Periodo deportivo|Periodo; convocatoria asociada|Definida en la fuente|**I · E**|
-|**Convocatoria**|Documento normativo de temporada|Documento/contenido normativo|Definida en la fuente|**S · C**<br>Referencia/versión de reglas.|
-|**Categoría**|Nivel/categoría deportiva|Nombre; contexto de temporada|Definida en la fuente|**I · E**|
-|**Grupo**|Agrupación dentro de categoría|Identificación del grupo|Definida en la fuente|**I · E**|
-|**Competencia/Fase**|Estructura de competencia y fase|Tipo/fase/formato; detalle**[PENDIENTE]**|Definida en la fuente|**P · C**<br>¿Necesaria para tabla y partidos? (Q-14)|
-|**Partido**|Unidad competitiva|Local/visitante, fecha/hora, estado, cancha, competencia,<br>incidencias|Definida en la fuente|**I · E**|
-|**Cancha**|Recurso físico|Características, disponibilidad, bloqueo/mantenimiento|Definida en la fuente|**I · E**|
-|**Incidente**|Hecho disciplinario|Participantes, evidencia, presunta infracción|Definida en la fuente|**P · C**<br>Solo si se valida disciplina.|
-|**Resolución**|Determinación de autoridad|Decisión, vigencia; detalle**[PENDIENTE]**|**[PROPUESTA]**entidad auxiliar o<br>nombre deducido|**P · C**<br>Solo si se valida disciplina.|
-|**Sanción**|Consecuencia disciplinaria|Vigencia, estado, relación con regla|Definida en la fuente|**P · C**<br>Solo si se valida disciplina.|
-|**Resultado**|Marcador/resultado oficial|Marcador, estado; detalle**[PENDIENTE]**|Definida en la fuente|**I · E**|
-|**Programación**|Organización de jornada/partidos|Fecha, hora, cancha/sede, estado|Definida en la fuente|**S · E**<br>Jornada/partidos manuales.|
-|**Usuario**|Cuenta de acceso|Credenciales/estado; detalle**[PENDIENTE]**|Definida en la fuente|**I · E**|
-|**Rol**|Conjunto de permisos|Nombre y permisos|Definida en la fuente|**I · E**<br>Pocos perfiles.|
-|**Registro de jugador**|Relación persona-equipo-temporada|Persona, equipo, categoría, temporada, estado, historial|**[PROPUESTA]**entidad auxiliar o<br>nombre deducido|**S · E**<br>Alta/baja y estado.|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 41 
-
-|**Entidad**|**Propósito**|**Atributos conocidos**|**Origen**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|
-|**Disponibilidad de**<br>**cancha**|Disponibilidad temporal|Cancha, fecha/hora, estado|**[PROPUESTA]**entidad auxiliar o<br>nombre deducido|**S · E**<br>Mínima.|
-|**Auditoría**|Trazabilidad de acciones|Usuario, fecha, acción, motivo/contexto|**[PROPUESTA]**entidad auxiliar o<br>nombre deducido|**S · E**<br>Mínima.|
-|**Permiso**|Autorización por módulo/acción|Módulo, acción|**[PROPUESTA]**entidad auxiliar o<br>nombre deducido|**S · E**<br>Matriz mínima pendiente.|
-
-
-
-#### **Relaciones principales.** Todas las cardinalidades están por validar. 
-
-|**Origen**|**Relación**|**Destino**|**Cardinalidad**|**Estado**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|---|
-|Club|tiene|Equipo por temporada|1:N|**[PENDIENTE]**validar|**I · E**|
-|Equipo|pertenece a|Categoría/Grupo|N:1|**[PENDIENTE]**validar|**I · E**|
-|Equipo|registra|Persona|N:M mediante Registro|**[PENDIENTE]**validar|**S · E**<br>Registro de jugador como relación.|
-|Partido|pertenece a|Competencia/Fase|N:1|**[PENDIENTE]**validar|**P · C**<br>Si se valida Competencia/Fase<br>(Q-14).|
-|Partido|usa|Cancha|N:1|**[PENDIENTE]**validar|**I · E**|
-|Partido|tiene|Resultado|1:1 cuando finaliza|**[PENDIENTE]**validar|**I · E**|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 42 
-
-
-
-<!-- Start of picture text -->
-Cardinalidades [PENDIENTE] (AMB-005). 5<br>Ga, par. rN<br> incidente }—______—_sisevaldo_" pesoiucign |—#1¢vala_{' sancién<br>Sirencis<br>(ce } (io)<br>Disponibilidad de cancha<br>| Competencia/Fase ;<br><!-- End of picture text -->
-
-_Figura 13. Modelo entidad-relación preliminar de la entrega. Las cardinalidades están [PENDIENTE] (AMB-005)._ 
-
-Varias entidades del diagrama (REGISTRO_JUGADOR, ROL_USUARIO y PERMISO) son relaciones o entidades auxiliares **[PROPUESTA]** ; sus nombres y cardinalidades deben validarse. Incidente, Resolución y Sanción solo se modelan si se valida la disciplina reducida (Q-05), y Competencia/Fase solo si se valida (Q-14). La relación del Incidente con el Partido sigue **[PENDIENTE]** . 
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 43 
-
-### **4.4 Estructura modular y arquitectura conceptual** 
-
-
-
-<!-- Start of picture text -->
-(Estado de entrega [PROPUESTA] )<br>M-O1 Administracién {M09 Disciplina »)<br>y seguridad \reducida<br>re<br>7<br>M-02 Temporadasy normativa M-03deportivaOrganizaci6n M-04elegibilidadRegistros y M-06y recursosCanchas M-07 ‘manualProgramacién M-08resultadosPartidos y M-11y publicacionPortal piblico eaea<br>|"<br>Pendientede decision |<br><!-- End of picture text -->
-
-_Figura 14. Descomposición modular de la entrega (M-01 a M-04, M-06 a M-08, M-11; M-09 pendiente). No se exige una interfaz o servicio independiente por módulo._ 
-
-Directrices arquitectónicas de la entrega **[PROPUESTA]** : aplicación web responsive; backend modular y una sola aplicación; base de datos relacional; separación lógica entre interfaz, reglas de la demostración, autorización y datos; y un componente lógico de validación de conflictos de programación. No se incluyen API pública, integraciones, almacenamiento documental, CI/CD ni contenedores. Que el frontend sea separado o integrado es una decisión abierta. El stack y la arquitectura deben ser justificados por el equipo. 
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 44 
-
-
-
-<!-- Start of picture text -->
-Aplicacién web responsive Unica y modular [PROPUESTA]<br>Vista publica de solo consulta Interfaz interna autenticada<br>(programacién, resultados, tabla) (formularios y listados)<br>Logica de negocio modular:<br>temporadas, equipos, partidos, resultados,<br>tabla, validacién de conflictos<br>a<br>Autenticacion, autorizacién (RBAC minimo) Base de datos relacional<br>y auditoria de acciones criticas (datos internos y publicados separados)<br><!-- End of picture text -->
-
-_Figura 15. Arquitectura conceptual de la entrega [PROPUESTA]: una aplicación modular y una base de datos relacional. El stack y el despliegue siguen [PENDIENTE] (PEN-024 a PEN-026, PEN-036, PEN-037)._ 
-
-#### **Propuestas de diseño del análisis (R3 §18.2).** No son requisitos de la fuente y deben justificarse antes de adoptarse: 
-
-|**ID**|**Propuesta**|**Motivo**|**Estado**|**Entrega[PROPUESTA]**|
-|---|---|---|---|---|
-|DP-001|Mantener módulos de dominio desacoplados dentro del<br>backend|Reduce acoplamiento y facilita evolución|**[PROPUESTA]**|**I · C**|
-|DP-002|Versionar explícitamente reglas de temporada|Alineado con trazabilidad normativa|**[PROPUESTA]**|**S · C**<br>Referencia de reglas por temporada.|
-|DP-003|Diseñar una máquina de estados de partido|El estado controla acciones y auditoría|**[PROPUESTA]**|**I · E**|
-|DP-004|Tratar Programación como entidad/documento de<br>jornada además de los partidos|Facilita histórico, publicación y trazabilidad|**[PROPUESTA]**|**I · C**|
-|DP-005|Mantener un módulo lógico específico para la validación de<br>conflictos de programación|La programación es manual; el problema se reduce a<br>validar conflictos duros|**[PROPUESTA]**|**S · C**<br>Módulo lógico de validación; el generador<br>se aplaza.|
-|DP-006|Separar datos publicados de datos internos a nivel de<br>aplicación y autorización|Reduce exposición accidental|**[PROPUESTA]**|**I · E**|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 45 
-
-Decisiones arquitectónicas pendientes **[PENDIENTE]** : stack de frontend; stack de backend; motor de base de datos relacional; estrategia de autenticación y sesión; frontend separado o integrado; y entornos y alojamiento de la demostración (PEN-024 a PEN-026, PEN-030, PEN-036, PEN-037). 
-
-### **4.5 Flujo de información** 
-
-**Flujo por operación.** Entrada del usuario → interfaz → validación de formato y permisos → reglas de negocio → procesamiento del módulo → persistencia transaccional → auditoría → resultado → publicación (solo cuando corresponda). 
-
-**Flujo público.** Datos internos → validación y autorización → estado publicado → portal público → consulta del usuario. No existe flujo inverso desde el portal para editar información. 
-
-**Trazabilidad de la entrega.** Temporada → Categoría → Grupo → Equipo → Jornada/Partido → Resultado → Tabla → Publicación. Cada cambio crítico conserva usuario, fecha y motivo. Si se valida la disciplina, se añade Incidente → Resolución → Sanción **[PENDIENTE]** . 
-
-### **4.6 Matriz de trazabilidad** 
-
-La trazabilidad se presenta a nivel funcional. En el diseño detallado, cada requisito deberá vincularse además con historias de usuario, pruebas y criterios de 
-
-aceptación específicos. 
-
-|**Requisitos**|**Casos de**<br>**uso**|**Proces**<br>**o**|**Módul**<br>**o**|**Pantalla**|**Entidades**|**Entrega**<br>**[PROPUES**<br>**TA]**|
-|---|---|---|---|---|---|---|
-|RF-001 a RF-007|CU-001,<br>CU-002|P-01|M-02|UI-003,<br>UI-004|Temporada,<br>Convocatoria,<br>Categoría, Grupo|S · E|
-|RF-008 a RF-012|CU-003|P-02|M-03|UI-005|Club, Equipo, Persona|S · E|
-|RF-013, RF-014;<br>RF-017, RF-019,<br>RF-020**[PENDIENTE]**|CU-004|P-02|M-04|UI-006|Persona, Registro de<br>jugador, Equipo,<br>Temporada|S · E (P para<br>RF-017,<br>019, 020)|
-|RF-027, RF-029,<br>RF-030|CU-005|P-03|M-06|UI-008|Cancha, Disponibilidad<br>de cancha|S · E|
-|RF-033, RF-036,<br>RF-039, RF-040|CU-006|P-03|M-07|UI-009|Programación, Partido,<br>Equipo, Cancha|S · E|
-|RF-043 a RF-046|CU-008|P-04|M-08|UI-010|Partido, estado,<br>Auditoría|S · E|
-|RF-047 a RF-050,<br>RF-052, RF-053,<br>RF-055, RF-056|CU-008,<br>CU-009|P-05|M-08|UI-011,<br>UI-012|Resultado, Partido,<br>Equipo|I · E (RF-050<br>pendiente)|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 46 
-
-|**Requisitos**|**Casos de**<br>**uso**|**Proces**<br>**o**|**Módul**<br>**o**|**Pantalla**|**Entidades**|**Entrega**<br>**[PROPUES**<br>**TA]**|
-|---|---|---|---|---|---|---|
-|RF-056, RF-082 a<br>RF-084, RF-089,<br>RF-090|CU-007,<br>CU-016|P-09|M-11|UI-020|Datos publicados de<br>programación,<br>resultados y tabla|I · E|
-|RF-093|Transversal|Transve<br>rsal|M-01|UI-022<br>**[PENDIEN**<br>**TE]**|Auditoría|S · E|
-|RF-057, RF-058,<br>RF-062, RF-063,<br>RF-065**[PENDIENTE]**|CU-010,<br>CU-011|P-06|M-09|UI-015|Incidente, Resolución,<br>Sanción|P · C|
-
-
-
-**Trazabilidad [PROPUESTA].** La matriz cubre solo lo que forma parte de la entrega. Los requisitos aplazados y sus casos de uso, pantallas y entidades se listan en 2.6. 
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 47 
-
-## **Apéndice A. Pendientes por definir** 
-
-**Nota de la revisión 0.3 [PROPUESTA].** Los pendientes se conservan con su identificador. La columna «Relación con la entrega» indica si el pendiente aplica a la entrega o a lo que queda fuera (2.6). Las preguntas nuevas están en el Apéndice C. 
-
-Información faltante que debe definirse antes de convertir los elementos relacionados en requisitos definitivos. Se conservan los identificadores PEN de la fuente. 
-
-#### **Requisitos** 
-
-|**ID**|**Pendiente**|**Por qué debe definirse**|**Quién debería**<br>**aclararlo**|**Relación con la**<br>**entrega**<br>**[PROPUESTA]**|
-|---|---|---|---|---|
-|PEN-0<br>01|Prioridad formal de cada<br>requisito|Permite ordenar backlog<br>y entregas|Equipo/cliente/<br>profesor|Aplica a la entrega|
-|PEN-0<br>02|Alcance exacto de cada actor|Evita permisos<br>incorrectos|Liga /<br>autoridades|Aplica a la entrega|
-|PEN-0<br>03|Requisitos de importación de<br>datos históricos|Afecta modelo y<br>migración|Liga|Fuera del alcance (2.6)|
-|PEN-0<br>04|Qué operaciones son<br>obligatorias por temporada|Define validaciones y<br>flujos|Liga|Aplica a la entrega|
-
-
-
-#### **Procesos** 
-
-|**ID**|**Pendiente**|**Por qué debe definirse**|**Quién debería**<br>**aclararlo**|**Relación con la**<br>**entrega**<br>**[PROPUESTA]**|
-|---|---|---|---|---|
-|PEN-0<br>05|Quién crea y quién aprueba<br>programación|Define separación de<br>funciones|Liga|Aplica a la entrega|
-|PEN-0<br>06|Qué es obligatorio antes de<br>programar|Define precondiciones<br>del algoritmo|Liga|Aplica a la entrega|
-|PEN-0<br>07|Qué ocurre formalmente al<br>bloquear una cancha|Define reprogramación y<br>conflictos|Liga|Aplica a la entrega|
-|PEN-0<br>08|Qué sucede ante una<br>suspensión/cancelación|Define estados y<br>transiciones reales|Liga|Aplica a la entrega|
-|PEN-0<br>09|Flujo exacto de<br>publicación/revisión|Define gobernanza del<br>portal|Liga|Aplica a la entrega|
-
-
-
-#### **Usuarios y permisos** 
-
-|**ID**|**Pendiente**|**Por qué debe definirse**|**Quién debería**<br>**aclararlo**|**Relación con la**<br>**entrega**<br>**[PROPUESTA]**|
-|---|---|---|---|---|
-|PEN-0<br>10|Matriz rol → módulo → acción|Es necesaria para<br>implementar RBAC|Liga|Aplica a la entrega|
-|PEN-0<br>11|Facultades exactas del Comité<br>Ejecutivo, Secretaría, Tesorería y<br>comisiones|El modelo organizacional<br>requiere facultades<br>explícitas|Liga|Aplica a la entrega|
-|PEN-0<br>12|Acciones permitidas a<br>presidente/delegado de club|Define alcance de<br>autoservicio|Liga|Fuera del alcance (2.6)|
-|PEN-0<br>13<br>**nterfaz**|Acciones permitidas al jugador|Define participación<br>directa o sólo consulta|Liga|Fuera del alcance (2.6)|
-|**ID**|**Pendiente**|**Por qué debe definirse**|**Quién debería**<br>**aclararlo**|**Relación con la**<br>**entrega**<br>**[PROPUESTA]**|
-|PEN-0<br>14|Prototipo y navegación final|Reduce retrabajo de<br>desarrollo|Equipo +<br>cliente|Aplica a la entrega|
-
-
-
-#### **Interfaz** 
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 48 
-
-#### **Base de datos** 
-
-|**ID**|**Pendiente**|**Por qué debe definirse**|**Quién debería**<br>**aclararlo**|**Relación con la**<br>**entrega**<br>**[PROPUESTA]**|
-|---|---|---|---|---|
-|PEN-0<br>18|Identificadores oficiales y claves|Evita duplicados y<br>ambigüedad|Liga + equipo|Aplica a la entrega|
-|PEN-0<br>19|Atributos de persona/jugador|Define protección de<br>datos y formularios|Liga|Aplica a la entrega|
-|PEN-0<br>20|Estructura detallada de cédula e<br>incidentes|Es núcleo del módulo<br>disciplinario|Liga / árbitros|Fuera del alcance (2.6)|
-|PEN-0<br>21|Catálogo de artículos,<br>infracciones y sanciones|Necesario para motor de<br>reglas disciplinarias|Liga|Fuera del alcance (2.6)|
-|PEN-0<br>22|Modelo definitivo de<br>disponibilidad de canchas|Crítico para<br>programación|Liga|Aplica a la entrega|
-|PEN-0<br>23|Estructura de<br>documentos/evidencias|Afecta almacenamiento<br>documental|Liga|Fuera del alcance (2.6)|
-
-
-
-#### **Arquitectura** 
-
-|**ID**|**Pendiente**|**Por qué debe definirse**|**Quién debería**<br>**aclararlo**|**Relación con la**<br>**entrega**<br>**[PROPUESTA]**|
-|---|---|---|---|---|
-|PEN-0<br>24|Stack tecnológico|Requisito para prototipos<br>e implementación|Equipo|Aplica a la entrega|
-|PEN-0<br>25|Frontend separado o integrado|Afecta despliegue y<br>arquitectura|Equipo|Aplica a la entrega|
-|PEN-0<br>26|Base de datos concreta|Afecta persistencia y<br>despliegue|Equipo|Aplica a la entrega|
-|PEN-0<br>27|Estrategia del motor de reglas|Afecta mantenibilidad y<br>pruebas|Equipo|Fuera del alcance (2.6)|
-|PEN-0<br>28|Algoritmo de programación|Es un problema técnico<br>central|Equipo +<br>validación con<br>reglas reales|Fuera del alcance (2.6)|
-
-
-
-#### **Seguridad** 
-
-|**ID**|**Pendiente**|**Por qué debe definirse**|**Quién debería**<br>**aclararlo**|**Relación con la**<br>**entrega**<br>**[PROPUESTA]**|
-|---|---|---|---|---|
-|PEN-0<br>29|Matriz de permisos detallada|Sin ella no se puede<br>implementar autorización<br>correctamente|Liga|Aplica a la entrega|
-|PEN-0<br>30|Políticas de<br>sesiones/contraseñas|Convierte seguridad<br>general en controles<br>verificables|Equipo|Aplica a la entrega|
-|PEN-0<br>31|Política de respaldo/recuperación|Define continuidad<br>operativa|Liga + equipo|Aplica a la entrega|
-|PEN-0<br>32|Datos públicos vs restringidos|Evita exposición de<br>información<br>personal/disciplinaria|Liga|Aplica a la entrega|
-
-
-
-#### **Integraciones** 
-
-|**ID**|**Pendiente**|**Por qué debe definirse**|**Quién debería**<br>**aclararlo**|**Relación con la**<br>**entrega**<br>**[PROPUESTA]**|
-|---|---|---|---|---|
-|PEN-0<br>33|Integraciones realmente<br>necesarias|Evita sobrecoste y<br>dependencia innecesaria|Liga + equipo|Fuera del alcance (2.6)|
-|PEN-0<br>34|Proveedor y presupuesto de<br>WhatsApp/SMS/correo|Afecta factibilidad|Liga|Fuera del alcance (2.6)|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 49 
-
-|**ID**|**Pendiente**|**Por qué debe definirse**|**Quién debería**<br>**aclararlo**|**Relación con la**<br>**entrega**<br>**[PROPUESTA]**|
-|---|---|---|---|---|
-|PEN-0<br>35|Necesidad real de mapas/API<br>pública/autenticación externa|Afecta alcance|Liga + equipo|Fuera del alcance (2.6)|
-|**nfraes**<br>**ID**|**tructura**<br>**Pendiente**|**Por qué debe definirse**|**Quién debería**<br>**aclararlo**|**Relación con la**<br>**entrega**<br>**[PROPUESTA]**|
-|PEN-0<br>36|Ambiente de<br>desarrollo/pruebas/producción|Necesario para<br>despliegue controlado|Equipo|Aplica a la entrega|
-|PEN-0<br>37|Dominio/hosting/infraestructura|Necesario para<br>despliegue funcional|Liga + equipo|Aplica a la entrega|
-|PEN-0<br>38|Estrategia CI/CD y contenedores|Necesaria sólo si se<br>adopta|Equipo|Fuera del alcance (2.6)|
-
-
-
-#### **Infraestructura** 
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 50 
-
-## **Apéndice B. Ambigüedades, riesgos y verificación de fuentes** 
-
-#### **Ambigüedades abiertas** 
-
-|**ID**|**Ambigüedad**|**Impacto**|
-|---|---|---|
-|AMB-001|Alcance de la sanción: participación, programación o ambas|Afecta reglas, UI, programación y<br>BD|
-|AMB-002|Qué resultado se considera oficial|Afecta tablas y publicación|
-|AMB-003|Qué elementos pueden publicarse|Afecta privacidad y portal|
-|AMB-005|Cardinalidades de datos preliminares|Afecta modelo ER|
-|AMB-006|Permisos exactos por cargo/comisión|Afecta seguridad y procesos|
-
-
-
-#### **Riesgos identificados** 
-
-|**ID**|**Riesgo**|**Impacto**|**Mitigación**|
-|---|---|---|---|
-|RSK-001|Reglas pueden requerir<br>interpretación|Automatización incorrecta|Versionado, validación humana y<br>autorización|
-|RSK-002|Convocatorias cambian por<br>temporada|Diseño rígido|Configuración versionable|
-|RSK-003|Datos históricos no<br>estructurados|Migración/duplicados|Catálogos, identificadores,<br>validación|
-|RSK-005|Disciplina exige trazabilidad|Riesgo de perder evidencia o<br>contexto|Modelo de expediente + auditoría +<br>historial inmutable|
-|RSK-006|Automatización incorrecta por<br>mala parametrización|Decisiones<br>deportivas/disciplinares<br>erróneas|Validación humana y pruebas con<br>casos reales|
-|RSK-007|Exposición de datos personales|Riesgo de privacidad|Separar datos internos/públicos y<br>permisos explícitos|
-|RSK-008|Demasiadas decisiones<br>técnicas abiertas|Retraso del desarrollo|Cerrar arquitectura durante sprint de<br>arquitectura|
-
-
-
-#### **Contradicciones y verificación del audio** 
-
-**Nota de la revisión 0.3.** AMB-004 (excepciones en reglas) y RSK-004 (programación como problema de restricciones) se retiraron de las tablas porque corresponden a funciones fuera del alcance de la entrega (2.6). 
-
-En el contenido textual de R1 no se identifica ninguna contradicción explícita entre las definiciones centrales. Sí existen varios puntos deliberadamente abiertos que no deben resolverse por suposición. 
-
-El audio del levantamiento (R2) no pudo transcribirse de forma confiable. Antes de cerrar el ERS deben comprobarse las respuestas dadas verbalmente y registrar como contradicción cualquier respuesta que difiera de estas definiciones **[PENDIENTE]** . 
-
-## **Apéndice C. Preguntas pendientes para el equipo, el profesor y la Liga** 
-
-Estas preguntas bloquean o condicionan decisiones de alcance. Mientras no se respondan, los elementos relacionados conservan estado P (pendiente) o se mantienen fuera de la entrega. «Quién» indica quién debería responder **[PROPUESTA]** . 
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 51 
-
-|**ID**|**Tema**|**Pregunta**|**Elementos**<br>**afectados**|**Quién**|**Estado**|
-|---|---|---|---|---|---|
-|Q-01|Renovación y<br>transferencia<br>de jugadores|¿Son obligatorias para la evaluación o<br>para la operación real? Si lo son, ¿cuál es<br>la regla vigente de la Liga?|RF-015, RF-016,<br>VAL-001, M-04|Profesor /<br>Liga|Abierta|
-|Q-02|Alcance que<br>exige la<br>rúbrica|¿El entregable académico exige<br>implementar todo el alcance del ERS o<br>basta una versión acotada y demostrable?<br>¿Qué funciones exige explícitamente la<br>rúbrica (se necesita la rúbrica por<br>escrito)?|Todo el alcance de<br>entrega|Profesor|Abierta|
-|Q-03|Reglamento y<br>Convocatoria<br>como fuente|¿El Reglamento y la Convocatoria 2025–<br>2026 estarán disponibles y validados para<br>el equipo? Sin ellos no se fijan reglas<br>oficiales de puntos, desempates, registro,<br>sanciones ni ascensos.|RF-002, RF-006,<br>RF-007, RN-002, R4|Liga /<br>Profesor|Abierta|
-|Q-04|Programación<br>automática|¿Es obligatoria en la evaluación? Si sí,<br>¿basta una primera versión que genere<br>enfrentamientos o debe asignar fechas,<br>horas y canchas?|RF-034, RF-035,<br>RF-037, RF-038,<br>RF-041, RF-042,<br>CU-006, P-03|Profesor|Abierta|
-|Q-05|Disciplina en<br>el producto<br>demostrable|¿Debe aparecer? Si sí, ¿basta con<br>registrar manualmente incidencias y<br>resoluciones o se piden cédulas,<br>expediente, recursos, evidencias y<br>castigados? ¿Qué campos son<br>indispensables?|RF-057–RF-068,<br>CU-010, CU-011,<br>P-06, M-09|Profesor /<br>Liga|Abierta|
-|Q-06|Arbitraje y<br>cédula|¿Basta con asignar un árbitro como dato<br>del partido y registrar una incidencia<br>textual? ¿Se exige catálogo,<br>disponibilidad y cédula?|RF-021–RF-026,<br>CU-010, UI-007,<br>UI-014|Profesor /<br>Liga|Abierta|
-|Q-07|Matriz mínima<br>de permisos|¿Quién puede registrar y quién puede<br>aprobar o publicar programación,<br>resultados y sanciones? ¿Qué perfiles se<br>usarán en la demostración?|RF-040, RF-090,<br>DD-009, RNF-003,<br>PEN-005, PEN-010|Liga /<br>Profesor|Abierta|
-|Q-08|Datos de<br>jugadores y<br>privacidad|¿Qué información de jugadores puede<br>almacenar y publicar el prototipo? ¿Deben<br>ser datos ficticios? ¿Qué datos son<br>públicos?|RNF-012, AMB-003,<br>PEN-019, PEN-032|Liga /<br>Profesor|Abierta|
-|Q-09|Integraciones,<br>importación,<br>exportación y<br>alojamiento|¿Se requiere carga histórica,<br>notificaciones, exportación o alojamiento<br>accesible en internet? Hoy son<br>dependencias no resueltas.|Integraciones,<br>RF-092, REP-011,<br>PEN-003, PEN-037|Profesor /<br>Liga|Abierta|
-|Q-10|Reglas de<br>demostración:<br>puntos y<br>desempates|¿Qué puntuación y criterios de desempate<br>se usarán en la demostración? Si no son<br>oficiales, deben rotularse como datos de<br>demostración.|RF-049, RF-050,<br>RN-023, VAL-011|Liga /<br>Profesor|Abierta|
-|Q-11|Temporada,<br>categoría y<br>grupo de<br>demostración|¿Cuál temporada, categoría y grupo se<br>usarán y qué datos pueden usarse (reales<br>autorizados o ficticios)?|RF-001, RF-004,<br>RF-005, CU-001|Profesor /<br>Liga|Abierta|
-|Q-12|Resultado<br>oficial|¿Qué se considera resultado oficial y<br>cuándo se vuelve oficial?|AMB-002, RF-048,<br>RF-055, VAL-009|Liga|Abierta|
-|Q-13|Estados<br>mínimos del<br>partido|¿Qué estados y transiciones se usarán<br>(suspensión, cancelación, pospuesto)?|RF-043, P-04,<br>PEN-008|Liga|Abierta|
-|Q-14|Competencia/<br>Fase en el<br>modelo|¿Debe existir la entidad<br>Competencia/Fase en la entrega o basta<br>temporada–categoría–grupo?|Entidad<br>Competencia/Fase,<br>RF-076|Equipo /<br>Profesor|Abierta|
-|Q-15|Auditoría|¿Se requiere una pantalla de consulta de<br>auditoría o basta registrar las acciones<br>críticas?|RF-093, UI-022,<br>REP-010, VAL-016|Profesor /<br>Equipo|Abierta|
-|Q-16|Reglas de<br>elegibilidad|¿Qué reglas de registro y bloqueo están<br>confirmadas por la Liga?|RF-017, RF-019,<br>RN-009, RN-010,<br>VAL-002, CA-006|Liga|Abierta|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 52 
-
-|**ID**|**Tema**|**Pregunta**|**Elementos**<br>**afectados**|**Quién**|**Estado**|
-|---|---|---|---|---|---|
-|Q-17|AMB-001:<br>alcance de la<br>sanción|¿La sanción afecta participación,<br>programación o ambas?|RF-064, RF-020,<br>RN-011, RN-015,<br>VAL-006, CA-004|Liga|Abierta|
-|Q-18|Ascensos,<br>descensos y<br>fases finales|¿Se piden en la evaluación? Si no, ¿se<br>registra el cierre fuera del sistema?<br>¿Cuáles son las reglas y el formato?|RF-069–RF-081,<br>CU-014, CU-015,<br>P-07, P-08|Profesor /<br>Liga|Abierta|
-|Q-19|Valores<br>cuantitativos<br>de los RNF|¿Qué metas medibles (disponibilidad,<br>rendimiento, accesibilidad, respaldo)<br>acepta el equipo verificar y en qué<br>entorno?|RNF-001, 002, 008,<br>010, 011|Equipo /<br>Profesor|Abierta|
-|Q-20|Roles de<br>Scrum y<br>revisión|¿Pueden combinarse responsabilidades<br>de Scrum, análisis, arquitectura,<br>desarrollo y pruebas? ¿Quién revisa<br>código e integración?|Sección 1.2|Equipo /<br>Profesor|Abierta|
-|Q-21|RNF-006 y<br>RNF-009|¿Qué criterio medible tendrán la<br>usabilidad y la mantenibilidad?|RNF-006, RNF-009|Equipo|Abierta|
-|Q-22|Tabla de<br>aprobaciones|En el registro de aprobaciones el nombre<br>del profesor aparece también como<br>representante de la Liga. ¿Quién es el<br>representante de la Liga? No se corrigió<br>por suposición.|Registro de<br>aprobaciones, 1.2|Equipo|Abierta|
-|Q-23|Audio R2 y<br>fuentes R4|¿Quién verificará el audio del<br>levantamiento y consultará el Reglamento<br>y la Convocatoria directamente?|R2, R4, Apéndice B|Equipo|Abierta|
-|Q-24|Calendario y<br>entregables|¿Las 10 semanas son el calendario<br>aplicable? ¿Qué se evaluará (ERS,<br>BPMN, arquitectura, prototipo, sistema<br>desplegado, pruebas)? ¿Hay hitos o<br>fechas de entrega?|Sección 2.4, plan|Profesor|Abierta|
-
-
-
-## **Apéndice D. Supuestos inevitables [PROPUESTA]** 
-
-Los siguientes supuestos son necesarios para poder proponer el alcance de entrega. **Son propuestas pendientes de aprobación, no requisitos aprobados.** 
-
-|**ID**|**Supuesto**|**Relacionado con**|
-|---|---|---|
-|S-01|El calendario aplicable es de 10 semanas con un equipo de tres personas (2.4).|Q-24|
-|S-02|La entrega cubre una temporada de trabajo y una categoría/grupo de demostración.|Q-11|
-|S-03|Se usan datos ficticios o autorizados y reglas de puntos y desempates de demostración<br>rotuladas como no oficiales mientras no haya fuente validada.|Q-03, Q-08, Q-10|
-|S-04|Los perfiles se reducen a administración, operación, disciplina (condicional) y público,<br>con nombres y permisos pendientes.|Q-07|
-|S-05|La arquitectura es una aplicación modular única con base de datos relacional; el stack<br>y el despliegue son decisión técnica del equipo.|PEN-024 a 026|
-|S-06|La prioridad de entrega (E/C/O) es una propuesta; la prioridad de producto<br>(Alta/Media/Baja) no cambia.|Q-02|
-|S-07|La auditoría mínima cubre acciones críticas: cambios de programación, resultado y<br>corrección, transiciones de estado del partido y publicación; el contenido exacto está<br>pendiente.|Q-15|
-|S-08|La disciplina solo se incluye como registro manual acotado si se valida; en caso<br>contrario queda fuera de la entrega.|Q-05|
-|S-09|No se presume que el uso de IA reduzca el esfuerzo de análisis, integración, pruebas o<br>mantenimiento.|—|
-|S-10|Mientras no se definan los estados mínimos del partido se mantienen los de la fuente<br>como preliminares.|Q-13|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
-ERS · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia 
-
-Rev. 0.3  |  Pág. 53 
-
-|**ID**|**Supuesto**|**Relacionado con**|
-|---|---|---|
-|S-11|Lo que queda fuera se conserva solo por identificador en 2.6, para trazabilidad.|—|
-
-
-
-Borrador para seguimiento · Octubre de 2026 
-
-Descripción de requisitos del software 
-
+| Campo | Valor |
+| --- | --- |
+| Proyecto | SIGLIM — Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia. Nombre definitivo del proyecto: **SIGLIM**. |
+| Documento | Especificación de requisitos de software (ERS), estructurada según IEEE Std 830-1998. |
+| Revisión | 0.4. Versiones previas: 0.1, 0.2 y 0.3. |
+| Fecha | Octubre de 2026 |
+| Elaborado por | López Meza Leonardo, por encargo del equipo de trabajo (véase 1.2). |
+| Seguimiento | Profesor de Fundamentos de Ingeniería de Software: Claudio Ernesto Florian Arenas. |
+| Estado | Borrador para seguimiento. Los requisitos no han sido aprobados por la Liga. La revisión 0.4 sustituye la reducción de perfiles de la 0.3 por el alcance acordado por el equipo el 19-oct-2026 (registro de decisiones). |
+
+### Historial de revisiones
+
+| Revisión | Fecha | Autor | Descripción |
+| --- | --- | --- | --- |
+| 0.1 | Octubre de 2026 | López Meza Leonardo | Primera versión. Se organiza la documentación técnica base de la Liga en la estructura IEEE 830, con prioridades propuestas y pendientes señalados. |
+| 0.2 | Octubre de 2026 | López Meza Leonardo | Etiquetado de estado y prioridad de entrega sobre el contenido integral (versión intermedia). |
+| 0.3 | Octubre de 2026 | López Meza Leonardo | Reducción al alcance de entrega propuesto para un equipo de tres personas; sección 2.6 y Apéndices C y D. Aprobada parcialmente por el profesor y el equipo el 07/10/26. |
+| 0.4 | 19 de octubre de 2026 | López Meza Leonardo | Se recuperan los 12 tipos de usuario y su funcionalidad (DEC-01). Se incorporan las respuestas del cliente en el levantamiento (R2), los formatos de carta (R8) y las decisiones del equipo (R9), sobre la base del ERS 0.3 con las ediciones del equipo (DEC-41): cédula con validación arbitral, disciplina, tesorería, canchas de club, transferencias entre temporadas, liguilla, ascensos y descensos, reportes, portal ampliado y notificaciones. Nuevos RF-094 a RF-145, RNF-016 a RNF-019, RN-037 a RN-058, VAL-017 a VAL-028, CA-009 a CA-014, CU-017 a CU-029, P-10 a P-13, UI-023 a UI-034, REP-012 a REP-014, DD-011, DD-012, DP-007, DP-008, PEN-039 a PEN-043 y los módulos M-13 y M-14. Se sustituye la clasificación I/S/P por N/B/F (véase Convenciones). Se resuelven los pendientes que respondió el cliente o el equipo (Apéndices A y C). |
+
+### Registro de aprobaciones
+
+| Parte | Nombre | Revisión | Fecha | Estado |
+| --- | --- | --- | --- | --- |
+| Representante de la Liga Municipal (cliente) | Claudio Ernesto Florian Arenas | 0.4 | **[PENDIENTE]** | Sin aprobar |
+| Profesor de Fundamentos de Ingeniería de Software | Claudio Ernesto Florian Arenas | 0.3 | 07/10/26 | Aprobado parcialmente |
+| Profesor de Fundamentos de Ingeniería de Software | Claudio Ernesto Florian Arenas | 0.4 | **[PENDIENTE]** | Sin aprobar |
+| Equipo de desarrollo | Olvera Bucio Jose Israel; Olvera Lobato David Geovani; López Meza Leonardo | 0.3 | 07/10/26 | Aprobado parcialmente |
+| Equipo de desarrollo | Olvera Bucio Jose Israel; Olvera Lobato David Geovani; López Meza Leonardo | 0.4 | **[PENDIENTE]** | Sin aprobar |
+
+### Convenciones de este documento
+
+| Marca | Significado |
+| --- | --- |
+| **[PENDIENTE]** | Dato o decisión aún no definido. No es requisito aprobado. El detalle está en el Apéndice A. |
+| **[PROPUESTA]** | Propuesta del equipo que requiere validación. |
+| **[DEMO]** | Valor de demostración: el requisito es configurable y el valor indicado se usa, rotulado «no oficial», hasta que la Liga confirme el real. |
+| Sin marca | Contenido respaldado por las fuentes (R1, R2, R3, R8) o decidido por el equipo (R9). Sigue sujeto a validación con la Liga. |
+| DEC-xx | Decisión del registro de decisiones (R9) que origina o modifica el elemento. |
+| Identificadores | Se conservan los de la fuente: RF, RNF, RN, CU, P, M, UI, VAL, REP, CA, DD, DP, PEN, AMB y RSK. Los elementos nuevos continúan la numeración (RF-094 en adelante, etc.). |
+| **Entrega** (N, B, F) | **N** = núcleo comprometido en los Sprints de esta entrega. **B** = forma parte del alcance y queda priorizado en el Product Backlog, sin Sprint asignado. **F** = fuera del alcance de esta entrega (sección 2.6). Cada uno de los 12 tipos de usuario tiene al menos un requisito N (DEC-01). |
+| **Prioridad** | Prioridad del producto integral (Alta, Media, Baja), independiente de la entrega. Para los RF de la fuente se conserva la de la revisión 0.1 **[PROPUESTA]**. |
+
+## 1 Introducción
+
+Este documento es la Especificación de Requisitos de Software (ERS) de **SIGLIM**, el Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia. Describe qué debe hacer el sistema y bajo qué restricciones, sin definir cómo se implementará. Está estructurado según IEEE Std 830-1998 y sigue la plantilla de ERS del curso.
+
+Está dirigido al equipo de desarrollo, que lo usa como base para el diseño, el backlog y las pruebas; al profesor de Fundamentos de Ingeniería de Software, que da seguimiento al proyecto durante el semestre; y a los representantes de la Liga, que deberán validar los requisitos, los procesos y las reglas en caso de que el sistema se lance al público.
+
+El proyecto es real y el documento es de seguimiento. Se conserva la información respaldada por las fuentes, se marcan con **[PENDIENTE]** los aspectos por definir, con **[PROPUESTA]** las sugerencias del equipo y con **[DEMO]** los valores de demostración, de modo que ninguna suposición se presente como requisito aprobado.
+
+### 1.1 Alcance
+
+**Producto.** SIGLIM es una plataforma web responsive con una aplicación interna, con acceso según el rol y el ámbito de cada usuario, y un portal público de solo consulta. Administra el ciclo completo de una temporada de la Liga: afiliación de clubes, registro y validación de jugadores, árbitros, canchas, programación manual, cédula arbitral, resultados oficiales, tabla, disciplina, liguilla, ascensos y descensos, cobros, reportes y publicación de la información autorizada.
+
+**Contexto operativo.** La operación se organiza en la estructura Temporada → Categoría → Grupo → Equipos → Partidos. Las programaciones observadas incluyen Primera Especial, Primera Fuerza, Reserva, Intermedia, Segunda, Tercera, Juvenil, Cuarta y Veteranos. Una categoría puede tener uno o varios grupos y un equipo pertenece a una categoría y grupo durante una temporada. El orden y la jerarquía de las categorías son configurables (DEC-16). La Liga de referencia tiene cerca de 200 clubes, más de 600 equipos, 40 canchas en su unidad deportiva y recibe de 5,000 a 6,000 asistentes por fin de semana (R2).
+
+**Beneficios esperados.** Centralizar la información que hoy está dispersa y en papel; detectar jugadores registrados en dos clubes («cachirules») mediante la CURP; oficializar resultados con una cédula validada; aplicar las sanciones según el reglamento con trazabilidad; y publicar solo información autorizada.
+
+**Alcance de esta entrega.** Comprende los 14 módulos de la sección 2.2. Cada requisito indica si pertenece al núcleo comprometido (N), al backlog priorizado (B) o si queda fuera (F). No incluye programación automática ni las integraciones que se listan en 2.6.
+
+### 1.2 Personal involucrado
+
+| Campo | Valor |
+| --- | --- |
+| Nombre | Olvera Bucio Jose Israel |
+| Rol | Desarrollador responsable de arquitectura y datos |
+| Categoría profesional | Estudiante de Ingeniería en Sistemas Computacionales |
+| Responsabilidades | Coordinar la arquitectura y el diseño lógico de datos; preparar el repositorio y el entorno de desarrollo; documentar decisiones técnicas; colaborar en desarrollo, integración y revisión. |
+| Información de contacto | l24120356@morelia.tecnm.mx |
+| Aprobación | Ing. López Meza Leonardo, Scrum Master. |
+
+| Campo | Valor |
+| --- | --- |
+| Nombre | Olvera Lobato David Geovani |
+| Rol | Product Owner y analista de requisitos |
+| Categoría profesional | Estudiante de Ingeniería en Sistemas Computacionales |
+| Responsabilidades | Mantener y priorizar el Product Backlog; elaborar historias de usuario y criterios de aceptación; coordinar el ERS y el análisis de procesos; consultar y validar requisitos con la Liga o el asesor. |
+| Información de contacto | l24120339@morelia.tecnm.mx |
+| Aprobación | Ing. Claudio Ernesto Florian Arenas, Representante del Cliente. |
+
+| Campo | Valor |
+| --- | --- |
+| Nombre | López Meza Leonardo |
+| Rol | Scrum Master y responsable de calidad |
+| Categoría profesional | Estudiante de Ingeniería en Sistemas Computacionales |
+| Responsabilidades | Facilitar Sprint Planning, Daily Scrum, Sprint Review y Sprint Retrospective; mantener actualizado el tablero; dar seguimiento a impedimentos; coordinar pruebas y verificar los entregables. |
+| Información de contacto | l24120362@morelia.tecnm.mx |
+| Aprobación | Ing. Olvera Lobato David Geovani, Product Owner. |
+
+**Otras partes interesadas**
+
+| Parte | Nombre | Participación |
+| --- | --- | --- |
+| Liga Municipal de Futbol Amateur Morelia | **[PENDIENTE]** | Cliente y fuente de los procesos y reglas. Valida requisitos, procesos y reglas. |
+| Profesor de Fundamentos de Ingeniería de Software | Claudio Ernesto Florian Arenas | Seguimiento académico del proyecto; en el levantamiento actuó como representante del cliente (R2). |
+
+### 1.3 Definiciones, acrónimos y abreviaturas
+
+| Término | Definición |
+| --- | --- |
+| ERS / SRS | Especificación de requisitos de software. |
+| RF / RNF | Requisito funcional / requisito no funcional. |
+| RN | Regla de negocio. |
+| CU | Caso de uso. |
+| RBAC | Control de acceso basado en roles. En SIGLIM se combina con un **ámbito** (liga, club o propio). |
+| Ámbito | Alcance de un permiso: **liga** (toda la información), **club** (solo el club al que pertenece el usuario) o **propio** (solo los datos o partidos de la persona). |
+| BPMN | Notación para el modelado de procesos de negocio (OMG). |
+| CURP | Clave Única de Registro de Población. Identificador único de toda persona en SIGLIM (DEC-10). |
+| ARCO | Derechos de acceso, rectificación, cancelación y oposición sobre datos personales. |
+| Liga | Liga Municipal de Futbol Amateur Morelia. |
+| Temporada | Periodo deportivo en que se desarrolla una competencia. Tiene una convocatoria asociada. |
+| Convocatoria | Documento normativo de una temporada, del cual se derivan sus reglas de operación. |
+| Categoría / Grupo | Nivel deportivo / agrupación de equipos dentro de una categoría. Las categorías tienen orden y una categoría superior inmediata configurable. |
+| Afiliación (tarjetón) | Registro del club al inicio de cada temporada con su directiva, colores, categorías y firmas; lleva un folio (R2). |
+| Directiva de club | Presidente, secretario, tesorero y delegado de un club. Es un solo tipo de usuario con cuatro cargos y ámbito de club. |
+| Competencia / Fase | Estructura de competencia de una temporada y su fase (fase regular, liguilla). El formato lo define el programador de partidos con los parámetros de la temporada. |
+| Programación / Jornada | Organización de partidos con fecha, hora, cancha y árbitros asignados. |
+| Bloque de cancha | Intervalo que ocupa un partido en una cancha para detectar choques de horario. Es configurable por categoría (DEC-25). |
+| Cédula | Registro oficial del partido: alineación, marcador, goles, tarjetas, incidencias, sustituciones y observaciones. La captura el Capturista y la valida el árbitro (DEC-19). |
+| Incidencia | Hecho registrado en la cédula. Según su tipo puede abrir un expediente disciplinario. |
+| Expediente | Caso disciplinario abierto a partir de una o más incidencias; termina en una resolución. |
+| Sanción | Consecuencia disciplinaria con vigencia, definida por un artículo del reglamento. |
+| Cachirul | Jugador registrado indebidamente en más de un club o categoría (R2). |
+| Elegibilidad | Condición que determina si una persona o un equipo puede participar. |
+| Restricción dura / blanda | Condición que no puede violarse / que se advierte pero puede aceptarse con motivo. |
+| Cobro | Cargo a un club o a un equipo con concepto, monto y periodo de pago. |
+| Pago simulado | Registro de un pago en línea con referencia ficticia; no hay pasarela de pago real (DEC-37). |
+| Portal público | Parte del sistema, sin privilegios de edición, que muestra solo la información publicada. |
+| Publicación | Paso de la información interna al portal. La programación y los comunicados requieren aprobación; los resultados oficiales se publican automáticamente (DEC-21). |
+| PEN / AMB / RSK | Pendiente / ambigüedad / riesgo identificados en la fuente (Apéndices A y B). |
+
+### 1.4 Referencias
+
+| Código | Referencia |
+| --- | --- |
+| R1 | Presentación «Sistema_Gestion_Liga_Municipal_Morelia_Base_Ingenieria_Software(2).pptx»: visión, alcance y requerimientos preliminares. Documento base del proyecto. |
+| R2 | Levantamiento con el cliente, audio «PREGUNTAS - PROY LIGAS DEPORTIVAS (2).m4a», y su transcripción ([`fuentes/levantamiento-audio-r2-transcripcion.md`](fuentes/levantamiento-audio-r2-transcripcion.md)). |
+| R3 | Documentación técnica base para ERS/SRS ([`fuentes/documentacion-tecnica-base-ers.md`](fuentes/documentacion-tecnica-base-ers.md)), derivada de R1. Las citas «R3 §n» remiten a sus secciones. |
+| R4 | Fuentes de fondo citadas por R1, no consultadas directamente: Reglamento de la Liga, Convocatoria 2025–2026 y programaciones oficiales de las Fechas 32 y 33. |
+| R5 | IEEE Std 830-1998, Recommended Practice for Software Requirements Specifications. |
+| R6 | Plantilla «ERS_simplificado» proporcionada para el curso. |
+| R7 | OMG, Business Process Model and Notation (BPMN) 2.0 (ISO/IEC 19510:2013). |
+| R8 | Formatos de carta de préstamo y de oferta de cancha entregados por el cliente ([`fuentes/formatos-carta-cancha.md`](fuentes/formatos-carta-cancha.md)). |
+| R9 | Registro de decisiones del equipo, DEC-01 a DEC-44 ([`decisiones/registro-de-decisiones.md`](decisiones/registro-de-decisiones.md)). |
+| R10 | Ley Federal de Protección de Datos Personales en Posesión de los Particulares (DOF 20-mar-2025). |
+| R11 | Ley General de Protección de Datos Personales en Posesión de Sujetos Obligados (aplicable solo si la Liga resulta ser un organismo público; véase PEN-039). |
+
+### 1.5 Visión general del documento
+
+El capítulo 2 describe el producto, sus módulos, usuarios, restricciones y dependencias; la sección 2.6 lista lo que queda fuera de la entrega. El capítulo 3 contiene los requisitos específicos: interfaces, requisitos funcionales, no funcionales, reglas de negocio, validaciones, reportes, datos, criterios de aceptación y requisitos legales. El capítulo 4 reúne el modelado: casos de uso, procesos, máquinas de estado, modelo de datos conceptual, arquitectura conceptual y trazabilidad. El Apéndice A concentra los pendientes; el B, ambigüedades y riesgos; el C, las preguntas y su estado; el D, los supuestos; y el E, la matriz de permisos inicial.
+
+## 2 Descripción general
+
+### 2.1 Perspectiva del producto
+
+SIGLIM es una plataforma web independiente con dos caras: una **aplicación interna**, a la que cada usuario accede según su rol y su ámbito, y un **portal público** de solo consulta. Ambas comparten un backend modular y una base de datos relacional dentro de una sola aplicación. La información interna solo llega al portal por un flujo autorizado y no existe flujo inverso desde el portal para editar datos.
+
+El sistema se relaciona con tres servicios externos: el servicio de identidad que emite las sesiones, un servicio de almacenamiento privado para documentos y fotos (DEC-10) y un servicio de correo para las notificaciones (DEC-38). Los proveedores concretos se justifican en las decisiones de arquitectura.
+
+```mermaid
+flowchart LR
+    subgraph Liga["Usuarios internos de la Liga"]
+        ADM[Administrador general]
+        PRE[Presidente del Comité Ejecutivo]
+        SEC[Secretario]
+        TES[Tesorero]
+        CDI[Comisión Disciplinaria]
+        CAR[Comisión de Arbitraje]
+        PRO[Programador de partidos]
+        CAP[Capturista]
+    end
+    subgraph Club["Usuarios de club"]
+        DIR[Directiva de club]
+        ARB[Árbitro]
+        JUG[Jugador / tutor]
+    end
+    PUB[Usuario público]
+    SIS(("SIGLIM<br/>aplicación interna<br/>+ portal público"))
+    IDP[[Servicio de identidad]]
+    ALM[[Almacenamiento de documentos]]
+    COR[[Servicio de correo]]
+    Liga --> SIS
+    Club --> SIS
+    PUB -- consulta --> SIS
+    SIS --- IDP
+    SIS --- ALM
+    SIS --- COR
+```
+
+*Figura 1. Contexto del sistema.*
+
+La arquitectura y el diseño jerárquico detallados están en [`../arquitectura/arquitectura-y-diseno-jerarquico.md`](../arquitectura/arquitectura-y-diseno-jerarquico.md); su copia en PDF se encuentra en [OneDrive](https://itecm-my.sharepoint.com/:b:/g/personal/l24120356_morelia_tecnm_mx/IQDJlksHByLHR6OTzFSXRQSVAUigyqzW2snfk5ciVYfrWVU?e=Xcwb0G). Ambos deberán actualizarse a esta revisión.
+
+### 2.2 Funcionalidad del producto
+
+El sistema se organiza en 14 módulos funcionales. No se exige una interfaz o un servicio independiente por módulo.
+
+| Módulo | Nombre | Propósito | Usuarios principales |
+| --- | --- | --- | --- |
+| M-01 | Administración y seguridad | Usuarios, roles, permisos con ámbito y control dual, consentimiento y aviso de privacidad, auditoría. | Administrador general, Presidente |
+| M-02 | Temporadas y normativa | Temporadas, convocatoria, catálogo y jerarquía de categorías, grupos y parámetros deportivos configurables. | Administrador general, Presidente, Secretario |
+| M-03 | Organización deportiva | Clubes, afiliación por temporada, directiva, equipos, venta de equipo y plaza, personas y tutores. | Secretario, Directiva de club, Presidente |
+| M-04 | Registros y elegibilidad | Alta, baja, renovación y transferencia entre temporadas; documentos; unicidad por CURP; elegibilidad y alineación en categoría superior. | Directiva de club, Secretario, Jugador |
+| M-05 | Árbitros y designaciones | Árbitros presentados por los clubes, validación, disponibilidad y designación a partidos. | Comisión de Arbitraje, Directiva de club, Árbitro |
+| M-06 | Canchas y recursos | Canchas de la liga y de clubes, comodatos, ofertas, préstamos, horarios, disponibilidad y bloqueos. | Administrador general, Secretario, Presidente, Directiva de club |
+| M-07 | Programación manual | Jornadas y partidos con validación de conflictos y localía, aprobación y publicación. | Programador de partidos, Presidente |
+| M-08 | Partidos, cédula y resultados | Ciclo de vida del partido, cédula con validación arbitral, resultado oficial, tabla y estadísticas. | Capturista, Árbitro, Comisión de Arbitraje |
+| M-09 | Disciplina | Catálogos de incidencias y artículos, expedientes, resoluciones, sanciones, bajas y recursos. | Comisión Disciplinaria, Presidente |
+| M-10 | Competencias y fases finales | Liguilla, llaves, campeón, ascensos y descensos. | Programador de partidos, Presidente |
+| M-11 | Portal público y publicación | Programación, resultados, tablas, calendario, comunicados, sanciones autorizadas, equipos y buscador. | Usuario público, Secretario, Presidente |
+| M-12 | Reportes y documentos | Reportes operativos y exportación a PDF y Excel. | Todos los internos según permiso |
+| M-13 | Tesorería y cobros | Tarifas, cobros automáticos y manuales, pago simulado, adeudos y vencimientos. | Tesorero, Directiva de club |
+| M-14 | Notificaciones | Avisos dentro del sistema y por correo ante eventos del flujo. | Todos los usuarios internos |
+
+```mermaid
+flowchart LR
+    S[SIGLIM]
+    S --> M01[M-01 Administración y seguridad]
+    S --> M02[M-02 Temporadas y normativa]
+    S --> M03[M-03 Organización deportiva]
+    S --> M04[M-04 Registros y elegibilidad]
+    S --> M05[M-05 Árbitros y designaciones]
+    S --> M06[M-06 Canchas y recursos]
+    S --> M07[M-07 Programación manual]
+    S --> M08[M-08 Partidos, cédula y resultados]
+    S --> M09[M-09 Disciplina]
+    S --> M10[M-10 Competencias y fases finales]
+    S --> M11[M-11 Portal y publicación]
+    S --> M12[M-12 Reportes y documentos]
+    S --> M13[M-13 Tesorería y cobros]
+    S --> M14[M-14 Notificaciones]
+```
+
+*Figura 2. Módulos funcionales.*
+
+**Cadena de trazabilidad del dominio.** Convocatoria → reglas de temporada → afiliación y registros → jornada y designación → partido → cédula → resultado oficial → tabla → clasificación, liguilla, ascenso y descenso; y, en paralelo, cédula → incidencia → expediente → resolución → sanción → elegibilidad y programación; jornada publicada → cobros → pagos. Cada cambio crítico conserva usuario, fecha y motivo.
+
+### 2.3 Características de los usuarios
+
+Existen 12 tipos de usuario (DEC-01, DEC-02). Cada uno tiene permisos por módulo y acción con un ámbito; el Administrador general puede modificar esos permisos con los límites de RN-053. La matriz inicial está en el Apéndice E. El portal público no tiene privilegios de edición.
+
+| # | Tipo de usuario | Ámbito | Formación y habilidades | Descripción y responsabilidades | Núcleo comprometido (N) |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Administrador general | Liga | Presente ante problemáticas que surjan en campo. | Administra usuarios, roles, permisos, catálogos y temporadas. No aprueba decisiones del negocio. | Usuarios y permisos, temporada y categorías, catálogos, auditoría. |
+| 2 | Presidente del Comité Ejecutivo | Liga | Conocimiento del reglamento y de la convocatoria **[PROPUESTA]**. | Autoridad de la Liga: aprueba afiliaciones, programación, cambios de permisos incompatibles, cartas de cancha, ventas de equipo, recursos y ascensos. | Aprobar afiliaciones, programación y permisos incompatibles. |
+| 3 | Secretario (liga) | Liga | Manejo administrativo y documental **[PROPUESTA]**. | Captura y revisa tarjetones, valida documentos e identidad de jugadores, genera oficios y redacta comunicados. | Tarjetones y validación de documentos e identidad. |
+| 4 | Tesorero (liga) | Liga | Manejo de cobros y pagos **[PROPUESTA]**. | Configura tarifas, genera cobros, registra pagos y da seguimiento a adeudos. | Cobros manuales, registro de pagos y adeudos. |
+| 5 | Comisión Disciplinaria | Liga | Dominio de las reglas a seguir y de la plataforma. | Revisa expedientes, aplica artículos del reglamento y resuelve sanciones y bajas. | Expedientes, resoluciones y sanciones con vigencia. |
+| 6 | Comisión de Arbitraje | Liga | Conocimiento del cuerpo arbitral **[PROPUESTA]**. | Valida árbitros, administra su disponibilidad, los designa y aprueba cédulas cuando vence el plazo del árbitro. | Validación y designación de árbitros; aprobación por vencimiento. |
+| 7 | Programador de partidos | Liga | Disponer de horarios y dominar la plataforma. | Arma las jornadas, asigna canchas y horarios, ajusta la programación y configura fases finales. | Programación manual con conflictos y estados del partido. |
+| 8 | Directiva de club | Club | Conocimiento de su club y de la convocatoria **[PROPUESTA]**. | Cargos presidente, secretario, tesorero y delegado. Solicita la afiliación, registra jugadores y árbitros, solicita canchas, interpone recursos y paga adeudos de su club. | Afiliación, registro de jugadores y árbitros, pago de adeudos. |
+| 9 | Árbitro | Propio | Conocimiento del reglamento de juego **[PROPUESTA]**. | Consulta sus designaciones y aprueba o devuelve la cédula de sus partidos. | Validación de la cédula. |
+| 10 | Capturista | Liga | Noción del entorno de la plataforma. | Captura la cédula del partido (alineación, marcador, goles, tarjetas, incidencias, sustituciones y observaciones) y la envía a validación. | Captura de la cédula. |
+| 11 | Jugador (o su tutor) | Propio | Manejo básico de teléfono móvil u ordenador. | Consulta su registro, documentos, elegibilidad, partidos, estadísticas y sanciones. El de un menor lo consulta su tutor (DEC-11). | Consulta de información propia. |
+| 12 | Usuario público | — | Conocimiento y manejo básico de ordenador y/o teléfono móvil. | Consulta la información publicada. | Portal público. |
+
+**Separación de funciones.** Captura de la cédula (Capturista) ≠ validación (Árbitro o Comisión de Arbitraje); programación (Programador) ≠ aprobación (Presidente); resolución disciplinaria (Comisión Disciplinaria) ≠ recurso (Presidente); redacción de comunicados (Secretario) ≠ aprobación (Presidente); cambio de permisos (Administrador) ≠ aprobación de pares incompatibles (Presidente) (DD-010, RN-044, RN-053).
+
+### 2.4 Restricciones
+
+Decisiones de diseño que el equipo debe respetar (R3 §18.1 y R9):
+
+| ID | Restricción | Entrega |
+| --- | --- | --- |
+| DD-001 | El sistema será una aplicación web responsive. | N |
+| DD-002 | Debe existir un backend modular dentro de una sola aplicación. | N |
+| DD-003 | Se utilizará una base de datos relacional. | N |
+| DD-004 | Las reglas deportivas y disciplinarias se parametrizan por temporada en catálogos y configuración, no en código (motor de reglas por configuración). | N |
+| DD-005 | ~~Servicio específico de programación automática~~. Descartada: no hay programación automática (DEC-06). | F |
+| DD-006 | Debe existir trazabilidad de cambios y decisiones críticas. | N |
+| DD-007 | Las temporadas históricas no deben sobrescribirse. | N |
+| DD-008 | La publicación requiere control: la programación y los comunicados se aprueban; los resultados oficiales se publican al validarse la cédula. | N |
+| DD-009 | Los permisos se basan en roles, acciones y ámbito, y son configurables. | N |
+| DD-010 | La captura y la resolución se separan (cédula y disciplina). | N |
+| DD-011 | El sistema administra una sola liga, pero su diseño no debe impedir varias (DEC-07). | N |
+| DD-012 | No se almacenan contraseñas propias; la identidad se delega en un servicio de autenticación. | N |
+
+Otras restricciones:
+
+- Proyecto académico de **8 semanas** (4 Sprints de 2 semanas) con un equipo de tres personas (DEC-08).
+- El stack elegido por el equipo es React con TypeScript, Spring Boot con Java y Spring JDBC, PostgreSQL en Supabase y Supabase Auth (DEC-43). Su justificación está en la arquitectura y en los ADR.
+- No existe flujo inverso desde el portal público para editar información.
+- Los datos personales se tratan conforme a la sección 3.4.4.
+- El sistema refleja los procesos reales de la Liga; lo que no esté respaldado por las fuentes debe validarse antes de convertirse en requisito definitivo.
+
+### 2.5 Suposiciones y dependencias
+
+Este documento no asume reglas de negocio sin respaldo. Cuando una regla no la ha fijado el cliente, se implementa como parámetro configurable con un valor **[DEMO]** (RN-006, RN-035).
+
+Dependencias:
+
+- Validación de requisitos, procesos, interfaces, modelo de datos y reglas con la Liga y el profesor.
+- Reglamento y Convocatoria 2025–2026 de la Liga para sustituir los valores [DEMO] (R4, PEN-021).
+- Servicio de identidad, almacenamiento privado de documentos y servicio de correo, con los proveedores que se justifiquen en los ADR.
+- Naturaleza jurídica de la Liga, que determina la ley de datos personales aplicable (PEN-039).
+
+### 2.6 Fuera del alcance de esta entrega
+
+Los siguientes elementos se conservan solo por su identificador, para trazabilidad.
+
+| Capacidad | Identificadores | Motivo |
+| --- | --- | --- |
+| Programación automática (generación de enfrentamientos, fechas, horarios y descansos; restricciones blandas; explicación de inviabilidad) | RF-034, RF-035, RF-037, RF-038, RF-041, RF-042; RN-016, RN-017; VAL-007; DD-005; PEN-027, PEN-028 | DEC-06. La reprogramación de un partido se hace manualmente con RF-040 y RF-043. |
+| Pasarela de pago real | — | DEC-37: el pago en línea es simulado. |
+| Reconocimiento facial de jugadores | — | Mencionado como idea en R2; el nivel de validación acordado es el 2 (DEC-10). |
+| Integraciones no aprobadas: WhatsApp/SMS, mapas, API pública, autenticación con proveedores externos, importación masiva CSV/Excel de históricos | PEN-003, PEN-033 a PEN-035 | Sin justificación de costo y necesidad. La exportación a PDF/Excel sí está incluida (RF-092). |
+| Operación simultánea de varias ligas | — | DEC-07: una sola liga; el diseño no lo impide. |
+| CI/CD y contenedores | PEN-038 | Opcionales según R3; no forman parte de esta entrega. |
+
+La reducción de alcance de la Rev. 0.3 queda sin efecto (DEC-01).
+
+## 3 Requisitos específicos
+
+Este capítulo contiene los requisitos con el detalle necesario para diseñar y probar el sistema. Cada requisito tiene identificador, nombre, descripción, actor, fuente, prioridad de producto y entrega (N, B o F).
+
+### 3.1 Requisitos comunes de las interfaces
+
+#### 3.1.1 Interfaces de usuario
+
+El sistema es una aplicación web responsive (RNF-007) con una aplicación interna de acceso autenticado y un portal público. Las pantallas son una **[PROPUESTA]** derivada de las funcionalidades; su composición y nomenclatura se validan en el prototipo de [Figma](https://www.figma.com/design/kxtW96Gd0FNxdwmvSk6S4t/Untitled?node-id=0-1&t=VymLfyImOGjy1T3f-1) (PEN-014). Una vista puede cubrir varios identificadores.
+
+| ID | Pantalla | Actor | Objetivo | Entrega |
+| --- | --- | --- | --- | --- |
+| UI-001 | Inicio de sesión | Usuarios internos, jugador o tutor | Autenticarse | N |
+| UI-002 | Panel de inicio | Usuarios internos | Acceder a las funciones permitidas y a las notificaciones pendientes | N |
+| UI-003 | Gestión de temporadas | Administrador general | Crear, configurar, activar y cerrar temporadas | N |
+| UI-004 | Categorías, jerarquía, grupos y parámetros | Administrador general | Configurar la estructura y los parámetros deportivos | N |
+| UI-005 | Clubes y equipos | Secretario, Directiva de club | Administrar clubes, directiva y equipos | N |
+| UI-006 | Registro de jugadores | Directiva de club, Secretario | Alta, baja, renovación y transferencia; estado de elegibilidad | N |
+| UI-007 | Árbitros | Comisión de Arbitraje | Catálogo, validación y disponibilidad | N |
+| UI-008 | Canchas | Administrador general, Secretario | Catálogo, propietario, comodato, horarios, disponibilidad y bloqueos | N |
+| UI-009 | Programación de jornada | Programador, Presidente | Registrar, ajustar, validar conflictos, aprobar y publicar | N |
+| UI-010 | Detalle de partido | Usuarios internos | Estado, historial, árbitros, cédula y acciones permitidas | N |
+| UI-011 | Captura de cédula | Capturista | Alineación, marcador, goles, tarjetas, incidencias, sustituciones y observaciones | N |
+| UI-012 | Tabla de posiciones | Interno y público | Consultar la clasificación | N |
+| UI-013 | Estadísticas | Interno y público | Estadísticas de equipo y de jugador | B |
+| UI-014 | Validación de cédula | Árbitro, Comisión de Arbitraje | Aprobar o devolver la cédula con observaciones | N |
+| UI-015 | Expediente disciplinario | Comisión Disciplinaria | Revisar, aplicar artículo y resolver | N |
+| UI-016 | Sanciones y castigados | Comisión Disciplinaria, público | Consultar y publicar sanciones vigentes | B |
+| UI-017 | Recursos de inconformidad | Directiva de club, Presidente | Interponer y resolver recursos | B |
+| UI-018 | Ascensos y descensos | Presidente | Revisar y validar la propuesta | B |
+| UI-019 | Liguilla y fases finales | Programador | Configurar la fase y consultar llaves | B |
+| UI-020 | Portal público | Usuario público | Programación, resultados, tablas, calendario, comunicados, sanciones y equipos | N |
+| UI-021 | Reportes | Usuarios internos | Generar y exportar reportes | B |
+| UI-022 | Auditoría | Administrador general, Presidente | Consultar la trazabilidad | N |
+| UI-023 | Afiliación (tarjetón) | Directiva de club, Secretario, Presidente | Solicitar, revisar y aprobar la afiliación | N |
+| UI-024 | Documentos e identidad | Directiva de club, Secretario | Cargar y validar documentos y fotos | N |
+| UI-025 | Designación de árbitros | Comisión de Arbitraje | Designar árbitros a los partidos de una jornada | N |
+| UI-026 | Catálogos disciplinarios | Administrador general, Comisión Disciplinaria | Tipos de incidencia y artículos | N |
+| UI-027 | Tesorería | Tesorero, Directiva de club | Tarifas, cobros, pagos y adeudos | N |
+| UI-028 | Solicitudes y ofertas de cancha | Directiva de club, Secretario, Presidente | Formatos 1 y 2 y su aprobación | B |
+| UI-029 | Roles y permisos | Administrador general, Presidente | Editar permisos y aprobar pares incompatibles | N |
+| UI-030 | Notificaciones | Usuarios internos | Consultar y marcar avisos | N |
+| UI-031 | Comunicados | Secretario, Presidente | Redactar, aprobar y publicar | B |
+| UI-032 | Mi información | Jugador o tutor | Registro, documentos, partidos y sanciones propios | N |
+| UI-033 | Aviso de privacidad y consentimiento | Tutor, jugador, Directiva de club | Mostrar el aviso y registrar el consentimiento | N |
+| UI-034 | Venta de equipo y plaza | Directiva de club, Presidente | Registrar y autorizar el cambio de propietario y la plaza | B |
+
+Comportamientos que la interfaz debe reflejar:
+
+- Mostrar la causa del bloqueo cuando una persona o un equipo no puede participar.
+- Mostrar los conflictos de programación y su motivo, y las advertencias de localía.
+- Mostrar el estado del partido, de la cédula y de cada trámite, con las acciones permitidas en ese estado.
+- Diferenciar los datos oficiales de los indicadores calculados y rotular los valores [DEMO] como «no oficiales».
+- Mostrar a cada usuario solo la información de su ámbito.
+- Evitar que usuarios sin autorización vean o ejecuten acciones.
+
+**Navegación.** Aplicación interna: inicio de sesión → panel con los módulos permitidos y las notificaciones. Portal público: Programación, Resultados, Tablas, Calendario, Comunicados, Sanciones, Equipos y buscador por fecha, categoría/grupo y equipo. La navegación final se valida en el prototipo **[PENDIENTE]** (PEN-014).
+
+#### 3.1.2 Interfaces de hardware
+
+No aplica. El acceso es mediante navegador web desde equipos de escritorio y móviles (RNF-007). La captura de fotos de documentos usa la cámara o los archivos del dispositivo a través del navegador.
+
+#### 3.1.3 Interfaces de software
+
+| Interfaz | Propósito | Datos | Entrega |
+| --- | --- | --- | --- |
+| Servicio de identidad (Supabase Auth) | Autenticación y emisión de sesiones; el sistema no guarda contraseñas | Credenciales, token de sesión | N |
+| Almacenamiento privado de archivos | Documentos de identidad y fotos de jugadores; evidencias disciplinarias | Archivos, identificadores, URL firmadas temporales | N |
+| Servicio de correo transaccional | Notificaciones por correo (RF-143) | Destinatario, asunto, contenido | B |
+| Exportación PDF/Excel | Reportes (RF-092) | Datos tabulares | B |
+
+Cada integración se justifica por costo, seguridad y necesidad en una decisión de arquitectura (PEN-033, PEN-034). El diccionario de datos y el script SQL vigentes se enlazan desde la documentación técnica del repositorio; su copia previa está en OneDrive ([diccionario](https://itecm-my.sharepoint.com/:b:/g/personal/l24120356_morelia_tecnm_mx/IQCzMefLsnvMS6fRWMhs3da1Af0Bkpxt7vIjWf2IgmIU-hw?e=jDG3Ne), [script SQL](https://itecm-my.sharepoint.com/:u:/g/personal/l24120356_morelia_tecnm_mx/IQDvro8mXY5pSZJ3D3LUadWjAZiVS9JHpOUPktLOPQxK8zA?e=qO5cHm)) y debe actualizarse a esta revisión.
+
+#### 3.1.4 Interfaces de comunicación
+
+El acceso del navegador al sistema es por HTTPS con datos en JSON. La comunicación del backend con la base de datos usa TLS. El contrato detallado de la API está en las convenciones de API del repositorio.
+
+### 3.2 Requisitos funcionales
+
+Los requisitos funcionales (RF) describen comportamientos verificables; no definen la implementación. Conservan el identificador de la fuente (RF-001 a RF-093) y los nuevos continúan desde RF-094. La columna **Fuente** cita R3 (formalización de R1), R2 (levantamiento) o la decisión DEC-xx (R9).
+
+#### 3.2.1 M-01 Administración y seguridad
+
+| ID | Requisito | Descripción | Actor | Fuente | Prioridad | Entrega |
+| --- | --- | --- | --- | --- | --- | --- |
+| RF-094 | Gestionar usuarios y roles con ámbito | El sistema debe permitir crear cuentas internas, activarlas o desactivarlas y asignarles uno o más roles con su ámbito (liga, club o propio). | Administrador general | DEC-02, DEC-03 | Alta | N |
+| RF-095 | Modificar permisos de los roles | El sistema debe permitir modificar los permisos por módulo y acción de cada rol, excepto los del rol del propio usuario, y auditar cada cambio con motivo. | Administrador general | DEC-04 | Alta | N |
+| RF-096 | Aprobar permisos incompatibles | Cuando un cambio asigne a un mismo rol un par de permisos declarados incompatibles, el sistema debe dejarlo pendiente hasta que lo apruebe el Presidente del Comité Ejecutivo. | Presidente | DEC-04 | Alta | N |
+| RF-097 | Registrar consentimiento y aviso de privacidad | El sistema debe mostrar el aviso de privacidad y registrar el consentimiento expreso del titular o, si es menor, de su tutor, con fecha, versión del aviso y finalidades. | Directiva de club, tutor, jugador | DEC-11, DEC-40 | Alta | N |
+| RF-098 | Atender solicitudes ARCO | El sistema debe registrar las solicitudes de acceso, rectificación, cancelación y oposición y su seguimiento. | Administrador general | DEC-40 | Media | B |
+| RF-093 | Auditar acciones críticas | El sistema debe registrar las acciones críticas con usuario, fecha, módulo, acción, registro afectado y motivo. | Sistema | R3 §3.12 | Alta | N |
+| RF-134 | Consultar auditoría | El sistema debe permitir consultar y filtrar la auditoría por usuario, operación, módulo y fecha. | Administrador general, Presidente | R3 §10 (UI-022), DEC-05 | Media | N |
+
+#### 3.2.2 M-02 Temporadas y normativa
+
+| ID | Requisito | Descripción | Actor | Fuente | Prioridad | Entrega |
+| --- | --- | --- | --- | --- | --- | --- |
+| RF-001 | Gestionar temporadas | El sistema debe registrar y administrar temporadas como periodos deportivos, con una sola temporada activa a la vez. | Administrador general | R3 §3.2, RN-058 | Alta | N |
+| RF-002 | Asociar convocatoria a temporada | El sistema debe asociar a cada temporada la referencia de su convocatoria. | Secretario | R3 §3.2 | Media | B |
+| RF-003 | Conservar histórico de temporadas | El sistema debe conservar la información de temporadas cerradas sin sobrescribirla. | Sistema | R3 §3.2 | Alta | N |
+| RF-004 | Gestionar categorías por temporada | El sistema debe permitir definir qué categorías del catálogo participan en cada temporada. | Administrador general | R3 §3.2 | Alta | N |
+| RF-005 | Gestionar grupos | El sistema debe permitir uno o varios grupos por categoría de una temporada. | Administrador general | R3 §3.2 | Alta | N |
+| RF-099 | Configurar orden y jerarquía de categorías | El sistema debe mantener un catálogo de categorías con orden y categoría superior inmediata configurables, sin cambios de código ni de esquema. | Administrador general | DEC-16 | Alta | N |
+| RF-006 | Configurar reglas versionables | El sistema debe asociar a cada temporada la versión de las reglas usadas, de modo que los cálculos se puedan rastrear a la configuración que los produjo. | Administrador general, Presidente | R3 §3.2 | Alta | N |
+| RF-100 | Configurar parámetros deportivos | El sistema debe permitir configurar por temporada: puntos por resultado, orden de criterios de desempate, duración de juego y bloque de cancha por categoría, marcador por default, plazo de validación de la cédula y parámetros de liguilla y de ascenso y descenso. | Administrador general | DEC-20, DEC-23 a DEC-29 | Alta | N |
+| RF-007 | Registrar reglas interpretadas como pendientes | El sistema no debe convertir una interpretación administrativa en regla permanente; debe registrarla como pendiente de autorización del Presidente. | Presidente | R3 §3.2 | Media | B |
+
+#### 3.2.3 M-03 Organización deportiva
+
+| ID | Requisito | Descripción | Actor | Fuente | Prioridad | Entrega |
+| --- | --- | --- | --- | --- | --- | --- |
+| RF-008 | Gestionar clubes | El sistema debe registrar y administrar los clubes afiliados. | Secretario | R3 §3.3 | Alta | N |
+| RF-101 | Registrar la afiliación por temporada | El sistema debe registrar el tarjetón del club en cada temporada (nombre, presidente, secretario y tesorero del club, colores del uniforme, categorías y firmas) con folio, y someterlo a la aprobación del Presidente. | Directiva de club, Secretario, Presidente | R2, DEC-09 | Alta | N |
+| RF-102 | Registrar la directiva del club | El sistema debe registrar los cargos de la directiva del club (presidente, secretario, tesorero y delegado) y sus cambios con fecha y autorización. | Directiva de club, Secretario | R2, DEC-03 | Alta | N |
+| RF-009 | Gestionar equipos | El sistema debe registrar los equipos de un club en una categoría y grupo de la temporada. | Directiva de club, Secretario | R3 §3.3 | Alta | N |
+| RF-103 | Registrar la venta de un equipo | El sistema debe registrar el cambio de propietario de un equipo con la autorización del Presidente; surte efecto al cierre de la temporada y conserva el historial de propietarios. | Directiva de club, Presidente | R2, DEC-14 | Media | B |
+| RF-104 | Registrar la conservación de plaza | El sistema debe registrar, como operación independiente de la venta, la conservación de la categoría y de la plaza deportiva, con autorización del Presidente. | Presidente | DEC-14 | Media | B |
+| RF-105 | Registrar el cambio de nombre de un club | El sistema debe registrar el cambio de nombre como un club nuevo sin historial y cerrar el anterior. | Secretario | R2, DEC-15 | Baja | B |
+| RF-010 | Reutilizar identidad de persona | El sistema debe mantener una sola identidad por persona, identificada por su CURP, reutilizable en diferentes roles. | Sistema | R3 §3.3, DEC-10 | Alta | N |
+| RF-011 | Separar roles de la identidad | El sistema debe permitir que una persona sea jugador, árbitro, directivo o tutor sin duplicar su identidad. | Sistema | R3 §3.3 | Media | N |
+| RF-012 | Mantener historial de pertenencia | El sistema debe conservar el historial de clubes y equipos de cada jugador por temporada. | Sistema | R3 §3.3, DEC-13 | Media | N |
+| RF-106 | Vincular menores con su tutor | El sistema debe vincular a cada menor con su tutor, cuya cuenta gestiona la información del menor; el menor no tiene credenciales propias. | Directiva de club, tutor | DEC-11 | Alta | N |
+
+#### 3.2.4 M-04 Registros y elegibilidad
+
+| ID | Requisito | Descripción | Actor | Fuente | Prioridad | Entrega |
+| --- | --- | --- | --- | --- | --- | --- |
+| RF-013 | Dar de alta jugador | El sistema debe registrar el alta de un jugador en un equipo de su club con los datos y documentos requeridos por su categoría; el registro queda pendiente de validación. | Directiva de club | R3 §3.4, R2 | Alta | N |
+| RF-107 | Validar unicidad por CURP | El sistema debe impedir que una misma CURP tenga más de un registro activo en la misma temporada, en cualquier club o categoría, e informar dónde está registrada. | Sistema | R2, DEC-10, DEC-12 | Alta | N |
+| RF-108 | Resguardar documentos y fotos | El sistema debe almacenar en forma privada los documentos y fotos requeridos por tipo de categoría (infantil, libre, veteranos) y el INE del tutor cuando el jugador sea menor. | Directiva de club | R2, DEC-10 | Alta | N |
+| RF-109 | Validar documentos e identidad | El sistema debe permitir revisar los documentos y aprobar o rechazar el registro con observaciones. | Secretario | DEC-10 | Alta | N |
+| RF-014 | Dar de baja jugador | El sistema debe registrar la baja de un jugador con fecha y motivo, conservando su historial. | Directiva de club, Secretario | R3 §3.4 | Alta | N |
+| RF-015 | Renovar registro de jugador | El sistema debe permitir renovar el registro de un jugador en una temporada nueva reutilizando sus datos y documentos vigentes. | Directiva de club | R3 §3.4 | Media | B |
+| RF-016 | Transferir jugador entre temporadas | El sistema debe permitir registrar a un jugador en otro club en una temporada nueva, si la configuración de la Liga lo permite. Dentro de una temporada no hay cambio de equipo. | Directiva de club, Secretario | R3 §3.4, R2, DEC-13 | Media | B |
+| RF-111 | Configurar restricción de cambio de club | El sistema debe permitir configurar por temporada si se aceptan cambios de club entre temporadas y con qué condiciones. | Administrador general | DEC-13 | Media | B |
+| RF-017 | Registrar estado de elegibilidad | El sistema debe manejar los estados del registro (pendiente de validación, activo, suspendido, baja, rechazado) y la causa de cada cambio. | Sistema | R3 §3.4 | Alta | N |
+| RF-018 | Mantener historial de cambios de registro | El sistema debe conservar cada cambio de estado del registro con usuario, fecha y motivo. | Sistema | R3 §3.4 | Media | B |
+| RF-019 | Validar elegibilidad antes de participar | El sistema debe comprobar, al capturar la alineación, que cada jugador tenga registro activo, esté validado y no tenga sanción vigente. | Sistema | R3 §3.4 | Alta | N |
+| RF-110 | Validar alineación en categoría superior | El sistema debe aceptar a un jugador en la alineación de otro equipo de su club solo si ese equipo está en la categoría inmediata superior; se permite el mismo día. | Sistema | R2, DEC-12 | Alta | N |
+| RF-020 | Bloquear participación por sanción vigente | Cuando una sanción vigente impida participar, el sistema debe impedir la alineación y explicar el motivo. | Sistema | R3 §3.4, RN-057 | Alta | N |
+| RF-144 | Consultar información propia | El sistema debe permitir al jugador, o al tutor del menor, consultar su registro, documentos, estado de elegibilidad, partidos, estadísticas y sanciones. | Jugador, tutor | DEC-02, Apéndice E | Media | N |
+
+#### 3.2.5 M-05 Árbitros y designaciones
+
+| ID | Requisito | Descripción | Actor | Fuente | Prioridad | Entrega |
+| --- | --- | --- | --- | --- | --- | --- |
+| RF-112 | Registrar árbitros del club | El sistema debe permitir a cada club registrar a los árbitros que presenta. | Directiva de club | R2, DEC-17 | Alta | N |
+| RF-113 | Validar árbitros | El sistema debe permitir aprobar o rechazar a los árbitros presentados. | Comisión de Arbitraje | DEC-17 | Alta | N |
+| RF-021 | Gestionar catálogo de árbitros | El sistema debe mantener el catálogo de árbitros validados con el club que los presenta y su estado. | Comisión de Arbitraje | R3 §3.5 | Alta | N |
+| RF-114 | Verificar la cuota de árbitros | El sistema debe indicar si un club presenta al menos un árbitro por cada cuatro equipos (redondeo hacia arriba). | Sistema | R2, DEC-17 | Media | B |
+| RF-022 | Gestionar disponibilidad arbitral | El sistema debe registrar la disponibilidad de los árbitros por fecha y horario. | Comisión de Arbitraje, árbitro | R3 §3.5 | Media | B |
+| RF-023 | Designar árbitros a partido | El sistema debe permitir asignar árbitros a los partidos de una jornada. | Comisión de Arbitraje | R3 §3.5, DEC-18 | Alta | N |
+| RF-115 | Impedir designación al propio club | El sistema debe rechazar la designación de un árbitro a un partido en que juegue un equipo de su club. | Sistema | DEC-18 | Alta | N |
+| RF-024 | Consultar historial de designaciones | El sistema debe conservar y permitir consultar el historial de designaciones. | Comisión de Arbitraje, árbitro | R3 §3.5 | Media | B |
+
+#### 3.2.6 M-06 Canchas y recursos
+
+| ID | Requisito | Descripción | Actor | Fuente | Prioridad | Entrega |
+| --- | --- | --- | --- | --- | --- | --- |
+| RF-027 | Gestionar catálogo de canchas | El sistema debe registrar las canchas con sus características, ubicación (unidad deportiva o externa) y propietario (liga, club o externo). | Administrador general | R3 §3.6, R2 | Alta | N |
+| RF-028 | Gestionar sedes | El sistema debe agrupar canchas por sede o unidad deportiva. | Administrador general | R3 §3.6 | Media | B |
+| RF-029 | Registrar disponibilidad temporal | El sistema debe administrar la disponibilidad de cada cancha por fecha y hora. | Administrador general | R3 §3.6 | Alta | N |
+| RF-030 | Bloquear cancha | El sistema debe permitir bloquear una cancha por intervalo con motivo. | Administrador general | R3 §3.6 | Alta | N |
+| RF-031 | Registrar mantenimiento | El sistema debe registrar periodos de mantenimiento como bloqueos tipificados. | Administrador general | R3 §3.6 | Media | B |
+| RF-032 | Considerar partidos consecutivos | El sistema debe validar que los partidos consecutivos en una cancha respeten el bloque de cancha de cada categoría. | Sistema | R3 §3.6, DEC-25 | Media | B |
+| RF-119 | Registrar horarios de cancha de club | El sistema debe registrar los horarios por categoría de la cancha que ofrece un club y la cancha asignada en comodato por temporada. | Secretario | R2, DEC-33 | Media | B |
+| RF-116 | Registrar oferta de cancha | El sistema debe registrar la oferta de una cancha conforme al Formato 2 con los estados Pendiente de negociación, Aceptada y Rechazada; si el oferente es externo, la captura el Secretario. | Directiva de club, Secretario, Presidente | R8, DEC-35 | Media | B |
+| RF-117 | Gestionar préstamo y comodato | El sistema debe registrar la solicitud de préstamo o comodato conforme al Formato 1, dirigida a la Liga o a un dueño externo, con los estados Pendiente, Aprobada y No aprobada. | Directiva de club, Presidente | R2, R8, DEC-35 | Media | B |
+| RF-118 | Generar cartas con número de oficio | El sistema debe generar la carta de los Formatos 1 y 2 con número de oficio y datos del trámite. | Sistema | R2, R8 | Baja | B |
+
+#### 3.2.7 M-07 Programación manual
+
+| ID | Requisito | Descripción | Actor | Fuente | Prioridad | Entrega |
+| --- | --- | --- | --- | --- | --- | --- |
+| RF-033 | Registrar programación | El sistema debe permitir registrar manualmente jornadas y partidos por categoría, grupo, equipos, cancha, fecha y hora. | Programador | R3 §3.7, DEC-06 | Alta | N |
+| RF-036 | Asignar canchas | El sistema debe permitir asignar manualmente una cancha disponible a un partido y rechazar la asignación si genera un conflicto duro. | Programador | R3 §3.7 | Alta | N |
+| RF-039 | Detectar conflictos de programación | El sistema debe detectar equipo duplicado, cancha ocupada, cancha no disponible, equipo con baja o sanción que impida jugar, y árbitro con conflicto, usando el bloque de cancha de cada categoría. | Sistema | R3 §3.7, RN-050, RN-057 | Alta | N |
+| RF-120 | Advertir reglas de localía | El sistema debe advertir cuando un partido no respete las reglas de localía o use una cancha externa en las últimas diez fechas; el programador puede aceptar con motivo. | Sistema | R2, DEC-34 | Media | B |
+| RF-040 | Permitir ajuste manual autorizado | El sistema debe permitir modificar la programación, incluida la reprogramación de partidos, con motivo y traza (RN-018). | Programador | R3 §3.7 | Alta | N |
+| RF-121 | Aprobar la programación | El sistema debe someter cada jornada a la aprobación del Presidente antes de publicarla; el Presidente puede aprobarla o devolverla con observaciones. | Presidente | DEC-04, DEC-21 | Alta | N |
+| RF-034, RF-035, RF-037, RF-038, RF-041, RF-042 | Programación automática | Generación de enfrentamientos, fechas, horarios y descansos; registro de causa de generación; explicación de inviabilidad. | — | R3 §3.7 | — | F |
+
+#### 3.2.8 M-08 Partidos, cédula y resultados
+
+| ID | Requisito | Descripción | Actor | Fuente | Prioridad | Entrega |
+| --- | --- | --- | --- | --- | --- | --- |
+| RF-043 | Gestionar estado del partido | El sistema debe manejar los estados Programado, En curso, Finalizado, Suspendido, Reprogramado y Cancelado con las transiciones de 4.3.1. | Programador, sistema | R3 §3.8, DEC-23 | Alta | N |
+| RF-127 | Cambiar automáticamente el estado | El sistema debe pasar el partido a En curso al llegar su fecha y hora, y a Finalizado al aprobarse su cédula. | Sistema | DEC-23 | Alta | N |
+| RF-044 | Mantener historial del partido | El sistema no debe eliminar partidos con historial. | Sistema | R3 §3.8 | Alta | N |
+| RF-045 | Auditar transiciones de estado | Cada transición debe conservar usuario, fecha y motivo. | Sistema | R3 §3.8 | Alta | N |
+| RF-046 | Restringir acciones por estado | El estado del partido debe determinar las acciones permitidas. | Sistema | R3 §3.8 | Alta | N |
+| RF-025 | Registrar cédula | El sistema debe permitir capturar la cédula del partido: alineación de ambos equipos, marcador, goles, tarjetas, sustituciones y observaciones. | Capturista | R3 §3.5, R2, DEC-19 | Alta | N |
+| RF-026 | Registrar incidencias | El sistema debe registrar las incidencias de la cédula por tipo y relacionarlas con las personas o equipos involucrados. | Capturista | R3 §3.5, DEC-19 | Alta | N |
+| RF-122 | Enviar la cédula a validación | Al completar los campos obligatorios, el sistema debe pasar la cédula a Pendiente de validación y notificar al árbitro designado. | Capturista | DEC-19 | Alta | N |
+| RF-123 | Aprobar o devolver la cédula | El sistema debe permitir al árbitro designado aprobar la cédula o devolverla con observaciones al capturista. | Árbitro | DEC-19 | Alta | N |
+| RF-124 | Aprobar la cédula al vencer el plazo | Si el árbitro no responde en el plazo configurado (48 h [DEMO]), el sistema debe habilitar la aprobación de la cédula a la Comisión de Arbitraje y notificarla. | Comisión de Arbitraje | DEC-20 | Alta | N |
+| RF-047 | Capturar marcador | El sistema debe registrar el marcador como parte de la cédula. | Capturista | R3 §3.9 | Alta | N |
+| RF-048 | Validar resultado | El resultado queda oficial cuando se aprueba la cédula; ninguna otra vía lo oficializa, salvo una resolución disciplinaria. | Árbitro, Comisión de Arbitraje | R3 §3.9, DEC-21 | Alta | N |
+| RF-125 | Oficializar y publicar el resultado | Al aprobarse la cédula, el sistema debe registrar el resultado oficial, recalcular la tabla, publicar el resultado en el portal y abrir los expedientes que correspondan. | Sistema | DEC-21, DEC-22 | Alta | N |
+| RF-126 | Registrar no presentación | El sistema debe registrar en la cédula la no presentación de un equipo y asignar el marcador por default configurado (3-0 [DEMO]). | Capturista | DEC-24 | Alta | N |
+| RF-049 | Calcular tabla automáticamente | El sistema debe calcular PJ, PG, PE, PP, GF, GC, DG y puntos con los parámetros de la temporada (3, 1 y 0). | Sistema | R3 §3.9, DEC-26 | Alta | N |
+| RF-050 | Parametrizar desempates | El sistema debe aplicar los criterios de desempate en el orden configurado para la temporada; el nombre del equipo nunca decide una posición. | Sistema | R3 §3.9, DEC-27 | Alta | N |
+| RF-051 | Mantener histórico de tabla | El sistema debe conservar el estado de la tabla por jornada. | Sistema | R3 §3.9 | Media | B |
+| RF-052 | Recalcular tras corrección autorizada | El sistema debe recalcular la tabla cuando un resultado cambie por resolución disciplinaria, conservando la versión anterior. | Sistema | R3 §3.9, DEC-24 | Alta | N |
+| RF-053 | Calcular estadísticas de equipo | El sistema debe producir PJ, PG, PE, PP, GF, GC, DG, puntos y posición. | Sistema | R3 §3.9 | Alta | N |
+| RF-054 | Calcular estadísticas de jugador | El sistema debe calcular participaciones, goles, tarjetas y sanciones de cada jugador a partir de las cédulas. | Sistema | R3 §3.9, DEC-05 | Baja | B |
+| RF-055 | Separar dato oficial de indicador calculado | El sistema debe distinguir la información oficial de las métricas derivadas. | Sistema | R3 §3.9 | Media | N |
+| RF-056 | Publicar solo información validada | El portal solo debe mostrar resultados de cédulas aprobadas y programación aprobada. | Sistema | R3 §3.9 | Alta | N |
+
+#### 3.2.9 M-09 Disciplina
+
+| ID | Requisito | Descripción | Actor | Fuente | Prioridad | Entrega |
+| --- | --- | --- | --- | --- | --- | --- |
+| RF-128 | Configurar tipos de incidencia | El sistema debe mantener un catálogo de tipos de incidencia que indique cuáles abren expediente. | Administrador general | DEC-22 | Alta | N |
+| RF-129 | Configurar artículos y sanciones | El sistema debe mantener el catálogo de artículos del reglamento con tipo de sanción, sujeto (jugador, equipo o club), efecto (hacia adelante o retroactivo) y marca de aplicación automática. | Administrador general, Comisión Disciplinaria | DEC-30 | Alta | N |
+| RF-057 | Generar expediente disciplinario | El sistema debe abrir automáticamente un expediente por cada incidencia cuyo tipo lo requiera al aprobarse la cédula. | Sistema | R3 §3.10, DEC-22 | Alta | N |
+| RF-058 | Relacionar incidentes con personas y equipos | Cada incidencia debe quedar relacionada con las personas y equipos involucrados. | Sistema | R3 §3.10 | Alta | N |
+| RF-059 | Registrar evidencias | El sistema debe permitir adjuntar evidencias al expediente en el almacenamiento privado. | Comisión Disciplinaria | R3 §3.10 | Media | B |
+| RF-060 | Consultar artículos e infracciones | El sistema debe permitir consultar el catálogo de artículos al resolver. | Comisión Disciplinaria | R3 §3.10 | Media | N |
+| RF-061 | Generar propuesta de sanción | El sistema debe proponer la sanción según el artículo seleccionado, sujeta a validación humana. | Sistema | R3 §3.10 | Media | B |
+| RF-062 | Validar y resolver sanción | El sistema debe permitir a la Comisión Disciplinaria resolver el expediente y establecer la sanción. | Comisión Disciplinaria | R3 §3.10 | Alta | N |
+| RF-063 | Calcular vigencia de sanción | El sistema debe calcular y conservar la vigencia de la sanción (por partidos o por fechas). | Sistema | R3 §3.10 | Alta | N |
+| RF-064 | Aplicar bloqueo derivado de sanción | La sanción vigente debe afectar la elegibilidad del jugador o la programación del equipo según RN-057. | Sistema | R3 §3.10 | Alta | N |
+| RF-065 | Mantener resolución inmutable | El historial de resoluciones debe conservarse sin alteración destructiva. | Sistema | R3 §3.10 | Alta | N |
+| RF-066 | Gestionar lista de castigados | El sistema debe generar la lista de personas y equipos con sanción vigente. | Sistema | R3 §3.10 | Media | B |
+| RF-067 | Gestionar recursos de inconformidad | El sistema debe permitir al club interponer un recurso sobre una resolución y al Presidente resolverlo como segunda instancia. | Directiva de club, Presidente | R3 §3.10, DEC-31 | Media | B |
+| RF-068 | Publicar sanciones autorizadas | El sistema debe permitir publicar las sanciones vigentes autorizadas para difusión. | Comisión Disciplinaria | R3 §3.10 | Media | B |
+| RF-130 | Aplicar baja automática | El sistema debe aplicar la baja del equipo cuando se cumpla un artículo marcado como automático (5 partidos perdidos por default, falta de pago) y auditarla. | Sistema | R2, DEC-31 | Media | B |
+| RF-131 | Aplicar sanción retroactiva | El sistema debe declarar perdidos por el equipo los partidos en que participó una persona sancionada con efecto retroactivo y recalcular la tabla. | Sistema | R2, DEC-24, DEC-32 | Media | B |
+| RF-132 | Resolver partidos restantes de un equipo dado de baja | El sistema debe otorgar por default al rival los partidos pendientes de un equipo dado de baja, según la configuración del artículo. | Sistema | DEC-32 | Media | B |
+| RF-133 | Generar cobro por multa | Una sanción de multa debe generar el cobro correspondiente en tesorería. | Sistema | DEC-30 | Media | B |
+
+#### 3.2.10 M-10 Competencias y fases finales
+
+| ID | Requisito | Descripción | Actor | Fuente | Prioridad | Entrega |
+| --- | --- | --- | --- | --- | --- | --- |
+| RF-069 | Configurar reglas de ascenso y descenso | El sistema debe configurar por temporada cuántos equipos suben y bajan entre categorías adyacentes (2 y 2 [DEMO]). | Administrador general | R3 §3.11, DEC-29 | Media | B |
+| RF-070 | Determinar posiciones finales | El sistema debe determinar las posiciones finales con los resultados y reglas de la temporada. | Sistema | R3 §3.11 | Media | B |
+| RF-071 | Evaluar elegibilidad para ascenso | El sistema debe excluir a equipos con adeudos, con sanción de baja o cuyo club ya tenga equipo en la categoría superior (RN-052). | Sistema | R3 §3.11, DEC-29 | Media | B |
+| RF-072 | Aplicar restricciones documentadas | El sistema debe aplicar las restricciones de la convocatoria configuradas para la temporada. | Sistema | R3 §3.11 | Media | B |
+| RF-073 | Generar propuesta de ascenso y descenso | El sistema debe generar la propuesta de ascensos y descensos. | Sistema | R3 §3.11 | Media | B |
+| RF-074 | Solicitar validación | Toda propuesta de ascenso y descenso requiere la validación del Presidente. | Presidente | R3 §3.11, RN-035 | Media | B |
+| RF-075 | Guardar versión de reglas utilizada | El sistema debe registrar la versión de la configuración que produjo la propuesta. | Sistema | R3 §3.11 | Media | B |
+| RF-076 | Configurar fases finales | El sistema debe permitir definir la fase final: número de clasificados (8 [DEMO]), formato (partido único o ida y vuelta) y criterio de empate. | Programador | R3 §3.11, DEC-28 | Media | B |
+| RF-077 | Clasificar equipos a fase final | El sistema debe clasificar a los equipos según la tabla. | Sistema | R3 §3.11 | Media | B |
+| RF-078 | Generar llaves de fase final | El sistema debe generar las llaves; la programación de sus partidos es manual. | Sistema, Programador | R3 §3.11, DEC-06 | Baja | B |
+| RF-079 | Resolver empates de fase final | El sistema debe resolver empates según el criterio configurado (penales registrados en la cédula). | Sistema | R3 §3.11, DEC-28 | Baja | B |
+| RF-080 | Registrar avances y eliminaciones | El sistema debe conservar el avance de los equipos en la fase final. | Sistema | R3 §3.11 | Baja | B |
+| RF-081 | Determinar campeón y subcampeón | El sistema debe registrar los resultados finales de la competencia. | Sistema | R3 §3.11 | Baja | B |
+
+#### 3.2.11 M-11 Portal público y publicación
+
+| ID | Requisito | Descripción | Actor | Fuente | Prioridad | Entrega |
+| --- | --- | --- | --- | --- | --- | --- |
+| RF-082 | Consultar programación semanal | El portal debe mostrar la programación aprobada de la semana. | Usuario público | R3 §3.12 | Alta | N |
+| RF-083 | Consultar resultados | El portal debe mostrar los resultados oficiales. | Usuario público | R3 §3.12 | Alta | N |
+| RF-084 | Consultar tablas | El portal debe mostrar las tablas de posiciones. | Usuario público | R3 §3.12 | Alta | N |
+| RF-085 | Consultar calendario | El portal debe mostrar el calendario de la competencia. | Usuario público | R3 §3.12 | Media | B |
+| RF-086 | Consultar comunicados | El portal debe mostrar las noticias y comunicados aprobados. | Usuario público | R3 §3.12 | Media | B |
+| RF-087 | Consultar sanciones autorizadas | El portal debe mostrar las sanciones publicadas. | Usuario público | R3 §3.12 | Media | B |
+| RF-088 | Consultar equipos y competencias | El portal debe permitir consultar equipos y fases publicadas. | Usuario público | R3 §3.12 | Media | B |
+| RF-089 | Buscar por fecha, categoría y equipo | El portal debe permitir filtrar por fecha, categoría/grupo y equipo. | Usuario público | R3 §3.12 | Media | N |
+| RF-090 | Gestionar flujo de publicación | La programación y los comunicados siguen el flujo Borrador → Revisión → Publicado con aprobación del Presidente; los resultados oficiales se publican automáticamente (DEC-21). | Secretario, Programador, Presidente | R3 §3.12, DEC-21 | Alta | N |
+| RF-145 | Publicar estadísticas de jugador con consentimiento | El portal solo debe mostrar estadísticas con nombre de jugador cuando exista consentimiento para la finalidad de difusión **[PROPUESTA]**. | Sistema | DEC-05, DEC-40 | Baja | B |
+
+#### 3.2.12 M-12 Reportes y documentos
+
+| ID | Requisito | Descripción | Actor | Fuente | Prioridad | Entrega |
+| --- | --- | --- | --- | --- | --- | --- |
+| RF-091 | Generar reportes operativos | El sistema debe producir los reportes REP-001 a REP-014 según el permiso y el ámbito del usuario. | Usuarios internos | R3 §3.12, DEC-05 | Media | B |
+| RF-092 | Exportar reportes | El sistema debe exportar los reportes a PDF y a Excel. | Usuarios internos | R3 §3.12, DEC-05 | Baja | B |
+
+#### 3.2.13 M-13 Tesorería y cobros
+
+| ID | Requisito | Descripción | Actor | Fuente | Prioridad | Entrega |
+| --- | --- | --- | --- | --- | --- | --- |
+| RF-135 | Configurar tarifas | El sistema debe permitir configurar las tarifas de arbitraje y de cancha por temporada y categoría. | Tesorero | DEC-36 | Media | B |
+| RF-136 | Generar cobros automáticos por partido | Al publicarse una jornada, el sistema debe generar a cada equipo los cobros de arbitraje y de cancha de sus partidos, sin cobro de cancha si juega en la propia. | Sistema | R2, DEC-36 | Media | B |
+| RF-137 | Crear cobros manuales | El sistema debe permitir crear un cobro a un club o a un equipo con concepto, monto y periodo de pago. | Tesorero | R2, DEC-36 | Alta | N |
+| RF-138 | Pagar un cobro en línea (simulado) | El sistema debe permitir al club pagar un cobro mediante un pago simulado con referencia ficticia y los estados Pendiente, Pagado, Rechazado y Vencido. | Directiva de club | DEC-37 | Alta | N |
+| RF-139 | Registrar pagos fuera del sistema | El sistema debe permitir registrar pagos recibidos por otros medios con su comprobante. | Tesorero | DEC-36 | Alta | N |
+| RF-140 | Consultar adeudos | El sistema debe mostrar los adeudos por club y por equipo según el ámbito del usuario. | Tesorero, Directiva de club | DEC-36 | Alta | N |
+| RF-141 | Vencer cobros no pagados | El sistema debe marcar como vencidos los cobros no pagados al terminar su periodo y notificar al club; el vencimiento alimenta el artículo de baja por falta de pago. | Sistema | R2, DEC-31 | Media | B |
+
+#### 3.2.14 M-14 Notificaciones
+
+| ID | Requisito | Descripción | Actor | Fuente | Prioridad | Entrega |
+| --- | --- | --- | --- | --- | --- | --- |
+| RF-142 | Notificar dentro del sistema | El sistema debe avisar dentro de la aplicación los eventos del flujo: cédula pendiente, devuelta o vencida; expediente abierto; trámite por aprobar; cobro generado o vencido; programación publicada. | Sistema | DEC-38 | Alta | N |
+| RF-143 | Notificar por correo | El sistema debe enviar por correo los mismos eventos a los usuarios que correspondan. | Sistema | DEC-38 | Media | B |
+
+#### 3.2.15 Validaciones y manejo de errores
+
+Validaciones que el sistema debe aplicar y su comportamiento ante el fallo. Los mensajes exactos se definen en el prototipo (PEN-016).
+
+| ID | Elemento | Validación | Comportamiento si falla | Entrega |
+| --- | --- | --- | --- | --- |
+| VAL-001 | Registro de jugador | Datos y documentos completos según la categoría | No completar la operación; indicar lo faltante | N |
+| VAL-002 | Elegibilidad | Registro activo, validado y sin sanción vigente | Bloquear la alineación y explicar el motivo | N |
+| VAL-003 | Programación | Equipo con otro partido en el mismo bloque | Rechazar y explicar el conflicto | N |
+| VAL-004 | Programación | Cancha ocupada en el bloque | Rechazar y explicar el conflicto | N |
+| VAL-005 | Programación | Cancha bloqueada, en mantenimiento, inactiva o fuera de disponibilidad | Rechazar y explicar el conflicto | N |
+| VAL-006 | Programación | Equipo dado de baja o con sanción que impide jugar | Rechazar y explicar el conflicto | N |
+| VAL-007 | Programación automática | No existe solución | Fuera de alcance | F |
+| VAL-008 | Estado del partido | Acción no permitida por el estado | Rechazar la acción | N |
+| VAL-009 | Resultado | Cédula no aprobada | No oficializar ni publicar | N |
+| VAL-010 | Corrección de resultado | Corrección sin resolución disciplinaria | Rechazar y conservar el dato oficial | N |
+| VAL-011 | Desempate | Igualdad en la tabla | Aplicar los criterios configurados | N |
+| VAL-012 | Disciplina | Artículo no identificado | Dejar el expediente en revisión | N |
+| VAL-013 | Sanción | Excepción no definida en el catálogo | No automatizarla; requerir resolución | N |
+| VAL-014 | Publicación | Información no aprobada | No mostrarla en el portal | N |
+| VAL-015 | Acceso | Rol sin permiso | Denegar la acción | N |
+| VAL-016 | Auditoría | Operación crítica | Registrar usuario, fecha, acción y motivo | N |
+| VAL-017 | Identidad | CURP con registro activo en la temporada | Rechazar y mostrar el club y equipo donde está registrada | N |
+| VAL-018 | Alineación | Jugador de otro equipo que no está en la categoría inmediata superior de su club | Rechazar la alineación | N |
+| VAL-019 | Designación | Árbitro del mismo club que uno de los equipos | Rechazar la designación | N |
+| VAL-020 | Cédula | Campos obligatorios incompletos | No permitir el envío a validación | N |
+| VAL-021 | Cédula | Aprobación por quien la capturó | Denegar la aprobación | N |
+| VAL-022 | Permisos | Cambio de permisos del propio rol | Denegar el cambio | N |
+| VAL-023 | Permisos | Par de permisos incompatibles | Dejar el cambio pendiente de aprobación del Presidente | N |
+| VAL-024 | Ámbito | Consulta o cambio fuera del ámbito del usuario | Denegar sin revelar si el recurso existe | N |
+| VAL-025 | Registro de menor | Falta el consentimiento o el INE del tutor | No completar el registro | N |
+| VAL-026 | Transferencia | Cambio de club dentro de la temporada | Rechazar | N |
+| VAL-027 | Localía | Cancha fuera de la regla de localía o externa en las últimas diez fechas | Advertir; aceptar solo con motivo | B |
+| VAL-028 | Pago | Pago de un cobro vencido o ya pagado | Rechazar e indicar el estado del cobro | N |
+
+#### 3.2.16 Reportes
+
+| ID | Reporte | Filtros | Entrega |
+| --- | --- | --- | --- |
+| REP-001 | Programación | Fecha, categoría, cancha | N (consulta) · B (exportación) |
+| REP-002 | Resultados | Temporada, categoría, grupo, jornada | N (consulta) · B (exportación) |
+| REP-003 | Tabla de posiciones | Categoría, grupo | N (consulta) · B (exportación) |
+| REP-004 | Castigados | Vigencia, categoría, club | B |
+| REP-005 | Sanciones | Estado, vigencia, artículo | B |
+| REP-006 | Cédulas | Partido, árbitro, fecha, estado | B |
+| REP-007 | Historial de equipo o jugador | Temporada, club | B |
+| REP-008 | Ascensos y descensos propuestos | Temporada | B |
+| REP-009 | Uso de canchas | Fecha, cancha | B |
+| REP-010 | Auditoría | Usuario, operación, módulo, fecha | N (consulta) · B (exportación) |
+| REP-011 | Exportación PDF/Excel | Reportes compatibles | B |
+| REP-012 | Adeudos y pagos | Club, equipo, estado, periodo | N (consulta) · B (exportación) |
+| REP-013 | Árbitros y designaciones | Árbitro, club, fecha | B |
+| REP-014 | Afiliaciones de la temporada | Estado, categoría | B |
+
+### 3.3 Requisitos no funcionales
+
+Las metas se dimensionaron con el volumen de R2 (cerca de 200 clubes, más de 600 equipos, 40 canchas y 5,000 a 6,000 asistentes por fin de semana) y son **[PROPUESTA]** del equipo (DEC-39). Se verifican en el entorno de pruebas del proyecto.
+
+#### 3.3.1 Requisitos de rendimiento
+
+| ID | Requisito | Criterio verificable | Fuente | Prioridad | Entrega |
+| --- | --- | --- | --- | --- | --- |
+| RNF-002 | Rendimiento de consultas públicas | p95 del tiempo de respuesta menor a 2 s con 300 usuarios simultáneos en el portal. | R3 §4, DEC-39 | Media | N |
+| RNF-016 | Rendimiento de operaciones internas | p95 menor a 3 s en operaciones internas; generación o exportación de un reporte en menos de 10 s. | DEC-39 | Media | N |
+| RNF-017 | Volumen de datos | El sistema debe operar con al menos 250 clubes, 800 equipos, 15,000 personas y 50 canchas por temporada sin degradar las metas anteriores. | R2, DEC-39 | Media | N |
+
+#### 3.3.2 Seguridad
+
+| ID | Requisito | Criterio verificable | Fuente | Prioridad | Entrega |
+| --- | --- | --- | --- | --- | --- |
+| RNF-003 | Seguridad y mínimo privilegio | Toda operación se autoriza por permiso y ámbito con denegación por defecto; las pruebas cubren 401, 403 y acceso fuera de ámbito por endpoint. | R3 §4, DEC-04 | Alta | N |
+| RNF-012 | Protección de datos personales | El portal no expone datos personales salvo los consentidos para difusión; los usuarios solo ven datos personales de su ámbito. | R3 §4, DEC-40 | Alta | N |
+| RNF-013 | Sin contraseñas propias | Las contraseñas no se almacenan en el sistema; la identidad se delega al servicio de autenticación. | R3 §4, DD-012 | Alta | N |
+| RNF-014 | Gestión segura de sesiones | Sesiones con expiración y límite de intentos según la política de PEN-030. | R3 §4 | Alta | N |
+| RNF-015 | Auditoría | Las acciones críticas son trazables y la auditoría no puede modificarse por los usuarios. | R3 §4 | Alta | N |
+| RNF-018 | Resguardo de documentos | Los documentos y fotos se almacenan en un repositorio privado; solo se acceden con URL firmadas de vigencia corta y por usuarios con permiso y ámbito. | DEC-10 | Alta | N |
+| RNF-019 | Cifrado en tránsito | Toda comunicación con el sistema y con la base de datos usa TLS. | R3 §15.2 | Alta | N |
+
+Controles por definir **[PENDIENTE]**: política de contraseñas, duración y renovación de la sesión, recuperación de acceso y límite de intentos (PEN-030); retención de auditoría y de documentos (PEN-040).
+
+#### 3.3.3 Fiabilidad
+
+| ID | Requisito | Criterio verificable | Fuente | Prioridad | Entrega |
+| --- | --- | --- | --- | --- | --- |
+| RNF-004 | Integridad transaccional | Las operaciones críticas (cédula, resultado, sanción, pago) son atómicas: si falla un paso no queda ningún cambio parcial. | R3 §4 | Alta | N |
+
+#### 3.3.4 Disponibilidad
+
+| ID | Requisito | Criterio verificable | Fuente | Prioridad | Entrega |
+| --- | --- | --- | --- | --- | --- |
+| RNF-001 | Disponibilidad durante jornadas | 99 % de disponibilidad los sábados y domingos de 7:00 a 21:00. | R3 §4, DEC-39 | Alta | B |
+| RNF-010 | Respaldo y recuperación | Respaldo diario con 7 días de retención; RPO de 24 h y RTO de 4 h, comprobados con una restauración de prueba. | R3 §4, DEC-39 | Alta | B |
+
+#### 3.3.5 Mantenibilidad
+
+| ID | Requisito | Criterio verificable | Fuente | Prioridad | Entrega |
+| --- | --- | --- | --- | --- | --- |
+| RNF-005 | Escalabilidad funcional | Se pueden agregar temporadas, categorías, artículos, tipos de incidencia y criterios de desempate sin cambios de código ni de esquema. | R3 §4, DD-004 | Media | N |
+| RNF-009 | Mantenibilidad | Los módulos no tienen dependencias cíclicas, verificado con una prueba de arquitectura. | R3 §4, DEC-39 | Media | N |
+| RNF-011 | Observabilidad | Bitácora estructurada sin datos personales y un punto de verificación de salud. | R3 §4, DEC-39 | Media | B |
+
+#### 3.3.6 Portabilidad
+
+El acceso es desde cualquier navegador moderno de escritorio o móvil (RNF-007). El diseño del modelo de datos no debe impedir operar varias ligas (DD-011).
+
+#### 3.3.7 Usabilidad y accesibilidad
+
+| ID | Requisito | Criterio verificable | Fuente | Prioridad | Entrega |
+| --- | --- | --- | --- | --- | --- |
+| RNF-006 | Usabilidad | Las tareas clave (capturar la cédula, aprobarla, registrar un jugador, pagar un cobro) se completan en tres pasos o menos desde el panel. | R3 §4, DEC-39 | Media | N |
+| RNF-007 | Responsive | Todas las pantallas son legibles y operables sin desplazamiento horizontal desde 360 px de ancho. | R3 §4 | Alta | N |
+| RNF-008 | Accesibilidad | Cumplimiento de WCAG 2.1 nivel AA en las pantallas del núcleo. | R3 §4, DEC-39 | Media | N |
+
+### 3.4 Otros requisitos
+
+#### 3.4.1 Reglas de negocio
+
+Las reglas deportivas y disciplinarias provienen de la convocatoria de cada temporada y se versionan. Si una regla no es explícita, su interpretación requiere autorización (RN-006, RN-035).
+
+**Reglas de temporada y configuración**
+
+| ID | Regla | Condición | Comportamiento esperado | Entrega |
+| --- | --- | --- | --- | --- |
+| RN-001 | La temporada representa un periodo deportivo | Se gestiona una competencia | La información queda asociada a su temporada | N |
+| RN-002 | La convocatoria es normativa | Una temporada tiene convocatoria | Las reglas de operación se vinculan a su documento normativo | B |
+| RN-003 | Las categorías y grupos pueden variar por temporada | Se abre una temporada | No se hereda una estructura fija sin configuración | N |
+| RN-004 | Las reglas de ascenso y descenso se versionan | Cambia una regla | Se conserva la versión utilizada | B |
+| RN-005 | El histórico no se sobrescribe | Se modifica una temporada | Los datos históricos se conservan (excepción: RN-041) | N |
+| RN-006 | Las interpretaciones requieren validación | Una regla no es explícita | Pasa por autorización del Presidente | N |
+| RN-058 | Una sola temporada activa a la vez | Se activa una temporada | La anterior debe estar cerrada | N |
+
+**Reglas deportivas, de registro y de clubes**
+
+| ID | Regla | Condición | Comportamiento esperado | Entrega |
+| --- | --- | --- | --- | --- |
+| RN-007 | Un equipo pertenece a una categoría y grupo durante una temporada | Durante su participación | La relación se identifica por temporada | N |
+| RN-008 | Una persona es una identidad reutilizable | Tiene uno o más roles | No se duplica su identidad; la clave es la CURP | N |
+| RN-009 | El registro del jugador está sujeto a reglas | Alta, baja, renovación o transferencia | Se valida conforme a la configuración de la temporada | N |
+| RN-010 | La elegibilidad se comprueba antes de participar | Se captura la alineación | Se bloquea si existe impedimento | N |
+| RN-011 | La sanción vigente puede impedir participación | La norma lo establece | Se impide la participación correspondiente (RN-057) | N |
+| RN-037 | Un jugador pertenece a un solo equipo por temporada | Se registra un jugador | Una CURP no puede tener dos registros activos en la temporada | N |
+| RN-038 | Alineación solo en la categoría inmediata superior | Un jugador se alinea con otro equipo de su club | Solo si ese equipo está en la categoría inmediata superior; se permite el mismo día | N |
+| RN-039 | Sin cambio de club dentro de la temporada | Se solicita un cambio | Se rechaza; entre temporadas se aplica la configuración de la Liga | N |
+| RN-040 | La venta de un equipo surte efecto al cierre | Se registra una venta o una conservación de plaza | Requiere autorización del Presidente y se aplica al cerrar la temporada | B |
+| RN-041 | Un cambio de nombre crea un club nuevo | Un club cambia de nombre | El club nuevo empieza sin historial; el anterior se cierra | B |
+| RN-055 | Datos de menores con consentimiento del tutor | Se registra un menor | Se exige el consentimiento expreso y el INE del tutor; el menor no tiene credenciales propias | N |
+
+**Reglas de árbitros**
+
+| ID | Regla | Condición | Comportamiento esperado | Entrega |
+| --- | --- | --- | --- | --- |
+| RN-042 | Cuota de árbitros por club | Un club afilia equipos | Debe presentar un árbitro por cada cuatro equipos, redondeando hacia arriba | B |
+| RN-043 | Un árbitro no pita a su club | Se designa un árbitro | Se rechaza si juega un equipo de su club | N |
+
+**Reglas de canchas y programación**
+
+| ID | Regla | Condición | Comportamiento esperado | Entrega |
+| --- | --- | --- | --- | --- |
+| RN-012 | Un equipo no puede aparecer duplicado | Se edita una jornada | Conflicto duro | N |
+| RN-013 | Una cancha ocupada no se reutiliza en el mismo bloque | Se asigna cancha | Se bloquea la asignación | N |
+| RN-014 | Una cancha no disponible no se asigna | Bloqueo, mantenimiento, inactividad o fuera de disponibilidad | Se impide la asignación | N |
+| RN-015 | Una sanción puede afectar la programación | Equipo dado de baja o con pérdida de partidos | La programación lo considera (RN-057) | N |
+| RN-016 | Las preferencias son restricciones blandas del algoritmo | — | Fuera de alcance (programación automática) | F |
+| RN-017 | Explicación de conflictos sin solución | — | Fuera de alcance (programación automática) | F |
+| RN-018 | Los cambios manuales quedan trazados | Se modifica la programación | Se registra usuario, fecha y motivo | N |
+| RN-048 | Localía | Un equipo es local | Se usa su cancha; si el rival no tiene cancha, se juega en la del que sí tiene; la cancha de un club solo se usa cuando ese club es local | B |
+| RN-049 | Últimas diez fechas en la unidad deportiva | Partido en las últimas diez fechas de la fase regular | Se advierte el uso de canchas externas (restricción blanda) | B |
+| RN-050 | Choques por bloque de cancha | Se detectan choques | Se usa el bloque de cancha de la categoría (120 min [DEMO]); la duración de juego es de 90 min sin tiempo extra | N |
+
+**Reglas de partidos, cédula y resultados**
+
+| ID | Regla | Condición | Comportamiento esperado | Entrega |
+| --- | --- | --- | --- | --- |
+| RN-019 | El estado del partido controla acciones | Cualquier momento del ciclo | Solo se permiten las acciones válidas para el estado | N |
+| RN-020 | Los partidos históricos no se eliminan | El partido tiene historial | Se conserva | N |
+| RN-021 | Cada transición es auditable | Cambio de estado | Se registra usuario, fecha y motivo | N |
+| RN-044 | Separación en la cédula | Se valida una cédula | El capturista no la aprueba; la aprueba o devuelve el árbitro designado y, al vencer el plazo, la Comisión de Arbitraje | N |
+| RN-045 | La cédula aprobada oficializa y publica | Se aprueba la cédula | El resultado queda oficial, actualiza la tabla y se publica sin revisión adicional | N |
+| RN-047 | No presentación | Un equipo no se presenta | Se asigna el marcador por default configurado (3-0 [DEMO]) | N |
+| RN-022 | La tabla se deriva de resultados oficiales | Se oficializa un resultado | Se recalcula la tabla | N |
+| RN-023 | Los desempates dependen de reglas configuradas | Igualdad de puntos | Se aplica el orden configurado: puntos, diferencia de goles, goles a favor, resultado entre los empatados, menos expulsiones, sorteo registrado por el Presidente [DEMO] | N |
+| RN-024 | Una corrección requiere recálculo | Un resultado cambia por resolución disciplinaria | Se recalcula la tabla y se conserva la versión anterior | N |
+| RN-025 | Solo información validada se publica | Un dato no es oficial | No se muestra en el portal | N |
+
+**Reglas disciplinarias**
+
+| ID | Regla | Condición | Comportamiento esperado | Entrega |
+| --- | --- | --- | --- | --- |
+| RN-026 | Una cédula origina incidencias | Se captura una cédula | Las incidencias se registran vinculadas al partido | N |
+| RN-046 | Las incidencias abren expediente según su tipo | Se aprueba una cédula con incidencias | Se abre expediente si el tipo lo indica | N |
+| RN-027 | Los incidentes se relacionan con artículos | Existe presunta infracción | Se registra el artículo aplicable | N |
+| RN-028 | La propuesta automática requiere validación | Se genera una propuesta de sanción | La Comisión la acepta, modifica o rechaza | B |
+| RN-029 | La resolución genera vigencia verificable | Se aprueba una sanción | Se conserva el periodo de vigencia | N |
+| RN-030 | El historial de resolución es inmutable | Se emite una resolución | No se altera destructivamente | N |
+| RN-031 | Un recurso abre un nuevo estado | Se presenta un recurso | El expediente pasa a En recurso y lo resuelve el Presidente | B |
+| RN-032 | La publicación disciplinaria es controlada | Sanción autorizada | Solo se publica lo autorizado | B |
+| RN-056 | Efectos de la baja de un equipo | Se da de baja un equipo | Sus partidos pendientes se otorgan por default al rival (configurable por artículo); con efecto retroactivo pierde además los partidos en que participó la persona sancionada | B |
+| RN-057 | Alcance de las sanciones | Hay una sanción vigente | La suspensión de un jugador impide su alineación; la baja de un equipo o la pérdida de partidos afecta su programación y resultados | N |
+
+**Reglas de competencias**
+
+| ID | Regla | Condición | Comportamiento esperado | Entrega |
+| --- | --- | --- | --- | --- |
+| RN-033 | Ascensos y descensos dependen de la temporada | Se calcula la clasificación final | Se aplica la versión de reglas de la temporada | B |
+| RN-034 | La elegibilidad forma parte del cálculo | Se determina ascenso o descenso | No basta la posición deportiva (RN-052) | B |
+| RN-035 | Los casos no automáticos requieren validación | Regla ambigua o propuesta | Se genera propuesta y se solicita autorización del Presidente | N |
+| RN-036 | Las fases finales conservan historial | Avanza o se elimina un equipo | Se conserva el historial | B |
+| RN-052 | Restricciones de ascenso | Un equipo califica para ascender | No asciende si tiene adeudos, sanción de baja o si su club ya tiene equipo en la categoría superior | B |
+
+**Reglas de seguridad y tesorería**
+
+| ID | Regla | Condición | Comportamiento esperado | Entrega |
+| --- | --- | --- | --- | --- |
+| RN-053 | Límites a la edición de permisos | El administrador modifica permisos | No puede modificar su propio rol; los pares incompatibles requieren aprobación del Presidente; todo cambio se audita | N |
+| RN-054 | Ámbito de club | Un usuario con ámbito de club opera | Solo ve y modifica información de su club | N |
+| RN-051 | Sin cobro de cancha propia | Se generan cobros de un partido | No se cobra cancha al equipo que juega en su cancha | B |
+
+#### 3.4.2 Requisitos de datos
+
+Principios de diseño de datos respaldados por la fuente y las decisiones:
+
+- Usar catálogos e identificadores para resolver abreviaturas, nombres variables y formatos no uniformes.
+- La CURP es la clave natural de la persona; el folio identifica la afiliación (R2).
+- No sobrescribir históricos: registros, propietarios de equipos, directivas, designaciones, resultados y resoluciones conservan sus versiones.
+- Separar la identidad de la persona de sus roles y la cuenta de usuario de la persona.
+- Separar datos oficiales de indicadores calculados.
+- Mantener la trazabilidad de la configuración y las reglas utilizadas en cada cálculo.
+- Identificar la liga en las entidades raíz para no impedir varias ligas (DD-011).
+
+Atributos que requieren definición **[PENDIENTE]**: campos obligatorios por formulario (PEN-015) y política de retención de datos (PEN-040).
+
+#### 3.4.3 Criterios de aceptación
+
+| ID | Criterio | Entrega |
+| --- | --- | --- |
+| CA-001 | Las temporadas históricas no se alteran. | N |
+| CA-002 | La programación manual no acepta asignaciones con conflicto duro detectable. | N |
+| CA-003 | Una cédula aprobada actualiza la tabla y el portal. | N |
+| CA-004 | Una sanción vigente impide la alineación o la programación según su alcance. | N |
+| CA-005 | Una resolución genera una vigencia verificable. | N |
+| CA-006 | El sistema explica por qué un equipo o una persona no puede participar. | N |
+| CA-007 | El portal muestra solo información autorizada y sin datos personales no consentidos. | N |
+| CA-008 | Los cambios críticos quedan auditados. | N |
+| CA-009 | Ningún resultado se vuelve oficial sin la aprobación del árbitro o, vencido el plazo, de la Comisión de Arbitraje. | N |
+| CA-010 | Una CURP con registro activo en la temporada no puede registrarse en otro club o categoría. | N |
+| CA-011 | Un usuario con ámbito de club no puede consultar ni modificar información de otro club. | N |
+| CA-012 | El administrador no puede ampliar los permisos de su propio rol. | N |
+| CA-013 | Un pago registrado actualiza el adeudo del club o equipo. | N |
+| CA-014 | Un árbitro no puede ser designado a un partido de su club. | N |
+
+#### 3.4.4 Requisitos legales y normativos
+
+- El tratamiento de datos personales se diseña conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (R10): aviso de privacidad integral y simplificado, consentimiento expreso para datos sensibles y de menores (otorgado por el tutor), finalidades separadas y atención de derechos ARCO (DEC-40). Si la Liga resultara un organismo público, aplicaría la ley general para sujetos obligados (R11) **[PENDIENTE]** (PEN-039).
+- Los documentos de identidad y las fotos se consideran datos personales de acceso restringido (RNF-018).
+- La normativa deportiva proviene del Reglamento y la Convocatoria de la Liga (R4). Mientras no se consulten, las reglas se configuran con valores [DEMO].
+- Este documento no constituye asesoría legal; el aviso de privacidad definitivo debe revisarlo la Liga.
+
+## 4 Modelado del sistema
+
+Este capítulo reúne los modelos que complementan los requisitos: casos de uso, procesos, máquinas de estado, datos, estructura modular y trazabilidad. La asignación de tareas a carriles y las entidades auxiliares son **[PROPUESTA]** del equipo.
+
+### 4.1 Modelo de casos de uso
+
+```mermaid
+flowchart LR
+    ADM([Administrador general])
+    PRE([Presidente del Comité Ejecutivo])
+    SEC([Secretario])
+    TES([Tesorero])
+    subgraph S1[SIGLIM]
+        CU001[CU-001 Registrar temporada]
+        CU002[CU-002 Configurar categorías y grupos]
+        CU005[CU-005 Registrar cancha]
+        CU022[CU-022 Gestionar permisos]
+        CU007[CU-007 Aprobar y publicar programación]
+        CU013[CU-013 Resolver recurso]
+        CU014[CU-014 Ascenso y descenso]
+        CU018[CU-018 Afiliar club]
+        CU026[CU-026 Venta de equipo y plaza]
+        CU021[CU-021 Validar identidad]
+        CU025[CU-025 Oferta de cancha]
+        CU027[CU-027 Publicar comunicado]
+        CU023[CU-023 Cobrar y pagar]
+        CU029[CU-029 Generar reportes]
+    end
+    ADM --- CU001 & CU002 & CU005 & CU022
+    PRE --- CU007 & CU013 & CU014 & CU018 & CU026 & CU022
+    SEC --- CU018 & CU021 & CU025 & CU027
+    TES --- CU023 & CU029
+```
+
+*Figura 3a. Casos de uso de administración y autoridades de la Liga.*
+
+```mermaid
+flowchart LR
+    PRO([Programador de partidos])
+    CAR([Comisión de Arbitraje])
+    CAP([Capturista])
+    ARB([Árbitro])
+    CDI([Comisión Disciplinaria])
+    SYS([Sistema])
+    subgraph S2[SIGLIM]
+        CU006[CU-006 Programar jornada]
+        CU015[CU-015 Fase final]
+        CU019[CU-019 Registrar y validar árbitros]
+        CU020[CU-020 Designar árbitros]
+        CU010[CU-010 Capturar cédula]
+        CU017[CU-017 Validar cédula]
+        CU008[CU-008 Registrar resultado]
+        CU009[CU-009 Calcular tabla]
+        CU011[CU-011 Resolver expediente]
+        CU012[CU-012 Publicar castigados y sanciones]
+    end
+    PRO --- CU006 & CU015
+    CAR --- CU019 & CU020 & CU017
+    CAP --- CU010
+    ARB --- CU017
+    CDI --- CU011 & CU012
+    SYS --- CU008 & CU009
+```
+
+*Figura 3b. Casos de uso de la operación deportiva.*
+
+```mermaid
+flowchart LR
+    DIR([Directiva de club])
+    JUG([Jugador o tutor])
+    PUB([Usuario público])
+    subgraph S3[SIGLIM]
+        CU003[CU-003 Registrar club y equipos]
+        CU004[CU-004 Registrar jugador]
+        CU018b[CU-018 Afiliar club]
+        CU019b[CU-019 Registrar árbitros]
+        CU024[CU-024 Préstamo o comodato]
+        CU023b[CU-023 Pagar cobros]
+        CU013b[CU-013 Interponer recurso]
+        CU028[CU-028 Consultar información propia]
+        CU016[CU-016 Consultar portal]
+    end
+    DIR --- CU003 & CU004 & CU018b & CU019b & CU024 & CU023b & CU013b
+    JUG --- CU028
+    PUB --- CU016
+```
+
+*Figura 3c. Casos de uso de los clubes, jugadores y público.*
+
+| Caso de uso | Actores | Objetivo y precondiciones | Flujo principal | Alternativas y excepciones | Requisitos | Entrega |
+| --- | --- | --- | --- | --- | --- | --- |
+| CU-001 Registrar temporada | Administrador general; secundario: Presidente | Crear y configurar un periodo deportivo. Usuario autorizado. | Registrar temporada → asociar convocatoria → configurar parámetros → activar. | Otra temporada activa → no se activa (RN-058). Datos incompletos. | RF-001 a RF-003, RF-006, RF-100 | N |
+| CU-002 Configurar categorías y grupos | Administrador general | Definir la estructura deportiva. Temporada en configuración. | Seleccionar categorías del catálogo → confirmar jerarquía → crear grupos. | Categoría sin superior inmediata → se registra como tope de su rama. | RF-004, RF-005, RF-099 | N |
+| CU-003 Registrar club y equipos | Secretario, Directiva de club | Incorporar un club y sus equipos. | Registrar club → registrar directiva → registrar equipos por categoría y grupo. | Cambio de nombre → club nuevo (RN-041). | RF-008, RF-009, RF-102, RF-105 | N |
+| CU-004 Registrar jugador | Directiva de club | Inscribir a una persona en un equipo. Club afiliado en la temporada. | Capturar CURP → validar unicidad → datos y documentos según categoría → consentimiento (tutor si es menor) → enviar a validación. | CURP con registro activo → rechazo (VAL-017). Menor sin tutor → no se completa (VAL-025). Renovación o transferencia entre temporadas. | RF-010 a RF-017, RF-097, RF-106 a RF-108, RF-111 | N |
+| CU-005 Registrar cancha | Administrador general | Incorporar una cancha y su disponibilidad. | Registrar cancha → propietario y ubicación → disponibilidad → bloqueos. | Cancha de club → horarios por categoría (RF-119). | RF-027 a RF-032, RF-119 | N |
+| CU-006 Programar jornada | Programador | Registrar o ajustar los partidos sin conflictos duros. Equipos y canchas registrados. | Crear jornada → registrar partidos (equipos, fecha, hora, cancha) → validar conflictos y localía → enviar a aprobación. | Conflicto duro → rechazo explicado. Advertencia de localía → aceptar con motivo. Reprogramación con motivo. | RF-033, RF-036, RF-039, RF-040, RF-120 | N |
+| CU-007 Aprobar y publicar programación | Presidente | Autorizar la jornada antes de hacerla pública. Jornada en revisión. | Revisar → aprobar → publicar → generar cobros de la jornada. | Devolver con observaciones → Borrador. | RF-121, RF-090, RF-056, RF-082, RF-136 | N |
+| CU-008 Registrar resultado | Sistema | Oficializar el resultado de un partido. Cédula aprobada. | Registrar resultado oficial → recalcular tabla → publicar → abrir expedientes. | Resolución disciplinaria posterior → recalcular (RF-052). | RF-047, RF-048, RF-052, RF-055, RF-056, RF-125 | N |
+| CU-009 Calcular tabla | Sistema | Calcular posiciones con los parámetros de la temporada. | Recuperar resultados oficiales → estadísticas → puntos → desempates → posiciones. | Empate total → sorteo registrado por el Presidente. | RF-049 a RF-051, RF-053, RF-055 | N |
+| CU-010 Capturar cédula | Capturista | Registrar la cédula del partido. Partido en curso o terminado. | Seleccionar partido → alineaciones (con validación de elegibilidad) → marcador, goles, tarjetas, sustituciones, incidencias y observaciones → enviar a validación. | No presentación → marcador por default (RF-126). Campos incompletos → no se envía (VAL-020). | RF-019, RF-020, RF-025, RF-026, RF-110, RF-122, RF-126 | N |
+| CU-011 Resolver expediente | Comisión Disciplinaria | Resolver un expediente con base en el reglamento. Expediente abierto. | Revisar incidencias → seleccionar artículo → definir sanción y vigencia → resolver. | Artículo no identificado → en revisión (VAL-012). Baja automática o retroactiva. | RF-057 a RF-065, RF-130 a RF-133 | N |
+| CU-012 Publicar castigados y sanciones | Comisión Disciplinaria | Difundir las sanciones autorizadas. | Seleccionar sanciones → publicar. | — | RF-066, RF-068, RF-087 | B |
+| CU-013 Resolver recurso | Directiva de club, Presidente | Revisar una resolución en segunda instancia. Expediente resuelto. | Interponer recurso → En recurso → Presidente resuelve → cierre. | Recurso fuera de plazo [PENDIENTE] (PEN-041). | RF-067 | B |
+| CU-014 Ascenso y descenso | Sistema, Presidente | Proponer y validar ascensos y descensos al cierre. | Cargar reglas → posiciones finales → elegibilidad → propuesta → validación. | Equipo no elegible → se excluye con motivo (RN-052). | RF-069 a RF-075 | B |
+| CU-015 Fase final | Programador | Configurar y llevar la liguilla. | Configurar fase → clasificar → llaves → programar partidos → registrar avances → campeón. | Empate → penales en la cédula. | RF-076 a RF-081 | B |
+| CU-016 Consultar portal | Usuario público | Consultar información publicada. | Elegir sección → filtrar → consultar. | — | RF-082 a RF-089, RF-145 | N |
+| CU-017 Validar cédula | Árbitro; Comisión de Arbitraje | Aprobar o devolver la cédula. Cédula pendiente de validación. | Revisar → aprobar → el resultado se oficializa (CU-008). | Devolver con observaciones → En captura. Plazo vencido → aprueba la Comisión (RF-124). | RF-123, RF-124, RF-127 | N |
+| CU-018 Afiliar club | Directiva de club, Secretario, Presidente | Registrar el tarjetón de la temporada. | Capturar tarjetón → folio → revisión del Secretario → aprobación del Presidente. | Rechazo con observaciones. | RF-101, RF-102 | N |
+| CU-019 Registrar y validar árbitros | Directiva de club, Comisión de Arbitraje | Incorporar los árbitros que presenta un club. | Registrar árbitro (CURP) → validar → catálogo. | Cuota incompleta → aviso (RF-114). | RF-021, RF-022, RF-112 a RF-114 | N |
+| CU-020 Designar árbitros | Comisión de Arbitraje | Asignar árbitros a los partidos de la jornada. Jornada registrada. | Seleccionar partido → elegir árbitro disponible → designar. | Árbitro de un club participante → rechazo (VAL-019). | RF-023, RF-024, RF-115 | N |
+| CU-021 Validar identidad | Secretario | Validar documentos y unicidad de un registro. Registro pendiente. | Revisar documentos → aprobar o rechazar con observaciones. | — | RF-107 a RF-109 | N |
+| CU-022 Gestionar permisos | Administrador general, Presidente | Ajustar los permisos de los roles. | Editar permisos de un rol → guardar con motivo. | Rol propio → denegado. Par incompatible → pendiente de aprobación del Presidente. | RF-094 a RF-096 | N |
+| CU-023 Cobrar y pagar | Tesorero, Directiva de club | Generar cobros y registrar su pago. | Crear cobro (o automático por jornada) → el club consulta adeudos → paga (simulado) o el Tesorero registra el pago. | Cobro vencido → no se paga en línea (VAL-028); alimenta la baja por falta de pago. | RF-135 a RF-141, RF-133 | N |
+| CU-024 Préstamo o comodato de cancha | Directiva de club, Presidente | Solicitar el uso de una cancha (Formato 1). | Capturar solicitud → carta con oficio → aprobación o rechazo. | — | RF-117, RF-118 | B |
+| CU-025 Oferta de cancha | Directiva de club, Secretario, Presidente | Registrar la oferta de una cancha (Formato 2). | Capturar oferta → negociación → aceptar o rechazar → alta de la cancha y horarios. | Oferente externo → captura el Secretario. | RF-116, RF-118, RF-119 | B |
+| CU-026 Venta de equipo y plaza | Directiva de club, Presidente | Registrar el cambio de propietario y la plaza. | Registrar venta → registrar plaza → autorizar → aplicar al cierre de temporada. | — | RF-103, RF-104 | B |
+| CU-027 Publicar comunicado | Secretario, Presidente | Difundir un comunicado oficial. | Redactar → enviar a revisión → aprobar → publicar. | Devolver con observaciones. | RF-086, RF-090 | B |
+| CU-028 Consultar información propia | Jugador o tutor | Consultar su registro, partidos y sanciones. Cuenta activa. | Iniciar sesión → consultar. | Menor → lo consulta el tutor. | RF-144, RF-097 | N |
+| CU-029 Generar reportes | Usuarios internos | Obtener y exportar reportes. | Elegir reporte → filtros → generar → exportar. | — | RF-091, RF-092, RF-134 | B |
+
+### 4.2 Modelo de procesos
+
+Los procesos se resumen con diagramas de flujo por carril (un subgrupo por participante). La notación BPMN 2.0 completa (R7) se desarrolla en el documento de BPMN, que debe actualizarse a esta revisión (versión 2.0). Inicio y fin se representan con círculos, decisiones con rombos.
+
+#### 4.2.1 P-01 Configuración de temporada
+
+| Elemento | Contenido |
+| --- | --- |
+| Objetivo | Preparar el marco deportivo y normativo de una temporada. |
+| Entradas | Convocatoria, categorías, grupos, parámetros deportivos, tarifas. |
+| Salida | Temporada configurada, versionada y activa. |
+| Requisitos | RF-001 a RF-007, RF-099, RF-100, RF-135; CU-001, CU-002 |
+
+```mermaid
+flowchart LR
+    subgraph ADM[Administrador general]
+        A0((Inicio)) --> A1[Registrar temporada] --> A2[Seleccionar categorías y grupos] --> A3[Configurar parámetros deportivos] --> D1{¿Regla interpretada?}
+        D1 -- No --> A4[Versionar configuración]
+    end
+    subgraph PRE[Presidente]
+        P1[Autorizar interpretación]
+    end
+    subgraph TES[Tesorero]
+        T1[Configurar tarifas]
+    end
+    D1 -- Sí --> P1 --> A4
+    A4 --> T1 --> A5[Activar temporada] --> A6((Fin))
+```
+
+#### 4.2.2 P-02 Afiliación y registro de jugadores
+
+| Elemento | Contenido |
+| --- | --- |
+| Objetivo | Afiliar al club en la temporada y registrar a sus jugadores con identidad validada. |
+| Entradas | Tarjetón, directiva, equipos, CURP, documentos, consentimiento. |
+| Salida | Club afiliado; registros activos o rechazados con causa. |
+| Requisitos | RF-008 a RF-017, RF-097, RF-101, RF-102, RF-106 a RF-109; CU-003, CU-004, CU-018, CU-021 |
+
+```mermaid
+flowchart LR
+    subgraph DIR[Directiva de club]
+        D0((Inicio)) --> D1[Capturar tarjetón] --> D2[Registrar equipos]
+        D3[Registrar jugador con CURP] --> X1{¿CURP con registro activo?}
+        X1 -- Sí --> D4[Rechazo: indica club y equipo]
+        X1 -- No --> D5[Cargar documentos y consentimiento]
+    end
+    subgraph SEC[Secretario]
+        S1[Revisar tarjetón]
+        S2[Validar documentos e identidad] --> X2{¿Válido?}
+    end
+    subgraph PRE[Presidente]
+        P1[Aprobar afiliación]
+    end
+    D2 --> S1 --> P1 --> D3
+    D5 --> S2
+    X2 -- Sí --> R1[Registro activo] --> F((Fin))
+    X2 -- No --> R2[Registro rechazado con observaciones] --> F
+    D4 --> F
+```
+
+#### 4.2.3 P-03 Programación manual, designación y publicación
+
+| Elemento | Contenido |
+| --- | --- |
+| Objetivo | Registrar la jornada sin conflictos duros, designar árbitros, aprobarla y publicarla. |
+| Restricciones duras | Equipo duplicado, cancha ocupada, cancha no disponible, equipo con baja o sanción, árbitro de un club participante. |
+| Restricciones blandas | Localía y canchas externas en las últimas diez fechas (advertencia). |
+| Requisitos | RF-023, RF-033, RF-036, RF-039, RF-040, RF-115, RF-120, RF-121, RF-136; CU-006, CU-007, CU-020 |
+
+```mermaid
+flowchart LR
+    subgraph PRO[Programador]
+        A0((Inicio)) --> A1[Crear jornada] --> A2[Registrar partido] --> X1{¿Conflicto duro?}
+        X1 -- Sí --> A3[Corregir partido] --> A2
+        X1 -- No --> X2{¿Advertencia de localía?}
+        X2 -- Sí --> A4[Aceptar con motivo o corregir]
+        X2 -- No --> A5[Enviar a revisión]
+        A4 --> A5
+    end
+    subgraph CAR[Comisión de Arbitraje]
+        C1[Designar árbitros] --> X3{¿Árbitro de un club participante?}
+        X3 -- Sí --> C1
+    end
+    subgraph PRE[Presidente]
+        P1{¿Aprueba?}
+    end
+    subgraph SIS[Sistema]
+        S1[Publicar programación] --> S2[Generar cobros de la jornada] --> S3[Notificar] --> F((Fin))
+    end
+    A5 --> C1
+    X3 -- No --> P1
+    P1 -- No --> A3
+    P1 -- Sí --> S1
+```
+
+#### 4.2.4 P-04 Ciclo de vida del partido
+
+Se modela como máquina de estados en 4.3.1. Reglas: no se eliminan partidos con historial (RN-020); toda transición registra usuario, fecha y motivo (RN-021); el estado controla las acciones permitidas (RN-019). Requisitos: RF-043 a RF-046, RF-127.
+
+#### 4.2.5 P-05 Cédula, resultado oficial y tabla
+
+| Elemento | Contenido |
+| --- | --- |
+| Objetivo | Capturar la cédula, validarla y oficializar el resultado. |
+| Salida | Resultado oficial publicado, tabla actualizada y expedientes abiertos. |
+| Requisitos | RF-019, RF-025, RF-026, RF-047 a RF-056, RF-110, RF-122 a RF-127; CU-008 a CU-010, CU-017 |
+
+```mermaid
+flowchart LR
+    subgraph CAP[Capturista]
+        A0((Inicio)) --> A1[Capturar alineaciones, marcador e incidencias] --> X1{¿Campos completos?}
+        X1 -- No --> A1
+        X1 -- Sí --> A2[Enviar a validación]
+    end
+    subgraph ARB[Árbitro designado]
+        B1{¿Responde dentro del plazo?}
+        B2{¿Aprueba?}
+    end
+    subgraph CAR[Comisión de Arbitraje]
+        C1[Aprobar cédula vencida]
+    end
+    subgraph SIS[Sistema]
+        S1[Resultado oficial y partido Finalizado] --> S2[Recalcular tabla] --> S3[Publicar en el portal] --> S4[Abrir expedientes según tipo de incidencia] --> F((Fin))
+    end
+    A2 --> B1
+    B1 -- Sí --> B2
+    B1 -- No --> C1 --> S1
+    B2 -- Sí --> S1
+    B2 -- No, devuelve --> A1
+```
+
+#### 4.2.6 P-06 Expediente, resolución y sanción
+
+| Elemento | Contenido |
+| --- | --- |
+| Objetivo | Convertir las incidencias en una resolución trazable conforme al reglamento. |
+| Separación de funciones | La captura (Capturista) y la validación (Árbitro) están separadas de la resolución (Comisión Disciplinaria) y del recurso (Presidente). |
+| Requisitos | RF-057 a RF-068, RF-130 a RF-133; CU-011 a CU-013 |
+
+```mermaid
+flowchart LR
+    subgraph SIS[Sistema]
+        S0((Inicio)) --> S1[Expediente abierto por incidencia]
+        S5[Calcular vigencia y aplicar efectos] --> X3{¿Baja de equipo?}
+        X3 -- Sí --> S6[Partidos restantes por default; retroactiva si aplica]
+        X3 -- No --> S7[Bloqueo de elegibilidad o programación]
+        S6 --> S8[Recalcular tabla y notificar]
+        S7 --> S8
+    end
+    subgraph CDI[Comisión Disciplinaria]
+        C1[Revisar incidencias y evidencias] --> X1{¿Artículo identificado?}
+        X1 -- No --> C2[Dejar en revisión] --> C1
+        X1 -- Sí --> C3[Resolver sanción]
+    end
+    subgraph DIR[Directiva de club]
+        D1{¿Interpone recurso?}
+    end
+    subgraph PRE[Presidente]
+        P1[Resolver recurso]
+    end
+    S1 --> C1
+    C3 --> S5
+    S8 --> D1
+    D1 -- Sí --> P1 --> F((Fin))
+    D1 -- No --> F
+```
+
+#### 4.2.7 P-07 Ascenso, descenso y clasificación
+
+Al cierre de la fase regular el sistema carga la versión de reglas, determina posiciones, excluye a los equipos no elegibles (RN-052), genera la propuesta y la somete a validación del Presidente. Requisitos: RF-069 a RF-075; CU-014.
+
+```mermaid
+flowchart LR
+    A0((Inicio)) --> A1[Cargar versión de reglas] --> A2[Determinar posiciones finales] --> A3[Evaluar elegibilidad] --> A4[Generar propuesta] --> X1{¿Presidente valida?}
+    X1 -- Sí --> A5[Registrar determinación] --> F((Fin))
+    X1 -- No --> A6[Registrar observaciones y ajustar] --> A4
+```
+
+#### 4.2.8 P-08 Liguilla y fases finales
+
+El programador configura la fase con los parámetros de la temporada; el sistema clasifica y genera las llaves; los partidos se programan manualmente (P-03) y se juegan con cédula (P-05); los empates se resuelven por penales registrados en la cédula; se registran avances, eliminaciones, campeón y subcampeón. Requisitos: RF-076 a RF-081; CU-015.
+
+#### 4.2.9 P-09 Publicación del portal
+
+La programación y los comunicados siguen el flujo Borrador → Revisión → Publicado con aprobación del Presidente; los resultados oficiales y la tabla se publican al aprobarse la cédula (DEC-21); las sanciones se publican cuando la Comisión Disciplinaria las autoriza. Requisitos: RF-056, RF-068, RF-082 a RF-090; CU-007, CU-012, CU-016, CU-027.
+
+#### 4.2.10 P-10 Préstamo, comodato y oferta de cancha
+
+| Elemento | Contenido |
+| --- | --- |
+| Objetivo | Tramitar el uso o la oferta de canchas con los formatos del cliente (R8). |
+| Requisitos | RF-116 a RF-119; CU-024, CU-025 |
+
+```mermaid
+flowchart LR
+    subgraph SOL[Directiva de club o Secretario]
+        A0((Inicio)) --> X0{¿Tipo de trámite?}
+        X0 -- Préstamo o comodato --> A1[Capturar Formato 1]
+        X0 -- Oferta --> A2[Capturar Formato 2]
+    end
+    subgraph SIS[Sistema]
+        S1[Generar carta con número de oficio]
+        S2[Registrar cancha, horarios y comodato] --> F((Fin))
+        S3[Registrar rechazo] --> F
+    end
+    subgraph PRE[Presidente]
+        X1{¿Aprueba o acepta?}
+    end
+    A1 --> S1
+    A2 --> S1
+    S1 --> X1
+    X1 -- Sí --> S2
+    X1 -- No --> S3
+```
+
+#### 4.2.11 P-11 Cobros y pagos
+
+| Elemento | Contenido |
+| --- | --- |
+| Objetivo | Generar los cobros de la temporada y registrar su pago. |
+| Requisitos | RF-133, RF-135 a RF-141; CU-023 |
+
+```mermaid
+flowchart LR
+    subgraph ORI[Origen del cobro]
+        A0((Inicio)) --> X0{¿Origen?}
+        X0 -- Jornada publicada --> A1[Cobros de arbitraje y cancha]
+        X0 -- Tesorero --> A2[Cobro manual]
+        X0 -- Multa --> A3[Cobro por sanción]
+    end
+    subgraph DIR[Directiva de club]
+        D1{¿Paga en línea?}
+        D2[Pago simulado]
+    end
+    subgraph TES[Tesorero]
+        T1[Registrar pago recibido por otro medio]
+    end
+    subgraph SIS[Sistema]
+        S1[Cobro Pendiente y notificación]
+        S2[Cobro Pagado y adeudo actualizado] --> F((Fin))
+        S3[Cobro Vencido: alimenta artículo de falta de pago] --> F
+    end
+    A1 --> S1
+    A2 --> S1
+    A3 --> S1
+    S1 --> D1
+    D1 -- Sí --> D2 --> S2
+    D1 -- Otro medio --> T1 --> S2
+    D1 -- No paga en el periodo --> S3
+```
+
+#### 4.2.12 P-12 Venta de equipo y conservación de plaza
+
+La directiva registra la venta; la conservación de la categoría y de la plaza se registra como operación independiente; el Presidente autoriza ambas; el sistema las aplica al cerrar la temporada y conserva el historial de propietarios (RN-040). Requisitos: RF-103, RF-104; CU-026.
+
+#### 4.2.13 P-13 Cambio de permisos con control dual
+
+```mermaid
+flowchart LR
+    subgraph ADM[Administrador general]
+        A0((Inicio)) --> A1[Editar permisos de un rol] --> X1{¿Es su propio rol?}
+        X1 -- Sí --> A2[Denegado] --> F((Fin))
+        X1 -- No --> X2{¿Crea un par incompatible?}
+    end
+    subgraph PRE[Presidente]
+        P1{¿Aprueba?}
+    end
+    subgraph SIS[Sistema]
+        S1[Aplicar y auditar cambio] --> F
+        S2[Rechazar y auditar] --> F
+    end
+    X2 -- No --> S1
+    X2 -- Sí --> P1
+    P1 -- Sí --> S1
+    P1 -- No --> S2
+```
+
+Requisitos: RF-094 a RF-096; CU-022.
+
+### 4.3 Máquinas de estado
+
+#### 4.3.1 Partido (DEC-23)
+
+```mermaid
+stateDiagram-v2
+    [*] --> Programado
+    Programado --> En_curso: fecha y hora (automático)
+    Programado --> Reprogramado: programador, con motivo
+    Programado --> Cancelado: programador, con motivo
+    En_curso --> Finalizado: cédula aprobada (automático)
+    En_curso --> Suspendido: programador, con motivo
+    Suspendido --> Reprogramado: programador, con motivo
+    Suspendido --> Cancelado: programador, con motivo
+    Reprogramado --> En_curso: nueva fecha y hora (automático)
+    Finalizado --> [*]
+    Cancelado --> [*]
+```
+
+La no presentación se registra en la cédula con marcador por default; una sanción retroactiva modifica el resultado de un partido Finalizado por resolución, sin cambiar su estado (DEC-24).
+
+#### 4.3.2 Cédula (DEC-19, DEC-20)
+
+```mermaid
+stateDiagram-v2
+    [*] --> En_captura
+    En_captura --> Pendiente_de_validacion: capturista envía
+    Pendiente_de_validacion --> Aprobada: árbitro aprueba
+    Pendiente_de_validacion --> Devuelta: árbitro devuelve con observaciones
+    Pendiente_de_validacion --> Aprobada: Comisión de Arbitraje, plazo vencido
+    Devuelta --> En_captura: capturista corrige
+    Aprobada --> [*]
+```
+
+#### 4.3.3 Registro de jugador
+
+```mermaid
+stateDiagram-v2
+    [*] --> Pendiente_de_validacion
+    Pendiente_de_validacion --> Activo: Secretario valida
+    Pendiente_de_validacion --> Rechazado: Secretario rechaza
+    Activo --> Suspendido: sanción vigente
+    Suspendido --> Activo: fin de vigencia
+    Activo --> Baja: baja con motivo
+    Rechazado --> [*]
+    Baja --> [*]
+```
+
+#### 4.3.4 Expediente disciplinario
+
+```mermaid
+stateDiagram-v2
+    [*] --> Abierto
+    Abierto --> En_revision: Comisión inicia revisión
+    En_revision --> Resuelto: resolución con artículo y sanción
+    Resuelto --> En_recurso: club interpone recurso
+    En_recurso --> Cerrado: Presidente resuelve
+    Resuelto --> Cerrado: sin recurso
+    Cerrado --> [*]
+```
+
+#### 4.3.5 Cobro (DEC-37)
+
+```mermaid
+stateDiagram-v2
+    [*] --> Pendiente
+    Pendiente --> Pagado: pago simulado o registrado
+    Pendiente --> Rechazado: pago simulado rechazado
+    Rechazado --> Pendiente: nuevo intento
+    Pendiente --> Vencido: fin del periodo de pago
+    Vencido --> Pagado: Tesorero registra pago
+    Pagado --> [*]
+```
+
+#### 4.3.6 Publicación de programación y comunicados
+
+```mermaid
+stateDiagram-v2
+    [*] --> Borrador
+    Borrador --> Revision: enviar a aprobación
+    Revision --> Publicado: Presidente aprueba
+    Revision --> Borrador: Presidente devuelve
+    Publicado --> [*]
+```
+
+Otros estados: temporada (Configuración, Activa, Cerrada); afiliación (Solicitada, Aprobada, Rechazada); solicitud de cancha (Formato 1: Pendiente, Aprobada, No aprobada; Formato 2: Pendiente de negociación, Aceptada, Rechazada); cambio de permisos (Solicitado, Aprobado, Rechazado).
+
+### 4.4 Modelo de datos conceptual
+
+Modelo conceptual. Las entidades provienen de la fuente (R3 §11) y de las decisiones (R9); las auxiliares son **[PROPUESTA]**. Los atributos, tipos e índices se definen en el diccionario de datos, que debe actualizarse a esta revisión (DEC-42).
+
+| Entidad | Propósito | Atributos clave | Origen | Entrega |
+| --- | --- | --- | --- | --- |
+| Liga | Organización que opera el sistema | Nombre | DEC-07 | N |
+| Temporada | Periodo deportivo | Periodo, estado, versión de reglas | R3 | N |
+| Convocatoria | Documento normativo de la temporada | Referencia, versión | R3 | B |
+| Categoría | Nivel deportivo del catálogo | Nombre, orden, categoría superior inmediata, tipo (infantil, libre, veteranos) | R3, DEC-16 | N |
+| Categoría de temporada / Grupo | Participación de la categoría y sus grupos | Temporada, categoría, grupos | R3 | N |
+| Parámetros de temporada | Reglas configurables | Puntos, desempates, bloque de cancha, marcador por default, plazo de cédula, liguilla, ascenso | DEC-26 a DEC-29 | N |
+| Persona | Identidad única | CURP, nombre, fecha de nacimiento, contacto | R3, DEC-10 | N |
+| Tutela | Relación tutor–menor | Tutor, menor, consentimiento | DEC-11 | N |
+| Consentimiento | Aceptación del aviso de privacidad | Titular u otorgante, versión del aviso, finalidades, fecha | DEC-40 | N |
+| Usuario (perfil) | Cuenta de acceso | Persona, estado | R3 | N |
+| Rol, permiso, asignación de rol | RBAC con ámbito | Módulo, acción, ámbito, club | R3, DEC-03, DEC-04 | N |
+| Solicitud de cambio de permisos | Control dual | Rol, permisos, estado, aprobador | DEC-04 | N |
+| Club | Entidad afiliada | Nombre, estado, club anterior (cambio de nombre) | R3, DEC-15 | N |
+| Afiliación | Tarjetón por temporada | Folio, colores, categorías, firmas, estado | R2, DEC-09 | N |
+| Cargo de directiva | Directiva del club | Club, persona, cargo, vigencia | R2, DEC-03 | N |
+| Equipo | Representación del club en categoría y grupo | Club, grupo, temporada, estado | R3 | N |
+| Propiedad de equipo / plaza | Historial de propietarios y plaza deportiva | Equipo, club, fechas, autorización | DEC-14 | B |
+| Registro de jugador | Persona en un equipo por temporada | Persona, equipo, estado, fechas | R3, DEC-12 | N |
+| Documento | Archivo del registro o evidencia | Tipo, ruta privada, estado de validación | DEC-10 | N |
+| Árbitro | Persona con rol arbitral | Persona, club que lo presenta, estado | R3, DEC-17 | N |
+| Disponibilidad arbitral / Designación | Disponibilidad y asignación | Árbitro, partido, fecha | R3 | N |
+| Cancha / Sede | Recurso físico | Ubicación, propietario, sede, estado | R3, DEC-33 | N |
+| Disponibilidad de cancha | Disponibilidad, bloqueos y mantenimiento | Cancha, intervalo, tipo | R3 | N |
+| Horario de cancha de club / Comodato | Uso de canchas por club | Cancha, club, categoría, día y hora | DEC-33 | B |
+| Solicitud de cancha | Formatos 1 y 2 | Tipo, oficio, datos del formato, estado | R8, DEC-35 | B |
+| Jornada | Unidad de programación | Grupo, número, estado de publicación | R3 | N |
+| Partido | Unidad competitiva | Equipos, cancha, inicio, fin de bloque, estado | R3 | N |
+| Historial de estados del partido | Transiciones | Estado anterior y nuevo, usuario, motivo | R3 | N |
+| Cédula | Registro oficial del partido | Partido, estado, capturista, árbitro validador, fechas | R3, DEC-19 | N |
+| Alineación | Jugadores del partido | Cédula, registro de jugador, equipo, categoría superior | R2, DEC-12 | N |
+| Evento de cédula | Goles, tarjetas, sustituciones | Cédula, persona, tipo, minuto | DEC-19 | N |
+| Incidencia | Hecho disciplinario | Cédula, tipo, personas o equipos | R3 | N |
+| Tipo de incidencia | Catálogo | Nombre, abre expediente | DEC-22 | N |
+| Resultado | Marcador oficial | Partido, goles, origen (cédula o resolución), versión | R3, DEC-21 | N |
+| Artículo / Infracción | Catálogo del reglamento | Número, tipo de sanción, sujeto, efecto, automático | R3, DEC-30 | N |
+| Expediente | Caso disciplinario | Incidencias, estado | R3 | N |
+| Resolución / Sanción | Decisión y consecuencia | Artículo, vigencia, sujeto | R3 | N |
+| Recurso | Inconformidad | Expediente, estado, resolución | R3 | B |
+| Competencia / Fase | Fase regular y liguilla | Tipo, formato, llaves | R3, DEC-28 | B |
+| Tarifa | Cuotas por temporada y categoría | Concepto, monto | DEC-36 | B |
+| Cobro / Pago | Cargos y pagos | Club o equipo, concepto, monto, periodo, estado, referencia | R2, DEC-36, DEC-37 | N |
+| Publicación / Comunicado | Contenido del portal | Tipo, estado, aprobador | R3 | N |
+| Notificación | Aviso a usuarios | Destinatario, evento, canal, leída | DEC-38 | N |
+| Auditoría | Trazabilidad | Usuario, fecha, módulo, acción, motivo | R3 | N |
+
+```mermaid
+erDiagram
+    LIGA ||--o{ TEMPORADA : organiza
+    LIGA ||--o{ CLUB : afilia
+    TEMPORADA ||--o{ CATEGORIA_TEMPORADA : incluye
+    CATEGORIA ||--o{ CATEGORIA_TEMPORADA : participa
+    CATEGORIA |o--o{ CATEGORIA : "superior inmediata de"
+    CATEGORIA_TEMPORADA ||--o{ GRUPO : contiene
+    CLUB ||--o{ AFILIACION : presenta
+    TEMPORADA ||--o{ AFILIACION : recibe
+    CLUB ||--o{ CARGO_DIRECTIVA : tiene
+    PERSONA ||--o{ CARGO_DIRECTIVA : ocupa
+    CLUB ||--o{ EQUIPO : "es propietario de"
+    GRUPO ||--o{ EQUIPO : agrupa
+    PERSONA ||--o{ REGISTRO_JUGADOR : tiene
+    EQUIPO ||--o{ REGISTRO_JUGADOR : registra
+    PERSONA ||--o{ TUTELA : "es tutor en"
+    REGISTRO_JUGADOR ||--o{ DOCUMENTO : respalda
+    PERSONA ||--o| ARBITRO : "actúa como"
+    CLUB ||--o{ ARBITRO : presenta
+    GRUPO ||--o{ JORNADA : programa
+    JORNADA ||--o{ PARTIDO : contiene
+    CANCHA ||--o{ PARTIDO : aloja
+    PARTIDO ||--o{ DESIGNACION : recibe
+    ARBITRO ||--o{ DESIGNACION : asignado
+    PARTIDO ||--|| CEDULA : documenta
+    CEDULA ||--o{ ALINEACION : registra
+    CEDULA ||--o{ EVENTO_CEDULA : registra
+    CEDULA ||--o{ INCIDENCIA : reporta
+    PARTIDO ||--o{ RESULTADO : "versiones de"
+    INCIDENCIA }o--o| EXPEDIENTE : origina
+    EXPEDIENTE ||--o{ RESOLUCION : produce
+    ARTICULO ||--o{ RESOLUCION : fundamenta
+    RESOLUCION ||--o{ SANCION : determina
+    EXPEDIENTE ||--o{ RECURSO : recibe
+    CLUB ||--o{ COBRO : adeuda
+    EQUIPO ||--o{ COBRO : adeuda
+    COBRO ||--o{ PAGO : liquida
+    USUARIO ||--o{ ASIGNACION_ROL : posee
+    ROL ||--o{ ASIGNACION_ROL : asigna
+    ROL ||--o{ ROL_PERMISO : concede
+```
+
+*Figura 4. Modelo entidad-relación conceptual (relaciones principales).*
+
+### 4.5 Estructura modular y arquitectura conceptual
+
+Arquitectura cliente-servidor de tres niveles **[PROPUESTA]** justificada en el documento de arquitectura y los ADR: una aplicación web de una sola página (React) con el portal público y la aplicación interna; un backend monolítico modular en capas (Spring Boot), con un paquete por módulo M-xx; y servicios administrados de datos, identidad y almacenamiento (Supabase). Componentes adicionales que exige esta revisión:
+
+- **Tareas programadas** para el cambio automático de estado del partido, el vencimiento del plazo de la cédula y de los cobros (RF-124, RF-127, RF-141).
+- **Autorización por permiso y ámbito** en la capa de servicios, con políticas de seguridad a nivel de fila como defensa adicional (RN-054).
+- **Almacenamiento privado** de documentos con URL firmadas (RNF-018).
+- **Servicio de correo** transaccional (RF-143).
+
+| ID | Propuesta de diseño | Motivo | Entrega |
+| --- | --- | --- | --- |
+| DP-001 | Módulos de dominio desacoplados dentro del backend | Reduce acoplamiento y facilita la evolución | N |
+| DP-002 | Versionar explícitamente las reglas de la temporada | Trazabilidad normativa | N |
+| DP-003 | Máquinas de estado explícitas (partido, cédula, expediente, cobro) | El estado controla acciones y auditoría | N |
+| DP-004 | Tratar la jornada como entidad con estado de publicación | Histórico, publicación y cobros | N |
+| DP-005 | Componente específico de validación de conflictos de programación | La programación es manual; se validan restricciones duras y blandas | N |
+| DP-006 | Separar datos publicados de datos internos | Reduce la exposición accidental | N |
+| DP-007 | Tareas programadas idempotentes para los procesos por tiempo | Plazos de cédula, estados y vencimientos | N |
+| DP-008 | Permisos como datos (rol, módulo, acción, ámbito), nunca por nombre de rol en el código | Permisos configurables (DEC-04) | N |
+
+### 4.6 Flujo de información
+
+**Por operación.** Entrada del usuario → interfaz → validación de formato, permiso y ámbito → reglas de negocio → procesamiento del módulo → persistencia transaccional → auditoría → notificación → resultado → publicación (cuando corresponde).
+
+**Público.** Datos internos → aprobación o validación de cédula → estado publicado → portal público → consulta. No existe flujo inverso desde el portal.
+
+### 4.7 Matriz de trazabilidad
+
+| Requisitos | Casos de uso | Proceso | Módulo | Pantallas | Entidades | Decisiones |
+| --- | --- | --- | --- | --- | --- | --- |
+| RF-093 a RF-098, RF-134 | CU-022 | P-13 | M-01 | UI-001, UI-002, UI-022, UI-029, UI-033 | Usuario, rol, permiso, solicitud de cambio, consentimiento, auditoría | DEC-02 a DEC-04, DEC-40 |
+| RF-001 a RF-007, RF-099, RF-100 | CU-001, CU-002 | P-01 | M-02 | UI-003, UI-004 | Temporada, convocatoria, categoría, grupo, parámetros | DEC-16, DEC-26 a DEC-29 |
+| RF-008 a RF-012, RF-101 a RF-106 | CU-003, CU-018, CU-026 | P-02, P-12 | M-03 | UI-005, UI-023, UI-034 | Club, afiliación, cargo, equipo, propiedad, persona, tutela | DEC-09, DEC-11, DEC-14, DEC-15 |
+| RF-013 a RF-020, RF-107 a RF-111, RF-144 | CU-004, CU-021, CU-028 | P-02 | M-04 | UI-006, UI-024, UI-032 | Registro de jugador, documento, alineación | DEC-10, DEC-12, DEC-13 |
+| RF-021 a RF-024, RF-112 a RF-115 | CU-019, CU-020 | P-03 | M-05 | UI-007, UI-025 | Árbitro, disponibilidad, designación | DEC-17, DEC-18 |
+| RF-027 a RF-032, RF-116 a RF-119 | CU-005, CU-024, CU-025 | P-10 | M-06 | UI-008, UI-028 | Cancha, sede, disponibilidad, horario, solicitud | DEC-33, DEC-35 |
+| RF-033, RF-036, RF-039, RF-040, RF-120, RF-121 | CU-006, CU-007 | P-03 | M-07 | UI-009 | Jornada, partido | DEC-06, DEC-34 |
+| RF-025, RF-026, RF-043 a RF-056, RF-122 a RF-127 | CU-008 a CU-010, CU-017 | P-04, P-05 | M-08 | UI-010 a UI-014 | Partido, cédula, alineación, evento, incidencia, resultado | DEC-19 a DEC-21, DEC-23 a DEC-27 |
+| RF-057 a RF-068, RF-128 a RF-133 | CU-011 a CU-013 | P-06 | M-09 | UI-015 a UI-017, UI-026 | Tipo de incidencia, artículo, expediente, resolución, sanción, recurso | DEC-22, DEC-30 a DEC-32 |
+| RF-069 a RF-081 | CU-014, CU-015 | P-07, P-08 | M-10 | UI-018, UI-019 | Competencia/fase, temporada | DEC-28, DEC-29 |
+| RF-082 a RF-090, RF-145 | CU-007, CU-012, CU-016, CU-027 | P-09 | M-11 | UI-020, UI-031 | Publicación, comunicado | DEC-05, DEC-21 |
+| RF-091, RF-092 | CU-029 | Transversal | M-12 | UI-021 | Reportes | DEC-05 |
+| RF-135 a RF-141 | CU-023 | P-11 | M-13 | UI-027 | Tarifa, cobro, pago | DEC-36, DEC-37 |
+| RF-142, RF-143 | Transversal | Transversal | M-14 | UI-030 | Notificación | DEC-38 |
+
+## Apéndice A. Pendientes por definir
+
+Se conservan los identificadores PEN de la fuente. **Estado:** Resuelto (con la decisión que lo resuelve), Demo (resuelto con un valor configurable [DEMO] hasta conocer el real), Abierto o Fuera (fuera de alcance, 2.6).
+
+| ID | Pendiente | Estado | Resolución o quién debe aclararlo |
+| --- | --- | --- | --- |
+| PEN-001 | Prioridad formal de cada requisito | Resuelto | Prioridad de producto conservada [PROPUESTA]; entrega N/B/F (DEC-01) |
+| PEN-002 | Alcance exacto de cada actor | Resuelto | 2.3 y Apéndice E (DEC-02 a DEC-04); falta validación de la Liga |
+| PEN-003 | Importación de datos históricos | Fuera | 2.6 |
+| PEN-004 | Operaciones obligatorias por temporada | Resuelto | Afiliación y registro con validación (DEC-09, DEC-10) |
+| PEN-005 | Quién crea y quién aprueba la programación | Resuelto | Programador crea; Presidente aprueba (RF-121) |
+| PEN-006 | Qué es obligatorio antes de programar | Resuelto | Clubes afiliados, equipos, canchas y árbitros validados (CU-006) [PROPUESTA] |
+| PEN-007 | Qué ocurre al bloquear una cancha | Abierto | Propuesta: se listan los partidos afectados para reprogramarlos manualmente; validar con la Liga |
+| PEN-008 | Suspensión y cancelación | Resuelto | DEC-23, 4.3.1 |
+| PEN-009 | Flujo de publicación | Resuelto | DEC-21, 4.2.9 |
+| PEN-010 | Matriz rol → módulo → acción | Resuelto | Apéndice E, configurable (DEC-04); falta validación de la Liga |
+| PEN-011 | Facultades del Comité, Secretaría, Tesorería y comisiones | Resuelto | DEC-02 a DEC-04 |
+| PEN-012 | Acciones del presidente o delegado de club | Resuelto | Directiva de club (DEC-03) |
+| PEN-013 | Acciones del jugador | Resuelto | Consulta de información propia (RF-144); menores mediante su tutor (DEC-11) |
+| PEN-014 | Prototipo y navegación final | Abierto | Equipo y cliente, sobre el prototipo de Figma |
+| PEN-015 | Campos obligatorios por formulario | Abierto | Parcial: tarjetón y documentos por categoría (R2); el resto con la Liga |
+| PEN-016 | Mensajes de error y bloqueo | Abierto | Equipo y Liga |
+| PEN-017 | Estados de publicación | Resuelto | 4.3.6 |
+| PEN-018 | Identificadores oficiales | Resuelto | CURP para personas; folio para afiliación (DEC-09, DEC-10) |
+| PEN-019 | Atributos de persona y jugador | Abierto | Parcial: documentos por categoría (R2); datos de contacto con la Liga |
+| PEN-020 | Estructura de cédula e incidencias | Resuelto | DEC-19 y R2 |
+| PEN-021 | Catálogo de artículos, infracciones y sanciones | Demo | Semilla con las tres causas de baja de R2 (DEC-30); catálogo real del Reglamento (R4) |
+| PEN-022 | Modelo de disponibilidad de canchas | Resuelto | DEC-25, DEC-33 |
+| PEN-023 | Documentos y evidencias | Resuelto | Almacenamiento privado (DEC-10, RNF-018) |
+| PEN-024 a PEN-026 | Stack, frontend y base de datos | Resuelto | DEC-43 |
+| PEN-027 | Estrategia del motor de reglas | Resuelto | Reglas por configuración y catálogos (DD-004) |
+| PEN-028 | Algoritmo de programación | Fuera | DEC-06 |
+| PEN-029 | Matriz de permisos detallada | Resuelto | Apéndice E |
+| PEN-030 | Políticas de sesión y contraseñas | Abierto | Equipo, en la ADR de autenticación |
+| PEN-031 | Política de respaldo y recuperación | Resuelto | Metas de RNF-010; procedimiento en la arquitectura |
+| PEN-032 | Datos públicos y restringidos | Resuelto | RNF-012, RF-145 |
+| PEN-033 | Integraciones necesarias | Resuelto | Identidad, almacenamiento y correo (3.1.3) |
+| PEN-034 | Proveedor de correo | Abierto | Equipo, en una ADR (costo, seguridad y necesidad) |
+| PEN-035 | Mapas, API pública y autenticación externa | Fuera | 2.6 |
+| PEN-036 | Ambientes de desarrollo, pruebas y producción | Abierto | Equipo |
+| PEN-037 | Dominio y alojamiento | Abierto | Liga y equipo |
+| PEN-038 | CI/CD y contenedores | Fuera | 2.6 |
+| PEN-039 | Naturaleza jurídica de la Liga | Abierto | Liga: define la ley de datos personales aplicable (3.4.4) |
+| PEN-040 | Retención de datos personales, documentos y auditoría | Abierto | Liga y equipo |
+| PEN-041 | Plazo para interponer un recurso | Abierto | Liga (Reglamento) |
+| PEN-042 | Tarifas reales de arbitraje y cancha | Abierto | Liga (Tesorería) |
+| PEN-043 | Duración de juego y bloque de cancha por categoría | Demo | 90 min de juego y 120 min de bloque [DEMO] (DEC-25); valores reales con la Liga |
+
+## Apéndice B. Ambigüedades, riesgos y verificación de fuentes
+
+**Ambigüedades**
+
+| ID | Ambigüedad | Estado |
+| --- | --- | --- |
+| AMB-001 | Alcance de la sanción: participación, programación o ambas | Resuelta: RN-057 (adoptada por estándar) |
+| AMB-002 | Qué resultado se considera oficial | Resuelta: cédula aprobada (DEC-21) |
+| AMB-003 | Qué elementos pueden publicarse | Resuelta: RNF-012, RF-145, 4.2.9 |
+| AMB-004 | Excepciones en las reglas | Abierta: se registran como artículos o como interpretaciones pendientes (RF-007) |
+| AMB-005 | Cardinalidades del modelo | Resuelta en 4.4 [PROPUESTA] |
+| AMB-006 | Permisos por cargo y comisión | Resuelta: Apéndice E |
+
+**Contradicciones entre la fuente R3 y el levantamiento R2** (prevalece R2)
+
+| ID | R3 | R2 / decisión | Tratamiento |
+| --- | --- | --- | --- |
+| X-A | RF-016: transferir jugador | No hay cambio de equipo dentro de la temporada | RF-016 limitado a cambios entre temporadas (DEC-13) |
+| X-B | Equipo–Persona N:M | Un jugador pertenece a un solo equipo por temporada | RN-037; la alineación en categoría superior es una entidad aparte |
+| X-C | Secretario y Tesorero como cargos de la liga | También son cargos del club | Existen en ambos (DEC-03) |
+| X-D | Conservar el histórico del club | Cambio de nombre = club nuevo sin histórico | RN-041 |
+| X-E | Sin módulo financiero | Gestión de cobros a club y equipo | M-13 (DEC-36) |
+| X-F | El árbitro captura la cédula | El capturista la captura; el árbitro la valida | DEC-19 |
+
+**Riesgos**
+
+| ID | Riesgo | Impacto | Mitigación |
+| --- | --- | --- | --- |
+| RSK-001 | Reglas que requieren interpretación | Automatización incorrecta | Versionado, autorización del Presidente y valores [DEMO] rotulados |
+| RSK-002 | Convocatorias que cambian por temporada | Diseño rígido | Parámetros por temporada (RF-100) |
+| RSK-003 | Datos históricos no estructurados | Duplicados | CURP y catálogos; sin importación en esta entrega |
+| RSK-005 | Pérdida de evidencia disciplinaria | Resoluciones sin sustento | Expediente, auditoría y resolución inmutable |
+| RSK-006 | Parametrización incorrecta | Decisiones deportivas erróneas | Validación humana y pruebas con casos reales |
+| RSK-007 | Exposición de datos personales | Riesgo legal y de privacidad | Ámbitos, almacenamiento privado, consentimiento |
+| RSK-008 | Demasiadas decisiones técnicas abiertas | Retraso | ADR antes del primer Sprint de desarrollo |
+| RSK-009 | Alcance integral en 8 semanas con 3 personas | No completar el núcleo | Núcleo N comprometido por rol; el resto en backlog priorizado; recalibrar tras el Sprint 1 |
+| RSK-010 | Datos de menores | Incumplimiento legal | Cuenta del tutor, consentimiento expreso, acceso restringido (DEC-11, DEC-40) |
+| RSK-011 | Dependencia de servicios administrados (identidad, almacenamiento, correo) | Indisponibilidad o costo | Capas de abstracción y capa gratuita justificada en ADR |
+| RSK-012 | Procesos por tiempo (plazos, estados automáticos) | Estados incorrectos si falla la tarea | Tareas idempotentes y auditadas (DP-007) |
+
+## Apéndice C. Preguntas y su estado
+
+| ID | Tema | Estado | Respuesta o pendiente |
+| --- | --- | --- | --- |
+| Q-01 | Renovación y transferencia | Resuelta | DEC-13 |
+| Q-02 | Alcance que exige la rúbrica | Abierta | Profesor |
+| Q-03 | Reglamento y Convocatoria como fuente | Abierta | Valores [DEMO] hasta contar con ellos |
+| Q-04 | Programación automática | Resuelta | No se incluye (DEC-06) |
+| Q-05 | Disciplina en el producto | Resuelta | Incluida (DEC-01, DEC-19 a DEC-22, DEC-30 a DEC-32) |
+| Q-06 | Arbitraje y cédula | Resuelta | DEC-17 a DEC-20 |
+| Q-07 | Matriz de permisos | Resuelta | DEC-04, Apéndice E |
+| Q-08 | Datos de jugadores y privacidad | Resuelta | DEC-40; la demostración usa datos ficticios |
+| Q-09 | Integraciones y alojamiento | Resuelta parcialmente | Integraciones en 3.1.3; alojamiento en PEN-037 |
+| Q-10 | Puntos y desempates | Resuelta | DEC-26, DEC-27 |
+| Q-11 | Temporada de trabajo | Resuelta | Una temporada activa a la vez (RN-058) |
+| Q-12 | Resultado oficial | Resuelta | DEC-21 |
+| Q-13 | Estados del partido | Resuelta | DEC-23 |
+| Q-14 | Competencia/Fase | Resuelta | Se incluye para la liguilla (DEC-28) |
+| Q-15 | Pantalla de auditoría | Resuelta | RF-134 (N) |
+| Q-16 | Reglas de elegibilidad | Resuelta | DEC-12, RN-037 a RN-039, RN-057 |
+| Q-17 | Alcance de la sanción | Resuelta | RN-057 |
+| Q-18 | Ascensos, descensos y fases finales | Resuelta | DEC-28, DEC-29 [DEMO] |
+| Q-19 | Valores de los RNF | Resuelta | DEC-39 |
+| Q-20 | Roles de Scrum y revisión de código | Abierta | Equipo |
+| Q-21 | Criterios de RNF-006 y RNF-009 | Resuelta | DEC-39 |
+| Q-22 | Representante de la Liga | Resuelta parcialmente | El profesor actuó como cliente en el levantamiento (R2); falta el representante formal |
+| Q-23 | Audio R2 y fuentes R4 | Resuelta parcialmente | Audio transcrito (R2); R4 sin consultar |
+| Q-24 | Calendario y entregables | Resuelta parcialmente | 8 semanas (DEC-08); entregables evaluados con el profesor |
+
+## Apéndice D. Supuestos [PROPUESTA]
+
+| ID | Supuesto | Relacionado con |
+| --- | --- | --- |
+| S-01 | El calendario es de 8 semanas con un equipo de tres personas. | DEC-08 |
+| S-02 | Opera una sola liga y una temporada activa a la vez. | DEC-07, RN-058 |
+| S-03 | Las reglas deportivas y disciplinarias usan valores [DEMO] rotulados como no oficiales hasta contar con el Reglamento y la Convocatoria. | Q-03, PEN-021 |
+| S-04 | Los 12 tipos de usuario usan la matriz inicial del Apéndice E, configurable por el Administrador general. | DEC-04 |
+| S-05 | El stack es React, Spring Boot, PostgreSQL en Supabase y Supabase Auth. | DEC-43 |
+| S-06 | La prioridad de producto se conserva de la revisión 0.1; la entrega se clasifica en N, B y F. | DEC-01 |
+| S-07 | La demostración usa datos ficticios. | Q-08 |
+| S-08 | El pago en línea es simulado. | DEC-37 |
+| S-09 | No se presume que el uso de herramientas de IA reduzca el esfuerzo de análisis, integración, pruebas o mantenimiento. | — |
+| S-10 | El profesor actuó como representante del cliente en el levantamiento. | Q-22 |
+
+## Apéndice E. Matriz inicial rol → módulo → acción
+
+Configuración inicial de DEC-04. **C** crear/registrar · **L** consultar · **E** editar · **A** aprobar, validar o resolver · **P** publicar · **X** exportar · **(\*)** solo su ámbito (su club, sus partidos o sus datos).
+
+| # | Rol | Permisos por módulo |
+| --- | --- | --- |
+| 1 | Administrador general | M-01 C L E (usuarios, roles, permisos, auditoría) · M-02 C L E (temporadas, categorías, parámetros) · M-03 L E · M-06 C L E (catálogo de canchas) · M-09 C L E (catálogos) · M-12 L X. No aprueba decisiones del negocio. |
+| 2 | Presidente del Comité Ejecutivo | M-02 A (reglas interpretadas) · M-03 A (afiliaciones, cambios de directiva, venta de equipo, plaza) · M-06 A (préstamos, ofertas, comodatos) · M-07 A (programación) · M-09 A (recursos) · M-10 A (ascensos y descensos) · M-11 A (comunicados) · M-01 A (pares de permisos incompatibles), L (auditoría) · M-12 L X |
+| 3 | Secretario (liga) | M-02 C E (convocatoria) · M-03 C L E (tarjetones) · M-04 L A (documentos e identidad) · M-06 C (oficios; ofertas de externos) · M-11 C E P (comunicados aprobados) · M-12 L X |
+| 4 | Tesorero (liga) | M-13 C L E A (tarifas, cobros, pagos, adeudos) · M-06 L (costos de cancha) · M-12 L X |
+| 5 | Comisión Disciplinaria | M-09 C L E A (expedientes, resoluciones, sanciones, publicación de sanciones) · M-08 L (cédulas e incidencias) · M-04 L (elegibilidad) · M-12 L X |
+| 6 | Comisión de Arbitraje | M-05 C L E A (catálogo, validación, disponibilidad, designaciones) · M-08 A (cédula con plazo vencido) · M-07 L · M-12 L X |
+| 7 | Programador de partidos | M-07 C L E (programación y ajustes) · M-08 E (Suspendido, Reprogramado, Cancelado) · M-10 C E (fases y llaves) · M-05 L · M-06 L |
+| 8 | Directiva de club | M-03 C\* E\* (tarjetón y equipos; solo el presidente del club lo firma) · M-04 C\* E\* (jugadores y documentos) · M-05 C\* (árbitros del club) · M-06 C\* (solicitudes y ofertas) · M-09 C\* L\* (recursos, sanciones del club) · M-13 L\* y pago\* (cargo tesorero) · M-07 y M-08 L\* · M-12 L X\* |
+| 9 | Árbitro | M-05 L\* E\* (designaciones y disponibilidad propias) · M-08 A\* (cédula de sus partidos) |
+| 10 | Capturista | M-08 C E (cédula y envío a validación) |
+| 11 | Jugador o tutor | M-04 L\* · M-08 L\* · M-09 L\* (información propia o del menor) |
+| 12 | Usuario público | M-11 L (información publicada) |
+
+Pares de permisos incompatibles iniciales [PROPUESTA]: capturar y validar cédula; programar y aprobar programación; resolver expediente y resolver recurso; redactar y aprobar comunicados; modificar permisos y aprobar pares incompatibles.

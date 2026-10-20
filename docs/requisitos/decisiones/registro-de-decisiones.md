@@ -4,9 +4,8 @@
 > Rev. 0.3, para que la Rev. 0.4, el BPMN, la arquitectura, el modelo de datos y el backlog se
 > actualicen contra una sola fuente.
 >
-> **Vigencia.** Este registro **prevalece sobre el ERS Rev. 0.3** en los puntos que trata, hasta que la
-> Rev. 0.4 los incorpore. A partir de entonces el ERS vuelve a ser la fuente principal y este archivo
-> queda como evidencia de origen.
+> **Vigencia.** Las decisiones están **integradas en el ERS Rev. 0.4** ([`../ERS.md`](../ERS.md)), que
+> vuelve a ser la fuente principal. Este archivo queda como evidencia de origen de cada requisito.
 >
 > **Fecha de corte:** 19 de octubre de 2026.
 

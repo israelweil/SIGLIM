@@ -17,7 +17,7 @@ agente de IA, léela en el orden de la tabla.
 | 8 | [`requisitos/bpmn/`](requisitos/bpmn/) | Diagramas BPMN de los procesos del sistema (P-xx), en DOCX y PDF. | Para entender el flujo de un proceso antes de implementarlo. |
 | 9 | [`arquitectura/figuras/`](arquitectura/figuras/) | Figuras 1 a 8 de la arquitectura (HIPO, IPO, componentes), enlazadas desde el documento de arquitectura. | Junto con el documento 2. |
 | — | [`requisitos/historico/`](requisitos/historico/) y [`base-de-datos/historico/`](base-de-datos/historico/) | Versiones anteriores **reemplazadas** (ERS Rev. 0.1, revisión del Equipo 3, extracción del PDF, diccionario original). Solo como referencia histórica. | Nunca para implementar. |
-| 10 | [`requisitos/decisiones/registro-de-decisiones.md`](requisitos/decisiones/registro-de-decisiones.md) | Decisiones posteriores al ERS Rev. 0.3 (DEC-xx), con origen y estado. Prevalecen sobre el ERS hasta la Rev. 0.4. | Antes de usar el ERS Rev. 0.3. |
+| 10 | [`requisitos/decisiones/registro-de-decisiones.md`](requisitos/decisiones/registro-de-decisiones.md) | Decisiones del 19-oct-2026 (DEC-xx) con su origen; integradas en el ERS Rev. 0.4. | Para rastrear por qué existe un requisito. |
 | — | [`requisitos/fuentes/`](requisitos/fuentes/) y [`arquitectura/originales/`](arquitectura/originales/) | Documentación técnica base, transcripción del levantamiento (R2), formatos de carta del cliente y DOCX original de arquitectura. | Para rastrear de dónde salió un requisito o una figura. |
 
 ## Jerarquía de fuentes de verdad
