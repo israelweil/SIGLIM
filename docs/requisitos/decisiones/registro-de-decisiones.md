@@ -142,5 +142,5 @@ No bloquean la Rev. 0.4; se registran como **[PENDIENTE]** y se resuelven como v
 2. BPMN v2.0 ([`../bpmn/bpmn-procesos-del-sistema.md`](../bpmn/bpmn-procesos-del-sistema.md)). **Hecho.**
 3. Arquitectura, diseño jerárquico y ADR nuevas (autorización por permiso y ámbito, almacenamiento de documentos, tareas programadas, correo, preparación multiliga, pago simulado; aceptación de ADR-0003 y ADR-0005) ([`../../arquitectura/arquitectura-y-diseno-jerarquico.md`](../../arquitectura/arquitectura-y-diseno-jerarquico.md), ADR-0003 y ADR-0005 a ADR-0012). **Hecho.**
 4. Diccionario de datos y nueva migración inicial (DEC-42) ([`../../base-de-datos/diccionario-de-datos.md`](../../base-de-datos/diccionario-de-datos.md), `supabase/migrations/20261020090000_esquema_inicial.sql`, ADR-0013 y ADR-0014). **Hecho.**
-5. Convenciones de API y diseño UI (reabrir C-03 y C-04).
+5. Convenciones de API v2.0 ([`../../arquitectura/convenciones-api.md`](../../arquitectura/convenciones-api.md)) y diseño UI: C-03 y C-04 reabiertos y resueltos, prompts de Stitch por pantalla ([`../../diseno-ui/prompts-stitch.md`](../../diseno-ui/prompts-stitch.md)). **Hecho**; queda generar y aprobar el prototipo (PEN-014).
 6. Backlog v4 y reemplazo de Jira (DEC-44).

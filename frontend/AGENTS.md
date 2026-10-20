@@ -39,16 +39,20 @@ src/
   (`useQuery`/`useMutation`) definidos en `features/<modulo>/api.ts`. Nunca `fetch` dentro de un
   componente ni `supabase.from(...)`.
 - **Errores:** captura `ApiError` y muestra `error.problema.detail` al usuario (ya viene en español
-  y explica la causa). Para conflictos de programación muestra el motivo junto al campo.
+  y explica la causa). Decide el tratamiento por `error.problema.codigo` (`VAL-004`, `VAL-015`…),
+  nunca por el texto; marca los campos de `errores`. Ver convenciones de API §3.
 - **Rutas:** el portal público cuelga de `/` (`PublicLayout`); la aplicación interna de `/app`
   (`RutaProtegida` + `InternalLayout`). Registra rutas nuevas solo en `src/app/router.tsx`.
-- **Permisos:** el backend decide (VAL-015). El frontend oculta lo que el usuario no puede hacer,
-  pero nunca es la única barrera.
+- **Permisos:** el backend decide (VAL-015). El frontend oculta lo que el usuario no puede hacer
+  con los permisos de `GET /api/v1/yo` y las `accionesPermitidas` de cada recurso, pero nunca es la
+  única barrera. Nunca condiciones por el nombre del rol.
 - **Estilos:** solo utilidades de Tailwind con los tokens de `styles/index.css`
   (`bg-primary`, `text-text-muted`, `border-border`, `bg-surface-dark`…). **Prohibido** escribir
   colores HEX en componentes o crear archivos `.css` por componente.
-- **Diseño:** sigue [`docs/diseno-ui/`](../docs/diseno-ui/README.md), pero respeta la tabla de
-  conflictos C-01 a C-08: sin buscador global, sin estadísticas de jugador, sin "Portal Delegados".
+- **Diseño:** sigue [`docs/diseno-ui/`](../docs/diseno-ui/README.md) y los frames aprobados de
+  [`prompts-stitch.md`](../docs/diseno-ui/prompts-stitch.md); respeta la tabla de conflictos C-01 a
+  C-08: sin buscador global, estadísticas de jugador solo en backlog y con consentimiento, un solo
+  «Iniciar sesión» para todos los usuarios internos.
 - **Estados visibles (ERS 3.1.1):** muestra el estado del partido y las acciones permitidas,
   distingue Borrador/Revisión/Publicado y diferencia dato oficial de indicador calculado.
 - **Accesibilidad (WCAG 2.1 AA):** `<label>` asociado a cada input, foco visible, `aria-hidden`

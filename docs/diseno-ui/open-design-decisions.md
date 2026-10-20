@@ -1,30 +1,38 @@
 # Decisiones de Diseño Pendientes y Observaciones - SIGLIM
 
+> Actualizado al ERS Rev. 0.4.1 (20 de octubre de 2026). Las pantallas nuevas se generan con los
+> [prompts de Stitch](prompts-stitch.md), que ya aplican las resoluciones de la sección 4.
+
 ## 1. Decisiones Observadas (Confirmadas por Referencias Visuales)
 - Uso de la paleta verde esmeralda (`#006837`) como color primario institucional.
-- Estructura de cabecera fija con selector de temporada y acceso a gestión.
-- Uso de tarjetas oscuras (`#131b2e`) para destacar el Partido de la Semana y los paneles de control de competición.
+- Estructura de cabecera fija con acceso a la aplicación interna.
+- Uso de tarjetas oscuras (`#131b2e`) solo para destacar en el portal público.
 
 ## 2. Inferencias Razonables
-- Los estados de los partidos (Final, En juego, Programado) se alimentan directamente de los estados devueltos por el backend en Spring Boot / Supabase.
-- La responsividad en dispositivos móviles transforma los grids de múltiples columnas en listas apiladas de una sola columna.
+- Los estados de los partidos, cédulas, registros y cobros se alimentan de los enums que devuelve
+  el backend (convenciones de API §9.3); la interfaz solo los traduce a texto.
+- La responsividad en dispositivos móviles transforma los grids de múltiples columnas en listas
+  apiladas de una sola columna (RNF-007: desde 360 px).
 
 ## 3. Puntos Pendientes de Validación por el Equipo
-- **P-01**: Confirmar si el sistema de notificaciones en tiempo real para cambios de marcador en el portal público utilizará WebSockets de Supabase o sondeo HTTP.
-- **P-02**: Verificar la biblioteca exacta de iconos a utilizar en el desarrollo frontend (se recomienda Lucide React por su coherencia de trazo).
+- **P-01**: ~~Notificaciones en tiempo real para cambios de marcador~~. Resuelto: no hay tiempo
+  real; los avisos se consultan al cargar y cada 60 s **[PROPUESTA]** (convenciones de API §6.14).
+- **P-02**: Biblioteca de iconos: se propone Lucide React por su coherencia de trazo; los prompts
+  de Stitch ya la piden.
+- **P-03**: Aprobar el prototipo generado con Stitch y exportado a Figma (PEN-014).
 
 ## 4. Conflictos detectados entre el diseño de referencia y el ERS
 
-Las capturas de referencia (Google Stitch) muestran elementos que el ERS deja fuera del alcance o
-pendientes. Mientras no se resuelvan, **la implementación sigue al ERS**.
+Las capturas de referencia (Google Stitch, primera ronda) muestran elementos que el ERS deja fuera
+del alcance o pendientes. **La implementación sigue al ERS.**
 
-| ID | Elemento del diseño | Qué dice el ERS | Qué se implementa |
-| --- | --- | --- | --- |
-| C-01 | Marca "LIGA APEX" | El sistema es **SIGLIM**; nombre de la Liga: Liga Municipal de Futbol Amateur Morelia | Logo/nombre SIGLIM hasta que el equipo decida la marca |
-| C-02 | Buscador global en el header | RF-089: "solo filtros básicos… **sin buscador general**"; buscador listado en 2.6 (portal ampliado) | Filtros por fecha, categoría/grupo y equipo |
-| C-03 | Botón "Portal Delegados" | Presidente/delegado de club es un perfil **no modelado** (2.6, Q-07) | Botón "Acceso interno" → login (UI-001) |
-| C-04 | Tarjetas "Máximo goleador" / "Mejor portero" | Estadísticas de jugador **aplazadas** (RF-051, RF-054; 2.6) | Solo estadísticas de equipo de la tabla (RF-053) |
-| C-05 | Enlaces a Reglamento, Comité de Competición, Prensa y Medios | Noticias, comunicados y documentos **aplazados** (RF-085 a RF-088) | Footer con créditos y sin esas secciones |
-| C-06 | Marcador "En vivo" en tiempo real (P-01) | Sin requisito de tiempo real; WebSockets fuera del alcance | Estado del partido al consultar (sin tiempo real) |
-| C-07 | Selector de temporada y de división | Una temporada de trabajo (RF-001, Q-11); categorías reales de la Liga, no "divisiones" | Filtro de categoría/grupo; selector de temporada solo si se valida |
-| C-08 | Resultados de partidos "Finalizados" en el portal | Solo resultados **validados y publicados** (RF-056, VAL-009, VAL-014) | Mostrar únicamente lo que devuelve `consultar_resultados_publicos` |
+| ID | Elemento del diseño | Qué dice el ERS Rev. 0.4.1 | Qué se implementa | Estado |
+| --- | --- | --- | --- | --- |
+| C-01 | Marca "LIGA APEX" | El sistema es **SIGLIM**; la Liga es la Liga Municipal de Futbol Amateur Morelia | Logotipo tipográfico «SIGLIM» con el nombre de la liga | Vigente |
+| C-02 | Buscador global en el header | RF-089: filtros por fecha, categoría/grupo y equipo; sin buscador general | Barra de filtros; búsqueda de texto solo dentro de un listado | Vigente |
+| C-03 | Botón "Portal Delegados" | **Reabierto y resuelto.** La Directiva de club (presidente, secretario, tesorero y delegado) ya es un tipo de usuario (§2.3, DEC-02, DEC-03), pero entra por el mismo inicio de sesión que los demás | Botón «Iniciar sesión» (UI-001); cada usuario ve su panel según permisos y ámbito (F-07, F-08) | Resuelto |
+| C-04 | Tarjetas "Máximo goleador" / "Mejor portero" | **Reabierto y resuelto.** Las estadísticas de jugador ya están en el ERS, pero como backlog (RF-054, UI-013) y en el portal solo con consentimiento de difusión (RF-145) | Núcleo: estadísticas de equipo de la tabla (RF-053). Backlog: frame B-01 con «Jugador (dato reservado)» sin consentimiento | Resuelto |
+| C-05 | Enlaces a Reglamento, Comité de Competición, Prensa y Medios | Comunicados, calendario, sanciones y equipos en el portal son backlog (RF-085 a RF-088) | Pie con nombre de la liga y «Aviso de privacidad» (RF-097); secciones del portal ampliado en B-10 | Vigente |
+| C-06 | Marcador "En vivo" en tiempo real | Sin requisito de tiempo real | Estado del partido al consultar | Vigente |
+| C-07 | Selector de temporada y de división | Una temporada activa por liga (RF-001); categorías y grupos reales, no "divisiones" | Texto «Temporada … · Activa» en la barra superior; filtros de categoría y grupo; temporadas cerradas en UI-003 | Vigente |
+| C-08 | Resultados de partidos "Finalizados" en el portal | Solo resultados de cédulas aprobadas (RF-056, RF-125, VAL-009) | Lo que devuelve la vista `v_publica_resultados` | Vigente |
