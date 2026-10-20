@@ -8,7 +8,7 @@ Plataforma web para configurar temporadas, programar partidos, oficializar resul
 y publicar la tabla de posiciones de la Liga, con trazabilidad de cada cambio.
 
 ![Estado](https://img.shields.io/badge/estado-en%20desarrollo-f59e0b?style=for-the-badge)
-![ERS](https://img.shields.io/badge/ERS-IEEE%20830%20·%20Rev.%201.3-006837?style=for-the-badge)
+![ERS](https://img.shields.io/badge/ERS-IEEE%20830%20·%20Rev.%200.4-006837?style=for-the-badge)
 ![Scrum](https://img.shields.io/badge/metodología-Scrum-0f172a?style=for-the-badge)
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)
@@ -35,25 +35,27 @@ sola aplicación web con **dos caras**:
 
 | | Aplicación interna | Portal público |
 | --- | --- | --- |
-| **Quién** | Administración, programación y captura | Cualquier visitante |
-| **Acceso** | Inicio de sesión y permisos por rol | Sin cuenta, solo lectura |
-| **Qué hace** | Configura, programa, captura, valida y publica | Consulta programación, resultados y tabla publicados |
+| **Quién** | 11 tipos de usuario: autoridades y comisiones de la Liga, programación, captura, clubes, árbitros y jugadores | Cualquier visitante |
+| **Acceso** | Inicio de sesión y permisos por rol y ámbito (liga, club o propio) | Sin cuenta, solo lectura |
+| **Qué hace** | Afilia, registra, programa, captura y valida la cédula, sanciona, cobra y publica | Consulta programación, resultados, tablas, comunicados y sanciones |
 
-La información interna **solo llega al portal después de un flujo de aprobación**
-(Borrador → Revisión → Publicado) y no existe forma de editar datos desde el portal.
+La programación y los comunicados llegan al portal **después de la aprobación del Presidente**;
+los resultados se publican al aprobarse la cédula. No existe forma de editar datos desde el portal.
 
 ## 🔄 Flujo central de la entrega
 
 ```mermaid
 flowchart LR
-    A[🗓️ Temporada] --> B[🏷️ Categoría / Grupo]
-    B --> C[🛡️ Clubes y equipos]
-    C --> D[🧑 Registro de jugadores]
-    D --> E[📋 Programación manual]
-    E --> F[⚽ Partido]
+    A[🗓️ Temporada] --> B[🛡️ Afiliación de clubes]
+    B --> C[🧑 Registro y validación de jugadores]
+    C --> D[📋 Programación y designación]
+    D --> E[⚽ Partido]
+    E --> F[📝 Cédula validada por el árbitro]
     F --> G[🔢 Resultado oficial]
-    G --> H[📊 Tabla de posiciones]
+    G --> H[📊 Tabla]
     H --> I[🌐 Publicación]
+    F --> J[⚖️ Disciplina]
+    D --> K[💰 Cobros]
     style I fill:#006837,color:#fff
 ```
 
@@ -61,20 +63,26 @@ Cada cambio crítico queda registrado con **usuario, fecha y motivo** (auditorí
 
 ## 🧩 Módulos
 
-| ID | Módulo | Qué cubre | Entrega |
-| --- | --- | --- | --- |
-| M-01 | Administración y seguridad | Inicio de sesión, roles, permisos por acción y auditoría | Esencial |
-| M-02 | Temporadas y normativa | Temporada, convocatoria, categorías, grupos y referencia de reglas | Esencial |
-| M-03 | Organización deportiva | Clubes, equipos y personas | Esencial |
-| M-04 | Registros y elegibilidad | Alta y baja de jugadores con historial | Conveniente |
-| M-06 | Canchas y recursos | Catálogo, disponibilidad y bloqueos | Esencial |
-| M-07 | Programación manual | Jornadas, partidos y detección de conflictos | Esencial |
-| M-08 | Partidos y resultados | Estados del partido, marcador, validación y tabla | Esencial |
-| M-11 | Portal público y publicación | Flujo de publicación y consultas públicas con filtros | Esencial |
-| M-09 | Disciplina reducida | Incidentes y resoluciones manuales | ⏸️ Pendiente (Q-05) |
+| ID | Módulo | Qué cubre |
+| --- | --- | --- |
+| M-01 | Administración y seguridad | Usuarios, roles, permisos con ámbito y control dual, consentimiento, auditoría |
+| M-02 | Temporadas y normativa | Temporada, categorías con jerarquía, grupos y parámetros deportivos |
+| M-03 | Organización deportiva | Clubes, afiliación, directiva, equipos, venta y plaza, personas y tutores |
+| M-04 | Registros y elegibilidad | Registro por CURP, documentos, validación, elegibilidad y alineación |
+| M-05 | Árbitros y designaciones | Árbitros de los clubes, validación y designación |
+| M-06 | Canchas y recursos | Canchas de liga y de clubes, préstamos, ofertas, disponibilidad |
+| M-07 | Programación manual | Jornadas, conflictos, localía, aprobación y publicación |
+| M-08 | Partidos, cédula y resultados | Estados, cédula validada, resultado oficial, tabla y estadísticas |
+| M-09 | Disciplina | Catálogos, expedientes, sanciones, bajas y recursos |
+| M-10 | Competencias y fases finales | Liguilla, ascensos y descensos |
+| M-11 | Portal público y publicación | Programación, resultados, tablas, comunicados y sanciones |
+| M-12 | Reportes y documentos | Reportes y exportación PDF/Excel |
+| M-13 | Tesorería y cobros | Tarifas, cobros, pago simulado y adeudos |
+| M-14 | Notificaciones | Avisos en el sistema y por correo |
 
-> Lo que queda fuera de esta entrega (árbitros, programación automática, liguillas, reportes,
-> integraciones) está en la sección 2.6 del [ERS](docs/requisitos/ERS.md).
+Cada requisito del [ERS Rev. 0.4](docs/requisitos/ERS.md) indica si es núcleo comprometido (N),
+backlog priorizado (B) o fuera del alcance (F, sección 2.6: programación automática, pasarela de
+pago real, integraciones no aprobadas).
 
 ## 🏗️ Arquitectura
 

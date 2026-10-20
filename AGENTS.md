@@ -7,10 +7,11 @@ en lo específico, y este aplica a todo.
 
 ## 1. El proyecto en tres líneas
 
-SIGLIM es la plataforma web de la **Liga Municipal de Futbol Amateur Morelia**: configura
-temporadas, programa partidos manualmente, oficializa resultados, calcula la tabla y publica todo
-en un portal de solo lectura. Proyecto académico real (ITM, equipo de 3, ~10 semanas) con requisitos
-en IEEE 830 **todavía no aprobados por la Liga**.
+SIGLIM es la plataforma web de la **Liga Municipal de Futbol Amateur Morelia**: afilia clubes,
+registra y valida jugadores por CURP, programa partidos manualmente, oficializa resultados con una
+cédula validada por el árbitro, aplica la disciplina, cobra cuotas y publica en un portal de solo
+lectura, con 12 tipos de usuario. Proyecto académico real (ITM, equipo de 3, 8 semanas) con
+requisitos en IEEE 830 **todavía no aprobados por la Liga**.
 
 ## 2. Antes de escribir código, lee
 
@@ -29,32 +30,32 @@ No leas todo en cada tarea: localiza el módulo (M-xx) y los RF de la tarea y le
 menor autoridad: ver los conflictos C-01 a C-08 en
 [`docs/diseno-ui/open-design-decisions.md`](docs/diseno-ui/open-design-decisions.md).
 
-> `docs/requisitos/ERS.md` es la Rev. 0.3 con sus tablas completas. Si un requisito es ambiguo,
-> pregunta en lugar de suponer.
+> `docs/requisitos/ERS.md` es la **Rev. 0.4** (integra el registro de decisiones DEC-01 a DEC-44).
+> Si un requisito es ambiguo, pregunta en lugar de suponer.
 > Las carpetas `historico/` (en `docs/requisitos/` y `docs/base-de-datos/`) contienen versiones **reemplazadas**,
 > y `docs/requisitos/fuentes/` el levantamiento original: nunca los uses para implementar.
 
 ## 3. Reglas de alcance (las más importantes)
 
-> ⚠️ **Alcance en revisión (19-oct-2026).** El equipo recuperó los 12 roles y su funcionalidad
-> (árbitros, cédula, disciplina, transferencias, liguillas, ascensos, tesorería, reportes, entre otros).
-> Las decisiones están en [`docs/requisitos/decisiones/registro-de-decisiones.md`](docs/requisitos/decisiones/registro-de-decisiones.md)
-> y prevalecen sobre el ERS Rev. 0.3 en lo que tratan. **No implementes nada** hasta que exista el
-> ERS Rev. 0.4 y el backlog v4; las reglas de esta sección se actualizarán con ellos.
+> ⚠️ **Antes de programar:** la arquitectura, los ADR, el diccionario de datos, la migración y las
+> convenciones de API todavía reflejan el alcance de la Rev. 0.3. **No implementes código** hasta que
+> se actualicen (orden en el §11 del registro de decisiones) y exista el backlog v4.
 
-1. **Implementa solo lo que el ERS incluye en la entrega**: estado `I` (incluido) o `S`
-   (simplificado). Lo simplificado se implementa en su versión simplificada, no en la completa.
-2. **Estado `P` o marca `[PENDIENTE]` → no se implementa.** Detente e informa qué decisión falta
-   (cita el `PEN-xxx` o `Q-xx`). Ejemplos: elegibilidad RF-017/019/020 (Q-16, Q-17), desempates
-   oficiales RF-050 (Q-10), disciplina M-09 (Q-05), consulta de auditoría UI-022 (Q-15).
-3. **Fuera del alcance (ERS §2.6) → nunca**, aunque parezca fácil o útil: árbitros y cédula,
-   programación automática, renovaciones y transferencias, sedes, estadísticas de jugador,
-   liguillas/ascensos/descensos, noticias y buscador general, reportes PDF/Excel, correo,
-   WhatsApp/SMS, API pública, login con Google u otros proveedores, CI/CD y contenedores.
-4. **No inventes reglas de negocio** (RN-006, RN-035). Si una regla no está escrita (duración de
-   un partido, criterio de desempate, quién aprueba), usa un valor de demostración **configurable**,
-   márcalo `[PROPUESTA]` en un comentario y menciónalo en tu respuesta.
-5. Los datos de las capturas de diseño ("Liga Apex", "Temporada 2024/25", "Primera División") son
+1. **Entrega `N`** (núcleo comprometido): se implementa en los Sprints. **Entrega `B`** (backlog
+   priorizado): solo cuando su historia entre a un Sprint. **Entrega `F`** (ERS §2.6): nunca, aunque
+   parezca fácil: programación automática, pasarela de pago real, reconocimiento facial,
+   WhatsApp/SMS, mapas, API pública, login con proveedores externos, importación masiva de
+   históricos, varias ligas en operación, CI/CD y contenedores.
+2. **Marca `[PENDIENTE]` → no se implementa.** Detente e informa qué decisión falta (cita el
+   `PEN-xxx` o `Q-xx` del ERS, Apéndices A y C).
+3. **Valores `[DEMO]`** (puntos, desempates, bloque de cancha, plazo de cédula, marcador por default,
+   liguilla, ascensos, catálogo de artículos): se implementan como **configuración**, nunca fijos en
+   el código, y se rotulan «no oficial» en la interfaz.
+4. **No inventes reglas de negocio** (RN-006, RN-035). Si una regla no está escrita, usa un valor
+   configurable, márcalo `[PROPUESTA]` en un comentario y menciónalo en tu respuesta.
+5. **Permisos:** nunca decidas por el nombre del rol; usa permiso `modulo:ACCION` más el **ámbito**
+   (liga, club o propio). La matriz inicial está en el Apéndice E del ERS y es configurable.
+6. Los datos de las capturas de diseño ("Liga Apex", "Temporada 2024/25", "Primera División") son
    de ejemplo, no requisitos.
 
 ## 4. Mapa del repositorio
@@ -81,6 +82,10 @@ Antes de dar una tarea por terminada, ejecuta la verificación del subproyecto q
 reporta el resultado real. Si no pudiste ejecutarla, dilo.
 
 ## 6. Modelo de dominio (resumen)
+
+> Este resumen describe la migración **actual** (alcance Rev. 0.3). El modelo de la Rev. 0.4 (ERS §4.4)
+> agrega persona con CURP, tutela, afiliación, directiva, árbitros, cédula, disciplina, cobros y
+> notificaciones; se aplicará con la nueva migración inicial (DEC-42).
 
 ```text
 Temporada ─< Categoría ─< Grupo ─< Equipo >─ Club
