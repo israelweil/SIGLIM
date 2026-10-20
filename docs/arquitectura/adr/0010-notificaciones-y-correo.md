@@ -1,6 +1,6 @@
 # ADR-0010: Notificar en la aplicación y por correo SMTP con bandeja de salida
 
-- **Estado:** Aceptada
+- **Estado:** Aceptada · el proveedor del punto 4 queda **pendiente** (PEN-034, DEC-46): Brevo es solo candidato; el mecanismo (SMTP y bandeja de salida) sigue vigente
 - **Fecha:** 2026-10-19
 - **Responsables:** Equipo SIGLIM
 - **Trazabilidad:** RF-142, RF-143, RNF-004, RNF-011, RNF-012, DEC-38, PEN-033, PEN-034, ADR-0003, ADR-0006, ADR-0009

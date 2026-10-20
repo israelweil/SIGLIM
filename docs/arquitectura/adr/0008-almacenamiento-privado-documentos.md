@@ -1,6 +1,6 @@
 # ADR-0008: Resguardar documentos en Supabase Storage privado, siempre a través del backend
 
-- **Estado:** Aceptada
+- **Estado:** Reemplazada por [ADR-0013](0013-documentos-en-aws-s3.md) (AWS S3)
 - **Fecha:** 2026-10-19
 - **Responsables:** Equipo SIGLIM
 - **Trazabilidad:** RNF-012, RNF-018, RNF-019, RF-059, RF-097, RF-108, RF-109, RF-139, DEC-10, DEC-40, PEN-023, PEN-040
