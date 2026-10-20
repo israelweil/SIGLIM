@@ -86,8 +86,8 @@ pago real, integraciones no aprobadas).
 
 ## 🏗️ Arquitectura
 
-Cliente-servidor de tres niveles: **SPA en React**, **monolito modular en Spring Boot** y
-**PostgreSQL + Auth administrados por Supabase**.
+Cliente-servidor de tres niveles: **SPA en React**, **monolito modular en Spring Boot** con un
+paquete por módulo, y **PostgreSQL, Auth y Storage administrados por Supabase**.
 
 ```mermaid
 flowchart TB
@@ -95,23 +95,28 @@ flowchart TB
         P[Portal público<br/>solo lectura]
         I[Aplicación interna<br/>autenticada]
     end
-    subgraph API["☕ Spring Boot · monolito modular"]
-        S[Filtro de seguridad<br/>JWT + RBAC] --> C[Controladores REST]
-        C --> SV[Servicios<br/>reglas · transacciones · auditoría]
+    subgraph API["☕ Spring Boot · 14 módulos"]
+        S[Filtro de seguridad<br/>JWT] --> C[Controladores REST]
+        C --> SV[Servicios<br/>permiso y ámbito · reglas · transacción · auditoría · eventos]
         SV --> R[Repositorios JDBC]
+        T[Tareas programadas] --> SV
     end
     subgraph SB["☁️ Supabase"]
-        AUTH[Supabase Auth<br/>emite JWT]
-        DB[(PostgreSQL<br/>RLS · triggers · funciones)]
+        AUTH[Auth<br/>emite JWT]
+        DB[(PostgreSQL<br/>RLS · historial · vistas públicas)]
+        ST[(Storage privado<br/>documentos)]
     end
+    MAIL[[Correo SMTP]]
     I -- login --> AUTH
     P -- HTTPS / REST --> C
     I -- HTTPS / REST + JWT --> S
     S -. valida firma con JWKS .-> AUTH
     R -- JDBC / TLS --> DB
+    SV -- URL firmadas --> ST
+    SV -- bandeja de salida --> MAIL
 ```
 
-El detalle (diagrama HIPO, diagramas IPO y decisiones justificadas) está en
+El detalle (HIPO de los 14 módulos, dependencias entre módulos, secuencias, seguridad y respaldo) está en
 [Arquitectura y diseño jerárquico](docs/arquitectura/arquitectura-y-diseno-jerarquico.md)
 y en los [ADR](docs/arquitectura/adr/).
 
@@ -126,7 +131,7 @@ siglim/
 │
 ├── docs/                     ← fuente de verdad del proyecto
 │   ├── requisitos/           ← ERS (IEEE 830), BPMN, decisiones, fuentes e histórico
-│   ├── arquitectura/         ← arquitectura, HIPO, figuras, convenciones de API y ADR
+│   ├── arquitectura/         ← arquitectura y HIPO, convenciones de API, ADR e histórico
 │   ├── base-de-datos/        ← diccionario de datos (+ histórico)
 │   └── diseno-ui/            ← sistema de diseño, tokens, componentes, accesibilidad
 │

@@ -1,6 +1,6 @@
 # ADR-0002: Backend como monolito modular por paquetes con Spring JDBC
 
-- **Estado:** Aceptada
+- **Estado:** Aceptada · la tabla de paquetes del punto 1 la reemplaza [ADR-0006](0006-paquetes-14-modulos-y-dependencias.md)
 - **Fecha:** 2026-10-13
 - **Responsables:** Equipo SIGLIM
 - **Trazabilidad:** DD-002, DP-001, DP-003, RNF-004, RNF-009; Tabla 2 de la arquitectura
