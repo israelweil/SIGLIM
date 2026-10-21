@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-tertiary":"#ffffff","on-surface":"#0b1c30","on-secondary-fixed-variant":"#3f465b","surface-container":"#e5eeff","outline-variant":"#bec9be","on-primary":"#ffffff","inverse-primary":"#83d99c","secondary-container":"#d8dff9","on-secondary":"#ffffff","surface-bright":"#f8f9ff","on-secondary-fixed":"#131b2e","error-container":"#ffdad6","on-primary-fixed":"#00210e","inverse-on-surface":"#eaf1ff","outline":"#6f7a70","tertiary-fixed-dim":"#ffb3b6","on-tertiary-container":"#ffc3c5","tertiary-container":"#943e46","secondary-fixed":"#dae2fc","surface-container-highest":"#d3e4fe","surface-tint":"#0b6d3b","tertiary-fixed":"#ffdada","on-error-container":"#93000a","surface-variant":"#d3e4fe","primary-container":"#006837","primary":"#004d27","on-surface-variant":"#3f4940","primary-fixed":"#9ef6b6","surface-container-high":"#dce9ff","surface-dim":"#cbdbf5","on-tertiary-fixed":"#40000c","surface":"#f8f9ff","on-primary-container":"#8ee4a6","on-secondary-container":"#5a6278","inverse-surface":"#213145","surface-container-low":"#eff4ff","on-error":"#ffffff","surface-container-lowest":"#ffffff","on-primary-fixed-variant":"#00522a","background":"#f8f9ff","secondary":"#565e74","on-tertiary-fixed-variant":"#7b2b34","secondary-fixed-dim":"#bec6e0","tertiary":"#762730","error":"#ba1a1a","primary-fixed-dim":"#83d99c","on-background":"#0b1c30"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xl":"1.5rem","margin-desktop":"2rem","space-md":"0.75rem","space-sm":"0.5rem","gutter":"1rem","gutter-desktop":"1.5rem","space-xs":"0.25rem","margin":"1rem","space-lg":"1rem"},"fontFamily":{"mono-data":["JetBrains Mono"],"label-sm":["Inter"],"label-md":["Inter"],"headline-lg":["Inter"],"body-sm":["Inter"],"headline-md":["Inter"],"display-lg-mobile":["Inter"],"body-md":["Inter"],"body-lg":["Inter"],"mono-score":["JetBrains Mono"],"headline-sm":["Inter"],"display-lg":["Inter"]},"fontSize":{"mono-data":["13px",{"lineHeight":"18px","fontWeight":"500"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"600"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-lg":["24px",{"lineHeight":"32px","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"display-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"mono-score":["28px",{"lineHeight":"32px","fontWeight":"700"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"display-lg":["36px",{"lineHeight":"44px","fontWeight":"700"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between border-r border-surface-container shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm border-b border-surface-container"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[20px]">sports_soccer</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-tight tracking-tight">SIGLIM</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">LIGA MORELIA</span></div></div><div class="px-space-md py-space-sm"><span class="px-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Administración</span></div><nav class="flex flex-col gap-space-xs px-space-md" data-active-classes="bg-primary-container text-on-primary font-label-md"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="inicio" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span>Inicio</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="cedulas-y-partidos" href="#"><span class="material-symbols-outlined text-[20px]">assignment</span>Cédulas y Partidos</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="tabla-de-posiciones" href="#"><span class="material-symbols-outlined text-[20px]">format_list_numbered</span>Tabla de Posiciones</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="estadisticas" href="#"><span class="material-symbols-outlined text-[20px]">query_stats</span>Estadísticas</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="comision-disciplinaria" href="#"><span class="material-symbols-outlined text-[20px]">gavel</span>Comisión Disciplinaria</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="arbitros" href="#"><span class="material-symbols-outlined text-[20px]">sports</span>Árbitros</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="tesoreria" href="#"><span class="material-symbols-outlined text-[20px]">payments</span>Tesorería</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="canchas" href="#"><span class="material-symbols-outlined text-[20px]">stadium</span>Canchas</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="auditoria" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span>Auditoría</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="configuracion" href="#"><span class="material-symbols-outlined text-[20px]">settings</span>Configuración</a></nav></div><div class="p-space-lg border-t border-surface-container bg-surface-container-lowest"><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">location_city</span><span class="font-label-sm text-label-sm font-semibold">Morelia, Mich.</span></div><p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Instancia Disciplinaria</p></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md border-b border-surface-container z-40 flex items-center justify-between px-space-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md"><span class="font-headline-sm text-headline-sm text-on-surface">Liga Municipal de Futbol Amateur Morelia</span><span class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-primary-container/10 text-primary border border-primary/20 font-label-sm text-label-sm"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>Temporada 2025–2026 · Activa</span></div><div class="flex items-center gap-space-lg"><button class="relative p-space-sm text-on-surface-variant hover:text-on-surface rounded-lg hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="h-6 w-px bg-surface-container"></div><div class="flex items-center gap-space-md"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface">Lic. Fernando Morales</span><span class="font-body-sm text-body-sm text-on-surface-variant">Comisión Disciplinaria</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-space-xl py-space-xl"><div class="flex flex-col w-full">
+<!-- SCRIPT PARA INTERACTIVIDAD DE MENÚS Y MODAL -->
+<script>
+    function toggleObservationModal(show) {
+      const modal = document.getElementById('modal-observaciones');
+      if (modal) {
+        if (show) {
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+        } else {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }
+      }
+    }
+
+    function toggleConfirmModal(show) {
+      const modal = document.getElementById('modal-validacion');
+      if (modal) {
+        if (show) {
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+        } else {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }
+      }
+    }
+  </script>
+<!-- CABECERA INSTITUCIONAL INTERNA Y CONTEXTO NORMATIVO -->
+<div class="flex flex-col gap-space-lg mb-space-xl">
+<!-- Breadcrumb de Auditoría y Navegación Presidencial -->
+<nav class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="hover:text-on-surface transition-colors cursor-pointer">Temporada 2025–2026</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-on-surface transition-colors cursor-pointer">Presidencia del Comité Ejecutivo</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Propuesta de Ascensos y Descensos</span>
+</nav>
+<!-- Título y Acciones de Alto Rango -->
+<div class="flex flex-col lg:flex-row lg:items-start justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs max-w-4xl">
+<div class="flex items-center flex-wrap gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+            Propuesta de Ascensos y Descensos · Temporada 2025–2026
+          </h1>
+<span class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded bg-tertiary/10 text-tertiary font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+<span class="material-symbols-outlined text-[14px]">science</span>
+            No oficial · Demostración administrativa
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Dictamen provisional de movimientos de categoría para la Asamblea General de Delegados con base en la tabla general de posiciones acumulada y criterios de elegibilidad federativa (Reglamento Deportivo Morelia Arts. 18 al 24).
+        </p>
+<!-- Insignias Normativas y Control de Versión -->
+<div class="flex items-center flex-wrap gap-space-md pt-space-xs">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-primary text-[16px]">balance</span>
+<span>Regla reglamentaria: 2 ascensos y 2 descensos directos por categoría</span>
+<span class="text-tertiary ml-space-xs font-mono-data text-label-sm">[No oficial]</span>
+</div>
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">rule</span>
+<span>Reglas versión 3.1.2</span>
+<span class="text-tertiary ml-space-xs font-mono-data text-label-sm">[No oficial]</span>
+</div>
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-primary text-[16px]">history_edu</span>
+<span>Folio Dictamen: <span class="font-mono-data font-semibold">DIC-PCE-2026-04</span></span>
+</div>
+</div>
+</div>
+<!-- Barra de Acciones de Presidencia -->
+<div class="flex items-center flex-wrap gap-space-sm self-start shrink-0">
+<button class="h-11 px-space-lg rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container-low transition-all flex items-center gap-space-sm" onclick="toggleObservationModal(true)">
+<span class="material-symbols-outlined text-tertiary text-[18px]">edit_note</span>
+          Observar propuesta
+        </button>
+<button class="h-11 px-space-lg rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container-low transition-all flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+          Exportar Dictamen (PDF)
+        </button>
+<button class="h-11 px-space-xl rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shadow-md hover:bg-primary transition-all flex items-center gap-space-sm" onclick="toggleConfirmModal(true)">
+<span class="material-symbols-outlined text-on-primary text-[20px]">verified</span>
+          Validar propuesta federativa
+        </button>
+</div>
+</div>
+</div>
+<!-- FILTROS ESTRUCTURADOS Y STATUS DE LA REVISIÓN -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm mb-space-xl flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="flex flex-wrap items-center gap-space-md w-full md:w-auto">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Par de Categorías Adyacentes</label>
+<div class="relative">
+<select class="h-11 pl-space-md pr-10 bg-surface-container-low rounded-lg font-label-md text-label-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer">
+<option value="todas">Todas las categorías adyacentes</option>
+<option selected="" value="especial-libre">Primera Especial ↔ Libre Primera</option>
+<option value="libre-intermedia">Libre Primera ↔ Primera Intermedia</option>
+<option value="intermedia-segunda">Primera Intermedia ↔ Segunda Fuerza</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Grupo / Conferencia</label>
+<div class="relative">
+<select class="h-11 pl-space-md pr-10 bg-surface-container-low rounded-lg font-label-md text-label-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer">
+<option value="gral">Tabla General Única</option>
+<option value="g1">Grupo 1 - Zona Norte Morelia</option>
+<option value="g2">Grupo 2 - Zona Sur / Tenencias</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Jornada de Cierre</label>
+<div class="h-11 px-space-md bg-surface-container-low rounded-lg font-mono-data text-mono-data text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">event_available</span>
+          Jornada 34 (Oficial Cierre)
+        </div>
+</div>
+</div>
+<!-- Indicador de Estado del Dictamen -->
+<div class="flex items-center gap-space-md w-full md:w-auto justify-end">
+<div class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg bg-surface-container text-on-surface font-label-md text-label-md shadow-sm">
+<span class="w-3 h-3 rounded-full bg-tertiary-container animate-pulse"></span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-tertiary font-bold tracking-wide uppercase">En revisión de Presidencia</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dictamen preliminar no remitido</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECCIÓN PRINCIPAL: BLOQUES DE ASCENSOS Y DESCENSOS -->
+<div class="flex flex-col gap-space-xl">
+<!-- ==================== BLOQUE 1: PRIMERA ESPECIAL ↔ LIBRE PRIMERA ==================== -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<!-- Encabezado de Bloque de Categoría -->
+<div class="bg-on-secondary-fixed text-on-primary px-space-xl py-space-md flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<span class="material-symbols-outlined text-on-primary-container text-[24px]">swap_vert</span>
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm font-bold tracking-tight">Bloque A: Movimientos de Categoría Estelar</span>
+<span class="text-surface-variant">·</span>
+<span class="font-label-sm text-label-sm px-space-sm py-0.5 rounded bg-primary-container text-on-primary font-semibold">DIVISIÓN SUPERIOR</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm text-on-secondary-fixed-variant font-label-md text-label-md">
+<span class="px-space-sm py-1 bg-surface-container-lowest/10 rounded text-on-primary font-semibold">Primera Especial</span>
+<span class="material-symbols-outlined text-[16px] text-on-primary">sync_alt</span>
+<span class="px-space-sm py-1 bg-surface-container-lowest/10 rounded text-on-primary font-semibold">Libre Primera</span>
+</div>
+</div>
+<!-- Contenido en Dos Columnas Paralelas Estrictas -->
+<div class="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-surface-container">
+<!-- COLUMNA IZQUIERDA: ASCIENDEN A PRIMERA ESPECIAL -->
+<div class="p-space-lg flex flex-col gap-space-md bg-surface-container-lowest">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">arrow_upward</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Ascienden a Primera Especial</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-mono-data tracking-wider">Suben de Libre Primera</span>
+</div>
+<!-- Resumen de Criterio -->
+<div class="p-space-sm rounded-lg bg-surface-container text-on-surface-variant font-body-sm text-body-sm flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">info</span>
+<span>Cupos reglamentarios: <strong>2 equipos</strong>. Se evalúa derecho por mérito deportivo con verificación previa de inexistencia de filial en Primera Especial y solvencia ante Tesorería.</span>
+</div>
+<!-- Tarjetas de Equipos Promovidos / Elegibles -->
+<div class="flex flex-col gap-space-sm">
+<!-- Equipo 1: Campeón General -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<span class="w-8 h-8 rounded-full bg-primary-container text-on-primary font-mono-data text-mono-data font-bold flex items-center justify-center shrink-0">1°</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Club Félix Ireta</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Campeón General Libre Primera</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-mono-score text-mono-score text-on-surface">48 <span class="text-body-sm font-label-sm text-on-surface-variant">PTS</span></span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">DG +34 (J34)</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[16px]">verified_user</span>
+<span class="font-body-sm text-body-sm text-on-surface">Expediente limpio · Sin filial en división superior</span>
+</div>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-primary-container/15 text-primary font-label-sm text-label-sm uppercase font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  Elegible / Aprobado
+                </span>
+</div>
+</div>
+<!-- Equipo 2: Subcampeón -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<span class="w-8 h-8 rounded-full bg-primary-container text-on-primary font-mono-data text-mono-data font-bold flex items-center justify-center shrink-0">2°</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Real Atapaneo</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Subcampeón General Libre Primera</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-mono-score text-mono-score text-on-surface">45 <span class="text-body-sm font-label-sm text-on-surface-variant">PTS</span></span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">DG +28 (J34)</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[16px]">verified_user</span>
+<span class="font-body-sm text-body-sm text-on-surface">Acreditación canchas y arbitrajes al corriente</span>
+</div>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-primary-container/15 text-primary font-label-sm text-label-sm uppercase font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  Elegible / Aprobado
+                </span>
+</div>
+</div>
+</div>
+<!-- Sección: Equipos con derecho deportivo excluidos / bloqueados -->
+<div class="mt-space-sm flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">gavel</span>
+              Casos de prelación, filiales y bloqueos normativos
+            </span>
+<!-- Halcones FC (Bloqueado por filial) -->
+<div class="p-space-sm rounded-lg bg-error-container/40 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="font-mono-data text-mono-data text-error font-bold">3° Lugar</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Halcones FC (42 pts)</span>
+</div>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-error/15 text-error font-label-sm text-label-sm uppercase font-bold">
+<span class="material-symbols-outlined text-[14px]">block</span>
+                  Bloqueado por Estatutos
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong class="text-error font-semibold">Causa:</strong> El club ya cuenta con representación en la categoría superior activa (<strong>Halcones Mayor</strong> en Primera Especial). Incompatible con Art. 18 de los Estatutos de la Liga.
+              </p>
+</div>
+<!-- Canarios Morelia (Adeudo Tesorería) -->
+<div class="p-space-sm rounded-lg bg-error-container/40 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="font-mono-data text-mono-data text-error font-bold">4° Lugar</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Canarios Morelia (39 pts)</span>
+</div>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-error/15 text-error font-label-sm text-label-sm uppercase font-bold">
+<span class="material-symbols-outlined text-[14px]">money_off</span>
+                  Inhabilitado Financiero
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong class="text-error font-semibold">Causa:</strong> Adeudo registrado en Tesorería General (Folio COB-2025-0199 por $3,400 MXN - Art. 22). Se ejecuta corrimiento de prelación al siguiente en tabla general.
+              </p>
+</div>
+<!-- Furia Michoacana (Asciende por prelación) -->
+<div class="p-space-sm rounded-lg bg-secondary-container/50 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="font-mono-data text-mono-data text-secondary font-bold">5° Lugar</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Furia Michoacana (38 pts)</span>
+</div>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-secondary/15 text-secondary font-label-sm text-label-sm uppercase font-bold">
+<span class="material-symbols-outlined text-[14px]">low_priority</span>
+                  Asciende por Prelación
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+                Habilitado para ocupar la plaza de ascenso en sustitución de <strong>Canarios Morelia</strong> tras dictamen de solvencia y elegibilidad verificado.
+              </p>
+</div>
+</div>
+</div>
+<!-- COLUMNA DERECHA: DESCIENDEN A LIBRE PRIMERA -->
+<div class="p-space-lg flex flex-col gap-space-md bg-surface-container-lowest">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-lg bg-tertiary-fixed/30 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Descienden a Libre Primera</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-mono-data tracking-wider">Bajan de Primera Especial</span>
+</div>
+<!-- Resumen de Criterio Descenso -->
+<div class="p-space-sm rounded-lg bg-surface-container text-on-surface-variant font-body-sm text-body-sm flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">report_problem</span>
+<span>Descensos reglamentarios: <strong>2 últimos lugares de la tabla general</strong> tras resolución definitiva de sanciones administrativas.</span>
+</div>
+<!-- Tarjetas de Equipos Descendidos -->
+<div class="flex flex-col gap-space-sm">
+<!-- Equipo Descenso 1: Ventura -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<span class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary font-mono-data text-mono-data font-bold flex items-center justify-center shrink-0">19°</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Deportivo Ventura</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Primera Especial · 34 Partidos Jugados</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-mono-score text-mono-score text-tertiary">14 <span class="text-body-sm font-label-sm text-on-surface-variant">PTS</span></span>
+<span class="font-mono-data text-body-sm text-error">DG -28</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span>Sin apelaciones disciplinarias pendientes</span>
+</div>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-tertiary/15 text-tertiary font-label-sm text-label-sm uppercase font-semibold">
+<span class="material-symbols-outlined text-[14px]">trending_down</span>
+                  Descenso Directo
+                </span>
+</div>
+</div>
+<!-- Equipo Descenso 2: Atlético Español -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<span class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary font-mono-data text-mono-data font-bold flex items-center justify-center shrink-0">20°</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Atlético Español</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Último lugar general Primera Especial</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-mono-score text-mono-score text-tertiary">9 <span class="text-body-sm font-label-sm text-on-surface-variant">PTS</span></span>
+<span class="font-mono-data text-body-sm text-error">DG -41</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span>Confirmado matemáticamente en J31</span>
+</div>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-tertiary/15 text-tertiary font-label-sm text-label-sm uppercase font-semibold">
+<span class="material-symbols-outlined text-[14px]">trending_down</span>
+                  Descenso Directo
+                </span>
+</div>
+</div>
+</div>
+<!-- Caso Extraordinario: Santos Morelia (Desafiliación) -->
+<div class="mt-space-sm p-space-sm rounded-lg bg-surface-container flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="font-mono-data text-mono-data font-bold text-on-surface">18° Lugar</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Santos Morelia (16 pts)</span>
+</div>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-error text-on-error font-label-sm text-label-sm uppercase font-bold">
+<span class="material-symbols-outlined text-[14px]">delete_forever</span>
+                Desafiliación Deportiva
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong class="text-on-surface font-semibold">Resolución CD-2025-0012:</strong> El club pierde el registro federativo íntegro debido a reincidencia en agresiones al cuerpo arbitral. No ocupa plaza de descenso ordinaria; su vacante pasa a dictamen especial de Asamblea.
+            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- ==================== BLOQUE 2: LIBRE PRIMERA ↔ PRIMERA INTERMEDIA ==================== -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<!-- Encabezado de Bloque de Categoría -->
+<div class="bg-secondary-fixed text-on-secondary-fixed px-space-xl py-space-md flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<span class="material-symbols-outlined text-secondary text-[24px]">swap_vert</span>
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm font-bold tracking-tight">Bloque B: Movimientos de Categoría Intermedia</span>
+<span class="text-outline">·</span>
+<span class="font-label-sm text-label-sm px-space-sm py-0.5 rounded bg-secondary text-on-secondary font-semibold">CATEGORÍA MEDIA</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm text-on-secondary-fixed font-label-md text-label-md">
+<span class="px-space-sm py-1 bg-surface-container-lowest/40 rounded font-semibold">Libre Primera</span>
+<span class="material-symbols-outlined text-[16px]">sync_alt</span>
+<span class="px-space-sm py-1 bg-surface-container-lowest/40 rounded font-semibold">Primera Intermedia</span>
+</div>
+</div>
+<!-- Contenido en Dos Columnas -->
+<div class="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-surface-container">
+<!-- COLUMNA IZQUIERDA: ASCIENDEN A LIBRE PRIMERA -->
+<div class="p-space-lg flex flex-col gap-space-md bg-surface-container-lowest">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">arrow_upward</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Ascienden a Libre Primera</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-mono-data tracking-wider">Suben de Primera Intermedia</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Toros Santa María B (Bloqueado por filial) -->
+<div class="p-space-md rounded-lg bg-error-container/30 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<span class="w-8 h-8 rounded-full bg-error text-on-error font-mono-data text-mono-data font-bold flex items-center justify-center shrink-0">1°</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Toros de Santa María B</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Líder Deportivo de Primera Intermedia</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-mono-score text-mono-score text-on-surface">50 <span class="text-body-sm font-label-sm text-on-surface-variant">PTS</span></span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">DG +39</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-xs text-error font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+<span>El club ya milita con "Toros de Santa María" en Libre Primera A</span>
+</div>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-error/15 text-error font-label-sm text-label-sm uppercase font-bold">
+<span class="material-symbols-outlined text-[14px]">do_not_disturb_on</span>
+                  Excluido por Filial
+                </span>
+</div>
+</div>
+<!-- Águilas de Morelia (Elegible) -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<span class="w-8 h-8 rounded-full bg-primary-container text-on-primary font-mono-data text-mono-data font-bold flex items-center justify-center shrink-0">2°</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Águilas de Morelia</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sublíder de Primera Intermedia</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-mono-score text-mono-score text-on-surface">47 <span class="text-body-sm font-label-sm text-on-surface-variant">PTS</span></span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">DG +25</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface">Dictamen documental y de registros conforme</span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-primary-container/15 text-primary font-label-sm text-label-sm uppercase font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  Elegible / Aprobado
+                </span>
+</div>
+</div>
+<!-- Tigres de San Juan (Asciende por prelación) -->
+<div class="p-space-md rounded-lg bg-secondary-container/40 hover:bg-secondary-container/60 transition-colors flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<span class="w-8 h-8 rounded-full bg-secondary text-on-secondary font-mono-data text-mono-data font-bold flex items-center justify-center shrink-0">3°</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Tigres de San Juan</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">3er Lugar General Primera Intermedia</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-mono-score text-mono-score text-on-surface">44 <span class="text-body-sm font-label-sm text-on-surface-variant">PTS</span></span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">DG +18</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface">Cubre plaza liberada por incompatibilidad de Toros B</span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-secondary/15 text-secondary font-label-sm text-label-sm uppercase font-bold">
+<span class="material-symbols-outlined text-[14px]">low_priority</span>
+                  Asciende por Prelación
+                </span>
+</div>
+</div>
+</div>
+</div>
+<!-- COLUMNA DERECHA: DESCIENDEN A PRIMERA INTERMEDIA -->
+<div class="p-space-lg flex flex-col gap-space-md bg-surface-container-lowest">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-lg bg-tertiary-fixed/30 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Descienden a Primera Intermedia</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-mono-data tracking-wider">Bajan de Libre Primera</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Indios de Morelia -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<span class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary font-mono-data text-mono-data font-bold flex items-center justify-center shrink-0">9°</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Indios de Morelia</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Penúltimo lugar Libre Primera</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-mono-score text-mono-score text-tertiary">11 <span class="text-body-sm font-label-sm text-on-surface-variant">PTS</span></span>
+<span class="font-mono-data text-body-sm text-error">DG -21</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Descenso ordinario por puntaje</span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-tertiary/15 text-tertiary font-label-sm text-label-sm uppercase font-semibold">
+<span class="material-symbols-outlined text-[14px]">trending_down</span>
+                  Descenso Directo
+                </span>
+</div>
+</div>
+<!-- Halcones de Guadalupe -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<span class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary font-mono-data text-mono-data font-bold flex items-center justify-center shrink-0">10°</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Halcones de Guadalupe</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Último lugar Libre Primera</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-mono-score text-mono-score text-tertiary">7 <span class="text-body-sm font-label-sm text-on-surface-variant">PTS</span></span>
+<span class="font-mono-data text-body-sm text-error">DG -35</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Descenso ordinario por puntaje</span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-tertiary/15 text-tertiary font-label-sm text-label-sm uppercase font-semibold">
+<span class="material-symbols-outlined text-[14px]">trending_down</span>
+                  Descenso Directo
+                </span>
+</div>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container text-on-surface-variant font-body-sm text-body-sm flex items-center gap-space-sm mt-auto">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Sin objeciones ni solicitudes de revisión radicadas en Secretaría de Actas.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL: OBSERVAR PROPUESTA (OCULTO POR DEFECTO CON CLASE HIDDEN) -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center bg-on-surface/40 backdrop-blur-sm p-space-md" id="modal-observaciones">
+<div class="bg-surface-container-lowest rounded-xl max-w-2xl w-full p-space-xl shadow-xl flex flex-col gap-space-lg">
+<div class="flex items-center justify-between border-b border-surface-container pb-space-sm">
+<div class="flex items-center gap-space-sm text-tertiary">
+<span class="material-symbols-outlined text-[24px]">edit_note</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Emitir observaciones a la propuesta de ascensos y descensos</h3>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="toggleObservationModal(false)">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-md">
+<div class="p-space-sm bg-surface-container rounded-lg font-body-sm text-body-sm text-on-surface">
+          Esta observación será radicada con copia digital al <strong>Secretario de Actas</strong> y a la <strong>Comisión de Honor y Justicia</strong> previa deliberación en la sesión plenaria de delegados.
+        </div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">
+            Categoría o Caso en Conflicto <span class="text-error">*</span>
+</label>
+<select class="h-11 px-space-md bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary">
+<option value="b1">Bloque 1: Caso Canarios Morelia (Adeudo COB-2025-0199)</option>
+<option value="b1_filial">Bloque 1: Caso Halcones FC (Incompatibilidad por filial Art. 18)</option>
+<option value="b2_toros">Bloque 2: Caso Toros de Santa María B</option>
+<option value="otro">Otro bloque o reclamo general de prelación</option>
+</select>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">
+            Motivo y fundamento reglamentario <span class="text-error">*</span>
+</label>
+<textarea class="p-space-md bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary resize-none" placeholder="Indica el artículo estatutario o error en la tabla de prelación que sustenta la observación de Presidencia..." rows="4"></textarea>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Adjuntar Fe de Hechos o Dictamen de Comisión</label>
+<div class="p-space-md bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">attach_file</span>
+<span class="font-body-sm text-body-sm">Dictamen_Tesoreria_Morelia_2026.pdf (1.2 MB)</span>
+</div>
+<button class="font-label-sm text-label-sm text-primary font-bold hover:underline">Reemplazar</button>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-sm border-t border-surface-container">
+<button class="h-11 px-space-lg rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-all" onclick="toggleObservationModal(false)">
+          Cancelar
+        </button>
+<button class="h-11 px-space-lg rounded-lg bg-tertiary text-on-tertiary font-label-md text-label-md hover:opacity-90 transition-all flex items-center gap-space-xs" onclick="toggleObservationModal(false)">
+<span class="material-symbols-outlined text-[18px]">send</span>
+          Enviar observaciones al Secretario de Actas
+        </button>
+</div>
+</div>
+</div>
+<!-- MODAL: VALIDACIÓN FEDERATIVA (OCULTO POR DEFECTO) -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center bg-on-surface/40 backdrop-blur-sm p-space-md" id="modal-validacion">
+<div class="bg-surface-container-lowest rounded-xl max-w-lg w-full p-space-xl shadow-xl flex flex-col gap-space-md">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 text-primary flex items-center justify-center mx-auto">
+<span class="material-symbols-outlined text-[28px]">verified</span>
+</div>
+<div class="text-center flex flex-col gap-space-xs">
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-bold">Validar y Firmar Dictamen</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          ¿Confirma que la propuesta provisional cumple con los estatutos para transferirse formalmente al <strong>Libro de Gobierno</strong> y someterse a votación en la próxima <strong>Asamblea General de Delegados</strong>?
+        </p>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-lg flex flex-col gap-space-xs font-label-sm text-label-sm text-on-surface">
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Responsable:</span>
+<span class="font-semibold">Lic. Antonio Huerta G.</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Cargo:</span>
+<span class="font-semibold">Presidente del Comité Ejecutivo SIGLIM</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Categorías Validadas:</span>
+<span class="font-mono-data font-semibold">2 Bloques (4 Categorías)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="flex-1 h-11 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-all" onclick="toggleConfirmModal(false)">
+          Revisar más tarde
+        </button>
+<button class="flex-1 h-11 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-all flex items-center justify-center gap-space-xs" onclick="toggleConfirmModal(false)">
+<span class="material-symbols-outlined text-[18px]">draw</span>
+          Confirmar y Firmar
+        </button>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

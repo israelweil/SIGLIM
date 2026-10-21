@@ -1,0 +1,1043 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "tertiary-container": "#943e46",
+          "on-background": "#0b1c30",
+          "on-secondary-container": "#5a6278",
+          "secondary": "#565e74",
+          "surface-container": "#e5eeff",
+          "on-tertiary-container": "#ffc3c5",
+          "tertiary-fixed-dim": "#ffb3b6",
+          "on-primary-fixed-variant": "#00522a",
+          "surface-variant": "#d3e4fe",
+          "on-surface-variant": "#3f4940",
+          "background": "#f8f9ff",
+          "on-primary": "#ffffff",
+          "on-tertiary-fixed-variant": "#7b2b34",
+          "surface-container-lowest": "#ffffff",
+          "primary-container": "#006837",
+          "primary-fixed-dim": "#83d99c",
+          "error-container": "#ffdad6",
+          "tertiary-fixed": "#ffdada",
+          "secondary-container": "#d8dff9",
+          "surface": "#f8f9ff",
+          "on-surface": "#0b1c30",
+          "inverse-primary": "#83d99c",
+          "surface-dim": "#cbdbf5",
+          "surface-tint": "#0b6d3b",
+          "primary-fixed": "#9ef6b6",
+          "surface-container-low": "#eff4ff",
+          "on-secondary-fixed-variant": "#3f465b",
+          "surface-bright": "#f8f9ff",
+          "on-primary-fixed": "#00210e",
+          "error": "#ba1a1a",
+          "inverse-on-surface": "#eaf1ff",
+          "tertiary": "#762730",
+          "outline-variant": "#bec9be",
+          "inverse-surface": "#213145",
+          "on-secondary-fixed": "#131b2e",
+          "secondary-fixed-dim": "#bec6e0",
+          "on-primary-container": "#8ee4a6",
+          "primary": "#004d27",
+          "on-tertiary-fixed": "#40000c",
+          "on-error-container": "#93000a",
+          "on-secondary": "#ffffff",
+          "secondary-fixed": "#dae2fc",
+          "outline": "#6f7a70",
+          "on-error": "#ffffff",
+          "surface-container-highest": "#d3e4fe",
+          "surface-container-high": "#dce9ff",
+          "on-tertiary": "#ffffff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-md": "0.75rem",
+          "margin-desktop": "2rem",
+          "space-lg": "1rem",
+          "gutter-desktop": "1.5rem",
+          "space-xl": "1.5rem",
+          "gutter": "1rem",
+          "space-sm": "0.5rem",
+          "space-xs": "0.25rem",
+          "margin": "1rem"
+        },
+        "fontFamily": {
+          "display-lg-mobile": [
+            "Inter"
+          ],
+          "mono-score": [
+            "JetBrains Mono"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "mono-data": [
+            "JetBrains Mono"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "headline-md": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Inter"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "display-lg": [
+            "Inter"
+          ],
+          "body-md": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "display-lg-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "700"
+            }
+          ],
+          "mono-score": [
+            "28px",
+            {
+              "lineHeight": "32px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "400"
+            }
+          ],
+          "mono-data": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "500"
+            }
+          ],
+          "label-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-md": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ],
+          "label-sm": [
+            "11px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.05em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-lg": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary"><header class="fixed top-0 left-0 w-full z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-margin-desktop flex items-center justify-between gap-gutter-desktop"><div class="flex items-center gap-space-lg shrink-0"><div class="flex items-center justify-center w-11 h-11 rounded-lg bg-primary text-on-primary font-headline-md text-headline-md tracking-wider shadow-[0_1px_8px_rgba(0,0,0,0.04)]">M</div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight uppercase leading-none">SIGLIM</span><span class="font-label-sm text-label-sm text-secondary tracking-wider uppercase mt-0.5">LMFM Morelia</span></div></div><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm rounded-lg"><a aria-current="page" class="px-space-md py-space-sm transition-colors bg-primary-container text-on-primary-container font-headline-sm rounded-lg" data-path="inicio" href="#">Inicio</a><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="programacion" href="#">Programación</a><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="resultados" href="#">Resultados</a><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="tablas" href="#">Tablas</a><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="calendario" href="#">Calendario</a><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="comunicados" href="#">Comunicados</a><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="sanciones" href="#">Sanciones</a><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="equipos" href="#">Equipos</a></nav><div class="flex items-center gap-space-md shrink-0"><a class="inline-flex items-center justify-center px-space-lg h-11 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-colors" data-path="login" href="#"><span class="material-symbols-outlined text-[18px] mr-space-sm">login</span>Ingreso al Sistema</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- BANNER INSTITUCIONAL Y CABECERA DE PORTAL -->
+<section class="w-full bg-surface-container-low py-space-xl px-margin-desktop">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-lg">
+<!-- Fila superior: Credencial institucional & Insignia de demostración -->
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="inline-flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-space-xs rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">verified_user</span>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">Órgano Rector Federado · LMFM A.C.</span>
+</div>
+<div class="inline-flex items-center gap-space-xs bg-secondary-container text-on-secondary-fixed px-space-md py-space-xs rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[15px] text-on-secondary-fixed">shield_lock</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-bold">No oficial · Consulta pública federativa</span>
+</div>
+</div>
+<!-- Títulos Principales de Página -->
+<div class="flex flex-col gap-space-xs">
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight">Portal Oficial de la Liga Municipal de Futbol Amateur Morelia</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-4xl">
+          Temporada 2025–2026 · Consulta pública de roles, circulares oficiales, resoluciones disciplinarias y directorio de clubes afiliados con aval del Comité Directivo.
+        </p>
+</div>
+<!-- Barra de accesos directos por ancla -->
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
+<a class="inline-flex items-center gap-space-xs px-space-md py-space-sm bg-surface-container-lowest hover:bg-surface-container-high text-on-surface rounded-lg font-label-md text-label-md transition-colors shadow-sm" href="#calendario-mensual">
+<span class="material-symbols-outlined text-[18px] text-primary">calendar_month</span>
+          Calendario Mensual
+        </a>
+<a class="inline-flex items-center gap-space-xs px-space-md py-space-sm bg-surface-container-lowest hover:bg-surface-container-high text-on-surface rounded-lg font-label-md text-label-md transition-colors shadow-sm" href="#comunicados-oficiales">
+<span class="material-symbols-outlined text-[18px] text-primary">campaign</span>
+          Comunicados Oficiales
+        </a>
+<a class="inline-flex items-center gap-space-xs px-space-md py-space-sm bg-surface-container-lowest hover:bg-surface-container-high text-on-surface rounded-lg font-label-md text-label-md transition-colors shadow-sm" href="#sanciones-disciplinarias">
+<span class="material-symbols-outlined text-[18px] text-tertiary">gavel</span>
+          Sanciones Públicas
+        </a>
+<a class="inline-flex items-center gap-space-xs px-space-md py-space-sm bg-surface-container-lowest hover:bg-surface-container-high text-on-surface rounded-lg font-label-md text-label-md transition-colors shadow-sm" href="#directorio-equipos">
+<span class="material-symbols-outlined text-[18px] text-primary">shield</span>
+          Directorio de Equipos
+        </a>
+</div>
+<!-- BARRA DE FILTROS DEDICADOS (Sin buscador general / sin tiempo real) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mt-space-xs">
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md shrink-0">
+<span class="material-symbols-outlined text-[20px] text-primary">tune</span>
+<span class="font-semibold text-on-surface">Filtros de consulta:</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md w-full lg:w-auto flex-1 max-w-5xl">
+<!-- Selector Categoría -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-secondary uppercase" for="filter-categoria">Categoría</label>
+<div class="relative">
+<select class="w-full h-11 pl-space-md pr-8 bg-surface rounded-lg font-body-md text-body-md text-on-surface appearance-none focus:outline-none focus:ring-2 focus:ring-primary" id="filter-categoria">
+<option selected="">Libre Primera</option>
+<option>Libre Segunda</option>
+<option>Juvenil Mayor (Sub-18)</option>
+<option>Femenil Premier</option>
+<option>Veteranos Especial</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-2.5 text-[18px] text-secondary">expand_more</span>
+</div>
+</div>
+<!-- Selector Grupo -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-secondary uppercase" for="filter-grupo">Grupo</label>
+<div class="relative">
+<select class="w-full h-11 pl-space-md pr-8 bg-surface rounded-lg font-body-md text-body-md text-on-surface appearance-none focus:outline-none focus:ring-2 focus:ring-primary" id="filter-grupo">
+<option selected="">Grupo A (Sector Norte/Centro)</option>
+<option>Grupo B (Sector Sur/Poniente)</option>
+<option>Todos los grupos</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-2.5 text-[18px] text-secondary">expand_more</span>
+</div>
+</div>
+<!-- Selector Equipo -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-secondary uppercase" for="filter-equipo">Club / Equipo</label>
+<div class="relative">
+<select class="w-full h-11 pl-space-md pr-8 bg-surface rounded-lg font-body-md text-body-md text-on-surface appearance-none focus:outline-none focus:ring-2 focus:ring-primary" id="filter-equipo">
+<option selected="">Todos los clubes afiliados</option>
+<option>Halcones FC</option>
+<option>Toros de Santa María</option>
+<option>Club Félix Ireta</option>
+<option>Real Atapaneo</option>
+<option>Canarios Morelia</option>
+<option>Tigres de San Juan</option>
+<option>Deportivo Vasco de Quiroga</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-2.5 text-[18px] text-secondary">expand_more</span>
+</div>
+</div>
+<!-- Selector Período / Mes -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-secondary uppercase" for="filter-periodo">Mes de Competición</label>
+<div class="relative">
+<select class="w-full h-11 pl-space-md pr-8 bg-surface rounded-lg font-body-md text-body-md text-on-surface appearance-none focus:outline-none focus:ring-2 focus:ring-primary" id="filter-periodo">
+<option>Octubre 2025</option>
+<option selected="">Noviembre 2025</option>
+<option>Diciembre 2025</option>
+<option>Enero 2026</option>
+<option>Febrero 2026</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-2.5 text-[18px] text-secondary">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CONTENIDO PRINCIPAL EN BLOQUES COHESIVOS -->
+<div class="max-w-7xl mx-auto w-full px-margin-desktop py-space-xl flex flex-col gap-14">
+<!-- SECCIÓN 1: CALENDARIO MENSUAL POR CATEGORÍA -->
+<section class="flex flex-col gap-space-lg" id="calendario-mensual">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs text-primary mb-1">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-wider">Módulo de Programación</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Calendario: Vista Mensual de Jornadas</h2>
+<p class="font-body-md text-body-md text-secondary">Consulta la asignación semanal de fechas para la categoría <span class="font-semibold text-on-surface">Libre Primera (Grupo A)</span>.</p>
+</div>
+<!-- Controles de Mes -->
+<div class="flex items-center gap-space-xs bg-surface-container-low p-1 rounded-lg">
+<button aria-label="Mes previo" class="w-9 h-9 flex items-center justify-center rounded bg-surface-container-lowest text-on-surface hover:bg-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<span class="font-label-md text-label-md font-semibold px-space-md text-on-surface min-w-[150px] text-center">Noviembre 2025</span>
+<button aria-label="Mes siguiente" class="w-9 h-9 flex items-center justify-center rounded bg-surface-container-lowest text-on-surface hover:bg-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Cuadrícula de Calendario (Lunes a Domingo) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<!-- Cabecera de días de la semana -->
+<div class="grid grid-cols-7 bg-surface-container-low text-center text-secondary font-label-sm text-label-sm uppercase py-2.5">
+<span>Lun</span>
+<span>Mar</span>
+<span>Mié</span>
+<span>Jue</span>
+<span>Vie</span>
+<span class="text-primary font-bold">Sáb</span>
+<span class="text-primary font-bold">Dom</span>
+</div>
+<!-- Celdas del Mes (Noviembre 2025 inicia en Sábado 1) -->
+<div class="grid grid-cols-7 gap-1 p-2 bg-surface-container-low">
+<!-- Espacios vacíos de días del mes anterior (Lun 27 - Vie 31 Oct) -->
+<div class="min-h-[105px] bg-surface/50 rounded-lg p-2 text-outline font-mono-data text-mono-data">27</div>
+<div class="min-h-[105px] bg-surface/50 rounded-lg p-2 text-outline font-mono-data text-mono-data">28</div>
+<div class="min-h-[105px] bg-surface/50 rounded-lg p-2 text-outline font-mono-data text-mono-data">29</div>
+<div class="min-h-[105px] bg-surface/50 rounded-lg p-2 text-outline font-mono-data text-mono-data">30</div>
+<div class="min-h-[105px] bg-surface/50 rounded-lg p-2 text-outline font-mono-data text-mono-data">31</div>
+<!-- Sábado 1 Nov -->
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 flex flex-col justify-between">
+<span class="font-mono-data text-mono-data font-bold text-on-surface">01</span>
+<span class="font-label-sm text-[10px] text-secondary">Cotejos juveniles</span>
+</div>
+<!-- Domingo 2 Nov (Jornada 7) -->
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-mono-data text-mono-data font-bold text-primary">02</span>
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-[10px]">OFICIAL</span>
+</div>
+<div class="bg-surface-container-high rounded p-1.5 flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Jornada 7</span>
+<span class="font-mono-data text-[11px] text-secondary">08:00–14:00 hrs</span>
+<span class="font-body-sm text-[10px] text-primary-container font-semibold">10 cotejos prog.</span>
+</div>
+</div>
+<!-- Semana 2: 03 al 09 Nov -->
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">03</div>
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">04</div>
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">05</div>
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">06</div>
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">07</div>
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">08</div>
+<!-- Domingo 9 Nov (Jornada 8) -->
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-mono-data text-mono-data font-bold text-primary">09</span>
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-[10px]">PROGRAMADA</span>
+</div>
+<div class="bg-surface-container-high rounded p-1.5 flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Jornada 8 · Libre</span>
+<span class="font-mono-data text-[11px] text-secondary">UD Cuauhtémoc</span>
+<span class="font-body-sm text-[10px] text-primary font-semibold">12 partidos en rol</span>
+</div>
+</div>
+<!-- Semana 3: 10 al 16 Nov -->
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">10</div>
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">11</div>
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">12</div>
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">13</div>
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">14</div>
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">15</div>
+<!-- Domingo 16 Nov (Jornada 9) -->
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-mono-data text-mono-data font-bold text-primary">16</span>
+<span class="px-1.5 py-0.5 rounded bg-secondary text-on-secondary font-label-sm text-[10px]">ORDINARIA</span>
+</div>
+<div class="bg-surface-container-high rounded p-1.5 flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Jornada 9</span>
+<span class="font-mono-data text-[11px] text-secondary">08:00 a 16:00 hrs</span>
+<span class="font-body-sm text-[10px] text-primary font-semibold">10 cotejos prog.</span>
+</div>
+</div>
+<!-- Semana 4: 17 al 23 Nov -->
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">17</div>
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">18</div>
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">19</div>
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">20</div>
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">21</div>
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">22</div>
+<!-- Domingo 23 Nov (Jornada 10 / Cierre) -->
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-mono-data text-mono-data font-bold text-primary">23</span>
+<span class="px-1.5 py-0.5 rounded bg-tertiary-container text-on-tertiary font-label-sm text-[10px]">CIERRE ROL</span>
+</div>
+<div class="bg-surface-container-high rounded p-1.5 flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Jornada 10 (Final)</span>
+<span class="font-mono-data text-[11px] text-secondary">Definición pase</span>
+<span class="font-body-sm text-[10px] text-tertiary font-semibold">10 partidos simultáneos</span>
+</div>
+</div>
+<!-- Semana 5: 24 al 30 Nov -->
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">24</div>
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">25</div>
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">26</div>
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">27</div>
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">28</div>
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 font-mono-data text-mono-data text-on-surface">29</div>
+<!-- Domingo 30 Nov (Liguilla Cuartos Ida) -->
+<div class="min-h-[105px] bg-surface-container-lowest rounded-lg p-2 flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-mono-data text-mono-data font-bold text-on-surface">30</span>
+<span class="px-1.5 py-0.5 rounded bg-on-secondary-fixed text-on-primary font-label-sm text-[10px]">LIGUILLA</span>
+</div>
+<div class="bg-surface-container-highest rounded p-1.5 flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Cuartos de Ida</span>
+<span class="font-mono-data text-[11px] text-secondary">Canchas 1, 2 y 3 UD</span>
+<span class="font-body-sm text-[10px] text-primary-container font-semibold">4 llaves de honor</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Leyenda reglamentaria de fecha y hora -->
+<div class="flex items-center gap-space-xs bg-surface-container-low px-space-md py-space-sm rounded-lg text-secondary">
+<span class="material-symbols-outlined text-[18px] text-secondary shrink-0">info</span>
+<p class="font-body-sm text-body-sm italic">
+          Nota reglamentaria: Las fechas y horarios definitivos se confirman en el rol semanal convalidado por el Comité Ejecutivo en la asamblea de los días martes.
+        </p>
+</div>
+</section>
+<!-- SECCIÓN 2: COMUNICADOS OFICIALES -->
+<section class="flex flex-col gap-space-lg" id="comunicados-oficiales">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs text-primary mb-1">
+<span class="material-symbols-outlined text-[20px]">campaign</span>
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-wider">Boletines y Circulares</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Comunicados Oficiales</h2>
+<p class="font-body-md text-body-md text-secondary">Avisos normativos expedidos por la Mesa Directiva y el Comité de Árbitros de Morelia.</p>
+</div>
+<a class="inline-flex items-center gap-space-xs font-label-md text-label-md text-primary hover:text-primary-container transition-colors font-semibold" href="#">
+<span>Ver archivo histórico de circulares</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Cuadrícula de 3 Tarjetas Oficiales -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop">
+<!-- Tarjeta 1 -->
+<article class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md transition-shadow">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                VIGENTE
+              </span>
+<span class="font-mono-data text-mono-data text-secondary">24 Feb 2025</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-mono-data text-mono-data text-primary font-semibold">COM-2025-029</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Ajuste extraordinario al calendario de Liguilla Libre Primera</h3>
+</div>
+<p class="font-body-md text-body-md text-secondary line-clamp-3">
+              Por acuerdo unánime del Comité Ejecutivo, los cotejos de vuelta de Semifinales se reprograman para las 11:30 hrs por motivo del evento atlético municipal programado en la calzada perimetral...
+            </p>
+</div>
+<div class="pt-space-sm">
+<a class="w-full inline-flex items-center justify-center gap-space-xs h-11 px-space-md bg-surface-container-low hover:bg-surface-container-high text-on-surface rounded-lg font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px] text-primary">picture_as_pdf</span>
+              Leer circular completa (PDF)
+            </a>
+</div>
+</article>
+<!-- Tarjeta 2 -->
+<article class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md transition-shadow">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">build</span>
+                OFICIAL
+              </span>
+<span class="font-mono-data text-mono-data text-secondary">20 Feb 2025</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-mono-data text-mono-data text-primary font-semibold">COM-2025-028</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Suspensión preventiva de canchas 1 y 2 por mantenimiento pluvial</h3>
+</div>
+<p class="font-body-md text-body-md text-secondary line-clamp-3">
+              La Comisión de Infraestructura y Canchas notifica a los delegados que las canchas 1 y 2 de la Unidad Deportiva Cuauhtémoc entran en labores de drenaje preventivo y nivelación de superficie...
+            </p>
+</div>
+<div class="pt-space-sm">
+<a class="w-full inline-flex items-center justify-center gap-space-xs h-11 px-space-md bg-surface-container-low hover:bg-surface-container-high text-on-surface rounded-lg font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px] text-secondary">download</span>
+              Descargar rol alterno (PDF)
+            </a>
+</div>
+</article>
+<!-- Tarjeta 3 -->
+<article class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md transition-shadow">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">groups</span>
+                ASAMBLEA
+              </span>
+<span class="font-mono-data text-mono-data text-secondary">15 Feb 2025</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-mono-data text-mono-data text-primary font-semibold">COM-2025-027</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Convocatoria a Asamblea General Extraordinaria de Delegados</h3>
+</div>
+<p class="font-body-md text-body-md text-secondary line-clamp-3">
+              Se convoca a todos los delegados con tarjetón vigente a la sesión extraordinaria para ratificación de acuerdos estatutarios, glosa de finanzas correspondientes al primer semestre y padrón...
+            </p>
+</div>
+<div class="pt-space-sm">
+<a class="w-full inline-flex items-center justify-center gap-space-xs h-11 px-space-md bg-surface-container-low hover:bg-surface-container-high text-on-surface rounded-lg font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px] text-on-surface">menu_book</span>
+              Orden del Día Oficial
+            </a>
+</div>
+</article>
+</div>
+</section>
+<!-- SECCIÓN 3: SANCIONES DISCIPLINARIAS PÚBLICAS -->
+<section class="flex flex-col gap-space-lg" id="sanciones-disciplinarias">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-tertiary">
+<span class="material-symbols-outlined text-[20px]">gavel</span>
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-wider">Tribunal de Penas y Disciplina</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Registro Público de Sanciones Autorizadas</h2>
+<p class="font-body-md text-body-md text-secondary max-w-4xl">
+          Resoluciones emitidas conforme a la cédula arbitral oficial y ratificadas por la Comisión de Honor y Justicia.
+        </p>
+</div>
+<!-- Recuadro Legal y de Privacidad -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex items-start gap-space-md">
+<span class="material-symbols-outlined text-primary text-[22px] shrink-0 mt-0.5">policy</span>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface uppercase">Aviso de Privacidad y Convalidación Estatutaria</span>
+<p class="font-body-sm text-body-sm text-secondary">
+            Conforme a la Ley de Protección de Datos Personales y el Estatuto de la LMFM, los datos de menores de edad o jugadores sin consentimiento de difusión pública se clasifican como <span class="font-semibold text-on-surface">«Jugador (dato reservado)»</span>. Las resoluciones son inapelables para la jornada inmediata y convalidan la elegibilidad deportiva federada.
+          </p>
+</div>
+</div>
+<!-- Tabla Administrativa de Sanciones -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-secondary font-label-sm text-label-sm uppercase">
+<th class="py-3 px-4 font-semibold">Folio Exp.</th>
+<th class="py-3 px-4 font-semibold">Sancionado / Afiliado</th>
+<th class="py-3 px-4 font-semibold">Club Federado</th>
+<th class="py-3 px-4 font-semibold">Infracción Reglamentaria</th>
+<th class="py-3 px-4 font-semibold">Sanción Impuesta</th>
+<th class="py-3 px-4 font-semibold text-right">Restantes</th>
+<th class="py-3 px-4 font-semibold">Vigencia / Jornada</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-md text-body-md text-on-surface">
+<!-- Fila 1 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-4 font-mono-data text-mono-data font-semibold text-primary">EXP-2025-0042</td>
+<td class="py-3.5 px-4 font-medium">Rodrigo Navarro Vega <span class="text-secondary text-body-sm">(Delantero)</span></td>
+<td class="py-3.5 px-4">Halcones FC</td>
+<td class="py-3.5 px-4 text-body-sm text-secondary">Art. 48 Cód. Justicia - Juego brusco grave</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">block</span>
+                    4 Partidos
+                  </span>
+</td>
+<td class="py-3.5 px-4 font-mono-data text-mono-data text-right font-bold text-tertiary">2 partidos</td>
+<td class="py-3.5 px-4 font-body-sm text-secondary">Jornadas 8 y 9</td>
+</tr>
+<!-- Fila 2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-4 font-mono-data text-mono-data font-semibold text-primary">EXP-2025-0047</td>
+<td class="py-3.5 px-4 font-medium">Prof. Gilberto Méndez T. <span class="text-secondary text-body-sm">(Director Técnico)</span></td>
+<td class="py-3.5 px-4">Real Atapaneo</td>
+<td class="py-3.5 px-4 text-body-sm text-secondary">Art. 61 Reg. Cancha - Ingreso no autorizado al campo</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">do_not_disturb_on</span>
+                    1 Mes inhabilitación
+                  </span>
+</td>
+<td class="py-3.5 px-4 font-mono-data text-mono-data text-right font-bold text-secondary">16 días</td>
+<td class="py-3.5 px-4 font-body-sm text-secondary">Hasta 15 Nov 2025</td>
+</tr>
+<!-- Fila 3: Dato Reservado -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-4 font-mono-data text-mono-data font-semibold text-primary">EXP-2025-0050</td>
+<td class="py-3.5 px-4 italic text-secondary">Jugador (dato reservado)</td>
+<td class="py-3.5 px-4">Deportivo La Guadalupana</td>
+<td class="py-3.5 px-4 text-body-sm text-secondary">Art. 45 - Doble amonestación en el cotejo</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+                    1 Partido
+                  </span>
+</td>
+<td class="py-3.5 px-4 font-mono-data text-mono-data text-right font-bold text-on-surface">1 partido</td>
+<td class="py-3.5 px-4 font-body-sm text-primary font-medium">Jornada 8 (Cumple)</td>
+</tr>
+<!-- Fila 4: Dato Reservado -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-4 font-mono-data text-mono-data font-semibold text-primary">EXP-2025-0051</td>
+<td class="py-3.5 px-4 italic text-secondary">Jugador (dato reservado)</td>
+<td class="py-3.5 px-4">Deportivo Vasco de Quiroga</td>
+<td class="py-3.5 px-4 text-body-sm text-secondary">Art. 48 - Conducta antideportiva hacia oficial</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">block</span>
+                    2 Partidos
+                  </span>
+</td>
+<td class="py-3.5 px-4 font-mono-data text-mono-data text-right font-bold text-tertiary">2 partidos</td>
+<td class="py-3.5 px-4 font-body-sm text-secondary">Jornadas 8 y 9</td>
+</tr>
+<!-- Fila 5: Porra / Tribuna -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-4 font-mono-data text-mono-data font-semibold text-primary">EXP-2025-0049</td>
+<td class="py-3.5 px-4 font-medium">Porra y grupo acreditado</td>
+<td class="py-3.5 px-4">Tigres de San Juan</td>
+<td class="py-3.5 px-4 text-body-sm text-secondary">Art. 73 Seguridad - Uso de pirotecnia en tribuna</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-tertiary-container text-on-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">campaign</span>
+                    Veto de campo (2 cotejos)
+                  </span>
+</td>
+<td class="py-3.5 px-4 font-mono-data text-mono-data text-right font-bold text-tertiary">1 partido</td>
+<td class="py-3.5 px-4 font-body-sm text-secondary">Jornada 8 (a puerta cerrada)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 4: DIRECTORIO DE EQUIPOS -->
+<section class="flex flex-col gap-space-lg" id="directorio-equipos">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs text-primary mb-1">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-wider">Padrón de Clubes</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Directorio Oficial de Equipos</h2>
+<p class="font-body-md text-body-md text-secondary">Registros vigentes para: <span class="font-semibold text-on-surface">Categoría Libre Primera · Grupo A</span> (10 clubes federados).</p>
+</div>
+<div class="bg-surface-container-low px-space-md py-space-sm rounded-lg flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-mono-data text-mono-data font-semibold text-on-surface">10 Clubes Convalidados</span>
+</div>
+</div>
+<!-- Cuadrícula de 10 Clubes Federados -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-gutter-desktop">
+<!-- Club 1: Halcones FC -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-bold text-headline-sm">
+                HFC
+              </div>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-[10px] flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+                ACTIVO
+              </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Halcones FC</h3>
+<span class="font-mono-data text-[12px] text-secondary">Folio: AF-094</span>
+</div>
+<div class="flex flex-col gap-1 text-body-sm text-secondary pt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">stadium</span>
+<span class="truncate">Cancha 2 UD Cuauhtémoc</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">badge</span>
+<span class="truncate">Prof. Miguel Á. Huerta</span>
+</div>
+</div>
+</div>
+<div class="pt-space-xs border-t border-surface-container-high flex items-center justify-between font-mono-data text-[11px] text-secondary">
+<span>22 Afiliados</span>
+<span>Dom 10:00 hrs</span>
+</div>
+</div>
+<!-- Club 2: Toros de Santa María -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-lg bg-tertiary-container text-on-tertiary flex items-center justify-center font-bold text-headline-sm">
+                TSM
+              </div>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-[10px] flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+                ACTIVO
+              </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Toros Sta. María</h3>
+<span class="font-mono-data text-[12px] text-secondary">Folio: AF-102</span>
+</div>
+<div class="flex flex-col gap-1 text-body-sm text-secondary pt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">stadium</span>
+<span class="truncate">Félix Ireta 1</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">badge</span>
+<span class="truncate">Roberto Cárdenas</span>
+</div>
+</div>
+</div>
+<div class="pt-space-xs border-t border-surface-container-high flex items-center justify-between font-mono-data text-[11px] text-secondary">
+<span>20 Afiliados</span>
+<span>Dom 12:00 hrs</span>
+</div>
+</div>
+<!-- Club 3: Félix Ireta -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-lg bg-on-secondary-fixed text-on-primary flex items-center justify-center font-bold text-headline-sm">
+                CFI
+              </div>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-[10px] flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+                ACTIVO
+              </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Club Félix Ireta</h3>
+<span class="font-mono-data text-[12px] text-secondary">Folio: AF-018</span>
+</div>
+<div class="flex flex-col gap-1 text-body-sm text-secondary pt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">stadium</span>
+<span class="truncate">Cancha Félix Ireta 2</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">badge</span>
+<span class="truncate">Lic. Mario Morales</span>
+</div>
+</div>
+</div>
+<div class="pt-space-xs border-t border-surface-container-high flex items-center justify-between font-mono-data text-[11px] text-secondary">
+<span>24 Afiliados</span>
+<span>Dom 08:00 hrs</span>
+</div>
+</div>
+<!-- Club 4: Real Atapaneo -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-lg bg-primary text-on-primary flex items-center justify-center font-bold text-headline-sm">
+                RAT
+              </div>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-[10px] flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+                ACTIVO
+              </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Real Atapaneo</h3>
+<span class="font-mono-data text-[12px] text-secondary">Folio: AF-088</span>
+</div>
+<div class="flex flex-col gap-1 text-body-sm text-secondary pt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">stadium</span>
+<span class="truncate">Campo Morelos 3</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">badge</span>
+<span class="truncate">Saúl Orozco</span>
+</div>
+</div>
+</div>
+<div class="pt-space-xs border-t border-surface-container-high flex items-center justify-between font-mono-data text-[11px] text-secondary">
+<span>19 Afiliados</span>
+<span>Dom 10:00 hrs</span>
+</div>
+</div>
+<!-- Club 5: Canarios Morelia -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest text-on-surface font-bold text-headline-sm flex items-center justify-center">
+                CAN
+              </div>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-[10px] flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+                ACTIVO
+              </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Canarios Morelia</h3>
+<span class="font-mono-data text-[12px] text-secondary">Folio: AF-064</span>
+</div>
+<div class="flex flex-col gap-1 text-body-sm text-secondary pt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">stadium</span>
+<span class="truncate">Cancha 5 UD Cuauhtémoc</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">badge</span>
+<span class="truncate">Jorge Tena</span>
+</div>
+</div>
+</div>
+<div class="pt-space-xs border-t border-surface-container-high flex items-center justify-between font-mono-data text-[11px] text-secondary">
+<span>21 Afiliados</span>
+<span>Dom 12:00 hrs</span>
+</div>
+</div>
+<!-- Club 6: Tigres de San Juan -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-lg bg-secondary text-on-secondary flex items-center justify-center font-bold text-headline-sm">
+                TSJ
+              </div>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-[10px] flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+                ACTIVO
+              </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Tigres San Juan</h3>
+<span class="font-mono-data text-[12px] text-secondary">Folio: AF-115</span>
+</div>
+<div class="flex flex-col gap-1 text-body-sm text-secondary pt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">stadium</span>
+<span class="truncate">Campo San Juan 1</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">badge</span>
+<span class="truncate">Héctor Ramos</span>
+</div>
+</div>
+</div>
+<div class="pt-space-xs border-t border-surface-container-high flex items-center justify-between font-mono-data text-[11px] text-secondary">
+<span>23 Afiliados</span>
+<span>Dom 14:00 hrs</span>
+</div>
+</div>
+<!-- Club 7: Indios de Morelia -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-bold text-headline-sm">
+                IND
+              </div>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-[10px] flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+                ACTIVO
+              </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Indios Morelia</h3>
+<span class="font-mono-data text-[12px] text-secondary">Folio: AF-076</span>
+</div>
+<div class="flex flex-col gap-1 text-body-sm text-secondary pt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">stadium</span>
+<span class="truncate">Cancha Morelia Norte</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">badge</span>
+<span class="truncate">Arturo Medina</span>
+</div>
+</div>
+</div>
+<div class="pt-space-xs border-t border-surface-container-high flex items-center justify-between font-mono-data text-[11px] text-secondary">
+<span>22 Afiliados</span>
+<span>Dom 08:00 hrs</span>
+</div>
+</div>
+<!-- Club 8: Furia Michoacana -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-lg bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-headline-sm">
+                FM
+              </div>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-[10px] flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+                ACTIVO
+              </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Furia Michoacana</h3>
+<span class="font-mono-data text-[12px] text-secondary">Folio: AF-140</span>
+</div>
+<div class="flex flex-col gap-1 text-body-sm text-secondary pt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">stadium</span>
+<span class="truncate">Cancha 4 UD Cuauhtémoc</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">badge</span>
+<span class="truncate">Raúl Zavala</span>
+</div>
+</div>
+</div>
+<div class="pt-space-xs border-t border-surface-container-high flex items-center justify-between font-mono-data text-[11px] text-secondary">
+<span>20 Afiliados</span>
+<span>Dom 10:00 hrs</span>
+</div>
+</div>
+<!-- Club 9: Deportivo Vasco de Quiroga (Con Observación) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-lg bg-surface-container text-on-surface font-bold text-headline-sm flex items-center justify-center">
+                DVQ
+              </div>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-[10px] flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[12px]">error</span>
+                OBSERVACIÓN
+              </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Dep. Vasco de Quiroga</h3>
+<span class="font-mono-data text-[12px] text-secondary">Folio: AF-132</span>
+</div>
+<div class="flex flex-col gap-1 text-body-sm text-secondary pt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">stadium</span>
+<span class="truncate">Cancha 1 UD Cuauhtémoc</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">badge</span>
+<span class="truncate">Carlos Pardo</span>
+</div>
+</div>
+</div>
+<div class="pt-space-xs border-t border-surface-container-high flex items-center justify-between font-mono-data text-[11px] text-secondary">
+<span>18 Afiliados</span>
+<span>Dom 12:00 hrs</span>
+</div>
+</div>
+<!-- Club 10: Deportivo La Guadalupana -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-lg bg-primary-fixed-dim text-on-primary-fixed flex items-center justify-center font-bold text-headline-sm">
+                DLG
+              </div>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-[10px] flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+                ACTIVO
+              </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">La Guadalupana</h3>
+<span class="font-mono-data text-[12px] text-secondary">Folio: AF-150</span>
+</div>
+<div class="flex flex-col gap-1 text-body-sm text-secondary pt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">stadium</span>
+<span class="truncate">Cancha San Rafael</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">badge</span>
+<span class="truncate">Daniel Ruiz</span>
+</div>
+</div>
+</div>
+<div class="pt-space-xs border-t border-surface-container-high flex items-center justify-between font-mono-data text-[11px] text-secondary">
+<span>22 Afiliados</span>
+<span>Dom 08:00 hrs</span>
+</div>
+</div>
+</div>
+</section>
+<!-- BLOQUE INSTITUCIONAL: UNIDAD DEPORTIVA Y SELLO DIRECTIVO -->
+<section class="bg-surface-container-low rounded-xl p-space-xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-desktop items-center">
+<div class="md:col-span-8 flex flex-col gap-space-sm">
+<div class="inline-flex items-center gap-space-xs text-primary font-label-sm text-label-sm uppercase font-bold tracking-wider">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+            Sello Directivo Institucional
+          </div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Unidad Deportiva Cuauhtémoc (Policía y Tránsito)</h3>
+<p class="font-body-md text-body-md text-secondary">
+            Sede central y canchas oficiales del balompié federado amateur. La información pública de este portal se actualiza semanalmente previa ratificación de las comisiones arbitrales, el Colegio de Silbantes y el Comité Ejecutivo de la Liga Municipal de Futbol Amateur Morelia A.C.
+          </p>
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs font-mono-data text-mono-data text-secondary">
+<span>• 38 Canchas Reglamentarias</span>
+<span>• Padrón Superior a 18,000 Deportistas</span>
+<span>• Afiliación a la Asociación Estatal</span>
+</div>
+</div>
+<div class="md:col-span-4 flex flex-col sm:flex-row md:flex-col items-center md:items-end justify-center gap-space-md">
+<div class="w-24 h-24 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center p-3 text-center">
+<div class="w-full h-full rounded-full border-2 border-dashed border-primary flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[28px]">sports_soccer</span>
+<span class="font-label-sm text-[9px] uppercase font-bold text-on-surface tracking-tighter">LMFM 1952</span>
+</div>
+</div>
+<span class="font-body-sm text-body-sm text-secondary text-center md:text-right">
+            Certificación Digital SIGLIM v2.4<br>
+            Secretaría General y Registro Federado
+          </span>
+</div>
+</div>
+</section>
+</div>
+</div></main><footer class="w-full bg-surface-container-low text-on-surface"><div class="w-full px-margin-desktop py-space-xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-desktop items-start"><div class="md:col-span-5 flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><div class="flex items-center justify-center w-8 h-8 rounded bg-primary text-on-primary font-headline-sm text-headline-sm">M</div><span class="font-headline-sm text-headline-sm text-on-surface uppercase">Liga Municipal de Futbol Amateur Morelia</span></div><p class="font-body-sm text-body-sm text-secondary max-w-md">Órgano rector de las competencias municipales de futbol amateur en Morelia, Michoacán. Promoviendo el juego limpio, la disciplina deportiva y el desarrollo cívico a través del Sistema Integral de Gestión (SIGLIM).</p></div><div class="md:col-span-4 flex flex-col gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface">Sede y Canchas Oficiales</span><div class="flex items-start gap-space-xs font-body-sm text-body-sm text-secondary"><span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">location_on</span><span>Unidad Deportiva Cuauhtémoc (Policía y Tránsito), Morelia, Michoacán, México.</span></div><div class="flex items-center gap-space-xs font-body-sm text-body-sm text-secondary mt-space-xs"><span class="material-symbols-outlined text-[18px] text-secondary shrink-0">schedule</span><span>Atención Administrativa: Lunes a Viernes de 09:00 a 19:00 hrs.</span></div></div><div class="md:col-span-3 flex flex-col gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface">Enlaces Normativos</span><a class="font-body-sm text-body-sm text-secondary hover:text-on-surface transition-colors" data-path="aviso-de-privacidad" href="#">Aviso de Privacidad Oficial</a><a class="font-body-sm text-body-sm text-secondary hover:text-on-surface transition-colors" data-path="reglamento-general" href="#">Reglamento de Competencia y Sanciones</a><a class="font-body-sm text-body-sm text-secondary hover:text-on-surface transition-colors" data-path="directiva" href="#">Directorio del Comité Directivo</a></div></div><div class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-secondary"><p>© 2025 Liga Municipal de Futbol Amateur Morelia A.C. (LMFM) • SIGLIM v2.4</p><span class="font-mono-data text-mono-data text-secondary">Portal Institucional Oficial Federado</span></div></div></footer></body></html>

@@ -1,5 +1,8 @@
 # Paleta de Colores y Tokens - SIGLIM
 
+> [!WARNING]
+> **Reemplazado** por [`DESIGN.md`](DESIGN.md) (prototipo aprobado el 20 de octubre de 2026). Se conserva como referencia de la primera ronda de capturas.
+
 | Token de Color | Valor HEX (Aproximado) | Uso / Propósito en Interfaz | Estado |
 | :--- | :--- | :--- | :--- |
 | `--color-primary` | `#006837` (Emerald Green) | Botones principales, pestañas activas, distintivos de liga, elementos destacados | Observado |

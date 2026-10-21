@@ -1,0 +1,749 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-container-highest":"#d3e4fe","secondary":"#565e74","on-secondary-fixed":"#131b2e","on-surface":"#0b1c30","inverse-surface":"#213145","surface-container-high":"#dce9ff","outline":"#6f7a70","on-tertiary-container":"#ffc3c5","surface-container-low":"#eff4ff","surface-tint":"#0b6d3b","secondary-fixed":"#dae2fc","secondary-fixed-dim":"#bec6e0","on-primary-container":"#8ee4a6","on-secondary-fixed-variant":"#3f465b","tertiary-fixed-dim":"#ffb3b6","primary":"#004d27","surface-container-lowest":"#ffffff","on-surface-variant":"#3f4940","surface-variant":"#d3e4fe","on-background":"#0b1c30","primary-fixed":"#9ef6b6","on-secondary-container":"#5a6278","secondary-container":"#d8dff9","tertiary-fixed":"#ffdada","error":"#ba1a1a","on-primary-fixed":"#00210e","surface-dim":"#cbdbf5","surface":"#f8f9ff","background":"#f8f9ff","surface-container":"#e5eeff","on-error":"#ffffff","inverse-on-surface":"#eaf1ff","on-error-container":"#93000a","on-secondary":"#ffffff","inverse-primary":"#83d99c","primary-container":"#006837","on-tertiary":"#ffffff","surface-bright":"#f8f9ff","tertiary-container":"#943e46","tertiary":"#762730","on-primary":"#ffffff","primary-fixed-dim":"#83d99c","on-primary-fixed-variant":"#00522a","on-tertiary-fixed-variant":"#7b2b34","error-container":"#ffdad6","on-tertiary-fixed":"#40000c","outline-variant":"#bec9be"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin":"1rem","space-md":"0.75rem","margin-desktop":"2rem","gutter":"1rem","space-lg":"1rem","space-xl":"1.5rem","space-sm":"0.5rem","space-xs":"0.25rem","gutter-desktop":"1.5rem"},"fontFamily":{"label-md":["Inter"],"body-md":["Inter"],"label-sm":["Inter"],"mono-score":["JetBrains Mono"],"mono-data":["JetBrains Mono"],"display-lg":["Inter"],"body-lg":["Inter"],"display-lg-mobile":["Inter"],"headline-md":["Inter"],"headline-sm":["Inter"],"headline-lg":["Inter"],"body-sm":["Inter"]},"fontSize":{"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"600"}],"mono-score":["28px",{"lineHeight":"32px","fontWeight":"700"}],"mono-data":["13px",{"lineHeight":"18px","fontWeight":"500"}],"display-lg":["36px",{"lineHeight":"44px","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"display-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 flex items-center gap-space-sm px-space-xl bg-surface-container-low"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-headline-sm font-bold shadow-sm"><span class="material-symbols-outlined text-[20px]">sports_soccer</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-tight font-bold tracking-tight">SIGLIM</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Panel Directiva</span></div></div><div class="px-space-xl pt-space-lg pb-space-sm"><span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Menú Directivo</span></div><nav class="flex flex-col gap-space-xs px-space-md" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg shadow-sm"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="inicio" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Inicio</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="mi-club" href="#"><span class="material-symbols-outlined text-[20px]">shield</span><span>Mi club</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="jugadores" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Jugadores</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="arbitros-del-club" href="#"><span class="material-symbols-outlined text-[20px]">sports</span><span>Árbitros del club</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="tesoreria" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span>Tesorería</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="notificaciones" href="#"><span class="material-symbols-outlined text-[20px]">notifications</span><span>Notificaciones</span></a></nav></div><div class="p-space-lg mx-space-md mb-space-lg rounded-lg bg-surface-container-low"><div class="flex items-center gap-space-sm"><div class="w-2 h-2 rounded-full bg-primary-container"></div><span class="font-label-sm text-label-sm text-on-surface font-semibold">SIGLIM v2.4</span></div><p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Afiliación Activa · Club Halcones FC</p></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter-desktop"><div class="flex items-center gap-space-md"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">SIGLIM - LIGA MUNICIPAL DE FUTBOL AMATEUR MORELIA</span><span class="font-body-sm text-body-sm text-outline">Órgano de Control Normativo y Registro de Cédulas</span></div></div><div class="flex items-center gap-space-lg"><div class="hidden md:flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-primary font-semibold tracking-wide uppercase">Temporada 2025–2026 · Activa</span></div><button aria-label="Notificaciones" class="relative p-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors focus:outline-none" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-space-md pl-space-sm"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Julio César Ortiz</span><span class="font-body-sm text-body-sm text-on-surface-variant">Delegado · Halcones FC</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-background flex-1 px-gutter-desktop py-space-xl"><div class="flex flex-col w-full">
+<!-- Cabecera Institucional y Migas de Pan -->
+<div class="flex flex-col gap-space-lg mb-space-xl">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<!-- Breadcrumb federado -->
+<nav aria-label="Ruta de navegación" class="flex items-center gap-space-xs text-body-sm font-body-sm text-outline">
+<span class="hover:text-primary cursor-pointer transition-colors">Mi club / Organización</span>
+<span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
+<span class="hover:text-primary cursor-pointer transition-colors">Equipos federados</span>
+<span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
+<span class="text-on-surface font-semibold">Halcones FC · Libre Primera (Varonil) · Grupo A</span>
+</nav>
+<div class="flex items-center gap-space-xs text-label-sm font-label-sm px-space-sm py-space-xs bg-surface-container-high rounded text-on-surface-variant font-mono-data">
+<span class="material-symbols-outlined text-[15px] text-primary">verified</span>
+<span>ID Cédula: HLC-2025-LP-A08</span>
+</div>
+</div>
+<!-- Título y Acciones de Cabecera -->
+<div class="flex flex-col xl:flex-row xl:items-end justify-between gap-space-lg bg-surface-container-lowest p-space-xl rounded-xl shadow-sm">
+<div class="flex flex-col max-w-3xl">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">Plantilla Oficial de Jugadores</h1>
+<span class="px-space-sm py-space-xs rounded bg-surface-container text-on-secondary-fixed font-label-sm text-label-sm uppercase tracking-wider font-semibold">Temporada Activa</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+          Ciclo 2025–2026 · Cédula colectiva de inscripción y elegibilidad para cotejo de partidos oficiales de la Liga Municipal.
+        </p>
+</div>
+<!-- Barra de Acciones -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="h-[44px] px-space-md bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-label-md text-label-md rounded-lg flex items-center gap-space-xs shadow-sm transition-all focus:outline-none" onclick="alert('Generando archivo Cédula_Halcones_FC_J12.pdf...')" type="button">
+<span class="material-symbols-outlined text-[20px] text-secondary">picture_as_pdf</span>
+<span>Descargar cédula colectiva (PDF)</span>
+</button>
+<button class="h-[44px] px-space-md bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-label-md text-label-md rounded-lg flex items-center gap-space-xs shadow-sm transition-all focus:outline-none" onclick="alert('Exportando lista en formato normativo de liga (.xlsx)...')" type="button">
+<span class="material-symbols-outlined text-[20px] text-secondary">table_view</span>
+<span>Exportar lista</span>
+</button>
+<button class="h-[44px] px-space-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md rounded-lg flex items-center gap-space-xs shadow-sm transition-all focus:outline-none" onclick="alert('Apertura de formulario de pre-registro normativo SIGLIM.')" type="button">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+<span class="font-semibold">+ Registrar jugador</span>
+</button>
+</div>
+</div>
+<!-- Tarjetas de Resumen Rápido -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Tarjeta 1: Total en plantilla -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Total en plantilla</span>
+<span class="px-space-xs py-0.5 rounded text-[10px] bg-tertiary-fixed text-on-tertiary-fixed font-semibold uppercase tracking-wider">No oficial</span>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-mono-score text-mono-score text-on-surface font-bold">22</span>
+<span class="font-body-sm text-body-sm text-outline">registrados</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Cupo federativo: máx. 25 por cédula</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]">groups</span>
+</div>
+</div>
+<!-- Tarjeta 2: Elegibles para próxima jornada -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold mb-space-xs">Elegibles para próxima jornada</span>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-mono-score text-mono-score text-primary-container font-bold">19</span>
+<span class="font-body-sm text-body-sm text-outline">jugadores</span>
+</div>
+<span class="font-body-sm text-body-sm text-primary font-medium mt-space-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Habilitados para Jornada 14
+          </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-primary-fixed/30 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[28px]">sports_soccer</span>
+</div>
+</div>
+<!-- Tarjeta 3: En revisión / Incidencias -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold mb-space-xs">En revisión / Incidencias</span>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-mono-score text-mono-score text-tertiary font-bold">3</span>
+<span class="font-body-sm text-body-sm text-outline">registros</span>
+</div>
+<span class="font-body-sm text-body-sm text-tertiary mt-space-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">report_problem</span> 1 suspendido · 1 rechazado · 1 pendiente
+          </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[28px]">pending_actions</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sección de Control de Filtros y Ordenamiento -->
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md mb-space-md bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<!-- Segmented Filter Chips -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-space-xs lg:pb-0" id="filterChips">
+<!-- Todos -->
+<button class="filter-chip active flex items-center gap-space-xs px-space-md py-space-xs rounded-lg font-label-md text-label-md bg-surface-container-high text-on-surface font-semibold shadow-sm transition-all focus:outline-none" onclick="filterBy('all', this)" type="button">
+<span>Todos</span>
+<span class="px-1.5 py-0.5 rounded-full text-[11px] font-mono-data bg-surface-container-lowest text-on-surface font-bold">22</span>
+</button>
+<!-- Pendiente de validación -->
+<button class="filter-chip flex items-center gap-space-xs px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low transition-all focus:outline-none" onclick="filterBy('pendiente', this)" type="button">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+<span>Pendiente</span>
+<span class="px-1.5 py-0.5 rounded-full text-[11px] font-mono-data bg-amber-100 text-amber-900 font-bold">2</span>
+</button>
+<!-- Activo -->
+<button class="filter-chip flex items-center gap-space-xs px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low transition-all focus:outline-none" onclick="filterBy('activo', this)" type="button">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>Activo</span>
+<span class="px-1.5 py-0.5 rounded-full text-[11px] font-mono-data bg-primary-fixed text-primary font-bold">16</span>
+</button>
+<!-- Suspendido -->
+<button class="filter-chip flex items-center gap-space-xs px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low transition-all focus:outline-none" onclick="filterBy('suspendido', this)" type="button">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Suspendido</span>
+<span class="px-1.5 py-0.5 rounded-full text-[11px] font-mono-data bg-tertiary-fixed text-tertiary font-bold">1</span>
+</button>
+<!-- Rechazado -->
+<button class="filter-chip flex items-center gap-space-xs px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low transition-all focus:outline-none" onclick="filterBy('rechazado', this)" type="button">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>Rechazado</span>
+<span class="px-1.5 py-0.5 rounded-full text-[11px] font-mono-data bg-error-container text-on-error-container font-bold">1</span>
+</button>
+<!-- Baja -->
+<button class="filter-chip flex items-center gap-space-xs px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low transition-all focus:outline-none" onclick="filterBy('baja', this)" type="button">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Baja</span>
+<span class="px-1.5 py-0.5 rounded-full text-[11px] font-mono-data bg-secondary-container text-on-secondary-container font-bold">2</span>
+</button>
+</div>
+<!-- Selector complementario de ordenamiento -->
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold">Ordenar:</span>
+<div class="relative">
+<select class="h-[40px] pl-space-md pr-space-xl bg-surface-container-low text-on-surface font-label-md text-label-md rounded-lg appearance-none focus:outline-none cursor-pointer" id="sortSelect" onchange="sortTable(this.value)">
+<option value="apellidos">Apellidos (A–Z)</option>
+<option value="dorsal">Número de dorsal (Ascendente)</option>
+<option value="fecha">Fecha de registro reciente</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Contenedor Principal: Tabla Federada de Jugadores -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden mb-space-xl">
+<div class="overflow-x-auto">
+<table class="w-full border-collapse text-left" id="tablaJugadores">
+<thead>
+<tr class="bg-surface-container-low font-label-sm text-label-sm text-outline uppercase tracking-wider">
+<th class="py-space-md px-space-lg font-semibold w-72">Foto y Nombre</th>
+<th class="py-space-md px-space-lg font-semibold w-64">CURP / Edad</th>
+<th class="py-space-md px-space-lg font-semibold w-52">Estado del Registro</th>
+<th class="py-space-md px-space-lg font-semibold w-44">Expediente Normativo</th>
+<th class="py-space-md px-space-lg font-semibold w-48">Elegibilidad J-14</th>
+<th class="py-space-md px-space-lg font-semibold text-right w-36">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high/60 text-body-md font-body-md" id="jugadoresTbody">
+<!-- JUGADOR 1: Normal Activo (Capitán) -->
+<tr class="hover:bg-surface-container-low/70 transition-colors group" data-apellido="Alvarez Cruz Daniel" data-dorsal="8" data-status="activo">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="relative w-10 h-10 rounded-full overflow-hidden shrink-0 bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Close-up headshot of a Hispanic young adult soccer player with short black hair wearing a forest green soccer jersey against a soft stadium background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtZa-1LAGpPNrX2aKBZESa3VJwmeFjcP2p9VssfDD-bcAxg5SfN__PnBm12LXi_lSBuibk224O9teWXULQZzvccbqt8m_pI6QIkIM5dTk4nZRh--lfRXSLL8oXB92-bKwiEeEZ0_zb0yceeJY2ZyDI5ghjMkZD0DmoP5pOTPuGwQy1WTrf6gjk931LIKJfg7_FytN78YbRokWI4D8hejPFcDGzWJIEWxy-mzox3jndVmR7y5r8sNlQ">
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-primary ring-2 ring-surface-container-lowest" title="Convalidado"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate">Daniel Álvarez Cruz</span>
+<span class="px-space-xs py-0.5 rounded text-[10px] font-mono-data bg-primary-fixed text-primary font-bold">CAP</span>
+</div>
+<span class="font-mono-data text-mono-data text-on-surface-variant font-medium">Dorsal: #8 · Mediocampista</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data text-on-surface tracking-wider">ALCD******HMNRR03</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">25 años</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center gap-1.5 px-space-sm h-[24px] rounded-md bg-emerald-500/10 text-emerald-800 font-label-sm text-label-sm uppercase font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Activo</span>
+</span>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-emerald-500/10 text-emerald-800 font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">task_alt</span>
+<span>3 de 3 ✓</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-1.5 text-primary-container font-semibold font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">sports_soccer</span>
+<span>Elegible</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-space-xs text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors focus:outline-none" onclick="alert('Consulta de cédula y récord de Daniel Álvarez Cruz')" title="Ver expediente" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="p-space-xs text-on-surface-variant hover:text-error hover:bg-error-container rounded-lg transition-colors focus:outline-none" onclick="openBajaModal('Daniel Álvarez Cruz', '#8', 'ALCD******HMNRR03')" title="Dar de baja" type="button">
+<span class="material-symbols-outlined text-[20px]">person_remove</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- JUGADOR 2: Menor de Edad (17 años) con consentimiento -->
+<tr class="hover:bg-surface-container-low/70 transition-colors group" data-apellido="Benitez Ortiz Gael" data-dorsal="19" data-status="activo">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="relative w-10 h-10 rounded-full overflow-hidden shrink-0 bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Portrait of a 17-year-old Mexican soccer forward boy smiling softly with training bib on sunny grass field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDau4fMsPHVDs-xwo3Z-SAJqHZHKQxXfIABCkgcQ8AwBWMhe8yre7WsvC_Vn-w7Jul2P9-KSscGE8d9Id1g7hrabDUmCuecERGV_N1T_dRxUyP6uEtkZE5WhOYv9JcRKxH-T4T-RFhm49qZFAaObUf4ju5qeNRmqSZOISJepQ3RK3C-yrxlyU2v44gaIRh0pgwstnp0WD8MYOrG2ms8mqeyrmompqerh6hpolze8tJQ76vHy-xM7Pw5">
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate">Gael Benítez Ortiz</span>
+</div>
+<span class="font-mono-data text-mono-data text-on-surface-variant font-medium">Dorsal: #19 · Delantero</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col gap-1">
+<span class="font-mono-data text-mono-data text-on-surface tracking-wider">BEOG******HMNTC01</span>
+<div class="flex items-center gap-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">17 años</span>
+<!-- Insignia Menor Destacada -->
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-blue-100 text-blue-800 font-label-sm text-[10px] font-bold uppercase tracking-wider" title="Carta responsiva de tutor legal acreditada conforme al Art. 9">
+<span class="material-symbols-outlined text-[12px]">verified_user</span>
+<span>Menor</span>
+</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center gap-1.5 px-space-sm h-[24px] rounded-md bg-emerald-500/10 text-emerald-800 font-label-sm text-label-sm uppercase font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Activo</span>
+</span>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-emerald-500/10 text-emerald-800 font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">task_alt</span>
+<span>3 de 3 ✓</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-1.5 text-primary-container font-semibold font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">sports_soccer</span>
+<span>Elegible</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-space-xs text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors focus:outline-none" onclick="alert('Expediente y responsiva de tutor de Gael Benítez Ortiz')" title="Ver expediente" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="p-space-xs text-on-surface-variant hover:text-error hover:bg-error-container rounded-lg transition-colors focus:outline-none" onclick="openBajaModal('Gael Benítez Ortiz', '#19', 'BEOG******HMNTC01')" title="Dar de baja" type="button">
+<span class="material-symbols-outlined text-[20px]">person_remove</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- JUGADOR 3: CASO ESPECIAL SUSPENDIDO CON TOOLTIP NORMATIVO -->
+<tr class="bg-amber-50/40 hover:bg-amber-50/70 transition-colors group" data-apellido="Corona Morales Javier" data-dorsal="4" data-status="suspendido">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<!-- Sin foto: Avatar con iniciales -->
+<div class="w-10 h-10 rounded-full shrink-0 bg-tertiary-fixed text-on-tertiary-fixed font-headline-sm font-bold flex items-center justify-center">
+                  JC
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate">Javier Corona Morales</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant font-medium">Dorsal: #4 · Defensa Central</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data text-on-surface tracking-wider">COMJ******HMNRL09</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">24 años</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center gap-1.5 px-space-sm h-[24px] rounded-md bg-tertiary-fixed text-tertiary font-label-sm text-label-sm uppercase font-semibold">
+<span class="material-symbols-outlined text-[14px]">block</span>
+<span>Suspendido</span>
+</span>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-emerald-500/10 text-emerald-800 font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">task_alt</span>
+<span>3 de 3 ✓</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg relative">
+<!-- No elegible con Tooltip Interactivo -->
+<div class="relative inline-block group/tooltip">
+<div class="flex items-center gap-1.5 text-error font-semibold font-label-md text-label-md cursor-help underline decoration-dotted decoration-error">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+<span>No elegible</span>
+<span class="material-symbols-outlined text-[14px] text-error">info</span>
+</div>
+<!-- Tooltip normativo disciplinario visible al hover -->
+<div class="absolute z-30 bottom-full left-0 mb-2 w-72 p-space-md bg-inverse-surface text-inverse-on-surface rounded-xl shadow-xl opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none text-left">
+<div class="flex items-start gap-space-xs text-error font-semibold font-label-sm text-label-sm mb-1 uppercase">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+<span>Sanción Disciplinaria Activa</span>
+</div>
+<p class="font-body-sm text-body-sm leading-snug text-inverse-on-surface/90">
+                    Sanción vigente: 2 partidos de suspensión (EXP-2025-0042) por acumulación de tarjetas y reporte arbitral en J-12. Cumple en J-14.
+                  </p>
+<div class="mt-space-xs pt-space-xs border-t border-surface-variant/20 flex justify-between font-mono-data text-[10px] text-inverse-on-surface/70">
+<span>Comité de Penas</span>
+<span>Folio: #CP-884</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-space-xs text-on-surface-variant hover:text-tertiary hover:bg-surface-container rounded-lg transition-colors focus:outline-none" onclick="alert('Expediente sancionatorio EXP-2025-0042')" title="Ver cédula de sanción" type="button">
+<span class="material-symbols-outlined text-[20px]">policy</span>
+</button>
+<button class="p-space-xs text-on-surface-variant hover:text-error hover:bg-error-container rounded-lg transition-colors focus:outline-none" onclick="openBajaModal('Javier Corona Morales', '#4', 'COMJ******HMNRL09')" title="Dar de baja" type="button">
+<span class="material-symbols-outlined text-[20px]">person_remove</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- JUGADOR 4: CASO ESPECIAL RECHAZADO CON SUBSANACIÓN REGLAMENTARIA -->
+<tr class="bg-red-50/50 hover:bg-red-50/80 transition-colors" data-apellido="Mendoza Ruiz Carlos E." data-dorsal="14" data-status="rechazado">
+<td class="p-0" colspan="6">
+<div class="py-space-md px-space-lg flex flex-col gap-space-sm">
+<!-- Fila estándar interna -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md w-72">
+<div class="relative w-10 h-10 rounded-full overflow-hidden shrink-0 bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Official registration headshot photo of an adult Hispanic male soccer player with serious expression and navy background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPED4QjW5B_VWDzYF0hJim4ojJJWopKe2YF0SC4nGPUz3tSlALN0tPC_6Yj4NXAGeAaJrMfJ9D5MDwHyIx27ZnTtb0XK8j0fEc-VmuJdlYjaJAsTs0CtUR7XozLILm0p6bk_tdbuGv_-UzLj3tDvd9zugMEbj7eiq0bcwe4-MjHcFUQWtm5wnseJnrYbcS5MJ-9VRpBVYUa-GAeXzmnpyBJSq2vvqLzkmOOxlLaBCErft5nCpys3_7">
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate">Carlos E. Mendoza Ruiz</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant font-medium">Dorsal: #14 · Extremo Derecho</span>
+</div>
+</div>
+<div class="flex flex-col w-48">
+<span class="font-mono-data text-mono-data text-on-surface tracking-wider">MERC******HMNZ04</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">22 años</span>
+</div>
+<div class="w-44">
+<span class="inline-flex items-center gap-1.5 px-space-sm h-[24px] rounded-md bg-error-container text-on-error-container font-label-sm text-label-sm uppercase font-semibold">
+<span class="material-symbols-outlined text-[14px]">cancel</span>
+<span>Rechazado</span>
+</span>
+</div>
+<div class="w-36">
+<div class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-amber-500/15 text-amber-800 font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">report</span>
+<span>2 de 3 ⚠</span>
+</div>
+</div>
+<div class="w-40">
+<div class="flex items-center gap-1.5 text-error font-semibold font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+<span>No elegible</span>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-xs text-right">
+<!-- Botón directo de corrección solicitado -->
+<button class="h-[36px] px-space-md bg-surface-container-lowest hover:bg-error-container text-error font-label-md text-label-md font-semibold rounded-lg flex items-center gap-space-xs shadow-sm transition-all focus:outline-none" onclick="alert('Abriendo asistente de subsanación de comprobante domiciliario para Carlos Mendoza.')" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_document</span>
+<span>Corregir y reenviar</span>
+</button>
+</div>
+</div>
+<!-- Subsanación oficial del Secretario de la Liga -->
+<div class="mt-space-xs p-space-md bg-error-container/40 rounded-lg flex items-start gap-space-md">
+<span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">report_problem</span>
+<div class="flex flex-col text-on-error-container">
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider">Observación del Secretario de la Liga:</span>
+<p class="font-body-sm text-body-sm mt-0.5 leading-relaxed">
+                      El comprobante de domicilio presentado no corresponde al municipio de Morelia o zona conurbada (Art. 14 del Reglamento de la Liga Municipal). Adjuntar constancia de radicación reciente, contrato de arrendamiento o carta patronal con domicilio laboral activo.
+                    </p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<!-- JUGADOR 5: Pendiente de validación médica -->
+<tr class="hover:bg-surface-container-low/70 transition-colors group" data-apellido="Estrada Morales Samuel" data-dorsal="22" data-status="pendiente">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full shrink-0 bg-secondary-container text-on-secondary-fixed font-headline-sm font-bold flex items-center justify-center">
+                  SE
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate">Samuel Estrada Morales</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant font-medium">Dorsal: #22 · Portero</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data text-on-surface tracking-wider">EAMS******HMNX01</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">27 años</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center gap-1.5 px-space-sm h-[24px] rounded-md bg-amber-500/15 text-amber-900 font-label-sm text-label-sm uppercase font-semibold">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>Pendiente de validación</span>
+</span>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-amber-500/15 text-amber-800 font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">pending</span>
+<span>2 de 3 ⚠</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-medium font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px] text-amber-600">hourglass_top</span>
+<span>En revisión</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-space-xs text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors focus:outline-none" onclick="alert('Expediente médico de Samuel Estrada Morales')" title="Ver detalle" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="p-space-xs text-on-surface-variant hover:text-error hover:bg-error-container rounded-lg transition-colors focus:outline-none" onclick="openBajaModal('Samuel Estrada Morales', '#22', 'EAMS******HMNX01')" title="Dar de baja" type="button">
+<span class="material-symbols-outlined text-[20px]">person_remove</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- JUGADOR 6: Activo Normal -->
+<tr class="hover:bg-surface-container-low/70 transition-colors group" data-apellido="Silva Carvajal Mateo" data-dorsal="10" data-status="activo">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="relative w-10 h-10 rounded-full overflow-hidden shrink-0 bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Portrait photo of a young professional Mexican midfielder athlete wearing green jersey with sharp focus on eyes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm4K1nk-zrNQMxJnqsFVlr93HHrOAI3TTnMzIucZW867cvaTpFibIsDwi-ECeBqhO89hJjT9bU1sQxewUJ_JK8Hb3vKSjrEAHND-YUgcPIEOcc_WuxreZFk7dJ3AWF6aLQJ2WWfeVLOtiYdtXwQwP5SRSrf-p6x4CBcnSDRZAs0ZMEM-9yjiUgV1n1bgFWKjVlwYKB4J66f9evk2kJh09o8mv16ifOXo61cwUJBAciUFJ-zrv5rmfP">
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate">Mateo Silva Carvajal</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant font-medium">Dorsal: #10 · Volante Ofensivo</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data text-on-surface tracking-wider">SICM******HMNRP05</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">21 años</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center gap-1.5 px-space-sm h-[24px] rounded-md bg-emerald-500/10 text-emerald-800 font-label-sm text-label-sm uppercase font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Activo</span>
+</span>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-emerald-500/10 text-emerald-800 font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">task_alt</span>
+<span>3 de 3 ✓</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-1.5 text-primary-container font-semibold font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">sports_soccer</span>
+<span>Elegible</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-space-xs text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors focus:outline-none" onclick="alert('Consulta de ficha técnica de Mateo Silva')" title="Ver detalle" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="p-space-xs text-on-surface-variant hover:text-error hover:bg-error-container rounded-lg transition-colors focus:outline-none" onclick="openBajaModal('Mateo Silva Carvajal', '#10', 'SICM******HMNRP05')" title="Dar de baja" type="button">
+<span class="material-symbols-outlined text-[20px]">person_remove</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- JUGADOR 7: Baja Reglamentaria Histórica -->
+<tr class="opacity-75 bg-surface-container-low/30 hover:bg-surface-container-low/60 transition-colors group" data-apellido="Vargas Perez Rodrigo" data-dorsal="17" data-status="baja">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full shrink-0 bg-surface-container-high text-on-surface-variant font-headline-sm font-bold flex items-center justify-center grayscale">
+                  RV
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface-variant line-through truncate">Rodrigo Vargas Pérez</span>
+<span class="font-mono-data text-mono-data text-outline font-medium">Dorsal: #17 · Lateral</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data text-outline tracking-wider">VAPR******HMND02</span>
+<span class="font-body-sm text-body-sm text-outline">29 años</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center gap-1.5 px-space-sm h-[24px] rounded-md bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase font-semibold">
+<span class="material-symbols-outlined text-[14px]">archive</span>
+<span>Baja reglamentaria</span>
+</span>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-secondary-container/50 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">folder_zip</span>
+<span>Archivado</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-1.5 text-outline font-medium font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">do_not_disturb_on</span>
+<span>Inactivo</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-space-xs text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors focus:outline-none" onclick="alert('Expediente archivado conforme al Art. 27.')" title="Ver expediente archivado" type="button">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Paginación y Nota Reglamentaria al pie de tabla -->
+<div class="py-space-md px-space-lg bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm text-body-sm font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px] text-primary">policy</span>
+<span>Cotejo oficial normativo auditado por la Mesa Directiva de la Liga Municipal de Morelia.</span>
+</div>
+<div class="flex items-center gap-space-md font-mono-data text-mono-data text-on-surface-variant">
+<span>Mostrando 6 de 22 registros</span>
+<div class="flex items-center gap-space-xs">
+<button class="w-8 h-8 rounded bg-surface-container-lowest text-on-surface flex items-center justify-center hover:bg-surface-container shadow-sm disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<span class="px-space-sm py-1 bg-primary text-on-primary rounded text-label-sm font-bold">1</span>
+<button class="w-8 h-8 rounded bg-surface-container-lowest text-on-surface flex items-center justify-center hover:bg-surface-container shadow-sm" onclick="alert('Página 2')" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL / DIÁLOGO DE BAJA REGLAMENTARIA (Interactivo / Pre-visualizado para auditoría directa) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/60 backdrop-blur-sm p-space-md hidden" id="modalBajaJugador">
+<div class="bg-surface-container-lowest w-full max-w-xl rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+<!-- Encabezado Modal -->
+<div class="bg-surface-container-low px-space-xl py-space-lg flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">person_remove</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Dar de baja reglamentaria a jugador</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Trámite oficial ante la Liga Municipal de Fútbol Amateur Morelia</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1 rounded-lg focus:outline-none" onclick="closeBajaModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Cuerpo del Modal -->
+<div class="p-space-xl flex flex-col gap-space-lg">
+<!-- Ficha del Jugador Seleccionado -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold">Jugador seleccionado</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-0.5" id="modalJugadorNombre">Mateo Silva Carvajal · Dorsal #10</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant mt-0.5" id="modalJugadorCurp">CURP: SICM******HMNRP05</span>
+</div>
+<span class="px-space-sm py-1 rounded bg-surface-container-high text-on-secondary-fixed font-label-sm text-label-sm font-semibold">Libre Primera</span>
+</div>
+<!-- Advertencia Institucional Rigurosa -->
+<div class="p-space-md bg-amber-500/10 rounded-lg flex items-start gap-space-md">
+<span class="material-symbols-outlined text-amber-800 text-[22px] shrink-0 mt-0.5">warning</span>
+<div class="flex flex-col text-amber-950 font-body-sm text-body-sm leading-relaxed">
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wide text-amber-900">Aviso normativo permanente:</span>
+            El historial del jugador, actas firmadas, estadísticas de partidos anteriores y sanciones previas se conservan de forma permanente e inmutable en el registro de la Liga conforme al Art. 27 del Reglamento Deportivo Oficial. Una vez formalizada la baja, el dorsal queda bloqueado durante 3 jornadas.
+          </div>
+</div>
+<!-- Formulario de Baja -->
+<form class="flex flex-col gap-space-md" id="formBajaJugador" onsubmit="handleConfirmBaja(event)">
+<!-- Campo 1: Fecha de efectividad -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1" for="fechaBaja">
+<span>Fecha de efectividad de la baja</span>
+<span class="text-error font-bold">*</span>
+</label>
+<div class="relative">
+<input class="w-full h-[44px] px-space-md bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary" id="fechaBaja" required="" type="date" value="2025-10-24">
+</div>
+<span class="font-body-sm text-body-sm text-outline">Aplica a partir del siguiente reporte semanal de la Comisión de Registro.</span>
+</div>
+<!-- Campo 2: Motivo Reglamentario -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1" for="motivoBaja">
+<span>Motivo reglamentario de la baja</span>
+<span class="text-error font-bold">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-[44px] px-space-md pr-space-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg appearance-none shadow-sm focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer" id="motivoBaja" required="">
+<option disabled="" selected="" value="">Seleccione el motivo federativo...</option>
+<option value="cambio_residencia">Cambio de residencia fuera del municipio</option>
+<option value="lesion_prolongada">Lesión médica prolongada (incapacidad mayor a 6 meses)</option>
+<option value="decision_voluntaria">Decisión voluntaria del jugador (baja de común acuerdo)</option>
+<option value="transferencia">Transferencia federada a otra división o club</option>
+<option value="sancion_administrativa">Incumplimiento interno del estatuto de club</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Observaciones Adicionales Opcionales -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="obsBaja">
+              Observaciones de la directiva (opcional)
+            </label>
+<textarea class="w-full p-space-md bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary resize-none" id="obsBaja" placeholder="Agregue información complementaria para el acta del Secretario..." rows="2"></textarea>
+</div>
+<!-- Acciones del Modal -->
+<div class="flex items-center justify-end gap-space-md mt-space-sm pt-space-md border-t border-surface-container-high">
+<button class="h-[44px] px-space-lg rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold transition-all focus:outline-none" onclick="closeBajaModal()" type="button">
+              Cancelar
+            </button>
+<button class="h-[44px] px-space-xl rounded-lg bg-error hover:bg-red-700 text-on-error font-label-md text-label-md font-bold transition-all shadow-sm flex items-center gap-space-xs focus:outline-none" type="submit">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Confirmar baja definitiva</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<!-- Banner de Acceso Rápido a Reglamentación de Liga -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Reglamento General de Competencia 2025–2026</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Consulta de artículos sobre transferencias, cédulas, alineaciones indebidas y recursos de inconformidad.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="h-[40px] px-space-md bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-label-md text-label-md rounded-lg shadow-sm transition-all focus:outline-none" onclick="alert('Abriendo visor del Reglamento Oficial de la Liga...')" type="button">
+<span>Consultar normativa (PDF)</span>
+</button>
+<button class="h-[40px] px-space-md bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md rounded-lg shadow-sm transition-all focus:outline-none" onclick="alert('Mesa de ayuda directa con la Secretaría de Actas de la Liga Municipal.')" type="button">
+<span>Contactar Secretario</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Lógica de Micro-interacción Client-Side (Filtros, Ordenamiento y Modal) -->
+<script>
+  function openBajaModal(nombre, dorsal, curp) {
+    const modal = document.getElementById('modalBajaJugador');
+    const labelNombre = document.getElementById('modalJugadorNombre');
+    const labelCurp = document.getElementById('modalJugadorCurp');
+    
+    if (labelNombre) labelNombre.textContent = nombre + ' · Dorsal ' + dorsal;
+    if (labelCurp) labelCurp.textContent = 'CURP: ' + curp;
+    if (modal) {
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeBajaModal() {
+    const modal = document.getElementById('modalBajaJugador');
+    if (modal) {
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  }
+
+  function handleConfirmBaja(e) {
+    e.preventDefault();
+    const motivo = document.getElementById('motivoBaja').value;
+    const fecha = document.getElementById('fechaBaja').value;
+    alert('Trámite registrado con éxito ante la Liga Municipal de Morelia.\n\nEfectividad: ' + fecha + '\nMotivo: ' + motivo + '\n\nSe ha emitido el recibo oficial digital de baja reglamentaria.');
+    closeBajaModal();
+  }
+
+  function filterBy(status, btnElement) {
+    const chips = document.querySelectorAll('#filterChips .filter-chip');
+    chips.forEach(c => {
+      c.classList.remove('bg-surface-container-high', 'font-semibold', 'shadow-sm');
+      c.classList.add('text-on-surface-variant');
+    });
+
+    if (btnElement) {
+      btnElement.classList.add('bg-surface-container-high', 'font-semibold', 'shadow-sm');
+      btnElement.classList.remove('text-on-surface-variant');
+    }
+
+    const rows = document.querySelectorAll('#jugadoresTbody tr');
+    rows.forEach(row => {
+      const rowStatus = row.getAttribute('data-status');
+      if (status === 'all' || rowStatus === status) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  }
+
+  function sortTable(criteria) {
+    const tbody = document.getElementById('jugadoresTbody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+
+    rows.sort((a, b) => {
+      if (criteria === 'apellidos') {
+        const apA = (a.getAttribute('data-apellido') || '').toLowerCase();
+        const apB = (b.getAttribute('data-apellido') || '').toLowerCase();
+        return apA.localeCompare(apB);
+      } else if (criteria === 'dorsal') {
+        const dNumA = parseInt(a.getAttribute('data-dorsal') || '999', 10);
+        const dNumB = parseInt(b.getAttribute('data-dorsal') || '999', 10);
+        return dNumA - dNumB;
+      }
+      return 0;
+    });
+
+    rows.forEach(row => tbody.appendChild(row));
+  }
+</script></main></div></body></html>

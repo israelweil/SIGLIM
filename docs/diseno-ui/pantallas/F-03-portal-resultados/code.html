@@ -1,0 +1,487 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><title>SIGLIM - Liga Municipal de Futbol Amateur Morelia</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"secondary-container":"#d8dff9","on-secondary":"#ffffff","primary-fixed-dim":"#83d99c","surface-container-high":"#dce9ff","on-error-container":"#93000a","on-error":"#ffffff","primary-container":"#006837","on-secondary-fixed-variant":"#3f465b","on-tertiary-fixed-variant":"#7b2b34","primary-fixed":"#9ef6b6","surface-variant":"#d3e4fe","tertiary":"#762730","on-primary":"#ffffff","on-primary-container":"#8ee4a6","surface-tint":"#0b6d3b","on-background":"#0b1c30","background":"#f8f9ff","outline":"#6f7a70","on-secondary-fixed":"#131b2e","surface-container-highest":"#d3e4fe","inverse-primary":"#83d99c","tertiary-fixed":"#ffdada","inverse-surface":"#213145","surface-container-lowest":"#ffffff","inverse-on-surface":"#eaf1ff","primary":"#004d27","on-primary-fixed-variant":"#00522a","on-surface":"#0b1c30","on-tertiary-fixed":"#40000c","surface-dim":"#cbdbf5","outline-variant":"#bec9be","surface-container":"#e5eeff","on-primary-fixed":"#00210e","tertiary-fixed-dim":"#ffb3b6","on-tertiary":"#ffffff","surface-bright":"#f8f9ff","surface-container-low":"#eff4ff","surface":"#f8f9ff","error-container":"#ffdad6","tertiary-container":"#943e46","error":"#ba1a1a","secondary-fixed":"#dae2fc","on-secondary-container":"#5a6278","on-tertiary-container":"#ffc3c5","on-surface-variant":"#3f4940","secondary-fixed-dim":"#bec6e0","secondary":"#565e74"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-xs":"0.25rem","space-xl":"1.5rem","gutter-desktop":"1.5rem","space-sm":"0.5rem","margin-desktop":"2rem","space-md":"0.75rem","margin":"1rem","gutter":"1rem","space-lg":"1rem"},fontFamily:{"headline-md":["Inter"],"headline-lg":["Inter"],"label-md":["Inter"],"display-lg":["Inter"],"mono-data":["JetBrains Mono"],"body-md":["Inter"],"body-sm":["Inter"],"body-lg":["Inter"],"mono-score":["JetBrains Mono"],"label-sm":["Inter"],"display-lg-mobile":["Inter"],"headline-sm":["Inter"]},fontSize:{"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","fontWeight":"600"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"display-lg":["36px",{"lineHeight":"44px","fontWeight":"700"}],"mono-data":["13px",{"lineHeight":"18px","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"mono-score":["28px",{"lineHeight":"32px","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"600"}],"display-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"700"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest border-b border-outline-variant/30"><div class="h-16 max-w-7xl mx-auto px-gutter lg:px-gutter-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-0"><div class="flex flex-col min-w-0 leading-tight"><span class="font-headline-lg text-headline-lg text-primary tracking-tight font-bold">SIGLIM</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate">Liga Municipal de Futbol Amateur Morelia</span></div></div><nav class="flex items-center gap-space-lg lg:gap-space-xl h-full" data-active-classes="text-on-surface font-headline-sm border-b-2 border-primary"><a class="inline-flex items-center h-full px-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="programacion" href="#">Programación</a><a aria-current="page" class="inline-flex items-center h-full px-space-xs transition-colors text-on-surface font-headline-sm border-b-2 border-primary" data-path="resultados" href="#">Resultados</a><a class="inline-flex items-center h-full px-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="tablas-de-posiciones" href="#">Tablas de posiciones</a></nav><div class="flex items-center shrink-0"><a class="inline-flex items-center justify-center min-h-[44px] px-space-lg rounded-lg border border-outline-variant/40 text-on-surface font-label-md text-label-md hover:border-primary hover:text-primary transition-all duration-150" data-path="iniciar-sesion" href="#">Iniciar sesión</a></div></div></header><main class="w-full pt-16 bg-surface flex-1"><div class="flex flex-col w-full">
+<!-- 1. Panel Superior Oscuro Institucional (#131B2E -> on-secondary-fixed) -->
+<section class="w-full bg-on-secondary-fixed text-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-gutter lg:px-gutter-desktop py-space-xl">
+<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded bg-primary-container/40 text-on-primary-container border border-primary-fixed/20 w-fit">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase font-semibold">Temporada Oficial 2025–2026 · Validación Arbitral</span>
+</div>
+<h1 class="font-headline-lg text-[28px] leading-[34px] font-bold tracking-tight text-surface-container-lowest">Resultados Oficiales</h1>
+<p class="font-body-md text-body-md text-surface-dim">Consulta de marcadores convalidados mediante cédula oficial arbitral aprobada.</p>
+</div>
+<!-- Selector de Jornada -->
+<div class="flex items-center gap-space-xs bg-surface-container-lowest/10 p-1.5 rounded-lg border border-surface-container-lowest/15 self-start md:self-auto">
+<button aria-label="Jornada anterior" class="w-9 h-9 rounded flex items-center justify-center text-surface-container-lowest hover:bg-surface-container-lowest/20 active:bg-surface-container-lowest/30 transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<div class="px-space-md py-1 text-center min-w-[210px]">
+<span class="font-mono-data text-mono-data font-semibold text-primary-fixed block tracking-wide">Jornada 7 (20 – 26 oct 2026)</span>
+<span class="font-label-sm text-[10px] uppercase text-surface-container-high tracking-wider">Cédulas cerradas</span>
+</div>
+<button aria-label="Jornada siguiente" class="w-9 h-9 rounded flex items-center justify-center text-surface-container-lowest hover:bg-surface-container-lowest/20 active:bg-surface-container-lowest/30 transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Contenedor Principal de Contenido -->
+<div class="max-w-7xl mx-auto px-gutter lg:px-gutter-desktop py-space-xl flex flex-col gap-space-xl w-full">
+<!-- 2. Nota Visible Obligatoria / Banner Institucional -->
+<div class="w-full bg-surface-container-low rounded-lg p-space-md lg:p-space-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">gavel</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Los resultados son oficiales cuando el árbitro aprueba la cédula del partido.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Los datos aquí expuestos poseen valor reglamentario y fe pública deportiva de conformidad con el Estatuto de la Liga.</span>
+</div>
+</div>
+<div class="inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-lowest text-primary font-label-sm text-label-sm shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">task_alt</span>
+<span class="uppercase">Cédulas cerradas y publicadas</span>
+</div>
+</div>
+<!-- 3. Barra de Filtros de Consulta -->
+<section aria-labelledby="filtros-heading" class="w-full bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-space-xs" id="filtros-heading">
+<span class="material-symbols-outlined text-[20px] text-primary">filter_alt</span>
+          Filtros de consulta federada
+        </h2>
+<span class="font-mono-data text-mono-data text-primary font-semibold bg-surface-container px-space-sm py-0.5 rounded">14 resultados convalidados</span>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Filtro Semana / Jornada -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface" for="filtro-jornada">Semana o Jornada</label>
+<div class="relative">
+<select class="w-full h-[44px] px-space-md pr-8 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm appearance-none" id="filtro-jornada">
+<option selected="">Jornada 7 (Semana actual)</option>
+<option>Jornada 6 (13 – 19 oct 2026)</option>
+<option>Jornada 5 (06 – 12 oct 2026)</option>
+<option>Jornada 4 (29 sep – 05 oct 2026)</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[20px] text-on-surface-variant">arrow_drop_down</span>
+</div>
+</div>
+<!-- Filtro Categoría -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface" for="filtro-categoria">Categoría</label>
+<div class="relative">
+<select class="w-full h-[44px] px-space-md pr-8 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm appearance-none" id="filtro-categoria">
+<option selected="">Todas las categorías</option>
+<option>Libre Primera</option>
+<option>Libre Segunda</option>
+<option>Veteranos +40</option>
+<option>Infantil Sub-12</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[20px] text-on-surface-variant">arrow_drop_down</span>
+</div>
+</div>
+<!-- Filtro Grupo / Rama -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface" for="filtro-grupo">Grupo / Rama</label>
+<div class="relative">
+<select class="w-full h-[44px] px-space-md pr-8 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm appearance-none" id="filtro-grupo">
+<option selected="">Todos los grupos</option>
+<option>Grupo 1</option>
+<option>Grupo 2</option>
+<option>Femenil Libre</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[20px] text-on-surface-variant">arrow_drop_down</span>
+</div>
+</div>
+<!-- Filtro Club / Equipo -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface" for="filtro-equipo">Equipo o Club</label>
+<div class="relative">
+<select class="w-full h-[44px] px-space-md pr-8 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm appearance-none" id="filtro-equipo">
+<option selected="">Todos los equipos</option>
+<option>Halcones FC</option>
+<option>Toros de Santa María</option>
+<option>Real Atapaneo</option>
+<option>Club Juventud Morelia</option>
+<option>Deportivo Vasco de Quiroga</option>
+<option>F.C. Chapultepec Norte</option>
+<option>Club Deportivo Indeco</option>
+<option>Deportivo Tiripetío</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[20px] text-on-surface-variant">arrow_drop_down</span>
+</div>
+</div>
+</form>
+<div class="flex flex-wrap items-center justify-end gap-space-md pt-space-xs">
+<button class="h-[44px] px-space-lg rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+          Limpiar filtros
+        </button>
+<button class="h-[44px] px-space-xl rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors flex items-center gap-space-xs shadow-sm" type="submit">
+<span class="material-symbols-outlined text-[18px]">search</span>
+          Filtrar resultados
+        </button>
+</div>
+</section>
+<!-- 4. Lista de Resultados Agrupada por Jornada y Fecha -->
+<section aria-label="Resultados de la Jornada" class="flex flex-col gap-space-xl">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-xs gap-space-xs">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Torneo Regular 2025–2026</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Jornada 7 · Torneo de Liga 2025–2026</h2>
+</div>
+<span class="font-mono-data text-mono-data text-on-surface-variant">Actualización de sistema: 26 oct 2026 · 21:15 hrs</span>
+</div>
+<!-- BLOQUE 1: SÁBADO 25 DE OCTUBRE DE 2026 -->
+<div class="flex flex-col gap-space-md">
+<!-- Encabezado de Fecha -->
+<div class="flex items-center gap-space-sm">
+<div class="px-space-md py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-headline-sm text-headline-sm font-semibold flex items-center gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+            Sábado 25 de octubre de 2026
+          </div>
+<div class="h-0.5 flex-1 bg-surface-container-high"></div>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- CASO A: PARTIDO REGULAR (Halcones FC 2 - 1 Toros de Santa María) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md lg:p-space-lg shadow-sm flex flex-col gap-space-md hover:bg-surface-bright transition-colors">
+<!-- Fila superior de Metadatos -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm text-on-surface-variant font-mono-data text-mono-data">
+<div class="flex flex-wrap items-center gap-space-md">
+<span class="flex items-center gap-1 font-medium text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">schedule</span>
+                  sáb 25 oct 2026 · 10:00 hrs
+                </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">stadium</span>
+                  Unidad Deportiva Norte · Cancha 2
+                </span>
+<span class="px-space-sm py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm uppercase font-semibold">
+                  Libre Primera · Grupo 1
+                </span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="text-on-surface-variant font-semibold tracking-wide">Cédula #CED-7041</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-primary-fixed/30 text-on-primary-fixed-variant font-label-sm text-label-sm uppercase font-bold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  Finalizado
+                </span>
+</div>
+</div>
+<!-- Bloque de Marcador y Enfrentamiento -->
+<div class="grid grid-cols-1 md:grid-cols-11 items-center gap-space-md py-space-sm">
+<!-- Equipo Local -->
+<div class="md:col-span-4 flex items-center md:justify-end gap-space-md text-left md:text-right">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Halcones FC</span>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-bold text-on-surface-variant shrink-0">HFC</div>
+</div>
+<!-- Marcador Central -->
+<div class="md:col-span-3 flex flex-col items-center justify-center">
+<div class="bg-on-secondary-fixed text-surface-container-lowest px-space-xl py-space-xs rounded-lg shadow-sm">
+<span class="font-mono-score text-mono-score font-bold tracking-widest">2 – 1</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1 uppercase tracking-wider">Tiempo Reglamentario (90')</span>
+</div>
+<!-- Equipo Visitante -->
+<div class="md:col-span-4 flex items-center md:justify-start gap-space-md text-left">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-bold text-on-surface-variant shrink-0">TSM</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Toros de Santa María</span>
+</div>
+</div>
+<!-- Footer Cédula -->
+<div class="flex items-center justify-between pt-space-xs font-body-sm text-body-sm text-on-surface-variant bg-surface-container-low px-space-md py-space-xs rounded-lg">
+<span>Árbitro Central Convalidador: Colegio de Árbitros de Michoacán A.C.</span>
+<span class="font-label-sm text-label-sm uppercase text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+                Firma electrónica registrada
+              </span>
+</div>
+</article>
+<!-- CASO B: DEFINICIÓN POR PENALES (Real Atapaneo 2 - 2 Club Juventud Morelia) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md lg:p-space-lg shadow-sm flex flex-col gap-space-md hover:bg-surface-bright transition-colors">
+<!-- Fila superior de Metadatos -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm text-on-surface-variant font-mono-data text-mono-data">
+<div class="flex flex-wrap items-center gap-space-md">
+<span class="flex items-center gap-1 font-medium text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">schedule</span>
+                  sáb 25 oct 2026 · 12:15 hrs
+                </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">stadium</span>
+                  Cancha Félix Cerda Loza
+                </span>
+<span class="px-space-sm py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm uppercase font-semibold">
+                  Libre Primera · Grupo 1
+                </span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="text-on-surface-variant font-semibold tracking-wide">Cédula #CED-7044</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-primary-fixed/30 text-on-primary-fixed-variant font-label-sm text-label-sm uppercase font-bold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  Finalizado
+                </span>
+</div>
+</div>
+<!-- Bloque de Marcador y Enfrentamiento -->
+<div class="grid grid-cols-1 md:grid-cols-11 items-center gap-space-md py-space-sm">
+<!-- Equipo Local -->
+<div class="md:col-span-4 flex items-center md:justify-end gap-space-md text-left md:text-right">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Real Atapaneo</span>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-bold text-on-surface-variant shrink-0">RAT</div>
+</div>
+<!-- Marcador Central + Penales -->
+<div class="md:col-span-3 flex flex-col items-center justify-center gap-1">
+<div class="bg-on-secondary-fixed text-surface-container-lowest px-space-xl py-space-xs rounded-lg shadow-sm">
+<span class="font-mono-score text-mono-score font-bold tracking-widest">2 – 2</span>
+</div>
+<div class="inline-flex items-center gap-space-xs px-2.5 py-0.5 rounded bg-secondary-container text-on-secondary-container">
+<span class="material-symbols-outlined text-[14px]">sports_soccer</span>
+<span class="font-mono-data text-mono-data font-bold">Penales 4 – 3</span>
+</div>
+<span class="font-label-sm text-[11px] text-on-surface-variant font-medium">Punto extra reglamentario a favor de Real Atapaneo</span>
+</div>
+<!-- Equipo Visitante -->
+<div class="md:col-span-4 flex items-center md:justify-start gap-space-md text-left">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-bold text-on-surface-variant shrink-0">CJM</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Club Juventud Morelia</span>
+</div>
+</div>
+<!-- Footer Cédula -->
+<div class="flex items-center justify-between pt-space-xs font-body-sm text-body-sm text-on-surface-variant bg-surface-container-low px-space-md py-space-xs rounded-lg">
+<span>Serie de 5 tiros con muerte súbita reglamentaria ejecutada conforme a cédula anexa.</span>
+<span class="font-label-sm text-label-sm uppercase text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+                Oficializado en acta
+              </span>
+</div>
+</article>
+</div>
+</div>
+<!-- BLOQUE 2: DOMINGO 26 DE OCTUBRE DE 2026 -->
+<div class="flex flex-col gap-space-md mt-space-md">
+<!-- Encabezado de Fecha -->
+<div class="flex items-center gap-space-sm">
+<div class="px-space-md py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-headline-sm text-headline-sm font-semibold flex items-center gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+            Domingo 26 de octubre de 2026
+          </div>
+<div class="h-0.5 flex-1 bg-surface-container-high"></div>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- CASO C: POR NO PRESENTACIÓN / DEFAULT (Deportivo Vasco de Quiroga 2 - 0 F.C. Chapultepec Norte) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md lg:p-space-lg shadow-sm flex flex-col gap-space-md hover:bg-surface-bright transition-colors">
+<!-- Fila superior de Metadatos -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm text-on-surface-variant font-mono-data text-mono-data">
+<div class="flex flex-wrap items-center gap-space-md">
+<span class="flex items-center gap-1 font-medium text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">schedule</span>
+                  dom 26 oct 2026 · 08:30 hrs
+                </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">stadium</span>
+                  Unidad Cuauhtémoc · Campo 1
+                </span>
+<span class="px-space-sm py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm uppercase font-semibold">
+                  Libre Segunda · Grupo 2
+                </span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="text-on-surface-variant font-semibold tracking-wide">Cédula #CED-7052</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm uppercase font-bold">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                  Por default
+                </span>
+</div>
+</div>
+<!-- Bloque de Marcador y Enfrentamiento -->
+<div class="grid grid-cols-1 md:grid-cols-11 items-center gap-space-md py-space-sm">
+<!-- Equipo Local (Ganador por default) -->
+<div class="md:col-span-4 flex items-center md:justify-end gap-space-md text-left md:text-right">
+<div class="flex flex-col items-start md:items-end">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Deportivo Vasco de Quiroga</span>
+<span class="font-label-sm text-[11px] text-primary font-semibold">Presente en terreno de juego</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-bold text-on-surface-variant shrink-0">DVQ</div>
+</div>
+<!-- Marcador Central Administrativo -->
+<div class="md:col-span-3 flex flex-col items-center justify-center">
+<div class="bg-on-secondary-fixed text-surface-container-lowest px-space-xl py-space-xs rounded-lg shadow-sm">
+<span class="font-mono-score text-mono-score font-bold tracking-widest">2 – 0</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold mt-1 uppercase tracking-wide">Marcador Administrativo</span>
+</div>
+<!-- Equipo Visitante (No presentado) -->
+<div class="md:col-span-4 flex items-center md:justify-start gap-space-md text-left">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-bold text-on-surface-variant shrink-0">FCN</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">F.C. Chapultepec Norte</span>
+<span class="font-label-sm text-[11px] text-error font-semibold">Incomparecencia</span>
+</div>
+</div>
+</div>
+<!-- Banner Normativo del Default -->
+<div class="p-space-sm rounded-lg bg-surface-container-high/40 flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant shrink-0 mt-0.5">policy</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong class="font-semibold text-on-surface">Art. 52 Reglamento General:</strong> Incomparecencia del equipo visitante en el tiempo de tolerancia reglamentario de 15 min. Se adjudican 3 puntos y marcador de 2-0 a favor de la escuadra compareciente.
+              </p>
+</div>
+</article>
+<!-- CASO D: RESULTADO MODIFICADO POR RESOLUCIÓN (Club Deportivo Indeco 0 - 2 Deportivo Tiripetío) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md lg:p-space-lg shadow-sm flex flex-col gap-space-md hover:bg-surface-bright transition-colors">
+<!-- Fila superior de Metadatos -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm text-on-surface-variant font-mono-data text-mono-data">
+<div class="flex flex-wrap items-center gap-space-md">
+<span class="flex items-center gap-1 font-medium text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">schedule</span>
+                  dom 26 oct 2026 · 11:00 hrs
+                </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">stadium</span>
+                  Cancha Indeco Principal
+                </span>
+<span class="px-space-sm py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm uppercase font-semibold">
+                  Veteranos +40 · Grupo 1
+                </span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="text-on-surface-variant font-semibold tracking-wide">Cédula #CED-7060</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase font-bold">
+<span class="material-symbols-outlined text-[14px]">balance</span>
+                  Resultado modificado por resolución
+                </span>
+</div>
+</div>
+<!-- Bloque de Marcador y Enfrentamiento -->
+<div class="grid grid-cols-1 md:grid-cols-11 items-center gap-space-md py-space-sm">
+<!-- Equipo Local -->
+<div class="md:col-span-4 flex items-center md:justify-end gap-space-md text-left md:text-right">
+<div class="flex flex-col items-start md:items-end">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Club Deportivo Indeco</span>
+<span class="font-label-sm text-[11px] text-error font-medium">Sancionado por Comisión Disciplinaria</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-bold text-on-surface-variant shrink-0">CDI</div>
+</div>
+<!-- Marcador Central Modificado -->
+<div class="md:col-span-3 flex flex-col items-center justify-center">
+<div class="bg-on-secondary-fixed text-surface-container-lowest px-space-xl py-space-xs rounded-lg shadow-sm">
+<span class="font-mono-score text-mono-score font-bold tracking-widest">0 – 2</span>
+</div>
+<span class="font-mono-data text-[12px] text-on-surface-variant mt-1 line-through">Marcador previo en cancha: 1 – 1</span>
+</div>
+<!-- Equipo Visitante (Favorecido en mesa) -->
+<div class="md:col-span-4 flex items-center md:justify-start gap-space-md text-left">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-bold text-on-surface-variant shrink-0">DTI</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Deportivo Tiripetío</span>
+<span class="font-label-sm text-[11px] text-primary font-semibold">Adjudicación por resolución</span>
+</div>
+</div>
+</div>
+<!-- Nota Explicativa Dictamen Disciplinario -->
+<div class="p-space-sm rounded-lg bg-surface-container-high/40 flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant shrink-0 mt-0.5">info</span>
+<div class="flex flex-col font-body-sm text-body-sm text-on-surface">
+<p>
+                  El resultado original (1 – 1) fue revocado según <strong>Resolución CD-2026-042</strong> por alineación indebida. El resultado anterior se conserva en el historial del expediente de la Comisión de Honor y Justicia.
+                </p>
+</div>
+</div>
+</article>
+<!-- CASO E: ENCUENTRO CATEGORÍA INFANTIL SUB-12 (Unión San Juanito 3 - 0 Leones de Ventura Puente) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md lg:p-space-lg shadow-sm flex flex-col gap-space-md hover:bg-surface-bright transition-colors">
+<!-- Fila superior de Metadatos -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm text-on-surface-variant font-mono-data text-mono-data">
+<div class="flex flex-wrap items-center gap-space-md">
+<span class="flex items-center gap-1 font-medium text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">schedule</span>
+                  dom 26 oct 2026 · 13:30 hrs
+                </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">stadium</span>
+                  Unidad Deportiva Morelos · Campo Infantil 3
+                </span>
+<span class="px-space-sm py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm uppercase font-semibold">
+                  Infantil Sub-12 · Grupo Único
+                </span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="text-on-surface-variant font-semibold tracking-wide">Cédula #CED-7068</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-primary-fixed/30 text-on-primary-fixed-variant font-label-sm text-label-sm uppercase font-bold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  Finalizado
+                </span>
+</div>
+</div>
+<!-- Bloque de Marcador y Enfrentamiento -->
+<div class="grid grid-cols-1 md:grid-cols-11 items-center gap-space-md py-space-sm">
+<!-- Equipo Local -->
+<div class="md:col-span-4 flex items-center md:justify-end gap-space-md text-left md:text-right">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Unión San Juanito</span>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-bold text-on-surface-variant shrink-0">USJ</div>
+</div>
+<!-- Marcador Central -->
+<div class="md:col-span-3 flex flex-col items-center justify-center">
+<div class="bg-on-secondary-fixed text-surface-container-lowest px-space-xl py-space-xs rounded-lg shadow-sm">
+<span class="font-mono-score text-mono-score font-bold tracking-widest">3 – 0</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1 uppercase tracking-wider">Tiempo Reglamentario (60')</span>
+</div>
+<!-- Equipo Visitante -->
+<div class="md:col-span-4 flex items-center md:justify-start gap-space-md text-left">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-bold text-on-surface-variant shrink-0">LVP</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Leones de Ventura Puente</span>
+</div>
+</div>
+<!-- Footer Cédula -->
+<div class="flex items-center justify-between pt-space-xs font-body-sm text-body-sm text-on-surface-variant bg-surface-container-low px-space-md py-space-xs rounded-lg">
+<span>Cédula firmada por directores técnicos acreditados y terna arbitral.</span>
+<span class="font-label-sm text-label-sm uppercase text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+                Validada sin protestas
+              </span>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Paginador y Resumen de Cédulas -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-lg">
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+        Mostrando <strong class="text-on-surface font-semibold">5</strong> de <strong class="text-on-surface font-semibold">14</strong> partidos convalidados en la Jornada 7
+      </div>
+<nav aria-label="Paginación de resultados" class="flex items-center gap-space-xs">
+<button class="px-space-md h-[40px] rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors shadow-sm disabled:opacity-50" disabled="">
+          Anterior
+        </button>
+<button class="w-[40px] h-[40px] rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold shadow-sm">
+          1
+        </button>
+<button class="w-[40px] h-[40px] rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors shadow-sm">
+          2
+        </button>
+<button class="w-[40px] h-[40px] rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors shadow-sm">
+          3
+        </button>
+<button class="px-space-md h-[40px] rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors shadow-sm">
+          Siguiente
+        </button>
+</nav>
+</div>
+</div>
+</div>
+<script>
+  // Sincronizar estado activo de navegación del App Shell para 'Resultados'
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('header nav a');
+    navLinks.forEach(link => {
+      if (link.getAttribute('data-path') === 'resultados') {
+        link.classList.remove('text-on-surface-variant', 'border-transparent');
+        link.classList.add('text-on-surface', 'font-headline-sm', 'border-b-2', 'border-primary');
+      }
+    });
+  });
+</script></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant/30 py-space-xl mt-auto"><div class="max-w-7xl mx-auto px-gutter lg:px-gutter-desktop flex flex-col md:flex-row items-center justify-between gap-space-lg font-body-sm text-body-sm text-on-surface-variant"><div class="flex flex-wrap items-center gap-space-sm text-center md:text-left"><span class="font-label-md text-label-md text-on-surface">Liga Municipal de Futbol Amateur Morelia · SIGLIM</span><span class="text-outline-variant/40">|</span><a class="hover:text-primary transition-colors underline-offset-4 hover:underline" data-path="aviso-de-privacidad" href="#">Aviso de privacidad</a><span class="text-outline-variant/40">|</span><span>Temporada Oficial 2025–2026</span></div><div class="flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm border border-outline-variant/30 text-center"><span class="material-symbols-outlined text-[16px] text-primary">verified</span><span>Solo se publican resultados validados por el árbitro</span></div></div></footer></body></html>

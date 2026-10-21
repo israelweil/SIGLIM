@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-primary-fixed-variant": "#00522a", "on-secondary-fixed": "#131b2e", "secondary-fixed": "#dae2fc", "on-primary-fixed": "#00210e", "on-error": "#ffffff", "on-secondary-container": "#5a6278", "surface-container-high": "#dce9ff", "error": "#ba1a1a", "tertiary-fixed-dim": "#ffb3b6", "on-background": "#0b1c30", "on-surface": "#0b1c30", "primary-fixed-dim": "#83d99c", "surface-variant": "#d3e4fe", "surface-bright": "#f8f9ff", "tertiary-fixed": "#ffdada", "on-surface-variant": "#3f4940", "on-tertiary-fixed": "#40000c", "inverse-surface": "#213145", "primary-container": "#006837", "surface-tint": "#0b6d3b", "on-tertiary-container": "#ffc3c5", "inverse-on-surface": "#eaf1ff", "on-secondary-fixed-variant": "#3f465b", "tertiary": "#762730", "secondary-container": "#d8dff9", "on-primary": "#ffffff", "on-tertiary": "#ffffff", "surface": "#f8f9ff", "primary-fixed": "#9ef6b6", "secondary-fixed-dim": "#bec6e0", "on-tertiary-fixed-variant": "#7b2b34", "outline-variant": "bec9be", "on-primary-container": "#8ee4a6", "outline": "#6f7a70", "on-error-container": "#93000a", "inverse-primary": "#83d99c", "primary": "#004d27", "surface-container-low": "#eff4ff", "error-container": "#ffdad6", "surface-container": "#e5eeff", "surface-dim": "#cbdbf5", "surface-container-highest": "#d3e4fe", "on-secondary": "#ffffff", "tertiary-container": "#943e46", "secondary": "#565e74", "background": "#f8f9ff", "surface-container-lowest": "#ffffff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin-desktop": "2rem", "space-xs": "0.25rem", "margin": "1rem", "space-xl": "1.5rem", "space-lg": "1rem", "gutter-desktop": "1.5rem", "space-md": "0.75rem", "gutter": "1rem", "space-sm": "0.5rem" }, fontFamily: { "display-lg": ["Inter"], "body-md": ["Inter"], "headline-md": ["Inter"], "display-lg-mobile": ["Inter"], "body-sm": ["Inter"], "label-md": ["Inter"], "mono-data": ["JetBrains Mono"], "body-lg": ["Inter"], "label-sm": ["Inter"], "headline-lg": ["Inter"], "headline-sm": ["Inter"], "mono-score": ["JetBrains Mono"] }, fontSize: { "display-lg": ["36px", { "lineHeight": "44px", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "mono-data": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "mono-score": ["28px", { "lineHeight": "32px", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior:none;background-color:#f8f9ff;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen selection:bg-primary selection:text-on-primary"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center shrink-0 shadow-sm"><span class="material-symbols-outlined text-on-primary text-[22px]">sports_soccer</span></div><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight truncate">SIGLIM</span><span class="font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed px-1.5 py-0.5 rounded uppercase">Halcones FC</span></div><div class="flex items-center gap-1 mt-0.5"><span class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">2025–2026 · Activa</span></div></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Notificaciones directivas" class="relative w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary transition-colors"><span class="material-symbols-outlined text-[24px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-tertiary ring-2 ring-surface"></span></button><div class="flex items-center gap-space-xs pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="flex-1 flex flex-col relative w-full px-margin pt-20 pb-24 bg-surface"><div class="flex flex-col w-full pb-8">
+<!-- Banner Demostración Institucional -->
+<div class="w-full bg-secondary-container/70 px-margin py-space-sm rounded-lg flex items-center justify-between mb-space-md shadow-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="material-symbols-outlined text-tertiary text-[18px] shrink-0">verified_user</span>
+<span class="font-label-sm text-label-sm text-on-secondary-container truncate font-semibold uppercase tracking-wider">
+        No oficial · Demostración
+      </span>
+</div>
+<span class="font-mono-data text-[11px] bg-surface text-secondary px-2 py-0.5 rounded shadow-sm shrink-0">
+      SIGLIM v4.8
+    </span>
+</div>
+<!-- Identificación de Directiva y Categoría -->
+<div class="flex flex-col mb-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-widest">
+        Módulo de Tesorería · Directiva
+      </span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-2 py-0.5 rounded">
+        Folio Reg: 104-HAL
+      </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-0.5">
+      Adeudos y Cobranza
+    </h1>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">shield</span>
+<p class="font-body-md text-body-md text-secondary">
+        Halcones FC · Libre Primera Grupo A
+      </p>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+      Responsable de Club: <strong class="text-on-surface">Ing. Fernando Tapia Ortiz</strong>
+</p>
+</div>
+<!-- Resumen de Saldo Total (Tarjeta Destacada) -->
+<div class="w-full bg-inverse-surface text-inverse-on-surface p-space-lg rounded-xl shadow-md mb-space-lg relative overflow-hidden">
+<div class="absolute -right-4 -bottom-6 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[120px]">account_balance_wallet</span>
+</div>
+<div class="relative z-10 flex flex-col">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-inverse-on-surface/80 flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary-fixed shrink-0"></span>
+          Saldo consolidado
+        </span>
+<span class="font-mono-data text-[12px] bg-surface/15 text-inverse-on-surface px-2 py-0.5 rounded">
+          Liga Morelia
+        </span>
+</div>
+<div class="my-space-xs flex items-baseline gap-1">
+<span class="font-display-lg-mobile text-display-lg-mobile font-bold tracking-tight text-surface-lowest">
+          $2,350.00
+        </span>
+<span class="font-label-md text-label-md text-inverse-on-surface/80 font-mono-data">
+          MXN
+        </span>
+</div>
+<!-- Desglose Rápido -->
+<div class="mt-space-sm pt-space-sm border-t border-inverse-on-surface/15 grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-inverse-on-surface/70">1 Ordinario pendiente</span>
+<span class="font-mono-data text-mono-data font-semibold text-primary-fixed-dim">$1,850.00 MXN</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-inverse-on-surface/70">1 Multa reglamentaria</span>
+<span class="font-mono-data text-mono-data font-semibold text-tertiary-fixed-dim">$500.00 MXN</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Stepper / Navegador de 3 Pasos Interactivo -->
+<div class="w-full bg-surface-container-low p-1.5 rounded-xl shadow-sm mb-space-lg">
+<div class="grid grid-cols-3 gap-1">
+<button aria-label="Paso 1: Cobros" class="h-11 rounded-lg flex flex-col items-center justify-center transition-all bg-primary text-on-primary shadow-sm" id="step-btn-1" onclick="showStep(1)">
+<span class="font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="w-4 h-4 rounded-full bg-on-primary text-primary text-[10px] flex items-center justify-center font-bold">1</span>
+          Cobros
+        </span>
+<span class="text-[10px] opacity-90 truncate max-w-full px-1">2 activos</span>
+</button>
+<button aria-label="Paso 2: Simulación" class="h-11 rounded-lg flex flex-col items-center justify-center transition-all text-secondary hover:bg-surface-container" id="step-btn-2" onclick="showStep(2)">
+<span class="font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-4 h-4 rounded-full bg-surface-variant text-secondary text-[10px] flex items-center justify-center font-bold">2</span>
+          Simulador
+        </span>
+<span class="text-[10px] text-secondary truncate max-w-full px-1">Sin cargo</span>
+</button>
+<button aria-label="Paso 3: Resultado" class="h-11 rounded-lg flex flex-col items-center justify-center transition-all text-secondary hover:bg-surface-container" id="step-btn-3" onclick="showStep(3)">
+<span class="font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-4 h-4 rounded-full bg-surface-variant text-secondary text-[10px] flex items-center justify-center font-bold">3</span>
+          Cédula
+        </span>
+<span class="text-[10px] text-secondary truncate max-w-full px-1">Estatus final</span>
+</button>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- PASO 1: LISTA DE COBROS                     -->
+<!-- ========================================== -->
+<div class="flex flex-col gap-space-md" id="step-1">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">
+        Detalle de Cobros Registrados
+      </h2>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-2 py-0.5 rounded">
+        Jornada 7 y anteriores
+      </span>
+</div>
+<!-- TARJETA 1: Cobro Pendiente Activo (Pagable) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border-l-4 border-primary flex flex-col gap-space-sm transition hover:shadow-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-mono-data text-mono-data font-bold text-on-surface bg-surface-container px-1.5 py-0.5 rounded">
+              COB-2025-0412
+            </span>
+<span class="font-label-sm text-label-sm bg-primary/10 text-primary px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">sports</span>
+              Arbitraje
+            </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1.5 leading-snug">
+            Honorarios de terna arbitral - Jornada 7
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Colegio de Árbitros Michoacán A.C. · Halcones FC vs Toros de Sta. María
+          </p>
+</div>
+</div>
+<div class="flex items-center justify-between py-space-xs bg-surface-container-low px-space-sm rounded-lg">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary">Monto oficial liquidable</span>
+<span class="font-mono-score text-[20px] leading-6 text-on-surface font-bold">
+            $1,850.00 <span class="font-mono-data text-[12px] font-normal text-secondary">MXN</span>
+</span>
+</div>
+<div class="flex flex-col items-end">
+<!-- Insignia Estado Pendiente -->
+<div class="inline-flex items-center gap-1 px-2 py-1 rounded bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span>
+<span>PENDIENTE</span>
+</div>
+<span class="font-label-sm text-[11px] text-secondary mt-1">
+            Límite: 15/Nov/2025 (En 3 días)
+          </span>
+</div>
+</div>
+<!-- Botón Primario Pagar -->
+<button class="w-full min-h-[44px] bg-primary hover:bg-primary-container active:scale-[0.99] text-on-primary rounded-lg font-label-md text-label-md font-semibold flex items-center justify-center gap-2 shadow-sm transition" onclick="iniciarPagoSimulado()">
+<span class="material-symbols-outlined text-[18px]">credit_card</span>
+        Pagar en línea (Simulado)
+      </button>
+</div>
+<!-- TARJETA 2: Cobro Vencido Reglamentario (Bloqueado) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border-l-4 border-error flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-mono-data text-mono-data font-bold text-on-surface bg-surface-container px-1.5 py-0.5 rounded">
+              COB-2025-0398
+            </span>
+<span class="font-label-sm text-label-sm bg-error-container text-on-error-container px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">gavel</span>
+              Multa disciplinaria
+            </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1.5 leading-snug">
+            Sanción Exp. EXP-2025-0042 (Art. 51 Disciplinario)
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Conducta antideportiva en banca · Dictamen de la Comisión Disciplinaria
+          </p>
+</div>
+</div>
+<div class="flex items-center justify-between py-space-xs bg-surface-container-low px-space-sm rounded-lg">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary">Multa reglamentaria</span>
+<span class="font-mono-score text-[20px] leading-6 text-error font-bold">
+            $500.00 <span class="font-mono-data text-[12px] font-normal text-secondary">MXN</span>
+</span>
+</div>
+<div class="flex flex-col items-end">
+<!-- Insignia Estado Vencido -->
+<div class="inline-flex items-center gap-1 px-2 py-1 rounded bg-error-container text-on-error-container text-label-sm font-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+<span>VENCIDO</span>
+</div>
+<span class="font-label-sm text-[11px] text-error font-semibold mt-1">
+            08/Nov/2025 (Vencido hace 4 días)
+          </span>
+</div>
+</div>
+<!-- Bloque de advertencia institucional y contacto -->
+<div class="bg-error-container/40 p-space-sm rounded-lg flex items-start gap-2">
+<span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">report_problem</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">
+            Pago electrónico inhabilitado por mora reglamentaria
+          </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            De acuerdo con el Art. 88 de la Liga, los cargos con más de 72 h de vencimiento deben liquidarse directamente ante Tesorería General para levantar la retención de cédula.
+          </p>
+</div>
+</div>
+<!-- Enlace táctil de atención directa -->
+<a aria-label="Llamar a Tesorería" class="w-full min-h-[44px] bg-surface-container hover:bg-surface-container-high text-on-surface rounded-lg font-label-md text-label-md font-semibold flex items-center justify-center gap-2 transition" href="tel:4433120000">
+<span class="material-symbols-outlined text-primary text-[18px]">call</span>
+        Comunícate con Tesorería: (443) 312-0000
+      </a>
+</div>
+<!-- TARJETA 3: Histórico de Referencia (Pagado) -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-xs opacity-90">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-mono-data text-mono-data text-secondary">
+            COB-2025-0310
+          </span>
+<span class="font-label-sm text-label-sm text-secondary">· Cédula de inscripción</span>
+</div>
+<!-- Insignia Estado Pagado -->
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm font-bold">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+          PAGADO
+        </span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<span class="font-body-sm text-body-sm text-secondary">Temporada Regular Libre 2025</span>
+<span class="font-mono-data text-mono-data font-bold text-on-surface">$1,200.00 MXN</span>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- PASO 2: VISTA DE PAGO SIMULADO            -->
+<!-- ========================================== -->
+<div class="hidden flex flex-col gap-space-md" id="step-2">
+<!-- Banner de Advertencia Prominente y Demostrativo Obligatorio -->
+<div class="w-full bg-secondary-fixed text-on-secondary-fixed p-space-md rounded-xl shadow-sm border-l-4 border-primary">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[24px] shrink-0 mt-0.5">verified</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-secondary-fixed">
+            Pago simulado: no se realiza ningún cargo
+          </span>
+<p class="font-body-md text-body-md text-on-secondary-fixed-variant mt-1 leading-snug">
+            Entorno demostrativo de la Liga Municipal de Morelia. Esta operación no afecta cuentas bancarias ni tarjetas reales.
+          </p>
+</div>
+</div>
+</div>
+<!-- Resumen Oficial del Cobro a Liquidar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">
+          Orden de Cobranza Oficial
+        </span>
+<span class="font-mono-data text-mono-data text-primary font-bold bg-primary/10 px-2 py-0.5 rounded">
+          COB-2025-0412
+        </span>
+</div>
+<!-- Detalle desglose -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex justify-between items-start">
+<span class="font-body-sm text-body-sm text-secondary">Concepto deportivo:</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold text-right max-w-[60%]">
+            Honorarios de terna arbitral - Jornada 7
+          </span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-secondary">Destino de fondos:</span>
+<span class="font-label-md text-label-md text-on-surface text-right">
+            Tesorería de la Liga Municipal de Morelia
+          </span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-secondary">Método demostrativo:</span>
+<span class="font-label-md text-label-md text-on-surface text-right flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">account_balance</span>
+            Pasarela Federativa SPEI / Simulación
+          </span>
+</div>
+<!-- Clave de Referencia Única -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between mt-1">
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] uppercase text-secondary font-semibold tracking-wider">Referencia de Simulación</span>
+<span class="font-mono-data text-mono-data font-bold text-on-surface select-all" id="ref-code">
+              SIM-20261025-4F7K2A
+            </span>
+</div>
+<button class="h-9 px-2.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface text-label-sm font-label-sm flex items-center gap-1 transition" onclick="copiarReferencia()" title="Copiar referencia">
+<span class="material-symbols-outlined text-[16px]" id="copy-icon">content_copy</span>
+<span id="copy-text">Copiar</span>
+</button>
+</div>
+<div class="pt-space-sm border-t border-surface-container flex justify-between items-baseline">
+<span class="font-headline-sm text-headline-sm text-on-surface">Total a liquidar:</span>
+<span class="font-mono-score text-mono-score text-primary font-bold">
+            $1,850.00 <span class="font-mono-data text-[14px] text-secondary font-normal">MXN</span>
+</span>
+</div>
+</div>
+<!-- Nota de Privacidad / Cero Tarjetas -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">lock</span>
+<p class="font-body-sm text-body-sm text-secondary">
+          No se requieren datos bancarios privados ni claves de seguridad en modo prueba.
+        </p>
+</div>
+<!-- Botones de Acción de Prueba -->
+<div class="flex flex-col gap-2.5 mt-space-xs">
+<button class="w-full min-h-[46px] bg-primary hover:bg-primary-container active:scale-[0.99] text-on-primary rounded-lg font-label-md text-label-md font-semibold flex items-center justify-center gap-2 shadow-sm transition" onclick="completarPago(true)">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+          Aprobar pago (Simulación exitosa)
+        </button>
+<button class="w-full min-h-[46px] bg-surface-container hover:bg-error-container hover:text-on-error-container text-tertiary rounded-lg font-label-md text-label-md font-semibold flex items-center justify-center gap-2 transition" onclick="completarPago(false)">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+          Rechazar pago (Simular declinado)
+        </button>
+<button class="w-full min-h-[44px] text-secondary hover:text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 transition" onclick="showStep(1)">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+          Volver a lista de adeudos
+        </button>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- PASO 3: PANTALLA DE RESULTADO OFICIAL     -->
+<!-- ========================================== -->
+<div class="hidden flex flex-col gap-space-md" id="step-3">
+<!-- MODO ÉXITO -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col items-center text-center gap-space-md" id="result-success">
+<div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed shadow-sm">
+<span class="material-symbols-outlined text-[36px]">verified</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">
+          Transacción Acreditada
+        </span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+          Pago registrado
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs mt-1">
+          La Tesorería de la Liga ha registrado el abono. El folio <strong class="text-on-surface font-mono-data">COB-2025-0412</strong> queda liquidado en el sistema federativo.
+        </p>
+</div>
+<!-- Ficha de Recibo Digital Oficial -->
+<div class="w-full bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-xs text-left">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-secondary">Folio comprobante:</span>
+<span class="font-mono-data font-bold text-on-surface">REC-2025-MORELIA-089</span>
+</div>
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-secondary">Referencia de pago:</span>
+<span class="font-mono-data font-bold text-primary">SIM-20261025-4F7K2A</span>
+</div>
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-secondary">Monto aplicado:</span>
+<span class="font-mono-data font-bold text-on-surface">$1,850.00 MXN</span>
+</div>
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-secondary">Club beneficiario:</span>
+<span class="text-on-surface font-medium">Halcones FC (Primera)</span>
+</div>
+<div class="flex justify-between items-center text-label-sm font-label-sm pt-1 border-t border-surface-container">
+<span class="text-secondary">Estatus de Cédula:</span>
+<span class="inline-flex items-center gap-1 text-primary font-bold">
+<span class="material-symbols-outlined text-[14px]">check</span>
+            Habilitado Jornada 8
+          </span>
+</div>
+</div>
+<div class="w-full flex flex-col gap-2.5 mt-space-xs">
+<button class="w-full min-h-[46px] bg-primary hover:bg-primary-container text-on-primary rounded-lg font-label-md text-label-md font-semibold flex items-center justify-center gap-2 shadow-sm transition" onclick="descargarComprobante()">
+<span class="material-symbols-outlined text-[18px]">download</span>
+          Descargar comprobante digital (PDF)
+        </button>
+<button class="w-full min-h-[44px] bg-surface-container hover:bg-surface-container-high text-on-surface rounded-lg font-label-md text-label-md font-semibold flex items-center justify-center gap-2 transition" onclick="showStep(1)">
+<span class="material-symbols-outlined text-[18px]">home</span>
+          Volver a mis cobros
+        </button>
+</div>
+</div>
+<!-- MODO RECHAZO (Conmutable) -->
+<div class="hidden bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col items-center text-center gap-space-md" id="result-failed">
+<div class="w-16 h-16 rounded-full bg-error-container flex items-center justify-center text-on-error-container shadow-sm">
+<span class="material-symbols-outlined text-[36px]">block</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-error font-bold">
+          Simulación Declinada
+        </span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+          El pago fue rechazado
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs mt-1">
+          Simulación de transacción declinada por la entidad financiera. Tu saldo de cobro sigue pendiente sin penalizaciones adicionales.
+        </p>
+</div>
+<!-- Ficha de Diagnóstico de Transacción -->
+<div class="w-full bg-error-container/30 p-space-md rounded-xl flex flex-col gap-space-xs text-left">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-on-error-container font-semibold">Código de rechazo:</span>
+<span class="font-mono-data font-bold text-error">ERR_SIM_INSUFFICIENT_LIMIT</span>
+</div>
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-secondary">Referencia intentada:</span>
+<span class="font-mono-data font-bold text-on-surface">SIM-20261025-4F7K2A</span>
+</div>
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-secondary">Importe retenido:</span>
+<span class="font-mono-data font-bold text-on-surface">$0.00 MXN</span>
+</div>
+</div>
+<div class="w-full flex flex-col gap-2.5 mt-space-xs">
+<button class="w-full min-h-[46px] bg-primary hover:bg-primary-container text-on-primary rounded-lg font-label-md text-label-md font-semibold flex items-center justify-center gap-2 shadow-sm transition" onclick="showStep(2)">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+          Reintentar pago simulado
+        </button>
+<button class="w-full min-h-[44px] bg-surface-container hover:bg-surface-container-high text-on-surface rounded-lg font-label-md text-label-md font-semibold flex items-center justify-center gap-2 transition" onclick="showStep(1)">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+          Volver al inicio
+        </button>
+</div>
+</div>
+</div>
+<!-- Pie institucional de auditoría de la Liga -->
+<div class="mt-space-lg flex flex-col items-center justify-center text-center px-margin">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-label-sm text-label-sm font-semibold">Liga Municipal de Futbol Amateur Morelia A.C.</span>
+</div>
+<span class="font-body-sm text-[11px] text-secondary mt-0.5">
+      Unidad de Cédulas Digitales y Arbitraje · Ciclo 2025–2026
+    </span>
+</div>
+</div>
+<script>
+  let currentStep = 1;
+  let lastOutcome = true; // true = éxito, false = rechazo
+
+  function updateStepperUI(activeStep) {
+    const steps = [1, 2, 3];
+    steps.forEach(step => {
+      const btn = document.getElementById('step-btn-' + step);
+      if (!btn) return;
+      if (step === activeStep) {
+        btn.className = "h-11 rounded-lg flex flex-col items-center justify-center transition-all bg-primary text-on-primary shadow-sm";
+      } else {
+        btn.className = "h-11 rounded-lg flex flex-col items-center justify-center transition-all text-secondary hover:bg-surface-container";
+      }
+    });
+  }
+
+  function showStep(stepIndex) {
+    currentStep = stepIndex;
+    
+    // Ocultar todas las secciones
+    const s1 = document.getElementById('step-1');
+    const s2 = document.getElementById('step-2');
+    const s3 = document.getElementById('step-3');
+    
+    if (s1) s1.classList.add('hidden');
+    if (s2) s2.classList.add('hidden');
+    if (s3) s3.classList.add('hidden');
+
+    if (stepIndex === 1 && s1) s1.classList.remove('hidden');
+    if (stepIndex === 2 && s2) s2.classList.remove('hidden');
+    if (stepIndex === 3 && s3) {
+      s3.classList.remove('hidden');
+      renderOutcome(lastOutcome);
+    }
+
+    updateStepperUI(stepIndex);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function iniciarPagoSimulado() {
+    showStep(2);
+  }
+
+  function completarPago(isSuccess) {
+    lastOutcome = isSuccess;
+    showStep(3);
+  }
+
+  function renderOutcome(isSuccess) {
+    const succPanel = document.getElementById('result-success');
+    const failPanel = document.getElementById('result-failed');
+    if (!succPanel || !failPanel) return;
+
+    if (isSuccess) {
+      succPanel.classList.remove('hidden');
+      failPanel.classList.add('hidden');
+    } else {
+      succPanel.classList.add('hidden');
+      failPanel.classList.remove('hidden');
+    }
+  }
+
+  function copiarReferencia() {
+    const code = document.getElementById('ref-code');
+    const icon = document.getElementById('copy-icon');
+    const text = document.getElementById('copy-text');
+    if (code) {
+      navigator.clipboard.writeText(code.innerText.trim()).then(() => {
+        if (text) text.innerText = "¡Copiado!";
+        if (icon) icon.innerText = "done";
+        setTimeout(() => {
+          if (text) text.innerText = "Copiar";
+          if (icon) icon.innerText = "content_copy";
+        }, 2000);
+      }).catch(() => {
+        if (text) text.innerText = "Listo";
+      });
+    }
+  }
+
+  function descargarComprobante() {
+    const originalText = event.currentTarget.innerHTML;
+    event.currentTarget.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span> Generando PDF federativo...';
+    setTimeout(() => {
+      alert("Comprobante oficial generado con éxito. Se ha archivado una copia en la cédula digital del club.");
+      showStep(1);
+    }, 1200);
+  }
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary font-headline-sm"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] h-12 text-on-surface-variant transition-colors hover:text-on-surface" data-path="resumen-club" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-sm text-label-sm">Club</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] h-12 text-on-surface-variant transition-colors hover:text-on-surface" data-path="cedula-arbitral" href="#"><span class="material-symbols-outlined text-[22px]">assignment</span><span class="font-label-sm text-label-sm">Cédula</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] h-12 text-on-surface-variant transition-colors hover:text-on-surface" data-path="plantilla-jugadores" href="#"><span class="material-symbols-outlined text-[22px]">badge</span><span class="font-label-sm text-label-sm">Plantilla</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] h-12 text-on-surface-variant transition-colors hover:text-on-surface" data-path="jornadas-calendario" href="#"><span class="material-symbols-outlined text-[22px]">event_available</span><span class="font-label-sm text-label-sm">Rol</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] h-12 transition-colors text-primary font-headline-sm" data-path="sanciones-pagos" href="#"><span class="material-symbols-outlined text-[22px]">gavel</span><span class="font-label-sm text-label-sm">Sanciones</span></a></div></nav></body></html>

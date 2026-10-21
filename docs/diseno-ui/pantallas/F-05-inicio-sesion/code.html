@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="es-MX">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SIGLIM - Inicio de Sesión Institucional</title>
+<!-- Google Fonts: Inter & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#006837',
+              hover: '#004D28',
+              surface: '#F8FAFC',
+              dark: '#131B2E',
+            },
+            textMain: '#1E293B',
+            textSec: '#64748B',
+            borderDefault: '#E2E8F0',
+            statusError: '#EF4444',
+            statusAlert: '#F59E0B',
+            statusSuccess: '#10B981',
+            statusInfo: '#2563EB',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#F8FAFC] text-[#1E293B] font-sans min-h-screen flex flex-col justify-between antialiased selection:bg-[#006837] selection:text-white">
+<!-- Encabezado superior mínimo e institucional para contexto -->
+<header class="w-full border-b border-[#E2E8F0] bg-white px-6 py-3.5 flex items-center justify-between"><div class="flex items-center gap-3.5">
+<div class="w-9 h-9 rounded-lg bg-[#006837] text-white flex items-center justify-center font-bold text-base shadow-sm ring-1 ring-black/5">
+<span class="material-symbols-outlined text-[20px]">sports_soccer</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="text-lg font-bold tracking-tight text-[#006837] leading-none">SIGLIM</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-[#006837]/10 text-[#006837] tracking-wider uppercase">A.C.</span>
+</div>
+<span class="text-[11px] font-medium text-[#64748B] tracking-normal mt-0.5">LIGA MUNICIPAL DE FUTBOL AMATEUR MORELIA</span>
+</div>
+</div>
+<div class="flex items-center gap-3.5 text-xs font-medium text-[#64748B]">
+<div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
+<span class="font-mono text-[11px] tracking-wide">Temporada Oficial 2025–2026 · Activa</span>
+</div>
+<a class="inline-flex items-center gap-1.5 text-[#006837] hover:text-[#004D28] hover:bg-[#006837]/5 transition-colors focus:outline-none focus:ring-2 focus:ring-[#006837] focus:ring-offset-2 rounded-lg px-3 py-1.5 border border-[#006837]/20 font-medium" href="#">
+<span class="material-symbols-outlined text-[16px]">public</span>
+<span>Portal de consulta pública</span>
+</a>
+</div></header>
+<!-- Contenedor central -->
+<main class="flex-1 flex flex-col items-center justify-center p-4 sm:p-6 my-4"><div class="w-full max-w-6xl mx-auto my-auto py-4 sm:py-6">
+<!-- Split Card Container -->
+<div class="w-full grid grid-cols-1 lg:grid-cols-12 rounded-2xl shadow-xl overflow-hidden bg-white border border-[#E2E8F0]">
+<!-- Columna Izquierda: Hero Institucional Deportivo (5 columnas) -->
+<div class="lg:col-span-5 relative flex flex-col justify-between p-6 sm:p-8 bg-[#0B1914] text-white overflow-hidden min-h-[580px]">
+<!-- Glow accents -->
+<div class="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-[#006837]/25 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-24 -right-24 w-80 h-80 rounded-full bg-[#10B981]/15 blur-3xl pointer-events-none"></div>
+<!-- Top Institutional Metadata -->
+<div class="relative z-10 flex items-center justify-between border-b border-white/10 pb-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/10 shadow-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
+<span class="font-mono text-[11px] text-emerald-300 font-semibold uppercase tracking-wider">PROTOCOLO LMFM-SSL</span>
+</div>
+<span class="font-mono text-[11px] text-slate-300 tracking-wider font-medium">FED-ID #MORELIA-2025</span>
+</div>
+<!-- Center Content: Stadium Image & Live Telemetry -->
+<div class="relative z-10 my-6 flex flex-col gap-4">
+<div class="relative w-full h-52 sm:h-56 rounded-xl overflow-hidden shadow-lg border border-white/10 group">
+<img alt="Estadio de futbol amateur en Morelia bajo reflectores nocturnos con gradas llenas" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhgT6-4qM-9qssEZm6AGE9l3Tb9YAbg3hjBF1spHw0AayDSn2kvvj8pC-3UDp8YZQ4ANvwRQjkfi0lSFxhBkIW_YOAFG7ThevhE4qKL55KYu9JDuEYEL3y0Dlz_bKucy2nWjL1QUZgV3w4JzryI4UMfvXaTBfX6b0GZnxX_cGCHRNjXJd3a_RwheAqtydlXVpjGGmN3ar6vw45NFUm5DO3SU7Kq8hSbT3772E8WNuDoTmIMs4CQlNM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0B1914] via-[#0B1914]/40 to-transparent"></div>
+<div class="absolute top-3 left-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#0B1914]/80 backdrop-blur-md text-[10px] font-mono text-emerald-300 border border-emerald-500/30 uppercase tracking-wide font-semibold">
+<span class="material-symbols-outlined text-[13px] text-emerald-400">stadium</span>
+                  Estadio Unidad Dep. Cuauhtémoc
+                </span>
+</div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-xs">
+<div class="flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded border border-white/10">
+<span class="material-symbols-outlined text-[15px] text-emerald-400">verified</span>
+<span class="font-medium text-[11px]">Cédulas y Actas 100% Digitales</span>
+</div>
+<span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-semibold border border-emerald-400/20 tracking-wider">EN VIVO</span>
+</div>
+</div>
+<!-- Info governance card -->
+<div class="p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="font-bold text-sm uppercase tracking-wide text-emerald-300 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">shield</span>
+                  Sistema Integral de Gestión (SIGLIM)
+                </span>
+<span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-semibold">OFICIAL</span>
+</div>
+<p class="text-xs text-slate-300 leading-relaxed">
+                Gestión federativa, convalidación arbitral en tiempo real, cédulas electrónicas y control integral de los 142 clubes de la Liga Municipal de Futbol Amateur Morelia A.C.
+              </p>
+<!-- Métricas clave en tarjetas -->
+<div class="grid grid-cols-2 gap-2 mt-1">
+<div class="bg-black/30 border border-white/10 rounded-lg p-2.5 text-center">
+<div class="font-mono font-bold text-lg text-emerald-400 leading-tight">38</div>
+<div class="text-[10px] text-slate-300 uppercase tracking-wider font-medium mt-0.5">Canchas Reglamentarias</div>
+</div>
+<div class="bg-black/30 border border-white/10 rounded-lg p-2.5 text-center">
+<div class="font-mono font-bold text-lg text-white leading-tight">18,000+</div>
+<div class="text-[10px] text-slate-300 uppercase tracking-wider font-medium mt-0.5">Deportistas Federados</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Column Telemetry -->
+<div class="relative z-10 flex items-center justify-between text-[11px] font-mono text-slate-400 border-t border-white/10 pt-3.5">
+<div class="flex items-center gap-1.5 text-emerald-400 font-medium">
+<span class="material-symbols-outlined text-[14px]">dns</span>
+<span>v2.4.0 · SERVIDOR FEDERATIVO ACTIVO</span>
+</div>
+<span class="text-slate-300 text-[10px] flex items-center gap-1 font-sans">
+<span class="material-symbols-outlined text-[13px] text-amber-400">workspace_premium</span>
+              Sello Oficial FMF Sector Amateur
+            </span>
+</div>
+</div>
+<!-- Columna Derecha: Formulario Institucional de Acceso (7 columnas) -->
+<div class="lg:col-span-7 flex flex-col justify-between p-6 sm:p-9 lg:p-10 bg-white">
+<div>
+<!-- Header del formulario -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-[#006837] flex items-center justify-center text-white shadow-md shadow-[#006837]/20 ring-2 ring-[#006837]/20">
+<span class="material-symbols-outlined text-[24px]">shield_person</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="text-lg font-bold tracking-tight text-[#006837]">SIGLIM</span>
+<span class="px-1.5 py-0.5 rounded bg-[#006837]/10 text-[#006837] text-[10px] font-mono font-bold uppercase">PORTAL SEGURO</span>
+</div>
+<span class="text-[10px] font-semibold text-[#64748B] uppercase tracking-wider">LIGA MUNICIPAL DE FUTBOL AMATEUR MORELIA A.C.</span>
+</div>
+</div>
+<span class="hidden sm:inline-flex items-center gap-1 text-[11px] font-mono text-[#006837] bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200/80">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+                  Acceso Interno
+                </span>
+</div>
+<h1 class="text-2xl sm:text-3xl font-bold text-[#1E293B] tracking-tight mt-5">Iniciar Sesión</h1>
+<p class="text-xs sm:text-sm text-[#64748B] leading-relaxed">
+                Acceso restringido para órganos directivos, secretaría, comisiones disciplinarias, colegios arbitrales y delegados acreditados.
+              </p>
+</div>
+<!-- Alerta reglamentaria y de seguridad institucional -->
+<div class="mt-4 p-3 rounded-lg bg-slate-50 border border-[#E2E8F0] flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-[#006837] shrink-0 mt-0.5">lock</span>
+<div class="text-xs text-[#64748B] leading-relaxed">
+<span class="font-semibold text-[#1E293B]">Acceso cifrado SHA-256</span> homologado por el Comité Ejecutivo. Sesión monitoreada para auditoría de actas y cédulas de juego.
+              </div>
+</div>
+<!-- Formulario de Credenciales -->
+<form class="flex flex-col gap-4 mt-5" id="login-form-siglim" onsubmit="event.preventDefault();">
+<!-- Campo 1: Correo / Folio -->
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-semibold text-[#1E293B] flex items-center justify-between" for="siglim-usuario">
+<span>Correo electrónico institucional o Folio federativo <span class="text-[#EF4444]">*</span></span>
+<span class="text-[11px] font-normal text-[#64748B]">Ej. arbitro@ligamorelia.org.mx</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-[#64748B] text-[18px] pointer-events-none">badge</span>
+<input class="w-full h-11 pl-10 pr-3.5 rounded-lg border border-[#E2E8F0] bg-slate-50/50 text-[#1E293B] text-sm placeholder-[#64748B]/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#006837] focus:border-transparent transition-all shadow-sm" id="siglim-usuario" placeholder="ej. secretario@ligamorelia.org.mx o LMFM-2025-042" required="" type="text" value="arbitro.central@ligamorelia.org.mx"/>
+</div>
+</div>
+<!-- Campo 2: Contraseña -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="text-xs font-semibold text-[#1E293B]" for="siglim-password">
+                    Contraseña federativa <span class="text-[#EF4444]">*</span>
+</label>
+<a class="text-xs font-medium text-[#006837] hover:text-[#004D28] hover:underline transition-colors focus:outline-none focus:ring-2 focus:ring-[#006837] rounded" href="#">
+                    ¿Olvidaste tu contraseña?
+                  </a>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-[#64748B] text-[18px] pointer-events-none">lock</span>
+<input class="w-full h-11 pl-10 pr-11 rounded-lg border border-[#E2E8F0] bg-slate-50/50 text-[#1E293B] text-sm font-mono tracking-wider placeholder-[#64748B]/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#006837] focus:border-transparent transition-all shadow-sm" id="siglim-password" placeholder="••••••••••••" required="" type="password" value="••••••••••••"/>
+<button aria-label="Mostrar u ocultar contraseña" class="absolute right-2.5 p-1 text-[#64748B] hover:text-[#1E293B] rounded transition-colors flex items-center justify-center focus:outline-none focus:text-[#006837]" onclick="const el = document.getElementById('siglim-password'); const icon = document.getElementById('siglim-pwd-icon'); const isPwd = el.type === 'password'; el.type = isPwd ? 'text' : 'password'; icon.textContent = isPwd ? 'visibility_off' : 'visibility';" type="button">
+<span class="material-symbols-outlined text-[18px]" id="siglim-pwd-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Controles de sesión y 2FA -->
+<div class="flex items-center justify-between pt-0.5">
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded text-[#006837] border-[#E2E8F0] focus:ring-[#006837] cursor-pointer" id="siglim-remember" type="checkbox"/>
+<span class="text-xs text-[#64748B]">Mantener sesión activa en este equipo</span>
+</label>
+<div class="inline-flex items-center gap-1 text-[11px] font-mono text-[#006837] font-semibold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100">
+<span class="material-symbols-outlined text-[13px] text-[#10B981]">verified_user</span>
+<span>2FA Federativo Activo</span>
+</div>
+</div>
+<!-- Botón Primario de Acción -->
+<button class="w-full mt-1.5 h-11 min-h-[44px] rounded-lg bg-[#006837] hover:bg-[#004D28] text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all duration-150 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#006837] focus:ring-offset-2 active:scale-[0.99]" type="submit">
+<span>Acceder al Sistema SIGLIM</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+</div>
+<!-- Bloque institucional inferior y guía para clubes / tutores -->
+<div class="flex flex-col gap-3 pt-5 mt-6 border-t border-[#E2E8F0]">
+<div class="p-3 rounded-lg bg-slate-50 border border-dashed border-[#E2E8F0] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#006837]">family_restroom</span>
+<span class="text-xs text-[#64748B]">¿Eres tutor de jugador menor o directiva de nuevo ingreso?</span>
+</div>
+<a class="text-xs font-semibold text-[#006837] hover:text-[#004D28] hover:underline whitespace-nowrap transition-colors" href="#">
+                Consultar guía de trámites y consentimientos →
+              </a>
+</div>
+<p class="text-[11px] text-[#64748B] text-center leading-normal">
+              Sin registro libre público. El alta se efectúa por convocatoria y convalidación formal de la Secretaría de la Liga.
+            </p>
+<!-- Pie del formulario con enlaces de navegación -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-2 pt-2 text-xs font-medium text-[#64748B]">
+<a class="inline-flex items-center gap-1.5 hover:text-[#006837] transition-colors focus:outline-none focus:ring-2 focus:ring-[#006837] rounded px-1.5 py-1" href="#">
+<span class="material-symbols-outlined text-[15px]">arrow_back</span>
+                Volver al portal público de consulta
+              </a>
+<div class="flex items-center gap-3">
+<a class="hover:text-[#006837] transition-colors focus:outline-none focus:ring-2 focus:ring-[#006837] rounded px-1.5 py-1" href="#">
+                  Aviso de privacidad federativo
+                </a>
+<span class="text-slate-300">•</span>
+<span class="font-mono text-[11px] text-slate-400">v2.4.0</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main>
+<!-- Pie de página institucional simple -->
+<footer class="w-full border-t border-[#E2E8F0] bg-white py-3 px-6 text-center text-xs text-[#64748B]">Liga Municipal de Futbol Amateur Morelia A.C. · Todos los derechos reservados · Temporada 2025–2026</footer>
+</body>
+</html>

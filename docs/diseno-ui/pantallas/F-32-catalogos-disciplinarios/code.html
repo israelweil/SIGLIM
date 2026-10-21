@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary-container":"#943e46","primary-container":"#006837","outline-variant":"#bec9be","surface-tint":"#0b6d3b","error-container":"#ffdad6","on-surface":"#0b1c30","surface-container-high":"#dce9ff","primary-fixed-dim":"#83d99c","inverse-primary":"#83d99c","secondary":"#565e74","on-tertiary-container":"#ffc3c5","surface-container-low":"#eff4ff","on-tertiary-fixed":"#40000c","on-tertiary":"#ffffff","surface-container-highest":"#d3e4fe","surface":"#f8f9ff","error":"#ba1a1a","secondary-fixed-dim":"#bec6e0","on-error-container":"#93000a","inverse-on-surface":"#eaf1ff","on-background":"#0b1c30","primary-fixed":"#9ef6b6","surface-container-lowest":"#ffffff","on-primary-container":"#8ee4a6","surface-dim":"#cbdbf5","surface-container":"#e5eeff","on-secondary-container":"#5a6278","tertiary-fixed-dim":"#ffb3b6","tertiary-fixed":"#ffdada","secondary-container":"#d8dff9","surface-variant":"#d3e4fe","on-surface-variant":"#3f4940","background":"#f8f9ff","on-secondary-fixed-variant":"#3f465b","secondary-fixed":"#dae2fc","tertiary":"#762730","outline":"#6f7a70","on-primary-fixed":"#00210e","primary":"#004d27","on-tertiary-fixed-variant":"#7b2b34","on-secondary":"#ffffff","on-error":"#ffffff","on-secondary-fixed":"#131b2e","surface-bright":"#f8f9ff","on-primary-fixed-variant":"#00522a","inverse-surface":"#213145","on-primary":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-md":"0.75rem","gutter":"1rem","space-lg":"1rem","margin-desktop":"2rem","margin":"1rem","space-sm":"0.5rem","space-xs":"0.25rem","space-xl":"1.5rem","gutter-desktop":"1.5rem"},"fontFamily":{"mono-data":["JetBrains Mono"],"display-lg":["Inter"],"display-lg-mobile":["Inter"],"body-md":["Inter"],"mono-score":["JetBrains Mono"],"body-sm":["Inter"],"headline-md":["Inter"],"label-md":["Inter"],"headline-lg":["Inter"],"headline-sm":["Inter"],"body-lg":["Inter"],"label-sm":["Inter"]},"fontSize":{"mono-data":["13px",{"lineHeight":"18px","fontWeight":"500"}],"display-lg":["36px",{"lineHeight":"44px","fontWeight":"700"}],"display-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"mono-score":["28px",{"lineHeight":"32px","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-lg":["24px",{"lineHeight":"32px","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 flex items-center px-space-lg bg-surface-container-low"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm">S</div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">SIGLIM</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Futbol Amateur</span></div></div></div><div class="px-space-md py-space-md"><span class="px-space-sm font-label-sm text-label-sm uppercase text-secondary tracking-wider block mb-space-xs">Módulos Operativos</span><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-headline-sm rounded-lg"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="inicio" href="#"><span class="material-symbols-outlined text-[20px]">home</span><span>Inicio</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="cedulas-y-partidos" href="#"><span class="material-symbols-outlined text-[20px]">sports_soccer</span><span>Cédulas y Partidos</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="comision-disciplinaria" href="#"><span class="material-symbols-outlined text-[20px]">gavel</span><span>Comisión Disciplinaria</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="arbitros" href="#"><span class="material-symbols-outlined text-[20px]">sports</span><span>Árbitros</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="auditoria" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Auditoría</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="configuracion" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Configuración</span></a></nav></div></div><div class="p-space-md bg-surface-container-low"><div class="flex items-center gap-space-sm px-space-sm py-space-xs"><span class="material-symbols-outlined text-secondary text-[20px]">shield</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Morelia, Mich.</span><span class="font-body-sm text-body-sm text-secondary">Instancia Disciplinaria</span></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-margin-desktop"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface">SIGLIM</span><span class="text-outline-variant font-label-md text-label-md">·</span><span class="font-body-md text-body-md text-secondary">Futbol Amateur</span></div><div class="inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm uppercase tracking-wide"><span class="material-symbols-outlined text-[14px]">verified</span><span>Temporada 2025–2026 · Activa</span></div></div><div class="flex items-center gap-space-lg"><button aria-label="Notificaciones" class="relative p-space-sm rounded-lg text-secondary hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-tertiary"></span></button><div class="flex items-center gap-space-md pl-space-md"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface leading-tight">Lic. Fernando Morales</span><span class="font-body-sm text-body-sm text-secondary leading-tight">Comisión Disciplinaria</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-16 w-full px-margin-desktop bg-background min-h-screen"><div class="flex flex-col w-full pb-16">
+<!-- BREADCRUMB & REGULATORY VERSION BADGES -->
+<div class="flex flex-wrap items-center justify-between gap-space-md py-space-md">
+<nav aria-label="Ruta de navegación" class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="flex items-center gap-1 hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+<span>Comisión Disciplinaria</span>
+</span>
+<span class="text-outline-variant font-label-sm">/</span>
+<span class="hover:text-primary transition-colors cursor-pointer">Temporada 2025–2026</span>
+<span class="text-outline-variant font-label-sm">/</span>
+<span class="text-primary font-headline-sm text-headline-sm">Catálogos Disciplinarios</span>
+</nav>
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-container/20 text-tertiary font-label-sm text-label-sm font-semibold tracking-wide border border-tertiary-container/30">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+        NO OFICIAL · DEMOSTRACIÓN
+      </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-on-surface font-mono-data text-mono-data">
+<span class="material-symbols-outlined text-[15px] text-primary">policy</span>
+        Reglamento de Sanciones v2.4 (Borrador federativo)
+      </span>
+</div>
+</div>
+<!-- AVISO INSTITUCIONAL PROMINENTE -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-surface-container-high via-surface-container to-surface-container-low p-space-lg shadow-sm border border-outline-variant/40 mb-space-xl">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md relative z-10">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">info</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">Aviso de Parámetros Normativos en Fase Previa</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm uppercase tracking-wider">Sin validez jurídica</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-4xl mt-0.5">
+            El catálogo exhibe valores demostrativos y ponderaciones aritméticas de prueba. Toda resolución formal de la Comisión de Honor y Justicia de la Liga Municipal de Morelia se rige exclusivamente por el expediente físico suscrito hasta la ratificación formal de la Asamblea de Delegados (Art. 9 del Reglamento General).
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 pl-14 md:pl-0">
+<button class="inline-flex items-center gap-space-xs px-space-md h-9 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-bright shadow-sm transition-all border border-outline-variant/50">
+<span class="material-symbols-outlined text-[16px]">upload_file</span>
+<span>Cargar Acta Oficial</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md h-9 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-all">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Auditar Reglas</span>
+</button>
+</div>
+</div>
+<!-- Detalle decorativo de fondo institucional -->
+<div class="absolute right-0 bottom-0 opacity-5 pointer-events-none transform translate-x-8 translate-y-8">
+<span class="material-symbols-outlined text-[200px] text-primary">sports_soccer</span>
+</div>
+</div>
+<!-- SECCIÓN CABECERA DE MÓDULO -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Dirección Normativa y Arbitral</span>
+<span class="text-outline-variant text-[12px]">•</span>
+<span class="font-label-sm text-label-sm text-secondary">Liga Municipal de Morelia, Michoacán</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Catálogos Disciplinarios y Reglas de Sanción</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl mt-1">
+        Parametrización del marco sancionatorio, tipificación de incidencias registradas en cédula arbitral digital y catálogo correlacionado de artículos del Reglamento de Justicia Deportiva vigente.
+      </p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<div class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-low text-secondary font-label-sm text-label-sm border border-outline-variant/30">
+<span class="material-symbols-outlined text-[16px] text-primary">history</span>
+<span>Última reforma: 03 Feb 2025</span>
+</div>
+</div>
+</div>
+<!-- PESTAÑAS DE NAVEGACIÓN PRINCIPAL -->
+<div class="flex border-b-2 border-outline-variant/30 mb-space-xl">
+<button class="relative flex items-center gap-space-sm px-space-xl py-space-md font-headline-sm text-headline-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" id="tab-btn-incidencias" onclick="switchMainTab('incidencias')">
+<span class="material-symbols-outlined text-[20px]">assignment_late</span>
+<span>Tipos de Incidencia</span>
+<span class="ml-1 inline-flex items-center px-2 py-0.5 rounded-full text-label-sm font-mono-data bg-surface-container-high text-on-surface font-semibold">8</span>
+<span class="hidden absolute bottom-[-2px] left-0 right-0 h-1 bg-primary-container rounded-t-sm" id="indicator-incidencias"></span>
+</button>
+<button class="relative flex items-center gap-space-sm px-space-xl py-space-md font-headline-sm text-headline-sm text-primary font-bold transition-colors cursor-pointer" id="tab-btn-articulos" onclick="switchMainTab('articulos')">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+<span>Artículos del Reglamento</span>
+<span class="ml-1 inline-flex items-center px-2 py-0.5 rounded-full text-label-sm font-mono-data bg-primary-fixed text-on-primary-fixed font-bold">14</span>
+<span class="block absolute bottom-[-2px] left-0 right-0 h-1 bg-primary-container rounded-t-sm" id="indicator-articulos"></span>
+</button>
+</div>
+<!-- CONTENIDO: PESTAÑA 1 - TIPOS DE INCIDENCIA -->
+<div class="hidden flex-col gap-space-lg" id="tab-content-incidencias">
+<!-- Contexto operativo -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl border border-outline-variant/40 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">auto_stories</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Disparadores de Expedientes Disciplinarios</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Las incidencias reportadas en la Cédula Digital al cierre del partido activan automáticamente la apertura de un expediente previo a la sesión colegiada de los martes.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<input class="h-10 pl-9 pr-3 rounded-lg bg-surface-container-low border border-outline-variant/50 text-on-surface font-body-md text-body-md focus:outline-none focus:border-primary w-64" placeholder="Buscar incidencia..." type="text"/>
+<span class="material-symbols-outlined absolute left-2.5 top-2.5 text-secondary text-[18px]">search</span>
+</div>
+</div>
+</div>
+<!-- Tabla Tipos de Incidencia -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/80 border-b border-outline-variant/50 font-label-sm text-label-sm text-secondary uppercase tracking-wider">
+<th class="py-space-md px-space-lg">Código</th>
+<th class="py-space-md px-space-lg">Conducta Tipificada</th>
+<th class="py-space-md px-space-lg">Severidad</th>
+<th class="py-space-md px-space-lg">Abre Expediente Auto.</th>
+<th class="py-space-md px-space-lg text-center">Estado Muestra</th>
+<th class="py-space-md px-space-lg text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 font-body-md text-body-md text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg font-mono-data text-mono-data text-primary font-bold">INC-01</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Amonestación con Tarjeta Amarilla</span>
+<span class="font-body-sm text-body-sm text-secondary">Falta táctica o conducta antideportiva menor sujeta a acumulación</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Leve
+                </span>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-2">
+<button class="w-11 h-6 flex items-center bg-outline-variant/60 rounded-full p-0.5 transition-colors cursor-pointer" onclick="this.classList.toggle('bg-primary-container'); this.firstElementChild.classList.toggle('translate-x-5');" type="button">
+<div class="bg-surface-container-lowest w-5 h-5 rounded-full shadow-md transform transition-transform"></div>
+</button>
+<span class="font-label-sm text-label-sm text-secondary">Solo acumulación (3 acum.)</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">code_blocks</span>
+                  No oficial
+                </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<button class="inline-flex items-center gap-1 text-primary hover:text-primary-container font-label-md text-label-md font-semibold">
+<span>Configurar</span>
+<span class="material-symbols-outlined text-[16px]">tune</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg font-mono-data text-mono-data text-primary font-bold">INC-02</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Expulsión Directa (Roja)</span>
+<span class="font-body-sm text-body-sm text-secondary">Falta grave, doble amonestación u ofensa verbal directa a rival</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                  Grave
+                </span>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-2">
+<button class="w-11 h-6 flex items-center bg-primary-container rounded-full p-0.5 transition-colors cursor-pointer" onclick="this.classList.toggle('bg-primary-container'); this.firstElementChild.classList.toggle('translate-x-5');" type="button">
+<div class="bg-surface-container-lowest w-5 h-5 rounded-full shadow-md transform translate-x-5 transition-transform"></div>
+</button>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Activado (Cédula)</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">code_blocks</span>
+                  No oficial
+                </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<button class="inline-flex items-center gap-1 text-primary hover:text-primary-container font-label-md text-label-md font-semibold">
+<span>Configurar</span>
+<span class="material-symbols-outlined text-[16px]">tune</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg font-mono-data text-mono-data text-primary font-bold">INC-03</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Riña Colectiva en Terreno o Tribuna</span>
+<span class="font-body-sm text-body-sm text-secondary">Gresca multitudinaria con suspensión o alteración del partido</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">dangerous</span>
+                  Muy grave
+                </span>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-2">
+<button class="w-11 h-6 flex items-center bg-primary-container rounded-full p-0.5 transition-colors cursor-pointer" onclick="this.classList.toggle('bg-primary-container'); this.firstElementChild.classList.toggle('translate-x-5');" type="button">
+<div class="bg-surface-container-lowest w-5 h-5 rounded-full shadow-md transform translate-x-5 transition-transform"></div>
+</button>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Activado (Urgente)</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">code_blocks</span>
+                  No oficial
+                </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<button class="inline-flex items-center gap-1 text-primary hover:text-primary-container font-label-md text-label-md font-semibold">
+<span>Configurar</span>
+<span class="material-symbols-outlined text-[16px]">tune</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg font-mono-data text-mono-data text-primary font-bold">INC-04</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Invasión no Autorizada de Cancha</span>
+<span class="font-body-sm text-body-sm text-secondary">Ingreso indebido de espectadores, directivos o jugadores expulsados</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                  Grave
+                </span>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-2">
+<button class="w-11 h-6 flex items-center bg-primary-container rounded-full p-0.5 transition-colors cursor-pointer" onclick="this.classList.toggle('bg-primary-container'); this.firstElementChild.classList.toggle('translate-x-5');" type="button">
+<div class="bg-surface-container-lowest w-5 h-5 rounded-full shadow-md transform translate-x-5 transition-transform"></div>
+</button>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Activado</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">code_blocks</span>
+                  No oficial
+                </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<button class="inline-flex items-center gap-1 text-primary hover:text-primary-container font-label-md text-label-md font-semibold">
+<span>Configurar</span>
+<span class="material-symbols-outlined text-[16px]">tune</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg font-mono-data text-mono-data text-primary font-bold">INC-05</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Desacato o Agresión Física/Verbal a Silbante</span>
+<span class="font-body-sm text-body-sm text-secondary">Amedrentamiento, contacto lesivo o insultos calificados a la terna</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">dangerous</span>
+                  Muy grave
+                </span>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-2">
+<button class="w-11 h-6 flex items-center bg-primary-container rounded-full p-0.5 transition-colors cursor-pointer" onclick="this.classList.toggle('bg-primary-container'); this.firstElementChild.classList.toggle('translate-x-5');" type="button">
+<div class="bg-surface-container-lowest w-5 h-5 rounded-full shadow-md transform translate-x-5 transition-transform"></div>
+</button>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Activado (Copia Comisión)</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">code_blocks</span>
+                  No oficial
+                </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<button class="inline-flex items-center gap-1 text-primary hover:text-primary-container font-label-md text-label-md font-semibold">
+<span>Configurar</span>
+<span class="material-symbols-outlined text-[16px]">tune</span>
+</button>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg font-mono-data text-mono-data text-primary font-bold">INC-06</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Suplantación de Identidad / Falsificación</span>
+<span class="font-body-sm text-body-sm text-secondary">Uso indebido de credencial federada o registro apócrifo de jugador</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">dangerous</span>
+                  Muy grave
+                </span>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-2">
+<button class="w-11 h-6 flex items-center bg-primary-container rounded-full p-0.5 transition-colors cursor-pointer" onclick="this.classList.toggle('bg-primary-container'); this.firstElementChild.classList.toggle('translate-x-5');" type="button">
+<div class="bg-surface-container-lowest w-5 h-5 rounded-full shadow-md transform translate-x-5 transition-transform"></div>
+</button>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Activado</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">code_blocks</span>
+                  No oficial
+                </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<button class="inline-flex items-center gap-1 text-primary hover:text-primary-container font-label-md text-label-md font-semibold">
+<span>Configurar</span>
+<span class="material-symbols-outlined text-[16px]">tune</span>
+</button>
+</td>
+</tr>
+<!-- Row 7 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg font-mono-data text-mono-data text-primary font-bold">INC-07</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Alineación Indebida / Jugador Castigado</span>
+<span class="font-body-sm text-body-sm text-secondary">Participación de elementos con sanción vigente en el boletín</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                  Grave
+                </span>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-2">
+<button class="w-11 h-6 flex items-center bg-primary-container rounded-full p-0.5 transition-colors cursor-pointer" onclick="this.classList.toggle('bg-primary-container'); this.firstElementChild.classList.toggle('translate-x-5');" type="button">
+<div class="bg-surface-container-lowest w-5 h-5 rounded-full shadow-md transform translate-x-5 transition-transform"></div>
+</button>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Activado</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">code_blocks</span>
+                  No oficial
+                </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<button class="inline-flex items-center gap-1 text-primary hover:text-primary-container font-label-md text-label-md font-semibold">
+<span>Configurar</span>
+<span class="material-symbols-outlined text-[16px]">tune</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- CONTENIDO: PESTAÑA 2 - ARTÍCULOS DEL REGLAMENTO & PANEL LATERAL -->
+<div class="flex flex-col xl:flex-row items-start gap-space-xl" id="tab-content-articulos">
+<!-- ÁREA PRINCIPAL: TABLA DE ARTÍCULOS -->
+<div class="flex-1 w-full flex flex-col gap-space-md">
+<!-- Barra de Filtros y Acción Nueva -->
+<div class="flex flex-wrap items-center justify-between gap-space-md bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant/40 shadow-sm">
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="relative">
+<input class="h-10 pl-9 pr-3 rounded-lg bg-surface-container-low border border-outline-variant/50 text-on-surface font-body-md text-body-md focus:outline-none focus:border-primary w-64 md:w-80" placeholder="Filtrar por artículo o conducta..." type="text"/>
+<span class="material-symbols-outlined absolute left-2.5 top-2.5 text-secondary text-[18px]">search</span>
+</div>
+<select class="h-10 px-3 rounded-lg bg-surface-container-low border border-outline-variant/50 text-on-surface font-label-md text-label-md focus:outline-none focus:border-primary">
+<option>Todos los sujetos (Jugador, DT, Club)</option>
+<option>Solo Jugador</option>
+<option>Solo Cuerpo Técnico</option>
+<option>Club / Delegado</option>
+</select>
+</div>
+<button class="inline-flex items-center gap-2 px-space-lg h-10 rounded-lg bg-primary-container text-on-primary font-headline-sm text-headline-sm hover:bg-primary shadow-sm transition-all shrink-0">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>+ Nuevo Artículo</span>
+</button>
+</div>
+<!-- Tabla de Artículos -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/80 border-b border-outline-variant/50 font-label-sm text-label-sm text-secondary uppercase tracking-wider">
+<th class="py-space-md px-space-md">Artículo</th>
+<th class="py-space-md px-space-md">Conducta Tipificada</th>
+<th class="py-space-md px-space-md">Sanción</th>
+<th class="py-space-md px-space-md">Sujeto</th>
+<th class="py-space-md px-space-md">Efecto</th>
+<th class="py-space-md px-space-md text-right">Por Defecto</th>
+<th class="py-space-md px-space-md text-center">Auto</th>
+<th class="py-space-md px-space-md text-center">Muestra</th>
+<th class="py-space-md px-space-md text-center">Acción</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 font-body-md text-body-md text-on-surface">
+<!-- Art. 42 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-space-md px-space-md font-mono-data text-mono-data font-bold text-primary">Art. 42</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Acumulación de amonestaciones</span>
+<span class="font-body-sm text-body-sm text-secondary truncate max-w-xs">3 tarjetas amarillas acumuladas en el torneo ordinario</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface">
+                    Suspensión
+                  </span>
+</td>
+<td class="py-space-md px-space-md font-label-sm text-label-sm text-secondary">Jugador</td>
+<td class="py-space-md px-space-md font-label-sm text-label-sm text-secondary">Hacia adelante</td>
+<td class="py-space-md px-space-md text-right font-mono-data text-mono-data font-semibold">1 partido</td>
+<td class="py-space-md px-space-md text-center">
+<span class="material-symbols-outlined text-primary text-[20px]">toggle_on</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tertiary-container/15 text-tertiary font-label-sm text-[10px]">No oficial</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<button class="p-1 rounded text-secondary hover:text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</td>
+</tr>
+<!-- Art. 48 - SELECCIONADO ACTIVO -->
+<tr class="bg-primary-fixed/20 border-l-4 border-l-primary-container transition-colors">
+<td class="py-space-md px-space-md font-mono-data text-mono-data font-bold text-primary">Art. 48</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Juego brusco grave / Fuerza excesiva</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-[10px] uppercase font-bold tracking-wider">Activo en editor</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">Entrada con plancha, desmedida o con intención de causar daño corporal</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">
+                    Suspensión
+                  </span>
+</td>
+<td class="py-space-md px-space-md font-label-sm text-label-sm font-semibold text-on-surface">Jugador</td>
+<td class="py-space-md px-space-md font-label-sm text-label-sm text-secondary">Hacia adelante</td>
+<td class="py-space-md px-space-md text-right font-mono-data text-mono-data font-bold text-tertiary">2 a 4 part.</td>
+<td class="py-space-md px-space-md text-center">
+<span class="material-symbols-outlined text-primary text-[20px]">toggle_on</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tertiary-container/15 text-tertiary font-label-sm text-[10px]">No oficial</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center px-2 py-1 rounded bg-primary-container text-on-primary font-label-sm text-label-sm font-medium">
+                    Editando
+                  </span>
+</td>
+</tr>
+<!-- Art. 51 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-space-md px-space-md font-mono-data text-mono-data font-bold text-primary">Art. 51</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Desacato y reclamos airados a oficiales</span>
+<span class="font-body-sm text-body-sm text-secondary truncate max-w-xs">Gesticulaciones o confrontación verbal reiterada al cuerpo arbitral</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface">
+                    Partidos + Multa
+                  </span>
+</td>
+<td class="py-space-md px-space-md font-label-sm text-label-sm text-secondary">Cuerpo técnico</td>
+<td class="py-space-md px-space-md font-label-sm text-label-sm text-secondary">Hacia adelante</td>
+<td class="py-space-md px-space-md text-right font-mono-data text-mono-data font-semibold">2 part. + $300</td>
+<td class="py-space-md px-space-md text-center">
+<span class="material-symbols-outlined text-outline text-[20px]">toggle_off</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tertiary-container/15 text-tertiary font-label-sm text-[10px]">No oficial</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<button class="p-1 rounded text-secondary hover:text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</td>
+</tr>
+<!-- Art. 54 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-space-md px-space-md font-mono-data text-mono-data font-bold text-primary">Art. 54</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Agresión física consumada a comisario o silbante</span>
+<span class="font-body-sm text-body-sm text-secondary truncate max-w-xs">Golpes directos, empujones violentos o escupitajos a la autoridad</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">
+                    Inhabilitación
+                  </span>
+</td>
+<td class="py-space-md px-space-md font-label-sm text-label-sm text-secondary">Cualquiera</td>
+<td class="py-space-md px-space-md font-label-sm text-label-sm text-secondary">Retroactivo</td>
+<td class="py-space-md px-space-md text-right font-mono-data text-mono-data font-bold text-error">1 a 3 años</td>
+<td class="py-space-md px-space-md text-center">
+<span class="material-symbols-outlined text-outline text-[20px]">toggle_off</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tertiary-container/15 text-tertiary font-label-sm text-[10px]">No oficial</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<button class="p-1 rounded text-secondary hover:text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</td>
+</tr>
+<!-- Art. 60 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-space-md px-space-md font-mono-data text-mono-data font-bold text-primary">Art. 60</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Incursión de porras en zona técnica o terreno</span>
+<span class="font-body-sm text-body-sm text-secondary truncate max-w-xs">Disturbios de simpatizantes sin resguardo de la directiva local</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface">
+                    Multa + Veto
+                  </span>
+</td>
+<td class="py-space-md px-space-md font-label-sm text-label-sm text-secondary">Club / Delegado</td>
+<td class="py-space-md px-space-md font-label-sm text-label-sm text-secondary">Hacia adelante</td>
+<td class="py-space-md px-space-md text-right font-mono-data text-mono-data font-semibold">$1,500.00 MXN</td>
+<td class="py-space-md px-space-md text-center">
+<span class="material-symbols-outlined text-outline text-[20px]">toggle_off</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tertiary-container/15 text-tertiary font-label-sm text-[10px]">No oficial</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<button class="p-1 rounded text-secondary hover:text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</td>
+</tr>
+<!-- Art. 64 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-space-md px-space-md font-mono-data text-mono-data font-bold text-primary">Art. 64</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Alineación indebida comprobada</span>
+<span class="font-body-sm text-body-sm text-secondary truncate max-w-xs">Pérdida de puntos del cotejo adjudicándolos al club oponente (3-0)</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">
+                    Pérdida puntos
+                  </span>
+</td>
+<td class="py-space-md px-space-md font-label-sm text-label-sm text-secondary">Club</td>
+<td class="py-space-md px-space-md font-label-sm text-label-sm text-secondary">Retroactivo</td>
+<td class="py-space-md px-space-md text-right font-mono-data text-mono-data font-semibold">-3 pts + $800</td>
+<td class="py-space-md px-space-md text-center">
+<span class="material-symbols-outlined text-primary text-[20px]">toggle_on</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tertiary-container/15 text-tertiary font-label-sm text-[10px]">No oficial</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<button class="p-1 rounded text-secondary hover:text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Paginación / Resumen de artículos -->
+<div class="flex items-center justify-between px-space-lg py-space-md bg-surface-container-low/60 border-t border-outline-variant/30 text-secondary font-label-sm text-label-sm">
+<span>Mostrando 6 de 14 artículos tipificados en borrador</span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded border border-outline-variant/40 hover:bg-surface-container disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<span class="px-2 font-mono-data">Pág. 1 de 3</span>
+<button class="p-1 rounded border border-outline-variant/40 hover:bg-surface-container">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- PANEL LATERAL DE EDICIÓN (DRAWER ACOPLADO) -->
+<aside class="w-full xl:w-[460px] bg-surface-container-lowest rounded-xl border border-outline-variant/60 shadow-lg shrink-0 flex flex-col overflow-hidden">
+<!-- Cabecera del Panel -->
+<div class="p-space-lg bg-surface-container-low border-b border-outline-variant/40 flex items-start justify-between gap-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-2 mb-1">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[13px]">edit_note</span>
+              No oficial · En edición
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Editar Precepto: Art. 48</h2>
+<span class="font-body-sm text-body-sm text-secondary">Juego Brusco Grave y Fuerza Excesiva</span>
+</div>
+<button class="p-1.5 rounded-lg text-secondary hover:bg-surface-container-high hover:text-on-surface transition-colors" title="Cerrar panel">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Formulario de Edición -->
+<form class="p-space-lg flex flex-col gap-space-md max-h-[calc(100vh-220px)] overflow-y-auto" onsubmit="event.preventDefault();">
+<!-- Precepto & Título -->
+<div class="grid grid-cols-3 gap-space-sm">
+<div class="col-span-1">
+<label class="block font-label-md text-label-md text-on-surface mb-1">
+              Precepto <span class="text-tertiary">*</span>
+</label>
+<input class="w-full h-11 px-3 rounded-lg bg-surface-container-lowest border border-outline-variant/70 text-on-surface font-mono-data text-mono-data font-bold focus:border-primary focus:outline-none" type="text" value="Art. 48"/>
+</div>
+<div class="col-span-2">
+<label class="block font-label-md text-label-md text-on-surface mb-1">
+              Título de la Conducta <span class="text-tertiary">*</span>
+</label>
+<input class="w-full h-11 px-3 rounded-lg bg-surface-container-lowest border border-outline-variant/70 text-on-surface font-body-md text-body-md focus:border-primary focus:outline-none" type="text" value="Juego brusco grave / Fuerza excesiva"/>
+</div>
+</div>
+<!-- Descripción Reglamentaria -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">
+            Descripción Típica Reglamentaria <span class="text-tertiary">*</span>
+</label>
+<textarea class="w-full p-3 rounded-lg bg-surface-container-lowest border border-outline-variant/70 text-on-surface font-body-md text-body-md focus:border-primary focus:outline-none leading-relaxed resize-none" rows="4">Incurre en falta grave el jugador que emplee fuerza desmedida o brutalidad en la disputa o fuera de la disputa del balón, con riesgo manifiesto a la integridad física del contrincante según reporte del cuerpo arbitral.</textarea>
+<span class="font-body-sm text-body-sm text-secondary mt-1 block">Texto homologado con el Reglamento Modelo FMF Amateur Morelia.</span>
+</div>
+<!-- Sanción Principal y Sujeto -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">
+              Sanción Principal <span class="text-tertiary">*</span>
+</label>
+<select class="w-full h-11 px-3 rounded-lg bg-surface-container-lowest border border-outline-variant/70 text-on-surface font-body-md text-body-md focus:border-primary focus:outline-none">
+<option selected="">Suspensión por partidos</option>
+<option>Multa pecuniaria</option>
+<option>Suspensión temporal (días/meses)</option>
+<option>Inhabilitación definitiva</option>
+<option>Pérdida de puntos</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">
+              Sujeto Pasivo <span class="text-tertiary">*</span>
+</label>
+<select class="w-full h-11 px-3 rounded-lg bg-surface-container-lowest border border-outline-variant/70 text-on-surface font-body-md text-body-md focus:border-primary focus:outline-none">
+<option selected="">Jugador activo</option>
+<option>Cuerpo técnico / Auxiliares</option>
+<option>Club / Franquicia</option>
+<option>Porra / Espectadores</option>
+</select>
+</div>
+</div>
+<!-- Efecto Temporal y Partidos Base -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">
+              Efecto Temporal <span class="text-tertiary">*</span>
+</label>
+<select class="w-full h-11 px-3 rounded-lg bg-surface-container-lowest border border-outline-variant/70 text-on-surface font-body-md text-body-md focus:border-primary focus:outline-none">
+<option selected="">Hacia adelante (Siguiente jornada)</option>
+<option>Inmediato (Mismo día)</option>
+<option>Retroactivo al cotejo disputado</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">
+              Partidos Base por Defecto
+            </label>
+<div class="relative flex items-center">
+<input class="w-full h-11 px-3 rounded-lg bg-surface-container-lowest border border-outline-variant/70 text-on-surface font-mono-data text-mono-data font-bold focus:border-primary focus:outline-none" max="10" min="1" type="number" value="2"/>
+<span class="absolute right-3 font-body-sm text-body-sm text-secondary pointer-events-none">partidos (Rango: 2–4)</span>
+</div>
+</div>
+</div>
+<!-- Interruptor: Aplicación automática -->
+<div class="p-space-md rounded-xl bg-surface-container-low border border-outline-variant/50 flex items-start gap-space-md">
+<button class="w-12 h-6 flex items-center bg-primary-container rounded-full p-0.5 transition-colors cursor-pointer shrink-0 mt-0.5" onclick="this.classList.toggle('bg-primary-container'); this.firstElementChild.classList.toggle('translate-x-6');" type="button">
+<div class="bg-surface-container-lowest w-5 h-5 rounded-full shadow-md transform translate-x-6 transition-transform"></div>
+</button>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Aplicación automática al validar cédula</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Si se activa, el sistema genera la sanción base en el boletín sin requerir acuerdo de sesión ordinaria presencial de la Comisión.
+            </p>
+</div>
+</div>
+<!-- Nota Obligatoria de Auditoría Estatutaria -->
+<div class="p-space-md rounded-xl bg-surface-container/60 border-l-4 border-l-primary flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0 mt-0.5">verified_user</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wide text-primary font-bold">Requisito de Auditoría Estatutaria</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+              Conforme al Art. 12 del Estatuto General de la Liga Municipal, cualquier reconfiguración a los topes de sanción quedará registrada en bitácora criptográfica con firma del Lic. Morales.
+            </span>
+</div>
+</div>
+<!-- Campo Justificación de Reforma -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">
+            Motivo o Justificación de la Reforma <span class="text-tertiary">*</span>
+</label>
+<input class="w-full h-11 px-3 rounded-lg bg-surface-container-lowest border border-outline-variant/70 text-on-surface font-body-md text-body-md focus:border-primary focus:outline-none" placeholder="Ej. Homologación con acuerdo de Asamblea Ordinaria de Delegados..." type="text"/>
+</div>
+<!-- Botones de Acción al pie -->
+<div class="flex items-center justify-end gap-space-sm pt-space-md border-t border-outline-variant/40 mt-space-sm">
+<button class="px-space-lg h-11 rounded-lg border border-outline-variant/60 bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors" type="button">
+            Cancelar
+          </button>
+<button class="px-space-xl h-11 rounded-lg bg-primary-container text-on-primary font-headline-sm text-headline-sm hover:bg-primary shadow-sm transition-all flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Guardar Cambios</span>
+</button>
+</div>
+</form>
+</aside>
+</div>
+</div>
+<script>
+  function switchMainTab(tabName) {
+    const tabIncidencias = document.getElementById('tab-content-incidencias');
+    const tabArticulos = document.getElementById('tab-content-articulos');
+    const btnIncidencias = document.getElementById('tab-btn-incidencias');
+    const btnArticulos = document.getElementById('tab-btn-articulos');
+    const indIncidencias = document.getElementById('indicator-incidencias');
+    const indArticulos = document.getElementById('indicator-articulos');
+
+    if (tabName === 'incidencias') {
+      tabIncidencias.classList.remove('hidden');
+      tabIncidencias.classList.add('flex');
+      tabArticulos.classList.add('hidden');
+
+      btnIncidencias.classList.add('text-primary', 'font-bold');
+      btnIncidencias.classList.remove('text-on-surface-variant');
+      btnArticulos.classList.remove('text-primary', 'font-bold');
+      btnArticulos.classList.add('text-on-surface-variant');
+
+      indIncidencias.classList.remove('hidden');
+      indIncidencias.classList.add('block');
+      indArticulos.classList.add('hidden');
+      indArticulos.classList.remove('block');
+    } else {
+      tabArticulos.classList.remove('hidden');
+      tabArticulos.classList.add('flex');
+      tabIncidencias.classList.add('hidden');
+
+      btnArticulos.classList.add('text-primary', 'font-bold');
+      btnArticulos.classList.remove('text-on-surface-variant');
+      btnIncidencias.classList.remove('text-primary', 'font-bold');
+      btnIncidencias.classList.add('text-on-surface-variant');
+
+      indArticulos.classList.remove('hidden');
+      indArticulos.classList.add('block');
+      indIncidencias.classList.add('hidden');
+      indIncidencias.classList.remove('block');
+    }
+  }
+</script></main></div></body></html>

@@ -49,10 +49,12 @@ src/
 - **Estilos:** solo utilidades de Tailwind con los tokens de `styles/index.css`
   (`bg-primary`, `text-text-muted`, `border-border`, `bg-surface-dark`…). **Prohibido** escribir
   colores HEX en componentes o crear archivos `.css` por componente.
-- **Diseño:** sigue [`docs/diseno-ui/`](../docs/diseno-ui/README.md) y los frames aprobados de
-  [`prompts-stitch.md`](../docs/diseno-ui/prompts-stitch.md); respeta la tabla de conflictos C-01 a
-  C-08: sin buscador global, estadísticas de jugador solo en backlog y con consentimiento, un solo
-  «Iniciar sesión» para todos los usuarios internos.
+- **Diseño:** sigue [`DESIGN.md`](../docs/diseno-ui/DESIGN.md) y las pantallas aprobadas de
+  [`docs/diseno-ui/pantallas/`](../docs/diseno-ui/pantallas/README.md). El `code.html` de cada
+  pantalla es referencia visual: **no lo copies**; reconstruye en React con los tokens y
+  componentes del proyecto. No implementes las diferencias D-01 a D-12 ni los conflictos C-01 a
+  C-08 (sin buscador global, estadísticas de jugador solo en backlog y con consentimiento, un solo
+  «Iniciar sesión»).
 - **Estados visibles (ERS 3.1.1):** muestra el estado del partido y las acciones permitidas,
   distingue Borrador/Revisión/Publicado y diferencia dato oficial de indicador calculado.
 - **Accesibilidad (WCAG 2.1 AA):** `<label>` asociado a cada input, foco visible, `aria-hidden`
