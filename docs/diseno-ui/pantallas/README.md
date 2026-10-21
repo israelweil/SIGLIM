@@ -56,7 +56,7 @@ El sistema visual (colores, tipografía, espaciado, componentes) está en [`../D
 | F-33 | [`F-33-tesoreria`](F-33-tesoreria/) | UI-027 | N | Modales «Nuevo cobro» y «Registrar pago externo» |
 | F-34 | [`F-34-adeudos-pago-simulado`](F-34-adeudos-pago-simulado/) | UI-027 | N | Flujo de pago simulado en 3 pasos |
 | F-35 | [`F-35-mi-informacion`](F-35-mi-informacion/) | UI-032 | N | Selector de menor; modal de revocación de difusión |
-| F-36 | — | Transversal | N | **No se generó** (pregunta en §4) |
+| F-36 | — | Transversal | N | No se generó: los estados (403, 404, error de conexión, avisos, modal de motivo, vacío, carga) se construyen con `DESIGN.md` (Q-UI-03) |
 | B-01 | [`B-01-estadisticas`](B-01-estadisticas/) | UI-013 | B | Vista interna/pública; pestañas Equipos/Jugadores |
 | B-02 | [`B-02-sanciones-castigados`](B-02-sanciones-castigados/) | UI-016 | B | Vista interna/pública; modal del expediente |
 | B-03 | [`B-03-recursos`](B-03-recursos/) | UI-017 | B | Vista Club/Presidencia |
@@ -83,12 +83,15 @@ móvil < 768 px) y deben funcionar desde 360 px sin desplazamiento horizontal (R
 El equipo rediseñó F-05 a dos paneles: uno institucional a la izquierda con fotografía y otro con el
 formulario a la derecha. Lo que se implementa:
 
-- Correo y contraseña con Supabase Auth, mostrar u ocultar contraseña, «¿Olvidaste tu contraseña?»,
-  sin registro libre, enlaces al portal y al aviso de privacidad, y el aviso para tutores (UI-001).
+- Disposición en dos paneles con la fotografía del panel izquierdo (es una imagen generada, no de un
+  lugar real; Q-UI-04).
+- **Solo correo** y contraseña con Supabase Auth (Q-UI-01): el campo se rotula «Correo
+  electrónico». Mostrar u ocultar contraseña, «¿Olvidaste tu contraseña?», sin registro libre,
+  enlaces al portal y al aviso de privacidad, y el aviso para tutores (UI-001).
 
-Lo que **no** se implementa hasta que se decida (pregunta en §4): acceso con «Folio federativo»,
-«2FA Federativo Activo», «Mantener sesión activa» (PEN-030), y los datos y sellos institucionales
-del panel izquierdo (§3).
+Lo que **no** se implementa: acceso con «Folio federativo» (descartado, Q-UI-01); «2FA Federativo
+Activo» y «Mantener sesión activa» hasta que se defina la política de sesión (PEN-030, Q-UI-02);
+los datos y sellos institucionales del panel izquierdo (§3).
 
 ## 3. Diferencias con el ERS que no se implementan
 
@@ -110,11 +113,11 @@ cuando sea texto de ejemplo, se reemplaza por datos reales del backend.
 | D-11 | Cifras y nombres inventados («142 clubes», «18,000+ deportistas», «Estadio Unidad Dep. Cuauhtémoc», «Club Félix Ireta», «Indios de Morelia») | F-05, F-26, B-05 | Datos de ejemplo (AGENTS.md §3.6) | Datos reales del backend; el panel de F-05 sin estadísticas |
 | D-12 | `alert()` del navegador para confirmaciones | F-15, F-17, F-19, F-25, B-02, B-03, B-05 | Bloquea la página y no es accesible | Modal de confirmación del sistema de diseño |
 
-## 4. Preguntas abiertas
+## 4. Preguntas del prototipo
 
-| ID | Pregunta | Afecta |
-| --- | --- | --- |
-| Q-UI-01 | ¿Se inicia sesión también con «Folio federativo» o solo con correo? Supabase Auth trabaja con correo; el folio requeriría buscar el correo por folio antes de autenticar | F-05, RF-094 |
-| Q-UI-02 | ¿Se quiere segundo factor (2FA) y «Mantener sesión activa»? Es parte de la política de PEN-030 | F-05, RNF-014 |
-| Q-UI-03 | ¿Se genera F-36 (estados de sistema) en Stitch o se construyen 403, 404, errores y avisos directamente con `DESIGN.md`? | F-36 |
-| Q-UI-04 | ¿Se conserva la fotografía del panel izquierdo de F-05? Si es de un estadio real, se necesita una imagen propia o con licencia | F-05 |
+| ID | Pregunta | Respuesta del equipo (20 oct 2026) | Afecta |
+| --- | --- | --- | --- |
+| Q-UI-01 | ¿Inicio de sesión con «Folio federativo» además del correo? | **Solo correo.** | F-05, RF-094 |
+| Q-UI-02 | ¿Segundo factor (2FA) y «Mantener sesión activa»? | Abierta: depende de la política de sesión (PEN-030). No se implementa mientras tanto. | F-05, RNF-014 |
+| Q-UI-03 | ¿F-36 en Stitch o directamente con `DESIGN.md`? | **Con `DESIGN.md`**, sin generar el frame. | F-36 |
+| Q-UI-04 | ¿Se conserva la fotografía de F-05? | **Sí**: es una imagen generada, no de un lugar real. | F-05 |
