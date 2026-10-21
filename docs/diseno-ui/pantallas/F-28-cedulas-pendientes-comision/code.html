@@ -1,0 +1,613 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><title>SIGLIM - Liga Municipal de Futbol Amateur Morelia</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"tertiary-fixed-dim":"#ffb3b6","on-background":"#0b1c30","tertiary-container":"#943e46","primary-fixed":"#9ef6b6","surface-container-high":"#dce9ff","surface-tint":"#0b6d3b","on-secondary-fixed-variant":"#3f465b","secondary":"#565e74","error":"#ba1a1a","background":"#f8f9ff","surface-variant":"#d3e4fe","on-primary-fixed-variant":"#00522a","on-surface":"#0b1c30","on-primary-fixed":"#00210e","outline":"#6f7a70","tertiary":"#762730","on-tertiary-fixed":"#40000c","on-primary":"#ffffff","on-tertiary-fixed-variant":"#7b2b34","inverse-on-surface":"#eaf1ff","primary":"#004d27","surface-bright":"#f8f9ff","on-primary-container":"#8ee4a6","primary-fixed-dim":"#83d99c","secondary-container":"#d8dff9","outline-variant":"#bec9be","on-secondary-container":"#5a6278","surface-container":"#e5eeff","surface":"#f8f9ff","surface-container-lowest":"#ffffff","on-secondary-fixed":"#131b2e","on-secondary":"#ffffff","on-tertiary":"#ffffff","on-error":"#ffffff","primary-container":"#006837","on-surface-variant":"#3f4940","on-tertiary-container":"#ffc3c5","error-container":"#ffdad6","surface-container-low":"#eff4ff","on-error-container":"#93000a","inverse-surface":"#213145","surface-dim":"#cbdbf5","secondary-fixed":"#dae2fc","tertiary-fixed":"#ffdada","secondary-fixed-dim":"#bec6e0","inverse-primary":"#83d99c","surface-container-highest":"#d3e4fe"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin":"1rem","space-md":"0.75rem","gutter":"1rem","space-lg":"1rem","space-xs":"0.25rem","gutter-desktop":"1.5rem","margin-desktop":"2rem","space-sm":"0.5rem","space-xl":"1.5rem"},"fontFamily":{"display-lg":["Inter"],"display-lg-mobile":["Inter"],"body-lg":["Inter"],"headline-md":["Inter"],"headline-sm":["Inter"],"body-md":["Inter"],"body-sm":["Inter"],"mono-data":["JetBrains Mono"],"label-md":["Inter"],"mono-score":["JetBrains Mono"],"headline-lg":["Inter"],"label-sm":["Inter"]},"fontSize":{"display-lg":["36px",{"lineHeight":"44px","fontWeight":"700"}],"display-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"mono-data":["13px",{"lineHeight":"18px","fontWeight":"500"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"mono-score":["28px",{"lineHeight":"32px","fontWeight":"700"}],"headline-lg":["24px",{"lineHeight":"32px","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col flex-1 min-h-0"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-surface-container-low"><div class="w-9 h-9 rounded bg-primary-container flex items-center justify-center text-on-primary font-mono-score text-headline-sm select-none">M</div><div class="flex flex-col leading-tight"><span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">SIGLIM</span><span class="font-label-sm text-label-sm text-secondary uppercase">Morelia Futbol</span></div></div><div class="px-space-md py-space-sm"><span class="px-space-sm font-label-sm text-label-sm text-secondary uppercase tracking-wider">Administración</span></div><nav class="flex-1 px-space-sm space-y-space-xs overflow-y-auto" data-active-classes="bg-primary-container text-on-primary font-semibold"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="inicio" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Inicio</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="arbitros" href="#"><span class="material-symbols-outlined text-[20px]">sports</span><span>Árbitros</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="designaciones" href="#"><span class="material-symbols-outlined text-[20px]">assignment_ind</span><span>Designaciones</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="cedulas-y-partidos" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span>Cédulas y Partidos</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="canchas" href="#"><span class="material-symbols-outlined text-[20px]">stadium</span><span>Canchas</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="auditoria" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Auditoría</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="configuracion" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Configuración</span></a></nav></div><div class="p-space-md bg-surface-container-low m-space-sm rounded-lg"><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm text-label-sm text-on-surface font-semibold">SIGLIM v2.4</span><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>Operativo</span></div><p class="font-body-sm text-body-sm text-secondary">Comisión Arbitral</p></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex items-center justify-between px-margin-desktop"><div class="flex items-center gap-space-md"><div class="inline-flex items-center gap-space-sm px-space-md py-space-xs rounded-lg bg-surface-container"><span class="material-symbols-outlined text-primary-container text-[18px]">event</span><span class="font-label-md text-label-md text-on-surface font-medium">Temporada 2025–2026</span><span class="inline-flex items-center px-space-xs py-0.5 rounded bg-primary-fixed font-label-sm text-label-sm text-on-primary-fixed-variant uppercase font-semibold">Activa</span></div></div><div class="flex items-center gap-space-lg"><button aria-label="Notificaciones" class="relative p-space-sm rounded-lg text-secondary hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-tertiary-container"></span></button><div class="flex items-center gap-space-md pl-space-md"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Administrador Principal</span><span class="font-label-sm text-label-sm text-secondary leading-tight">Comisión de Arbitraje</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Sub-header / Breadcrumbs & Regulatory Notice Banner -->
+<section class="bg-surface-container-low px-margin-desktop py-space-md shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-space-sm">
+<nav aria-label="Ruta de navegación" class="flex items-center gap-space-xs text-secondary font-label-sm text-label-sm">
+<span class="hover:text-on-surface transition-colors">Cédulas y Partidos</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-on-surface transition-colors">Temporada 2025–2026</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-on-surface transition-colors">Comisión de Arbitraje</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="font-semibold text-on-surface">Cédulas Pendientes de Dictamen</span>
+</nav>
+<div class="flex items-center gap-space-sm self-start md:self-auto">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-mono-data text-body-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+          No oficial · Demostración
+        </span>
+<span class="font-mono-data text-body-sm text-secondary bg-surface-container-lowest px-2 py-0.5 rounded">
+          FOLIO-SESIÓN: COM-ARB-2025-W45
+        </span>
+</div>
+</div>
+</section>
+<!-- Page Header & Metrics Summary -->
+<header class="px-margin-desktop pt-space-xl pb-space-lg bg-surface">
+<div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-space-lg">
+<div class="flex flex-col max-w-3xl">
+<div class="flex items-center gap-space-sm mb-space-xs">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded bg-tertiary-fixed text-tertiary font-label-sm text-label-sm uppercase font-bold tracking-wider">
+<span class="material-symbols-outlined text-[14px]">emergency</span>
+            Incidencia Reglamentaria Activa
+          </span>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">
+            Órgano Superior de Justiprecio
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+          Cédulas Pendientes de Validación Arbitral
+        </h1>
+<p class="font-body-md text-body-md text-secondary mt-1">
+          Módulo colegiado de fiscalización de actas arbitrales de la Liga Municipal de Futbol Amateur Morelia A.C. Control estatutario de plazos de ratificación por árbitros designados y resoluciones en suplencia administrativa.
+        </p>
+</div>
+<!-- Quick Status Badges Box -->
+<div class="flex flex-wrap items-center gap-space-sm bg-surface-container-lowest p-space-sm rounded-lg shadow-sm">
+<div class="flex items-center gap-2 px-space-md py-space-xs bg-surface-container-low rounded">
+<span class="material-symbols-outlined text-primary text-[20px]">gavel</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary">Instancia</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Pleno Comisorio</span>
+</div>
+</div>
+<div class="flex items-center gap-2 px-space-md py-space-xs bg-surface-container-low rounded">
+<span class="material-symbols-outlined text-primary text-[20px]">rule</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary">Fundamento</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Regla RF-124</span>
+</div>
+</div>
+</div>
+</div>
+<!-- KPI Metric Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop mt-space-xl">
+<!-- Card 1: Vencidas -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-bold tracking-wider">
+              Plazo Vencido (&gt; 48 hrs)
+            </span>
+<span class="font-body-sm text-body-sm text-secondary mt-0.5">
+              Requieren Dictamen Extraordinario (RF-124)
+            </span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-tertiary-container flex items-center justify-center text-on-tertiary">
+<span class="material-symbols-outlined text-[24px]">timer_off</span>
+</div>
+</div>
+<div class="mt-space-lg flex items-baseline justify-between">
+<div class="flex items-baseline gap-2">
+<span class="font-mono-score text-mono-score text-tertiary">03</span>
+<span class="font-body-sm text-body-sm font-semibold text-secondary">cédulas críticas</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-tertiary-fixed text-tertiary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[12px]">priority_high</span> Urgente
+          </span>
+</div>
+</div>
+<!-- Card 2: En Plazo -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">
+              En Plazo Reglamentario
+            </span>
+<span class="font-body-sm text-body-sm text-secondary mt-0.5">
+              En poder del árbitro central designado
+            </span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">pending_actions</span>
+</div>
+</div>
+<div class="mt-space-lg flex items-baseline justify-between">
+<div class="flex items-baseline gap-2">
+<span class="font-mono-score text-mono-score text-on-surface">09</span>
+<span class="font-body-sm text-body-sm font-semibold text-secondary">en revisión colegiada</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold">
+            Estatuto 48h
+          </span>
+</div>
+</div>
+<!-- Card 3: Tiempo promedio -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">
+              Tiempo Promedio Validación
+            </span>
+<span class="font-body-sm text-body-sm text-secondary mt-0.5">
+              Jornada actual (J07) · Colegio de Árbitros
+            </span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-[24px]">avg_pace</span>
+</div>
+</div>
+<div class="mt-space-lg flex items-baseline justify-between">
+<div class="flex items-baseline gap-1">
+<span class="font-mono-score text-mono-score text-primary">28.4</span>
+<span class="font-body-sm text-body-sm font-semibold text-secondary">horas</span>
+</div>
+<div class="flex items-center gap-1 text-primary font-mono-data text-body-sm">
+<span class="material-symbols-outlined text-[16px]">trending_down</span>
+<span>-3.2h vs J06</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Mandatory Segregation of Duties Notice -->
+<div class="mt-space-lg bg-surface-container-high rounded-xl p-space-md flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-8 h-8 rounded-full bg-primary flex-shrink-0 flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wide">
+            Regla de Segregación de Funciones (VAL-021)
+          </span>
+<p class="font-body-sm text-body-sm text-on-surface">
+            Quien capturó la cédula no puede aprobarla. Toda resolución de la Comisión se asienta en el Libro de Gobierno Arbitral institucional para auditoría federativa.
+          </p>
+</div>
+</div>
+<span class="self-start sm:self-auto font-mono-data text-body-sm px-2.5 py-1 rounded bg-surface-container-lowest text-secondary uppercase tracking-wider font-semibold">
+        AUD-OK-2025
+      </span>
+</div>
+</header>
+<!-- Main Work Area / Split Layout -->
+<div class="px-margin-desktop pb-space-xl grid grid-cols-1 xl:grid-cols-12 gap-gutter-desktop items-start">
+<!-- Left Column: Tabs and Dense Data Tables (7 of 12 columns) -->
+<div class="xl:col-span-7 flex flex-col gap-space-lg">
+<!-- Nav Tabs -->
+<div class="flex items-center gap-space-xs bg-surface-container-low p-1.5 rounded-xl">
+<button class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md font-semibold shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-tertiary text-[18px]">error</span>
+<span>Plazo vencido</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container text-on-tertiary font-mono-data text-body-sm font-bold">
+            3
+          </span>
+</button>
+<button class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-all font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px]">hourglass_top</span>
+<span>Pendientes del árbitro</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-mono-data text-body-sm">
+            9
+          </span>
+</button>
+</div>
+<!-- Section: Active Tab Table "Plazo Vencido (3)" -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="px-space-lg py-space-md bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[20px]">warning</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">
+              Expedientes para Dictamen en Suplencia
+            </span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-bold tracking-wider">
+            Prioridad Alta
+          </span>
+</div>
+<!-- Table View -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-secondary font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-space-sm px-space-md font-semibold">Folio y Partido</th>
+<th class="py-space-sm px-space-md font-semibold">Árbitro Designado</th>
+<th class="py-space-sm px-space-md font-semibold">Captura</th>
+<th class="py-space-sm px-space-md font-semibold text-right">Plazo y Expiración</th>
+<th class="py-space-sm px-space-md font-semibold text-center">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-sm text-body-sm">
+<!-- Row 1: Selected Item (Halcones FC vs Toros) -->
+<tr class="bg-surface-container-high/40 hover:bg-surface-container-high transition-colors">
+<td class="py-space-md px-space-md align-top">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-mono-data font-bold text-on-surface">CED-2025-J07-018</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-secondary text-[10px] font-mono-data">Jornada 7</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-0.5">
+                      Halcones FC vs Toros de Santa María
+                    </span>
+<span class="text-secondary text-[11px] mt-0.5">
+                      Libre Primera · Grupo A · Cancha UD Cuauhtémoc 2
+                    </span>
+</div>
+</td>
+<td class="py-space-md px-space-md align-top">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface leading-snug">Lic. Roberto Carlos Mendoza</span>
+<span class="text-secondary text-[11px] font-mono-data">ARB-2025-081 · Col. Michoacán</span>
+<span class="inline-flex items-center gap-1 text-tertiary text-[11px] font-semibold mt-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Sin respuesta
+                    </span>
+</div>
+</td>
+<td class="py-space-md px-space-md align-top">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">Dom 09 Nov, 12:45 hrs</span>
+<span class="text-secondary text-[11px]">Martín Salgado (CAP-084)</span>
+</div>
+</td>
+<td class="py-space-md px-space-md align-top text-right">
+<div class="flex flex-col items-end">
+<div class="w-24 bg-surface-container rounded-full h-1.5 mb-1 overflow-hidden">
+<div class="bg-tertiary h-1.5 rounded-full w-full"></div>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-tertiary text-[14px]">warning</span>
+<span class="font-mono-data text-body-sm font-bold text-tertiary">Vencido hace 6 h</span>
+</div>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="font-label-sm text-[10px] text-secondary">48h límite</span>
+<span class="px-1 py-0.2 rounded bg-secondary-fixed text-on-secondary-fixed-variant text-[9px] font-bold">No oficial</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md align-top text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="h-9 px-space-sm rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold flex items-center gap-1 hover:bg-primary-container transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">rate_review</span>
+<span>En revisión</span>
+</button>
+<button aria-label="Opciones" class="h-9 w-9 flex items-center justify-center rounded-lg text-secondary hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Félix Ireta vs Canarios Morelia -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-space-md px-space-md align-top">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-mono-data font-bold text-on-surface">CED-2025-J07-024</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-secondary text-[10px] font-mono-data">Jornada 7</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-0.5">
+                      Félix Ireta vs Canarios Morelia
+                    </span>
+<span class="text-secondary text-[11px] mt-0.5">
+                      Intermedia · Grupo B · Cancha Félix Ireta 1
+                    </span>
+</div>
+</td>
+<td class="py-space-md px-space-md align-top">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface leading-snug">Ing. Salvador Raya Gil</span>
+<span class="text-secondary text-[11px] font-mono-data">ARB-2025-042 · Colegio Morelia</span>
+<span class="inline-flex items-center gap-1 text-tertiary text-[11px] font-semibold mt-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Sin respuesta
+                    </span>
+</div>
+</td>
+<td class="py-space-md px-space-md align-top">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">Dom 09 Nov, 10:15 hrs</span>
+<span class="text-secondary text-[11px]">Gerardo Ruiz (CAP-012)</span>
+</div>
+</td>
+<td class="py-space-md px-space-md align-top text-right">
+<div class="flex flex-col items-end">
+<div class="w-24 bg-surface-container rounded-full h-1.5 mb-1 overflow-hidden">
+<div class="bg-tertiary h-1.5 rounded-full w-full"></div>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-tertiary text-[14px]">warning</span>
+<span class="font-mono-data text-body-sm font-bold text-tertiary">Vencido hace 14 h</span>
+</div>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="font-label-sm text-[10px] text-secondary">48h límite</span>
+<span class="px-1 py-0.2 rounded bg-secondary-fixed text-on-secondary-fixed-variant text-[9px] font-bold">No oficial</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md align-top text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="h-9 px-space-sm rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1 hover:bg-primary hover:text-on-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">rate_review</span>
+<span>Revisar</span>
+</button>
+<button aria-label="Opciones" class="h-9 w-9 flex items-center justify-center rounded-lg text-secondary hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: San Juanito FC vs Indeco FC -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-space-md px-space-md align-top">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-mono-data font-bold text-on-surface">CED-2025-J07-031</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-secondary text-[10px] font-mono-data">Jornada 7</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-0.5">
+                      San Juanito FC vs Indeco FC
+                    </span>
+<span class="text-secondary text-[11px] mt-0.5">
+                      Juvenil Especial · Cancha Rincón de Punhuato
+                    </span>
+</div>
+</td>
+<td class="py-space-md px-space-md align-top">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface leading-snug">C. Marco Antonio Villa</span>
+<span class="text-secondary text-[11px] font-mono-data">ARB-2025-115 · Colegio Morelia</span>
+<span class="inline-flex items-center gap-1 text-tertiary text-[11px] font-semibold mt-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Sin respuesta
+                    </span>
+</div>
+</td>
+<td class="py-space-md px-space-md align-top">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">Dom 09 Nov, 16:30 hrs</span>
+<span class="text-secondary text-[11px]">Ana Morales (CAP-039)</span>
+</div>
+</td>
+<td class="py-space-md px-space-md align-top text-right">
+<div class="flex flex-col items-end">
+<div class="w-24 bg-surface-container rounded-full h-1.5 mb-1 overflow-hidden">
+<div class="bg-tertiary h-1.5 rounded-full w-full"></div>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-tertiary text-[14px]">warning</span>
+<span class="font-mono-data text-body-sm font-bold text-tertiary">Vencido hace 2 h</span>
+</div>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="font-label-sm text-[10px] text-secondary">48h límite</span>
+<span class="px-1 py-0.2 rounded bg-secondary-fixed text-on-secondary-fixed-variant text-[9px] font-bold">No oficial</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md align-top text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="h-9 px-space-sm rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1 hover:bg-primary hover:text-on-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">rate_review</span>
+<span>Revisar</span>
+</button>
+<button aria-label="Opciones" class="h-9 w-9 flex items-center justify-center rounded-lg text-secondary hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Contrast Section: Preview of "Pendientes del Árbitro" (In time) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">schedule</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">
+                Muestreo: Cédulas en Plazo Reglamentario (9 en trámite)
+              </span>
+<span class="font-body-sm text-body-sm text-secondary">
+                La Comisión de Arbitraje sólo tiene facultades de consulta informativa hasta el agotamiento de las 48h.
+              </span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-secondary font-mono-data text-body-sm font-semibold">
+            Silbantes en tiempo
+          </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Sample In-Time Card 1 -->
+<div class="bg-surface-container-low rounded-lg p-space-md flex flex-col justify-between gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-mono-data text-body-sm text-secondary font-semibold">CED-2025-J07-040</span>
+<span class="font-label-md text-label-md text-on-surface font-bold mt-0.5">Tiripetío FC vs Deportivo Cosmos</span>
+<span class="text-[11px] text-secondary">Árbitro: Prof. Daniel Arévalo · ARB-2025-014</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-mono-data text-[11px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Vence en 26 h
+              </span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full w-[45%]"></div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-body-sm text-body-sm text-secondary">Capturado hace 22 h</span>
+<button class="h-8 px-space-md rounded bg-surface-container-lowest text-on-surface font-label-md text-body-sm hover:bg-surface-container transition-colors shadow-sm" type="button">
+                Ver acta borrador
+              </button>
+</div>
+</div>
+<!-- Sample In-Time Card 2 -->
+<div class="bg-surface-container-low rounded-lg p-space-md flex flex-col justify-between gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-mono-data text-body-sm text-secondary font-semibold">CED-2025-J07-048</span>
+<span class="font-label-md text-label-md text-on-surface font-bold mt-0.5">Real Morelia vs Atlético Vasco</span>
+<span class="text-[11px] text-secondary">Árbitro: C. Jaime Calderón · ARB-2025-067</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-mono-data text-[11px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Vence en 34 h
+              </span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full w-[29%]"></div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-body-sm text-body-sm text-secondary">Capturado hace 14 h</span>
+<button class="h-8 px-space-md rounded bg-surface-container-lowest text-on-surface font-label-md text-body-sm hover:bg-surface-container transition-colors shadow-sm" type="button">
+                Ver acta borrador
+              </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Institutional Resolution Panel / Modal View (5 of 12 columns) -->
+<div class="xl:col-span-5 bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col gap-space-lg">
+<!-- Panel Header -->
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-tertiary-container flex items-center justify-center text-on-tertiary">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">
+              Expediente en Sesión Extraordinaria
+            </span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">
+              Resolución de Cédula Vencida
+            </span>
+</div>
+</div>
+<button class="p-1 rounded text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" title="Cerrar panel" type="button">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</div>
+<!-- Statutory Warning Block (Amber/Gold alert) -->
+<div class="rounded-xl p-space-md bg-secondary-fixed/50 flex flex-col gap-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">warning</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">
+            Facultad de Suplencia Estatutaria (RF-124)
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          El árbitro no respondió en el plazo de 48 h (<span class="font-mono-data font-semibold">No oficial</span>). La Comisión de Arbitraje está plenamente facultada para resolver y aprobar esta cédula en suplencia estatutaria conforme a la Regla RF-124 del Estatuto de Competencia de la Liga Municipal Morelia.
+        </p>
+</div>
+<!-- Match Metadata Summary Block -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-mono-data text-headline-sm font-bold text-on-surface">CED-2025-J07-018</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-sm text-[11px] font-semibold">Jornada 7</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-bold uppercase">
+            Finalizado
+          </span>
+</div>
+<!-- High-Contrast Scoreboard -->
+<div class="bg-on-secondary-fixed rounded-xl p-space-md text-on-secondary flex flex-col items-center justify-center">
+<div class="grid grid-cols-5 items-center w-full text-center">
+<div class="col-span-2 text-right">
+<span class="font-headline-sm text-headline-sm font-bold block truncate">Halcones FC</span>
+<span class="font-label-sm text-[11px] text-surface-container-high">Local</span>
+</div>
+<div class="col-span-1 flex items-center justify-center gap-2">
+<span class="font-mono-score text-mono-score text-primary-fixed font-bold">2</span>
+<span class="font-mono-score text-mono-score text-surface-variant font-light">–</span>
+<span class="font-mono-score text-mono-score text-primary-fixed font-bold">1</span>
+</div>
+<div class="col-span-2 text-left">
+<span class="font-headline-sm text-headline-sm font-bold block truncate">Toros de Santa María</span>
+<span class="font-label-sm text-[11px] text-surface-container-high">Visitante</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center gap-space-md text-surface-variant font-mono-data text-body-sm">
+<span>90:00 Reg.</span>
+<span>·</span>
+<span>Cancha Cuauhtémoc 2</span>
+</div>
+</div>
+<!-- Disciplinary & Incidents Summary Badges -->
+<div class="grid grid-cols-3 gap-space-sm text-center">
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex flex-col items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">sports_soccer</span>
+<span class="font-mono-score text-headline-sm text-on-surface font-bold mt-0.5">3</span>
+<span class="font-label-sm text-[10px] text-secondary uppercase font-semibold">Goles Asentados</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex flex-col items-center justify-center shadow-sm">
+<div class="w-3.5 h-4.5 rounded bg-tertiary-container my-0.5"></div>
+<span class="font-mono-score text-headline-sm text-tertiary font-bold mt-0.5">1</span>
+<span class="font-label-sm text-[10px] text-secondary uppercase font-semibold">Roja Directa</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex flex-col items-center justify-center shadow-sm">
+<div class="w-3.5 h-4.5 rounded bg-amber-400 my-0.5"></div>
+<span class="font-mono-score text-headline-sm text-on-surface font-bold mt-0.5">1</span>
+<span class="font-label-sm text-[10px] text-secondary uppercase font-semibold">Amonestación</span>
+</div>
+</div>
+<!-- Incident Detailed List -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg flex flex-col gap-space-xs shadow-sm">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">
+            Detalle de Incidencias en Acta de Campo
+          </span>
+<div class="flex items-center justify-between text-body-sm py-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-3.5 rounded bg-tertiary-container inline-block"></span>
+<span class="font-medium text-on-surface">#04 M. Pantoja (Halcones FC)</span>
+</div>
+<span class="font-mono-data text-secondary text-[12px]">Min 64' · Conducta Violenta</span>
+</div>
+<div class="flex items-center justify-between text-body-sm py-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-3.5 rounded bg-amber-400 inline-block"></span>
+<span class="font-medium text-on-surface">#10 J. Solís (Toros Sta. María)</span>
+</div>
+<span class="font-mono-data text-secondary text-[12px]">Min 32' · Juego Peligroso</span>
+</div>
+</div>
+<!-- Defaulting Referee Card -->
+<div class="flex items-center justify-between p-space-sm bg-surface-container-lowest rounded-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]">sports</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-body-sm font-semibold text-on-surface">Lic. Roberto Carlos Mendoza</span>
+<span class="text-[11px] font-mono-data text-secondary">Colegiado ARB-2025-081 · Omisión: 54h transcurridas</span>
+</div>
+</div>
+<button class="text-primary hover:underline font-label-sm text-[12px] font-semibold flex items-center gap-0.5" type="button">
+<span>Expediente</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</button>
+</div>
+</div>
+<!-- Formal Commission Decision Form -->
+<form class="flex flex-col gap-space-md" onsubmit="event.preventDefault();">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md font-semibold text-on-surface flex items-center justify-between" for="motivo-resolucion">
+<span>Motivo de la resolución de la Comisión <span class="text-tertiary font-bold">*</span></span>
+<span class="font-body-sm text-[11px] text-secondary">Obligatorio (Estatuto RF-124)</span>
+</label>
+<textarea class="w-full p-space-sm rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm resize-none" id="motivo-resolucion" placeholder="Asiente la justificación fundamentada para validar o devolver el resultado ante la omisión del silbante..." required="" rows="4"></textarea>
+<span class="text-[11px] text-secondary font-mono-data">
+            Se registrará en el Acta de Gobierno Tomo XIV, Folio 289 con firma del Comisionado actuante.
+          </span>
+</div>
+<!-- Actions Cluster -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<!-- Primary: Approve RF-124 -->
+<button class="w-full h-11 px-space-md rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold flex items-center justify-center gap-2 hover:bg-primary-container transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Aprobar cédula en suplencia (RF-124)</span>
+</button>
+<p class="text-center font-body-sm text-[11px] text-secondary">
+            Al aprobarse, el resultado 2–1 será asentado de forma irrevocable en la tabla oficial de posiciones.
+          </p>
+<!-- Secondary Action: Return to Capturist -->
+<button class="w-full h-11 px-space-md rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md font-semibold flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+<span>Devolver cédula al capturista para cotejo</span>
+</button>
+<!-- Tertiary Action: Cancel -->
+<button class="w-full h-10 px-space-md text-secondary hover:text-on-surface transition-colors font-label-md text-body-sm" type="button">
+            Cancelar dictamen y cerrar vista
+          </button>
+</div>
+</form>
+</div>
+</div>
+</div></main></div></body></html>

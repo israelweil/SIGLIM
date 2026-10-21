@@ -1,0 +1,1047 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-surface":"#0b1c30","tertiary":"#762730","surface-container-lowest":"#ffffff","on-background":"#0b1c30","secondary-fixed-dim":"#bec6e0","surface-container-highest":"#d3e4fe","surface-container-high":"#dce9ff","secondary-fixed":"#dae2fc","on-tertiary-container":"#ffc3c5","on-primary-fixed-variant":"#00522a","tertiary-fixed-dim":"#ffb3b6","tertiary-fixed":"#ffdada","surface-container":"#e5eeff","primary-container":"#006837","on-secondary-container":"#5a6278","on-error":"#ffffff","surface-container-low":"#eff4ff","on-secondary-fixed":"#131b2e","on-error-container":"#93000a","surface-variant":"#d3e4fe","inverse-on-surface":"#eaf1ff","surface-bright":"#f8f9ff","background":"#f8f9ff","outline-variant":"#bec9be","error":"#ba1a1a","surface-dim":"#cbdbf5","primary-fixed":"#9ef6b6","outline":"#6f7a70","on-tertiary":"#ffffff","primary-fixed-dim":"#83d99c","on-primary-fixed":"#00210e","on-tertiary-fixed-variant":"#7b2b34","inverse-surface":"#213145","secondary":"#565e74","on-secondary-fixed-variant":"#3f465b","on-primary-container":"#8ee4a6","error-container":"#ffdad6","surface":"#f8f9ff","on-tertiary-fixed":"#40000c","surface-tint":"#0b6d3b","on-secondary":"#ffffff","on-primary":"#ffffff","primary":"#004d27","secondary-container":"#d8dff9","tertiary-container":"#943e46","on-surface-variant":"#3f4940","inverse-primary":"#83d99c"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-lg":"1rem","gutter":"1rem","margin":"1rem","space-md":"0.75rem","margin-desktop":"2rem","space-xs":"0.25rem","gutter-desktop":"1.5rem","space-xl":"1.5rem","space-sm":"0.5rem"},"fontFamily":{"label-md":["Inter"],"mono-data":["JetBrains Mono"],"headline-md":["Inter"],"mono-score":["JetBrains Mono"],"display-lg-mobile":["Inter"],"headline-lg":["Inter"],"body-md":["Inter"],"headline-sm":["Inter"],"body-sm":["Inter"],"label-sm":["Inter"],"display-lg":["Inter"],"body-lg":["Inter"]},"fontSize":{"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"mono-data":["13px",{"lineHeight":"18px","fontWeight":"500"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"mono-score":["28px",{"lineHeight":"32px","fontWeight":"700"}],"display-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"700"}],"headline-lg":["24px",{"lineHeight":"32px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"600"}],"display-lg":["36px",{"lineHeight":"44px","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col h-full"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-surface-container-lowest"><div class="w-9 h-9 rounded bg-primary flex items-center justify-center text-on-primary font-headline-sm text-headline-sm">S</div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-semibold">SIGLIM</span><span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Liga Morelia</span></div></div><div class="px-space-md py-space-sm"><div class="bg-surface-container-low px-space-sm py-space-xs rounded-lg flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary-container"></span><span class="font-label-sm text-label-sm text-on-surface">Temporada 2025–2026</span></div><span class="font-label-sm text-label-sm uppercase text-on-primary-fixed-variant bg-primary-fixed px-space-xs py-0.5 rounded">Activa</span></div></div><div class="flex-1 overflow-y-auto px-space-sm py-space-xs"><nav class="space-y-1" data-active-classes="bg-primary-container text-on-primary font-label-md"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="inicio" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span>Inicio</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="mi-club-organizacion" href="#"><span class="material-symbols-outlined text-[20px]">shield_person</span>Mi club / Organización</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="clubes" href="#"><span class="material-symbols-outlined text-[20px]">shield</span>Clubes</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="jugadores" href="#"><span class="material-symbols-outlined text-[20px]">groups</span>Jugadores</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="arbitros" href="#"><span class="material-symbols-outlined text-[20px]">sports</span>Árbitros</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="validacion-de-registros" href="#"><span class="material-symbols-outlined text-[20px]">how_to_reg</span>Validación de registros</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="cedulas-y-partidos" href="#"><span class="material-symbols-outlined text-[20px]">assignment</span>Cédulas y Partidos</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="tesoreria" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>Tesorería</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="auditoria" href="#"><span class="material-symbols-outlined text-[20px]">policy</span>Auditoría</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="roles-y-permisos" href="#"><span class="material-symbols-outlined text-[20px]">badge</span>Roles y Permisos</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="configuracion" href="#"><span class="material-symbols-outlined text-[20px]">settings</span>Configuración</a></nav></div><div class="p-space-sm bg-surface-container-low"><div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><span class="font-label-sm text-label-sm text-secondary uppercase block mb-1">Vista Simulada</span><div class="flex items-center justify-between"><span class="font-body-sm text-body-sm text-on-surface font-medium truncate">Halcones FC (Club)</span><span class="material-symbols-outlined text-outline text-[18px]">swap_horiz</span></div></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-margin-desktop"><div class="flex items-center gap-space-md"><span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Liga Municipal de Futbol Amateur Morelia</span><span class="hidden xl:inline-flex items-center font-mono-data text-mono-data px-space-sm py-0.5 rounded bg-surface-container text-on-secondary-container">SIGLIM v2.4</span></div><div class="flex items-center gap-space-lg"><div class="hidden md:flex items-center gap-space-xs bg-surface-container px-space-md py-space-xs rounded-full"><span class="font-label-sm text-label-sm text-secondary">Rol:</span><span class="font-label-sm text-label-sm text-on-surface font-semibold">Comisión de Arbitraje / Colegio de Árbitros</span></div><button aria-label="Notificaciones" class="relative p-space-xs rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm"><div class="hidden lg:flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-medium">Oficial de Arbitraje</span><span class="font-body-sm text-body-sm text-secondary">Colegio Morelia</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-16 w-full px-margin-desktop py-space-xl bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Bar / Breadcrumb / Mode Notice -->
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-space-md gap-space-sm">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Temporada Oficial 2025–2026</span>
+<span class="text-outline-variant font-bold">/</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold uppercase">Cédulas y Colegiados</span>
+<span class="bg-surface-container-high text-on-secondary-container px-space-xs py-0.5 rounded text-label-sm font-label-sm uppercase flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        Entorno Federado Oficial
+      </span>
+</div>
+<!-- Demo simulation tag -->
+<div class="flex items-center gap-space-xs bg-surface-container px-space-md py-1 rounded-full w-fit">
+<span class="material-symbols-outlined text-[16px] text-tertiary">info</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold uppercase">Insignia de Demostración «No Oficial»</span>
+</div>
+</div>
+<!-- Main Header Banner with Perspective Switcher -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm mb-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="space-y-1">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">Colegiado de Árbitros - Temporada 2025–2026</h1>
+<span class="bg-primary-container/10 text-primary-container px-space-xs py-0.5 rounded text-label-sm font-label-sm uppercase font-semibold">
+            Dictaminación Normativa
+          </span>
+</div>
+<p class="font-body-md text-body-md text-secondary">
+          Cotejo, homologación federativa y convalidación estatutaria de silbantes adscritos por clubes federados.
+        </p>
+</div>
+<!-- View Selector and Action Button -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-md">
+<!-- Switcher -->
+<div class="bg-surface-container-low p-1 rounded-lg flex items-center gap-1">
+<button class="px-space-md py-space-xs rounded-lg font-label-md text-label-md transition-all flex items-center gap-1.5 bg-surface-container-lowest text-primary-container shadow-sm font-semibold" id="viewBtnComision" onclick="switchPerspective('comision')">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Comisión de Arbitraje</span>
+</button>
+<button class="px-space-md py-space-xs rounded-lg font-label-md text-label-md transition-all flex items-center gap-1.5 text-on-surface-variant hover:text-on-surface" id="viewBtnClub" onclick="switchPerspective('club')">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+<span>Club (Halcones FC)</span>
+</button>
+</div>
+<!-- Action CTA: "+ Presentar árbitro" -->
+<button class="bg-primary-container hover:bg-primary text-on-primary px-space-lg py-2.5 rounded-lg font-label-md text-label-md font-semibold flex items-center justify-center gap-space-xs transition-colors shadow-sm" onclick="openModalRegistro()">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Presentar árbitro</span>
+</button>
+</div>
+</div>
+<!-- Club Perspective Context Notice (Visible dynamically) -->
+<div class="hidden mt-space-md p-space-md bg-secondary-container/40 rounded-lg flex flex-col md:flex-row md:items-center justify-between gap-space-sm" id="clubNotice">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-[24px]">shield</span>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Perspectiva: Directiva Halcones FC</span>
+<p class="font-body-sm text-body-sm text-secondary">Filtrado activo de colegiados postulados por tu personería. Revisa observaciones técnicas de la Comisión de Arbitraje.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-md bg-surface-container-lowest px-space-md py-space-xs rounded-lg shadow-sm">
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Cuota Halcones FC</span>
+<span class="font-mono-data text-mono-data font-bold text-on-surface">Equipos: 6 &nbsp;|&nbsp; Req: 2 &nbsp;|&nbsp; Presentados: 1</span>
+</div>
+<span class="bg-tertiary/10 text-tertiary px-space-xs py-1 rounded text-label-sm font-label-sm font-bold uppercase">Déficit: -1</span>
+</div>
+</div>
+</div>
+<!-- Status Tabs With Real-time Filter Counters -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xs shadow-sm mb-space-lg flex items-center gap-1 overflow-x-auto">
+<button class="tab-btn px-space-md py-space-xs rounded-lg font-label-md text-label-md flex items-center gap-space-xs transition-colors bg-primary-container text-on-primary font-semibold" id="tabPorValidar" onclick="filterByTab('por-validar')">
+<span class="material-symbols-outlined text-[18px]">pending_actions</span>
+<span>Por validar</span>
+<span class="bg-on-primary/20 text-on-primary px-space-xs py-0.5 rounded-full font-mono-data text-body-sm text-xs font-bold" id="badgePorValidar">4</span>
+</button>
+<button class="tab-btn px-space-md py-space-xs rounded-lg font-label-md text-label-md flex items-center gap-space-xs transition-colors text-on-surface-variant hover:bg-surface-container-high" id="tabValidados" onclick="filterByTab('validados')">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Validados</span>
+<span class="bg-surface-container text-secondary px-space-xs py-0.5 rounded-full font-mono-data text-body-sm text-xs">38</span>
+</button>
+<button class="tab-btn px-space-md py-space-xs rounded-lg font-label-md text-label-md flex items-center gap-space-xs transition-colors text-on-surface-variant hover:bg-surface-container-high" id="tabRechazados" onclick="filterByTab('rechazados')">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+<span>Rechazados</span>
+<span class="bg-tertiary-fixed-dim/40 text-tertiary px-space-xs py-0.5 rounded-full font-mono-data text-body-sm text-xs font-semibold">3</span>
+</button>
+<button class="tab-btn px-space-md py-space-xs rounded-lg font-label-md text-label-md flex items-center gap-space-xs transition-colors text-on-surface-variant hover:bg-surface-container-high" id="tabBajas" onclick="filterByTab('bajas')">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+<span>Historial de Bajas</span>
+<span class="bg-surface-container text-secondary px-space-xs py-0.5 rounded-full font-mono-data text-body-sm text-xs">12</span>
+</button>
+<div class="ml-auto pr-space-sm hidden xl:flex items-center gap-space-sm text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-outline">schedule</span>
+<span>Cierre de Homologación: 15 Noviembre 2025</span>
+</div>
+</div>
+<!-- Main Grid: 70% Left (Table & Filters) - 30% Right (Quota Card & Normative) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- Left Column: Arbitrators Table (12 cols mobile, 8 or 8.5 cols desktop) -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<!-- Filters Toolbar -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row items-center justify-between gap-space-md">
+<!-- Search Input -->
+<div class="relative w-full md:w-72">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full pl-10 pr-space-md py-2 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container" id="searchInput" oninput="applyFilters()" placeholder="Buscar por nombre o cédula..." type="text">
+</div>
+<div class="flex items-center gap-space-sm w-full md:w-auto flex-wrap">
+<!-- Club Filter -->
+<div class="relative flex-1 sm:flex-none">
+<select class="w-full sm:w-44 px-space-md py-2 bg-surface-container-low rounded-lg font-label-md text-label-md text-on-surface appearance-none focus:outline-none focus:ring-2 focus:ring-primary-container cursor-pointer pr-8" id="clubFilter" onchange="applyFilters()">
+<option value="all">Todos los Clubes</option>
+<option value="Halcones FC">Halcones FC</option>
+<option value="Deportivo Indeco">Deportivo Indeco</option>
+<option value="Real Atapaneo">Real Atapaneo</option>
+<option value="Fuerza Morelia">Fuerza Morelia</option>
+<option value="Atlético Valladolid">Atlético Valladolid</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-sm top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[18px]">expand_more</span>
+</div>
+<!-- Category/Role Filter -->
+<div class="relative flex-1 sm:flex-none">
+<select class="w-full sm:w-44 px-space-md py-2 bg-surface-container-low rounded-lg font-label-md text-label-md text-on-surface appearance-none focus:outline-none focus:ring-2 focus:ring-primary-container cursor-pointer pr-8" id="roleFilter" onchange="applyFilters()">
+<option value="all">Categoría arbitral</option>
+<option value="Central">Árbitro Central</option>
+<option value="Asistente 1">Asistente 1</option>
+<option value="Asistente 2">Asistente 2</option>
+<option value="Cuarto Oficial">Cuarto Oficial</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-sm top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[18px]">expand_more</span>
+</div>
+<button class="p-2 bg-surface-container-low hover:bg-surface-container text-secondary rounded-lg transition-colors" onclick="resetFilters()" title="Restablecer filtros">
+<span class="material-symbols-outlined text-[20px]">filter_alt_off</span>
+</button>
+</div>
+</div>
+<!-- Dense Arbitrators Table Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-secondary font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-space-md px-space-md">Árbitro Postulado &amp; Cédula</th>
+<th class="py-space-md px-space-md">Club Postulante</th>
+<th class="py-space-md px-space-md">Fecha de Propuesta</th>
+<th class="py-space-md px-space-md">Dictamen</th>
+<th class="py-space-md px-space-md text-right">Acciones Normativas</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container" id="arbitrosTbody">
+<!-- Item 1: Roberto Carlos Mendoza (Propuesto) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors row-item" data-club="Halcones FC" data-id="1" data-name="Roberto Carlos Mendoza" data-role="Central" data-status="por-validar">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary font-headline-sm flex items-center justify-center font-bold flex-shrink-0 shadow-sm">
+                      RM
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Lic. Roberto Carlos Mendoza</span>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-secondary">
+<span class="material-symbols-outlined text-[14px] text-primary">badge</span>
+<span>Cédula: <strong class="font-mono-data text-mono-data text-on-surface">ARB-2025-081</strong></span>
+<span class="text-outline-variant font-bold">·</span>
+<span class="text-on-surface-variant font-medium">Nivel Estatal FMF (Central)</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-5 h-5 rounded bg-surface-container-highest flex items-center justify-center text-[10px] font-bold text-on-surface">H</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Halcones FC</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-mono-data text-mono-data text-secondary block">24 Oct 2025</span>
+<span class="font-body-sm text-body-sm text-outline">11:20 CST</span>
+</td>
+<td class="py-space-md px-space-md">
+<!-- Badge Propuesto -->
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold uppercase">
+<span class="material-symbols-outlined text-[15px] text-primary-container">pending</span>
+                    Propuesto
+                  </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs action-buttons">
+<button class="btn-validate bg-primary-container hover:bg-primary text-on-primary px-space-md py-1.5 rounded-lg font-label-sm text-label-sm font-semibold inline-flex items-center gap-1 transition-colors" onclick="validarArbitro(1, 'Lic. Roberto Carlos Mendoza')">
+<span class="material-symbols-outlined text-[16px]">done</span>
+                      Validar
+                    </button>
+<button class="btn-reject bg-surface-container text-tertiary hover:bg-tertiary-container hover:text-on-tertiary px-space-md py-1.5 rounded-lg font-label-sm text-label-sm font-semibold inline-flex items-center gap-1 transition-colors" onclick="openModalRechazo(1, 'Lic. Roberto Carlos Mendoza', 'Halcones FC')">
+<span class="material-symbols-outlined text-[16px]">close</span>
+                      Rechazar
+                    </button>
+<button class="p-1.5 hover:bg-surface-container-high rounded text-secondary hover:text-on-surface" onclick="verExpediente('Lic. Roberto Carlos Mendoza', 'ARB-2025-081', 'Halcones FC')" title="Ver expediente">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 2: Arq. Miguel Ángel Tinoco (Propuesto) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors row-item" data-club="Deportivo Indeco" data-id="2" data-name="Miguel Ángel Tinoco" data-role="Asistente 1" data-status="por-validar">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container font-headline-sm flex items-center justify-center font-bold flex-shrink-0 shadow-sm">
+                      MT
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Arq. Miguel Ángel Tinoco</span>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-secondary">
+<span class="material-symbols-outlined text-[14px] text-primary">badge</span>
+<span>Cédula: <strong class="font-mono-data text-mono-data text-on-surface">ARB-2025-104</strong></span>
+<span class="text-outline-variant font-bold">·</span>
+<span class="text-on-surface-variant font-medium">Delegación Morelia (Asistente 1)</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-5 h-5 rounded bg-surface-container-highest flex items-center justify-center text-[10px] font-bold text-on-surface">I</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Deportivo Indeco</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-mono-data text-mono-data text-secondary block">25 Oct 2025</span>
+<span class="font-body-sm text-body-sm text-outline">16:45 CST</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold uppercase">
+<span class="material-symbols-outlined text-[15px] text-primary-container">pending</span>
+                    Propuesto
+                  </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs action-buttons">
+<button class="btn-validate bg-primary-container hover:bg-primary text-on-primary px-space-md py-1.5 rounded-lg font-label-sm text-label-sm font-semibold inline-flex items-center gap-1 transition-colors" onclick="validarArbitro(2, 'Arq. Miguel Ángel Tinoco')">
+<span class="material-symbols-outlined text-[16px]">done</span>
+                      Validar
+                    </button>
+<button class="btn-reject bg-surface-container text-tertiary hover:bg-tertiary-container hover:text-on-tertiary px-space-md py-1.5 rounded-lg font-label-sm text-label-sm font-semibold inline-flex items-center gap-1 transition-colors" onclick="openModalRechazo(2, 'Arq. Miguel Ángel Tinoco', 'Deportivo Indeco')">
+<span class="material-symbols-outlined text-[16px]">close</span>
+                      Rechazar
+                    </button>
+<button class="p-1.5 hover:bg-surface-container-high rounded text-secondary hover:text-on-surface" onclick="verExpediente('Arq. Miguel Ángel Tinoco', 'ARB-2025-104', 'Deportivo Indeco')" title="Ver expediente">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 3: Jorge Arturo Pedraza (Propuesto) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors row-item" data-club="Real Atapaneo" data-id="3" data-name="Jorge Arturo Pedraza" data-role="Asistente 2" data-status="por-validar">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface font-headline-sm flex items-center justify-center font-bold flex-shrink-0 shadow-sm">
+                      JP
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Jorge Arturo Pedraza</span>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-secondary">
+<span class="material-symbols-outlined text-[14px] text-primary">badge</span>
+<span>Cédula: <strong class="font-mono-data text-mono-data text-on-surface">ARB-2025-119</strong></span>
+<span class="text-outline-variant font-bold">·</span>
+<span class="text-on-surface-variant font-medium">Colegio Michoacano (Asistente 2)</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-5 h-5 rounded bg-surface-container-highest flex items-center justify-center text-[10px] font-bold text-on-surface">A</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Real Atapaneo</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-mono-data text-mono-data text-secondary block">26 Oct 2025</span>
+<span class="font-body-sm text-body-sm text-outline">09:15 CST</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold uppercase">
+<span class="material-symbols-outlined text-[15px] text-primary-container">pending</span>
+                    Propuesto
+                  </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs action-buttons">
+<button class="btn-validate bg-primary-container hover:bg-primary text-on-primary px-space-md py-1.5 rounded-lg font-label-sm text-label-sm font-semibold inline-flex items-center gap-1 transition-colors" onclick="validarArbitro(3, 'Jorge Arturo Pedraza')">
+<span class="material-symbols-outlined text-[16px]">done</span>
+                      Validar
+                    </button>
+<button class="btn-reject bg-surface-container text-tertiary hover:bg-tertiary-container hover:text-on-tertiary px-space-md py-1.5 rounded-lg font-label-sm text-label-sm font-semibold inline-flex items-center gap-1 transition-colors" onclick="openModalRechazo(3, 'Jorge Arturo Pedraza', 'Real Atapaneo')">
+<span class="material-symbols-outlined text-[16px]">close</span>
+                      Rechazar
+                    </button>
+<button class="p-1.5 hover:bg-surface-container-high rounded text-secondary hover:text-on-surface" onclick="verExpediente('Jorge Arturo Pedraza', 'ARB-2025-119', 'Real Atapaneo')" title="Ver expediente">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 4: Fernando Villalobos Soto (Propuesto) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors row-item" data-club="Fuerza Morelia" data-id="4" data-name="Fernando Villalobos Soto" data-role="Cuarto Oficial" data-status="por-validar">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-primary/10 text-primary-container font-headline-sm flex items-center justify-center font-bold flex-shrink-0 shadow-sm">
+                      FV
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Fernando Villalobos Soto</span>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-secondary">
+<span class="material-symbols-outlined text-[14px] text-primary">badge</span>
+<span>Cédula: <strong class="font-mono-data text-mono-data text-on-surface">ARB-2025-142</strong></span>
+<span class="text-outline-variant font-bold">·</span>
+<span class="text-on-surface-variant font-medium">Asociación Michoacán (4to Oficial)</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-5 h-5 rounded bg-surface-container-highest flex items-center justify-center text-[10px] font-bold text-on-surface">F</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Fuerza Morelia</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-mono-data text-mono-data text-secondary block">26 Oct 2025</span>
+<span class="font-body-sm text-body-sm text-outline">18:10 CST</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold uppercase">
+<span class="material-symbols-outlined text-[15px] text-primary-container">pending</span>
+                    Propuesto
+                  </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs action-buttons">
+<button class="btn-validate bg-primary-container hover:bg-primary text-on-primary px-space-md py-1.5 rounded-lg font-label-sm text-label-sm font-semibold inline-flex items-center gap-1 transition-colors" onclick="validarArbitro(4, 'Fernando Villalobos Soto')">
+<span class="material-symbols-outlined text-[16px]">done</span>
+                      Validar
+                    </button>
+<button class="btn-reject bg-surface-container text-tertiary hover:bg-tertiary-container hover:text-on-tertiary px-space-md py-1.5 rounded-lg font-label-sm text-label-sm font-semibold inline-flex items-center gap-1 transition-colors" onclick="openModalRechazo(4, 'Fernando Villalobos Soto', 'Fuerza Morelia')">
+<span class="material-symbols-outlined text-[16px]">close</span>
+                      Rechazar
+                    </button>
+<button class="p-1.5 hover:bg-surface-container-high rounded text-secondary hover:text-on-surface" onclick="verExpediente('Fernando Villalobos Soto', 'ARB-2025-142', 'Fuerza Morelia')" title="Ver expediente">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 5: Mtro. Daniel Saucedo Parra (Validado) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors row-item" data-club="Atlético Valladolid" data-id="5" data-name="Daniel Saucedo Parra" data-role="Central" data-status="validados">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed font-headline-sm flex items-center justify-center font-bold flex-shrink-0 shadow-sm">
+                      DS
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Mtro. Daniel Saucedo Parra</span>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-secondary">
+<span class="material-symbols-outlined text-[14px] text-primary">badge</span>
+<span>Cédula: <strong class="font-mono-data text-mono-data text-on-surface">ARB-2024-033</strong></span>
+<span class="text-outline-variant font-bold">·</span>
+<span class="text-on-surface-variant font-medium">Árbitro Central FMF Convalidado</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-5 h-5 rounded bg-surface-container-highest flex items-center justify-center text-[10px] font-bold text-on-surface">V</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Atlético Valladolid</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-mono-data text-mono-data text-secondary block">18 Oct 2025</span>
+<span class="font-body-sm text-body-sm text-outline">14:00 CST</span>
+</td>
+<td class="py-space-md px-space-md">
+<!-- Badge Validado -->
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded bg-primary-fixed/60 text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold uppercase">
+<span class="material-symbols-outlined text-[15px] text-primary-container">check_circle</span>
+                    Validado
+                  </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1 pr-2">
+<span class="material-symbols-outlined text-[16px]">verified</span> Habilitado
+                    </span>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface px-space-md py-1.5 rounded-lg font-label-sm text-label-sm font-semibold transition-colors" onclick="verExpediente('Mtro. Daniel Saucedo Parra', 'ARB-2024-033', 'Atlético Valladolid')">
+                      Cédula
+                    </button>
+</div>
+</td>
+</tr>
+<!-- Item 6: Héctor Valenzuela (Rechazado) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors row-item" data-club="Halcones FC" data-id="6" data-name="Héctor Valenzuela" data-role="Asistente 1" data-status="rechazados">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-error-container text-error font-headline-sm flex items-center justify-center font-bold flex-shrink-0 shadow-sm">
+                      HV
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Héctor Valenzuela</span>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-secondary">
+<span class="material-symbols-outlined text-[14px] text-error">badge</span>
+<span>Cédula: <strong class="font-mono-data text-mono-data text-on-surface">ARB-2025-019</strong></span>
+<span class="text-outline-variant font-bold">·</span>
+<span class="text-on-surface-variant font-medium">Asistente 1</span>
+</div>
+<div class="mt-1 bg-error-container/40 p-1.5 rounded flex items-center gap-1.5 text-on-error-container font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[15px] text-error">error</span>
+<span class="truncate">Motivo: Falta certificación vigente de la Escuela Estatal de Árbitros</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-5 h-5 rounded bg-surface-container-highest flex items-center justify-center text-[10px] font-bold text-on-surface">H</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Halcones FC</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-mono-data text-mono-data text-secondary block">12 Oct 2025</span>
+<span class="font-body-sm text-body-sm text-outline">10:05 CST</span>
+</td>
+<td class="py-space-md px-space-md">
+<!-- Badge Rechazado -->
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold uppercase">
+<span class="material-symbols-outlined text-[15px]">cancel</span>
+                    Rechazado
+                  </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="bg-surface-container-high hover:bg-surface-container-highest text-on-surface px-space-md py-1.5 rounded-lg font-label-sm text-label-sm font-semibold inline-flex items-center gap-1 transition-colors" onclick="subsanarDictamen('Héctor Valenzuela')">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+                      Subsanar
+                    </button>
+<button class="p-1.5 hover:bg-surface-container-high rounded text-secondary hover:text-on-surface" onclick="verExpediente('Héctor Valenzuela', 'ARB-2025-019', 'Halcones FC')">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Count Info -->
+<div class="p-space-md bg-surface-container-lowest border-t border-surface-container flex flex-col sm:flex-row items-center justify-between gap-space-sm text-secondary font-body-sm text-body-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">gavel</span>
+<span>Comisión de Arbitraje de Morelia · Cédulas vinculadas al Sistema Oficial de Cédulas Digitales</span>
+</div>
+<span class="font-mono-data text-mono-data" id="tableCountSummary">Mostrando 6 registros de 47 colegiados adscritos</span>
+</div>
+</div>
+<!-- Quick Regulatory Guide Note -->
+<div class="p-space-md bg-surface-container-low rounded-xl flex items-start gap-space-md shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-[22px] mt-0.5">help</span>
+<div class="space-y-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Lineamientos de Validación 2025–2026</span>
+<p class="font-body-sm text-body-sm text-secondary">
+            Los silbantes propuestos por las directivas de club deben presentar constancia de aprobación física expedida en los últimos 6 meses por el Colegio Michoacano de Árbitros o la Delegación Estatal del Sector Amateur de la FMF. No se autoriza su programación en cédula oficial hasta ostentar el estatus <strong>«Validado»</strong>.
+          </p>
+</div>
+</div>
+</div>
+<!-- Right Column (Tarjeta de Cuota de Árbitros - 30% / 4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Cuota Card (Strict, Functional & High-Hierarchy) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<!-- Header with "Próximamente" Badge -->
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[20px]">assignment_turned_in</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Cuota de árbitros por club</span>
+</div>
+<span class="bg-surface-container-highest text-on-secondary-fixed px-space-xs py-0.5 rounded text-label-sm font-label-sm uppercase font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+            Próximamente
+          </span>
+</div>
+<!-- Statutory Rule -->
+<div class="bg-surface-container-low p-space-md rounded-lg space-y-1">
+<div class="flex items-center gap-1 text-primary-container font-label-sm text-label-sm uppercase font-bold">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>Art. 31 Reglamento General</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+            «Cada club afiliado debe presentar al menos <strong>1 árbitro colegiado certificado</strong> por cada <strong>4 equipos registrados</strong> en la temporada activa.»
+          </p>
+</div>
+<!-- Metric alert banner -->
+<div class="p-space-sm bg-tertiary-fixed/30 rounded-lg flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[20px]">warning</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold uppercase">
+            4 de 12 clubes requieren subsanar cuota mínima para la Jornada 1
+          </span>
+</div>
+<!-- Non-compliant Clubs List -->
+<div class="space-y-space-sm pt-space-xs">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block">Clubes en Déficit de Cuota Obligatoria</span>
+<!-- Club 1: Fuerza Morelia -->
+<div class="p-space-md bg-surface-container-low/70 rounded-lg flex flex-col gap-1 hover:bg-surface-container-high/40 transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Fuerza Morelia</span>
+<span class="bg-error-container text-on-error-container px-space-xs py-0.5 rounded text-label-sm font-label-sm font-bold uppercase">Falta 1</span>
+</div>
+<div class="flex items-center justify-between font-mono-data text-mono-data text-secondary text-xs">
+<span>Equipos regs: 6</span>
+<span>Req: 2 | Presentados: 1</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-surface-container rounded-full h-1.5 mt-1 overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 50%"></div>
+</div>
+</div>
+<!-- Club 2: Deportivo Indeco -->
+<div class="p-space-md bg-surface-container-low/70 rounded-lg flex flex-col gap-1 hover:bg-surface-container-high/40 transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Deportivo Indeco</span>
+<span class="bg-error-container text-on-error-container px-space-xs py-0.5 rounded text-label-sm font-label-sm font-bold uppercase">Falta 1</span>
+</div>
+<div class="flex items-center justify-between font-mono-data text-mono-data text-secondary text-xs">
+<span>Equipos regs: 4</span>
+<span>Req: 1 | Presentados: 0</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 mt-1 overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 0%"></div>
+</div>
+</div>
+<!-- Club 3: Leones Negros Morelia -->
+<div class="p-space-md bg-surface-container-low/70 rounded-lg flex flex-col gap-1 hover:bg-surface-container-high/40 transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Leones Negros Morelia</span>
+<span class="bg-error-container text-on-error-container px-space-xs py-0.5 rounded text-label-sm font-label-sm font-bold uppercase">Faltan 2</span>
+</div>
+<div class="flex items-center justify-between font-mono-data text-mono-data text-secondary text-xs">
+<span>Equipos regs: 5</span>
+<span>Req: 2 | Presentados: 0</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 mt-1 overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 0%"></div>
+</div>
+</div>
+<!-- Club 4: Atlas Chapultepec -->
+<div class="p-space-md bg-surface-container-low/70 rounded-lg flex flex-col gap-1 hover:bg-surface-container-high/40 transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Atlas Chapultepec</span>
+<span class="bg-error-container text-on-error-container px-space-xs py-0.5 rounded text-label-sm font-label-sm font-bold uppercase">Falta 1</span>
+</div>
+<div class="flex items-center justify-between font-mono-data text-mono-data text-secondary text-xs">
+<span>Equipos regs: 8</span>
+<span>Req: 2 | Presentados: 1</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 mt-1 overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 50%"></div>
+</div>
+</div>
+</div>
+<!-- Footnote note -->
+<div class="pt-space-sm border-t border-surface-container">
+<p class="font-body-sm text-body-sm text-secondary italic">
+            * Los clubes con déficit en cuota arbitral recibirán notificación automática al cierre del periodo de afiliaciones reglamentarias de la Liga Municipal.
+          </p>
+</div>
+<!-- Download Compliance Summary CTA -->
+<button class="w-full py-2.5 px-space-md bg-surface-container hover:bg-surface-container-high text-on-surface rounded-lg font-label-md text-label-md font-semibold flex items-center justify-center gap-space-xs transition-colors" onclick="notificarSancionCuota()">
+<span class="material-symbols-outlined text-[18px]">outgoing_mail</span>
+<span>Enviar recordatorio de cuota</span>
+</button>
+</div>
+<!-- Institutional Quick Audit Stamp Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container flex-shrink-0">
+<span class="material-symbols-outlined text-[26px]">gavel</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Colegio Oficial de Morelia</span>
+<span class="font-body-sm text-body-sm text-secondary">Acreditaciones homologadas bajo las Reglas de Juego IFAB 2024/2025 y Sector Amateur FEMEXFUT.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL: Rechazar Propuesta de Árbitro (Dictamen Técnico) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm hidden items-center justify-center p-space-md" id="modalRechazo">
+<div class="bg-surface-container-lowest rounded-xl shadow-xl w-full max-w-lg overflow-hidden transform transition-all animate-in fade-in zoom-in-95">
+<!-- Modal Header -->
+<div class="bg-surface-container-low px-space-lg py-space-md border-b border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-tertiary">
+<span class="material-symbols-outlined text-[24px]">gavel</span>
+<h3 class="font-headline-md text-headline-md font-semibold text-on-surface">Dictamen de Comisión Arbitral</h3>
+</div>
+<button class="p-1 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" onclick="closeModalRechazo()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-space-lg space-y-space-md">
+<!-- Postulant Info Banner -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase block">Árbitro en Dictamen</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold" id="modalArbitroNombre">Roberto Carlos Mendoza</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-secondary uppercase block">Propuesto por</span>
+<span class="font-label-md text-label-md text-primary font-bold" id="modalClubNombre">Halcones FC</span>
+</div>
+</div>
+<!-- Mandatory Field: Motivo Reglamentario -->
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1">
+<span>Motivo Reglamentario</span>
+<span class="text-error font-bold">*</span>
+</label>
+<div class="relative">
+<select class="w-full px-space-md py-2.5 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface appearance-none focus:outline-none focus:ring-2 focus:ring-tertiary cursor-pointer pr-10" id="motivoSelect">
+<option value="">Seleccione causal de no convalidación...</option>
+<option value="Falta de certificación vigente de la Escuela Estatal o FMF">Falta de certificación vigente de la Escuela Estatal o FMF</option>
+<option value="Conflicto de interés o parentesco directo con directiva del club">Conflicto de interés o parentesco directo con directiva del club</option>
+<option value="Examen físico no acreditado en el periodo en curso">Examen físico no acreditado en el periodo en curso</option>
+<option value="Inhabilitación vigente por Tribunal Disciplinario de Liga">Inhabilitación vigente por Tribunal Disciplinario de Liga</option>
+<option value="Incompatibilidad horaria con calendarios federados">Incompatibilidad horaria con calendarios federados</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-sm top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Mandatory Field: Observaciones Reglamentarias -->
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1">
+<span>Observaciones Reglamentarias Obligatorias</span>
+<span class="text-error font-bold">*</span>
+</label>
+<textarea class="w-full p-space-md bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-tertiary" id="observacionesTextarea" placeholder="Detalle los fundamentos normativos para que la directiva pueda subsanar el expediente..." rows="3"></textarea>
+<span class="font-body-sm text-body-sm text-secondary block">Este dictamen se notificará de inmediato al buzón oficial del delegado del club.</span>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="bg-surface-container-low px-space-lg py-space-md border-t border-surface-container flex items-center justify-end gap-space-sm">
+<button class="px-space-md py-2 bg-surface-container hover:bg-surface-container-high text-on-surface rounded-lg font-label-md text-label-md font-semibold transition-colors" onclick="closeModalRechazo()">
+          Cancelar
+        </button>
+<button class="px-space-lg py-2 bg-error hover:bg-tertiary text-on-primary rounded-lg font-label-md text-label-md font-semibold flex items-center gap-1.5 transition-colors shadow-sm" onclick="confirmarRechazo()">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+<span>Confirmar Rechazo</span>
+</button>
+</div>
+</div>
+</div>
+<!-- MODAL: Presentar Nuevo Árbitro (+ Presentar Árbitro) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm hidden items-center justify-center p-space-md" id="modalRegistro">
+<div class="bg-surface-container-lowest rounded-xl shadow-xl w-full max-w-lg overflow-hidden transform transition-all animate-in fade-in zoom-in-95">
+<div class="bg-surface-container-low px-space-lg py-space-md border-b border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-primary-container">
+<span class="material-symbols-outlined text-[24px]">sports</span>
+<h3 class="font-headline-md text-headline-md font-semibold text-on-surface">Presentar Propuesta de Árbitro</h3>
+</div>
+<button class="p-1 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" onclick="closeModalRegistro()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-space-lg space-y-space-md">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Club que Postula</label>
+<input class="w-full px-space-md py-2.5 bg-surface-container rounded-lg font-body-md text-body-md text-on-surface font-semibold" disabled="" id="regClubName" type="text" value="Halcones FC (Tu Club)">
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1">
+<span>Nombre Completo del Colegiado</span>
+<span class="text-error font-bold">*</span>
+</label>
+<input class="w-full px-space-md py-2.5 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container" id="regNombre" placeholder="Ej. L.E.F. Carlos Alberto Prado" type="text">
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Categoría Arbitral</label>
+<select class="w-full px-space-md py-2.5 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container" id="regRol">
+<option value="Central">Árbitro Central</option>
+<option value="Asistente 1">Asistente 1</option>
+<option value="Asistente 2">Asistente 2</option>
+<option value="Cuarto Oficial">Cuarto Oficial</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Cédula / Folio FMF</label>
+<input class="w-full px-space-md py-2.5 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container" id="regCedula" placeholder="ARB-2025-XXX" type="text">
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1">
+<span>Constancia de Acreditación (PDF / Imagen)</span>
+<span class="text-error font-bold">*</span>
+</label>
+<div class="border-2 border-dashed border-outline-variant rounded-lg p-space-md text-center bg-surface-container-low/50 hover:bg-surface-container-low cursor-pointer">
+<span class="material-symbols-outlined text-primary text-[32px] block mx-auto mb-1">upload_file</span>
+<span class="font-label-md text-label-md text-on-surface block font-medium">Adjuntar Certificado de Escuela de Árbitros</span>
+<span class="font-body-sm text-body-sm text-secondary">Máximo 10 MB (PDF, JPG, PNG)</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low px-space-lg py-space-md border-t border-surface-container flex items-center justify-end gap-space-sm">
+<button class="px-space-md py-2 bg-surface-container hover:bg-surface-container-high text-on-surface rounded-lg font-label-md text-label-md font-semibold transition-colors" onclick="closeModalRegistro()">
+          Cancelar
+        </button>
+<button class="px-space-lg py-2 bg-primary-container hover:bg-primary text-on-primary rounded-lg font-label-md text-label-md font-semibold flex items-center gap-1.5 transition-colors shadow-sm" onclick="guardarNuevoArbitro()">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Enviar a Dictaminación</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed bottom-6 right-6 z-50 hidden transition-all duration-300" id="toastNotification">
+<div class="bg-inverse-surface text-inverse-on-surface px-space-lg py-space-md rounded-xl shadow-xl flex items-center gap-space-sm border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary-fixed" id="toastIcon">check_circle</span>
+<span class="font-body-md text-body-md" id="toastMessage">Operación realizada con éxito</span>
+</div>
+</div>
+</div>
+<!-- Inline JavaScript For Reactive Simulation & Strict State Filtering -->
+<script>
+  let currentPerspective = 'comision'; // 'comision' | 'club'
+  let currentTab = 'por-validar';
+  let targetArbitroId = null;
+
+  function switchPerspective(perspective) {
+    currentPerspective = perspective;
+    const btnComision = document.getElementById('viewBtnComision');
+    const btnClub = document.getElementById('viewBtnClub');
+    const clubNotice = document.getElementById('clubNotice');
+    const clubFilter = document.getElementById('clubFilter');
+
+    if (perspective === 'club') {
+      btnClub.className = "px-space-md py-space-xs rounded-lg font-label-md text-label-md transition-all flex items-center gap-1.5 bg-surface-container-lowest text-primary-container shadow-sm font-semibold";
+      btnComision.className = "px-space-md py-space-xs rounded-lg font-label-md text-label-md transition-all flex items-center gap-1.5 text-on-surface-variant hover:text-on-surface";
+      clubNotice.classList.remove('hidden');
+      clubFilter.value = 'Halcones FC';
+      clubFilter.disabled = true;
+      showToast('Perspectiva cambiada a: Directiva de Club (Halcones FC)', 'shield');
+    } else {
+      btnComision.className = "px-space-md py-space-xs rounded-lg font-label-md text-label-md transition-all flex items-center gap-1.5 bg-surface-container-lowest text-primary-container shadow-sm font-semibold";
+      btnClub.className = "px-space-md py-space-xs rounded-lg font-label-md text-label-md transition-all flex items-center gap-1.5 text-on-surface-variant hover:text-on-surface";
+      clubNotice.classList.add('hidden');
+      clubFilter.disabled = false;
+      clubFilter.value = 'all';
+      showToast('Perspectiva cambiada a: Comisión de Arbitraje Oficial', 'verified_user');
+    }
+    applyFilters();
+  }
+
+  function filterByTab(tabKey) {
+    currentTab = tabKey;
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    tabButtons.forEach(btn => {
+      btn.className = "tab-btn px-space-md py-space-xs rounded-lg font-label-md text-label-md flex items-center gap-space-xs transition-colors text-on-surface-variant hover:bg-surface-container-high";
+    });
+
+    const activeMap = {
+      'por-validar': 'tabPorValidar',
+      'validados': 'tabValidados',
+      'rechazados': 'tabRechazados',
+      'bajas': 'tabBajas'
+    };
+
+    const targetEl = document.getElementById(activeMap[tabKey]);
+    if (targetEl) {
+      targetEl.className = "tab-btn px-space-md py-space-xs rounded-lg font-label-md text-label-md flex items-center gap-space-xs transition-colors bg-primary-container text-on-primary font-semibold";
+    }
+
+    applyFilters();
+  }
+
+  function applyFilters() {
+    const searchText = (document.getElementById('searchInput').value || '').toLowerCase().trim();
+    const clubValue = document.getElementById('clubFilter').value;
+    const roleValue = document.getElementById('roleFilter').value;
+
+    const rows = document.querySelectorAll('#arbitrosTbody .row-item');
+    let visibleCount = 0;
+
+    rows.forEach(row => {
+      const rowName = (row.getAttribute('data-name') || '').toLowerCase();
+      const rowClub = row.getAttribute('data-club');
+      const rowRole = row.getAttribute('data-role');
+      const rowStatus = row.getAttribute('data-status');
+
+      // Perspective check
+      let matchesClub = true;
+      if (currentPerspective === 'club') {
+        matchesClub = (rowClub === 'Halcones FC');
+      } else if (clubValue !== 'all') {
+        matchesClub = (rowClub === clubValue);
+      }
+
+      // Tab check
+      let matchesTab = (currentTab === 'all' || rowStatus === currentTab);
+      if (currentTab === 'bajas') {
+        // If bajas, hide all demo items except if designated
+        matchesTab = (rowStatus === 'bajas');
+      }
+
+      // Search & role checks
+      const matchesSearch = !searchText || rowName.includes(searchText) || row.textContent.toLowerCase().includes(searchText);
+      const matchesRole = (roleValue === 'all' || rowRole === roleValue);
+
+      if (matchesClub && matchesTab && matchesSearch && matchesRole) {
+        row.classList.remove('hidden');
+        visibleCount++;
+      } else {
+        row.classList.add('hidden');
+      }
+    });
+
+    document.getElementById('tableCountSummary').innerText = `Mostrando ${visibleCount} registros de acuerdo a los filtros`;
+  }
+
+  function resetFilters() {
+    document.getElementById('searchInput').value = '';
+    document.getElementById('roleFilter').value = 'all';
+    if (currentPerspective !== 'club') {
+      document.getElementById('clubFilter').value = 'all';
+    }
+    applyFilters();
+    showToast('Filtros restablecidos');
+  }
+
+  function validarArbitro(id, nombre) {
+    const row = document.querySelector(`.row-item[data-id="${id}"]`);
+    if (row) {
+      row.setAttribute('data-status', 'validados');
+      const statusTd = row.children[3];
+      statusTd.innerHTML = `
+        <span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded bg-primary-fixed/60 text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold uppercase animate-pulse">
+          <span class="material-symbols-outlined text-[15px] text-primary-container">check_circle</span>
+          Validado
+        </span>
+      `;
+      const actionTd = row.children[4];
+      actionTd.innerHTML = `
+        <div class="flex items-center justify-end gap-space-xs">
+          <span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1 pr-2">
+            <span class="material-symbols-outlined text-[16px]">verified</span> Acreditado
+          </span>
+          <button onclick="verExpediente('${nombre}', 'ARB-2025-ACT', '${row.getAttribute('data-club')}')" class="bg-surface-container hover:bg-surface-container-high text-on-surface px-space-md py-1.5 rounded-lg font-label-sm text-label-sm font-semibold transition-colors">
+            Cédula
+          </button>
+        </div>
+      `;
+      updatePorValidarCount();
+      applyFilters();
+      showToast(`Árbitro ${nombre} validado e incorporado al rol oficial.`, 'check_circle');
+    }
+  }
+
+  function openModalRechazo(id, nombre, club) {
+    targetArbitroId = id;
+    document.getElementById('modalArbitroNombre').innerText = nombre;
+    document.getElementById('modalClubNombre').innerText = club;
+    document.getElementById('motivoSelect').value = '';
+    document.getElementById('observacionesTextarea').value = '';
+    document.getElementById('modalRechazo').classList.remove('hidden');
+    document.getElementById('modalRechazo').classList.add('flex');
+  }
+
+  function closeModalRechazo() {
+    document.getElementById('modalRechazo').classList.add('hidden');
+    document.getElementById('modalRechazo').classList.remove('flex');
+    targetArbitroId = null;
+  }
+
+  function confirmarRechazo() {
+    const motivo = document.getElementById('motivoSelect').value;
+    const observaciones = document.getElementById('observacionesTextarea').value;
+
+    if (!motivo) {
+      alert('Por favor seleccione un motivo reglamentario obligatorio.');
+      return;
+    }
+
+    if (targetArbitroId) {
+      const row = document.querySelector(`.row-item[data-id="${targetArbitroId}"]`);
+      if (row) {
+        row.setAttribute('data-status', 'rechazados');
+        const statusTd = row.children[3];
+        statusTd.innerHTML = `
+          <span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold uppercase">
+            <span class="material-symbols-outlined text-[15px]">cancel</span>
+            Rechazado
+          </span>
+        `;
+        const firstCol = row.children[0].querySelector('.flex-col');
+        if (firstCol) {
+          const alertNote = document.createElement('div');
+          alertNote.className = "mt-1 bg-error-container/40 p-1.5 rounded flex items-center gap-1.5 text-on-error-container font-body-sm text-body-sm";
+          alertNote.innerHTML = `<span class="material-symbols-outlined text-[15px] text-error">error</span><span class="truncate">Motivo: ${motivo}</span>`;
+          firstCol.appendChild(alertNote);
+        }
+
+        const actionTd = row.children[4];
+        actionTd.innerHTML = `
+          <div class="flex items-center justify-end gap-space-xs">
+            <button onclick="subsanarDictamen('${document.getElementById('modalArbitroNombre').innerText}')" class="bg-surface-container-high hover:bg-surface-container-highest text-on-surface px-space-md py-1.5 rounded-lg font-label-sm text-label-sm font-semibold inline-flex items-center gap-1 transition-colors">
+              <span class="material-symbols-outlined text-[16px]">edit_note</span>
+              Subsanar
+            </button>
+          </div>
+        `;
+
+        updatePorValidarCount();
+        applyFilters();
+      }
+    }
+
+    closeModalRechazo();
+    showToast('Dictamen de rechazo emitido y notificado a la directiva.', 'gavel');
+  }
+
+  function openModalRegistro() {
+    document.getElementById('modalRegistro').classList.remove('hidden');
+    document.getElementById('modalRegistro').classList.add('flex');
+  }
+
+  function closeModalRegistro() {
+    document.getElementById('modalRegistro').classList.add('hidden');
+    document.getElementById('modalRegistro').classList.remove('flex');
+  }
+
+  function guardarNuevoArbitro() {
+    const nombre = document.getElementById('regNombre').value.trim();
+    const cedula = document.getElementById('regCedula').value.trim() || 'ARB-2025-999';
+    const rol = document.getElementById('regRol').value;
+
+    if (!nombre) {
+      alert('Ingrese el nombre oficial del árbitro propuesto.');
+      return;
+    }
+
+    const tbody = document.getElementById('arbitrosTbody');
+    const newId = Date.now();
+    const newRow = document.createElement('tr');
+    newRow.className = "hover:bg-surface-container-low/60 transition-colors row-item";
+    newRow.setAttribute('data-id', newId);
+    newRow.setAttribute('data-club', 'Halcones FC');
+    newRow.setAttribute('data-role', rol);
+    newRow.setAttribute('data-status', 'por-validar');
+    newRow.setAttribute('data-name', nombre);
+
+    newRow.innerHTML = `
+      <td class="py-space-md px-space-md">
+        <div class="flex items-center gap-space-md">
+          <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary font-headline-sm flex items-center justify-center font-bold flex-shrink-0 shadow-sm">
+            ${nombre.substring(0, 2).toUpperCase()}
+          </div>
+          <div class="flex flex-col min-w-0">
+            <span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">${nombre}</span>
+            <div class="flex items-center gap-1 font-body-sm text-body-sm text-secondary">
+              <span class="material-symbols-outlined text-[14px] text-primary">badge</span>
+              <span>Cédula: <strong class="font-mono-data text-mono-data text-on-surface">${cedula}</strong></span>
+              <span class="text-outline-variant font-bold">·</span>
+              <span class="text-on-surface-variant font-medium">${rol}</span>
+            </div>
+          </div>
+        </div>
+      </td>
+      <td class="py-space-md px-space-md">
+        <div class="flex items-center gap-space-xs">
+          <span class="w-5 h-5 rounded bg-surface-container-highest flex items-center justify-center text-[10px] font-bold text-on-surface">H</span>
+          <span class="font-label-md text-label-md text-on-surface font-medium">Halcones FC</span>
+        </div>
+      </td>
+      <td class="py-space-md px-space-md">
+        <span class="font-mono-data text-mono-data text-secondary block">Hoy</span>
+        <span class="font-body-sm text-body-sm text-outline">Recién presentado</span>
+      </td>
+      <td class="py-space-md px-space-md">
+        <span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold uppercase">
+          <span class="material-symbols-outlined text-[15px] text-primary-container">pending</span>
+          Propuesto
+        </span>
+      </td>
+      <td class="py-space-md px-space-md text-right">
+        <div class="flex items-center justify-end gap-space-xs action-buttons">
+          <button onclick="validarArbitro(${newId}, '${nombre}')" class="btn-validate bg-primary-container hover:bg-primary text-on-primary px-space-md py-1.5 rounded-lg font-label-sm text-label-sm font-semibold inline-flex items-center gap-1 transition-colors">
+            <span class="material-symbols-outlined text-[16px]">done</span>
+            Validar
+          </button>
+          <button onclick="openModalRechazo(${newId}, '${nombre}', 'Halcones FC')" class="btn-reject bg-surface-container text-tertiary hover:bg-tertiary-container hover:text-on-tertiary px-space-md py-1.5 rounded-lg font-label-sm text-label-sm font-semibold inline-flex items-center gap-1 transition-colors">
+            <span class="material-symbols-outlined text-[16px]">close</span>
+            Rechazar
+          </button>
+        </div>
+      </td>
+    `;
+
+    tbody.prepend(newRow);
+    closeModalRegistro();
+    document.getElementById('regNombre').value = '';
+    updatePorValidarCount();
+    applyFilters();
+    showToast('Candidato registrado formalmente para revisión colegiada.', 'assignment_add');
+  }
+
+  function updatePorValidarCount() {
+    const count = document.querySelectorAll('#arbitrosTbody .row-item[data-status="por-validar"]').length;
+    const badge = document.getElementById('badgePorValidar');
+    if (badge) badge.innerText = count;
+  }
+
+  function verExpediente(nombre, cedula, club) {
+    alert(`[EXPEDIENTE OFICIAL SIGLIM]\nÁrbitro: ${nombre}\nCédula Federada: ${cedula}\nClub Adscrito: ${club}\nCertificación de Campo: Vigente 2025\nHistorial disciplinario: Sin sanciones previas.`);
+  }
+
+  function subsanarDictamen(nombre) {
+    alert(`Apertura de anexo para solventar observaciones del silbante: ${nombre}. Por favor cargue la nueva cédula o reevaluación física FMF.`);
+  }
+
+  function notificarSancionCuota() {
+    showToast('Aviso reglamentario emitido a los 4 clubes con déficit de cuota arbitral.', 'outgoing_mail');
+  }
+
+  function showToast(msg, iconName = 'check_circle') {
+    const toast = document.getElementById('toastNotification');
+    const msgEl = document.getElementById('toastMessage');
+    const iconEl = document.getElementById('toastIcon');
+
+    if (toast && msgEl && iconEl) {
+      msgEl.innerText = msg;
+      iconEl.innerText = iconName;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 4000);
+    }
+  }
+
+  // Initialize
+  document.addEventListener('DOMContentLoaded', () => {
+    applyFilters();
+  });
+</script></main></div></body></html>

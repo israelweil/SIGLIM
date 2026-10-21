@@ -1,12 +1,12 @@
 # Decisiones de Diseño Pendientes y Observaciones - SIGLIM
 
-> Actualizado al ERS Rev. 0.4.1 (20 de octubre de 2026). Las pantallas nuevas se generan con los
-> [prompts de Stitch](prompts-stitch.md), que ya aplican las resoluciones de la sección 4.
+> Actualizado al ERS Rev. 0.4.1 (20 de octubre de 2026). Las pantallas aprobadas están en
+> [`pantallas/`](pantallas/README.md) y el sistema visual en [`DESIGN.md`](DESIGN.md).
 
 ## 1. Decisiones Observadas (Confirmadas por Referencias Visuales)
 - Uso de la paleta verde esmeralda (`#006837`) como color primario institucional.
 - Estructura de cabecera fija con acceso a la aplicación interna.
-- Uso de tarjetas oscuras (`#131b2e`) solo para destacar en el portal público.
+- Azul noche (`#131b2e`) para paneles destacados del portal, cabeceras de módulo y el marcador (DESIGN.md).
 
 ## 2. Inferencias Razonables
 - Los estados de los partidos, cédulas, registros y cobros se alimentan de los enums que devuelve
@@ -17,9 +17,10 @@
 ## 3. Puntos Pendientes de Validación por el Equipo
 - **P-01**: ~~Notificaciones en tiempo real para cambios de marcador~~. Resuelto: no hay tiempo
   real; los avisos se consultan al cargar y cada 60 s **[PROPUESTA]** (convenciones de API §6.14).
-- **P-02**: Biblioteca de iconos: se propone Lucide React por su coherencia de trazo; los prompts
-  de Stitch ya la piden.
-- **P-03**: Aprobar el prototipo generado con Stitch y exportado a Figma (PEN-014).
+- **P-02**: Biblioteca de iconos: el HTML de Stitch usa Material Symbols; en React se usa
+  **Lucide React** con el ícono equivalente de cada pantalla **[PROPUESTA]** (dependencia que se
+  justifica al iniciar el frontend).
+- **P-03**: ~~Aprobar el prototipo generado con Stitch~~. Aprobado por el equipo el 20 de octubre de 2026 ([`pantallas/`](pantallas/README.md)); falta validarlo con la Liga (PEN-014). Las diferencias D-01 a D-12 y las preguntas Q-UI-01 a Q-UI-04 están en [`pantallas/README.md`](pantallas/README.md).
 
 ## 4. Conflictos detectados entre el diseño de referencia y el ERS
 

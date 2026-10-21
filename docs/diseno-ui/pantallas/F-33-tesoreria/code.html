@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary-container":"#943e46","primary-container":"#006837","outline-variant":"#bec9be","surface-tint":"#0b6d3b","error-container":"#ffdad6","on-surface":"#0b1c30","surface-container-high":"#dce9ff","primary-fixed-dim":"#83d99c","inverse-primary":"#83d99c","secondary":"#565e74","on-tertiary-container":"#ffc3c5","surface-container-low":"#eff4ff","on-tertiary-fixed":"#40000c","on-tertiary":"#ffffff","surface-container-highest":"#d3e4fe","surface":"#f8f9ff","error":"#ba1a1a","secondary-fixed-dim":"#bec6e0","on-error-container":"#93000a","inverse-on-surface":"#eaf1ff","on-background":"#0b1c30","primary-fixed":"#9ef6b6","surface-container-lowest":"#ffffff","on-primary-container":"#8ee4a6","surface-dim":"#cbdbf5","surface-container":"#e5eeff","on-secondary-container":"#5a6278","tertiary-fixed-dim":"#ffb3b6","tertiary-fixed":"#ffdada","secondary-container":"#d8dff9","surface-variant":"#d3e4fe","on-surface-variant":"#3f4940","background":"#f8f9ff","on-secondary-fixed-variant":"#3f465b","secondary-fixed":"#dae2fc","tertiary":"#762730","outline":"#6f7a70","on-primary-fixed":"#00210e","primary":"#004d27","on-tertiary-fixed-variant":"#7b2b34","on-secondary":"#ffffff","on-error":"#ffffff","on-secondary-fixed":"#131b2e","surface-bright":"#f8f9ff","on-primary-fixed-variant":"#00522a","inverse-surface":"#213145","on-primary":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-md":"0.75rem","gutter":"1rem","space-lg":"1rem","margin-desktop":"2rem","margin":"1rem","space-sm":"0.5rem","space-xs":"0.25rem","space-xl":"1.5rem","gutter-desktop":"1.5rem"},"fontFamily":{"mono-data":["JetBrains Mono"],"display-lg":["Inter"],"display-lg-mobile":["Inter"],"body-md":["Inter"],"mono-score":["JetBrains Mono"],"body-sm":["Inter"],"headline-md":["Inter"],"label-md":["Inter"],"headline-lg":["Inter"],"headline-sm":["Inter"],"body-lg":["Inter"],"label-sm":["Inter"]},"fontSize":{"mono-data":["13px",{"lineHeight":"18px","fontWeight":"500"}],"display-lg":["36px",{"lineHeight":"44px","fontWeight":"700"}],"display-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"mono-score":["28px",{"lineHeight":"32px","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-lg":["24px",{"lineHeight":"32px","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 flex items-center px-space-lg bg-surface-container-low"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm">S</div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">SIGLIM</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Futbol Amateur</span></div></div></div><div class="px-space-md py-space-md"><span class="px-space-sm font-label-sm text-label-sm uppercase text-secondary tracking-wider block mb-space-xs">Módulos Operativos / Administración</span><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-headline-sm rounded-lg"><a class="flex items-center px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="inicio" href="#">Inicio</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="cedulas-y-partidos" href="#">Cédulas y Partidos</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="comision-disciplinaria" href="#">Comisión Disciplinaria</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="arbitros" href="#">Árbitros</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="tesoreria" href="#">Tesorería</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="canchas" href="#">Canchas</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="auditoria" href="#">Auditoría</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="configuracion" href="#">Configuración</a></nav></div></div><div class="p-space-md bg-surface-container-low"><div class="flex items-center gap-space-sm px-space-sm py-space-xs"><span class="material-symbols-outlined text-secondary text-[20px]">account_balance</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Morelia, Mich.</span><span class="font-body-sm text-body-sm text-secondary">Tesorería General</span></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-margin-desktop"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface">SIGLIM</span><span class="text-outline-variant font-label-md text-label-md">·</span><span class="font-body-md text-body-md text-secondary">Futbol Amateur</span></div><div class="inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm uppercase tracking-wide"><span class="material-symbols-outlined text-[14px]">verified</span><span>Temporada 2025–2026 · Activa</span></div></div><div class="flex items-center gap-space-lg"><button aria-label="Notificaciones" class="relative p-space-sm rounded-lg text-secondary hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-tertiary"></span></button><div class="flex items-center gap-space-md pl-space-md"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface leading-tight">C.P. Ignacio Valenzuela</span><span class="font-body-sm text-body-sm text-secondary leading-tight">Tesorería de la Liga</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center font-headline-sm text-label-sm text-on-primary">IV</div></div></div></header><main class="relative pt-16 w-full px-margin-desktop bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Cabecera de la Sección -->
+<div class="flex flex-col gap-space-md pb-space-lg">
+<!-- Breadcrumb y Badges de Control -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<nav class="flex items-center gap-space-xs text-secondary font-label-md text-label-md">
+<span>Tesorería</span>
+<span class="text-outline-variant">/</span>
+<span>Temporada 2025–2026</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-headline-sm text-headline-sm">Control Financiero y Cobranza Federativa</span>
+</nav>
+<div class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm tracking-wider uppercase">
+<span class="material-symbols-outlined text-[13px]">policy</span>
+<span>No oficial · Demostración</span>
+</div>
+</div>
+<!-- Título y Acciones Principales -->
+<div class="flex flex-col xl:flex-row xl:items-end justify-between gap-space-md">
+<div class="flex flex-col max-w-3xl">
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight">
+          Control Financiero y Cobranza Federativa
+        </h1>
+<p class="font-body-md text-body-md text-secondary mt-space-xs">
+          Gestión de aportaciones por concepto de arbitraje, uso de campos municipales, sanciones pecuniarias y afiliaciones de clubes de la Liga Municipal de Futbol Amateur Morelia.
+        </p>
+</div>
+<!-- Barra de Acciones / Botones -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex flex-col text-right pr-space-xs">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Corte al ejercicio</span>
+<span class="font-mono-data text-mono-data text-on-surface font-bold">12 Nov 2025 · 18:00 hrs</span>
+</div>
+<button class="h-11 px-space-md bg-surface-container-lowest text-on-surface font-label-md text-label-md rounded-lg shadow-sm hover:bg-surface-container transition-colors flex items-center gap-space-xs" id="btnOpenAccountStatement" type="button">
+<span class="material-symbols-outlined text-[20px] text-secondary">picture_as_pdf</span>
+<span>Descargar estado de cuenta (PDF)</span>
+</button>
+<button class="h-11 px-space-lg bg-primary text-on-primary font-headline-sm text-label-md rounded-lg shadow-md hover:bg-surface-tint active:bg-primary-container transition-colors flex items-center gap-space-xs" id="btnOpenNewChargeModal" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>+ Nuevo cobro</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Métricas Hacendarias / KPIs -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md py-space-md">
+<!-- Tarjeta 1: Por Cobrar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Por cobrar</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">pending_actions</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-mono-score text-mono-score text-on-surface font-bold tracking-tight">$48,350.00</span>
+<span class="font-mono-data text-body-sm text-secondary">MXN</span>
+</div>
+<div class="flex items-center gap-space-xs mt-space-xs">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-surface-container-high text-secondary font-label-sm text-label-sm">
+            38 cobros activos
+          </span>
+<span class="font-body-sm text-body-sm text-secondary">· Ordinarios</span>
+</div>
+</div>
+</div>
+<!-- Tarjeta 2: Vencido -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider">Vencido reglamentario</span>
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-mono-score text-mono-score text-tertiary font-bold tracking-tight">$6,200.00</span>
+<span class="font-mono-data text-body-sm text-tertiary">MXN</span>
+</div>
+<div class="flex items-center gap-space-xs mt-space-xs">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">schedule</span>
+            7 cobros en mora
+          </span>
+<span class="font-body-sm text-body-sm text-secondary">Art. 88</span>
+</div>
+</div>
+</div>
+<!-- Tarjeta 3: Cobrado este mes -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Cobrado este mes</span>
+<div class="w-8 h-8 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-mono-score text-mono-score text-primary font-bold tracking-tight">$21,900.00</span>
+<span class="font-mono-data text-body-sm text-secondary">MXN</span>
+</div>
+<div class="flex items-center gap-space-xs mt-space-xs">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm">
+            Noviembre 2025
+          </span>
+<span class="font-body-sm text-body-sm text-secondary">· Ingreso directo</span>
+</div>
+</div>
+</div>
+<!-- Tarjeta 4: Clubes con adeudo -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Clubes con adeudo</span>
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-mono-score text-mono-score text-on-surface font-bold tracking-tight">23</span>
+<span class="font-body-md text-body-md text-secondary">clubes</span>
+</div>
+<div class="flex items-center gap-space-xs mt-space-xs">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm">
+            De 64 clubes registrados
+          </span>
+<span class="font-body-sm text-body-sm text-secondary">35.9% morosidad</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pestañas de Navegación de la Vista -->
+<div class="flex items-center justify-between pt-space-lg pb-space-sm">
+<div class="flex items-center gap-space-md">
+<button class="pb-space-sm px-space-xs font-headline-sm text-headline-sm text-primary border-b-2 border-primary flex items-center gap-space-xs transition-colors" id="tabBtnCobros" type="button">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+<span>Cobros</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-mono-data text-label-sm">45</span>
+</button>
+<button class="pb-space-sm px-space-xs font-label-md text-label-md text-secondary hover:text-on-surface flex items-center gap-space-xs transition-colors" id="tabBtnAdeudos" type="button">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+<span>Adeudos por club</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary font-mono-data text-label-sm">23</span>
+</button>
+</div>
+<!-- Indicador de Norma Contable -->
+<div class="hidden md:flex items-center gap-space-xs text-secondary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+<span>Criterio de Tesorería SIGLIM v2.4</span>
+</div>
+</div>
+<!-- CONTENEDOR 1: PESTAÑA COBROS -->
+<section class="flex flex-col gap-space-md" id="sectionCobros">
+<!-- Barra de Filtros Estructurada -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-sm">
+<!-- Filtro Club -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-secondary uppercase">Club deportivo</label>
+<div class="relative">
+<select class="w-full h-11 px-space-sm bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer" id="filterClub">
+<option value="all">Todos los clubes</option>
+<option value="halcones">Halcones FC</option>
+<option value="toros">Toros de Santa María</option>
+<option value="atapaneo">Real Atapaneo</option>
+<option value="ireta">Félix Ireta</option>
+<option value="canarios">Canarios Morelia</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-secondary text-[18px]">expand_more</span>
+</div>
+</div>
+<!-- Filtro Equipo / Categoría -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-secondary uppercase">Equipo / Categoría</label>
+<div class="relative">
+<select class="w-full h-11 px-space-sm bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer" id="filterTeam">
+<option value="all">Todos los equipos</option>
+<option value="libre-a">Libre Primera (Grupo A)</option>
+<option value="juvenil-esp">Juvenil Especial</option>
+<option value="veteranos">Veteranos Especial</option>
+<option value="juvenil-b">Juvenil B</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-secondary text-[18px]">expand_more</span>
+</div>
+</div>
+<!-- Filtro Tipo de Cobro -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-secondary uppercase">Tipo de concepto</label>
+<div class="relative">
+<select class="w-full h-11 px-space-sm bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer" id="filterType">
+<option value="all">Todos los tipos</option>
+<option value="arbitraje">Arbitraje</option>
+<option value="cancha">Uso de cancha</option>
+<option value="multa">Multa disciplinaria</option>
+<option value="tarjeton">Manual / Tarjetones</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-secondary text-[18px]">expand_more</span>
+</div>
+</div>
+<!-- Filtro Estado -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-secondary uppercase">Estado del cobro</label>
+<div class="relative">
+<select class="w-full h-11 px-space-sm bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer" id="filterStatus">
+<option value="all">Todos los estados</option>
+<option value="pendiente">Pendiente</option>
+<option value="pagado">Pagado</option>
+<option value="rechazado">Rechazado</option>
+<option value="vencido">Vencido</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-secondary text-[18px]">expand_more</span>
+</div>
+</div>
+<!-- Filtro Periodo -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-secondary uppercase">Periodo / Jornada</label>
+<div class="relative">
+<select class="w-full h-11 px-space-sm bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer" id="filterPeriod">
+<option value="j8">Jornada 8 (Actual)</option>
+<option value="j7">Jornada 7</option>
+<option value="nov">Noviembre 2025</option>
+<option value="all">Temporada completa</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-secondary text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Barra Inferior de Filtros -->
+<div class="flex items-center justify-between pt-space-xs text-body-sm text-secondary">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px]">filter_alt</span>
+<span>Mostrando 6 registros filtrados de 45 totales</span>
+</div>
+<button class="h-9 px-space-sm rounded-lg hover:bg-surface-container text-secondary hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-space-xs" id="btnResetFilters" type="button">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+<span>Restablecer filtros</span>
+</button>
+</div>
+</div>
+<!-- Tabla Densa Administrativa de Cobros -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-secondary font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-space-sm px-space-md font-medium">Folio &amp; Concepto</th>
+<th class="py-space-sm px-space-md font-medium">Destino (Club / Equipo)</th>
+<th class="py-space-sm px-space-md font-medium text-right">Monto</th>
+<th class="py-space-sm px-space-md font-medium">Fecha Límite</th>
+<th class="py-space-sm px-space-md font-medium text-center">Estado</th>
+<th class="py-space-sm px-space-md font-medium text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-md text-body-md text-on-surface">
+<!-- Fila 1: Halcones FC (Pendiente - Arbitraje) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs">
+<span class="font-mono-data text-mono-data font-bold text-primary">COB-2025-0412</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold tracking-wide uppercase bg-surface-container text-secondary">
+                      Arbitraje
+                    </span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Honorarios de terna arbitral - Jornada 7</span>
+<span class="font-body-sm text-body-sm text-secondary">Cédula No. CED-8812 · Colegio de Árbitros Morelia</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center font-bold text-primary text-label-sm">
+                    HAL
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-medium">Halcones FC</span>
+<span class="font-body-sm text-body-sm text-secondary">Libre Primera · Grupo A</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-mono-data text-mono-data text-on-surface font-bold">$1,850.00</span>
+<span class="font-label-sm text-[10px] text-secondary">MXN</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data">15/Nov/2025</span>
+<span class="font-body-sm text-body-sm text-secondary">En 3 días (Ordinario)</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex flex-col items-center gap-0.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">hourglass_empty</span>
+<span>Pendiente</span>
+</span>
+<span class="font-label-sm text-[9px] text-outline uppercase tracking-tight">No oficial</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-space-xs justify-end">
+<button class="h-9 px-space-sm rounded-lg bg-primary text-on-primary hover:bg-surface-tint font-label-md text-label-md flex items-center gap-1 transition-colors shadow-sm" onclick="openRegisterPaymentModal('COB-2025-0412', 'Halcones FC (Libre Primera)', '$1,850.00 MXN', 'Honorarios de terna arbitral - Jornada 7')" title="Registrar pago recibido en ventanilla o SPEI" type="button">
+<span class="material-symbols-outlined text-[16px]">point_of_sale</span>
+<span>Registrar pago</span>
+</button>
+<button class="w-9 h-9 rounded-lg hover:bg-surface-container text-secondary hover:text-on-surface flex items-center justify-center transition-colors" title="Ver opciones reglamentarias" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Fila 2: Real Atapaneo (Vencido - Multa) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors bg-tertiary-fixed/10">
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs">
+<span class="font-mono-data text-mono-data font-bold text-tertiary">COB-2025-0398</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold tracking-wide uppercase bg-tertiary-fixed text-on-tertiary-fixed-variant">
+                      Multa
+                    </span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Sanción Exp. EXP-2025-0042 (Art. 51 Disciplinario)</span>
+<span class="font-body-sm text-body-sm text-secondary">Conducta impropia de porra en Campo San Isidro</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center font-bold text-tertiary text-label-sm">
+                    ATA
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-medium">Real Atapaneo</span>
+<span class="font-body-sm text-body-sm text-secondary">Club General · Todas las ramas</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-mono-data text-mono-data text-tertiary font-bold">$1,200.00</span>
+<span class="font-label-sm text-[10px] text-secondary">MXN</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data font-bold text-tertiary">08/Nov/2025</span>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">Vencido hace 4 días</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex flex-col items-center gap-0.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">error</span>
+<span>Vencido</span>
+</span>
+<span class="font-label-sm text-[9px] text-outline uppercase tracking-tight">No oficial</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-space-xs justify-end">
+<button class="h-9 px-space-sm rounded-lg bg-primary text-on-primary hover:bg-surface-tint font-label-md text-label-md flex items-center gap-1 transition-colors shadow-sm" onclick="openRegisterPaymentModal('COB-2025-0398', 'Real Atapaneo (Club General)', '$1,200.00 MXN', 'Sanción Exp. EXP-2025-0042 (Art. 51 Disciplinario)')" type="button">
+<span class="material-symbols-outlined text-[16px]">point_of_sale</span>
+<span>Registrar pago</span>
+</button>
+<button class="w-9 h-9 rounded-lg hover:bg-surface-container text-secondary hover:text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Fila 3: Félix Ireta (Pagado - Cancha) -> BOTÓN DESHABILITADO POR REGLA -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs">
+<span class="font-mono-data text-mono-data font-bold text-secondary">COB-2025-0382</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold tracking-wide uppercase bg-surface-container text-secondary">
+                      Cancha
+                    </span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Renta de campo UD Cuauhtémoc 2</span>
+<span class="font-body-sm text-body-sm text-secondary">Póliza Tesorería Municipal REC-TES-1094</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center font-bold text-secondary text-label-sm">
+                    IRE
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-medium">Félix Ireta</span>
+<span class="font-body-sm text-body-sm text-secondary">Libre Primera · Grupo B</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-mono-data text-mono-data text-on-surface font-bold">$750.00</span>
+<span class="font-label-sm text-[10px] text-secondary">MXN</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data">02/Nov/2025</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Liquidado en tiempo</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex flex-col items-center gap-0.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Pagado</span>
+</span>
+<span class="font-label-sm text-[9px] text-outline uppercase tracking-tight">No oficial</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-space-xs justify-end">
+<!-- BOTÓN DESHABILITADO CRÍTICO SEGÚN ESPECIFICACIÓN -->
+<div class="relative group">
+<button class="h-9 px-space-sm rounded-lg bg-surface-container text-secondary/50 font-label-md text-label-md flex items-center gap-1 cursor-not-allowed opacity-60" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>Registrar pago</span>
+</button>
+<!-- Tooltip Normativo -->
+<div class="absolute right-0 bottom-full mb-1 hidden group-hover:flex w-64 p-2 bg-on-secondary-fixed text-surface text-left font-body-sm text-[11px] rounded-lg shadow-xl z-30 pointer-events-none">
+<span>Este cobro ya está pagado (VAL-028). Emisión de recibo finalizada.</span>
+</div>
+</div>
+<button class="w-9 h-9 rounded-lg hover:bg-surface-container text-secondary hover:text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Fila 4: Toros de Santa María (Pendiente - Cancha) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs">
+<span class="font-mono-data text-mono-data font-bold text-primary">COB-2025-0420</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold tracking-wide uppercase bg-surface-container text-secondary">
+                      Cancha
+                    </span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Uso y luz nocturna UD Félix Ireta (2 cotejos)</span>
+<span class="font-body-sm text-body-sm text-secondary">Programación preliminar Viernes 14 Nov</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center font-bold text-primary text-label-sm">
+                    TOR
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-medium">Toros de Santa María</span>
+<span class="font-body-sm text-body-sm text-secondary">Veteranos Especial</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-mono-data text-mono-data text-on-surface font-bold">$1,200.00</span>
+<span class="font-label-sm text-[10px] text-secondary">MXN</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data">14/Nov/2025</span>
+<span class="font-body-sm text-body-sm text-secondary">En 2 días</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex flex-col items-center gap-0.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">hourglass_empty</span>
+<span>Pendiente</span>
+</span>
+<span class="font-label-sm text-[9px] text-outline uppercase tracking-tight">No oficial</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-space-xs justify-end">
+<button class="h-9 px-space-sm rounded-lg bg-primary text-on-primary hover:bg-surface-tint font-label-md text-label-md flex items-center gap-1 transition-colors shadow-sm" onclick="openRegisterPaymentModal('COB-2025-0420', 'Toros de Santa María (Veteranos Especial)', '$1,200.00 MXN', 'Uso y luz nocturna UD Félix Ireta (2 cotejos)')" type="button">
+<span class="material-symbols-outlined text-[16px]">point_of_sale</span>
+<span>Registrar pago</span>
+</button>
+<button class="w-9 h-9 rounded-lg hover:bg-surface-container text-secondary hover:text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Fila 5: Canarios Morelia (Rechazado - Manual) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs">
+<span class="font-mono-data text-mono-data font-bold text-tertiary">COB-2025-0371</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold tracking-wide uppercase bg-surface-container text-secondary">
+                      Manual
+                    </span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Tarjetones faltantes 3 jugadores (Reposición)</span>
+<span class="font-body-sm text-body-sm text-secondary">Rechazado: Comprobante SPEI duplicado en BANORTE</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center font-bold text-primary text-label-sm">
+                    CAN
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-medium">Canarios Morelia</span>
+<span class="font-body-sm text-body-sm text-secondary">Juvenil Especial</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-mono-data text-mono-data text-on-surface font-bold">$450.00</span>
+<span class="font-label-sm text-[10px] text-secondary">MXN</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data text-tertiary font-bold">05/Nov/2025</span>
+<span class="font-label-sm text-label-sm text-tertiary">Comprobante devuelto</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex flex-col items-center gap-0.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">cancel</span>
+<span>Rechazado</span>
+</span>
+<span class="font-label-sm text-[9px] text-outline uppercase tracking-tight">No oficial</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-space-xs justify-end">
+<button class="h-9 px-space-sm rounded-lg bg-primary text-on-primary hover:bg-surface-tint font-label-md text-label-md flex items-center gap-1 transition-colors shadow-sm" onclick="openRegisterPaymentModal('COB-2025-0371', 'Canarios Morelia (Juvenil Especial)', '$450.00 MXN', 'Tarjetones faltantes 3 jugadores (Reposición)')" type="button">
+<span class="material-symbols-outlined text-[16px]">point_of_sale</span>
+<span>Reintentar pago</span>
+</button>
+<button class="w-9 h-9 rounded-lg hover:bg-surface-container text-secondary hover:text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Fila 6: Toros de Santa María (Pagado - Cuota Ordinaria) -> BOTÓN DESHABILITADO -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs">
+<span class="font-mono-data text-mono-data font-bold text-secondary">COB-2025-0349</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold tracking-wide uppercase bg-surface-container text-secondary">
+                      Afiliación
+                    </span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Cuota ordinaria de afiliación federada bimestral</span>
+<span class="font-body-sm text-body-sm text-secondary">Periodo Oct-Nov 2025 · Cuota Liga Federada</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center font-bold text-primary text-label-sm">
+                    TOR
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-medium">Toros de Santa María</span>
+<span class="font-body-sm text-body-sm text-secondary">Club General</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-mono-data text-mono-data text-on-surface font-bold">$3,600.00</span>
+<span class="font-label-sm text-[10px] text-secondary">MXN</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data">31/Oct/2025</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Liquidado en ventanilla</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex flex-col items-center gap-0.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Pagado</span>
+</span>
+<span class="font-label-sm text-[9px] text-outline uppercase tracking-tight">No oficial</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-space-xs justify-end">
+<!-- BOTÓN DESHABILITADO CRÍTICO SEGÚN ESPECIFICACIÓN -->
+<div class="relative group">
+<button class="h-9 px-space-sm rounded-lg bg-surface-container text-secondary/50 font-label-md text-label-md flex items-center gap-1 cursor-not-allowed opacity-60" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>Registrar pago</span>
+</button>
+<!-- Tooltip Normativo -->
+<div class="absolute right-0 bottom-full mb-1 hidden group-hover:flex w-64 p-2 bg-on-secondary-fixed text-surface text-left font-body-sm text-[11px] rounded-lg shadow-xl z-30 pointer-events-none">
+<span>Este cobro ya está pagado (VAL-028).</span>
+</div>
+</div>
+<button class="w-9 h-9 rounded-lg hover:bg-surface-container text-secondary hover:text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Paginación de la Tabla -->
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<span class="font-body-sm text-body-sm text-secondary">
+          Mostrando <strong class="text-on-surface font-semibold">1 a 6</strong> de <strong class="text-on-surface font-semibold">45</strong> registros de cobro federativo
+        </span>
+<div class="flex items-center gap-space-xs">
+<button class="h-8 px-2 rounded-lg bg-surface-container-lowest text-secondary hover:bg-surface-container disabled:opacity-40 transition-colors" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<button class="h-8 w-8 rounded-lg bg-primary text-on-primary font-mono-data text-label-sm font-bold shadow-sm" type="button">1</button>
+<button class="h-8 w-8 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-mono-data text-label-sm transition-colors" type="button">2</button>
+<button class="h-8 w-8 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-mono-data text-label-sm transition-colors" type="button">3</button>
+<span class="text-secondary px-1">...</span>
+<button class="h-8 w-8 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-mono-data text-label-sm transition-colors" type="button">8</button>
+<button class="h-8 px-2 rounded-lg bg-surface-container-lowest text-secondary hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- CONTENEDOR 2: PESTAÑA ADEUDOS POR CLUB (Integrada y conmutativa) -->
+<section class="hidden flex-col gap-space-md" id="sectionAdeudos">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md gap-space-sm">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Resumen Consolidado de Adeudos por Afiliado</h2>
+<p class="font-body-sm text-body-sm text-secondary">Estatus de solvencia, desglose de morosidad por equipo y retenciones preventivas.</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center px-2 py-1 rounded bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px] mr-1">block</span>
+            3 Clubes con Sanción Art. 88
+          </span>
+</div>
+</div>
+<!-- Tarjetas de Clubes con Adeudo -->
+<div class="flex flex-col gap-space-md">
+<!-- Club 1: Halcones FC -->
+<div class="bg-surface-container-low rounded-xl p-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary font-bold text-headline-sm flex items-center justify-center shadow-sm">
+                HAL
+              </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Club Halcones FC</h3>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px]">schedule</span>
+                    Mora parcial
+                  </span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Presidente / Delegado: C. Fernando Tapia · 2 equipos afiliados</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xl">
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Saldo total deudor</span>
+<span class="font-mono-score text-headline-lg font-bold text-on-surface">$2,350.00 <span class="text-body-sm text-secondary">MXN</span></span>
+</div>
+<button class="h-10 px-space-md bg-surface-container-lowest text-on-surface font-label-md text-label-md rounded-lg shadow-sm hover:bg-surface-container flex items-center gap-space-xs transition-colors" onclick="document.getElementById('desgloseHalcones').classList.toggle('hidden')" type="button">
+<span>Ver desglose</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Desglose Expandible -->
+<div class="mt-space-md pt-space-md border-t border-surface-container flex flex-col gap-space-xs" id="desgloseHalcones">
+<div class="flex items-center justify-between py-1 text-body-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary">sports_soccer</span>
+<span class="font-medium">Equipo Libre Primera (Grupo A)</span>
+<span class="text-secondary">· Arbitraje Jornada 7 (COB-2025-0412)</span>
+</div>
+<span class="font-mono-data text-mono-data text-on-surface font-medium">$1,850.00 MXN</span>
+</div>
+<div class="flex items-center justify-between py-1 text-body-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary">gavel</span>
+<span class="font-medium">Equipo Juvenil Especial</span>
+<span class="text-secondary">· Multa disciplinaria por uniforme incompleto J5</span>
+</div>
+<span class="font-mono-data text-mono-data text-on-surface font-medium">$500.00 MXN</span>
+</div>
+<div class="p-space-xs bg-surface-container-lowest rounded-lg mt-space-xs flex items-center justify-between text-body-sm">
+<span class="text-secondary text-body-sm">Dictamen preventivo: <strong class="text-on-surface">Club solvente para programar Jornada 8</strong> bajo apercibimiento.</span>
+<span class="font-label-sm text-label-sm text-primary uppercase font-semibold">Solvencia condicional</span>
+</div>
+</div>
+</div>
+<!-- Club 2: Toros de Santa María -->
+<div class="bg-surface-container-low rounded-xl p-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-secondary-container text-on-secondary-container font-bold text-headline-sm flex items-center justify-center shadow-sm">
+                TOR
+              </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Club Toros de Santa María</h3>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px]">schedule</span>
+                    Por vencer (48 hrs)
+                  </span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Presidente / Delegado: Lic. Mario Pantoja · 3 equipos afiliados</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xl">
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Saldo total deudor</span>
+<span class="font-mono-score text-headline-lg font-bold text-on-surface">$1,200.00 <span class="text-body-sm text-secondary">MXN</span></span>
+</div>
+<button class="h-10 px-space-md bg-surface-container-lowest text-on-surface font-label-md text-label-md rounded-lg shadow-sm hover:bg-surface-container flex items-center gap-space-xs transition-colors" onclick="document.getElementById('desgloseToros').classList.toggle('hidden')" type="button">
+<span>Ver desglose</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Desglose Expandible -->
+<div class="hidden mt-space-md pt-space-md border-t border-surface-container flex flex-col gap-space-xs" id="desgloseToros">
+<div class="flex items-center justify-between py-1 text-body-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary">stadium</span>
+<span class="font-medium">Equipo Veteranos Especial</span>
+<span class="text-secondary">· Uso de campo con alumbrado Félix Ireta (2 cotejos)</span>
+</div>
+<span class="font-mono-data text-mono-data text-on-surface font-medium">$1,200.00 MXN</span>
+</div>
+<div class="p-space-xs bg-surface-container-lowest rounded-lg mt-space-xs flex items-center justify-between text-body-sm">
+<span class="text-secondary text-body-sm">Dictamen: <strong class="text-on-surface">Club con solvencia vigente.</strong> Fecha de vencimiento el 14 de Noviembre.</span>
+<span class="font-label-sm text-label-sm text-primary uppercase font-semibold">Club Solvente</span>
+</div>
+</div>
+</div>
+<!-- Club 3: Real Atapaneo (Inhabilitado) -->
+<div class="bg-surface-container-low rounded-xl p-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-tertiary text-on-tertiary font-bold text-headline-sm flex items-center justify-center shadow-sm">
+                ATA
+              </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Club Real Atapaneo</h3>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[12px]">block</span>
+                    Inhabilitado para programar
+                  </span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Presidente / Delegado: C. Gilberto Morales · Mora &gt; 15 días reglamentarios</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xl">
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-bold">Saldo vencido total</span>
+<span class="font-mono-score text-headline-lg font-bold text-tertiary">$3,800.00 <span class="text-body-sm text-tertiary">MXN</span></span>
+</div>
+<button class="h-10 px-space-md bg-surface-container-lowest text-on-surface font-label-md text-label-md rounded-lg shadow-sm hover:bg-surface-container flex items-center gap-space-xs transition-colors" onclick="document.getElementById('desgloseAtapaneo').classList.toggle('hidden')" type="button">
+<span>Ver desglose</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Desglose Expandible -->
+<div class="mt-space-md pt-space-md border-t border-surface-container flex flex-col gap-space-xs" id="desgloseAtapaneo">
+<div class="flex items-center justify-between py-1 text-body-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary">gavel</span>
+<span class="font-medium">Club General</span>
+<span class="text-secondary">· Sanción Disciplinaria Art. 51 (COB-2025-0398)</span>
+</div>
+<span class="font-mono-data text-mono-data text-tertiary font-bold">$1,200.00 MXN</span>
+</div>
+<div class="flex items-center justify-between py-1 text-body-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary">payments</span>
+<span class="font-medium">Equipo Primera Especial</span>
+<span class="text-secondary">· Cuota federativa y fianza de torneo 2025</span>
+</div>
+<span class="font-mono-data text-mono-data text-tertiary font-bold">$2,600.00 MXN</span>
+</div>
+<div class="p-space-sm bg-tertiary-fixed/30 rounded-lg mt-space-xs flex items-center justify-between text-body-sm">
+<div class="flex items-center gap-space-xs text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+<span><strong>Sanción en vigor Art. 88:</strong> Retención de credenciales de juego e inhabilitación en rol de la Jornada 8.</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-bold">Sin solvencia</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Nota de Responsabilidad Hacendaria (Pie de Página) -->
+<div class="mt-space-lg p-space-md rounded-xl bg-surface-container-low flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+<strong class="text-on-surface font-medium">Regla de Responsabilidad Hacendaria (TES-004):</strong> Todo pago registrado en efectivo o transferencia externa genera una póliza contable inmutable para la glosa anual ante la Asamblea de Delegados de la Liga Municipal.
+      </p>
+</div>
+<div class="inline-flex items-center gap-1 text-secondary font-label-sm text-label-sm whitespace-nowrap">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span>Cifrado contable SHA-256</span>
+</div>
+</div>
+<!-- MODAL INSTITUCIONAL 1: REGISTRAR PAGO EXTERNO (Obligatorio) -->
+<div class="fixed inset-0 z-50 bg-on-secondary-fixed/50 backdrop-blur-sm hidden items-center justify-center p-space-md" id="modalPayment">
+<div class="bg-surface-container-lowest rounded-xl max-w-2xl w-full shadow-2xl overflow-hidden flex flex-col">
+<!-- Encabezado Modal -->
+<div class="p-space-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[24px]">receipt_long</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface" id="modalFolioTitle">Registrar Pago Externo · Folio COB-2025-0412</h2>
+<span class="font-body-sm text-body-sm text-secondary">Recepción administrativa en ventanilla o cotejo bancario de Tesorería</span>
+</div>
+</div>
+<button class="w-9 h-9 rounded-lg hover:bg-surface-container text-secondary hover:text-on-surface flex items-center justify-center transition-colors" onclick="closeRegisterPaymentModal()" type="button">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</div>
+<!-- Resumen Fijo del Cobro Seleccionado -->
+<div class="px-space-lg py-space-sm bg-surface-container flex flex-wrap items-center justify-between gap-space-sm font-body-sm text-body-sm">
+<div>
+<span class="text-secondary">Destino:</span>
+<strong class="text-on-surface font-semibold ml-1" id="modalTargetClub">Halcones FC (Libre Primera)</strong>
+</div>
+<div>
+<span class="text-secondary">Concepto:</span>
+<span class="text-on-surface ml-1 font-medium" id="modalConceptText">Honorarios de terna arbitral - Jornada 7</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="text-secondary">Importe a liquidar:</span>
+<strong class="font-mono-data text-mono-data text-primary font-bold text-headline-sm ml-1" id="modalAmountText">$1,850.00 MXN</strong>
+</div>
+</div>
+<!-- Cuerpo del Formulario Reglamentario -->
+<form class="p-space-lg flex flex-col gap-space-md overflow-y-auto max-h-[716px]" id="formRegisterPayment" onsubmit="handlePaymentSubmit(event)">
+<!-- Campo: Medio de Pago (Obligatorio) -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold">
+            Medio de pago <span class="text-tertiary">*</span>
+</label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<label class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="w-4 h-4 text-primary focus:ring-primary" name="payment_method" type="radio" value="efectivo"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Efectivo</span>
+<span class="font-body-sm text-body-sm text-secondary">Ventanilla de Liga</span>
+</div>
+</label>
+<label class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input class="w-4 h-4 text-primary focus:ring-primary" name="payment_method" type="radio" value="spei"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">SPEI / Banco</span>
+<span class="font-body-sm text-body-sm text-secondary">Cuenta BBVA Liga</span>
+</div>
+</label>
+<label class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input class="w-4 h-4 text-primary focus:ring-primary" name="payment_method" type="radio" value="cheque"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Cheque / Otro</span>
+<span class="font-body-sm text-body-sm text-secondary">Sujeto a salvo buen fin</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Fila con Fecha y Referencia -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Campo: Fecha de Recepción -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="payDate">
+              Fecha de recepción del pago <span class="text-tertiary">*</span>
+</label>
+<input class="h-11 px-space-sm bg-surface-container-lowest text-on-surface rounded-lg font-body-md text-body-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary" id="payDate" required="" type="date" value="2025-11-12"/>
+</div>
+<!-- Campo: Referencia Bancaria / Recibo -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="payReference">
+              Referencia bancaria o No. de recibo oficial <span class="text-tertiary">*</span>
+</label>
+<input class="h-11 px-space-sm bg-surface-container-lowest text-on-surface font-mono-data text-mono-data rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary" id="payReference" placeholder="Ej. SPEI-98432170 o REC-TES-1184" required="" type="text" value="SPEI-98432170"/>
+</div>
+</div>
+<!-- Campo: Carga del Comprobante (Obligatorio) -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold">
+            Carga del comprobante digital <span class="text-tertiary">*</span>
+</label>
+<div class="p-space-md bg-surface-container-low rounded-xl flex flex-col items-center justify-center text-center gap-space-xs">
+<span class="material-symbols-outlined text-[32px] text-primary">cloud_done</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">comprobante_spei_halcones_j07.pdf</span>
+<span class="font-mono-data text-body-sm text-secondary">420 KB · Cotejado y validado digitalmente</span>
+<button class="mt-1 font-label-sm text-label-sm text-primary hover:underline font-bold" type="button">
+              Reemplazar archivo digital
+            </button>
+</div>
+</div>
+<!-- Campo: Motivo y Observaciones (Obligatorio) -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="payNotes">
+            Motivo y observaciones del registro <span class="text-tertiary">*</span>
+</label>
+<textarea class="p-space-sm bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary" id="payNotes" placeholder="Especifique el motivo de registro, delegado presente y circunstancias..." required="" rows="3">Pago realizado por el delegado Fernando Tapia correspondiente al arbitraje colegiado de la jornada 7 verificado en cuenta bancaria de la Liga Municipal.</textarea>
+<span class="font-body-sm text-body-sm text-secondary">Este texto quedará impreso en la glosa contable y póliza de ingreso.</span>
+</div>
+<!-- Nota Reglamentaria del Modal -->
+<div class="p-space-sm rounded-lg bg-primary-fixed/30 text-on-primary-fixed-variant font-body-sm text-body-sm flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary mt-0.5">verified</span>
+<span><strong>Efecto reglamentario:</strong> La aprobación de este pago emitirá el recibo oficial digital con folio fiscal de la Tesorería de la Liga Municipal y liberará la solvencia del club en el sistema de cómputo.</span>
+</div>
+<!-- Botones de Acción del Modal -->
+<div class="pt-space-sm flex items-center justify-end gap-space-sm">
+<button class="h-11 px-space-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md rounded-lg transition-colors" onclick="closeRegisterPaymentModal()" type="button">
+            Cancelar
+          </button>
+<button class="h-11 px-space-xl bg-primary text-on-primary font-headline-sm text-label-md rounded-lg shadow-md hover:bg-surface-tint active:bg-primary-container transition-colors flex items-center gap-space-xs" type="submit">
+<span class="material-symbols-outlined text-[20px]">check</span>
+<span>Confirmar y Aplicar Pago</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- MODAL INSTITUCIONAL 2: NUEVO COBRO (Obligatorio) -->
+<div class="fixed inset-0 z-50 bg-on-secondary-fixed/50 backdrop-blur-sm hidden items-center justify-center p-space-md" id="modalNewCharge">
+<div class="bg-surface-container-lowest rounded-xl max-w-2xl w-full shadow-2xl overflow-hidden flex flex-col">
+<!-- Encabezado Modal -->
+<div class="p-space-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[24px]">add_card</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface">Emitir Nuevo Cobro Federativo</h2>
+<span class="font-body-sm text-body-sm text-secondary">Generación de orden de pago oficial con notificación reglamentaria</span>
+</div>
+</div>
+<button class="w-9 h-9 rounded-lg hover:bg-surface-container text-secondary hover:text-on-surface flex items-center justify-center transition-colors" onclick="closeNewChargeModal()" type="button">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</div>
+<!-- Formulario de Emisión -->
+<form class="p-space-lg flex flex-col gap-space-md overflow-y-auto max-h-[716px]" id="formNewCharge" onsubmit="handleNewChargeSubmit(event)">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Destino: Club o Equipo -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="newChargeClub">
+              Destino (Club o Equipo) <span class="text-tertiary">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-11 px-space-sm bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer" id="newChargeClub" required="">
+<option value="">Seleccione un club afiliado...</option>
+<option value="Halcones FC">Halcones FC (Libre Primera Grupo A)</option>
+<option value="Toros de Santa María">Toros de Santa María (Club General)</option>
+<option value="Real Atapaneo">Real Atapaneo (Juvenil B)</option>
+<option value="Félix Ireta">Félix Ireta (Libre Primera)</option>
+<option value="Canarios Morelia">Canarios Morelia (Juvenil Especial)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-secondary text-[18px]">expand_more</span>
+</div>
+</div>
+<!-- Concepto Hacendario -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="newChargeConcept">
+              Concepto reglamentario <span class="text-tertiary">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-11 px-space-sm bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer" id="newChargeConcept" required="">
+<option value="Arbitraje">Arbitraje (Cédula oficial)</option>
+<option value="Uso de cancha">Uso de cancha municipal</option>
+<option value="Multa disciplinaria">Multa disciplinaria (Comisión)</option>
+<option value="Tarjetón/Afiliación">Tarjetón / Afiliación federada</option>
+<option value="Cuota ordinaria">Cuota ordinaria bimestral</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-secondary text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+<!-- Monto en MXN -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="newChargeAmount">
+              Monto en MXN <span class="text-tertiary">*</span>
+</label>
+<input class="h-11 px-space-sm bg-surface-container-lowest text-on-surface font-mono-data text-mono-data rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary" id="newChargeAmount" min="10" placeholder="0.00" required="" step="0.50" type="number"/>
+</div>
+<!-- Periodo de Pago -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="newChargePeriod">
+              Periodo de pago <span class="text-tertiary">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-11 px-space-sm bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer" id="newChargePeriod" required="">
+<option value="Jornada 8">Jornada 8</option>
+<option value="Jornada 9">Jornada 9</option>
+<option value="Mensualidad Noviembre 2025">Mensualidad Noviembre 2025</option>
+<option value="Fase Regular Temporada">Fase Regular Temporada</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-secondary text-[18px]">expand_more</span>
+</div>
+</div>
+<!-- Fecha Límite -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="newChargeDeadline">
+              Fecha límite <span class="text-tertiary">*</span>
+</label>
+<input class="h-11 px-space-sm bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary" id="newChargeDeadline" required="" type="date"/>
+</div>
+</div>
+<!-- Motivo Reglamentario (Obligatorio) -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="newChargeReason">
+            Motivo reglamentario y fundamentación <span class="text-tertiary">*</span>
+</label>
+<textarea class="p-space-sm bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary" id="newChargeReason" placeholder="Indique los artículos aplicables, jornada, acuerdo de asamblea o número de expediente disciplinario..." required="" rows="3"></textarea>
+</div>
+<!-- Botones Modal -->
+<div class="pt-space-sm flex items-center justify-end gap-space-sm">
+<button class="h-11 px-space-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md rounded-lg transition-colors" onclick="closeNewChargeModal()" type="button">
+            Cancelar
+          </button>
+<button class="h-11 px-space-xl bg-primary text-on-primary font-headline-sm text-label-md rounded-lg shadow-md hover:bg-surface-tint active:bg-primary-container transition-colors flex items-center gap-space-xs" type="submit">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span>Emitir y Notificar al Club</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Toast de Notificación Dinámica -->
+<div class="fixed bottom-6 right-6 z-50 hidden items-center gap-space-sm px-space-md py-space-sm bg-on-secondary-fixed text-surface rounded-xl shadow-2xl transition-all" id="toastNotification">
+<span class="material-symbols-outlined text-primary-fixed text-[24px]">verified</span>
+<span class="font-body-md text-body-md font-medium" id="toastMessage">Operación contable registrada correctamente.</span>
+</div>
+</div>
+<script>
+  // Control de Pestañas
+  const tabBtnCobros = document.getElementById('tabBtnCobros');
+  const tabBtnAdeudos = document.getElementById('tabBtnAdeudos');
+  const sectionCobros = document.getElementById('sectionCobros');
+  const sectionAdeudos = document.getElementById('sectionAdeudos');
+
+  tabBtnCobros.addEventListener('click', () => {
+    tabBtnCobros.className = 'pb-space-sm px-space-xs font-headline-sm text-headline-sm text-primary border-b-2 border-primary flex items-center gap-space-xs transition-colors';
+    tabBtnAdeudos.className = 'pb-space-sm px-space-xs font-label-md text-label-md text-secondary hover:text-on-surface flex items-center gap-space-xs transition-colors';
+    sectionCobros.classList.remove('hidden');
+    sectionAdeudos.classList.add('hidden');
+  });
+
+  tabBtnAdeudos.addEventListener('click', () => {
+    tabBtnAdeudos.className = 'pb-space-sm px-space-xs font-headline-sm text-headline-sm text-primary border-b-2 border-primary flex items-center gap-space-xs transition-colors';
+    tabBtnCobros.className = 'pb-space-sm px-space-xs font-label-md text-label-md text-secondary hover:text-on-surface flex items-center gap-space-xs transition-colors';
+    sectionAdeudos.classList.remove('hidden');
+    sectionCobros.classList.add('hidden');
+  });
+
+  // Modal: Registrar Pago Externo
+  const modalPayment = document.getElementById('modalPayment');
+  const modalFolioTitle = document.getElementById('modalFolioTitle');
+  const modalTargetClub = document.getElementById('modalTargetClub');
+  const modalAmountText = document.getElementById('modalAmountText');
+  const modalConceptText = document.getElementById('modalConceptText');
+
+  window.openRegisterPaymentModal = function(folio, club, amount, concept) {
+    modalFolioTitle.innerText = `Registrar Pago Externo · Folio ${folio}`;
+    modalTargetClub.innerText = club;
+    modalAmountText.innerText = amount;
+    modalConceptText.innerText = concept;
+    modalPayment.classList.remove('hidden');
+    modalPayment.classList.add('flex');
+  };
+
+  window.closeRegisterPaymentModal = function() {
+    modalPayment.classList.add('hidden');
+    modalPayment.classList.remove('flex');
+  };
+
+  window.handlePaymentSubmit = function(e) {
+    e.preventDefault();
+    closeRegisterPaymentModal();
+    showToast('Pago externo registrado exitosamente. Recibo fiscal emitido.');
+  };
+
+  // Modal: Nuevo Cobro
+  const modalNewCharge = document.getElementById('modalNewCharge');
+  const btnOpenNewCharge = document.getElementById('btnOpenNewChargeModal');
+
+  btnOpenNewCharge.addEventListener('click', () => {
+    modalNewCharge.classList.remove('hidden');
+    modalNewCharge.classList.add('flex');
+  });
+
+  window.closeNewChargeModal = function() {
+    modalNewCharge.classList.add('hidden');
+    modalNewCharge.classList.remove('flex');
+  };
+
+  window.handleNewChargeSubmit = function(e) {
+    e.preventDefault();
+    closeNewChargeModal();
+    showToast('Nuevo cobro federativo emitido y notificado al club.');
+  };
+
+  // Descarga simulada de Estado de Cuenta
+  document.getElementById('btnOpenAccountStatement').addEventListener('click', () => {
+    showToast('Generando Estado de Cuenta en PDF (Corte al 12/Nov/2025)...');
+  });
+
+  // Limpieza de Filtros
+  document.getElementById('btnResetFilters').addEventListener('click', () => {
+    document.getElementById('filterClub').value = 'all';
+    document.getElementById('filterTeam').value = 'all';
+    document.getElementById('filterType').value = 'all';
+    document.getElementById('filterStatus').value = 'all';
+    document.getElementById('filterPeriod').value = 'j8';
+    showToast('Filtros restablecidos a Jornada 8 activa.');
+  });
+
+  // Notificación Toast
+  function showToast(message) {
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMessage');
+    toastMsg.innerText = message;
+    toast.classList.remove('hidden');
+    toast.classList.add('flex');
+    setTimeout(() => {
+      toast.classList.add('hidden');
+      toast.classList.remove('flex');
+    }, 4000);
+  }
+</script></main></div></body></html>

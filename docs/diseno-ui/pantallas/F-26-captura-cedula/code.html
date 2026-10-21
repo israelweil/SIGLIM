@@ -1,0 +1,1079 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-container": "#8ee4a6", "tertiary-fixed": "#ffdada", "on-primary-fixed-variant": "#00522a", "surface-tint": "#0b6d3b", "outline": "#6f7a70", "on-surface": "#0b1c30", "on-secondary-fixed": "#131b2e", "tertiary-fixed-dim": "#ffb3b6", "primary-fixed": "#9ef6b6", "surface-dim": "#cbdbf5", "surface": "#f8f9ff", "surface-container-lowest": "#ffffff", "surface-container": "#e5eeff", "secondary": "#565e74", "on-secondary": "#ffffff", "surface-container-low": "#eff4ff", "primary": "#004d27", "tertiary-container": "#943e46", "on-error": "#ffffff", "tertiary": "#762730", "secondary-fixed-dim": "#bec6e0", "inverse-on-surface": "#eaf1ff", "secondary-fixed": "#dae2fc", "inverse-primary": "#83d99c", "on-background": "#0b1c30", "on-primary": "#ffffff", "surface-container-high": "#dce9ff", "error": "#ba1a1a", "surface-bright": "#f8f9ff", "outline-variant": "#bec9be", "on-secondary-fixed-variant": "#3f465b", "error-container": "#ffdad6", "on-tertiary-fixed-variant": "#7b2b34", "on-primary-fixed": "#00210e", "inverse-surface": "#213145", "primary-fixed-dim": "#83d99c", "on-tertiary-fixed": "#40000c", "on-secondary-container": "#5a6278", "primary-container": "#006837", "secondary-container": "#d8dff9", "on-tertiary": "#ffffff", "surface-variant": "#d3e4fe", "on-surface-variant": "#3f4940", "background": "#f8f9ff", "surface-container-highest": "#d3e4fe", "on-error-container": "#93000a", "on-tertiary-container": "#ffc3c5" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "1.5rem", "margin-desktop": "2rem", "gutter-desktop": "1.5rem", "space-xs": "0.25rem", "space-md": "0.75rem", "space-lg": "1rem", "gutter": "1rem", "space-sm": "0.5rem", "margin": "1rem" }, "fontFamily": { "body-lg": [ "Inter" ], "headline-lg": [ "Inter" ], "body-sm": [ "Inter" ], "mono-data": [ "JetBrains Mono" ], "headline-md": [ "Inter" ], "display-lg": [ "Inter" ], "mono-score": [ "JetBrains Mono" ], "display-lg-mobile": [ "Inter" ], "body-md": [ "Inter" ], "headline-sm": [ "Inter" ], "label-sm": [ "Inter" ], "label-md": [ "Inter" ] }, "fontSize": { "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "headline-lg": [ "24px", { "lineHeight": "32px", "fontWeight": "600" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "mono-data": [ "13px", { "lineHeight": "18px", "fontWeight": "500" } ], "headline-md": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "display-lg": [ "36px", { "lineHeight": "44px", "fontWeight": "700" } ], "mono-score": [ "28px", { "lineHeight": "32px", "fontWeight": "700" } ], "display-lg-mobile": [ "28px", { "lineHeight": "36px", "fontWeight": "700" } ], "body-md": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "headline-sm": [ "16px", { "lineHeight": "24px", "fontWeight": "600" } ], "label-sm": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" } ], "label-md": [ "14px", { "lineHeight": "20px", "fontWeight": "500" } ] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-gutter-desktop flex items-center gap-space-sm bg-surface-container-lowest"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[20px]">sports_soccer</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-tight tracking-tight">SIGLIM</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Futbol Amateur</span></div></div><div class="px-space-md py-space-sm"><div class="h-px w-full bg-surface-container-high mb-space-sm"></div><span class="px-space-md font-label-sm text-label-sm text-secondary uppercase tracking-wider">Menú Institucional</span></div><nav class="flex flex-col gap-space-xs px-space-md" data-active-classes="bg-primary-container text-on-primary font-label-md rounded-lg shadow-sm"><a class="flex items-center gap-space-md px-space-md h-11 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="inicio" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-md text-label-md">Inicio</span></a><a class="flex items-center gap-space-md px-space-md h-11 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="cedulas-y-partidos" href="#"><span class="material-symbols-outlined text-[20px]">description</span><span class="font-label-md text-label-md">Cédulas y Partidos</span></a><a class="flex items-center gap-space-md px-space-md h-11 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="canchas" href="#"><span class="material-symbols-outlined text-[20px]">stadium</span><span class="font-label-md text-label-md">Canchas</span></a><a class="flex items-center gap-space-md px-space-md h-11 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="arbitros" href="#"><span class="material-symbols-outlined text-[20px]">sports</span><span class="font-label-md text-label-md">Árbitros</span></a><a class="flex items-center gap-space-md px-space-md h-11 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="auditoria" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span class="font-label-md text-label-md">Auditoría</span></a><a class="flex items-center gap-space-md px-space-md h-11 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="configuracion" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-label-md text-label-md">Configuración</span></a></nav></div><div class="p-space-md bg-surface-container-low mx-space-md mb-space-lg rounded-lg flex flex-col gap-space-xs"><span class="font-label-sm text-label-sm text-secondary uppercase">Municipio</span><span class="font-body-sm text-body-sm text-on-surface font-semibold">Morelia, Michoacán</span><span class="font-label-sm text-label-sm text-on-surface-variant">Sede Oficial Deportiva</span></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40"><div class="w-full h-16 px-gutter-desktop flex items-center justify-between"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary text-[22px]">shield</span><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight uppercase">SIGLIM FUTBOL AMATEUR</span></div><div class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant"><span class="material-symbols-outlined text-[14px]">check_circle</span><span class="font-label-sm text-label-sm uppercase font-semibold">Temporada 2025–2026 · Activa</span></div></div><div class="flex items-center gap-space-lg"><button aria-label="Notificaciones" class="relative p-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error"></span></button><div class="h-8 w-px bg-surface-container-high"></div><div class="flex items-center gap-space-md"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-semibold">Martín Salgado</span><span class="font-body-sm text-body-sm text-secondary">Capturista Oficial / Cédulas</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full pb-16">
+<!-- 1. BREADCRUMBS Y ENCABEZADO SUPERIOR -->
+<header class="w-full bg-surface-container-lowest px-margin-desktop py-space-lg flex flex-col gap-space-md shadow-sm">
+<!-- Breadcrumbs & Status Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<nav aria-label="Ruta de navegación" class="flex items-center flex-wrap gap-space-xs text-body-sm text-secondary font-body-sm">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">description</span> Cédulas y Partidos
+        </a>
+<span class="text-outline-variant font-mono-data">/</span>
+<span>Temporada 2025–2026</span>
+<span class="text-outline-variant font-mono-data">/</span>
+<span class="font-medium text-on-surface">Libre Primera División (Grupo A)</span>
+<span class="text-outline-variant font-mono-data">/</span>
+<span>Jornada 7</span>
+<span class="text-outline-variant font-mono-data">/</span>
+<span class="font-mono-data font-semibold text-primary px-space-xs py-0.5 rounded bg-surface-container">CED-2025-J07-018</span>
+</nav>
+<div class="flex items-center gap-space-md">
+<!-- Indicador de ambiente demo -->
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-on-secondary-container text-label-sm font-label-sm uppercase tracking-wide">
+<span class="material-symbols-outlined text-[14px]">science</span>
+          No oficial · Ambiente de prueba
+        </span>
+<!-- Guardado automático -->
+<div class="inline-flex items-center gap-1.5 text-body-sm text-primary font-medium" id="autosave-indicator">
+<span class="material-symbols-outlined text-[18px] text-primary-container">cloud_done</span>
+<span>Guardado automático: <span class="font-mono-data text-body-sm">hace 5 s</span></span>
+</div>
+</div>
+</div>
+<!-- Título Principal y Acciones -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-md">
+<h1 class="text-headline-lg font-headline-lg text-on-surface tracking-tight">
+            Captura de Cédula Oficial · Jornada 7
+          </h1>
+<!-- Insignia En Captura -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/15 text-amber-900 text-label-sm font-label-sm font-semibold uppercase tracking-wider">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-600 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-amber-600"></span>
+</span>
+<span class="material-symbols-outlined text-[14px]">edit_note</span>
+            En captura
+          </div>
+</div>
+<p class="text-body-md font-body-md text-secondary flex items-center gap-2">
+<span class="font-semibold text-on-surface">Halcones FC (Local) vs Toros de Santa María (Visita)</span>
+<span class="text-outline-variant font-mono-data">·</span>
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">stadium</span>
+            UD Cuauhtémoc · Cancha 2
+          </span>
+<span class="text-outline-variant font-mono-data">·</span>
+<span>Domingo 10:00 hrs</span>
+</p>
+</div>
+<!-- Botones de Acción -->
+<div class="flex items-center gap-space-md">
+<button class="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container text-label-md font-label-md shadow-sm transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">save</span>
+          Guardar borrador local
+        </button>
+<button class="inline-flex items-center justify-center gap-2 h-11 px-6 rounded-lg bg-primary-container text-on-primary hover:bg-primary text-label-md font-label-md shadow-sm transition-all active:scale-[0.98]" id="btn-submit-cedula" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+          Enviar a validación
+        </button>
+</div>
+</div>
+</header>
+<!-- 2. ALERTA DE REGLAS DE VALIDACIÓN AL ENVIAR (VAL-020) -->
+<section class="px-margin-desktop mt-space-lg">
+<div class="w-full rounded-xl bg-error-container/40 p-space-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-start gap-space-md">
+<div class="w-9 h-9 rounded-lg bg-error text-on-error flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">rule</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="text-headline-sm font-headline-sm text-tertiary">
+              Validación previa al dictamen arbitral (Código VAL-020)
+            </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-error/15 text-error text-label-sm font-label-sm font-semibold uppercase">
+              2 requisitos obligatorios pendientes
+            </span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+            El sistema de arbitraje municipal requiere subsanar estas omisiones antes de formalizar el cierre digital del encuentro:
+          </p>
+<ul class="flex flex-col gap-1.5 mt-1">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-error">priority_high</span>
+<a class="text-body-sm font-body-sm text-primary hover:underline font-semibold flex items-center gap-1" href="#alineacion-local">
+                Alineación Local: Se requiere designar al menos 7 jugadores titulares elegibles (actualmente 6 seleccionados)
+                <span class="material-symbols-outlined text-[14px]">pixel_4_4xl_4a_5_5a_5g</span>
+</a>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-error">priority_high</span>
+<a class="text-body-sm font-body-sm text-primary hover:underline font-semibold flex items-center gap-1" href="#panel-incidencias">
+                Incidencias: La expulsión en minuto 64' carece del motivo arbitral tipificado según reglamento oficial
+                <span class="material-symbols-outlined text-[14px]">pixel_4_4xl_4a_5_5a_5g</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-secondary bg-surface-container-lowest/80 px-3 py-1.5 rounded-lg flex-shrink-0">
+        Reglamento Oficial FMF / LMFA · Art. 34 y 62
+      </span>
+</div>
+</section>
+<!-- 3. ESTRUCTURA CENTRAL EN 3 COLUMNAS -->
+<main class="px-margin-desktop mt-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- COLUMNA 1 (Izquierda, 4 de 12 cols ~33%): ALINEACIÓN LOCAL -->
+<div class="lg:col-span-4 flex flex-col rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden" id="alineacion-local">
+<!-- Header Club Local -->
+<div class="p-space-lg bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-blue-700 text-surface-container-lowest flex items-center justify-center font-display-lg text-[20px] font-bold shadow-sm">
+              H
+            </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface">Halcones FC</span>
+<span class="text-label-sm font-label-sm text-primary font-bold uppercase tracking-wide bg-primary-fixed px-1.5 py-0.2 rounded">Local</span>
+</div>
+<span class="text-body-sm font-body-sm text-secondary">Uniforme Azul Rey · Registro Reg. #HLC-102</span>
+</div>
+</div>
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface text-label-sm font-label-sm transition-colors" title="Subir jugador de Juvenil conforme al Art. 28" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">person_add</span>
+            + Cat. inferior
+          </button>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-body-sm font-body-sm text-secondary">
+<span class="inline-flex items-center gap-1">
+<strong class="text-error font-mono-data">Titulares: 6/11</strong> (Mín. 7)
+          </span>
+<span class="text-outline-variant font-mono-data">|</span>
+<span>Suplentes: <strong class="text-on-surface font-mono-data">4</strong></span>
+<span class="text-outline-variant font-mono-data">|</span>
+<span>En Cancha: <strong class="text-on-surface font-mono-data">10</strong></span>
+</div>
+</div>
+<!-- Tabla de Jugadores Local -->
+<div class="overflow-x-auto">
+<table class="w-full text-left text-body-sm font-body-sm">
+<thead class="bg-surface-container-low text-secondary text-label-sm font-label-sm uppercase tracking-wider">
+<tr>
+<th class="py-2.5 px-3 text-center w-8" scope="col">Alin</th>
+<th class="py-2.5 px-2 text-center w-12" scope="col">#</th>
+<th class="py-2.5 px-3" scope="col">Jugador / CURP</th>
+<th class="py-2.5 px-2 w-24" scope="col">Condición</th>
+<th class="py-2.5 px-3 text-right" scope="col">Elegibilidad</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high/40">
+<!-- Portero -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-2 px-3 text-center">
+<input checked="" class="w-4 h-4 accent-primary rounded cursor-pointer" type="checkbox">
+</td>
+<td class="py-2 px-2 text-center">
+<input class="w-9 h-7 text-center rounded bg-surface-container-low font-mono-data text-body-sm text-on-surface font-semibold focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="01">
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface flex items-center gap-1">
+                    Roberto Silva
+                    <span class="text-label-sm text-secondary font-normal font-mono-data">(POR)</span>
+</span>
+<span class="text-[11px] text-secondary font-mono-data">SILR890412HMN</span>
+</div>
+</td>
+<td class="py-2 px-2">
+<select class="h-7 text-xs rounded bg-surface-container-low font-medium text-on-surface focus:outline-none">
+<option selected="">Titular</option>
+<option>Suplente</option>
+<option>No convocado</option>
+</select>
+</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-900 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Elegible
+                </span>
+</td>
+</tr>
+<!-- Titular 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-2 px-3 text-center">
+<input checked="" class="w-4 h-4 accent-primary rounded cursor-pointer" type="checkbox">
+</td>
+<td class="py-2 px-2 text-center">
+<input class="w-9 h-7 text-center rounded bg-surface-container-low font-mono-data text-body-sm text-on-surface font-semibold focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="04">
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface flex items-center gap-1">
+                    Miguel Pantoja
+                    <span class="material-symbols-outlined text-tertiary text-[14px]" title="Expulsado al 64'">credit_card</span>
+</span>
+<span class="text-[11px] text-secondary font-mono-data">PANM920311HMC</span>
+</div>
+</td>
+<td class="py-2 px-2">
+<select class="h-7 text-xs rounded bg-surface-container-low font-medium text-on-surface focus:outline-none">
+<option selected="">Titular</option>
+<option>Suplente</option>
+</select>
+</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-900 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Elegible
+                </span>
+</td>
+</tr>
+<!-- Titular 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-2 px-3 text-center">
+<input checked="" class="w-4 h-4 accent-primary rounded cursor-pointer" type="checkbox">
+</td>
+<td class="py-2 px-2 text-center">
+<input class="w-9 h-7 text-center rounded bg-surface-container-low font-mono-data text-body-sm text-on-surface font-semibold focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="07">
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Daniel Rojas</span>
+<span class="text-[11px] text-secondary font-mono-data">ROJD950820HMN</span>
+</div>
+</td>
+<td class="py-2 px-2">
+<select class="h-7 text-xs rounded bg-surface-container-low font-medium text-on-surface focus:outline-none">
+<option selected="">Titular</option>
+<option>Suplente</option>
+</select>
+</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-900 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Elegible
+                </span>
+</td>
+</tr>
+<!-- Titular 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-2 px-3 text-center">
+<input checked="" class="w-4 h-4 accent-primary rounded cursor-pointer" type="checkbox">
+</td>
+<td class="py-2 px-2 text-center">
+<input class="w-9 h-7 text-center rounded bg-surface-container-low font-mono-data text-body-sm text-on-surface font-semibold focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="08">
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface flex items-center gap-1">
+                    Luis Navarrete
+                    <span class="material-symbols-outlined text-secondary text-[14px]" title="Salió de cambio al 71'">sync_alt</span>
+</span>
+<span class="text-[11px] text-secondary font-mono-data">NAVL960114HMC</span>
+</div>
+</td>
+<td class="py-2 px-2">
+<select class="h-7 text-xs rounded bg-surface-container-low font-medium text-on-surface focus:outline-none">
+<option selected="">Titular</option>
+<option>Suplente</option>
+</select>
+</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-900 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Elegible
+                </span>
+</td>
+</tr>
+<!-- Titular 5 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-2 px-3 text-center">
+<input checked="" class="w-4 h-4 accent-primary rounded cursor-pointer" type="checkbox">
+</td>
+<td class="py-2 px-2 text-center">
+<input class="w-9 h-7 text-center rounded bg-surface-container-low font-mono-data text-body-sm text-on-surface font-semibold focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="09">
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Javier Solís</span>
+<span class="text-[11px] text-secondary font-mono-data">SOLJ940602HMC</span>
+</div>
+</td>
+<td class="py-2 px-2">
+<select class="h-7 text-xs rounded bg-surface-container-low font-medium text-on-surface focus:outline-none">
+<option selected="">Titular</option>
+<option>Suplente</option>
+</select>
+</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-900 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Elegible
+                </span>
+</td>
+</tr>
+<!-- Titular 6 / Capitán -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-2 px-3 text-center">
+<input checked="" class="w-4 h-4 accent-primary rounded cursor-pointer" type="checkbox">
+</td>
+<td class="py-2 px-2 text-center">
+<input class="w-9 h-7 text-center rounded bg-surface-container-low font-mono-data text-body-sm text-on-surface font-semibold focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="10">
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface flex items-center gap-1">
+                    Carlos Mendoza
+                    <span class="text-label-sm font-bold text-amber-700 font-mono-data">(C)</span>
+<span class="material-symbols-outlined text-emerald-700 text-[14px]">sports_soccer</span>
+</span>
+<span class="text-[11px] text-secondary font-mono-data">MENC901115HMN</span>
+</div>
+</td>
+<td class="py-2 px-2">
+<select class="h-7 text-xs rounded bg-surface-container-low font-medium text-on-surface focus:outline-none">
+<option selected="">Titular</option>
+<option>Suplente</option>
+</select>
+</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-900 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Elegible
+                </span>
+</td>
+</tr>
+<!-- Suplente promovido Art. 28 -->
+<tr class="bg-blue-50/40 hover:bg-blue-50/70 transition-colors">
+<td class="py-2 px-3 text-center">
+<input checked="" class="w-4 h-4 accent-primary rounded cursor-pointer" type="checkbox">
+</td>
+<td class="py-2 px-2 text-center">
+<input class="w-9 h-7 text-center rounded bg-surface-container-low font-mono-data text-body-sm text-on-surface font-semibold focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="22">
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-semibold text-on-surface">Alan Téllez</span>
+<span class="material-symbols-outlined text-emerald-700 text-[14px]">sports_soccer</span>
+</div>
+<span class="inline-block mt-0.5 px-1.5 py-0.2 rounded bg-blue-100 text-blue-900 text-[10px] font-semibold w-max uppercase">
+                    Categoría superior · Art. 28
+                  </span>
+</div>
+</td>
+<td class="py-2 px-2">
+<select class="h-7 text-xs rounded bg-surface-container-low font-medium text-on-surface focus:outline-none">
+<option>Titular</option>
+<option selected="">Suplente</option>
+</select>
+</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-900 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Elegible
+                </span>
+</td>
+</tr>
+<!-- Inhabilitado 1: Sanción vigente -->
+<tr class="bg-red-50/30 opacity-75">
+<td class="py-2 px-3 text-center">
+<input class="w-4 h-4 accent-primary rounded cursor-not-allowed opacity-40" disabled="" type="checkbox">
+</td>
+<td class="py-2 px-2 text-center">
+<span class="w-9 h-7 inline-flex items-center justify-center font-mono-data text-body-sm text-secondary bg-surface-container/60 rounded">14</span>
+</td>
+<td class="py-2 px-3" colspan="2">
+<div class="flex flex-col">
+<span class="font-medium text-secondary line-through">Juan Pablo Ortiz</span>
+<span class="text-tertiary text-label-sm font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">block</span>
+                    No elegible: Sanción vigente (Expulsión J6 - 2 part.)
+                  </span>
+</div>
+</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-error-container text-tertiary text-label-sm font-label-sm uppercase font-bold">
+                  Suspendido
+                </span>
+</td>
+</tr>
+<!-- Inhabilitado 2: Registro pendiente -->
+<tr class="bg-amber-50/30 opacity-75">
+<td class="py-2 px-3 text-center">
+<input class="w-4 h-4 accent-primary rounded cursor-not-allowed opacity-40" disabled="" type="checkbox">
+</td>
+<td class="py-2 px-2 text-center">
+<span class="w-9 h-7 inline-flex items-center justify-center font-mono-data text-body-sm text-secondary bg-surface-container/60 rounded">29</span>
+</td>
+<td class="py-2 px-3" colspan="2">
+<div class="flex flex-col">
+<span class="font-medium text-secondary">Mateo Calderón</span>
+<span class="text-amber-800 text-label-sm font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">pending</span>
+                    No elegible: Registro pendiente por Secretaría
+                  </span>
+</div>
+</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-amber-500/15 text-amber-900 text-label-sm font-label-sm uppercase font-bold">
+                  En trámite
+                </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- COLUMNA 2 (Centro, 4 de 12 cols ~33%): MARCADOR CENTRAL Y CONTROL -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Bloque de Marcador Principal -->
+<div class="rounded-xl bg-on-secondary-fixed text-on-secondary p-space-lg shadow-md flex flex-col items-center">
+<!-- Minuto / Periodo -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-tint/60 text-on-primary text-label-sm font-label-sm uppercase tracking-wider mb-space-md">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+<span>Tiempo regular · 90 min concluidos</span>
+</div>
+<!-- Tablero de Goles Interactivo -->
+<div class="w-full grid grid-cols-5 items-center my-space-sm">
+<!-- Local -->
+<div class="col-span-2 flex flex-col items-center gap-2">
+<span class="text-label-md font-label-md text-surface-container-high tracking-wider uppercase text-center">
+              Halcones FC
+            </span>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded-lg bg-surface-container/20 hover:bg-surface-container/30 text-surface-container flex items-center justify-center font-bold text-lg transition-colors" id="btn-dec-local" type="button">
+                -
+              </button>
+<div class="font-mono-score text-display-lg font-bold text-surface-container-lowest w-14 text-center" id="score-local">
+                2
+              </div>
+<button class="w-8 h-8 rounded-lg bg-primary-container hover:bg-primary text-on-primary flex items-center justify-center font-bold text-lg transition-colors" id="btn-inc-local" type="button">
+                +
+              </button>
+</div>
+<span class="text-label-sm font-label-sm text-surface-dim font-mono-data">Goles: 18', 83'</span>
+</div>
+<!-- Separador -->
+<div class="col-span-1 flex flex-col items-center justify-center">
+<span class="text-headline-md font-mono-data text-surface-dim font-semibold">VS</span>
+<span class="text-[11px] text-surface-container-highest tracking-widest uppercase">Oficial</span>
+</div>
+<!-- Visita -->
+<div class="col-span-2 flex flex-col items-center gap-2">
+<span class="text-label-md font-label-md text-surface-container-high tracking-wider uppercase text-center">
+              Toros Sta. María
+            </span>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded-lg bg-surface-container/20 hover:bg-surface-container/30 text-surface-container flex items-center justify-center font-bold text-lg transition-colors" id="btn-dec-visita" type="button">
+                -
+              </button>
+<div class="font-mono-score text-display-lg font-bold text-surface-container-lowest w-14 text-center" id="score-visita">
+                1
+              </div>
+<button class="w-8 h-8 rounded-lg bg-primary-container hover:bg-primary text-on-primary flex items-center justify-center font-bold text-lg transition-colors" id="btn-inc-visita" type="button">
+                +
+              </button>
+</div>
+<span class="text-label-sm font-label-sm text-surface-dim font-mono-data">Gol: 52'</span>
+</div>
+</div>
+<!-- Penales de Desempate -->
+<div class="w-full mt-space-md pt-space-md border-t border-surface-container/20 flex flex-col gap-space-xs">
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="w-4 h-4 accent-primary rounded" id="chk-penales" type="checkbox">
+<span class="text-body-sm font-body-sm text-surface-container-highest font-medium">
+              Hubo tanda de penales reglamentaria
+            </span>
+</label>
+<div class="flex items-center justify-between bg-surface-container/10 p-2.5 rounded-lg mt-1 hidden" id="penales-panel">
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm text-surface-dim">Penales:</span>
+<span class="font-mono-data font-bold text-surface-container-lowest">Local [4]</span>
+<span class="text-surface-dim">-</span>
+<span class="font-mono-data font-bold text-surface-container-lowest">Visita [3]</span>
+</div>
+<span class="text-[11px] text-surface-container-high italic">Punto extra oficial</span>
+</div>
+</div>
+</div>
+<!-- Casillas Reglamentarias de Comparecencia (Incomparecencia / Default) -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[20px]">gavel</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Dictamen de Comparecencia</h2>
+</div>
+<div class="flex flex-col gap-space-sm text-body-sm font-body-sm">
+<label class="flex items-start gap-2.5 p-2.5 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
+<input class="w-4 h-4 accent-primary rounded mt-0.5" type="checkbox">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">No se presentó (Incomparecencia) - Halcones FC</span>
+<span class="text-body-sm text-secondary">Aplica derrota federativa por default (Art. 52).</span>
+</div>
+</label>
+<label class="flex items-start gap-2.5 p-2.5 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
+<input class="w-4 h-4 accent-primary rounded mt-0.5" type="checkbox">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">No se presentó (Incomparecencia) - Toros de Santa María</span>
+<span class="text-body-sm text-secondary">Aplica derrota federativa por default (Art. 52).</span>
+</div>
+</label>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low text-body-sm font-body-sm text-secondary flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary mt-0.5">info</span>
+<span>
+            Al marcar incomparecencia se adjudica el marcador oficial federativo <strong>3 – 0</strong> a favor del equipo presente conforme al Reglamento de Competencia.
+          </span>
+</div>
+</div>
+<!-- Firma de la Cédula Arbitral -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-xs">
+<span class="text-label-sm font-label-sm text-secondary uppercase tracking-wider">Cuerpo Arbitral Municipal</span>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-space-md">
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">sports</span>
+</div>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface text-body-md font-body-md">Lic. Roberto Carlos Mendoza</span>
+<span class="text-body-sm font-body-sm text-secondary">Colegio de Árbitros de Michoacán A.C.</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-amber-800 bg-amber-500/15 px-2.5 py-1 rounded font-medium">
+<span class="material-symbols-outlined text-[14px]">draw</span> Firma pendiente
+          </span>
+</div>
+</div>
+</div>
+<!-- COLUMNA 3 (Derecha, 4 de 12 cols ~33%): ALINEACIÓN VISITANTE -->
+<div class="lg:col-span-4 flex flex-col rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden" id="alineacion-visita">
+<!-- Header Club Visitante -->
+<div class="p-space-lg bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-tertiary text-on-tertiary flex items-center justify-center font-display-lg text-[20px] font-bold shadow-sm">
+              T
+            </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface">Toros de Sta. María</span>
+<span class="text-label-sm font-label-sm text-tertiary font-bold uppercase tracking-wide bg-tertiary-fixed px-1.5 py-0.2 rounded">Visita</span>
+</div>
+<span class="text-body-sm font-body-sm text-secondary">Uniforme Carmesí · Reg. #TSM-044</span>
+</div>
+</div>
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface text-label-sm font-label-sm transition-colors" title="Subir jugador de Reserva conforme al Art. 28" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">person_add</span>
+            + Cat. inferior
+          </button>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-body-sm font-body-sm text-secondary">
+<span class="inline-flex items-center gap-1">
+<strong class="text-emerald-700 font-mono-data">Titulares: 8/11</strong> (Válido)
+          </span>
+<span class="text-outline-variant font-mono-data">|</span>
+<span>Suplentes: <strong class="text-on-surface font-mono-data">3</strong></span>
+<span class="text-outline-variant font-mono-data">|</span>
+<span>En Cancha: <strong class="text-on-surface font-mono-data">11</strong></span>
+</div>
+</div>
+<!-- Tabla de Jugadores Visita -->
+<div class="overflow-x-auto">
+<table class="w-full text-left text-body-sm font-body-sm">
+<thead class="bg-surface-container-low text-secondary text-label-sm font-label-sm uppercase tracking-wider">
+<tr>
+<th class="py-2.5 px-3 text-center w-8" scope="col">Alin</th>
+<th class="py-2.5 px-2 text-center w-12" scope="col">#</th>
+<th class="py-2.5 px-3" scope="col">Jugador / CURP</th>
+<th class="py-2.5 px-2 w-24" scope="col">Condición</th>
+<th class="py-2.5 px-3 text-right" scope="col">Elegibilidad</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high/40">
+<!-- Portero Visita -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-2 px-3 text-center">
+<input checked="" class="w-4 h-4 accent-primary rounded cursor-pointer" type="checkbox">
+</td>
+<td class="py-2 px-2 text-center">
+<input class="w-9 h-7 text-center rounded bg-surface-container-low font-mono-data text-body-sm text-on-surface font-semibold focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="01">
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface flex items-center gap-1">
+                    Óscar Tapia
+                    <span class="text-label-sm text-secondary font-normal font-mono-data">(POR)</span>
+</span>
+<span class="text-[11px] text-secondary font-mono-data">TAPO880914HMN</span>
+</div>
+</td>
+<td class="py-2 px-2">
+<select class="h-7 text-xs rounded bg-surface-container-low font-medium text-on-surface focus:outline-none">
+<option selected="">Titular</option>
+<option>Suplente</option>
+</select>
+</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-900 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Elegible
+                </span>
+</td>
+</tr>
+<!-- Titular 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-2 px-3 text-center">
+<input checked="" class="w-4 h-4 accent-primary rounded cursor-pointer" type="checkbox">
+</td>
+<td class="py-2 px-2 text-center">
+<input class="w-9 h-7 text-center rounded bg-surface-container-low font-mono-data text-body-sm text-on-surface font-semibold focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="05">
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface flex items-center gap-1">
+                    Héctor Morales
+                    <span class="material-symbols-outlined text-amber-600 text-[14px]" title="Amonestado al 34'">square</span>
+</span>
+<span class="text-[11px] text-secondary font-mono-data">MORH930219HMC</span>
+</div>
+</td>
+<td class="py-2 px-2">
+<select class="h-7 text-xs rounded bg-surface-container-low font-medium text-on-surface focus:outline-none">
+<option selected="">Titular</option>
+<option>Suplente</option>
+</select>
+</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-900 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Elegible
+                </span>
+</td>
+</tr>
+<!-- Titular 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-2 px-3 text-center">
+<input checked="" class="w-4 h-4 accent-primary rounded cursor-pointer" type="checkbox">
+</td>
+<td class="py-2 px-2 text-center">
+<input class="w-9 h-7 text-center rounded bg-surface-container-low font-mono-data text-body-sm text-on-surface font-semibold focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="09">
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface flex items-center gap-1">
+                    Gonzalo Castro
+                    <span class="material-symbols-outlined text-emerald-700 text-[14px]">sports_soccer</span>
+</span>
+<span class="text-[11px] text-secondary font-mono-data">CASG910712HMC</span>
+</div>
+</td>
+<td class="py-2 px-2">
+<select class="h-7 text-xs rounded bg-surface-container-low font-medium text-on-surface focus:outline-none">
+<option selected="">Titular</option>
+<option>Suplente</option>
+</select>
+</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-900 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Elegible
+                </span>
+</td>
+</tr>
+<!-- Titular 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-2 px-3 text-center">
+<input checked="" class="w-4 h-4 accent-primary rounded cursor-pointer" type="checkbox">
+</td>
+<td class="py-2 px-2 text-center">
+<input class="w-9 h-7 text-center rounded bg-surface-container-low font-mono-data text-body-sm text-on-surface font-semibold focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="11">
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Fernando Ruiz</span>
+<span class="text-[11px] text-secondary font-mono-data">RUIF950522HMN</span>
+</div>
+</td>
+<td class="py-2 px-2">
+<select class="h-7 text-xs rounded bg-surface-container-low font-medium text-on-surface focus:outline-none">
+<option selected="">Titular</option>
+<option>Suplente</option>
+</select>
+</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-900 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Elegible
+                </span>
+</td>
+</tr>
+<!-- Titular 5 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-2 px-3 text-center">
+<input checked="" class="w-4 h-4 accent-primary rounded cursor-pointer" type="checkbox">
+</td>
+<td class="py-2 px-2 text-center">
+<input class="w-9 h-7 text-center rounded bg-surface-container-low font-mono-data text-body-sm text-on-surface font-semibold focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="17">
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Sergio Valenzuela</span>
+<span class="text-[11px] text-secondary font-mono-data">VALS970130HMN</span>
+</div>
+</td>
+<td class="py-2 px-2">
+<select class="h-7 text-xs rounded bg-surface-container-low font-medium text-on-surface focus:outline-none">
+<option selected="">Titular</option>
+<option>Suplente</option>
+</select>
+</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-900 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Elegible
+                </span>
+</td>
+</tr>
+<!-- Jugador subido de Reserva Libre Art. 28 -->
+<tr class="bg-blue-50/40 hover:bg-blue-50/70 transition-colors">
+<td class="py-2 px-3 text-center">
+<input checked="" class="w-4 h-4 accent-primary rounded cursor-pointer" type="checkbox">
+</td>
+<td class="py-2 px-2 text-center">
+<input class="w-9 h-7 text-center rounded bg-surface-container-low font-mono-data text-body-sm text-on-surface font-semibold focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="28">
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Diego Barriga</span>
+<span class="inline-block mt-0.5 px-1.5 py-0.2 rounded bg-blue-100 text-blue-900 text-[10px] font-semibold w-max uppercase">
+                    Categoría superior · Res. Libre
+                  </span>
+</div>
+</td>
+<td class="py-2 px-2">
+<select class="h-7 text-xs rounded bg-surface-container-low font-medium text-on-surface focus:outline-none">
+<option>Titular</option>
+<option selected="">Suplente</option>
+</select>
+</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-900 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Elegible
+                </span>
+</td>
+</tr>
+<!-- Inhabilitado por Acumulación de 5 Amarillas -->
+<tr class="bg-red-50/30 opacity-75">
+<td class="py-2 px-3 text-center">
+<input class="w-4 h-4 accent-primary rounded cursor-not-allowed opacity-40" disabled="" type="checkbox">
+</td>
+<td class="py-2 px-2 text-center">
+<span class="w-9 h-7 inline-flex items-center justify-center font-mono-data text-body-sm text-secondary bg-surface-container/60 rounded">15</span>
+</td>
+<td class="py-2 px-3" colspan="2">
+<div class="flex flex-col">
+<span class="font-medium text-secondary line-through">Salvador Estrada</span>
+<span class="text-tertiary text-label-sm font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">block</span>
+                    No elegible: Sanción (5 amarillas VAL-015)
+                  </span>
+</div>
+</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-error-container text-tertiary text-label-sm font-label-sm uppercase font-bold">
+                  Suspendido
+                </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+<!-- 4. SECCIÓN INFERIOR 1: LÍNEA CRONOLÓGICA DE EVENTOS DEL PARTIDO -->
+<section class="px-margin-desktop mt-space-lg">
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-lg">
+<!-- Encabezado y Barra Rápida de Eventos -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md border-b border-surface-container-high/60 pb-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">history_edu</span>
+<h2 class="text-headline-md font-headline-md text-on-surface">Línea Cronológica de Eventos</h2>
+</div>
+<p class="text-body-sm font-body-sm text-secondary">
+            Registro secuencial de acciones oficiales validadas con el silbato arbitral
+          </p>
+</div>
+<!-- Botones de Acción Rápida -->
+<div class="flex flex-wrap items-center gap-2">
+<button class="inline-flex items-center gap-1.5 h-9 px-3.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-surface-container-lowest text-label-md font-label-md transition-colors shadow-sm" type="button">
+<span>⚽</span> + Gol
+          </button>
+<button class="inline-flex items-center gap-1.5 h-9 px-3.5 rounded-lg bg-slate-700 hover:bg-slate-800 text-surface-container-lowest text-label-md font-label-md transition-colors shadow-sm" type="button">
+<span>🥅</span> + Autogol
+          </button>
+<button class="inline-flex items-center gap-1.5 h-9 px-3.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-surface-container-lowest text-label-md font-label-md transition-colors shadow-sm" type="button">
+<span>🟨</span> + Tarjeta Amarilla
+          </button>
+<button class="inline-flex items-center gap-1.5 h-9 px-3.5 rounded-lg bg-rose-700 hover:bg-rose-800 text-surface-container-lowest text-label-md font-label-md transition-colors shadow-sm" type="button">
+<span>🟥</span> + Tarjeta Roja
+          </button>
+<button class="inline-flex items-center gap-1.5 h-9 px-3.5 rounded-lg bg-sky-700 hover:bg-sky-800 text-surface-container-lowest text-label-md font-label-md transition-colors shadow-sm" type="button">
+<span>🔄</span> + Sustitución
+          </button>
+</div>
+</div>
+<!-- Lista Cronológica Detallada -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- Evento 1: Gol -->
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start justify-between gap-space-sm hover:shadow-sm transition-shadow">
+<div class="flex items-start gap-space-md">
+<span class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-900 flex items-center justify-center font-mono-data font-bold text-body-lg flex-shrink-0">
+              18'
+            </span>
+<div class="flex flex-col">
+<span class="text-body-sm font-semibold text-on-surface flex items-center gap-1">
+                ⚽ Gol Oficial · Halcones FC
+              </span>
+<span class="text-body-sm text-secondary">
+                #10 Carlos Mendoza (Asistencia #07 Daniel Rojas)
+              </span>
+<span class="text-[11px] text-emerald-700 font-mono-data mt-0.5">Jugada en movimiento (1 - 0)</span>
+</div>
+</div>
+<button class="p-1 rounded text-secondary hover:text-error hover:bg-error-container/40 transition-colors" title="Quitar evento" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Evento 2: Amarilla -->
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start justify-between gap-space-sm hover:shadow-sm transition-shadow">
+<div class="flex items-start gap-space-md">
+<span class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-900 flex items-center justify-center font-mono-data font-bold text-body-lg flex-shrink-0">
+              34'
+            </span>
+<div class="flex flex-col">
+<span class="text-body-sm font-semibold text-on-surface flex items-center gap-1">
+                🟨 Tarjeta Amarilla · Toros Sta. María
+              </span>
+<span class="text-body-sm text-secondary">
+                #05 Héctor Morales
+              </span>
+<span class="text-[11px] text-amber-800 mt-0.5">Conducta antideportiva / Reclamo</span>
+</div>
+</div>
+<button class="p-1 rounded text-secondary hover:text-error hover:bg-error-container/40 transition-colors" title="Quitar evento" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Evento 3: Gol Visita -->
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start justify-between gap-space-sm hover:shadow-sm transition-shadow">
+<div class="flex items-start gap-space-md">
+<span class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-900 flex items-center justify-center font-mono-data font-bold text-body-lg flex-shrink-0">
+              52'
+            </span>
+<div class="flex flex-col">
+<span class="text-body-sm font-semibold text-on-surface flex items-center gap-1">
+                ⚽ Gol Oficial · Toros Sta. María
+              </span>
+<span class="text-body-sm text-secondary">
+                #09 Gonzalo Castro
+              </span>
+<span class="text-[11px] text-emerald-700 font-mono-data mt-0.5">Tiro libre directo (1 - 1)</span>
+</div>
+</div>
+<button class="p-1 rounded text-secondary hover:text-error hover:bg-error-container/40 transition-colors" title="Quitar evento" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Evento 4: Roja Directa -->
+<div class="p-3.5 rounded-lg bg-rose-50/70 flex items-start justify-between gap-space-sm hover:shadow-sm transition-shadow">
+<div class="flex items-start gap-space-md">
+<span class="w-10 h-10 rounded-lg bg-rose-600 text-on-primary flex items-center justify-center font-mono-data font-bold text-body-lg flex-shrink-0">
+              64'
+            </span>
+<div class="flex flex-col">
+<span class="text-body-sm font-semibold text-tertiary flex items-center gap-1">
+                🟥 Roja Directa · Halcones FC
+              </span>
+<span class="text-body-sm text-secondary">
+                #04 Miguel Pantoja
+              </span>
+<span class="text-[11px] text-error font-semibold mt-0.5">Juego brusco grave (Requiere tipificación)</span>
+</div>
+</div>
+<button class="p-1 rounded text-secondary hover:text-error hover:bg-error-container/40 transition-colors" title="Quitar evento" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Evento 5: Sustitución -->
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start justify-between gap-space-sm hover:shadow-sm transition-shadow">
+<div class="flex items-start gap-space-md">
+<span class="w-10 h-10 rounded-lg bg-sky-500/20 text-sky-900 flex items-center justify-center font-mono-data font-bold text-body-lg flex-shrink-0">
+              71'
+            </span>
+<div class="flex flex-col">
+<span class="text-body-sm font-semibold text-on-surface flex items-center gap-1">
+                🔄 Sustitución · Halcones FC
+              </span>
+<span class="text-body-sm text-secondary">
+                Sale: #08 Luis Navarrete
+              </span>
+<span class="text-body-sm text-primary font-medium">
+                Entra: #22 Alan Téllez
+              </span>
+</div>
+</div>
+<button class="p-1 rounded text-secondary hover:text-error hover:bg-error-container/40 transition-colors" title="Quitar evento" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Evento 6: Gol de la Victoria -->
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start justify-between gap-space-sm hover:shadow-sm transition-shadow">
+<div class="flex items-start gap-space-md">
+<span class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-900 flex items-center justify-center font-mono-data font-bold text-body-lg flex-shrink-0">
+              83'
+            </span>
+<div class="flex flex-col">
+<span class="text-body-sm font-semibold text-on-surface flex items-center gap-1">
+                ⚽ Gol Oficial · Halcones FC
+              </span>
+<span class="text-body-sm text-secondary">
+                #22 Alan Téllez (Jugador promovido)
+              </span>
+<span class="text-[11px] text-emerald-700 font-mono-data mt-0.5">Remate dentro del área (2 - 1)</span>
+</div>
+</div>
+<button class="p-1 rounded text-secondary hover:text-error hover:bg-error-container/40 transition-colors" title="Quitar evento" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. SECCIÓN INFERIOR 2: INCIDENCIAS REGLAMENTARIAS Y OBSERVACIONES -->
+<section class="px-margin-desktop mt-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-lg" id="panel-incidencias">
+<!-- Panel Izquierdo (7 cols): Incidencias del Encuentro -->
+<div class="lg:col-span-7 rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[22px]">warning</span>
+<h2 class="text-headline-md font-headline-md text-on-surface">Incidencias y Reporte Disciplinario</h2>
+</div>
+<span class="text-label-sm font-label-sm text-secondary bg-surface-container px-2.5 py-1 rounded">
+          Cédula de Sanción Federativa
+        </span>
+</div>
+<!-- Formulario para tipificar incidencia -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md bg-surface-container-low p-space-md rounded-lg">
+<div class="flex flex-col gap-1">
+<label class="text-label-md font-label-md text-on-surface font-medium">
+            Tipo de Incidencia <span class="text-error">*</span>
+</label>
+<select class="h-11 px-3 rounded-lg bg-surface-container-lowest text-body-md font-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary">
+<option>Amonestación reiterada</option>
+<option selected="">Expulsión (Roja Directa)</option>
+<option>Riña colectiva</option>
+<option>Invasión de cancha</option>
+<option>Falla de alumbrado / Terreno</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-md font-label-md text-on-surface font-medium">
+            Minuto <span class="text-error">*</span>
+</label>
+<input class="h-11 px-3 rounded-lg bg-surface-container-lowest text-body-md font-body-md text-on-surface font-mono-data focus:outline-none focus:ring-2 focus:ring-primary" type="text" value="64'">
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-md font-label-md text-on-surface font-medium">
+            Involucrados <span class="text-error">*</span>
+</label>
+<input class="h-11 px-3 rounded-lg bg-surface-container-lowest text-body-md font-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary" type="text" value="#04 Miguel Pantoja y cuerpo técnico">
+</div>
+<div class="sm:col-span-3 flex flex-col gap-1">
+<label class="text-label-md font-label-md text-on-surface font-medium">
+            Descripción de los Hechos y Tipificación Arbitral <span class="text-error">*</span>
+</label>
+<textarea class="w-full p-3 rounded-lg bg-surface-container-lowest text-body-md font-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary" rows="3">Al minuto 64' el jugador #04 comete una entrada con fuerza excesiva a la altura de la espinilla; el cuerpo técnico visitante ingresa al terreno de juego a protestar sin autorización del árbitro central, retirándose tras advertencia verbal.</textarea>
+</div>
+<div class="sm:col-span-3 flex justify-end">
+<button class="inline-flex items-center gap-2 h-11 px-5 rounded-lg bg-primary-container text-on-primary hover:bg-primary text-label-md font-label-md shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+            Actualizar incidencia formal
+          </button>
+</div>
+</div>
+</div>
+<!-- Panel Derecho (5 cols): Observaciones Generales de la Cédula -->
+<div class="lg:col-span-5 rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-md justify-between">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">notes</span>
+<h2 class="text-headline-md font-headline-md text-on-surface">Observaciones Generales</h2>
+</div>
+<p class="text-body-sm font-body-sm text-secondary">
+          Anotaciones de logística, estado del terreno de juego y uniformidad
+        </p>
+<textarea class="w-full p-3 rounded-lg bg-surface-container-low text-body-md font-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary mt-1" rows="6">El estado del terreno en UD Cuauhtémoc Cancha 2 presentó condiciones aptas. Balón reglamentario Voit #5 provisto por club local. El cotejo inició a las 10:02 hrs (2 min de demora por revisión de credenciales federativas).</textarea>
+</div>
+<div class="pt-space-md border-t border-surface-container-high/60 flex items-center justify-between">
+<div class="flex items-center gap-2 text-body-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+<span>Capturista: <strong>Martín Salgado</strong></span>
+</div>
+<span class="text-label-sm font-label-sm text-secondary font-mono-data">FOLIO-CED: 07-2025-018</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Microinteracciones Interactivas (Marcador y Tanda de Penales) -->
+<script>
+  (function initCedulaInteractions() {
+    // Control interactivo de Marcador Local
+    const scoreLocalEl = document.getElementById('score-local');
+    const btnIncLocal = document.getElementById('btn-inc-local');
+    const btnDecLocal = document.getElementById('btn-dec-local');
+    let localScore = 2;
+
+    if (btnIncLocal && btnDecLocal && scoreLocalEl) {
+      btnIncLocal.addEventListener('click', () => {
+        localScore++;
+        scoreLocalEl.textContent = localScore;
+        triggerAutosaveAnimation();
+      });
+      btnDecLocal.addEventListener('click', () => {
+        if (localScore > 0) {
+          localScore--;
+          scoreLocalEl.textContent = localScore;
+          triggerAutosaveAnimation();
+        }
+      });
+    }
+
+    // Control interactivo de Marcador Visita
+    const scoreVisitaEl = document.getElementById('score-visita');
+    const btnIncVisita = document.getElementById('btn-inc-visita');
+    const btnDecVisita = document.getElementById('btn-dec-visita');
+    let visitaScore = 1;
+
+    if (btnIncVisita && btnDecVisita && scoreVisitaEl) {
+      btnIncVisita.addEventListener('click', () => {
+        visitaScore++;
+        scoreVisitaEl.textContent = visitaScore;
+        triggerAutosaveAnimation();
+      });
+      btnDecVisita.addEventListener('click', () => {
+        if (visitaScore > 0) {
+          visitaScore--;
+          scoreVisitaEl.textContent = visitaScore;
+          triggerAutosaveAnimation();
+        }
+      });
+    }
+
+    // Toggle de Tanda de Penales
+    const chkPenales = document.getElementById('chk-penales');
+    const penalesPanel = document.getElementById('penales-panel');
+    if (chkPenales && penalesPanel) {
+      chkPenales.addEventListener('change', (e) => {
+        if (e.target.checked) {
+          penalesPanel.classList.remove('hidden');
+        } else {
+          penalesPanel.classList.add('hidden');
+        }
+        triggerAutosaveAnimation();
+      });
+    }
+
+    // Animación visual de guardado automático
+    function triggerAutosaveAnimation() {
+      const autosaveEl = document.getElementById('autosave-indicator');
+      if (autosaveEl) {
+        autosaveEl.classList.add('opacity-40');
+        setTimeout(() => {
+          autosaveEl.classList.remove('opacity-40');
+        }, 300);
+      }
+    }
+  })();
+</script></main></div></body></html>

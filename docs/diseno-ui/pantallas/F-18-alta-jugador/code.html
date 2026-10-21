@@ -1,0 +1,786 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-container-highest":"#d3e4fe","secondary":"#565e74","on-secondary-fixed":"#131b2e","on-surface":"#0b1c30","inverse-surface":"#213145","surface-container-high":"#dce9ff","outline":"#6f7a70","on-tertiary-container":"#ffc3c5","surface-container-low":"#eff4ff","surface-tint":"#0b6d3b","secondary-fixed":"#dae2fc","secondary-fixed-dim":"#bec6e0","on-primary-container":"#8ee4a6","on-secondary-fixed-variant":"#3f465b","tertiary-fixed-dim":"#ffb3b6","primary":"#004d27","surface-container-lowest":"#ffffff","on-surface-variant":"#3f4940","surface-variant":"#d3e4fe","on-background":"#0b1c30","primary-fixed":"#9ef6b6","on-secondary-container":"#5a6278","secondary-container":"#d8dff9","tertiary-fixed":"#ffdada","error":"#ba1a1a","on-primary-fixed":"#00210e","surface-dim":"#cbdbf5","surface":"#f8f9ff","background":"#f8f9ff","surface-container":"#e5eeff","on-error":"#ffffff","inverse-on-surface":"#eaf1ff","on-error-container":"#93000a","on-secondary":"#ffffff","inverse-primary":"#83d99c","primary-container":"#006837","on-tertiary":"#ffffff","surface-bright":"#f8f9ff","tertiary-container":"#943e46","tertiary":"#762730","on-primary":"#ffffff","primary-fixed-dim":"#83d99c","on-primary-fixed-variant":"#00522a","on-tertiary-fixed-variant":"#7b2b34","error-container":"#ffdad6","on-tertiary-fixed":"#40000c","outline-variant":"#bec9be"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin":"1rem","space-md":"0.75rem","margin-desktop":"2rem","gutter":"1rem","space-lg":"1rem","space-xl":"1.5rem","space-sm":"0.5rem","space-xs":"0.25rem","gutter-desktop":"1.5rem"},"fontFamily":{"label-md":["Inter"],"body-md":["Inter"],"label-sm":["Inter"],"mono-score":["JetBrains Mono"],"mono-data":["JetBrains Mono"],"display-lg":["Inter"],"body-lg":["Inter"],"display-lg-mobile":["Inter"],"headline-md":["Inter"],"headline-sm":["Inter"],"headline-lg":["Inter"],"body-sm":["Inter"]},"fontSize":{"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"600"}],"mono-score":["28px",{"lineHeight":"32px","fontWeight":"700"}],"mono-data":["13px",{"lineHeight":"18px","fontWeight":"500"}],"display-lg":["36px",{"lineHeight":"44px","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"display-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 flex items-center gap-space-sm px-space-xl bg-surface-container-low"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-headline-sm font-bold shadow-sm"><span class="material-symbols-outlined text-[20px]">sports_soccer</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-tight font-bold tracking-tight">SIGLIM</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Panel Directiva</span></div></div><div class="px-space-xl pt-space-lg pb-space-sm"><span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Menú Directivo</span></div><nav class="flex flex-col gap-space-xs px-space-md" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg shadow-sm"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="inicio" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Inicio</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="mi-club" href="#"><span class="material-symbols-outlined text-[20px]">shield</span><span>Mi club</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="jugadores" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Jugadores</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="arbitros-del-club" href="#"><span class="material-symbols-outlined text-[20px]">sports</span><span>Árbitros del club</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="tesoreria" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span>Tesorería</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="notificaciones" href="#"><span class="material-symbols-outlined text-[20px]">notifications</span><span>Notificaciones</span></a></nav></div><div class="p-space-lg mx-space-md mb-space-lg rounded-lg bg-surface-container-low"><div class="flex items-center gap-space-sm"><div class="w-2 h-2 rounded-full bg-primary-container"></div><span class="font-label-sm text-label-sm text-on-surface font-semibold">SIGLIM v2.4</span></div><p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Afiliación Activa · Club Halcones FC</p></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter-desktop"><div class="flex items-center gap-space-md"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">SIGLIM - LIGA MUNICIPAL DE FUTBOL AMATEUR MORELIA</span><span class="font-body-sm text-body-sm text-outline">Órgano de Control Normativo y Registro de Cédulas</span></div></div><div class="flex items-center gap-space-lg"><div class="hidden md:flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-primary font-semibold tracking-wide uppercase">Temporada 2025–2026 · Activa</span></div><button aria-label="Notificaciones" class="relative p-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors focus:outline-none" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-space-md pl-space-sm"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Julio César Ortiz</span><span class="font-body-sm text-body-sm text-on-surface-variant">Delegado · Halcones FC</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-background flex-1 px-gutter-desktop py-space-xl"><div class="flex flex-col w-full">
+<!-- Cabecera de Navegación & Acciones Superiores -->
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-space-md mb-space-lg">
+<div class="flex flex-col gap-space-xs">
+<nav aria-label="Migas de pan" class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<span>Mi club</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Halcones FC</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Jugadores</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-bold">Registrar nuevo jugador</span>
+</nav>
+<div class="flex items-center gap-space-md">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Registro Oficial de Jugador</h1>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-mono-data text-body-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">history_edu</span>
+          Formulario Oficial F-06
+        </span>
+</div>
+<p class="font-body-md text-body-md text-secondary">
+        Cédula individual de afiliación y convalidación estatutaria · Temporada 2025–2026 · Habilitada para Club Halcones FC
+      </p>
+</div>
+<!-- Botones de Acción de Cabecera -->
+<div class="flex items-center gap-space-sm self-start md:self-auto">
+<button class="h-11 px-space-lg rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md flex items-center gap-space-xs shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+<span>Cancelar / Volver</span>
+</button>
+<button class="h-11 px-space-lg rounded-lg bg-surface-container-low text-primary hover:bg-surface-container transition-colors font-label-md text-label-md flex items-center gap-space-xs shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Guardar borrador</span>
+</button>
+</div>
+</div>
+<!-- Stepper de 4 Pasos Superior -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg mb-space-xl shadow-sm">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md relative">
+<!-- Paso 1 -->
+<button class="step-nav-btn text-left p-space-md rounded-lg bg-surface-container-low transition-all relative flex items-start gap-space-md" id="step-btn-1" onclick="goToStep(1)" type="button">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-on-primary font-headline-sm flex items-center justify-center font-bold shrink-0 shadow-sm" id="step-indicator-1">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Paso 1</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Identidad Federativa</span>
+<span class="font-body-sm text-body-sm text-secondary truncate">CURP &amp; Padrón SIGLIM</span>
+</div>
+</button>
+<!-- Paso 2 -->
+<button class="step-nav-btn text-left p-space-md rounded-lg bg-primary/10 transition-all relative flex items-start gap-space-md" id="step-btn-2" onclick="goToStep(2)" type="button">
+<div class="w-9 h-9 rounded-lg bg-primary text-on-primary font-headline-sm flex items-center justify-center font-bold shrink-0 shadow-sm ring-4 ring-primary/20" id="step-indicator-2">
+          2
+        </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Paso 2 · En Proceso</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Datos y Categoría</span>
+<span class="font-body-sm text-body-sm text-secondary truncate">Plantilla &amp; Tutor Art. 24</span>
+</div>
+</button>
+<!-- Paso 3 -->
+<button class="step-nav-btn text-left p-space-md rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-all relative flex items-start gap-space-md" id="step-btn-3" onclick="goToStep(3)" type="button">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high text-secondary font-headline-sm flex items-center justify-center font-bold shrink-0" id="step-indicator-3">
+          3
+        </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold tracking-wider">Paso 3</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Expediente Digital</span>
+<span class="font-body-sm text-body-sm text-secondary truncate">Acta, CURP, Foto e INE</span>
+</div>
+</button>
+<!-- Paso 4 -->
+<button class="step-nav-btn text-left p-space-md rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-all relative flex items-start gap-space-md" id="step-btn-4" onclick="goToStep(4)" type="button">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high text-secondary font-headline-sm flex items-center justify-center font-bold shrink-0" id="step-indicator-4">
+          4
+        </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold tracking-wider">Paso 4</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Consentimiento</span>
+<span class="font-body-sm text-body-sm text-secondary truncate">Resumen y Dictamen</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Contenedor Dinámico de Pasos -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<!-- COLUMNA PRINCIPAL (8 columnas) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- ================= PASO 1: IDENTIDAD ================= -->
+<div class="step-panel hidden flex flex-col gap-space-lg" id="step-panel-1">
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Paso 1 de 4</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Validación de Identidad y CURP</h2>
+<p class="font-body-md text-body-md text-secondary">
+                Consulte al Registro Nacional de Población (RENAPO) y coteje el historial disciplinario en los archivos de la Liga Morelia.
+              </p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">fingerprint</span>
+</div>
+</div>
+<!-- Input CURP Oficial -->
+<div class="flex flex-col gap-space-sm bg-surface-container-low/60 p-space-lg rounded-xl">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-space-xs" for="curp-input">
+              Clave Única de Registro de Población (CURP)
+              <span class="text-error font-bold">*</span>
+</label>
+<div class="flex flex-col sm:flex-row gap-space-md">
+<div class="relative flex-1">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg bg-surface-container-lowest font-mono-score text-headline-sm tracking-widest uppercase text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="curp-input" maxlength="18" placeholder="ABCDAAMMDDHXXXXX00" type="text" value="ALGM080315HMNRND04">
+</div>
+<button class="h-11 px-space-xl rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md font-semibold flex items-center justify-center gap-space-xs shadow-sm shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">search</span>
+<span>Buscar en padrón histórico</span>
+</button>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">
+              Formato reglamentario de 18 caracteres alfanuméricos. Se efectúa verificación en tiempo real con RENAPO y padrón federativo histórico.
+            </span>
+</div>
+<!-- Escenario A: Reutilización de Datos -->
+<div class="rounded-xl bg-surface-container-low p-space-lg flex flex-col sm:flex-row items-start gap-space-md shadow-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+<div class="flex flex-col gap-space-xs flex-1">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Registro Previo Identificado en Sistema</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-mono-data text-body-sm font-bold">
+                  Folio: LM-2023-4410
+                </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+                Persona localizada en el padrón histórico de SIGLIM con afiliación anterior en <strong>Furia Azul (Sub-16)</strong>. Se conservará su historial de sanciones, cédulas y estadísticas previas conforme al Art. 12 del Reglamento General.
+              </p>
+</div>
+</div>
+<!-- Escenario B: Alerta de Colisión / Infracción Normativa (Demostración de Control) -->
+<div class="rounded-xl bg-error-container/40 p-space-lg flex flex-col sm:flex-row items-start gap-space-md shadow-sm">
+<div class="w-8 h-8 rounded-full bg-error text-on-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">gavel</span>
+</div>
+<div class="flex flex-col gap-space-xs flex-1">
+<div class="flex items-center justify-between flex-wrap gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-error font-bold flex items-center gap-1">
+                  Incompatibilidad Estatutaria (VAL-017)
+                </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error/15 text-error font-label-sm text-label-sm uppercase font-bold">
+                  Bloqueo Activo
+                </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+                Esta CURP presenta un registro simultáneo en <strong>Toros de Santa María · Libre Segunda</strong>. El Art. 18 de la Liga Municipal prohíbe el alta en dos clubes dentro de una misma temporada activa sin liberación previa de cédula.
+              </p>
+<div class="mt-space-xs flex items-center gap-space-sm text-body-sm text-error font-semibold">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span>Para proceder, el club de origen debe emitir la baja formal mediante el portal de transferencias.</span>
+</div>
+</div>
+</div>
+<!-- Botones de Navegación del Paso -->
+<div class="flex items-center justify-between pt-space-md bg-surface-container-lowest">
+<span class="font-body-sm text-body-sm text-secondary">Comprobación biométrica y legal superada condicionalmente.</span>
+<button class="h-11 px-space-xl rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md font-semibold flex items-center gap-space-xs shadow-sm" onclick="goToStep(2)" type="button">
+<span>Continuar a Datos y Equipo</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ================= PASO 2: DATOS Y EQUIPO (ACTIVO) ================= -->
+<div class="step-panel flex flex-col gap-space-lg" id="step-panel-2">
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Paso 2 de 4</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Datos Generales y Asignación Deportiva</h2>
+<p class="font-body-md text-body-md text-secondary">
+                Información personal validada con RENAPO, escuadra asignada dentro de Halcones FC y régimen de minoridad.
+              </p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">person_add</span>
+</div>
+</div>
+<!-- Campos Generales -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">
+                Nombre(s) <span class="text-error">*</span>
+</label>
+<input class="h-11 px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" type="text" value="Mateo Sebastián">
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">
+                Primer Apellido <span class="text-error">*</span>
+</label>
+<input class="h-11 px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" type="text" value="Álvarez">
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">
+                Segundo Apellido
+              </label>
+<input class="h-11 px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" type="text" value="Guzmán">
+</div>
+</div>
+<!-- Fecha de Nacimiento y Cálculo de Edad -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md items-end">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">
+                Fecha de Nacimiento <span class="text-error">*</span>
+</label>
+<input class="h-11 px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" type="date" value="2008-03-15">
+</div>
+<!-- Badge Cálculo Automático -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-secondary">Edad calculada para ciclo 2025-2026</label>
+<div class="h-11 px-space-md rounded-lg bg-surface-container-low flex items-center justify-between">
+<span class="font-mono-data text-body-lg font-bold text-on-surface">17 años, 7 meses</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold uppercase">
+<span class="material-symbols-outlined text-[14px]">child_care</span>
+                  Menor de Edad
+                </span>
+</div>
+</div>
+<!-- Posición Deportiva -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">
+                Posición Reglamentaria <span class="text-error">*</span>
+</label>
+<select class="h-11 px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm">
+<option value="MED">Centrocampista (Volante mixto)</option>
+<option value="POR">Portero</option>
+<option value="DEF">Defensa central</option>
+<option value="LAT">Defensa lateral</option>
+<option value="DEL">Delantero centro</option>
+<option value="EXT">Extremo ofensivo</option>
+</select>
+</div>
+</div>
+<!-- Selección de Equipo de Club -->
+<div class="flex flex-col gap-space-sm bg-surface-container-low/60 p-space-lg rounded-xl">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center justify-between">
+<span>Equipo y Rama Registrada en Club Halcones FC <span class="text-error">*</span></span>
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase">Filtro por tope etario</span>
+</label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<label class="relative flex items-center gap-space-md p-space-md rounded-lg bg-surface-container-lowest cursor-pointer shadow-sm ring-2 ring-primary">
+<input checked="" class="w-4 h-4 text-primary focus:ring-primary" name="equipo-club" type="radio">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Halcones FC · Juvenil Mayor (Sub-18)</span>
+<span class="font-body-sm text-body-sm text-secondary">Cancha Morelos 2 · Sábados 10:00 hrs · Torneo Oficial</span>
+</div>
+</label>
+<label class="relative flex items-center gap-space-md p-space-md rounded-lg bg-surface-container-lowest opacity-75 cursor-pointer shadow-sm">
+<input class="w-4 h-4 text-primary focus:ring-primary" name="equipo-club" type="radio">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Halcones FC · Libre Segunda</span>
+<span class="font-body-sm text-body-sm text-secondary">Requiere anexo de excepción etaria Art. 31</span>
+</div>
+</label>
+<label class="relative flex items-center gap-space-md p-space-md rounded-lg bg-surface-container-lowest opacity-60 cursor-not-allowed shadow-sm">
+<input class="w-4 h-4 text-primary" disabled="" name="equipo-club" type="radio">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-outline font-bold">Halcones FC · Infantil Sub-12</span>
+<span class="font-body-sm text-body-sm text-error">No elegible por tope de edad superado</span>
+</div>
+</label>
+<label class="relative flex items-center gap-space-md p-space-md rounded-lg bg-surface-container-lowest opacity-60 cursor-not-allowed shadow-sm">
+<input class="w-4 h-4 text-primary" disabled="" name="equipo-club" type="radio">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-outline font-bold">Halcones FC · Veteranos Especial</span>
+<span class="font-body-sm text-body-sm text-error">Exclusivo mayores de 35 años</span>
+</div>
+</label>
+</div>
+</div>
+<!-- SECCIÓN TUTOR CONDICIONAL (Activa para menores de 18 años) -->
+<div class="rounded-xl bg-surface-container-low p-space-lg flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container-highest">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-tertiary-container text-on-tertiary flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[16px]">shield_person</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+                    Acreditación del Tutor Legal Obligatoria
+                  </h3>
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-bold tracking-wide">
+                    Protocolo de Protección de Menores · Artículo 24 Estatutos Morelia
+                  </span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-bold uppercase">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                Identidad Cotejada
+              </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">
+                  CURP del Tutor Legal <span class="text-error">*</span>
+</label>
+<div class="relative">
+<input class="w-full h-11 px-space-md rounded-lg bg-surface-container-lowest font-mono-data text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm uppercase" type="text" value="GURM780911MDFLNS01">
+<span class="absolute right-3 top-3 text-primary">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">
+                  Nombre Completo del Tutor <span class="text-error">*</span>
+</label>
+<input class="h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" type="text" value="Rosa María Guzmán Rangel">
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">
+                  Parentesco / Representación Jurídica <span class="text-error">*</span>
+</label>
+<select class="h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm">
+<option selected="" value="madre">Madre</option>
+<option value="padre">Padre</option>
+<option value="tutor_judicial">Tutor Judicial Acreditado por Juzgado Familiar</option>
+</select>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">
+                  Teléfono Móvil de Contacto Urgente <span class="text-error">*</span>
+</label>
+<input class="h-11 px-space-md rounded-lg bg-surface-container-lowest font-mono-data text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" type="tel" value="443 281 9043">
+</div>
+<div class="flex flex-col gap-space-xs md:col-span-2">
+<label class="font-label-md text-label-md text-on-surface font-semibold">
+                  Correo Electrónico para Notificaciones Oficiales <span class="text-error">*</span>
+</label>
+<input class="h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" type="email" value="rosa.guzman.rangel@correo.com">
+<span class="font-body-sm text-body-sm text-secondary">
+                  A este correo se remitirá copia de la cédula arbitral digital, autorizaciones de salida médica y constancia de registro.
+                </span>
+</div>
+</div>
+</div>
+<!-- Botones de Navegación del Paso -->
+<div class="flex items-center justify-between pt-space-md">
+<button class="h-11 px-space-lg rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md font-semibold flex items-center gap-space-xs shadow-sm" onclick="goToStep(1)" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Anterior: Identidad</span>
+</button>
+<button class="h-11 px-space-xl rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md font-semibold flex items-center gap-space-xs shadow-sm" onclick="goToStep(3)" type="button">
+<span>Continuar a Documentos</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ================= PASO 3: DOCUMENTOS ================= -->
+<div class="step-panel hidden flex flex-col gap-space-lg" id="step-panel-3">
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Paso 3 de 4</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Carga y Cotejo de Expediente Digital</h2>
+<p class="font-body-md text-body-md text-secondary">
+                Formatos reglamentarios: JPG, PNG, WebP o PDF, tamaño máximo de 5 MB por archivo. Legibilidad requerida para dictamen de secretaría.
+              </p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">folder_supervised</span>
+</div>
+</div>
+<!-- Matriz de Requisitos Documentales -->
+<div class="flex flex-col gap-space-md">
+<!-- Documento 1: Acta de Nacimiento -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[28px]">description</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">1. Acta de Nacimiento Certificada</span>
+<span class="text-error font-bold">*</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary truncate">acta_mateo_alvarez_certificada_2025.pdf · 1.8 MB</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end sm:self-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-bold uppercase">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  Cargado ✓
+                </span>
+<button class="h-9 px-space-md rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-high font-label-md text-label-md text-body-sm shadow-sm" type="button">
+                  Reemplazar
+                </button>
+</div>
+</div>
+<!-- Documento 2: Constancia CURP -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[28px]">qr_code_2</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">2. Constancia de CURP Oficial RENAPO</span>
+<span class="text-error font-bold">*</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary truncate">curp_actualizada_renapo_2025.pdf · 0.9 MB</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end sm:self-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold uppercase">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                  Validado por RENAPO
+                </span>
+<button class="h-9 px-space-md rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-high font-label-md text-label-md text-body-sm shadow-sm" type="button">
+                  Ver
+                </button>
+</div>
+</div>
+<!-- Documento 3: Fotografía Infantil Reciente -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest overflow-hidden shrink-0 shadow-sm relative">
+<img class="w-full h-full object-cover" data-alt="Fotografía infantil formal a color en primer plano de un joven deportista mexicano de 17 años con fondo blanco neutro y corte reglamentario para credencial oficial deportiva federada" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgD-bNSbnQCpk3KBPkfMXINJeQMkWiotVLTjCYaTs48GwXT2Y-X5kdf2s9eyunc8gi3JLGgBdUPLPegSmVArJBGKzFVyC8WKX71J-cm6G-hamEMMpVdxEUjd7QYlvexmO5NNM1oou3iitCFTENdZgvTIU8nmIL0qHjHEvN6KAtt5yUEbJhciwIV3A_xPVBv5XI78-m0Nbt5OizeJPzfpvjci8Fj2C0MikhqG0bjXKfkuqgfvwFWtFd">
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">3. Fotografía Infantil a Color para Cédula</span>
+<span class="text-error font-bold">*</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary truncate">Encuadre facial reglamentario · Fondo blanco · Sin accesorios</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end sm:self-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-bold uppercase">
+<span class="material-symbols-outlined text-[14px]">crop_free</span>
+                  Encuadre Aprobado
+                </span>
+<button class="h-9 px-space-md rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-high font-label-md text-label-md text-body-sm shadow-sm" type="button">
+                  Ajustar corte
+                </button>
+</div>
+</div>
+<!-- Documento 4: INE / Identificación Oficial del Tutor Vigente -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center text-tertiary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[28px]">assignment_ind</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">4. INE / Identificación Oficial del Tutor (Ambos lados)</span>
+<span class="text-error font-bold">*</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary truncate">ine_tutor_rosa_guzman_anverso_reverso.pdf · 2.4 MB</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end sm:self-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-bold uppercase">
+<span class="material-symbols-outlined text-[14px]">pending</span>
+                  En Revisión
+                </span>
+<button class="h-9 px-space-md rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-high font-label-md text-label-md text-body-sm shadow-sm" type="button">
+                  Ver archivo
+                </button>
+</div>
+</div>
+</div>
+<!-- Botones de Navegación del Paso -->
+<div class="flex items-center justify-between pt-space-md">
+<button class="h-11 px-space-lg rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md font-semibold flex items-center gap-space-xs shadow-sm" onclick="goToStep(2)" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Anterior: Datos y Equipo</span>
+</button>
+<button class="h-11 px-space-xl rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md font-semibold flex items-center gap-space-xs shadow-sm" onclick="goToStep(4)" type="button">
+<span>Continuar a Consentimiento</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ================= PASO 4: CONSENTIMIENTO Y ENVÍO ================= -->
+<div class="step-panel hidden flex flex-col gap-space-lg" id="step-panel-4">
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Paso 4 de 4</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Consentimiento Estatutario y Dictamen</h2>
+<p class="font-body-md text-body-md text-secondary">
+                Verifique minuciosamente la cédula resumida antes de someter el trámite a la Secretaría General de SIGLIM.
+              </p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+</div>
+<!-- Resumen del Registro -->
+<div class="rounded-xl bg-surface-container-low p-space-lg flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Resumen de Expediente Digital #F06-MORELIA</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-mono-data text-body-sm font-bold">
+                Borrador Concluido
+              </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-space-md pt-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Jugador</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Mateo S. Álvarez Guzmán</span>
+<span class="font-body-sm text-body-sm text-secondary">17 años · Mediocampista</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase">CURP</span>
+<span class="font-mono-data text-body-md font-bold text-on-surface">ALGM080315HMNRND04</span>
+<span class="font-body-sm text-body-sm text-primary font-semibold">Validada en RENAPO</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Equipo Registrado</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Halcones FC</span>
+<span class="font-body-sm text-body-sm text-secondary">Juvenil Mayor (Sub-18)</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Tutor Legal</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Rosa María Guzmán</span>
+<span class="font-body-sm text-body-sm text-secondary">Parentesco: Madre</span>
+</div>
+</div>
+<div class="pt-space-sm border-t border-surface-container-highest flex items-center justify-between flex-wrap gap-space-sm">
+<div class="flex items-center gap-space-md">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold">Expediente Anexo:</span>
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface font-semibold">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span> 4 de 4 Requisitos
+                </span>
+</div>
+<span class="font-mono-data text-body-sm text-secondary">ID Temporal: TEMP-2025-HAL-084</span>
+</div>
+</div>
+<!-- Declaración Legal y Checkbox -->
+<div class="rounded-xl bg-surface-container-low/70 p-space-lg flex flex-col gap-space-md shadow-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">policy</span>
+              Cláusula Federativa y Aviso de Privacidad Integral
+            </h3>
+<p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+              En cumplimiento con la Ley General de Protección de Datos Personales en Posesión de Sujetos Obligados y el Estatuto Social de la Liga Municipal de Futbol Amateur de Morelia, el Delegado suscrito y el Tutor Legal manifiestan bajo protesta de decir verdad que los datos y documentos adjuntos son legítimos. La afiliación definitiva estará sujeta a dictamen de la Secretaría General conforme al Formato F-06.
+            </p>
+<label class="flex items-start gap-space-md p-space-md rounded-lg bg-surface-container-lowest cursor-pointer shadow-sm">
+<input checked="" class="w-5 h-5 mt-0.5 rounded text-primary focus:ring-primary" type="checkbox">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">
+                  Acepto el aviso de privacidad y autorizo el tratamiento de datos y participación deportiva del menor bajo los estatutos de la Liga Municipal de Futbol Amateur Morelia.
+                </span>
+<span class="font-body-sm text-body-sm text-secondary">
+                  Acreditación respaldada por Julio César Ortiz, Delegado de Club Halcones FC.
+                </span>
+</div>
+</label>
+</div>
+<!-- Botones de Acción del Paso Final -->
+<div class="flex items-center justify-between pt-space-md">
+<button class="h-11 px-space-lg rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md font-semibold flex items-center gap-space-xs shadow-sm" onclick="goToStep(3)" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Anterior: Documentos</span>
+</button>
+<div class="flex items-center gap-space-sm">
+<button class="h-11 px-space-lg rounded-lg bg-surface-container-low text-primary hover:bg-surface-container font-label-md text-label-md font-semibold shadow-sm" type="button">
+                Guardar como borrador
+              </button>
+<button class="h-11 px-space-xl rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md font-bold flex items-center gap-space-xs shadow-md" onclick="simulateSubmit()" type="button">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span>Enviar a validación</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Banner de Éxito / Confirmación Institucional Modal/Ilustrativo -->
+<div class="rounded-xl bg-surface-container-lowest p-space-xl shadow-md border-l-8 border-primary flex flex-col gap-space-md" id="success-banner">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[28px]">task_alt</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Registro Enviado a la Secretaría General</h3>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-error-container text-error font-mono-data text-body-sm font-bold uppercase">
+                  No Oficial · Muestra Demostrativa
+                </span>
+</div>
+<p class="font-body-md text-body-md text-secondary">
+                El expediente queda en lista de espera reglamentaria para dictamen por la Comisión Revisora de Cédulas.
+              </p>
+</div>
+</div>
+<span class="font-mono-score text-headline-sm text-primary font-bold">REG-2025-0842</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md p-space-md rounded-lg bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Folio de Trámite Asignado</span>
+<span class="font-mono-data text-headline-sm text-primary font-bold">REG-2025-0842</span>
+<span class="font-body-sm text-body-sm text-outline">Liga Morelia · Cat. Juvenil</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Tiempo Estimado de Resolución</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">48 Horas Hábiles</span>
+<span class="font-body-sm text-body-sm text-secondary">Previo al rol de Jornada 1</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Estado Actual</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md text-on-surface font-bold">Pendiente de Acreditación</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Notificación por correo al tutor</span>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="h-10 px-space-md rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md font-semibold flex items-center gap-space-xs shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Imprimir Acuse F-06</span>
+</button>
+<button class="h-10 px-space-lg rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md font-semibold flex items-center gap-space-xs shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">format_list_bulleted</span>
+<span>Ir a Plantilla de Halcones FC</span>
+</button>
+</div>
+</div>
+</div>
+<!-- COLUMNA LATERAL (4 columnas): Ficha de Previsualización y Reglas -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Credencial Digital Preliminar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">badge</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Cédula Digital (Previa)</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-error font-label-sm text-label-sm uppercase font-bold">
+            No Oficial
+          </span>
+</div>
+<!-- Tarjeta de Identificación SIGLIM -->
+<div class="rounded-xl overflow-hidden shadow-md bg-inverse-surface text-inverse-on-surface flex flex-col">
+<!-- Cabecera de la Credencial -->
+<div class="bg-primary px-space-md py-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-on-primary text-[18px]">sports_soccer</span>
+<span class="font-label-sm text-label-sm text-on-primary uppercase font-bold tracking-wider">Liga Municipal Morelia</span>
+</div>
+<span class="font-mono-data text-body-sm text-on-primary font-bold">2025-2026</span>
+</div>
+<!-- Cuerpo de Credencial con Foto -->
+<div class="p-space-md flex gap-space-md items-center">
+<div class="w-20 h-24 rounded-lg bg-surface-container-high overflow-hidden shrink-0 shadow-sm relative">
+<img class="w-full h-full object-cover" data-alt="Fotografía de identificación deportiva oficial de un joven jugador mexicano de fútbol soccer con playera deportiva verde institucional" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ0D0i6j8Ru4YYND10v1yHY1E0zIwNGzmdPQpeMoaht6IsSDht6y5QQoHmL4gFbTrCUL6RDltMfYruO8HgEFWTAlyqbThXDseFhPVY6-lPmXXOVPB3M6euabF2gnxMpoxGLHF_O7NxqswUkN7kS5vVzH2R_cgP6zp10blMtKhOeGn-cZAyV3aCaz6bCZEVkUMCuUDP6fAC8_IOnrvc0HEbN4Qk3_YdL8nT9OEyHYJ7A3F8T7KioBfp">
+<div class="absolute bottom-0 inset-x-0 bg-primary/90 text-on-primary text-center font-label-sm text-[10px] py-0.5 font-bold">
+                JUGADOR
+              </div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase font-bold truncate">Halcones FC</span>
+<span class="font-headline-sm text-headline-sm text-inverse-on-surface font-bold leading-snug truncate">Mateo Sebastián Álvarez</span>
+<span class="font-mono-data text-body-sm text-secondary-fixed">Dorsal Pendiente #--</span>
+<span class="font-label-sm text-label-sm text-tertiary-fixed-dim uppercase mt-1">Cat. Juvenil Mayor Sub-18</span>
+</div>
+</div>
+<!-- Pie de Credencial con Folio y QR -->
+<div class="bg-on-secondary-fixed px-space-md py-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] text-secondary-fixed uppercase">CURP Validada</span>
+<span class="font-mono-data text-body-sm font-bold text-inverse-on-surface">ALGM080315...</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[24px] text-secondary-fixed">qr_code_2</span>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+          La credencial definitiva con código de verificación QR será emitida en material PVC y formato móvil tras la firma de la Secretaría de la Liga.
+        </p>
+</div>
+<!-- Cuadro de Normativa y Criterios Estatutarios -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm text-primary">
+<span class="material-symbols-outlined text-[22px]">gavel</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Marco Normativo SIGLIM</h3>
+</div>
+<ul class="flex flex-col gap-space-sm font-body-sm text-body-sm text-secondary">
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[16px] shrink-0 mt-0.5">check</span>
+<span><strong>Art. 14 (Tope Etario):</strong> Para la categoría Juvenil Mayor Sub-18 se admiten nacidos del año 2007 al 2009.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[16px] shrink-0 mt-0.5">check</span>
+<span><strong>Art. 18 (Exclusividad):</strong> Un jugador solo puede militar en una plantilla registrada por temporada.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[16px] shrink-0 mt-0.5">check</span>
+<span><strong>Art. 24 (Minoridad):</strong> Consentimiento del padre, madre o tutor con identificación oficial requerida.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[16px] shrink-0 mt-0.5">check</span>
+<span><strong>Art. 42 (Cédula de Juego):</strong> No se permitirá ingreso a cancha sin holograma o verificación digital válida.</span>
+</li>
+</ul>
+<div class="pt-space-xs">
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Mesa Directiva Morelia</span>
+<span class="font-body-sm text-body-sm text-secondary">Atención a Delegados de 16:00 a 20:00 hrs</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">help_center</span>
+</div>
+</div>
+</div>
+<!-- Resumen de Afiliación de Halcones FC -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold">Estado de Plantilla Club</span>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Halcones FC Sub-18</span>
+<span class="font-mono-data text-body-md font-bold text-primary">16 / 25 cupos</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 64%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">
+          9 plazas disponibles para registro antes del cierre del periodo regular de transferencias (15 de octubre).
+        </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Micro-Interacciones del Stepper -->
+<script>
+  function goToStep(stepNumber) {
+    // Ocultar todos los paneles
+    for (let i = 1; i <= 4; i++) {
+      const panel = document.getElementById('step-panel-' + i);
+      const btn = document.getElementById('step-btn-' + i);
+      const indicator = document.getElementById('step-indicator-' + i);
+      
+      if (panel) {
+        if (i === stepNumber) {
+          panel.classList.remove('hidden');
+        } else {
+          panel.classList.add('hidden');
+        }
+      }
+
+      if (btn && indicator) {
+        if (i === stepNumber) {
+          btn.className = 'step-nav-btn text-left p-space-md rounded-lg bg-primary/10 transition-all relative flex items-start gap-space-md';
+          indicator.className = 'w-9 h-9 rounded-lg bg-primary text-on-primary font-headline-sm flex items-center justify-center font-bold shrink-0 shadow-sm ring-4 ring-primary/20';
+        } else if (i < stepNumber) {
+          btn.className = 'step-nav-btn text-left p-space-md rounded-lg bg-surface-container-low transition-all relative flex items-start gap-space-md';
+          indicator.className = 'w-9 h-9 rounded-lg bg-primary-container text-on-primary font-headline-sm flex items-center justify-center font-bold shrink-0 shadow-sm';
+        } else {
+          btn.className = 'step-nav-btn text-left p-space-md rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-all relative flex items-start gap-space-md';
+          indicator.className = 'w-9 h-9 rounded-lg bg-surface-container-high text-secondary font-headline-sm flex items-center justify-center font-bold shrink-0';
+        }
+      }
+    }
+  }
+
+  function simulateSubmit() {
+    const banner = document.getElementById('success-banner');
+    if (banner) {
+      banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      banner.classList.add('ring-4', 'ring-primary-container/30');
+      setTimeout(() => {
+        banner.classList.remove('ring-4', 'ring-primary-container/30');
+      }, 2000);
+    }
+  }
+</script></main></div></body></html>

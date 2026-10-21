@@ -1,5 +1,8 @@
 # Diseños de Disposición (Layouts) y Navegación - SIGLIM
 
+> [!WARNING]
+> **Reemplazado** por [`DESIGN.md`](DESIGN.md) (prototipo aprobado el 20 de octubre de 2026). Se conserva como referencia de la primera ronda de capturas.
+
 ## 1. Navegación Global (Header)
 - **Ubicación**: Fija en la parte superior de todas las páginas públicas e internas.
 - **Elementos**:

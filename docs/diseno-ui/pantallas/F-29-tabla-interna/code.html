@@ -1,0 +1,757 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-variant":"#d3e4fe","on-tertiary-container":"#ffc3c5","surface-bright":"#f8f9ff","tertiary":"#762730","on-secondary-fixed":"#131b2e","surface-tint":"#0b6d3b","on-primary-fixed-variant":"#00522a","on-error":"#ffffff","surface-dim":"#cbdbf5","primary-container":"#006837","primary":"#004d27","surface-container-lowest":"#ffffff","inverse-surface":"#213145","on-surface":"#0b1c30","on-primary-fixed":"#00210e","on-tertiary-fixed-variant":"#7b2b34","on-surface-variant":"#3f4940","secondary-fixed-dim":"#bec6e0","error":"#ba1a1a","tertiary-fixed-dim":"#ffb3b6","primary-fixed-dim":"#83d99c","secondary-container":"#d8dff9","inverse-on-surface":"#eaf1ff","on-background":"#0b1c30","surface-container":"#e5eeff","background":"#f8f9ff","surface-container-highest":"#d3e4fe","on-tertiary-fixed":"#40000c","inverse-primary":"#83d99c","outline":"#6f7a70","on-tertiary":"#ffffff","on-error-container":"#93000a","secondary-fixed":"#dae2fc","primary-fixed":"#9ef6b6","on-secondary-container":"#5a6278","surface-container-high":"#dce9ff","surface":"#f8f9ff","on-primary":"#ffffff","on-primary-container":"#8ee4a6","error-container":"#ffdad6","on-secondary":"#ffffff","surface-container-low":"#eff4ff","on-secondary-fixed-variant":"#3f465b","tertiary-fixed":"#ffdada","secondary":"#565e74","tertiary-container":"#943e46","outline-variant":"#bec9be"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-lg":"1rem","margin":"1rem","gutter-desktop":"1.5rem","space-md":"0.75rem","space-xs":"0.25rem","gutter":"1rem","margin-desktop":"2rem","space-xl":"1.5rem","space-sm":"0.5rem"},fontFamily:{"headline-lg":["Inter"],"display-lg-mobile":["Inter"],"headline-md":["Inter"],"body-lg":["Inter"],"body-sm":["Inter"],"label-md":["Inter"],"mono-score":["JetBrains Mono"],"label-sm":["Inter"],"mono-data":["JetBrains Mono"],"headline-sm":["Inter"],"body-md":["Inter"],"display-lg":["Inter"]},fontSize:{"headline-lg":["24px",{"lineHeight":"32px","fontWeight":"600"}],"display-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"mono-score":["28px",{"lineHeight":"32px","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"600"}],"mono-data":["13px",{"lineHeight":"18px","fontWeight":"500"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"display-lg":["36px",{"lineHeight":"44px","fontWeight":"700"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col"><div class="h-16 px-gutter flex items-center gap-space-sm bg-surface-container-lowest"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[20px]">sports_soccer</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm leading-tight text-on-surface font-bold tracking-tight">SIGLIM</span><span class="font-label-sm text-label-sm text-secondary uppercase">Liga Morelia</span></div></div><div class="px-space-md py-space-sm"><span class="font-label-sm text-label-sm uppercase text-secondary px-space-sm font-semibold tracking-wider">Navegación General</span></div><nav class="flex-1 px-space-md flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-lg shadow-sm"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="inicio" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-md text-label-md">Inicio</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="programacion-de-jornadas" href="#"><span class="material-symbols-outlined text-[20px]">event_available</span><span class="font-label-md text-label-md">Programación de Jornadas</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="cedulas-y-partidos" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-label-md text-label-md">Cédulas y Partidos</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm transition-colors bg-primary-container text-on-primary font-semibold rounded-lg shadow-sm" data-path="tabla-de-posiciones" href="#"><span class="material-symbols-outlined text-[20px]">format_list_numbered</span><span class="font-label-md text-label-md">Tabla de Posiciones</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="canchas" href="#"><span class="material-symbols-outlined text-[20px]">stadium</span><span class="font-label-md text-label-md">Canchas</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="arbitros" href="#"><span class="material-symbols-outlined text-[20px]">sports</span><span class="font-label-md text-label-md">Árbitros</span></a><div class="my-space-xs h-[1px] bg-surface-container"></div><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="auditoria" href="#"><span class="material-symbols-outlined text-[20px]">policy</span><span class="font-label-md text-label-md">Auditoría</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="configuracion" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-label-md text-label-md">Configuración</span></a></nav><div class="p-space-md bg-surface-container-lowest"><div class="bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between"><span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Federado FMF</span><span class="font-mono-data text-mono-data text-on-surface">v2.4.1</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter-desktop"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs"><span class="font-label-md text-label-md font-semibold text-on-surface">Liga Municipal de Futbol Amateur Morelia</span></div><div class="inline-flex items-center gap-space-xs bg-primary-container px-space-sm py-[2px] rounded-full text-on-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary-fixed animate-pulse"></span><span class="font-label-sm text-label-sm uppercase font-semibold">Temporada 2025–2026 · Activa</span></div></div><div class="flex items-center gap-space-lg"><div class="relative"><button aria-label="Notificaciones" class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><span class="absolute top-1.5 right-1.5 w-4 h-4 bg-tertiary text-on-tertiary rounded-full font-label-sm text-[10px] flex items-center justify-center font-bold">3</span></div><div class="h-8 w-[1px] bg-surface-container-high"></div><div class="flex items-center gap-space-md"><div class="flex flex-col text-right"><span class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Comité Ejecutivo</span><span class="font-body-sm text-body-sm text-secondary leading-tight">Programación y Presidencia</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Sub-header & Breadcrumb Navigation Bar -->
+<div class="bg-surface-container-lowest px-gutter-desktop py-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-secondary font-label-sm">
+<a class="hover:text-primary transition-colors" href="#">Temporada 2025–2026</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Libre Primera</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-secondary font-medium">Grupo A</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-semibold">Tabla de Posiciones Oficial</span>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-md mt-space-xs">
+<div class="flex items-center gap-space-md flex-wrap">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+          Tabla General de Posiciones · Libre Primera (Grupo A)
+        </h1>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-space-sm py-[2px] rounded bg-error-container text-on-error-container font-label-sm text-[11px] font-bold tracking-wide uppercase">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+            No oficial · Demostración
+          </span>
+<span class="inline-flex items-center gap-1 px-space-sm py-[2px] rounded bg-surface-container-high text-on-surface font-label-sm text-[11px] font-semibold uppercase">
+<span class="material-symbols-outlined text-[14px]">sports_soccer</span>
+            Libre Primera · Grupo A · Torneo de Liga 2025–2026
+          </span>
+<a class="inline-flex items-center gap-1 px-space-sm py-[2px] rounded bg-secondary-container text-on-secondary-fixed hover:bg-secondary-fixed-dim transition-colors font-label-sm text-[11px] font-semibold" href="#" title="Cálculo reglamentario homologado con Reglas FMF">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+            Parámetros versión 3
+            <span class="material-symbols-outlined text-[12px] opacity-75">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Action Selectors and Export Button -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center bg-surface-container-low rounded-lg p-1">
+<label class="sr-only" for="sel-cat">Categoría</label>
+<select class="bg-surface-container-lowest text-on-surface font-label-md px-space-sm py-1.5 rounded text-sm focus:outline-none focus:ring-1 focus:ring-primary shadow-xs" id="sel-cat">
+<option selected="">Libre Primera</option>
+<option>Libre Segunda</option>
+<option>Veteranos Especial</option>
+</select>
+<label class="sr-only" for="sel-grp">Grupo</label>
+<select class="bg-surface-container-lowest text-on-surface font-label-md px-space-sm py-1.5 rounded text-sm ml-1 focus:outline-none focus:ring-1 focus:ring-primary shadow-xs" id="sel-grp">
+<option selected="">Grupo A</option>
+<option>Grupo B</option>
+</select>
+<label class="sr-only" for="sel-jrn">Jornada</label>
+<select class="bg-surface-container-lowest text-on-surface font-label-md px-space-sm py-1.5 rounded text-sm ml-1 focus:outline-none focus:ring-1 focus:ring-primary shadow-xs" id="sel-jrn">
+<option selected="">Hasta Jornada 7 validada</option>
+<option>Hasta Jornada 6</option>
+<option>Hasta Jornada 5</option>
+</select>
+</div>
+<button class="inline-flex items-center justify-center gap-space-xs h-10 px-space-md rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-md shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary">picture_as_pdf</span>
+          Exportar acta oficial (PDF)
+        </button>
+</div>
+</div>
+</div>
+<!-- Main Canvas Container -->
+<div class="px-gutter-desktop py-space-xl flex flex-col gap-space-lg">
+<!-- Statutory Draw Alert Banner -->
+<div class="bg-amber-50 rounded-xl p-space-md shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-900 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">gavel</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-amber-950 font-bold">Atención colegiada: Criterio estatutario requerido</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-amber-200/70 text-amber-900 font-mono-data font-bold uppercase tracking-wider">Art. 58</span>
+</div>
+<p class="font-body-md text-amber-900 text-sm mt-0.5">
+<strong>Halcones FC</strong> y <strong>Real Atapaneo</strong> siguen empatados en todos los criterios deportivos reglamentarios (Pts, DG, GF, Enf. Directo, Fair Play). Se requiere registrar el sorteo estatutario con acta circunstanciada para validar el 1° lugar de la tabla.
+          </p>
+</div>
+</div>
+<button class="shrink-0 inline-flex items-center gap-space-xs h-11 px-space-md rounded-lg bg-amber-600 hover:bg-amber-700 text-white font-label-md font-semibold shadow-sm transition-all focus:ring-2 focus:ring-amber-500" onclick="document.getElementById('sorteo-modal').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[20px]">casino</span>
+        Registrar sorteo
+      </button>
+</div>
+<!-- Table Classification Visual Legend -->
+<div class="flex flex-wrap items-center justify-between gap-space-md text-xs px-1">
+<div class="flex items-center gap-space-lg flex-wrap">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-on-surface-variant">1° al 4° Clasificación Directa (Liguilla)</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-on-surface-variant">5° al 8° Fase Reclasificación</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-error"></span>
+<span class="font-label-sm text-on-surface-variant">Zona Baja de Grupo</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs font-mono-data text-secondary">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>70 partidos convalidos por Colegio Arbitral de Michoacán</span>
+</div>
+</div>
+<!-- Posiciones Table Card Container -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse min-w-[980px]">
+<thead>
+<!-- Grouped Top Tier Header -->
+<tr class="bg-surface-container-low text-xs">
+<th class="py-2.5 px-space-md font-label-sm text-on-surface uppercase tracking-wider" colspan="11">
+<div class="flex items-center gap-1.5 font-bold text-primary">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+                  DATO OFICIAL (Cédulas convalidadas por Colegio Arbitral)
+                </div>
+</th>
+<th class="py-2.5 px-space-md bg-surface-container font-label-sm text-secondary uppercase tracking-wider" colspan="3">
+<div class="flex items-center gap-1.5 font-bold">
+<span class="material-symbols-outlined text-[16px]">calculate</span>
+                  INDICADOR CALCULADO (Informativo)
+                </div>
+</th>
+</tr>
+<!-- Specific Column Subheaders -->
+<tr class="bg-surface-container-lowest text-secondary font-label-sm uppercase text-[11px] shadow-xs">
+<th class="py-3 px-space-sm text-center w-12">Pos</th>
+<th class="py-3 px-space-md min-w-[240px]">Club / Equipo</th>
+<th class="py-3 px-space-sm text-right w-12" title="Partidos Jugados">PJ</th>
+<th class="py-3 px-space-sm text-right w-12" title="Ganados">G</th>
+<th class="py-3 px-space-sm text-right w-12" title="Empatados">E</th>
+<th class="py-3 px-space-sm text-right w-12" title="Perdidos">P</th>
+<th class="py-3 px-space-sm text-right w-12" title="Goles a Favor">GF</th>
+<th class="py-3 px-space-sm text-right w-12" title="Goles en Contra">GC</th>
+<th class="py-3 px-space-sm text-right w-14" title="Diferencia de Goles">DG</th>
+<th class="py-3 px-space-sm text-right w-24 text-error" title="Tarjetas Rojas Acumuladas en Cédula Oficial">Expulsiones</th>
+<th class="py-3 px-space-md text-right w-16 text-on-surface font-bold text-sm" title="Puntos Oficiales Acumulados">PTS</th>
+<!-- Calculated Columns Header -->
+<th class="py-3 px-space-md text-right w-24 bg-surface-container-low text-secondary" title="Porcentaje de Efectividad">
+<div class="inline-flex items-center gap-1 justify-end">
+<span>% Efect.</span>
+<span class="material-symbols-outlined text-[13px]">percent</span>
+</div>
+</th>
+<th class="py-3 px-space-md text-right w-24 bg-surface-container-low text-secondary" title="Cociente Promedio de Goles">Cociente</th>
+<th class="py-3 px-space-md text-center w-36 bg-surface-container-low text-secondary">Racha (Últ. 5)</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-md text-sm">
+<!-- Posición 1: Halcones FC (Empatado con tooltip activo) -->
+<tr class="hover:bg-surface-container-low transition-colors bg-amber-50/40">
+<td class="py-3 px-space-sm text-center font-bold font-mono-data">
+<div class="flex items-center justify-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="text-on-surface text-base">1</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary font-bold flex items-center justify-center text-xs shrink-0 shadow-xs">
+                    HFC
+                  </div>
+<div class="flex flex-col relative group">
+<div class="flex items-center gap-1.5">
+<span class="font-semibold text-on-surface">Halcones FC</span>
+<span class="material-symbols-outlined text-amber-600 text-[16px] cursor-help" title="Sorteo requerido">priority_high</span>
+</div>
+<span class="font-mono-data text-xs text-secondary">FOL-2025-014</span>
+<!-- Permanent / Visible Criteria Badge on Position 1 -->
+<div class="mt-1 inline-flex items-center gap-1 text-[11px] text-amber-900 bg-amber-100/90 px-2 py-0.5 rounded font-label-sm w-fit">
+<span class="material-symbols-outlined text-[13px]">help_outline</span>
+                      Empate con Real Atapaneo (16 pts) · En revisión por sorteo
+                    </div>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">7</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-on-surface font-medium">5</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">1</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">1</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-on-surface">16</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">7</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-primary font-semibold">+9</td>
+<td class="py-3 px-space-sm text-right font-mono-data font-bold text-error">
+<span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded bg-error-container text-on-error-container text-xs">1</span>
+</td>
+<td class="py-3 px-space-md text-right font-mono-score text-base text-primary font-bold">16</td>
+<!-- Calculated Columns -->
+<td class="py-3 px-space-md text-right font-mono-data bg-surface-container-low text-secondary font-medium">76.2%</td>
+<td class="py-3 px-space-md text-right font-mono-data bg-surface-container-low text-secondary font-medium">2.28</td>
+<td class="py-3 px-space-md text-center bg-surface-container-low">
+<div class="inline-flex items-center justify-center gap-1 font-mono-data text-[10px] font-bold">
+<span class="w-5 h-5 rounded bg-primary-container text-on-primary flex items-center justify-center">G</span>
+<span class="w-5 h-5 rounded bg-primary-container text-on-primary flex items-center justify-center">G</span>
+<span class="w-5 h-5 rounded bg-secondary text-white flex items-center justify-center">E</span>
+<span class="w-5 h-5 rounded bg-primary-container text-on-primary flex items-center justify-center">G</span>
+<span class="w-5 h-5 rounded bg-error text-white flex items-center justify-center">P</span>
+</div>
+</td>
+</tr>
+<!-- Posición 2: Real Atapaneo (En empate reglamentario) -->
+<tr class="hover:bg-surface-container-low transition-colors bg-amber-50/40">
+<td class="py-3 px-space-sm text-center font-bold font-mono-data">
+<div class="flex items-center justify-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="text-on-surface text-base">2</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary font-bold flex items-center justify-center text-xs shrink-0 shadow-xs">
+                    RAT
+                  </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-semibold text-on-surface">Real Atapaneo</span>
+<span class="material-symbols-outlined text-amber-600 text-[16px] cursor-help" title="Sorteo pendiente">hourglass_top</span>
+</div>
+<span class="font-mono-data text-xs text-secondary">FOL-2025-009</span>
+<!-- Permanent Badge on Position 2 -->
+<div class="mt-1 inline-flex items-center gap-1 text-[11px] text-amber-900 bg-amber-100/90 px-2 py-0.5 rounded font-label-sm w-fit">
+<span class="material-symbols-outlined text-[13px]">balance</span>
+                      En empate reglamentario · Pendiente sorteo estatutario
+                    </div>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">7</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-on-surface font-medium">5</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">1</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">1</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-on-surface">15</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">6</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-primary font-semibold">+9</td>
+<td class="py-3 px-space-sm text-right font-mono-data font-bold text-error">
+<span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded bg-error-container text-on-error-container text-xs">1</span>
+</td>
+<td class="py-3 px-space-md text-right font-mono-score text-base text-primary font-bold">16</td>
+<!-- Calculated Columns -->
+<td class="py-3 px-space-md text-right font-mono-data bg-surface-container-low text-secondary font-medium">76.2%</td>
+<td class="py-3 px-space-md text-right font-mono-data bg-surface-container-low text-secondary font-medium">2.50</td>
+<td class="py-3 px-space-md text-center bg-surface-container-low">
+<div class="inline-flex items-center justify-center gap-1 font-mono-data text-[10px] font-bold">
+<span class="w-5 h-5 rounded bg-primary-container text-on-primary flex items-center justify-center">G</span>
+<span class="w-5 h-5 rounded bg-secondary text-white flex items-center justify-center">E</span>
+<span class="w-5 h-5 rounded bg-primary-container text-on-primary flex items-center justify-center">G</span>
+<span class="w-5 h-5 rounded bg-primary-container text-on-primary flex items-center justify-center">G</span>
+<span class="w-5 h-5 rounded bg-primary-container text-on-primary flex items-center justify-center">G</span>
+</div>
+</td>
+</tr>
+<!-- Posición 3: Félix Ireta -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-space-sm text-center font-bold font-mono-data">
+<div class="flex items-center justify-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="text-on-surface text-base">3</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold flex items-center justify-center text-xs shrink-0 shadow-xs">
+                    FIR
+                  </div>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Félix Ireta</span>
+<span class="font-mono-data text-xs text-secondary">FOL-2025-021</span>
+<span class="text-[11px] text-secondary font-mono-data mt-0.5">Definido por dif. de goles (+6 vs +4)</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">7</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-on-surface font-medium">4</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">2</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">1</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-on-surface">14</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">8</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-primary font-semibold">+6</td>
+<td class="py-3 px-space-sm text-right font-mono-data font-bold text-secondary">
+<span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded bg-surface-container text-secondary text-xs">0</span>
+</td>
+<td class="py-3 px-space-md text-right font-mono-score text-base text-on-surface font-bold">14</td>
+<!-- Calculated Columns -->
+<td class="py-3 px-space-md text-right font-mono-data bg-surface-container-low text-secondary font-medium">66.7%</td>
+<td class="py-3 px-space-md text-right font-mono-data bg-surface-container-low text-secondary font-medium">1.75</td>
+<td class="py-3 px-space-md text-center bg-surface-container-low">
+<div class="inline-flex items-center justify-center gap-1 font-mono-data text-[10px] font-bold">
+<span class="w-5 h-5 rounded bg-primary-container text-on-primary flex items-center justify-center">G</span>
+<span class="w-5 h-5 rounded bg-secondary text-white flex items-center justify-center">E</span>
+<span class="w-5 h-5 rounded bg-primary-container text-on-primary flex items-center justify-center">G</span>
+<span class="w-5 h-5 rounded bg-secondary text-white flex items-center justify-center">E</span>
+<span class="w-5 h-5 rounded bg-primary-container text-on-primary flex items-center justify-center">G</span>
+</div>
+</td>
+</tr>
+<!-- Posición 4: Toros de Santa María -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-space-sm text-center font-bold font-mono-data">
+<div class="flex items-center justify-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="text-on-surface text-base">4</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface font-bold flex items-center justify-center text-xs shrink-0 shadow-xs">
+                    TSM
+                  </div>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Toros de Santa María</span>
+<span class="font-mono-data text-xs text-secondary">FOL-2025-004</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">7</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-on-surface font-medium">4</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">2</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">1</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-on-surface">13</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">9</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-primary font-semibold">+4</td>
+<td class="py-3 px-space-sm text-right font-mono-data font-bold text-error">
+<span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded bg-error-container text-on-error-container text-xs">2</span>
+</td>
+<td class="py-3 px-space-md text-right font-mono-score text-base text-on-surface font-bold">14</td>
+<!-- Calculated Columns -->
+<td class="py-3 px-space-md text-right font-mono-data bg-surface-container-low text-secondary font-medium">66.7%</td>
+<td class="py-3 px-space-md text-right font-mono-data bg-surface-container-low text-secondary font-medium">1.44</td>
+<td class="py-3 px-space-md text-center bg-surface-container-low">
+<div class="inline-flex items-center justify-center gap-1 font-mono-data text-[10px] font-bold">
+<span class="w-5 h-5 rounded bg-primary-container text-on-primary flex items-center justify-center">G</span>
+<span class="w-5 h-5 rounded bg-primary-container text-on-primary flex items-center justify-center">G</span>
+<span class="w-5 h-5 rounded bg-error text-white flex items-center justify-center">P</span>
+<span class="w-5 h-5 rounded bg-secondary text-white flex items-center justify-center">E</span>
+<span class="w-5 h-5 rounded bg-primary-container text-on-primary flex items-center justify-center">G</span>
+</div>
+</td>
+</tr>
+<!-- Posición 5: Canarios Morelia (Reclasificación) -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-space-sm text-center font-bold font-mono-data">
+<div class="flex items-center justify-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-on-surface text-base">5</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-amber-100 text-amber-900 font-bold flex items-center justify-center text-xs shrink-0 shadow-xs">
+                    CAN
+                  </div>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Canarios Morelia</span>
+<span class="font-mono-data text-xs text-secondary">FOL-2025-032</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">7</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-on-surface font-medium">3</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">2</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">2</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-on-surface">11</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">10</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-on-surface font-semibold">+1</td>
+<td class="py-3 px-space-sm text-right font-mono-data font-bold text-error">
+<span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded bg-error-container text-on-error-container text-xs">3</span>
+</td>
+<td class="py-3 px-space-md text-right font-mono-score text-base text-on-surface font-bold">11</td>
+<!-- Calculated Columns -->
+<td class="py-3 px-space-md text-right font-mono-data bg-surface-container-low text-secondary font-medium">52.4%</td>
+<td class="py-3 px-space-md text-right font-mono-data bg-surface-container-low text-secondary font-medium">1.10</td>
+<td class="py-3 px-space-md text-center bg-surface-container-low">
+<div class="inline-flex items-center justify-center gap-1 font-mono-data text-[10px] font-bold">
+<span class="w-5 h-5 rounded bg-secondary text-white flex items-center justify-center">E</span>
+<span class="w-5 h-5 rounded bg-primary-container text-on-primary flex items-center justify-center">G</span>
+<span class="w-5 h-5 rounded bg-error text-white flex items-center justify-center">P</span>
+<span class="w-5 h-5 rounded bg-primary-container text-on-primary flex items-center justify-center">G</span>
+<span class="w-5 h-5 rounded bg-secondary text-white flex items-center justify-center">E</span>
+</div>
+</td>
+</tr>
+<!-- Posición 6: Atlético Valladolid -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-space-sm text-center font-bold font-mono-data">
+<div class="flex items-center justify-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-on-surface text-base">6</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-primary font-bold flex items-center justify-center text-xs shrink-0 shadow-xs">
+                    AVA
+                  </div>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Atlético Valladolid</span>
+<span class="font-mono-data text-xs text-secondary">FOL-2025-007</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">7</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-on-surface font-medium">3</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">1</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">3</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-on-surface">10</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">11</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-error font-semibold">-1</td>
+<td class="py-3 px-space-sm text-right font-mono-data font-bold text-error">
+<span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded bg-error-container text-on-error-container text-xs">1</span>
+</td>
+<td class="py-3 px-space-md text-right font-mono-score text-base text-on-surface font-bold">10</td>
+<!-- Calculated Columns -->
+<td class="py-3 px-space-md text-right font-mono-data bg-surface-container-low text-secondary font-medium">47.6%</td>
+<td class="py-3 px-space-md text-right font-mono-data bg-surface-container-low text-secondary font-medium">0.91</td>
+<td class="py-3 px-space-md text-center bg-surface-container-low">
+<div class="inline-flex items-center justify-center gap-1 font-mono-data text-[10px] font-bold">
+<span class="w-5 h-5 rounded bg-primary-container text-on-primary flex items-center justify-center">G</span>
+<span class="w-5 h-5 rounded bg-error text-white flex items-center justify-center">P</span>
+<span class="w-5 h-5 rounded bg-primary-container text-on-primary flex items-center justify-center">G</span>
+<span class="w-5 h-5 rounded bg-secondary text-white flex items-center justify-center">E</span>
+<span class="w-5 h-5 rounded bg-error text-white flex items-center justify-center">P</span>
+</div>
+</td>
+</tr>
+<!-- Posición 7: San Juanito FC -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-space-sm text-center font-bold font-mono-data">
+<div class="flex items-center justify-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-on-surface text-base">7</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface font-bold flex items-center justify-center text-xs shrink-0 shadow-xs">
+                    SJU
+                  </div>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">San Juanito FC</span>
+<span class="font-mono-data text-xs text-secondary">FOL-2025-018</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">7</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-on-surface font-medium">2</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">2</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">3</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-on-surface">9</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">12</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-error font-semibold">-3</td>
+<td class="py-3 px-space-sm text-right font-mono-data font-bold text-error">
+<span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded bg-error-container text-on-error-container text-xs">4</span>
+</td>
+<td class="py-3 px-space-md text-right font-mono-score text-base text-on-surface font-bold">8</td>
+<!-- Calculated Columns -->
+<td class="py-3 px-space-md text-right font-mono-data bg-surface-container-low text-secondary font-medium">38.1%</td>
+<td class="py-3 px-space-md text-right font-mono-data bg-surface-container-low text-secondary font-medium">0.75</td>
+<td class="py-3 px-space-md text-center bg-surface-container-low">
+<div class="inline-flex items-center justify-center gap-1 font-mono-data text-[10px] font-bold">
+<span class="w-5 h-5 rounded bg-error text-white flex items-center justify-center">P</span>
+<span class="w-5 h-5 rounded bg-secondary text-white flex items-center justify-center">E</span>
+<span class="w-5 h-5 rounded bg-primary-container text-on-primary flex items-center justify-center">G</span>
+<span class="w-5 h-5 rounded bg-error text-white flex items-center justify-center">P</span>
+<span class="w-5 h-5 rounded bg-secondary text-white flex items-center justify-center">E</span>
+</div>
+</td>
+</tr>
+<!-- Posición 8: Indeco FC -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-space-sm text-center font-bold font-mono-data">
+<div class="flex items-center justify-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-on-surface text-base">8</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold flex items-center justify-center text-xs shrink-0 shadow-xs">
+                    IND
+                  </div>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Indeco FC</span>
+<span class="font-mono-data text-xs text-secondary">FOL-2025-011</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">7</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-on-surface font-medium">2</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">1</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">4</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-on-surface">8</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">13</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-error font-semibold">-5</td>
+<td class="py-3 px-space-sm text-right font-mono-data font-bold text-error">
+<span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded bg-error-container text-on-error-container text-xs">2</span>
+</td>
+<td class="py-3 px-space-md text-right font-mono-score text-base text-on-surface font-bold">7</td>
+<!-- Calculated Columns -->
+<td class="py-3 px-space-md text-right font-mono-data bg-surface-container-low text-secondary font-medium">33.3%</td>
+<td class="py-3 px-space-md text-right font-mono-data bg-surface-container-low text-secondary font-medium">0.62</td>
+<td class="py-3 px-space-md text-center bg-surface-container-low">
+<div class="inline-flex items-center justify-center gap-1 font-mono-data text-[10px] font-bold">
+<span class="w-5 h-5 rounded bg-error text-white flex items-center justify-center">P</span>
+<span class="w-5 h-5 rounded bg-primary-container text-on-primary flex items-center justify-center">G</span>
+<span class="w-5 h-5 rounded bg-error text-white flex items-center justify-center">P</span>
+<span class="w-5 h-5 rounded bg-secondary text-white flex items-center justify-center">E</span>
+<span class="w-5 h-5 rounded bg-error text-white flex items-center justify-center">P</span>
+</div>
+</td>
+</tr>
+<!-- Posición 9: Tiripetío FC (Zona baja) -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-space-sm text-center font-bold font-mono-data">
+<div class="flex items-center justify-center gap-1">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="text-on-surface text-base">9</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container text-secondary font-bold flex items-center justify-center text-xs shrink-0 shadow-xs">
+                    TIR
+                  </div>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Tiripetío FC</span>
+<span class="font-mono-data text-xs text-secondary">FOL-2025-029</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">7</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-on-surface font-medium">1</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">2</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">4</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-on-surface">7</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">14</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-error font-semibold">-7</td>
+<td class="py-3 px-space-sm text-right font-mono-data font-bold text-error">
+<span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded bg-error-container text-on-error-container text-xs">3</span>
+</td>
+<td class="py-3 px-space-md text-right font-mono-score text-base text-on-surface font-bold">5</td>
+<!-- Calculated Columns -->
+<td class="py-3 px-space-md text-right font-mono-data bg-surface-container-low text-secondary font-medium">23.8%</td>
+<td class="py-3 px-space-md text-right font-mono-data bg-surface-container-low text-secondary font-medium">0.50</td>
+<td class="py-3 px-space-md text-center bg-surface-container-low">
+<div class="inline-flex items-center justify-center gap-1 font-mono-data text-[10px] font-bold">
+<span class="w-5 h-5 rounded bg-error text-white flex items-center justify-center">P</span>
+<span class="w-5 h-5 rounded bg-secondary text-white flex items-center justify-center">E</span>
+<span class="w-5 h-5 rounded bg-error text-white flex items-center justify-center">P</span>
+<span class="w-5 h-5 rounded bg-error text-white flex items-center justify-center">P</span>
+<span class="w-5 h-5 rounded bg-primary-container text-on-primary flex items-center justify-center">G</span>
+</div>
+</td>
+</tr>
+<!-- Posición 10: Leones Negros Morelia -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-space-sm text-center font-bold font-mono-data">
+<div class="flex items-center justify-center gap-1">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="text-on-surface text-base">10</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-inverse-surface text-inverse-on-surface font-bold flex items-center justify-center text-xs shrink-0 shadow-xs">
+                    LNM
+                  </div>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Leones Negros Morelia</span>
+<span class="font-mono-data text-xs text-secondary">FOL-2025-003</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">7</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-on-surface font-medium">0</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">2</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">5</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-on-surface">5</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-secondary">15</td>
+<td class="py-3 px-space-sm text-right font-mono-data text-error font-semibold">-10</td>
+<td class="py-3 px-space-sm text-right font-mono-data font-bold text-error">
+<span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded bg-error-container text-on-error-container text-xs">5</span>
+</td>
+<td class="py-3 px-space-md text-right font-mono-score text-base text-on-surface font-bold">2</td>
+<!-- Calculated Columns -->
+<td class="py-3 px-space-md text-right font-mono-data bg-surface-container-low text-secondary font-medium">9.5%</td>
+<td class="py-3 px-space-md text-right font-mono-data bg-surface-container-low text-secondary font-medium">0.33</td>
+<td class="py-3 px-space-md text-center bg-surface-container-low">
+<div class="inline-flex items-center justify-center gap-1 font-mono-data text-[10px] font-bold">
+<span class="w-5 h-5 rounded bg-error text-white flex items-center justify-center">P</span>
+<span class="w-5 h-5 rounded bg-error text-white flex items-center justify-center">P</span>
+<span class="w-5 h-5 rounded bg-secondary text-white flex items-center justify-center">E</span>
+<span class="w-5 h-5 rounded bg-error text-white flex items-center justify-center">P</span>
+<span class="w-5 h-5 rounded bg-error text-white flex items-center justify-center">P</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Metadata & Legal Notes -->
+<div class="p-space-md bg-surface-container-low flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md text-xs text-secondary">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">policy</span>
+<span>Solo se computan partidos con cédula arbitral ratificada o aprobada por dictamen de la Comisión de Arbitraje (VAL-018). Indicadores calculados son solo informativos y no constituyen criterio de clasificación estatutaria.</span>
+</div>
+<div class="flex items-center gap-space-md shrink-0 font-mono-data text-[11px]">
+<span class="px-2 py-1 bg-surface-container rounded text-on-surface">Motor de Tablas v3.4.1</span>
+<span>Temporada 2025–2026</span>
+</div>
+</div>
+</div>
+<!-- Administrative Quick Indicators (President & Scheduler view) -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">fact_check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm uppercase text-secondary font-semibold">Cédulas Ratificadas</span>
+<span class="font-mono-score text-xl text-on-surface font-bold">35 / 35</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[22px]">sports</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm uppercase text-secondary font-semibold">Tarjetas Rojas en Grupo</span>
+<span class="font-mono-score text-xl text-on-surface font-bold">22 Rojas</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">sports_soccer</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm uppercase text-secondary font-semibold">Goles Registrados</span>
+<span class="font-mono-score text-xl text-on-surface font-bold">104 Goles</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-amber-600">
+<span class="material-symbols-outlined text-[22px]">balance</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm uppercase text-secondary font-semibold">Dictámenes Pendientes</span>
+<span class="font-mono-score text-xl text-amber-700 font-bold">1 Sorteo</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Reglamentario de Registro de Sorteo (Overlay Interactivo) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-on-secondary-fixed/50 backdrop-blur-xs p-4" id="sorteo-modal">
+<div class="bg-surface-container-lowest w-full max-w-2xl rounded-2xl shadow-xl overflow-hidden flex flex-col animate-in fade-in zoom-in duration-200">
+<!-- Modal Header -->
+<div class="bg-inverse-surface text-inverse-on-surface px-space-xl py-space-md flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">casino</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-white font-bold leading-tight">
+              Resolución Extraordinaria: Registrar Sorteo Estatutario de Desempate
+            </h2>
+<span class="font-label-sm text-secondary-fixed-dim text-xs">
+              Art. 58 Reglamento General de Competencia · Liga Municipal Morelia
+            </span>
+</div>
+</div>
+<button aria-label="Cerrar modal" class="text-secondary-fixed-dim hover:text-white transition-colors" onclick="document.getElementById('sorteo-modal').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<!-- Modal Body Form -->
+<form class="p-space-xl flex flex-col gap-space-lg" id="draw-form" onsubmit="event.preventDefault(); document.getElementById('sorteo-modal').classList.add('hidden');">
+<!-- Explanation Alert Box inside Modal -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-sm text-sm text-on-surface">
+<span class="material-symbols-outlined text-amber-600 text-[20px] shrink-0">info</span>
+<p class="font-body-md text-xs leading-relaxed">
+            El sistema detectó <strong>empate total e indivisible</strong> tras aplicar los criterios sucesivos (1° Diferencia de goles, 2° Goles a favor, 3° Enfrentamiento directo, 4° Fair Play por tarjetas de expulsión). El orden final debe definirse mediante <strong>insaculación presencial ante los delegados acreditados</strong>.
+          </p>
+</div>
+<!-- Team Draw Result Selection -->
+<div class="flex flex-col gap-space-sm">
+<label class="font-label-md text-on-surface font-semibold flex items-center gap-1">
+            Resultado del sorteo estatutario para el 1° lugar de grupo <span class="text-error">*</span>
+</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<label class="cursor-pointer relative flex items-center gap-space-md p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all shadow-xs has-checked:bg-primary-container/10 has-checked:ring-2 has-checked:ring-primary">
+<input checked="" class="w-5 h-5 text-primary accent-primary" name="ganador_sorteo" onchange="document.getElementById('pos2-team').innerText = 'Real Atapaneo';" type="radio" value="halcones">
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Halcones FC</span>
+<span class="text-xs text-secondary font-mono-data">Asignar 1° Posición Oficial</span>
+</div>
+</label>
+<label class="cursor-pointer relative flex items-center gap-space-md p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all shadow-xs has-checked:bg-primary-container/10 has-checked:ring-2 has-checked:ring-primary">
+<input class="w-5 h-5 text-primary accent-primary" name="ganador_sorteo" onchange="document.getElementById('pos2-team').innerText = 'Halcones FC';" type="radio" value="atapaneo">
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Real Atapaneo</span>
+<span class="text-xs text-secondary font-mono-data">Asignar 1° Posición Oficial</span>
+</div>
+</label>
+</div>
+<span class="text-xs text-secondary italic">
+            El 2° puesto será asignado automáticamente a: <strong class="text-on-surface font-semibold" id="pos2-team">Real Atapaneo</strong>.
+          </span>
+</div>
+<!-- Legal Justification Capture Area -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-on-surface font-semibold flex items-center justify-between" for="acta-sorteo">
+<span>Motivo y Número de Acta de Sorteo <span class="text-error">*</span></span>
+<span class="text-[11px] text-secondary font-normal font-mono-data">Mínimo 30 caracteres</span>
+</label>
+<textarea class="w-full p-space-sm bg-surface-container-lowest text-on-surface text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-xs font-body-md" id="acta-sorteo" placeholder="Ej. Sorteo celebrado en sesión ordinaria del Comité Ejecutivo con presencia del delegado Fernando Tapia (Halcones) y delegado Rubén Ortiz (Atapaneo). Balota #1 asignó posición 1 a Halcones FC." required="" rows="3">Sorteo celebrado el 12 de Noviembre en sesión ordinaria del Comité Ejecutivo con presencia del delegado Fernando Tapia (Halcones) y delegado Rubén Ortiz (Atapaneo). Balota #1 asignó posición 1 a Halcones FC.</textarea>
+</div>
+<!-- File Upload Evidence Input -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-on-surface font-semibold flex items-center justify-between">
+<span>Acta circunstanciada escaneada (PDF)</span>
+<span class="text-[11px] text-secondary font-normal">Opcional</span>
+</label>
+<div class="flex items-center gap-space-md p-space-sm rounded-lg bg-surface-container-low shadow-xs">
+<span class="material-symbols-outlined text-secondary text-[24px]">attach_file</span>
+<div class="flex flex-col flex-1 truncate">
+<span class="text-xs font-medium text-on-surface truncate">Acta_Sorteo_Art58_LibrePrimera_GrpA_Firmada.pdf</span>
+<span class="text-[10px] text-secondary font-mono-data">1.8 MB · Firmado digitalmente por Presidencia</span>
+</div>
+<button class="text-xs text-tertiary hover:underline font-semibold" type="button">Reemplazar</button>
+</div>
+</div>
+<!-- Modal Actions Footer -->
+<div class="pt-space-md flex items-center justify-end gap-space-md">
+<button class="h-11 px-space-lg rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md transition-colors" onclick="document.getElementById('sorteo-modal').classList.add('hidden')" type="button">
+            Cancelar
+          </button>
+<button class="h-11 px-space-lg rounded-lg bg-primary-container hover:bg-primary text-white font-label-md font-semibold shadow-sm transition-all flex items-center gap-space-xs" type="submit">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+            Asentar Sorteo y Actualizar Posiciones
+          </button>
+</div>
+</form>
+</div>
+</div>
+<script>
+    // Minimal interactivity for the modal demonstration
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const modal = document.getElementById('sorteo-modal');
+        if (modal && !modal.classList.contains('hidden')) {
+          modal.classList.add('hidden');
+        }
+      }
+    });
+  </script>
+</div></main></div></body></html>

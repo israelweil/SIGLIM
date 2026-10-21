@@ -1,0 +1,765 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-fixed-dim": "#bec6e0", "surface-bright": "#f8f9ff", "tertiary-fixed-dim": "#ffb3b6", "on-secondary": "#ffffff", "on-tertiary-fixed-variant": "#7b2b34", "on-secondary-fixed-variant": "#3f465b", "on-surface": "#0b1c30", "surface-variant": "#d3e4fe", "primary-fixed": "#9ef6b6", "on-tertiary": "#ffffff", "on-tertiary-fixed": "#40000c", "on-primary-fixed": "#00210e", "on-secondary-container": "#5a6278", "inverse-primary": "#83d99c", "primary-container": "#006837", "on-error-container": "#93000a", "outline": "#6f7a70", "surface-tint": "#0b6d3b", "inverse-surface": "#213145", "secondary": "#565e74", "surface-dim": "#cbdbf5", "on-surface-variant": "#3f4940", "primary": "#004d27", "surface": "#f8f9ff", "inverse-on-surface": "#eaf1ff", "surface-container-high": "#dce9ff", "surface-container-lowest": "#ffffff", "secondary-fixed": "#dae2fc", "primary-fixed-dim": "#83d99c", "on-primary": "#ffffff", "on-error": "#ffffff", "surface-container": "#e5eeff", "on-primary-container": "#8ee4a6", "surface-container-low": "#eff4ff", "background": "#f8f9ff", "secondary-container": "#d8dff9", "outline-variant": "#bec9be", "on-tertiary-container": "#ffc3c5", "on-background": "#0b1c30", "tertiary": "#762730", "on-secondary-fixed": "#131b2e", "tertiary-container": "#943e46", "surface-container-highest": "#d3e4fe", "on-primary-fixed-variant": "#00522a", "tertiary-fixed": "#ffdada", "error-container": "#ffdad6", "error": "#ba1a1a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1rem", "space-xl": "1.5rem", "space-md": "0.75rem", "gutter": "1rem", "margin": "1rem", "space-xs": "0.25rem", "gutter-desktop": "1.5rem", "space-sm": "0.5rem", "margin-desktop": "2rem" }, "fontFamily": { "headline-lg": ["Inter"], "display-lg": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "headline-sm": ["Inter"], "mono-score": ["JetBrains Mono"], "mono-data": ["JetBrains Mono"], "body-sm": ["Inter"], "display-lg-mobile": ["Inter"] }, "fontSize": { "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "display-lg": ["36px", { "lineHeight": "44px", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }], "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "mono-score": ["28px", { "lineHeight": "32px", "fontWeight": "700" }], "mono-data": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-space-xl flex items-center gap-space-sm bg-surface-container-lowest"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm">S</div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-tight tracking-tight">SIGLIM</span><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Futbol Amateur</span></div></div><div class="px-space-md pt-space-md"><div class="px-space-sm pb-space-xs font-label-sm text-label-sm text-secondary uppercase tracking-wider">Operación de Liga</div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary rounded-lg font-label-md"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="inicio" href="#"><span class="material-symbols-outlined text-[20px]">space_dashboard</span>Inicio</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="programacion-de-jornadas" href="#"><span class="material-symbols-outlined text-[20px]">calendar_month</span>Programación de Jornadas</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="cedulas-y-partidos" href="#"><span class="material-symbols-outlined text-[20px]">assignment</span>Cédulas y Partidos</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="canchas" href="#"><span class="material-symbols-outlined text-[20px]">stadium</span>Canchas</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="arbitros" href="#"><span class="material-symbols-outlined text-[20px]">sports</span>Árbitros</a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="auditoria" href="#"><span class="material-symbols-outlined text-[20px]">history_edu</span>Auditoría</a></nav></div></div><div class="p-space-md"><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary rounded-lg font-label-md"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="configuracion" href="#"><span class="material-symbols-outlined text-[20px]">settings</span>Configuración</a></nav><div class="mt-space-md p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between"><span class="font-label-sm text-label-sm text-secondary">Versión Interna 2.5</span><span class="w-2 h-2 rounded-full bg-primary-container"></span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-margin-desktop"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-secondary-container"><span class="w-2 h-2 rounded-full bg-primary-container"></span><span class="font-label-sm text-label-sm text-on-secondary-fixed font-semibold tracking-wide uppercase">Temporada 2025–2026 · Activa</span></div><span class="font-label-sm text-label-sm text-secondary">Liga Municipal de Futbol Amateur Morelia</span></div><div class="flex items-center gap-space-lg"><button aria-label="Notificaciones institucionales" class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-md"><div class="flex flex-col items-end text-right"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Ing. Carlos Villalobos</span><span class="font-label-sm text-label-sm text-secondary leading-tight">Programador Oficial / Rol de Juegos</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-16 bg-surface w-full px-margin-desktop py-gutter-desktop"><div class="flex flex-col w-full">
+<!-- Breadcrumbs de navegación superior institucional -->
+<nav aria-label="Ruta de navegación" class="flex items-center gap-space-xs text-body-sm font-body-sm text-secondary mb-space-md">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">folder_open</span>
+<span>Cédulas y Partidos</span>
+</a>
+<span class="text-outline-variant">/</span>
+<span class="hover:text-on-surface transition-colors">Temporada 2025–2026</span>
+<span class="text-outline-variant">/</span>
+<span class="hover:text-on-surface transition-colors">Libre Primera División (Grupo A)</span>
+<span class="text-outline-variant">/</span>
+<span class="hover:text-on-surface transition-colors font-medium text-on-surface">Jornada 8</span>
+<span class="text-outline-variant">/</span>
+<span class="bg-surface-container-high text-on-surface px-space-xs py-0.5 rounded font-mono-data text-label-sm">
+      #2025-J08-018
+    </span>
+</nav>
+<!-- Banner Normativo Superior -->
+<div class="flex items-center justify-between bg-surface-container-low px-space-md py-space-sm rounded-lg mb-space-lg shadow-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-[20px]">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface">Órgano de Control: Dirección de Programación y Arbitraje · Morelia, Mich.</span>
+</div>
+<div class="flex items-center gap-space-xs px-2 py-0.5 rounded bg-tertiary/10 text-tertiary font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+<span class="material-symbols-outlined text-[14px]">science</span>
+<span>No oficial · Demostración</span>
+</div>
+</div>
+<!-- Encabezado Principal del Encuentro: Match Card de Alto Contraste -->
+<div class="relative bg-surface-container-lowest rounded-xl shadow-md p-space-xl mb-space-lg overflow-hidden">
+<!-- Acento institucional superior -->
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-primary-container"></div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-xl">
+<!-- Sección Equipos y Enfrentamiento -->
+<div class="flex-1 flex flex-col md:flex-row items-center justify-start gap-space-xl">
+<!-- Equipo Local: Halcones FC -->
+<div class="flex items-center gap-space-md w-full md:w-auto">
+<div class="w-16 h-16 rounded-xl bg-on-secondary-fixed text-surface-container-lowest flex items-center justify-center shadow-md shrink-0 relative overflow-hidden">
+<span class="font-display-lg text-display-lg font-bold tracking-tight">H</span>
+<div class="absolute bottom-0 inset-x-0 h-1 bg-surface-variant"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm uppercase">Local</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="text-body-sm font-body-sm text-secondary">Azul Rey / Blanco</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight truncate mt-0.5">
+              Halcones FC
+            </h1>
+<span class="font-mono-data text-mono-data text-secondary">ID Delegación: HLC-042</span>
+</div>
+</div>
+<!-- Separador Central VS -->
+<div class="flex flex-col items-center justify-center shrink-0 px-space-md my-space-xs md:my-0">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary font-headline-sm text-headline-sm font-bold shadow-inner">
+            VS
+          </div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mt-1">Cotejo Reg.</span>
+</div>
+<!-- Equipo Visitante: Toros de Santa María -->
+<div class="flex items-center gap-space-md w-full md:w-auto">
+<div class="w-16 h-16 rounded-xl bg-tertiary text-surface-container-lowest flex items-center justify-center shadow-md shrink-0 relative overflow-hidden">
+<span class="font-display-lg text-display-lg font-bold tracking-tight">T</span>
+<div class="absolute bottom-0 inset-x-0 h-1 bg-tertiary-fixed-dim"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm uppercase">Visita</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="text-body-sm font-body-sm text-secondary">Carmesí / Blanco</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight truncate mt-0.5">
+              Toros de Santa María
+            </h2>
+<span class="font-mono-data text-mono-data text-secondary">ID Delegación: TSM-109</span>
+</div>
+</div>
+</div>
+<!-- Estado e Insignia Federativa -->
+<div class="flex flex-col items-start lg:items-end gap-space-sm shrink-0 bg-surface-container-low p-space-md rounded-xl">
+<div class="flex items-center gap-space-xs">
+<!-- Insignia de estado grande destacada: PROGRAMADO -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-secondary-fixed shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">event</span>
+<span class="font-label-md text-label-md font-bold tracking-wider uppercase">PROGRAMADO</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-secondary block">Folio de Cotejo Oficial:</span>
+<span class="font-mono-data text-mono-data font-bold text-on-surface">FMF-LMM-2025-018</span>
+</div>
+</div>
+</div>
+<!-- Metadatos de Logística y Cancha (Bento Row) -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md mt-space-lg pt-space-md bg-surface-container-low/60 rounded-lg p-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="p-2 rounded bg-surface-container-lowest text-primary shadow-sm">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block">Fecha del Partido</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Domingo 09 Noviembre 2025</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<div class="p-2 rounded bg-surface-container-lowest text-primary shadow-sm">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block">Horario y Bloque</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">10:00 - 11:45 hrs</span>
+<span class="font-label-sm text-label-sm text-secondary block">(90m reglamentarios + 15m despeje)</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<div class="p-2 rounded bg-surface-container-lowest text-primary shadow-sm">
+<span class="material-symbols-outlined text-[20px]">stadium</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block">Cancha y Terreno</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">UD Cuauhtémoc · Cancha 2</span>
+<span class="font-label-sm text-label-sm text-secondary block">Tierra / Empastado mixto</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<div class="p-2 rounded bg-surface-container-lowest text-primary shadow-sm">
+<span class="material-symbols-outlined text-[20px]">military_tech</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block">Torneo y Rama</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Jornada 8 · Libre Primera</span>
+<span class="font-label-sm text-label-sm text-secondary block">Grupo A · Torneo de Liga</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Barra de Acciones según Estado (Programado) -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container-lowest p-space-md rounded-xl shadow-sm mb-space-xl">
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Botón Reprogramar -->
+<button class="h-11 px-space-lg rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md flex items-center gap-2 shadow-sm transition-all transform active:scale-95" onclick="document.getElementById('modal-reprogramar').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[20px]">update</span>
+<span>Reprogramar</span>
+</button>
+<!-- Botón Cancelar Partido -->
+<button class="h-11 px-space-lg rounded-lg bg-surface-container hover:bg-error-container text-error font-label-md text-label-md flex items-center gap-2 transition-all" onclick="alert('Confirmación requerida para Cancelación definitiva de rol de juegos.');" type="button">
+<span class="material-symbols-outlined text-[20px]">event_busy</span>
+<span>Cancelar partido</span>
+</button>
+<!-- Botón Suspender (DESHABILITADO con Tooltip de regla) -->
+<div class="relative group">
+<button class="h-11 px-space-lg rounded-lg bg-surface-container-high text-secondary/50 font-label-md text-label-md flex items-center gap-2 cursor-not-allowed select-none" disabled="" type="button">
+<span class="material-symbols-outlined text-[20px]">pause_circle</span>
+<span>Suspender</span>
+</button>
+<!-- Tooltip visible en hover -->
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:flex flex-col items-center z-30 pointer-events-none w-64">
+<div class="bg-inverse-surface text-inverse-on-surface text-label-sm font-label-sm px-3 py-1.5 rounded-lg shadow-lg text-center leading-snug">
+            Solo un partido <span class="font-bold text-primary-fixed">En curso</span> se puede suspender reglamentariamente.
+          </div>
+<div class="w-2 h-2 bg-inverse-surface rotate-45 -mt-1"></div>
+</div>
+</div>
+</div>
+<!-- Nota reglamentaria visible -->
+<div class="flex items-center gap-space-xs text-secondary font-label-sm text-label-sm bg-surface-container-low px-space-md py-2 rounded-lg">
+<span class="material-symbols-outlined text-[18px] text-primary-container">info</span>
+<span><strong>Nota oficial:</strong> El partido pasa a <em class="font-semibold text-on-surface">En curso</em> automáticamente a su hora y a <em class="font-semibold text-on-surface">Finalizado</em> al validar la cédula.</span>
+</div>
+</div>
+<!-- Pestañas de Navegación de Contenido -->
+<div class="flex items-center gap-space-xs border-b-2 border-surface-container mb-space-lg">
+<button class="tab-btn active px-space-lg py-space-sm font-label-md text-label-md font-semibold text-primary-container border-b-2 border-primary-container -mb-[2px] flex items-center gap-2 transition-colors" id="tab-btn-resumen" onclick="switchTab('resumen')">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Resumen</span>
+</button>
+<button class="tab-btn px-space-lg py-space-sm font-label-md text-label-md font-medium text-secondary hover:text-on-surface flex items-center gap-2 transition-colors" id="tab-btn-cedula" onclick="switchTab('cedula')">
+<span class="material-symbols-outlined text-[20px]">description</span>
+<span>Cédula</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-secondary text-label-sm font-mono-data">Pre</span>
+</button>
+<button class="tab-btn px-space-lg py-space-sm font-label-md text-label-md font-medium text-secondary hover:text-on-surface flex items-center gap-2 transition-colors" id="tab-btn-resultado" onclick="switchTab('resultado')">
+<span class="material-symbols-outlined text-[20px]">scoreboard</span>
+<span>Resultado</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</button>
+<button class="tab-btn px-space-lg py-space-sm font-label-md text-label-md font-medium text-secondary hover:text-on-surface flex items-center gap-2 transition-colors" id="tab-btn-historial" onclick="switchTab('historial')">
+<span class="material-symbols-outlined text-[20px]">history</span>
+<span>Historial</span>
+<span class="px-1.5 py-0.2 rounded-full bg-secondary-container text-on-secondary-fixed text-label-sm font-mono-data">3</span>
+</button>
+</div>
+<!-- Contenedores de Pestañas -->
+<!-- 1. PESTAÑA: RESUMEN -->
+<div class="tab-pane flex flex-col gap-space-lg" id="tab-content-resumen">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Columna Izquierda: Cuerpo Arbitral (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-md mb-space-md border-b border-surface-container">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">sports</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Cuerpo Arbitral Designado</h3>
+<span class="font-label-sm text-label-sm text-secondary">Colegio de Árbitros del Estado de Michoacán A.C.</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-primary-fixed/30 text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Designaciones Validadas</span>
+</div>
+</div>
+<!-- Árbitro Central Destacado -->
+<div class="bg-surface-container-low p-space-md rounded-lg mb-space-md flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest text-primary flex items-center justify-center font-bold text-headline-sm shadow-inner">
+                AC
+              </div>
+<div>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-secondary-fixed font-label-sm text-label-sm uppercase font-semibold">
+                  Árbitro Central
+                </span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-1">Lic. Roberto Carlos Mendoza</h4>
+<p class="font-body-sm text-body-sm text-secondary">Acreditación: Nivel Estatal FMF · Registro #ARB-MIC-1084</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-secondary block">Honorarios</span>
+<span class="font-mono-data text-mono-data font-bold text-on-surface">$550.00 MXN</span>
+</div>
+</div>
+<!-- Asistentes en Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="bg-surface-container-low p-space-md rounded-lg flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block">Asistente 1 (Banda Poniente)</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Sergio Calderón</span>
+<span class="font-mono-data text-mono-data text-secondary block">Credencial FMF: #A1-948</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[24px]">flag</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block">Asistente 2 (Banda Oriente)</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Iván Morales</span>
+<span class="font-mono-data text-mono-data text-secondary block">Credencial FMF: #A2-1102</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[24px]">flag</span>
+</div>
+</div>
+</div>
+<!-- Ficha Técnica de Delegados y Logística -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-md flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">badge</span>
+<span>Delegados Oficiales Acreditados en Banquillo</span>
+</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Delegado Local -->
+<div class="p-space-md rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase">Halcones FC (Local)</span>
+<span class="px-2 py-0.5 rounded bg-primary-fixed/30 text-on-primary-fixed font-label-sm text-label-sm font-semibold">Credencial Vigente</span>
+</div>
+<span class="font-body-lg text-body-lg font-semibold text-on-surface block">Ing. Fernando Tapia Ortiz</span>
+<span class="font-body-sm text-body-sm text-secondary block">Delegado Titular · Cel: 443-219-8801</span>
+<div class="mt-space-sm pt-space-xs border-t border-surface-container-high flex justify-between font-label-sm text-label-sm text-secondary">
+<span>Fianza de juego:</span>
+<span class="font-mono-data text-on-surface font-semibold text-primary">Cubierta ($1,200)</span>
+</div>
+</div>
+<!-- Delegado Visitante -->
+<div class="p-space-md rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-tertiary font-bold uppercase">Toros Santa María (Visita)</span>
+<span class="px-2 py-0.5 rounded bg-primary-fixed/30 text-on-primary-fixed font-label-sm text-label-sm font-semibold">Credencial Vigente</span>
+</div>
+<span class="font-body-lg text-body-lg font-semibold text-on-surface block">Mtro. Gerardo Pineda R.</span>
+<span class="font-body-sm text-body-sm text-secondary block">Delegado Titular · Cel: 443-802-1433</span>
+<div class="mt-space-sm pt-space-xs border-t border-surface-container-high flex justify-between font-label-sm text-label-sm text-secondary">
+<span>Fianza de juego:</span>
+<span class="font-mono-data text-on-surface font-semibold text-primary">Cubierta ($1,200)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Columna Derecha: Equipaciones e Inspección de Terreno (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Uniformes Registrados -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-md flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">checkroom</span>
+<span>Verificación de Indumentarias</span>
+</h3>
+<!-- Uniforme Local -->
+<div class="mb-space-md p-space-md rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between mb-2">
+<span class="font-body-md text-body-md font-bold text-on-surface">Halcones FC</span>
+<span class="font-label-sm text-label-sm text-secondary">Uniforme #1 Oficial</span>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-blue-700 shadow-sm" title="Camiseta Azul Rey"></div>
+<span class="font-body-sm text-body-sm text-on-surface">Playera: Azul Rey</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-white border border-surface-container-highest shadow-sm" title="Short Blanco"></div>
+<span class="font-body-sm text-body-sm text-on-surface">Short: Blanco</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-blue-700 shadow-sm" title="Calcetas Azules"></div>
+<span class="font-body-sm text-body-sm text-on-surface">Medias: Azul</span>
+</div>
+</div>
+</div>
+<!-- Uniforme Visitante -->
+<div class="p-space-md rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between mb-2">
+<span class="font-body-md text-body-md font-bold text-on-surface">Toros de Santa María</span>
+<span class="font-label-sm text-label-sm text-secondary">Uniforme #1 Oficial</span>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-red-700 shadow-sm" title="Camiseta Carmesí"></div>
+<span class="font-body-sm text-body-sm text-on-surface">Playera: Rojo</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-white border border-surface-container-highest shadow-sm" title="Short Blanco"></div>
+<span class="font-body-sm text-body-sm text-on-surface">Short: Blanco</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-red-700 shadow-sm" title="Calcetas Rojas"></div>
+<span class="font-body-sm text-body-sm text-on-surface">Medias: Rojo</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md p-space-sm rounded bg-surface-container-high/60 flex items-start gap-space-xs text-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[16px] text-primary">gavel</span>
+<span>Contraste aprobado por la mesa directiva. El guardameta de Halcones utilizará casaca Verde Neón y Toros casaca Gris Oscuro.</span>
+</div>
+</div>
+<!-- Condiciones del Escenario Deportivo -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-md flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">grass</span>
+<span>Condición de Instalación</span>
+</h3>
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-secondary">Unidad Deportiva:</span>
+<span class="font-semibold text-on-surface">Cuauhtémoc (Campos de Policía)</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-secondary">Superficie:</span>
+<span class="font-semibold text-on-surface">Mixta (80% tierra compacta, 20% pasto)</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-secondary">Marcaje de cal y redes:</span>
+<span class="text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>Inspeccionado 07:00 AM</span>
+</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-secondary">Balón reglamentario FMF:</span>
+<span class="font-semibold text-on-surface">Voit Liga Voit #5 (Aportan ambos)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 2. PESTAÑA: CÉDULA -->
+<div class="tab-pane hidden flex-col gap-space-lg" id="tab-content-cedula">
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-lg mb-space-lg border-b border-surface-container">
+<div>
+<div class="flex items-center gap-space-sm mb-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-secondary-fixed font-label-sm text-label-sm font-semibold uppercase">
+              Cédula en Espera de Apertura (Pre-partido)
+            </span>
+<span class="font-mono-data text-mono-data text-secondary">Folio: CED-2025-J08-018</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-bold">Cédula Digital y Listas de Alineación</h3>
+<p class="font-body-md text-body-md text-secondary mt-1">El árbitro central desbloqueará el llenado en vivo 15 minutos antes del silbatazo inicial (09:45 hrs).</p>
+</div>
+<div>
+<a class="h-11 px-space-lg rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md flex items-center gap-2 shadow-sm transition-all" href="#">
+<span>Ver y gestionar cédula digital oficial</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Requisitos Previos y Listas Cargadas -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Halcones FC Roster -->
+<div class="p-space-lg rounded-xl bg-surface-container-low">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-on-secondary-fixed text-white flex items-center justify-center font-bold">H</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Halcones FC</h4>
+<span class="font-label-sm text-label-sm text-secondary">22 jugadores registrados en cédula pre-partido</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary-fixed/40 text-on-primary-fixed text-label-sm font-semibold uppercase">Lista Validada</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="text-secondary font-label-sm uppercase border-b border-surface-container-high">
+<th class="py-2">Dorsal</th>
+<th class="py-2">Nombre del Jugador</th>
+<th class="py-2 text-right">Estatus FMF</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high font-mono-data text-mono-data">
+<tr>
+<td class="py-2 font-bold text-on-surface">#1</td>
+<td class="py-2 font-body-sm font-medium text-on-surface">García Solorio, Alejandro (POR)</td>
+<td class="py-2 text-right text-primary font-semibold">Habilitado</td>
+</tr>
+<tr>
+<td class="py-2 font-bold text-on-surface">#4</td>
+<td class="py-2 font-body-sm font-medium text-on-surface">Mendoza Villa, Cristian</td>
+<td class="py-2 text-right text-primary font-semibold">Habilitado</td>
+</tr>
+<tr>
+<td class="py-2 font-bold text-on-surface">#8</td>
+<td class="py-2 font-body-sm font-medium text-on-surface">Reyes Morales, Esteban (CAP)</td>
+<td class="py-2 text-right text-primary font-semibold">Habilitado</td>
+</tr>
+<tr>
+<td class="py-2 font-bold text-on-surface">#10</td>
+<td class="py-2 font-body-sm font-medium text-on-surface">Campos Hurtado, Leonardo</td>
+<td class="py-2 text-right text-primary font-semibold">Habilitado</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-space-md text-center">
+<span class="font-label-sm text-label-sm text-secondary">+ 18 jugadores suplentes disponibles en banquillo</span>
+</div>
+</div>
+<!-- Toros de Santa María Roster -->
+<div class="p-space-lg rounded-xl bg-surface-container-low">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-tertiary text-white flex items-center justify-center font-bold">T</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Toros de Santa María</h4>
+<span class="font-label-sm text-label-sm text-secondary">19 jugadores registrados en cédula pre-partido</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary-fixed/40 text-on-primary-fixed text-label-sm font-semibold uppercase">Lista Validada</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="text-secondary font-label-sm uppercase border-b border-surface-container-high">
+<th class="py-2">Dorsal</th>
+<th class="py-2">Nombre del Jugador</th>
+<th class="py-2 text-right">Estatus FMF</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high font-mono-data text-mono-data">
+<tr>
+<td class="py-2 font-bold text-on-surface">#12</td>
+<td class="py-2 font-body-sm font-medium text-on-surface">Orozco Bedolla, Salvador (POR)</td>
+<td class="py-2 text-right text-primary font-semibold">Habilitado</td>
+</tr>
+<tr>
+<td class="py-2 font-bold text-on-surface">#3</td>
+<td class="py-2 font-body-sm font-medium text-on-surface">Chávez Zavala, Guillermo</td>
+<td class="py-2 text-right text-primary font-semibold">Habilitado</td>
+</tr>
+<tr>
+<td class="py-2 font-bold text-on-surface">#7</td>
+<td class="py-2 font-body-sm font-medium text-on-surface">Guillén Torres, Raúl</td>
+<td class="py-2 text-right text-primary font-semibold">Habilitado</td>
+</tr>
+<tr>
+<td class="py-2 font-bold text-on-surface">#9</td>
+<td class="py-2 font-body-sm font-medium text-on-surface">Valdez Arreola, Mario (CAP)</td>
+<td class="py-2 text-right text-primary font-semibold">Habilitado</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-space-md text-center">
+<span class="font-label-sm text-label-sm text-secondary">+ 15 jugadores suplentes disponibles en banquillo</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. PESTAÑA: RESULTADO -->
+<div class="tab-pane hidden flex-col gap-space-lg" id="tab-content-resultado">
+<!-- Marcador en Espera -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm text-center">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest block mb-2">Estado del Marcador</span>
+<div class="inline-flex items-center justify-center gap-space-lg bg-surface-container-low px-space-xl py-space-lg rounded-xl mb-space-md">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">Halcones FC</span>
+<div class="flex items-center gap-3 bg-surface-container-highest px-4 py-2 rounded-lg">
+<span class="font-mono-score text-mono-score font-bold text-secondary">--</span>
+<span class="font-headline-md text-headline-md text-secondary">:</span>
+<span class="font-mono-score text-mono-score font-bold text-secondary">--</span>
+</div>
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">Toros Sta. María</span>
+</div>
+<p class="font-body-md text-body-md text-secondary font-medium">Sin resultado registrado (Partido Programado a disputarse)</p>
+</div>
+<!-- Sección de Versiones y Resoluciones Disciplinarias -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm">
+<div class="flex items-start justify-between pb-space-md mb-space-md border-b border-surface-container">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Versiones y Correcciones por Resolución de la Comisión Disciplinaria</h3>
+<p class="font-body-sm text-body-sm text-secondary">Registro inmutable de marcadores, protestas de alineación indebida y modificaciones oficiales de puntos.</p>
+</div>
+<span class="px-2.5 py-1 rounded bg-secondary-container text-on-secondary-fixed font-mono-data text-mono-data font-semibold">
+          Versión Actual: 1.0 (Borrador de Rol)
+        </span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg mb-space-md flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px]">fact_check</span>
+<div>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Versión vigente: Pendiente de disputa en terreno de juego</span>
+<span class="font-body-sm text-body-sm text-secondary block">Sin resoluciones de protesta asentadas a la fecha por los clubes involucrados.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>Expediente en Blanco</span>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container-high/40 flex items-center gap-space-xs text-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[16px] text-primary">gavel</span>
+<span><strong>Nota federativa:</strong> Todo cambio de marcador posterior al cierre arbitral (resolución en la mesa por protesta de cédula) generará una nueva versión numerada e inmutable con folio de acta y dictamen adjunto.</span>
+</div>
+</div>
+</div>
+<!-- 4. PESTAÑA: HISTORIAL (LÍNEA DE TIEMPO DE AUDITORÍA) -->
+<div class="tab-pane hidden flex-col gap-space-lg" id="tab-content-historial">
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-md mb-space-lg border-b border-surface-container">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Registro de Auditoría e Historial de Cambios</h3>
+<p class="font-body-sm text-body-sm text-secondary">Trazabilidad oficial de modificaciones de fecha, campo, árbitros y estado del partido.</p>
+</div>
+<span class="px-3 py-1 rounded bg-surface-container text-secondary font-label-sm text-label-sm font-medium">
+          3 Eventos Registrados
+        </span>
+</div>
+<!-- Timeline Vertical Estructurada -->
+<div class="relative pl-6 space-y-space-xl before:content-[''] before:absolute before:left-2.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-highest">
+<!-- Evento 1: Reprogramación -->
+<div class="relative flex items-start gap-space-md">
+<div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center text-[12px] shadow-sm">
+<span class="material-symbols-outlined text-[12px]">edit_calendar</span>
+</div>
+<div class="flex-1 bg-surface-container-low p-space-md rounded-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-1 mb-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Programado → Reprogramado</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-secondary-fixed text-label-sm font-semibold">Cambio de Horario</span>
+</div>
+<span class="font-mono-data text-mono-data text-secondary">24 oct 2025 · 18:02 hrs</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">
+<strong>Motivo federativo asentado:</strong> "Lluvia en la cancha y anegamiento de terreno de juego tras dictamen de protección civil de Morelia."
+            </p>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-secondary pt-2 border-t border-surface-container-high">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">person</span>
+<span>Responsable: Carlos Gómez (Programador Asignado)</span>
+</span>
+<span class="font-mono-data">Terminal: IP 187.190.44.12</span>
+</div>
+</div>
+</div>
+<!-- Evento 2: Aprobación de Borrador -->
+<div class="relative flex items-start gap-space-md">
+<div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-secondary text-surface-container-lowest flex items-center justify-center text-[12px] shadow-sm">
+<span class="material-symbols-outlined text-[12px]">verified</span>
+</div>
+<div class="flex-1 bg-surface-container-low p-space-md rounded-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-1 mb-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Borrador Técnico → Programado</span>
+<span class="px-2 py-0.5 rounded bg-primary-fixed/40 text-on-primary-fixed text-label-sm font-semibold">Oficialización</span>
+</div>
+<span class="font-mono-data text-mono-data text-secondary">21 oct 2025 · 19:30 hrs</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">
+<strong>Motivo federativo asentado:</strong> "Asignación regular de rol de juegos para la Jornada 8 tras asamblea de delegados celebrada el día martes."
+            </p>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-secondary pt-2 border-t border-surface-container-high">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">person</span>
+<span>Responsable: Ing. Carlos Villalobos (Rol de Juegos)</span>
+</span>
+<span class="font-mono-data">Terminal: IP 187.190.44.02</span>
+</div>
+</div>
+</div>
+<!-- Evento 3: Creación Inicial -->
+<div class="relative flex items-start gap-space-md">
+<div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-surface-container-highest text-secondary flex items-center justify-center text-[12px] shadow-sm">
+<span class="material-symbols-outlined text-[12px]">add</span>
+</div>
+<div class="flex-1 bg-surface-container-low p-space-md rounded-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-1 mb-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Creación de Encuentro</span>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-fixed text-label-sm font-semibold">Generación Algorítmica</span>
+</div>
+<span class="font-mono-data text-mono-data text-secondary">15 oct 2025 · 08:00 hrs</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">
+              Sistema SIGLIM: Generación automática de fixtures para el Torneo Apertura 2025–2026 Grupo A según calendario base de 20 jornadas.
+            </p>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-secondary pt-2 border-t border-surface-container-high">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">smart_toy</span>
+<span>Proceso: Motor de Fixtures SIGLIM v2.5</span>
+</span>
+<span class="font-mono-data">JOB_ID: #FXT-8820-25</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Interactivo: Reprogramar Partido -->
+<div aria-labelledby="modal-title" aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-on-surface/40 backdrop-blur-sm hidden" id="modal-reprogramar" role="dialog">
+<div class="bg-surface-container-lowest w-full max-w-2xl rounded-2xl shadow-xl overflow-hidden animate-in fade-in zoom-in duration-200">
+<!-- Encabezado Modal -->
+<div class="px-space-xl py-space-lg bg-surface-container-low flex items-start justify-between border-b border-surface-container">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary text-label-sm font-mono-data font-semibold">
+              #2025-J08-018
+            </span>
+<span class="font-label-sm text-label-sm text-secondary font-medium uppercase">Procedimiento Administrativo</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg font-bold text-on-surface" id="modal-title">
+            Reprogramar Partido · Halcones FC vs Toros
+          </h3>
+</div>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-secondary hover:bg-surface-container-highest transition-colors" onclick="document.getElementById('modal-reprogramar').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Aviso de impacto institucional -->
+<div class="px-space-xl py-space-sm bg-surface-container-high/50 flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0">campaign</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong>Aviso de Impacto:</strong> Modificar la programación notificará de forma inmediata por SMS y panel oficial a las directivas de ambos clubes y a la Comisión de Arbitraje.
+        </p>
+</div>
+<!-- Formulario de Reprogramación -->
+<form class="p-space-xl flex flex-col gap-space-lg" onsubmit="event.preventDefault(); alert('Reprogramación registrada con éxito en el sistema.'); document.getElementById('modal-reprogramar').classList.add('hidden');">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Campo Nueva Fecha -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md font-semibold text-on-surface flex items-center justify-between">
+<span>Nueva Fecha <span class="text-error">*</span></span>
+<span class="font-label-sm text-secondary font-normal">Jornada 8</span>
+</label>
+<div class="relative">
+<input class="w-full h-11 px-3 bg-surface-container-lowest border border-outline-variant/60 rounded-lg text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" type="text" value="Domingo 16 Noviembre 2025">
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-secondary text-[20px] pointer-events-none">event</span>
+</div>
+</div>
+<!-- Campo Nueva Hora y Bloque -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md font-semibold text-on-surface flex items-center justify-between">
+<span>Nueva Hora <span class="text-error">*</span></span>
+<span class="font-label-sm text-primary font-medium">Bloque auto: 10:00 - 11:45</span>
+</label>
+<div class="relative">
+<input class="w-full h-11 px-3 bg-surface-container-lowest border border-outline-variant/60 rounded-lg font-mono-data text-mono-data text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" type="text" value="10:00 hrs">
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-secondary text-[20px] pointer-events-none">schedule</span>
+</div>
+</div>
+</div>
+<!-- Campo Nueva Cancha -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md font-semibold text-on-surface flex items-center justify-between">
+<span>Nueva Cancha o Sede Alterna <span class="text-error">*</span></span>
+<span class="font-label-sm text-primary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span>Disponibilidad Verificada</span>
+</span>
+</label>
+<div class="relative">
+<select class="w-full h-11 px-3 bg-surface-container-lowest border border-outline-variant/60 rounded-lg text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm appearance-none pr-10">
+<option selected="" value="UD Morelos Cancha 1">UD Morelos · Cancha 1 (Pasto Sintético Acreditado)</option>
+<option value="UD Cuauhtemoc Cancha 2">UD Cuauhtémoc · Cancha 2 (Cancha Original)</option>
+<option value="UD Felix Ireta Cancha 3">UD Félix Ireta · Cancha 3 (Empastado Natural)</option>
+<option value="Canchas del Rastro 4">Canchas del Rastro · Cancha 4 (Tierra)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-secondary text-[20px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Campo Motivo Reglamentario Obligatorio -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md font-semibold text-on-surface flex items-center justify-between">
+<span>Motivo Reglamentario Formal <span class="text-error">* (Obligatorio)</span></span>
+<span class="font-label-sm text-secondary font-normal">Quedará asentado en Auditoría</span>
+</label>
+<textarea class="w-full p-3 bg-surface-container-lowest border border-outline-variant/60 rounded-lg text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm resize-none" placeholder="Describa el fundamento del cambio según el reglamento de competencia..." rows="3">Lluvia intensa y encharcamiento en Cancha 2 verificado por la administración de la unidad deportiva tras reporte meteorológico de CONAGUA Michoacán.</textarea>
+</div>
+<!-- Botones de Acción del Modal -->
+<div class="flex items-center justify-end gap-space-md pt-space-md border-t border-surface-container">
+<button class="h-11 px-space-lg rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" onclick="document.getElementById('modal-reprogramar').classList.add('hidden')" type="button">
+            Descartar
+          </button>
+<button class="h-11 px-space-xl rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md flex items-center gap-2 shadow-sm transition-all" type="submit">
+<span class="material-symbols-outlined text-[20px]">save</span>
+<span>Confirmar Reprogramación</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Script interactivo de navegación por pestañas -->
+<script>
+    function switchTab(tabId) {
+      // Ocultar todos los paneles
+      const panes = document.querySelectorAll('.tab-pane');
+      panes.forEach(pane => {
+        pane.classList.add('hidden');
+        pane.classList.remove('flex');
+      });
+
+      // Resetear clases de todos los botones
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('active', 'text-primary-container', 'border-b-2', 'border-primary-container', '-mb-[2px]');
+        btn.classList.add('text-secondary', 'font-medium');
+      });
+
+      // Mostrar el seleccionado
+      const targetPane = document.getElementById('tab-content-' + tabId);
+      if (targetPane) {
+        targetPane.classList.remove('hidden');
+        targetPane.classList.add('flex');
+      }
+
+      // Activar el botón
+      const activeBtn = document.getElementById('tab-btn-' + tabId);
+      if (activeBtn) {
+        activeBtn.classList.remove('text-secondary', 'font-medium');
+        activeBtn.classList.add('active', 'text-primary-container', 'font-semibold', 'border-b-2', 'border-primary-container', '-mb-[2px]');
+      }
+    }
+  </script>
+</div></main></div></body></html>

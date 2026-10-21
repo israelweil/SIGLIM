@@ -1,0 +1,769 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-error-container":"#93000a","tertiary-fixed-dim":"#ffb3b6","surface-container-highest":"#d3e4fe","outline":"#6f7a70","error":"#ba1a1a","surface-container-lowest":"#ffffff","on-secondary":"#ffffff","primary-fixed":"#9ef6b6","surface-variant":"#d3e4fe","inverse-primary":"#83d99c","on-primary-fixed":"#00210e","secondary-fixed-dim":"#bec6e0","on-surface":"#0b1c30","on-primary-container":"#8ee4a6","on-surface-variant":"#3f4940","on-tertiary-fixed-variant":"#7b2b34","outline-variant":"#bec9be","on-secondary-fixed":"#131b2e","error-container":"#ffdad6","surface-bright":"#f8f9ff","tertiary-container":"#943e46","background":"#f8f9ff","inverse-surface":"#213145","primary-fixed-dim":"#83d99c","surface-container":"#e5eeff","surface-container-low":"#eff4ff","secondary":"#565e74","on-error":"#ffffff","primary":"#004d27","on-primary":"#ffffff","on-primary-fixed-variant":"#00522a","surface-tint":"#0b6d3b","secondary-container":"#d8dff9","on-tertiary-container":"#ffc3c5","secondary-fixed":"#dae2fc","on-secondary-fixed-variant":"#3f465b","surface-container-high":"#dce9ff","tertiary":"#762730","on-background":"#0b1c30","inverse-on-surface":"#eaf1ff","primary-container":"#006837","on-tertiary-fixed":"#40000c","surface-dim":"#cbdbf5","on-secondary-container":"#5a6278","surface":"#f8f9ff","tertiary-fixed":"#ffdada","on-tertiary":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin":"1rem","gutter":"1rem","margin-desktop":"2rem","space-sm":"0.5rem","space-xs":"0.25rem","gutter-desktop":"1.5rem","space-md":"0.75rem","space-xl":"1.5rem","space-lg":"1rem"},"fontFamily":{"headline-md":["Inter"],"display-lg":["Inter"],"label-sm":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"headline-sm":["Inter"],"mono-score":["JetBrains Mono"],"mono-data":["JetBrains Mono"],"body-sm":["Inter"],"headline-lg":["Inter"],"display-lg-mobile":["Inter"],"label-md":["Inter"]},"fontSize":{"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"display-lg":["36px",{"lineHeight":"44px","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"mono-score":["28px",{"lineHeight":"32px","fontWeight":"700"}],"mono-data":["13px",{"lineHeight":"18px","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","fontWeight":"600"}],"display-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"700"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container-lowest z-50 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-margin-desktop flex items-center justify-between"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-md"><div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm tracking-wider shadow-sm">S</div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-tight tracking-tight">SIGLIM</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">LIGA MUNICIPAL DE FUTBOL AMATEUR MORELIA</span></div></div><div class="h-6 w-px bg-surface-container mx-space-xs"></div><div class="inline-flex items-center gap-space-xs px-space-md py-1 bg-surface-container-low rounded-full"><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Temporada 2025–2026 · Activa</span></div></div><div class="flex items-center gap-space-lg"><button aria-label="Notificaciones" class="relative p-space-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded-lg"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-tertiary"></span></button><div class="h-6 w-px bg-surface-container"></div><div class="flex items-center gap-space-md pl-space-xs"><div class="text-right flex flex-col"><span class="font-label-md text-label-md text-on-surface leading-tight">Ing. Ramón Medina</span><span class="font-body-sm text-body-sm text-on-surface-variant">Presidente · Liga</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-lowest z-40 flex flex-col justify-between py-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="px-space-md"><div class="px-space-md py-space-xs mb-space-sm"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Menú Ejecutivo</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm"><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="inicio" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-md text-label-md">Inicio</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="organizacion" href="#"><span class="material-symbols-outlined text-[20px]">corporate_fare</span><span class="font-label-md text-label-md">Organización</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="programacion" href="#"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span class="font-label-md text-label-md">Programación</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="partidos" href="#"><span class="material-symbols-outlined text-[20px]">sports_soccer</span><span class="font-label-md text-label-md">Partidos</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="disciplina" href="#"><span class="material-symbols-outlined text-[20px]">gavel</span><span class="font-label-md text-label-md">Disciplina</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="administracion" href="#"><span class="material-symbols-outlined text-[20px]">admin_panel_settings</span><span class="font-label-md text-label-md">Administración</span></a></nav></div><div class="px-space-lg pt-space-md border-t border-surface-container"><p class="font-mono-data text-mono-data text-on-surface-variant text-center">SIGLIM v2.4 · Presidencia</p></div></aside><div class="pl-64"><main class="w-full min-h-screen pt-16 bg-surface px-margin-desktop py-space-xl"><div class="flex flex-col w-full">
+<!-- Top Context Header & Actions -->
+<div class="flex flex-col gap-space-lg mb-space-xl">
+<!-- Breadcrumbs & Testing Tag -->
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<nav aria-label="Ruta de navegación" class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
+<a class="hover:text-primary transition-colors" href="#">Cédulas y Partidos</a>
+<span class="text-outline-variant">/</span>
+<a class="hover:text-primary transition-colors" href="#">Temporada 2025–2026</a>
+<span class="text-outline-variant">/</span>
+<a class="hover:text-primary transition-colors" href="#">Libre Primera (Grupo A)</a>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-semibold">Revisión de Jornada 8</span>
+</nav>
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-space-xs px-2.5 py-1 rounded bg-secondary-container text-on-secondary-fixed font-mono-data text-mono-data font-semibold">
+<span class="material-symbols-outlined text-[16px]">science</span>
+          No oficial · Ambiente de prueba
+        </span>
+<span class="inline-flex items-center gap-space-xs px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-primary">verified_user</span>
+          Sesión: Lic. Cuauhtémoc Rodríguez · Presidente
+        </span>
+</div>
+</div>
+<!-- Main Title, Primary Badges & Action Buttons -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-lg bg-surface-container-lowest p-space-xl rounded-xl shadow-sm">
+<div class="flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-md">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+            Revisión de Programación Oficial · Jornada 8
+          </h1>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-800 border-0 font-label-sm text-label-sm font-semibold tracking-wide">
+<span class="material-symbols-outlined text-[16px] animate-spin" style="animation-duration: 4s;">hourglass_top</span>
+            EN REVISIÓN EJECUTIVA
+          </span>
+</div>
+<div class="flex flex-wrap items-center gap-space-md text-on-surface-variant font-body-sm text-body-sm mt-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">person_pin</span>
+            Enviada por <strong class="font-medium text-on-surface">Carlos Gómez</strong> (Programador Oficial)
+          </span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-1 font-mono-data text-mono-data">
+<span class="material-symbols-outlined text-[16px]">event_available</span>
+            21 oct 2026, 18:45 hrs
+          </span>
+<span class="text-outline-variant">•</span>
+<span class="text-primary font-medium">Categoría Libre Primera División · Grupo A</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-space-md flex-shrink-0">
+<button class="h-11 px-space-lg inline-flex items-center gap-space-sm bg-surface-container-low hover:bg-surface-container text-tertiary font-label-md text-label-md font-semibold rounded-lg shadow-sm transition-all active:scale-[0.99]" id="btnOpenRejectModal" type="button">
+<span class="material-symbols-outlined text-[20px]">reply</span>
+          Devolver con observaciones
+        </button>
+<button class="h-11 px-space-xl inline-flex items-center gap-space-sm bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md font-semibold rounded-lg shadow-md transition-all active:scale-[0.99]" id="btnOpenApproveModal" type="button">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+          Aprobar y publicar
+        </button>
+</div>
+</div>
+<!-- Governance Notice Banner -->
+<div class="flex items-start gap-space-md p-space-md bg-surface-container-low rounded-lg shadow-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary-container flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm w-full">
+<div class="font-body-sm text-body-sm text-on-surface">
+<strong class="font-semibold text-primary">Regla Institucional de Segregación de Funciones:</strong>
+          «Quien programa no puede dictaminar ni validar su propia jornada» 
+          <span class="text-on-surface-variant font-mono-data text-mono-data">(Art. 14 de Estatutos de Gobierno y Gobernanza Federativa SIGLIM).</span>
+</div>
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-primary-container bg-surface-container px-2 py-0.5 rounded flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+          Candado Normativo Activo
+        </span>
+</div>
+</div>
+</div>
+<!-- Stepper / Pipeline de Publicación -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm mb-space-xl">
+<div class="flex items-center justify-between mb-space-md">
+<h2 class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">
+        Ciclo de Validación de Jornada Oficial
+      </h2>
+<span class="font-mono-data text-mono-data text-on-surface-variant">Etapa 2 de 3</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg relative">
+<!-- Step 1: Borrador -->
+<div class="flex items-start gap-space-md p-space-md rounded-lg bg-surface-container-low">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0 font-bold">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">Fase 1 · Concluida</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Elaboración de Borrador</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Carlos Gómez · 20 oct 2026</p>
+</div>
+</div>
+<!-- Step 2: Revisión (Active) -->
+<div class="flex items-start gap-space-md p-space-md rounded-lg bg-amber-50">
+<div class="relative flex items-center justify-center">
+<div class="w-8 h-8 rounded-full bg-amber-500 text-on-primary flex items-center justify-center flex-shrink-0 font-bold z-10">
+<span class="material-symbols-outlined text-[18px]">rate_review</span>
+</div>
+<span class="absolute w-10 h-10 rounded-full bg-amber-400 opacity-40 animate-ping"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-amber-800 font-bold uppercase tracking-wider">Fase 2 · En Proceso</span>
+<span class="font-headline-sm text-headline-sm text-amber-950 font-bold">Dictamen de Presidencia</span>
+<p class="font-body-sm text-body-sm text-amber-900 mt-0.5">Comité Ejecutivo · Lic. Cuauhtémoc Rodríguez</p>
+</div>
+</div>
+<!-- Step 3: Publicado -->
+<div class="flex items-start gap-space-md p-space-md rounded-lg bg-surface-container">
+<div class="w-8 h-8 rounded-full bg-surface-dim text-secondary flex items-center justify-center flex-shrink-0 font-bold">
+<span class="material-symbols-outlined text-[18px]">campaign</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase tracking-wider">Fase 3 · Siguiente</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-semibold">Publicación Oficial</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Difusión a delegados y cédulas arbitrales</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Key Metrics Executive Summary Grid (4 cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-lg mb-space-xl">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Cotejos Totales</span>
+<span class="material-symbols-outlined text-primary-container text-[22px]">sports_soccer</span>
+</div>
+<div>
+<div class="font-mono-score text-mono-score text-on-surface font-bold">6</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">12 escuadras emparejadas</p>
+</div>
+<div class="mt-space-md pt-space-xs bg-surface-container-low px-2 py-1 rounded flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Libre Primera</span>
+<span class="font-mono-data text-mono-data text-primary font-bold">Grupo A</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Sedes y Canchas</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">stadium</span>
+</div>
+<div>
+<div class="font-mono-score text-mono-score text-on-surface font-bold">3 Sedes</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">UD Cuauhtémoc, Morelos, V. Carranza</p>
+</div>
+<div class="mt-space-md pt-space-xs bg-surface-container-low px-2 py-1 rounded flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Disponibilidad</span>
+<span class="font-mono-data text-mono-data text-primary font-semibold">100% Verificada</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Conflictos de Cancha</span>
+<span class="material-symbols-outlined text-primary-container text-[22px]">check_circle</span>
+</div>
+<div>
+<div class="font-mono-score text-mono-score text-primary-container font-bold">0</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Sin empalmes de turno ni sede</p>
+</div>
+<div class="mt-space-md pt-space-xs bg-emerald-50 px-2 py-1 rounded flex items-center gap-1 text-emerald-800">
+<span class="material-symbols-outlined text-[14px]">format_image_left</span>
+<span class="font-label-sm text-label-sm font-semibold">VAL-003 / VAL-004 Ok</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm text-amber-800 uppercase tracking-wider font-semibold">Advertencias Regla</span>
+<span class="material-symbols-outlined text-amber-600 text-[22px]">warning_amber</span>
+</div>
+<div>
+<div class="font-mono-score text-mono-score text-amber-700 font-bold">1</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Con justificación capturada</p>
+</div>
+<div class="mt-space-md pt-space-xs bg-amber-50 px-2 py-1 rounded flex items-center justify-between text-amber-900">
+<span class="font-label-sm text-label-sm">Art. 22 · Localía</span>
+<span class="font-mono-data text-mono-data font-bold">Aceptada</span>
+</div>
+</div>
+</div>
+<!-- Featured Card: Accepted Warning Details -->
+<div class="bg-amber-50/70 p-space-lg rounded-xl shadow-sm mb-space-xl">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-amber-200 text-amber-900 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">assignment_late</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-amber-950 font-bold">
+            Advertencia de Alternancia de Localía Aceptada (Art. 22 del Reglamento General)
+          </h3>
+<p class="font-body-sm text-body-sm text-amber-900">
+            Partido #02: <strong class="font-semibold">Chapultepec FC vs Real Morelia</strong> · UD Morelos (Cancha 1)
+          </p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-200 text-amber-950 font-label-sm text-label-sm font-semibold rounded-full self-start md:self-auto">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+        Convalidado por Programador · Requiere Ratificación Presidencial
+      </span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-amber-700 text-[18px] mt-0.5">format_quote</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase tracking-wider">
+            Motivo reglamentario registrado por Carlos Gómez:
+          </span>
+<p class="font-body-md text-body-md text-on-surface mt-0.5 italic">
+            «Chapultepec FC solicitó permuta formal por remodelación de vestidores en su sede en J9 mediante oficio DG-88/2026 con anuencia firmada de Real Morelia depositada en Secretaría General.»
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Programmed Games Table (Read-Only Mode for Executive Role) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden mb-space-xl">
+<div class="px-space-xl py-space-lg flex flex-col sm:flex-row sm:items-center justify-between gap-space-md bg-surface-container-low">
+<div class="flex items-center gap-space-md">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]">table_chart</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+            Rol de Juegos Oficial · Jornada 8
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Domingo 25 de Octubre de 2026 · Despliegue estandarizado de canchas y colegios arbitrales
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-mono-data text-mono-data text-on-surface-variant bg-surface-container-lowest px-3 py-1.5 rounded-lg font-medium">
+          6 Cotejos Registrados
+        </span>
+</div>
+</div>
+<!-- Responsive Table Wrapper -->
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-md text-body-md border-collapse">
+<thead>
+<tr class="bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-space-md px-space-lg font-semibold w-12 text-center">#</th>
+<th class="py-space-md px-space-lg font-semibold min-w-[260px]">Encuentro (Local vs Visitante)</th>
+<th class="py-space-md px-space-lg font-semibold min-w-[200px]">Cancha y Sede</th>
+<th class="py-space-md px-space-lg font-semibold min-w-[190px]">Horario y Bloque Federativo</th>
+<th class="py-space-md px-space-lg font-semibold min-w-[180px]">Cuerpo Arbitral</th>
+<th class="py-space-md px-space-lg font-semibold text-right min-w-[140px]">Estatus Normativo</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-space-md px-space-lg text-center font-mono-data text-mono-data font-bold text-on-surface-variant">
+              01
+            </td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="flex flex-col gap-1 w-full">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">San Juanito FC</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant font-semibold">LOC</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Indeco FC</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant font-semibold">VIS</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Estadio Venustiano Carranza</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cancha Principal · Pasto Natural</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data font-bold text-primary">08:15 hrs</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant text-[12px]">Bloque: 08:15 – 10:00 (90m + 15m)</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">sports</span>
+<span>Terna Colegio Central</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-emerald-50 text-emerald-800 font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                VÁLIDO
+              </span>
+</td>
+</tr>
+<!-- Row 2 (With Accepted Warning) -->
+<tr class="hover:bg-amber-50/50 transition-colors bg-amber-50/20">
+<td class="py-space-md px-space-lg text-center font-mono-data text-mono-data font-bold text-amber-900">
+              02
+            </td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="flex flex-col gap-1 w-full">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Chapultepec FC</span>
+<span class="font-mono-data text-mono-data text-amber-800 font-semibold">LOC (Permuta)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Real Morelia</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant font-semibold">VIS</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">UD Morelos</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cancha 1 · Pasto Sintético</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data font-bold text-primary">08:00 hrs</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant text-[12px]">Bloque: 08:00 – 09:45 (90m + 15m)</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">sports</span>
+<span>Terna Colegio Michoacano</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-amber-100 text-amber-900 font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                MOTIVO ACEPTADO
+              </span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-space-md px-space-lg text-center font-mono-data text-mono-data font-bold text-on-surface-variant">
+              03
+            </td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="flex flex-col gap-1 w-full">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Atlético Valladolid</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant font-semibold">LOC</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">CD Morelia</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant font-semibold">VIS</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">UD Cuauhtémoc</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cancha 2 · Pasto Natural</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data font-bold text-primary">10:00 hrs</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant text-[12px]">Bloque: 10:00 – 11:45 (90m + 15m)</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">sports</span>
+<span>Terna Colegio Central</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-emerald-50 text-emerald-800 font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                VÁLIDO
+              </span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-space-md px-space-lg text-center font-mono-data text-mono-data font-bold text-on-surface-variant">
+              04
+            </td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="flex flex-col gap-1 w-full">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Félix Ireta</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant font-semibold">LOC</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Canarios Morelia</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant font-semibold">VIS</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">UD Wenceslao Victoria</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cancha 1 · Pasto Sintético</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data font-bold text-primary">10:15 hrs</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant text-[12px]">Bloque: 10:15 – 12:00 (90m + 15m)</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">sports</span>
+<span>Terna Michoacana</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-emerald-50 text-emerald-800 font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                VÁLIDO
+              </span>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-space-md px-space-lg text-center font-mono-data text-mono-data font-bold text-on-surface-variant">
+              05
+            </td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="flex flex-col gap-1 w-full">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Toros de Santa María</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant font-semibold">LOC</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Leones Negros</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant font-semibold">VIS</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">UD Cuauhtémoc</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cancha 12 · Pasto Natural</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data font-bold text-primary">12:00 hrs</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant text-[12px]">Bloque: 12:00 – 13:45 (90m + 15m)</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">sports</span>
+<span>Terna FMF Estatal</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-emerald-50 text-emerald-800 font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                VÁLIDO
+              </span>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-space-md px-space-lg text-center font-mono-data text-mono-data font-bold text-on-surface-variant">
+              06
+            </td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="flex flex-col gap-1 w-full">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Águilas Morelia</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant font-semibold">LOC</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Lobos Tec</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant font-semibold">VIS</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">UD Cuauhtémoc</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cancha 12 · Pasto Natural (Turno 2)</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data font-bold text-primary">14:00 hrs</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant text-[12px]">Bloque: 14:00 – 15:45 (90m + 15m)</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">sports</span>
+<span>Terna FMF Estatal</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-emerald-50 text-emerald-800 font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                VÁLIDO
+              </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Note -->
+<div class="px-space-xl py-space-md bg-surface-container-lowest flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">info</span>
+<span>Todos los horarios contemplan 15 minutos obligatorios para calentamiento, despeje y firma de actas.</span>
+</div>
+<span class="font-mono-data text-mono-data">Revisión SIGLIM · Hash: 9F2A-881C</span>
+</div>
+</div>
+<!-- MODAL 1: Confirmar Aprobación y Publicación Oficial -->
+<div aria-labelledby="approveModalTitle" aria-modal="true" class="fixed inset-0 bg-inverse-surface/60 backdrop-blur-sm z-50 flex items-center justify-center p-space-md hidden transition-opacity" id="approveModal" role="dialog">
+<div class="bg-surface-container-lowest w-full max-w-2xl rounded-xl shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+<!-- Modal Header -->
+<div class="bg-primary text-on-primary p-space-lg flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md font-bold leading-tight" id="approveModalTitle">
+              Confirmar Aprobación y Publicación Oficial · Jornada 8
+            </h3>
+<p class="font-body-sm text-body-sm text-primary-fixed mt-0.5">
+              Liga Municipal de Fútbol Amateur Morelia · Comité Ejecutivo
+            </p>
+</div>
+</div>
+<button aria-label="Cerrar modal" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-primary/80 hover:text-on-primary hover:bg-on-primary/10 transition-colors" id="btnCloseApproveModal" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-space-xl flex flex-col gap-space-lg">
+<!-- Callout Alert Required Text -->
+<div class="p-space-md rounded-lg bg-emerald-50 text-emerald-900 flex items-start gap-space-md">
+<span class="material-symbols-outlined text-emerald-700 text-[22px] mt-0.5">notification_important</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold text-emerald-950">
+              Efectos inmediatos de la aprobación presidencial
+            </span>
+<p class="font-body-md text-body-md text-emerald-900 mt-1">
+              Al publicar, la programación aparecerá en el portal y se notificará a los clubes.
+            </p>
+</div>
+</div>
+<!-- Impact Summary List -->
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm font-bold text-on-surface uppercase tracking-wider">
+            Detalle del impacto de publicación:
+          </span>
+<ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">public</span>
+              Se habilitará la visualización pública en el Portal Oficial (F-01).
+            </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">description</span>
+              Se generarán las 6 cédulas digitales para el colegio arbitral designado.
+            </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">outgoing_mail</span>
+              Se remitirá alerta vía correo y app institucional a los 12 delegados de club acreditados.
+            </li>
+</ul>
+</div>
+<!-- Form Field: Observaciones de Presidencia -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md font-semibold text-on-surface flex items-center justify-between" for="presidencyNotes">
+<span>Observaciones de presidencia para el acta</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-normal">Opcional / Registro en Libro de Gobierno</span>
+</label>
+<textarea class="w-full p-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm resize-none" id="presidencyNotes" placeholder="Escriba comentarios, resoluciones o acuerdos anexos para el acta oficial de la sesión ordinaria..." rows="3"></textarea>
+</div>
+<!-- Security Seal Signature Footnote -->
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1 font-mono-data text-mono-data text-[12px]">
+<span class="material-symbols-outlined text-[16px] text-primary">key</span>
+            Firma Electrónica: SIGLIM-PRES-2026-J08
+          </span>
+<span class="font-medium text-on-surface">Lic. Cuauhtémoc Rodríguez</span>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-space-lg bg-surface-container-low flex items-center justify-end gap-space-md">
+<button class="h-11 px-space-lg inline-flex items-center justify-center font-label-md text-label-md font-semibold text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded-lg" id="btnCancelApproveModal" type="button">
+          Cancelar
+        </button>
+<button class="h-11 px-space-xl inline-flex items-center gap-space-sm bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md font-semibold rounded-lg shadow-md transition-all active:scale-[0.99]" id="btnConfirmApprove" type="button">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+          Aprobar y publicar programación oficial
+        </button>
+</div>
+</div>
+</div>
+<!-- MODAL 2: Devolver con Observaciones (Rechazo / Reenvío a Borrador) -->
+<div aria-labelledby="rejectModalTitle" aria-modal="true" class="fixed inset-0 bg-inverse-surface/60 backdrop-blur-sm z-50 flex items-center justify-center p-space-md hidden transition-opacity" id="rejectModal" role="dialog">
+<div class="bg-surface-container-lowest w-full max-w-xl rounded-xl shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+<!-- Modal Header -->
+<div class="bg-tertiary text-on-tertiary p-space-lg flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-tertiary-container text-on-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">assignment_return</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md font-bold leading-tight" id="rejectModalTitle">
+              Devolver Rol de Juegos con Observaciones
+            </h3>
+<p class="font-body-sm text-body-sm text-tertiary-fixed mt-0.5">
+              Reversión a Fase de Borrador · Notificación al Programador
+            </p>
+</div>
+</div>
+<button aria-label="Cerrar modal" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-tertiary/80 hover:text-on-tertiary hover:bg-on-tertiary/10 transition-colors" id="btnCloseRejectModal" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-space-xl flex flex-col gap-space-lg">
+<div class="p-space-md rounded-lg bg-error-container text-on-error-container flex items-start gap-space-md">
+<span class="material-symbols-outlined text-[20px] mt-0.5">info</span>
+<p class="font-body-sm text-body-sm">
+            La programación retornará a estatus de <strong>Borrador editable</strong>. Carlos Gómez deberá solventar las observaciones antes de volver a solicitar dictamen.
+          </p>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md font-semibold text-on-surface" for="returnReasonCategory">
+            Tipo de corrección requerida <span class="text-error font-bold">*</span>
+</label>
+<select class="h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="returnReasonCategory">
+<option value="alternancia">Aclaración o rectificación de localía (Art. 22)</option>
+<option value="arbitraje">Ajuste de designación arbitral</option>
+<option value="canchas">Conflicto de canchas / Sedes municipales</option>
+<option value="horarios">Ajuste de horarios por causa de fuerza mayor</option>
+<option value="otro">Otro motivo administrativo o federativo</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md font-semibold text-on-surface" for="returnNotes">
+            Motivo detallado e instrucciones correctivas <span class="text-error font-bold">*</span>
+</label>
+<textarea class="w-full p-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm resize-none" id="returnNotes" placeholder="Especifique con precisión las modificaciones requeridas antes de su aprobación definitiva..." rows="4"></textarea>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-space-lg bg-surface-container-low flex items-center justify-end gap-space-md">
+<button class="h-11 px-space-lg inline-flex items-center justify-center font-label-md text-label-md font-semibold text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded-lg" id="btnCancelRejectModal" type="button">
+          Cancelar
+        </button>
+<button class="h-11 px-space-xl inline-flex items-center gap-space-sm bg-tertiary hover:bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold rounded-lg shadow-md transition-all active:scale-[0.99]" id="btnConfirmReject" type="button">
+<span class="material-symbols-outlined text-[20px]">reply</span>
+          Revertir a borrador con notas
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple vanilla JS controller for opening and closing executive modals
+  (function() {
+    const approveModal = document.getElementById('approveModal');
+    const rejectModal = document.getElementById('rejectModal');
+
+    const btnOpenApprove = document.getElementById('btnOpenApproveModal');
+    const btnCloseApprove = document.getElementById('btnCloseApproveModal');
+    const btnCancelApprove = document.getElementById('btnCancelApproveModal');
+    const btnConfirmApprove = document.getElementById('btnConfirmApprove');
+
+    const btnOpenReject = document.getElementById('btnOpenRejectModal');
+    const btnCloseReject = document.getElementById('btnCloseRejectModal');
+    const btnCancelReject = document.getElementById('btnCancelRejectModal');
+    const btnConfirmReject = document.getElementById('btnConfirmReject');
+
+    function toggleModal(modal, show) {
+      if (!modal) return;
+      if (show) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Approve Modal triggers
+    if (btnOpenApprove) btnOpenApprove.addEventListener('click', () => toggleModal(approveModal, true));
+    if (btnCloseApprove) btnCloseApprove.addEventListener('click', () => toggleModal(approveModal, false));
+    if (btnCancelApprove) btnCancelApprove.addEventListener('click', () => toggleModal(approveModal, false));
+    if (btnConfirmApprove) {
+      btnConfirmApprove.addEventListener('click', () => {
+        btnConfirmApprove.disabled = true;
+        btnConfirmApprove.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span> Publicando...';
+        setTimeout(() => {
+          alert('¡Jornada 8 aprobada con éxito! La programación ha sido publicada en el portal oficial y se han generado las cédulas digitales.');
+          toggleModal(approveModal, false);
+          window.location.reload();
+        }, 800);
+      });
+    }
+
+    // Reject Modal triggers
+    if (btnOpenReject) btnOpenReject.addEventListener('click', () => toggleModal(rejectModal, true));
+    if (btnCloseReject) btnCloseReject.addEventListener('click', () => toggleModal(rejectModal, false));
+    if (btnCancelReject) btnCancelReject.addEventListener('click', () => toggleModal(rejectModal, false));
+    if (btnConfirmReject) {
+      btnConfirmReject.addEventListener('click', () => {
+        const notes = document.getElementById('returnNotes').value;
+        if (!notes.trim()) {
+          alert('Por favor ingrese las observaciones detalladas para el programador.');
+          return;
+        }
+        btnConfirmReject.disabled = true;
+        btnConfirmReject.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span> Devolviendo...';
+        setTimeout(() => {
+          alert('El rol de juegos ha sido devuelto a fase de borrador con las observaciones consignadas.');
+          toggleModal(rejectModal, false);
+          window.location.reload();
+        }, 800);
+      });
+    }
+
+    // Close on backdrop click
+    [approveModal, rejectModal].forEach(modal => {
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) toggleModal(modal, false);
+        });
+      }
+    });
+
+    // Close on ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        toggleModal(approveModal, false);
+        toggleModal(rejectModal, false);
+      }
+    });
+  })();
+</script></main></div></body></html>

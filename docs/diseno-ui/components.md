@@ -1,5 +1,8 @@
 # Componentes Visuales Reutilizables - SIGLIM
 
+> [!WARNING]
+> **Reemplazado** por [`DESIGN.md`](DESIGN.md) (prototipo aprobado el 20 de octubre de 2026). Se conserva como referencia de la primera ronda de capturas.
+
 ## 1. Botones (`Button`)
 - **Variantes**: 
   - `Primary`: Fondo verde esmeralda (`#006837`), texto blanco, esquinas ligeramente redondeadas (`rounded-lg` o `rounded-md`), icono opcional a la derecha (e.g. flecha).

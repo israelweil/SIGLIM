@@ -1,0 +1,921 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-fixed": "#9ef6b6", "outline-variant": "#bec9be", "inverse-primary": "#83d99c", "on-surface-variant": "#3f4940", "primary": "#004d27", "on-primary-fixed": "#00210e", "on-secondary": "#ffffff", "secondary-container": "#d8dff9", "tertiary-container": "#943e46", "tertiary": "#762730", "error": "#ba1a1a", "outline": "#6f7a70", "on-primary-fixed-variant": "#00522a", "background": "#f8f9ff", "primary-fixed-dim": "#83d99c", "on-background": "#0b1c30", "surface-dim": "#cbdbf5", "on-secondary-fixed": "#131b2e", "primary-container": "#006837", "on-tertiary-fixed-variant": "#7b2b34", "tertiary-fixed": "#ffdada", "on-secondary-fixed-variant": "#3f465b", "on-surface": "#0b1c30", "on-error": "#ffffff", "surface-bright": "#f8f9ff", "secondary": "#565e74", "surface-container-high": "#dce9ff", "secondary-fixed-dim": "#bec6e0", "inverse-on-surface": "#eaf1ff", "inverse-surface": "#213145", "surface-variant": "#d3e4fe", "surface-container-highest": "#d3e4fe", "on-tertiary": "#ffffff", "on-tertiary-container": "#ffc3c5", "error-container": "#ffdad6", "surface-container": "#e5eeff", "tertiary-fixed-dim": "#ffb3b6", "on-primary-container": "#8ee4a6", "on-secondary-container": "#5a6278", "on-primary": "#ffffff", "surface-tint": "#0b6d3b", "surface-container-lowest": "#ffffff", "surface": "#f8f9ff", "secondary-fixed": "#dae2fc", "surface-container-low": "#eff4ff", "on-error-container": "#93000a", "on-tertiary-fixed": "#40000c" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "1.5rem", "gutter": "1rem", "space-lg": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "gutter-desktop": "1.5rem", "margin": "1rem", "margin-desktop": "2rem", "space-md": "0.75rem" }, "fontFamily": { "label-md": ["Inter"], "headline-lg": ["Inter"], "body-sm": ["Inter"], "display-lg-mobile": ["Inter"], "mono-score": ["JetBrains Mono"], "label-sm": ["Inter"], "headline-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "mono-data": ["JetBrains Mono"], "body-md": ["Inter"], "display-lg": ["Inter"] }, "fontSize": { "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }], "mono-score": ["28px", { "lineHeight": "32px", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "mono-data": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "display-lg": ["36px", { "lineHeight": "44px", "fontWeight": "700" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-desktop flex items-center gap-space-sm bg-surface-container-low"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[22px]">sports_soccer</span></div><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-on-surface leading-tight tracking-tight truncate">SIGLIM</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate uppercase">Liga Morelia</span></div></div><div class="px-gutter-desktop py-space-sm bg-surface-container-low/50"><div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Administración</div></div><nav class="flex-1 px-gutter py-space-sm space-y-space-xs overflow-y-auto" data-active-classes="bg-primary-container text-on-primary font-headline-sm rounded-lg"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="inicio" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Inicio</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mi-club-organizacion" href="#"><span class="material-symbols-outlined text-[20px]">shield</span><span>Mi club / Organización</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="temporadas" href="#"><span class="material-symbols-outlined text-[20px]">emoji_events</span><span>Temporadas</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="cedulas-y-partidos" href="#"><span class="material-symbols-outlined text-[20px]">assignment</span><span>Cédulas y Partidos</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="jugadores" href="#"><span class="material-symbols-outlined text-[20px]">badge</span><span>Jugadores</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm transition-colors bg-primary-container text-on-primary font-headline-sm rounded-lg" data-path="roles-y-permisos" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Roles y Permisos</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="notificaciones" href="#"><span class="material-symbols-outlined text-[20px]">notifications</span><span>Notificaciones</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="tesoreria" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span>Tesorería</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="configuracion" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Configuración</span></a></nav><div class="p-gutter bg-surface-container-lowest"><div class="flex items-center gap-space-sm px-space-sm py-space-xs bg-surface-container rounded-lg"><span class="material-symbols-outlined text-primary-container text-[18px]">verified</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Federado FMF</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter-desktop flex items-center justify-between"><div class="flex items-center gap-space-md min-w-0"><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Órgano de Control Normativo y Registro de Cédulas</h1><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-low"><span class="inline-block w-2 h-2 rounded-full bg-primary-container"></span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Temporada 2025–2026 · Activa</span></div></div><div class="flex items-center gap-space-lg flex-shrink-0"><div class="relative flex items-center justify-center"><button aria-label="Notificaciones institucionales" class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></div><div class="flex items-center gap-space-md pl-space-sm"><div class="text-right hidden sm:block"><div class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Lic. Fernando Morales</div><div class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Administrador General</div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="relative pt-16 bg-background w-full px-gutter-desktop min-h-screen"><div class="flex flex-col w-full pb-margin-desktop">
+<!-- Miga de Pan y Cabecera Institucional Superior -->
+<div class="py-space-md flex flex-col gap-space-xs">
+<nav class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<span class="hover:text-primary transition-colors cursor-pointer">Administración del Sistema</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-primary transition-colors cursor-pointer">Seguridad y Accesos</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Roles y Permisos</span>
+</nav>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pt-space-xs">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Roles y Matriz de Permisos</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs max-w-4xl">
+          Control estricto de facultades normativas, segregación de funciones federativas y régimen de autorizaciones de la Liga Municipal de Morelia.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm self-start md:self-auto">
+<span class="inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">policy</span>
+<span>Estatuto Vigente 2025–2026</span>
+</span>
+<span class="inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px]">info</span>
+<span>Dato Demostrativo · No oficial</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Selector de Pestañas Superior -->
+<div class="mt-space-md flex items-center justify-between bg-surface-container-low rounded-lg p-space-xs">
+<div class="flex items-center gap-space-xs">
+<button class="flex items-center gap-space-sm px-gutter py-space-sm rounded-lg bg-surface-container-lowest text-primary font-headline-sm text-headline-sm shadow-sm transition-all" id="tab-btn-matriz" onclick="switchMainTab('matriz')">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Matriz de Roles y Permisos</span>
+<span class="px-space-xs py-0.5 rounded-full bg-primary-container/10 text-primary font-mono-data text-body-sm font-semibold">12 roles configurados</span>
+</button>
+<button class="flex items-center gap-space-sm px-gutter py-space-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-all" id="tab-btn-solicitudes" onclick="switchMainTab('solicitudes')">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+<span>Solicitudes pendientes (Vista Presidencia)</span>
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary-container/20 text-tertiary font-mono-data text-body-sm font-semibold">2 pendientes de dictamen</span>
+</button>
+</div>
+<div class="hidden lg:flex items-center gap-space-xs px-space-md py-space-xs font-mono-data text-body-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+<span>Auditoría SHA-256 Activa</span>
+</div>
+</div>
+<!-- Contenedor Pestaña 1: Matriz de Roles y Permisos -->
+<div class="mt-space-lg flex flex-col gap-space-xl" id="tab-content-matriz">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- COLUMNA IZQUIERDA: Catálogo de Roles Institucionales (~320px/4 columnas) -->
+<div class="lg:col-span-4 bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-primary">shield_person</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Catálogo de Roles Oficiales</span>
+</div>
+<span class="font-mono-data text-body-sm text-on-surface-variant font-medium">12 registros</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant pb-space-xs">
+          Seleccione una figura reglamentaria para auditar facultades activas y proponer modificaciones.
+        </p>
+<!-- Lista de 12 roles oficiales -->
+<div class="space-y-space-xs overflow-y-auto max-h-[720px] pr-space-xs">
+<!-- 1. Administrador General -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer flex items-center justify-between group">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant group-hover:text-primary">
+<span class="material-symbols-outlined text-[18px]">manage_accounts</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface truncate">Administrador General</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Sistema y Auditoría · Ámbito Liga</span>
+</div>
+</div>
+<span class="font-mono-data text-body-sm text-primary font-semibold">44 perm.</span>
+</div>
+<!-- 2. Presidente del Comité Ejecutivo -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer flex items-center justify-between group">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant group-hover:text-primary">
+<span class="material-symbols-outlined text-[18px]">military_tech</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface truncate">Presidente del Comité Ejecutivo</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Autoridad Central · Dictamen final</span>
+</div>
+</div>
+<span class="font-mono-data text-body-sm text-primary font-semibold">38 perm.</span>
+</div>
+<!-- 3. Secretario General -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer flex items-center justify-between group">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant group-hover:text-primary">
+<span class="material-symbols-outlined text-[18px]">history_edu</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface truncate">Secretario General</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Actas y Acuerdos · Ámbito Liga</span>
+</div>
+</div>
+<span class="font-mono-data text-body-sm text-on-surface-variant font-medium">26 perm.</span>
+</div>
+<!-- 4. Tesorero de la Liga -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer flex items-center justify-between group">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant group-hover:text-primary">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface truncate">Tesorero de la Liga</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Aranceles y Cobros · Finanzas</span>
+</div>
+</div>
+<span class="font-mono-data text-body-sm text-on-surface-variant font-medium">19 perm.</span>
+</div>
+<!-- 5. Programador de partidos (SELECCIONADO / ACTIVO) -->
+<div class="p-space-md rounded-lg bg-primary-container/10 shadow-sm flex items-center justify-between relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<div class="flex items-center gap-space-md min-w-0 pl-space-xs">
+<div class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[18px]">event_note</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-body-md font-bold text-primary truncate">Programador de partidos</span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface uppercase font-semibold">Técnica Operativa · 18 asignados</span>
+</div>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-primary text-on-primary font-mono-data text-body-sm font-bold">ACTIVO</span>
+</div>
+<!-- 6. Delegado de Club Afiliado -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer flex items-center justify-between group">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant group-hover:text-primary">
+<span class="material-symbols-outlined text-[18px]">groups</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface truncate">Delegado de Club Afiliado</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Directiva de Club · Registros</span>
+</div>
+</div>
+<span class="font-mono-data text-body-sm text-on-surface-variant font-medium">11 perm.</span>
+</div>
+<!-- 7. Árbitro Central / Asistente -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer flex items-center justify-between group">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant group-hover:text-primary">
+<span class="material-symbols-outlined text-[18px]">sports</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface truncate">Árbitro Central / Asistente</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Colegio Arbitral · Cédula Digital</span>
+</div>
+</div>
+<span class="font-mono-data text-body-sm text-on-surface-variant font-medium">9 perm.</span>
+</div>
+<!-- 8. Juez de Mesa / Comisario -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer flex items-center justify-between group">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant group-hover:text-primary">
+<span class="material-symbols-outlined text-[18px]">checklist_rtl</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface truncate">Juez de Mesa / Comisario</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Validación en Campo · Sedes</span>
+</div>
+</div>
+<span class="font-mono-data text-body-sm text-on-surface-variant font-medium">8 perm.</span>
+</div>
+<!-- 9. Comisión Disciplinaria -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer flex items-center justify-between group">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant group-hover:text-primary">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface truncate">Comisión Disciplinaria</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Tribunal de Penas · Sanciones</span>
+</div>
+</div>
+<span class="font-mono-data text-body-sm text-on-surface-variant font-medium">14 perm.</span>
+</div>
+<!-- 10. Coordinador de Canchas y Sedes -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer flex items-center justify-between group">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant group-hover:text-primary">
+<span class="material-symbols-outlined text-[18px]">stadium</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface truncate">Coordinador de Canchas</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Infraestructura · U.D. Morelia</span>
+</div>
+</div>
+<span class="font-mono-data text-body-sm text-on-surface-variant font-medium">12 perm.</span>
+</div>
+<!-- 11. Médico / Salud Federada -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer flex items-center justify-between group">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant group-hover:text-primary">
+<span class="material-symbols-outlined text-[18px]">medical_services</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface truncate">Médico / Salud Federada</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Aptitud Física · Certificación</span>
+</div>
+</div>
+<span class="font-mono-data text-body-sm text-on-surface-variant font-medium">6 perm.</span>
+</div>
+<!-- 12. Consulta Pública y Prensa -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer flex items-center justify-between group">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant group-hover:text-primary">
+<span class="material-symbols-outlined text-[18px]">newspaper</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface truncate">Consulta Pública y Prensa</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Difusión · Solo Lectura</span>
+</div>
+</div>
+<span class="font-mono-data text-body-sm text-on-surface-variant font-medium">4 perm.</span>
+</div>
+</div>
+<div class="pt-space-sm">
+<div class="p-space-md bg-surface-container rounded-lg flex items-center gap-space-md">
+<span class="material-symbols-outlined text-primary text-[22px]">verified</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Catálogo Blindado</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Modificación de roles requiere quórum de Asamblea (Art. 12).</span>
+</div>
+</div>
+</div>
+</div>
+<!-- COLUMNA DERECHA: Detalle del Rol y Matriz de Permisos (~8 columnas) -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<!-- Ficha de Rol Activo -->
+<div class="bg-surface-container-lowest rounded-xl p-gutter shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-md pb-space-sm">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="font-mono-data text-body-sm px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface font-semibold tracking-wider">ROL-FED-005</span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-primary-container/15 text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>Vigente · Estatuto Art. 38</span>
+</span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-secondary-container/50 text-on-secondary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">code</span>
+<span>Dato reglamentario formal</span>
+</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Programador de partidos</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+                Responsable de la conformación de calendarios, asignación de canchas oficiales de Morelia y propuesta técnica de roles de juego semanales para todas las categorías activas.
+              </p>
+</div>
+<!-- Acciones Superiores -->
+<div class="flex flex-col items-end gap-space-xs">
+<button class="h-11 px-space-lg rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-all shadow-sm flex items-center gap-space-sm" onclick="openModalSolicitud()">
+<span class="material-symbols-outlined text-[18px]">lock_reset</span>
+<span>Solicitar aprobación a Presidencia</span>
+</button>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[14px] text-tertiary">info</span>
+<span>Se abrirá el modal de motivo obligatorio (Art. 18 Normativo)</span>
+</div>
+<button class="mt-space-xs text-primary hover:underline font-label-md text-body-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">history</span>
+<span>Ver auditoría de cambios de este rol</span>
+</button>
+</div>
+</div>
+<!-- BANNER INSTITUCIONAL DE ALERTA DE INCOMPATIBILIDAD (Segregación de funciones obligatoria) -->
+<div class="p-gutter rounded-xl bg-tertiary-fixed/30 flex flex-col gap-space-xs">
+<div class="flex items-start gap-space-md">
+<div class="w-9 h-9 rounded-lg bg-tertiary text-on-tertiary flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold">Incompatibilidad de Facultades Detectada (Segregación de Funciones)</span>
+<span class="px-space-xs py-0.5 rounded bg-tertiary text-on-tertiary font-label-sm text-label-sm font-semibold">BLOQUEO PREVENTIVO</span>
+</div>
+<p class="font-headline-sm text-body-md text-on-surface font-semibold">
+                  «Este cambio combina "Registrar y ajustar jornadas" con "Aprobar la jornada". Quedará pendiente hasta que lo apruebe el Presidente».
+                </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span class="font-semibold text-on-surface">Explicación normativa:</span> Conforme al Art. 49 del Estatuto de la Liga Municipal de Futbol Amateur Morelia, quien elabora el rol técnico de juegos no puede autoaprobar la validez oficial ni la reserva definitiva de canchas sin convalidación expresa de la Presidencia del Comité Ejecutivo, evitando conflicto de interés deportivo y manipulación de sedes.
+                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Matriz de Permisos Agrupada por Módulos Oficiales -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Matriz Detallada de Permisos del Rol</span>
+<div class="flex items-center gap-space-md text-body-sm font-label-md text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="w-3 h-3 rounded bg-primary"></span> Otorgado</span>
+<span class="flex items-center gap-1"><span class="w-3 h-3 rounded bg-tertiary"></span> Conflicto normativo</span>
+<span class="flex items-center gap-1"><span class="w-3 h-3 rounded bg-surface-container-high"></span> Restringido</span>
+</div>
+</div>
+<!-- MÓDULO 1: Programación (Módulo Clave - Resaltado) -->
+<div class="bg-surface-container-lowest rounded-xl p-gutter shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">1. Módulo Programación (Operación Central)</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Elaboración, corrida horaria y publicación del rol municipal de juegos</span>
+</div>
+</div>
+<span class="font-mono-data text-body-sm text-primary font-semibold px-space-sm py-1 rounded bg-primary-container/10">3 facultades seleccionadas</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+<!-- Item 1.1 -->
+<label class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-md cursor-pointer hover:bg-surface-container transition-all">
+<input checked="" class="mt-1 w-4 h-4 text-primary rounded accent-primary cursor-pointer" type="checkbox">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Registrar y ajustar jornadas</span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">programacion.jornada:REGISTRAR</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Captura inicial de fechas, emparejamientos y suspensiones.</span>
+</div>
+</label>
+<!-- Item 1.2: Conflicto Normativo (Alerta ámbar vinculada) -->
+<label class="p-space-md rounded-lg bg-tertiary-fixed/30 flex items-start gap-space-md cursor-pointer transition-all">
+<input checked="" class="mt-1 w-4 h-4 text-tertiary rounded accent-tertiary cursor-pointer" type="checkbox">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-body-md font-bold text-tertiary">Aprobar la jornada</span>
+<span class="px-space-xs py-0.5 rounded bg-tertiary text-on-tertiary font-label-sm text-[10px] font-bold uppercase">Requiere Dictamen</span>
+</div>
+<span class="font-mono-data text-body-sm text-tertiary font-semibold">programacion.jornada:APROBAR</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Incompatible con registro simultáneo (Art. 49 Estatutos).</span>
+</div>
+</label>
+<!-- Item 1.3 -->
+<label class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-md cursor-pointer hover:bg-surface-container transition-all">
+<input checked="" class="mt-1 w-4 h-4 text-primary rounded accent-primary cursor-pointer" type="checkbox">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Proponer horarios y sedes</span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">programacion.horarios:PROPONER</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Envío de propuesta semanal a comisarios de cancha.</span>
+</div>
+</label>
+<!-- Item 1.4: Desmarcada -->
+<label class="p-space-md rounded-lg bg-surface-container-low/50 opacity-75 flex items-start gap-space-md cursor-pointer hover:bg-surface-container-low transition-all">
+<input class="mt-1 w-4 h-4 rounded accent-primary cursor-pointer" type="checkbox">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-medium text-on-surface">Publicar rol extraordinario directo</span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">programacion.rol:PUBLICAR_DIRECTO</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Reservado a Secretaría General y Presidencia.</span>
+</div>
+</label>
+</div>
+</div>
+<!-- MÓDULO 2: Canchas e Infraestructura -->
+<div class="bg-surface-container-lowest rounded-xl p-gutter shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">stadium</span>
+</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">2. Módulo Canchas y Unidades Deportivas</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant">U.D. Cuauhtémoc, Venustiano Carranza, Rincón del Punhuato y campos periféricos</span>
+</div>
+</div>
+<span class="font-mono-data text-body-sm text-on-surface-variant font-medium">2 facultades activas</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm">
+<label class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-md cursor-pointer hover:bg-surface-container transition-all">
+<input checked="" class="mt-1 w-4 h-4 rounded accent-primary cursor-pointer" type="checkbox">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Consultar disponibilidad</span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">canchas.disponibilidad:CONSULTAR</span>
+</div>
+</label>
+<label class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-md cursor-pointer hover:bg-surface-container transition-all">
+<input checked="" class="mt-1 w-4 h-4 rounded accent-primary cursor-pointer" type="checkbox">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Bloqueo por mantenimiento</span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">canchas.bloqueo:REGISTRAR</span>
+</div>
+</label>
+<label class="p-space-md rounded-lg bg-surface-container-low/50 opacity-70 flex items-start gap-space-md cursor-pointer hover:bg-surface-container transition-all">
+<input class="mt-1 w-4 h-4 rounded accent-primary cursor-pointer" type="checkbox">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-medium text-on-surface">Homologar nuevas unidades</span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">canchas.homologacion:AUTORIZAR</span>
+</div>
+</label>
+</div>
+</div>
+<!-- MÓDULOS 3 y 4: Partidos y Arbitraje en Grid de 2 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-desktop">
+<!-- 3. Partidos -->
+<div class="bg-surface-container-lowest rounded-xl p-gutter shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm pb-space-xs">
+<span class="w-8 h-8 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">sports_soccer</span>
+</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">3. Módulo Partidos</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Emparejamientos y actas de juego</span>
+</div>
+</div>
+<div class="space-y-space-sm">
+<label class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-md cursor-pointer hover:bg-surface-container transition-all">
+<input checked="" class="mt-1 w-4 h-4 rounded accent-primary cursor-pointer" type="checkbox">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Asignar partidos a campos</span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">partidos.asignacion:MODIFICAR</span>
+</div>
+</label>
+<label class="p-space-md rounded-lg bg-surface-container-low/50 opacity-70 flex items-start gap-space-md cursor-pointer">
+<input class="mt-1 w-4 h-4 rounded accent-primary cursor-pointer" type="checkbox">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-medium text-on-surface">Modificar resultado en cédula</span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">partidos.cedula:EDITAR_RESULTADO</span>
+</div>
+</label>
+</div>
+</div>
+<!-- 4. Arbitraje -->
+<div class="bg-surface-container-lowest rounded-xl p-gutter shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm pb-space-xs">
+<span class="w-8 h-8 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">sports</span>
+</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">4. Módulo Arbitraje</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ternas del Colegio de Árbitros de Morelia</span>
+</div>
+</div>
+<div class="space-y-space-sm">
+<label class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-md cursor-pointer hover:bg-surface-container transition-all">
+<input checked="" class="mt-1 w-4 h-4 rounded accent-primary cursor-pointer" type="checkbox">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Consultar rol de ternas</span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">arbitraje.ternas:CONSULTAR</span>
+</div>
+</label>
+<label class="p-space-md rounded-lg bg-surface-container-low/50 opacity-70 flex items-start gap-space-md cursor-pointer">
+<input class="mt-1 w-4 h-4 rounded accent-primary cursor-pointer" type="checkbox">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-medium text-on-surface">Designar árbitros a partidos</span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">arbitraje.designacion:APROBAR</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- MÓDULOS 5 y 6: Seguridad y Temporadas -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-desktop">
+<!-- 5. Seguridad -->
+<div class="bg-surface-container-lowest rounded-xl p-gutter shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm pb-space-xs">
+<span class="w-8 h-8 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">security</span>
+</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">5. Módulo Seguridad y Accesos</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Credenciales y privilegios federados</span>
+</div>
+</div>
+<label class="p-space-md rounded-lg bg-surface-container-low/50 opacity-70 flex items-start gap-space-md cursor-pointer">
+<input class="mt-1 w-4 h-4 rounded accent-primary cursor-pointer" type="checkbox">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-medium text-on-surface">Gestionar credenciales y accesos</span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">seguridad.usuarios:ADMIN</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Facultad exclusiva de Administración General.</span>
+</div>
+</label>
+</div>
+<!-- 6. Temporadas -->
+<div class="bg-surface-container-lowest rounded-xl p-gutter shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm pb-space-xs">
+<span class="w-8 h-8 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">emoji_events</span>
+</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">6. Módulo Temporadas y Torneos</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Periodos oficiales, liguillas y copas</span>
+</div>
+</div>
+<div class="space-y-space-sm">
+<label class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-md cursor-pointer hover:bg-surface-container transition-all">
+<input checked="" class="mt-1 w-4 h-4 rounded accent-primary cursor-pointer" type="checkbox">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Consultar parámetros y calendarios</span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">temporadas.parametros:CONSULTAR</span>
+</div>
+</label>
+<label class="p-space-md rounded-lg bg-surface-container-low/50 opacity-70 flex items-start gap-space-md cursor-pointer">
+<input class="mt-1 w-4 h-4 rounded accent-primary cursor-pointer" type="checkbox">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-medium text-on-surface">Cerrar o activar ciclos federados</span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">temporadas.ciclo:ACTIVAR</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- MÓDULO 7: Organización, Registros, Disciplina, Publicación, Tesorería y Reportes -->
+<div class="bg-surface-container-lowest rounded-xl p-gutter shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">account_tree</span>
+</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">7. Módulos Institucionales Complementarios</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Régimen normativo transversal de la Liga</span>
+</div>
+</div>
+<span class="font-mono-data text-body-sm text-on-surface-variant">Resumen de facultades</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm">
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-md">
+<input checked="" class="mt-1 w-4 h-4 rounded accent-primary" type="checkbox">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Organización / Clubes</span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">organizacion.afiliados:LEER</span>
+<span class="font-body-sm text-body-sm text-primary font-medium mt-0.5">Acceso solo consulta</span>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-md">
+<input checked="" class="mt-1 w-4 h-4 rounded accent-primary" type="checkbox">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Registros y Cédulas</span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">registros.fichas:CONSULTAR</span>
+<span class="font-body-sm text-body-sm text-primary font-medium mt-0.5">Verificación de cédulas</span>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low/50 opacity-70 flex items-start gap-space-md">
+<input class="mt-1 w-4 h-4 rounded accent-primary" type="checkbox">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-medium text-on-surface">Comisión Disciplinaria</span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">disciplina.sanciones:RESOLVER</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Tribunal autónomo</span>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-md">
+<input checked="" class="mt-1 w-4 h-4 rounded accent-primary" type="checkbox">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Publicación y Medios</span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">publicacion.boletin:PROPONER</span>
+<span class="font-body-sm text-body-sm text-primary font-medium mt-0.5">Emisión de borradores</span>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-md">
+<input checked="" class="mt-1 w-4 h-4 rounded accent-primary" type="checkbox">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Reportes Técnicos</span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">reportes.estadisticas:GENERAR</span>
+<span class="font-body-sm text-body-sm text-primary font-medium mt-0.5">Métricas de canchas</span>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low/50 opacity-70 flex items-start gap-space-md">
+<input class="mt-1 w-4 h-4 rounded accent-primary" type="checkbox">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-medium text-on-surface">Tesorería y Arbitrajes</span>
+<span class="font-mono-data text-body-sm text-on-surface-variant">tesoreria.fianzas:AUTORIZAR</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Exclusivo Tesorero</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SECCIÓN: Solicitudes Pendientes (Vista Supervisión Presidencia del Comité Ejecutivo) -->
+<div class="mt-space-xl pt-space-md flex flex-col gap-space-md" id="section-presidencia">
+<!-- Cabecera de la Sección de Supervisión -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm bg-surface-container-lowest p-gutter rounded-xl shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[24px]">gavel</span>
+</div>
+<div>
+<div class="flex items-center gap-space-sm">
+<h3 class="font-headline-lg text-headline-sm text-on-surface font-bold">Vista de Supervisión Normativa - Presidencia del Comité Ejecutivo</h3>
+<span class="px-space-xs py-0.5 rounded bg-tertiary-container/30 text-tertiary font-label-sm text-label-sm font-bold uppercase">Régimen Art. 18</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Mesa de dictaminación de facultades extraordinarias y resolución de excepciones estatutarias en la Liga Morelia.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-low px-space-md py-space-sm rounded-lg font-mono-data text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">lock_clock</span>
+<span class="text-on-surface font-semibold">2 solicitudes en turno</span>
+</div>
+</div>
+<!-- TARJETA INSTITUCIONAL DE SOLICITUD PENDIENTE (Detallada y Normativa) -->
+<div class="bg-surface-container-lowest rounded-xl p-gutter shadow-sm flex flex-col gap-space-md">
+<!-- Metadata superior de la solicitud -->
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-md pb-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="font-mono-data text-body-sm font-bold text-on-surface bg-surface-container-high px-space-sm py-0.5 rounded">FOLIO: SOL-PERM-2026-004</span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">info</span>
+<span>No oficial · Demostración reglamentaria</span>
+</span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-tertiary-fixed text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>PENDIENTE DE DICTAMEN</span>
+</span>
+</div>
+<div class="flex items-center gap-space-xs mt-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Petición de facultad excepcional sobre rol:</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Programador de partidos</span>
+</div>
+<div class="flex items-center gap-space-md text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">person</span>
+<span>Solicitó: <strong class="text-on-surface">Lic. Fernando Morales (Administrador General)</strong></span>
+</span>
+<span>·</span>
+<span class="font-mono-data flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span>27 oct 2026, 10:15 CST</span>
+</span>
+</div>
+</div>
+<!-- Botones de Decisión con Solicitud de Motivo -->
+<div class="flex items-center gap-space-sm flex-shrink-0">
+<button class="h-11 px-space-lg rounded-lg bg-surface-container-low text-tertiary font-label-md text-label-md font-semibold hover:bg-tertiary-fixed transition-all flex items-center gap-space-xs" onclick="promptDecision('rechazar', 'SOL-PERM-2026-004')">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+<span>Rechazar solicitud</span>
+</button>
+<button class="h-11 px-space-lg rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-all flex items-center gap-space-xs shadow-sm" onclick="promptDecision('aprobar', 'SOL-PERM-2026-004')">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Aprobar solicitud</span>
+</button>
+</div>
+</div>
+<!-- Detalle técnico del cambio solicitado -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md pt-space-xs">
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Facultad requerida (Permiso Adicional)</span>
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded bg-primary-container/20 text-primary font-mono-data text-body-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>+ programacion.jornada:APROBAR</span>
+</span>
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Aprobar la jornada oficial</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Habilita cierre de rol y expedición de cédulas sin segunda firma técnica.</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Permisos revocados / Restricciones</span>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-[18px]">remove_done</span>
+<span>Ninguno en esta solicitud de ampliación transitoria.</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Mantiene sus 18 permisos base actuales del catálogo federado.</span>
+</div>
+</div>
+<!-- Motivo Formal Expresado -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Motivo expresado por el solicitante:</span>
+<blockquote class="font-body-md text-body-md text-on-surface italic pl-space-sm">
+          «Se requiere facultad temporal de aprobación para la Jornada 8 debido a la contingencia climática en campos de la U.D. Cuauhtémoc y necesidad de cierre expedito de rol para notificación a delegados el viernes a las 18:00 hrs.»
+        </blockquote>
+</div>
+<!-- NOTA NORMATIVA EXPLÍCITA OBLIGATORIA (Art. 18 Estatutario) -->
+<div class="p-space-md rounded-lg bg-surface-container flex items-center gap-space-md">
+<div class="w-8 h-8 rounded-full bg-on-surface-variant/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px] text-tertiary">shield</span>
+</div>
+<p class="font-headline-sm text-body-md text-on-surface">
+<strong class="text-tertiary">Regla de Segregación Inquebrantable:</strong> «Quien solicita no puede aprobar (Principio estatutario de segregación de funciones - Art. 18). Toda ratificación quedará rubricada en el Libro de Gobierno de la Presidencia de la Liga».
+        </p>
+</div>
+</div>
+<!-- SEGUNDA SOLICITUD PENDIENTE (Mesa de Trabajo) -->
+<div class="bg-surface-container-lowest rounded-xl p-gutter shadow-sm flex flex-col gap-space-md opacity-90">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="font-mono-data text-body-sm font-bold text-on-surface bg-surface-container-high px-space-sm py-0.5 rounded">FOLIO: SOL-PERM-2026-003</span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">info</span>
+<span>No oficial</span>
+</span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-tertiary-fixed text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>PENDIENTE DE DICTAMEN</span>
+</span>
+</div>
+<div class="flex items-center gap-space-xs mt-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Petición sobre rol:</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Juez de Mesa / Comisario</span>
+</div>
+<div class="flex items-center gap-space-md text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">person</span>
+<span>Solicitó: <strong>C. Roberto Ibarra (Colegio de Árbitros)</strong></span>
+</span>
+<span>·</span>
+<span class="font-mono-data">26 oct 2026, 17:40 CST</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="h-10 px-space-md rounded-lg bg-surface-container-low text-tertiary font-label-md text-label-md font-semibold hover:bg-tertiary-fixed" onclick="promptDecision('rechazar', 'SOL-PERM-2026-003')">
+            Rechazar
+          </button>
+<button class="h-10 px-space-md rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container" onclick="promptDecision('aprobar', 'SOL-PERM-2026-003')">
+            Aprobar
+          </button>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface-variant">
+        Solicitud de facultad: <code class="font-mono-data font-semibold text-on-surface">partidos.cedula:VALIDAR_IMPUGNACION</code>. Motivo: Coadyuvancia ante protestas en Torneo de Barrios.
+      </div>
+</div>
+</div>
+<!-- MODAL: Motivo Obligatorio de Solicitud de Facultad Excepcional -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-gutter bg-on-surface/40 backdrop-blur-xs hidden" id="modal-solicitud">
+<div class="bg-surface-container-lowest rounded-xl shadow-xl w-full max-w-xl p-gutter-desktop flex flex-col gap-space-md animate-in fade-in zoom-in-95 duration-150">
+<!-- Encabezado Modal -->
+<div class="flex items-start justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">policy</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Solicitud de Facultad Excepcional</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Régimen Normativo · Liga Municipal de Futbol Amateur Morelia</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container" onclick="closeModalSolicitud()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Cuerpo del Modal -->
+<div class="flex flex-col gap-space-md">
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Rol destino:</span>
+<strong class="text-on-surface">Programador de partidos (ROL-FED-005)</strong>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Facultad en conflicto:</span>
+<code class="font-mono-data text-tertiary font-semibold">programacion.jornada:APROBAR</code>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Dictaminador legal:</span>
+<span class="text-primary font-semibold">Presidente del Comité Ejecutivo</span>
+</div>
+</div>
+<!-- Campo de Texto Obligatorio -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center justify-between" for="input-motivo">
+<span>Motivo formal de la solicitud <span class="text-error">*</span></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-normal">Mínimo 30 caracteres</span>
+</label>
+<textarea class="w-full p-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder:text-outline-variant focus:outline-none focus:ring-2 focus:ring-primary" id="input-motivo" placeholder="Describa la causa de fuerza mayor, contingencia climática o acuerdo federativo que justifica habilitar esta facultad incompatible conforme al Estatuto..." rows="4"></textarea>
+</div>
+<!-- Advertencia de Bitácora -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-primary flex-shrink-0 mt-0.5">lock</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<strong class="text-on-surface">Registro Oficial en Bitácora Federal:</strong> Esta petición genera un sello de auditoría inmutable vinculado a su firma digital de Administrador General (Lic. Fernando Morales). El solicitante no puede convalidar su propia solicitud (Art. 18).
+          </p>
+</div>
+</div>
+<!-- Pie del Modal -->
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="h-11 px-space-lg rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container transition-all" onclick="closeModalSolicitud()">
+          Cancelar
+        </button>
+<button class="h-11 px-space-lg rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-all flex items-center gap-space-xs shadow-sm" onclick="submitSolicitud()">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Enviar solicitud a Presidencia</span>
+</button>
+</div>
+</div>
+</div>
+<!-- MODAL: Dictamen Presidencial (Ratificación o Rechazo) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-gutter bg-on-surface/40 backdrop-blur-xs hidden" id="modal-dictamen">
+<div class="bg-surface-container-lowest rounded-xl shadow-xl w-full max-w-lg p-gutter-desktop flex flex-col gap-space-md animate-in fade-in zoom-in-95 duration-150">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary text-on-primary flex items-center justify-center" id="dictamen-icon">
+<span class="material-symbols-outlined text-[22px]">gavel</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold" id="dictamen-title">Dictamen de Presidencia</h3>
+<span class="font-mono-data text-body-sm text-on-surface-variant" id="dictamen-subtitle">FOLIO: SOL-PERM-2026-004</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container" onclick="closeModalDictamen()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-md">
+<div class="p-space-md rounded-lg bg-surface-container-low text-body-sm text-on-surface font-body-sm" id="dictamen-banner">
+          Se emitirá acuerdo reglamentario con fe institucional de la Presidencia del Comité Ejecutivo.
+        </div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="dictamen-motivo">
+            Fundamento del dictamen / Observaciones reglamentarias <span class="text-error">*</span>
+</label>
+<textarea class="w-full p-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder:text-outline-variant focus:outline-none focus:ring-2 focus:ring-primary" id="dictamen-motivo" placeholder="Indique el acta de asamblea, número de acuerdo o resolución que soporta el sentido de este dictamen..." rows="3"></textarea>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="h-11 px-space-lg rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container" onclick="closeModalDictamen()">
+          Cancelar
+        </button>
+<button class="h-11 px-space-lg rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container flex items-center gap-space-xs shadow-sm" id="dictamen-submit-btn" onclick="executeDictamen()">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span id="dictamen-submit-label">Firmar Dictamen</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+    let currentAction = 'aprobar';
+    let currentFolio = '';
+
+    function switchMainTab(tab) {
+      const btnMatriz = document.getElementById('tab-btn-matriz');
+      const btnSolicitudes = document.getElementById('tab-btn-solicitudes');
+      const secPresidencia = document.getElementById('section-presidencia');
+      const contentMatriz = document.getElementById('tab-content-matriz');
+
+      if (tab === 'matriz') {
+        btnMatriz.className = "flex items-center gap-space-sm px-gutter py-space-sm rounded-lg bg-surface-container-lowest text-primary font-headline-sm text-headline-sm shadow-sm transition-all";
+        btnSolicitudes.className = "flex items-center gap-space-sm px-gutter py-space-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-all";
+        contentMatriz.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        btnSolicitudes.className = "flex items-center gap-space-sm px-gutter py-space-sm rounded-lg bg-surface-container-lowest text-primary font-headline-sm text-headline-sm shadow-sm transition-all";
+        btnMatriz.className = "flex items-center gap-space-sm px-gutter py-space-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-all";
+        secPresidencia.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function openModalSolicitud() {
+      const modal = document.getElementById('modal-solicitud');
+      modal.classList.remove('hidden');
+    }
+
+    function closeModalSolicitud() {
+      const modal = document.getElementById('modal-solicitud');
+      modal.classList.add('hidden');
+      document.getElementById('input-motivo').value = '';
+    }
+
+    function submitSolicitud() {
+      const motivo = document.getElementById('input-motivo').value.trim();
+      if (motivo.length < 15) {
+        alert('Por favor ingrese una fundamentación formal de al menos 15 caracteres conforme al Art. 18 Estatutario.');
+        return;
+      }
+      alert('Solicitud enviada a la Presidencia del Comité Ejecutivo bajo Folio SOL-PERM-2026-005. Se ha registrado en la bitácora de auditoría federal.');
+      closeModalSolicitud();
+    }
+
+    function promptDecision(action, folio) {
+      currentAction = action;
+      currentFolio = folio;
+      const modal = document.getElementById('modal-dictamen');
+      const title = document.getElementById('dictamen-title');
+      const subtitle = document.getElementById('dictamen-subtitle');
+      const banner = document.getElementById('dictamen-banner');
+      const submitBtn = document.getElementById('dictamen-submit-btn');
+      const submitLabel = document.getElementById('dictamen-submit-label');
+      const icon = document.getElementById('dictamen-icon');
+
+      subtitle.innerText = 'FOLIO: ' + folio;
+
+      if (action === 'aprobar') {
+        title.innerText = 'Dictamen Favorable de Presidencia';
+        banner.className = 'p-space-md rounded-lg bg-primary-container/15 text-body-sm text-primary font-body-sm font-medium';
+        banner.innerText = 'Usted va a convalidar formalmente la facultad excepcional. El permiso quedará habilitado de inmediato y auditado con fe estatutaria.';
+        submitBtn.className = 'h-11 px-space-lg rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container flex items-center gap-space-xs shadow-sm';
+        submitLabel.innerText = 'Ratificar y Habilitar';
+        icon.className = 'w-10 h-10 rounded-lg bg-primary text-on-primary flex items-center justify-center';
+      } else {
+        title.innerText = 'Dictamen de Rechazo Reglamentario';
+        banner.className = 'p-space-md rounded-lg bg-tertiary-fixed text-body-sm text-tertiary font-body-sm font-medium';
+        banner.innerText = 'Usted va a desechar la solicitud con apego al principio de segregación de facultades (Art. 18 / 49). Se notificará al solicitante.';
+        submitBtn.className = 'h-11 px-space-lg rounded-lg bg-tertiary text-on-tertiary font-label-md text-label-md font-semibold hover:bg-tertiary-container flex items-center gap-space-xs shadow-sm';
+        submitLabel.innerText = 'Rechazar Solicitud';
+        icon.className = 'w-10 h-10 rounded-lg bg-tertiary text-on-tertiary flex items-center justify-center';
+      }
+
+      modal.classList.remove('hidden');
+    }
+
+    function closeModalDictamen() {
+      const modal = document.getElementById('modal-dictamen');
+      modal.classList.add('hidden');
+      document.getElementById('dictamen-motivo').value = '';
+    }
+
+    function executeDictamen() {
+      const motivo = document.getElementById('dictamen-motivo').value.trim();
+      if (!motivo) {
+        alert('El dictamen presidencial requiere asentar el fundamento normativo u observaciones en el expediente.');
+        return;
+      }
+      const accionTexto = currentAction === 'aprobar' ? 'ratificada y activada' : 'rechazada';
+      alert('La solicitud ' + currentFolio + ' ha sido formalmente ' + accionTexto + ' por la Presidencia. Dictamen registrado con folio de acuerdo ACU-2026-PRES-089.');
+      closeModalDictamen();
+    }
+  </script>
+</div></main></div></body></html>

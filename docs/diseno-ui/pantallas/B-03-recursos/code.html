@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface": "#f8f9ff", "error-container": "#ffdad6", "on-tertiary-container": "#ffc3c5", "surface-container-highest": "#d3e4fe", "primary-fixed": "#9ef6b6", "surface-tint": "#0b6d3b", "secondary-fixed-dim": "#bec6e0", "on-error": "#ffffff", "on-primary-fixed-variant": "#00522a", "secondary-fixed": "#dae2fc", "tertiary-fixed": "#ffdada", "surface-container-lowest": "#ffffff", "tertiary-fixed-dim": "#ffb3b6", "surface-container-low": "#eff4ff", "on-primary-container": "#8ee4a6", "on-secondary": "#ffffff", "on-surface": "#0b1c30", "on-secondary-fixed": "#131b2e", "primary": "#004d27", "surface-container-high": "#dce9ff", "secondary-container": "#d8dff9", "inverse-primary": "#83d99c", "on-tertiary-fixed": "#40000c", "secondary": "#565e74", "on-secondary-fixed-variant": "#3f465b", "on-tertiary-fixed-variant": "#7b2b34", "on-surface-variant": "#3f4940", "primary-fixed-dim": "#83d99c", "outline": "#6f7a70", "on-error-container": "#93000a", "on-primary": "#ffffff", "surface-bright": "#f8f9ff", "inverse-on-surface": "#eaf1ff", "on-tertiary": "#ffffff", "on-primary-fixed": "#00210e", "inverse-surface": "#213145", "on-secondary-container": "#5a6278", "surface-container": "#e5eeff", "surface-dim": "#cbdbf5", "error": "#ba1a1a", "background": "#f8f9ff", "outline-variant": "#bec9be", "primary-container": "#006837", "tertiary": "#762730", "on-background": "#0b1c30", "tertiary-container": "#943e46", "surface-variant": "#d3e4fe" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "space-md": "0.75rem", "gutter": "1rem", "margin-desktop": "2rem", "margin": "1rem", "space-xl": "1.5rem", "space-xs": "0.25rem", "gutter-desktop": "1.5rem", "space-lg": "1rem" }, "fontFamily": { "headline-md": ["Inter"], "display-lg-mobile": ["Inter"], "mono-data": ["JetBrains Mono"], "label-md": ["Inter"], "display-lg": ["Inter"], "mono-score": ["JetBrains Mono"], "body-md": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Inter"], "headline-sm": ["Inter"], "body-sm": ["Inter"], "label-sm": ["Inter"] }, "fontSize": { "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}], "display-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}], "mono-data": ["13px", {"lineHeight": "18px", "fontWeight": "500"}], "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}], "display-lg": ["36px", {"lineHeight": "44px", "fontWeight": "700"}], "mono-score": ["28px", {"lineHeight": "32px", "fontWeight": "700"}], "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}], "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}], "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}], "label-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col pt-space-xl pb-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="px-space-xl mb-space-lg flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[22px]">sports_soccer</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight leading-tight">SIGLIM</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Liga Morelia</span></div></div><div class="px-space-md mb-space-sm"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-outline">Panel Operativo</span></div><nav class="flex-1 px-space-md space-y-space-xs overflow-y-auto" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg shadow-sm"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="inicio" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-md text-label-md">Inicio</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="cedulas-y-partidos" href="#"><span class="material-symbols-outlined text-[20px]">assignment</span><span class="font-label-md text-label-md">Cédulas y Partidos</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="tabla-de-posiciones" href="#"><span class="material-symbols-outlined text-[20px]">format_list_numbered</span><span class="font-label-md text-label-md">Tabla de Posiciones</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="estadisticas" href="#"><span class="material-symbols-outlined text-[20px]">query_stats</span><span class="font-label-md text-label-md">Estadísticas</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="comision-disciplinaria" href="#"><span class="material-symbols-outlined text-[20px]">gavel</span><span class="font-label-md text-label-md">Comisión Disciplinaria</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="arbitros" href="#"><span class="material-symbols-outlined text-[20px]">sports</span><span class="font-label-md text-label-md">Árbitros</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="tesoreria" href="#"><span class="material-symbols-outlined text-[20px]">account_balance</span><span class="font-label-md text-label-md">Tesorería</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="canchas" href="#"><span class="material-symbols-outlined text-[20px]">stadium</span><span class="font-label-md text-label-md">Canchas</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="auditoria" href="#"><span class="material-symbols-outlined text-[20px]">history_edu</span><span class="font-label-md text-label-md">Auditoría</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="configuracion" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-label-md text-label-md">Configuración</span></a></nav><div class="px-space-md mt-auto pt-space-sm"><div class="bg-surface-container rounded-lg p-space-sm flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary-container text-[20px]">verified</span><div class="flex flex-col"><span class="font-label-sm text-label-sm font-semibold text-on-surface">Ficha Federada</span><span class="font-mono-data text-mono-data text-on-surface-variant">v4.2.0 · FMF</span></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40"><div class="w-full h-full px-space-xl flex items-center justify-between"><div class="flex items-center gap-space-md"><span class="font-headline-sm text-headline-sm text-on-surface">SIGLIM · Liga Morelia</span><span class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm"><span class="material-symbols-outlined text-[14px]">check_circle</span>TEMPORADA 2025–2026 · ACTIVA</span></div><div class="flex items-center gap-space-lg"><button aria-label="Notificaciones" class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors relative" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-md"><div class="flex flex-col text-right"><span class="font-label-md text-label-md font-semibold text-on-surface">Comisionado General</span><span class="font-body-sm text-body-sm text-on-surface-variant">Mesa Directiva</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Cabecera Superior Institucional y Selector de Rol -->
+<section class="w-full bg-surface-container-low p-space-xl shadow-sm">
+<div class="max-w-[1600px] mx-auto flex flex-col gap-space-lg">
+<!-- Fila Contextual & Breadcrumb -->
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm font-label-md text-label-md text-on-surface-variant">
+<span class="flex items-center gap-space-xs text-secondary hover:text-on-surface transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+<span>Comisión Disciplinaria</span>
+</span>
+<span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
+<span class="font-semibold text-on-surface">Recursos de Inconformidad</span>
+<span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
+<span class="font-mono-data text-mono-data text-primary px-space-sm py-0.5 bg-primary-fixed/40 rounded">TEMPORADA 2025–2026</span>
+</div>
+<div class="flex items-center gap-space-md">
+<!-- Insignia Demostración Oficial -->
+<div class="inline-flex items-center gap-space-xs px-space-md py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold tracking-wide">
+<span class="material-symbols-outlined text-[15px]">info</span>
+<span>NO OFICIAL · DEMOSTRACIÓN</span>
+</div>
+<div class="h-4 w-px bg-outline-variant"></div>
+<span class="font-mono-data text-mono-data text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">verified_user</span>
+            CÓDIGO DE JUSTICIA ART. 70-79
+          </span>
+</div>
+</div>
+<!-- Barra de Título & Conmutador Primario de Rol -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-lg">
+<div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface flex items-center gap-space-sm">
+<span>Segunda Instancia Colegiada e Impugnaciones</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant font-normal self-center ml-2">Tribunal de Alzada Municipal</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Mecanismo reglamentario de revisión para resoluciones sancionatorias emitidas por la Comisión Disciplinaria de la Liga Morelia.
+          </p>
+</div>
+<!-- Conmutador Visual Robusto (Tabs) -->
+<div class="inline-flex p-1.5 bg-surface-container rounded-xl shadow-inner self-start xl:self-center" role="tablist">
+<button class="flex items-center gap-space-sm px-space-lg py-2.5 rounded-lg font-label-md text-label-md font-semibold transition-all shadow-sm bg-surface-container-lowest text-primary" id="tab-btn-club" onclick="switchView('club')">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+<div class="text-left">
+<span class="block leading-tight">Directiva de Club</span>
+<span class="text-[10px] uppercase font-mono-data tracking-wider opacity-80">Halcones FC (Reg. 204)</span>
+</div>
+</button>
+<button class="flex items-center gap-space-sm px-space-lg py-2.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" id="tab-btn-presidencia" onclick="switchView('presidencia')">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+<div class="text-left">
+<span class="block leading-tight">Presidencia del Comité</span>
+<span class="text-[10px] uppercase font-mono-data tracking-wider opacity-80">Segunda Instancia Oficial</span>
+</div>
+<span class="ml-1 w-2 h-2 rounded-full bg-error"></span>
+</button>
+</div>
+</div>
+<!-- KPI Ribbon Métricas de Gobernanza -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md pt-space-xs">
+<div class="bg-surface-container-lowest rounded-xl p-space-md flex items-center justify-between shadow-sm">
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold tracking-wider">Recursos Activos</span>
+<span class="font-mono-score text-mono-score text-on-surface">03</span>
+<span class="block font-body-sm text-body-sm text-secondary">Dentro de término legal</span>
+</div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[26px]">pending_actions</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md flex items-center justify-between shadow-sm">
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold tracking-wider">En Revisión Presidencial</span>
+<span class="font-mono-score text-mono-score text-tertiary">02</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Con expediente y video</span>
+</div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[26px]">balance</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md flex items-center justify-between shadow-sm">
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold tracking-wider">Resueltos 2ª Instancia</span>
+<span class="font-mono-score text-mono-score text-on-surface">05</span>
+<span class="block font-body-sm text-body-sm text-secondary">Jornadas 1 a 7</span>
+</div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[26px] text-on-primary-container">task_alt</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md flex items-center justify-between shadow-sm">
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold tracking-wider">Tasa de Modificación</span>
+<span class="font-mono-score text-mono-score text-primary">20%</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">1 modificada / 4 ratificadas</span>
+</div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[26px]">tune</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CONTENIDO PRINCIPAL: ESPACIO DINÁMICO POR ROLES -->
+<div class="max-w-[1600px] w-full mx-auto px-space-xl py-space-xl flex flex-col gap-space-xl">
+<!-- ========================================== -->
+<!-- VISTA 1: DIRECTIVA DE CLUB (HALCONES FC)  -->
+<!-- ========================================== -->
+<div class="flex flex-col gap-space-xl" id="vista-club">
+<!-- Banner Estatutario y Alerta de Plazo -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg shadow-sm">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed/60 text-on-primary-fixed-variant flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">timer</span>
+</div>
+<div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Término Perentorio para Impugnaciones</span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> PLAZO VIGENTE
+              </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+              Plazo reglamentario para interponer recurso: <strong class="text-on-surface font-semibold">72 horas hábiles</strong> tras la notificación formal del boletín sancionatorio de la Comisión (<span class="font-mono-data text-mono-data text-primary font-semibold">Art. 72 del Código de Justicia Deportiva</span>). Vencimiento para Jornada 7: <span class="font-mono-data text-mono-data">Jueves 13/Nov/2025 - 18:00 hrs</span>.
+            </p>
+</div>
+</div>
+<div class="shrink-0 bg-surface-container-lowest px-space-lg py-space-sm rounded-lg shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase font-semibold">Fianza de Recurso</span>
+<span class="font-mono-data text-mono-score text-on-surface font-bold leading-none">$1,200.00 <span class="font-body-sm text-body-sm text-secondary font-normal">MXN</span></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">Reembolsable si el fallo es favorable</span>
+</div>
+</div>
+<!-- Tarjeta de Resolución Notificada con Acción Inmediata -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-space-md bg-surface-container-low -mx-space-xl -mt-space-xl p-space-xl rounded-t-xl gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[28px]">sports_soccer</span>
+</div>
+<div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono-data">EXPEDIENTE ORIGEN: EXP-2025-0042</span>
+<span class="px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase font-semibold">Jornada 7 · Primera Fuerza A</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold mt-0.5">Sanción Notificada a Rodrigo Navarro Vega (#10, Delantero)</h2>
+</div>
+</div>
+<div class="inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-primary text-[16px]">schedule</span>
+<span>NOTIFICADA · EN PLAZO HÁBIL DE IMPUGNACIÓN (41H RESTANTES)</span>
+</div>
+</div>
+<!-- Ficha Resumida de la Sanción -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-lg bg-surface-container-low/60 p-space-lg rounded-xl">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase font-semibold">Jugador Ficha Federada</span>
+<p class="font-body-lg text-body-lg font-bold text-on-surface mt-1">Rodrigo Navarro Vega</p>
+<span class="font-mono-data text-mono-data text-secondary">ID FMF: MICH-884920</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase font-semibold">Castigo Determinado</span>
+<p class="font-body-lg text-body-lg font-bold text-error mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[20px]">block</span>
+              4 Partidos Suspensión
+            </p>
+<span class="font-mono-data text-mono-data text-secondary">Multa pecuniaria: $500.00 MXN</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase font-semibold">Causal Reglamentaria</span>
+<p class="font-body-md text-body-md font-semibold text-on-surface mt-1">Art. 48 Cód. Justicia</p>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Conducta violenta tipificada como juego brusco grave</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase font-semibold">Partido en Cuestión</span>
+<p class="font-body-md text-body-md font-semibold text-on-surface mt-1">Halcones FC vs Real Valladolid</p>
+<span class="font-mono-data text-mono-data text-secondary">Cancha 1 Policía y Tránsito · Min. 64</span>
+</div>
+</div>
+<!-- Botón para desplegar formulario -->
+<div class="flex items-center justify-between pt-space-xs">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Al interponer recurso, la sanción queda con efecto suspensivo provisional únicamente si la Presidencia autoriza medida cautelar preventiva (<span class="font-mono-data text-mono-data">Art. 74</span>).
+          </p>
+<button class="h-11 px-space-xl rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:bg-primary transition-all flex items-center gap-space-sm shadow-sm" onclick="document.getElementById('formulario-recurso-club').scrollIntoView({ behavior: 'smooth' })" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Interponer Recurso de Inconformidad</span>
+</button>
+</div>
+</div>
+<!-- Formulario / Panel Desplegado: Interponer Recurso Oficial -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-xl flex flex-col gap-space-lg" id="formulario-recurso-club">
+<div class="flex items-center justify-between pb-space-md bg-surface-container p-space-lg -mx-space-xl -mt-space-xl rounded-t-xl">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">assignment_turned_in</span>
+</div>
+<div>
+<span class="font-mono-data text-mono-data text-primary font-semibold">FOLIO ASIGNADO: REC-2025-0014</span>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Formulario Formal de Agravios e Inconformidad</h3>
+</div>
+</div>
+<div class="font-mono-data text-mono-data text-on-surface-variant bg-surface-container-lowest px-space-md py-1 rounded-lg shadow-sm">
+            TRIBUNAL DE APELACIÓN LIGA MORELIA
+          </div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-xl">
+<!-- Columna Izquierda & Central: Motivos y Agravios -->
+<div class="lg:col-span-2 flex flex-col gap-space-lg">
+<div>
+<label class="block font-label-md text-label-md font-semibold text-on-surface mb-2" for="motivo-agravios">
+                Motivo y expresión pormenorizada de agravios <span class="text-error">*</span>
+</label>
+<textarea class="w-full rounded-lg bg-surface-container-low text-on-surface p-space-md font-body-md text-body-md focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:outline-none transition-all resize-none shadow-inner" id="motivo-agravios" placeholder="Especifique los artículos violentados, la falta de proporcionalidad de la sanción, errónea tipificación del árbitro central o atenuantes reglamentarios..." rows="7">Por medio de la presente, la directiva del Club Halcones FC interpone formal RECURSO DE INCONFORMIDAD en contra de la resolución EXP-2025-0042. Sostenemos que el silbante Carlos Medina L. calificó erróneamente un forcejeo mutuo como 'agresión física directa deliberada' (Art. 48). Conforme al metraje en video anexo, se demuestra fehacientemente la existencia de provocación previa con jalón de camiseta no reportado por el árbitro, y que el contacto del jugador Navarro Vega fue accidental en el giro del cuerpo, sin fuerza excesiva ni dolo. Solicitamos la reclasificación al Art. 44 (Falta imprudente) con pena máxima de 1 a 2 partidos y la condonación de la multa económica.</textarea>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-1.5">
+                Fundamente con precisión estatutaria. Los agravios genéricos serán desechados de plano por el Pleno de Segunda Instancia.
+              </span>
+</div>
+<!-- Carga de Documentos Probatorios -->
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<label class="block font-label-md text-label-md font-semibold text-on-surface">
+                  Carga de documentos probatorios y peritajes <span class="text-error">*</span>
+</label>
+<span class="font-mono-data text-mono-data text-secondary">Máximo 35 MB por expediente</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Archivo 1: Video -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-md overflow-hidden">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed/50 text-on-primary-fixed-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">video_file</span>
+</div>
+<div class="truncate">
+<p class="font-label-md text-label-md font-semibold text-on-surface truncate">video_jugada_minuto_64.mp4</p>
+<span class="font-mono-data text-mono-data text-secondary">Cámara Lateral HD · 18.4 MB</span>
+</div>
+</div>
+<button aria-label="Remover archivo" class="text-outline hover:text-error transition-colors p-1" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<!-- Archivo 2: PDF Escrito -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-md overflow-hidden">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">picture_as_pdf</span>
+</div>
+<div class="truncate">
+<p class="font-label-md text-label-md font-semibold text-on-surface truncate">escrito_alegatos_halcones_fc.pdf</p>
+<span class="font-mono-data text-mono-data text-secondary">Firmado por Delegado · 1.2 MB</span>
+</div>
+</div>
+<button aria-label="Remover archivo" class="text-outline hover:text-error transition-colors p-1" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Botón Añadir Más Pruebas -->
+<button class="mt-space-md w-full h-11 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-medium transition-all flex items-center justify-center gap-space-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">upload_file</span>
+<span>+ Adjuntar prueba documental, médica o pericial adicional</span>
+</button>
+</div>
+</div>
+<!-- Columna Derecha: Sello de Fianza y Envío -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between gap-space-lg shadow-sm">
+<div class="flex flex-col gap-space-md">
+<span class="font-label-sm text-label-sm font-bold text-on-surface uppercase tracking-wider">Garantía de Imparcialidad</span>
+<!-- Constancia de Fianza -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sello de Fianza Liga</span>
+<span class="inline-flex items-center gap-1 font-mono-data text-mono-data text-primary font-bold">
+<span class="material-symbols-outlined text-[14px]">verified</span> PAGADO
+                  </span>
+</div>
+<div class="font-mono-score text-[22px] leading-tight text-on-surface font-bold">$1,200.00 MXN</div>
+<div class="font-mono-data text-mono-data text-secondary text-[11px] leading-relaxed">
+                  Recibo Tesorería: <strong class="text-on-surface">TES-2025-99318</strong><br/>
+                  Cuenta Concentradora Liga Morelia BBVA
+                </div>
+</div>
+<!-- Requisitos reglamentarios cumplidos -->
+<div class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px]">check_box</span>
+<span>Delegado acreditado con firma digital</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px]">check_box</span>
+<span>Acreditación de interés jurídico directo</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px]">check_box</span>
+<span>Cumplimiento del término de 72 hrs</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm pt-space-md">
+<button class="w-full h-11 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:bg-primary transition-all flex items-center justify-center gap-space-sm shadow-md" onclick="alert('Recurso REC-2025-0014 remitido con éxito a la Presidencia del Comité Ejecutivo.')" type="button">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span>Presentar e Interponer Recurso Oficial</span>
+</button>
+<span class="font-body-sm text-body-sm text-center text-on-surface-variant">
+                Genera Acuse Digital con Cadena Hash de Auditoría
+              </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Historial de Recursos Interpuestos por el Club -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-xl flex flex-col gap-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Histórico de Recursos de Impugnación</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Expedientes presentados por Halcones FC durante la Temporada 2025–2026.</p>
+</div>
+<span class="font-mono-data text-mono-data px-space-md py-1 bg-surface-container rounded-lg text-on-surface font-semibold">
+            TOTAL EN LA TEMPORADA: 3 RECURSOS
+          </span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low font-label-sm text-label-sm text-secondary uppercase font-semibold">
+<th class="py-space-md px-space-lg">Folio Recurso</th>
+<th class="py-space-md px-space-lg">Sancionado</th>
+<th class="py-space-md px-space-lg">Sanción de Origen</th>
+<th class="py-space-md px-space-lg">Fecha Interposición</th>
+<th class="py-space-md px-space-lg">Pruebas Aportadas</th>
+<th class="py-space-md px-space-lg">Estado</th>
+<th class="py-space-md px-space-lg text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-md text-body-md text-on-surface">
+<!-- Fila 1 (Actual en trámite) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg font-mono-data text-mono-data font-bold text-primary">REC-2025-0014</td>
+<td class="py-space-md px-space-lg">
+<div class="font-semibold text-on-surface">Rodrigo Navarro Vega</div>
+<span class="font-body-sm text-body-sm text-secondary">#10 · Exp. EXP-2025-0042</span>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="font-semibold text-error">4 partidos</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Art. 48 (Violenta)</span>
+</td>
+<td class="py-space-md px-space-lg font-mono-data text-mono-data">10/Nov/2025 · 11:24</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface bg-surface-container px-space-sm py-0.5 rounded">
+<span class="material-symbols-outlined text-[15px] text-primary">videocam</span> Video HD + Escrito
+                  </span>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[15px] text-secondary">hourglass_top</span>
+                    INTERPUESTO · EN REVISIÓN
+                  </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<button class="h-9 px-space-md rounded bg-surface-container text-on-surface hover:bg-surface-container-high font-label-sm text-label-sm font-semibold transition-colors inline-flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+<span>Ver Acuse</span>
+</button>
+</td>
+</tr>
+<!-- Fila 2 (Resuelto en Jornada 4) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg font-mono-data text-mono-data font-bold text-on-surface">REC-2025-0008</td>
+<td class="py-space-md px-space-lg">
+<div class="font-semibold text-on-surface">Esteban Pantoja Ruiz</div>
+<span class="font-body-sm text-body-sm text-secondary">DT · Exp. EXP-2025-0021</span>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="font-semibold text-on-surface">2 partidos</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Art. 52 (Reclamo)</span>
+</td>
+<td class="py-space-md px-space-lg font-mono-data text-mono-data">22/Oct/2025 · 09:15</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface bg-surface-container px-space-sm py-0.5 rounded">
+<span class="material-symbols-outlined text-[15px] text-secondary">description</span> Escrito + Testimonial
+                  </span>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+                    RESUELTO · MODIFICADA
+                  </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<button class="h-9 px-space-md rounded bg-surface-container text-on-surface hover:bg-surface-container-high font-label-sm text-label-sm font-semibold transition-colors inline-flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Ver Resolución</span>
+</button>
+</td>
+</tr>
+<!-- Fila 3 (Resuelto en Jornada 2) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg font-mono-data text-mono-data font-bold text-on-surface">REC-2025-0003</td>
+<td class="py-space-md px-space-lg">
+<div class="font-semibold text-on-surface">Club Halcones FC (Fianza)</div>
+<span class="font-body-sm text-body-sm text-secondary">Institucional · EXP-2025-0007</span>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="font-semibold text-on-surface">Multa $1,000 MXN</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Uniformidad reglamentaria</span>
+</td>
+<td class="py-space-md px-space-lg font-mono-data text-mono-data">05/Oct/2025 · 17:40</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface bg-surface-container px-space-sm py-0.5 rounded">
+<span class="material-symbols-outlined text-[15px] text-secondary">photo</span> Fotografías dorsales
+                  </span>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[15px]">check_circle</span>
+                    RESUELTO · RATIFICADA
+                  </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<button class="h-9 px-space-md rounded bg-surface-container text-on-surface hover:bg-surface-container-high font-label-sm text-label-sm font-semibold transition-colors inline-flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Ver Resolución</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- ============================================================ -->
+<!-- VISTA 2: PRESIDENCIA DEL COMITÉ EJECUTIVO (SEGUNDA INSTANCIA)-->
+<!-- ============================================================ -->
+<div class="hidden flex-col gap-space-xl" id="vista-presidencia">
+<!-- Cabecera de Gobierno de Segunda Instancia -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg shadow-sm">
+<div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Bandeja de Recursos de Inconformidad</span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-tertiary/15 text-tertiary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">balance</span> TRIBUNAL DE ALZADA
+            </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Atención oficial a impugnaciones contra fallos de la Comisión Disciplinaria. Facultad privativa de la Presidencia del Comité Ejecutivo (<span class="font-mono-data text-mono-data text-primary font-semibold">Art. 76 del Estatuto de la Liga</span>).
+          </p>
+</div>
+<!-- Selector de Recurso en Turno -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest p-space-sm rounded-xl shadow-sm">
+<label class="font-label-sm text-label-sm font-semibold text-secondary uppercase px-2" for="recurso-select">Expediente en turno:</label>
+<select class="h-10 rounded-lg bg-surface-container text-on-surface px-space-md font-mono-data text-mono-data font-semibold focus:outline-none focus:ring-2 focus:ring-primary" id="recurso-select">
+<option selected="" value="REC-2025-0014">REC-2025-0014 · Halcones FC (Navarro Vega)</option>
+<option value="REC-2025-0015">REC-2025-0015 · Atlético Valladolid (Gómez T.)</option>
+</select>
+</div>
+</div>
+<!-- Tarjeta Resumen del Expediente Seleccionado -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-lg">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]">folder_special</span>
+</div>
+<div>
+<div class="flex items-center gap-space-sm">
+<span class="font-mono-score text-[20px] font-bold text-on-surface">REC-2025-0014</span>
+<span class="px-space-sm py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold">TURNO PARA RESOLUCIÓN</span>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2 mt-0.5">
+<span>Club Recurrente: <strong class="text-on-surface">Halcones FC</strong></span>
+<span>·</span>
+<span>Sancionado: <strong class="text-on-surface">Rodrigo Navarro Vega (#10)</strong></span>
+<span>·</span>
+<span class="font-mono-data text-mono-data">Interpuesto: 10/Nov/2025</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="h-10 px-space-md rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md font-medium transition-colors flex items-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Descargar Cédula y Expediente Completo</span>
+</button>
+</div>
+</div>
+<!-- COMPARATIVA LADO A LADO (2 COLUMNAS) -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-xl items-start">
+<!-- COLUMNA IZQUIERDA: RESOLUCIÓN ORIGINAL 1ª INSTANCIA -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-xl flex flex-col gap-space-lg">
+<div class="flex items-center justify-between pb-space-md bg-surface-container-low p-space-lg -mx-space-xl -mt-space-xl rounded-t-xl">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">history_edu</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">1ª Instancia · Comisión Disciplinaria</h3>
+</div>
+<span class="font-mono-data text-mono-data text-secondary">EXP-2025-0042</span>
+</div>
+<!-- Metadatos de la Primera Instancia -->
+<div class="space-y-space-md">
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-space-xs">
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-secondary font-label-sm uppercase font-semibold">Cédula Oficial:</span>
+<span class="font-mono-data text-mono-data text-on-surface font-semibold">Jornada 7 · Primera Fuerza A</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-secondary font-label-sm uppercase font-semibold">Árbitro Central Reportante:</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Carlos Medina L. (Colegio Michoacano)</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-secondary font-label-sm uppercase font-semibold">Minuto del Incidente:</span>
+<span class="font-mono-data text-mono-data text-on-surface">Minuto 64:12 (Segundo Tiempo)</span>
+</div>
+</div>
+<!-- Descripción de la Calificación Original -->
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold block mb-1">Tipificación del Árbitro en Cédula:</span>
+<p class="font-body-md text-body-md text-on-surface bg-surface-container-low p-space-md rounded-lg font-mono-data leading-relaxed">
+                "Al min 64 expulso con tarjeta roja directa al jugador #10 de Halcones FC, Rodrigo Navarro Vega, por dar un manotazo con fuerza excesiva en el rostro de su adversario en jugada donde el balón no estaba a distancia de disputa reglamentaria."
+              </p>
+</div>
+<!-- Castigo Aplicado -->
+<div class="bg-error-container/40 p-space-md rounded-xl space-y-1">
+<span class="font-label-sm text-label-sm text-on-error-container uppercase font-bold tracking-wider">Castigo Impuesto por Comisión:</span>
+<div class="font-headline-sm text-headline-sm font-bold text-error">
+                4 Partidos de Suspensión Inmediata
+              </div>
+<div class="font-body-sm text-body-sm text-on-surface">
+<strong>Sanción pecuniaria:</strong> $500.00 MXN con cargo a la fianza del club.
+              </div>
+<div class="font-mono-data text-mono-data text-secondary text-[12px] pt-1">
+                Fundamento: Art. 48 del Reglamento de Justicia Deportiva de la Liga Morelia.
+              </div>
+</div>
+<!-- Informe de Comisión Disciplinaria -->
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold block mb-1">Considerando de 1ª Instancia:</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                La Comisión Disciplinaria no advirtió causal eximente en la cédula arbitral y dictó la sanción en su sesión plenaria del lunes 08/Nov/2025 aplicando la agravante de golpe en zona cefálica.
+              </p>
+</div>
+<!-- Botón Ver Video Adjunto del Incidente -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">videocam</span>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface block">Prueba Fílmica Incorporada</span>
+<span class="font-mono-data text-mono-data text-secondary">video_jugada_minuto_64.mp4 (18.4 MB)</span>
+</div>
+</div>
+<button class="h-9 px-space-md rounded bg-surface-container-lowest text-primary hover:bg-surface-container-high font-label-sm text-label-sm font-semibold transition-colors shadow-sm" type="button">
+                Reproducir Video
+              </button>
+</div>
+</div>
+</div>
+<!-- COLUMNA DERECHA: FORMULARIO DE RESOLUCIÓN EN SEGUNDA INSTANCIA -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-xl flex flex-col gap-space-lg">
+<div class="flex items-center justify-between pb-space-md bg-surface-container p-space-lg -mx-space-xl -mt-space-xl rounded-t-xl">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Dictamen Definitivo · Presidencia</h3>
+</div>
+<span class="font-mono-data text-mono-data text-primary font-bold">ALZADA COLEGIADA</span>
+</div>
+<form class="flex flex-col gap-space-lg" onsubmit="event.preventDefault(); alert('Dictamen Definitivo emitido con éxito. El expediente queda formalmente cerrado.');">
+<!-- Síntesis de Alegatos del Recurrente -->
+<div class="bg-surface-container-low p-space-md rounded-xl">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold block mb-1">Alegatos Evaluados de Halcones FC:</span>
+<p class="font-body-sm text-body-sm text-on-surface italic leading-relaxed">
+                "Se evidencia en la reproducción cuadro a cuadro que el rival sujeta indebidamente el jersey del jugador Navarro provocando desbalance motriz. El impacto en rostro fue fortuito derivado del manoteo instintivo de liberación, sin dolo ni fuerza excesiva..."
+              </p>
+</div>
+<!-- Opciones del Dictamen (Radio Buttons Diseñados) -->
+<div>
+<label class="block font-label-md text-label-md font-bold text-on-surface mb-space-sm">
+                Sentido de la Resolución en Segunda Instancia <span class="text-error">*</span>
+</label>
+<div class="space-y-space-sm">
+<!-- Opción 1: Confirmar -->
+<label class="flex items-start gap-space-md p-space-md rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-all">
+<input class="mt-1 w-4 h-4 text-primary focus:ring-primary accent-primary" name="dictamen" type="radio" value="confirmar"/>
+<div>
+<span class="font-label-md text-label-md font-bold text-on-surface block">Confirmar sanción íntegra</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ratifica los 4 partidos y la sanción económica. Fianza retenida a favor de la Liga.</span>
+</div>
+</label>
+<!-- Opción 2: Modificar (Seleccionada) -->
+<label class="flex items-start gap-space-md p-space-md rounded-xl bg-primary-fixed/20 cursor-pointer shadow-sm">
+<input checked="" class="mt-1 w-4 h-4 text-primary focus:ring-primary accent-primary" name="dictamen" type="radio" value="modificar"/>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-bold text-primary block">Modificar sanción (Atenuantes probados)</span>
+<span class="px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-mono-data text-[10px] font-bold">RECOMENDADO</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface">Reducción a 2 partidos por comprobación de forcejeo mutuo y reclasificación al Art. 44. Multa condonada y devolución de fianza.</span>
+</div>
+</label>
+<!-- Opción 3: Revocar -->
+<label class="flex items-start gap-space-md p-space-md rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-all">
+<input class="mt-1 w-4 h-4 text-primary focus:ring-primary accent-primary" name="dictamen" type="radio" value="revocar"/>
+<div>
+<span class="font-label-md text-label-md font-bold text-on-surface block">Revocar sanción (Exoneración total)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Anulación total del castigo por error manifiesto de identidad o inexistencia de infracción.</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Nueva Penalización Modificada (Selectores) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md bg-surface-container-low p-space-md rounded-xl">
+<div>
+<label class="block font-label-sm text-label-sm text-secondary uppercase font-semibold mb-1" for="nueva-suspension">Partidos Definitivos:</label>
+<select class="w-full h-10 rounded-lg bg-surface-container-lowest text-on-surface px-space-md font-mono-data text-mono-data font-bold focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="nueva-suspension">
+<option value="1">1 partido</option>
+<option selected="" value="2">2 partidos (Art. 44 Falta Imprudente)</option>
+<option value="3">3 partidos</option>
+<option value="4">4 partidos (Original)</option>
+</select>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-secondary uppercase font-semibold mb-1" for="nueva-multa">Destino Multa y Fianza:</label>
+<select class="w-full h-10 rounded-lg bg-surface-container-lowest text-on-surface px-space-md font-mono-data text-mono-data font-bold focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="nueva-multa">
+<option selected="" value="condonada">Multa condonada · Devolver Fianza</option>
+<option value="ratificada">Multa $500 cobrada · Fianza devuelta</option>
+<option value="retenida">Retención total de fianza</option>
+</select>
+</div>
+</div>
+<!-- Fundamentos y Considerandos Jurídicos Obligatorios -->
+<div>
+<label class="block font-label-md text-label-md font-bold text-on-surface mb-1" for="fundamentos-presidencia">
+                Fundamentos reglamentarios y considerandos jurídicos del Presidente <span class="text-error">*</span>
+</label>
+<textarea class="w-full rounded-lg bg-surface-container-low text-on-surface p-space-md font-body-md text-body-md focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:outline-none transition-all resize-none shadow-inner" id="fundamentos-presidencia" required="" rows="4">Visto el recurso interpuesto y analizados los elementos probatorios digitales anexados por la directiva de Halcones FC, esta Presidencia advierte la existencia de provocación no asentada en el informe del árbitro. Con base en las facultades del Art. 76 del Estatuto Orgánico, se reclasifica la conducta de 'agresión deliberada' a 'falta grave bajo atenuante de forcejeo mutuo' (Art. 44). Por consiguiente, se modifica el castigo a 2 partidos de suspensión y se ordena el reintegro de la fianza depositada.</textarea>
+</div>
+<!-- Firmante Oficial y Validación -->
+<div class="flex items-center justify-between pt-space-xs bg-surface-container-low/50 p-space-md rounded-xl">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold">
+                  RS
+                </div>
+<div>
+<span class="font-label-md text-label-md font-bold text-on-surface block">Lic. Roberto Silva M.</span>
+<span class="font-body-sm text-body-sm text-secondary">Presidente del Comité Ejecutivo · Liga Morelia</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 font-mono-data text-mono-data text-primary text-[12px]">
+<span class="material-symbols-outlined text-[16px]">key</span> FIRMA ELECTRÓNICA VIGENTE
+              </span>
+</div>
+<!-- Botón de Emisión Definitiva -->
+<button class="w-full h-12 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-bold hover:bg-primary transition-all flex items-center justify-center gap-space-sm shadow-md" type="submit">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+<span>Emitir Dictamen Definitivo de 2ª Instancia</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+<!-- ============================================================ -->
+<!-- NOTA Y ADVERTENCIA NORMATIVA INSTITUCIONAL OBLIGATORIA       -->
+<!-- ============================================================ -->
+<div class="bg-surface-container-high rounded-xl p-space-lg flex items-start gap-space-md shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest text-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">balance</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Efectos Jurídicos de la Segunda Instancia Colegiada</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 leading-relaxed">
+<strong class="text-on-surface">Nota reglamentaria:</strong> La resolución emitida por la Presidencia del Comité Ejecutivo cierra el expediente de forma definitiva e inapelable en el ámbito municipal (<span class="font-mono-data text-mono-data text-primary font-semibold">Art. 78 del Estatuto Orgánico de la Liga Municipal de Futbol Amateur Morelia</span>). No se admitirá ulterior recurso ordinario en la jurisdicción local, surtiendo efectos ejecutivos a partir de las 00:00 horas del día inmediato a su publicación en los estrados electrónicos oficiales.
+        </p>
+</div>
+</div>
+</div>
+<!-- SCRIPT CLIENTE PARA CONMUTACIÓN DE PERSPECTIVA -->
+<script>
+    function switchView(view) {
+      const vistaClub = document.getElementById('vista-club');
+      const vistaPresidencia = document.getElementById('vista-presidencia');
+      const tabClub = document.getElementById('tab-btn-club');
+      const tabPresidencia = document.getElementById('tab-btn-presidencia');
+
+      if (view === 'club') {
+        vistaClub.classList.remove('hidden');
+        vistaClub.classList.add('flex');
+        vistaPresidencia.classList.add('hidden');
+        vistaPresidencia.classList.remove('flex');
+
+        tabClub.className = 'flex items-center gap-space-sm px-space-lg py-2.5 rounded-lg font-label-md text-label-md font-semibold transition-all shadow-sm bg-surface-container-lowest text-primary';
+        tabPresidencia.className = 'flex items-center gap-space-sm px-space-lg py-2.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all';
+      } else {
+        vistaClub.classList.add('hidden');
+        vistaClub.classList.remove('flex');
+        vistaPresidencia.classList.remove('hidden');
+        vistaPresidencia.classList.add('flex');
+
+        tabPresidencia.className = 'flex items-center gap-space-sm px-space-lg py-2.5 rounded-lg font-label-md text-label-md font-semibold transition-all shadow-sm bg-surface-container-lowest text-primary';
+        tabClub.className = 'flex items-center gap-space-sm px-space-lg py-2.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all';
+      }
+    }
+  </script>
+</div></main></div></body></html>

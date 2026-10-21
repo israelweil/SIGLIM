@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#f8f9ff", "surface-container-highest": "#d3e4fe", "on-tertiary-fixed-variant": "#7b2b34", "tertiary-fixed": "#ffdada", "inverse-surface": "#213145", "on-tertiary-container": "#ffc3c5", "primary-fixed": "#9ef6b6", "on-primary-fixed-variant": "#00522a", "secondary-fixed": "#dae2fc", "primary-fixed-dim": "#83d99c", "on-surface-variant": "#3f4940", "primary": "#004d27", "tertiary-fixed-dim": "#ffb3b6", "on-tertiary": "#ffffff", "outline-variant": "#bec9be", "outline": "#6f7a70", "surface-container-lowest": "#ffffff", "inverse-on-surface": "#eaf1ff", "error": "#ba1a1a", "surface": "#f8f9ff", "surface-container-high": "#dce9ff", "surface-tint": "#0b6d3b", "tertiary-container": "#943e46", "on-secondary-container": "#5a6278", "on-secondary-fixed": "#131b2e", "on-primary": "#ffffff", "surface-dim": "#cbdbf5", "inverse-primary": "#83d99c", "on-error-container": "#93000a", "primary-container": "#006837", "surface-variant": "#d3e4fe", "secondary": "#565e74", "on-error": "#ffffff", "secondary-fixed-dim": "#bec6e0", "on-tertiary-fixed": "#40000c", "on-surface": "#0b1c30", "tertiary": "#762730", "surface-container": "#e5eeff", "on-primary-container": "#8ee4a6", "on-secondary-fixed-variant": "#3f465b", "error-container": "#ffdad6", "on-primary-fixed": "#00210e", "on-background": "#0b1c30", "surface-container-low": "#eff4ff", "secondary-container": "#d8dff9" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-desktop": "2rem", "gutter-desktop": "1.5rem", "space-sm": "0.5rem", "space-xl": "1.5rem", "margin": "1rem", "space-xs": "0.25rem", "space-lg": "1rem", "space-md": "0.75rem", "gutter": "1rem" }, "fontFamily": { "label-md": ["Inter"], "label-sm": ["Inter"], "body-sm": ["Inter"], "headline-sm": ["Inter"], "display-lg-mobile": ["Inter"], "headline-lg": ["Inter"], "mono-data": ["JetBrains Mono"], "headline-md": ["Inter"], "body-md": ["Inter"], "body-lg": ["Inter"], "display-lg": ["Inter"], "mono-score": ["JetBrains Mono"] }, "fontSize": { "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }], "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "mono-data": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "display-lg": ["36px", { "lineHeight": "44px", "fontWeight": "700" }], "mono-score": ["28px", { "lineHeight": "32px", "fontWeight": "700" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)] overflow-y-auto"><div class="p-space-lg flex items-center gap-space-md"><div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[24px]">sports_soccer</span></div><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight truncate">SIGLIM</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">LMF Morelia A.C.</span></div></div><div class="px-space-md py-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider px-space-md">Operación de Liga</span></div><nav class="flex-1 px-space-md space-y-1 mt-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-md text-label-md rounded-lg"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="inicio" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Inicio</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="programacion" href="#"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span>Programación</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="cedulas-y-partidos" href="#"><span class="material-symbols-outlined text-[20px]">sports</span><span>Cédulas y Partidos</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="tabla-de-posiciones" href="#"><span class="material-symbols-outlined text-[20px]">format_list_numbered</span><span>Tabla de Posiciones</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="estadisticas" href="#"><span class="material-symbols-outlined text-[20px]">query_stats</span><span>Estadísticas</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="comision-disciplinaria" href="#"><span class="material-symbols-outlined text-[20px]">gavel</span><span>Comisión Disciplinaria</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="arbitros" href="#"><span class="material-symbols-outlined text-[20px]">timer</span><span>Árbitros</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="tesoreria" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span>Tesorería</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="canchas" href="#"><span class="material-symbols-outlined text-[20px]">stadium</span><span>Canchas</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="afiliaciones" href="#"><span class="material-symbols-outlined text-[20px]">badge</span><span>Afiliaciones</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm transition-colors bg-primary-container text-on-primary font-label-md text-label-md rounded-lg" data-path="comunicados" href="#"><span class="material-symbols-outlined text-[20px]">campaign</span><span>Comunicados</span></a><div class="pt-space-md pb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider px-space-md">Auditoría &amp; Control</span></div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="reportes" href="#"><span class="material-symbols-outlined text-[20px]">summarize</span><span>Reportes</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="auditoria" href="#"><span class="material-symbols-outlined text-[20px]">history</span><span>Auditoría</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="configuracion" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Configuración</span></a></nav><div class="p-space-md mt-auto"><div class="bg-surface-container-low p-space-md rounded-lg flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant">v2.4 FMF Sector Amateur</span><span class="w-2 h-2 rounded-full bg-primary-container"></span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-margin-desktop"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-space-xs rounded-full shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface uppercase">Temporada 2025–2026 · Activa</span></div><span class="hidden xl:inline-block font-body-sm text-body-sm text-on-surface-variant">Liga Municipal de Futbol Amateur Morelia A.C.</span></div><div class="flex items-center gap-space-lg"><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-full transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span></button><div class="flex items-center gap-space-md"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Dr. Javier Villaseñor S.</span><span class="font-label-sm text-label-sm text-on-surface-variant">Secretario General</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen w-full px-margin-desktop pb-margin-desktop"><div class="flex flex-col w-full">
+<!-- Top Breadcrumb & Status Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm mb-space-md">
+<div class="flex flex-wrap items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<a class="hover:text-primary transition-colors" href="#">Inicio</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Órganos de Gobierno</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="font-medium text-on-surface">Comunicados Oficiales</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        No oficial · Demostración administrativa
+      </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+        Sello FMF Sector Amateur
+      </span>
+</div>
+</div>
+<!-- Page Header & Persona Switcher -->
+<div class="flex flex-col xl:flex-row xl:items-end justify-between gap-space-lg mb-space-xl">
+<div class="space-y-1">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+          Comunicados y Circulares Oficiales
+        </h1>
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono-data text-mono-data">
+          LMFM-SEC-2025
+        </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+        Redacción por Secretaría General y promulgación/publicación oficial por la Presidencia del Comité Ejecutivo para el portal público y delegados.
+      </p>
+</div>
+<!-- Right Controls: Role Switcher & New Post Button -->
+<div class="flex flex-wrap items-center gap-space-md">
+<!-- Institutional Role Switcher -->
+<div class="inline-flex p-1 rounded-lg bg-surface-container-high shadow-inner">
+<button class="px-3 py-1.5 rounded-md text-on-primary bg-primary font-label-md text-label-md transition-all flex items-center gap-1.5 shadow-sm" id="role-sec-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+<span>Sec. General (Redacción)</span>
+</button>
+<button class="px-3 py-1.5 rounded-md text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all flex items-center gap-1.5" id="role-pres-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Presidencia (Dictamen)</span>
+</button>
+</div>
+<!-- New Circular Primary Action -->
+<button class="h-11 px-space-lg rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md font-semibold flex items-center gap-2 shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Redactar Nuevo Comunicado</span>
+</button>
+</div>
+</div>
+<!-- Metrics / KPI Ribbon -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter-desktop mb-space-xl">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex items-center justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Publicados en Portal</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg font-bold text-on-surface">24</span>
+<span class="font-label-sm text-label-sm text-primary font-medium flex items-center">
+<span class="material-symbols-outlined text-[14px]">cell_tower</span> Activos
+          </span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Notificados a 142 clubes</span>
+</div>
+<div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[26px]">campaign</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex items-center justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">En Revisión Presidencia</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg font-bold text-on-surface">2</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Pendientes</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Requiere dictamen estatutario</span>
+</div>
+<div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[26px]">hourglass_top</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex items-center justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Borradores en Secretaría</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg font-bold text-on-surface">3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">En integración</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Último editado hoy 09:15</span>
+</div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[26px]">description</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-inverse-surface rounded-xl p-space-lg shadow-sm flex items-center justify-between text-inverse-on-surface">
+<div class="space-y-1 min-w-0">
+<span class="font-label-sm text-label-sm text-inverse-primary uppercase tracking-wider block">Circular de Emergencia</span>
+<div class="flex items-center gap-1.5">
+<span class="font-mono-data text-mono-data font-bold text-on-primary truncate">COM-2025-028</span>
+<span class="w-2 h-2 rounded-full bg-primary-fixed animate-ping"></span>
+</div>
+<p class="font-body-sm text-body-sm text-surface-container-high truncate">
+          Suspensión por lluvia en UD Cuauhtémoc
+        </p>
+</div>
+<div class="w-12 h-12 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">warning</span>
+</div>
+</div>
+</div>
+<!-- Main Workstation Layout (Master-Detail) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop mb-space-xl">
+<!-- LEFT PANEL: Filter and List of Circulars (lg:col-span-4 ~35%) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- List Controls Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-md">
+<!-- Status Filter Tabs -->
+<div class="flex items-center justify-between overflow-x-auto pb-1 gap-1">
+<button class="px-2.5 py-1 rounded-md text-on-primary bg-primary font-label-sm text-label-sm whitespace-nowrap" type="button">
+            Todos (9)
+          </button>
+<button class="px-2.5 py-1 rounded-md text-on-surface-variant hover:bg-surface-container-high font-label-sm text-label-sm whitespace-nowrap" type="button">
+            Borradores (3)
+          </button>
+<button class="px-2.5 py-1 rounded-md text-on-surface-variant hover:bg-surface-container-high font-label-sm text-label-sm whitespace-nowrap" type="button">
+            En Revisión (2)
+          </button>
+<button class="px-2.5 py-1 rounded-md text-on-surface-variant hover:bg-surface-container-high font-label-sm text-label-sm whitespace-nowrap" type="button">
+            Publicados (4)
+          </button>
+</div>
+<!-- Search Input -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-[18px] text-on-surface-variant">search</span>
+<input class="w-full h-11 pl-9 pr-3 rounded-lg bg-surface-container-low text-on-surface text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Buscar por título o circular..." type="text" value="COM-2025"/>
+</div>
+<!-- Category Dropdown filter -->
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span class="font-label-sm text-label-sm uppercase">Categoría:</span>
+<select class="bg-surface-container-low text-on-surface rounded px-2 py-1 focus:outline-none font-label-sm text-label-sm">
+<option>Todas las categorías</option>
+<option selected="">Competencia y Programación</option>
+<option>Comisión Disciplinaria</option>
+<option>Mantenimiento Canchas</option>
+<option>Administrativo y Tesorería</option>
+</select>
+</div>
+</div>
+<!-- Circulars List Scroll Container -->
+<div class="space-y-space-sm">
+<!-- ITEM 1: Active item (COM-2025-029) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-md ring-2 ring-primary relative cursor-pointer transition-all hover:bg-surface-container-low">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-mono-data text-mono-data font-bold text-primary">COM-2025-029</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-secondary-fixed text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[13px]">schedule</span>
+              EN REVISIÓN
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1 line-clamp-2">
+            Ajuste extraordinario al calendario de Liguilla Libre Primera por empalme cívico
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-sm">
+            Modificación oficial a los horarios de semifinales de vuelta en el complejo UD Cuauhtémoc...
+          </p>
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span> 24/Feb/2025
+            </span>
+<span class="bg-surface-container-high px-2 py-0.5 rounded text-[10px] font-medium text-on-surface">
+              Por: Secretaría General
+            </span>
+</div>
+</div>
+<!-- ITEM 2: COM-2025-028 (Publicado) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md cursor-pointer transition-all">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-mono-data text-mono-data font-bold text-on-surface">COM-2025-028</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-primary-fixed text-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+              PUBLICADO
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-medium mb-1 line-clamp-2">
+            Suspensión preventiva de canchas 1 y 2 por mantenimiento de drenaje pluvial
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-sm">
+            Debido a las lluvias atípicas registradas en el valle de Morelia, se suspende la actividad en...
+          </p>
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">event_available</span> 20/Feb/2025 18:30
+            </span>
+<span class="text-primary font-semibold">Vigente</span>
+</div>
+</div>
+<!-- ITEM 3: COM-2025-027 (Publicado) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md cursor-pointer transition-all">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-mono-data text-mono-data font-bold text-on-surface">COM-2025-027</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-primary-fixed text-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+              PUBLICADO
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-medium mb-1 line-clamp-2">
+            Aviso de vencimiento para el pago de fianzas de registro segunda vuelta
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-sm">
+            Se recuerda a todos los delegados que el día 28 de febrero concluye el plazo reglamentario improrrogable...
+          </p>
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">event_available</span> 15/Feb/2025
+            </span>
+<span class="text-on-surface-variant">Con acuse</span>
+</div>
+</div>
+<!-- ITEM 4: COM-2025-030 (Borrador) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md cursor-pointer transition-all">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-mono-data text-mono-data font-bold text-secondary">COM-2025-030</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px]">edit</span>
+              BORRADOR
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-medium mb-1 line-clamp-2">
+            Lineamientos de seguridad y acceso para porras en etapa de semifinales
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-sm">
+            Estatuto de convivencia deportiva: prohibición de pirotecnia y delimitación de accesos perimetrales...
+          </p>
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">history</span> Modificado: Hoy 09:15
+            </span>
+<span class="text-on-surface-variant">Secretaría</span>
+</div>
+</div>
+<!-- ITEM 5: COM-2025-026 (Publicado) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md cursor-pointer transition-all opacity-80 hover:opacity-100">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-mono-data text-mono-data font-bold text-on-surface">COM-2025-026</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-primary-fixed text-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+              PUBLICADO
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-medium mb-1 line-clamp-2">
+            Convocatoria a Asamblea General Extraordinaria de Delegados
+          </h2>
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">event_available</span> 02/Feb/2025
+            </span>
+<span>Archivo Actas</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT PANEL: Editor & Portal Preview Workstation (lg:col-span-8 ~65%) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Circular Header & Metadata Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md mb-space-md gap-space-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Circular No. COM-2025-029</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-secondary-fixed text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[14px]">pending_actions</span>
+                En Revisión de Presidencia
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Liga Municipal de Futbol Amateur Morelia A.C. · Libro de Circulares Temporada 2025–2026
+            </p>
+</div>
+<!-- Quick Actions & Print -->
+<div class="flex items-center gap-space-xs">
+<button class="p-2 rounded-lg bg-surface-container-high hover:bg-surface-container text-on-surface transition-colors" title="Imprimir borrador de secretaría" type="button">
+<span class="material-symbols-outlined text-[20px]">print</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high hover:bg-surface-container text-on-surface transition-colors" title="Descargar como PDF oficial preliminar" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high hover:bg-surface-container text-on-surface transition-colors" title="Historial de cambios y auditoría" type="button">
+<span class="material-symbols-outlined text-[20px]">history_edu</span>
+</button>
+</div>
+</div>
+<!-- Metadata Strip -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md p-space-md rounded-lg bg-surface-container-low text-on-surface">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Fecha de Redacción</span>
+<span class="font-mono-data text-mono-data font-semibold text-on-surface">24 de Febrero de 2025</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Fecha Estimada de Publicación</span>
+<span class="font-mono-data text-mono-data font-semibold text-primary">Inmediata a la aprobación</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Responsable de Redacción</span>
+<span class="font-mono-data text-mono-data font-semibold text-on-surface">Dr. Javier Villaseñor (Sec. Gral)</span>
+</div>
+</div>
+</div>
+<!-- Mode Selector Tabs (Parallel Editor vs Public View) -->
+<div class="flex items-center justify-between bg-surface-container-lowest rounded-xl p-space-xs shadow-sm">
+<div class="flex items-center gap-1">
+<button class="px-space-md py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center gap-2 shadow-sm" id="tab-editor-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_document</span>
+<span>1. Editor de Contenido Institucional</span>
+</button>
+<button class="px-space-md py-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md font-medium flex items-center gap-2" id="tab-preview-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span>2. Vista Previa en Portal Público</span>
+</button>
+</div>
+<span class="text-on-surface-variant font-body-sm text-body-sm px-space-md hidden sm:inline">
+          Edición activa · Guardado automático 12:44 hrs
+        </span>
+</div>
+<!-- SECTION A: WYSIWYG Content Editor -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md" id="content-editor-section">
+<!-- Field 1: Title -->
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface font-medium flex items-center justify-between">
+<span>Título del Comunicado Oficial <span class="text-error">*</span></span>
+<span class="text-on-surface-variant font-mono-data text-xs">78/120 caracteres</span>
+</label>
+<input class="w-full h-11 px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-lg text-body-lg focus:outline-none focus:ring-2 focus:ring-primary font-medium" type="text" value="Ajuste extraordinario al calendario de Liguilla Libre Primera por empalme cívico"/>
+</div>
+<!-- Field 2: Selectors Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface font-medium">Categoría Temática</label>
+<select class="w-full h-11 px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary">
+<option selected="">Competencia y Programación</option>
+<option>Comisión Disciplinaria</option>
+<option>Canchas y Campos de Juego</option>
+<option>Administrativo y Tesorería</option>
+<option>Asamblea y Estatutos</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface font-medium">Alcance y Difusión</label>
+<select class="w-full h-11 px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary">
+<option selected="">Portal Público + Notificación a Delegados Acreditados</option>
+<option>Únicamente Intranet Interna de Delegados</option>
+<option>Colegio de Árbitros y Jueces de Línea</option>
+<option>Prensa y Medios de Comunicación Deportiva</option>
+</select>
+</div>
+</div>
+<!-- Rich Text Toolbar -->
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface font-medium">Cuerpo del Comunicado</label>
+<div class="flex flex-wrap items-center gap-1 p-1.5 rounded-t-lg bg-surface-container">
+<button class="w-8 h-8 rounded hover:bg-surface-container-highest text-on-surface flex items-center justify-center font-bold" title="Negrita" type="button">B</button>
+<button class="w-8 h-8 rounded hover:bg-surface-container-highest text-on-surface flex items-center justify-center italic" title="Cursiva" type="button">I</button>
+<button class="w-8 h-8 rounded hover:bg-surface-container-highest text-on-surface flex items-center justify-center underline" title="Subrayado" type="button">U</button>
+<span class="w-px h-5 bg-outline-variant mx-1"></span>
+<button class="w-8 h-8 rounded hover:bg-surface-container-highest text-on-surface flex items-center justify-center" title="Lista con viñetas" type="button">
+<span class="material-symbols-outlined text-[18px]">format_list_bulleted</span>
+</button>
+<button class="w-8 h-8 rounded hover:bg-surface-container-highest text-on-surface flex items-center justify-center" title="Lista numerada" type="button">
+<span class="material-symbols-outlined text-[18px]">format_list_numbered</span>
+</button>
+<span class="w-px h-5 bg-outline-variant mx-1"></span>
+<button class="w-8 h-8 rounded hover:bg-surface-container-highest text-on-surface flex items-center justify-center" title="Insertar enlace" type="button">
+<span class="material-symbols-outlined text-[18px]">link</span>
+</button>
+<button class="w-8 h-8 rounded hover:bg-surface-container-highest text-on-surface flex items-center justify-center" title="Cita reglamentaria" type="button">
+<span class="material-symbols-outlined text-[18px]">format_quote</span>
+</button>
+<button class="w-8 h-8 rounded hover:bg-surface-container-highest text-on-surface flex items-center justify-center" title="Insertar separador institucional" type="button">
+<span class="material-symbols-outlined text-[18px]">horizontal_rule</span>
+</button>
+<span class="w-px h-5 bg-outline-variant mx-1"></span>
+<button class="w-8 h-8 rounded hover:bg-surface-container-highest text-on-surface flex items-center justify-center" title="Limpiar formato" type="button">
+<span class="material-symbols-outlined text-[18px]">format_clear</span>
+</button>
+</div>
+<!-- Text Area with formatted content mock -->
+<div class="rounded-b-lg bg-surface-container-lowest p-space-lg min-h-[220px] shadow-inner font-body-md text-body-md text-on-surface space-y-space-md focus:outline-none">
+<p>
+              Por acuerdo unánime del Comité Ejecutivo y con base en las facultades que otorgan los Artículos 34 y 37 del Estatuto Orgánico de la Liga Municipal de Futbol Amateur Morelia A.C., se hace del conocimiento formal a todos los delegados de la categoría <strong>Libre Primera</strong>, cuerpos técnicos, árbitros colegiados y afición en general lo siguiente:
+            </p>
+<ul class="list-disc pl-5 space-y-2 text-on-surface">
+<li>
+<strong>Modificación de horarios:</strong> Los cotejos de vuelta correspondientes a las Semifinales de Libre Primera se reprograman para las <strong>11:30 hrs</strong> del próximo domingo 2 de marzo, con motivo del desfile y carrera atlética cívica organizada por el H. Ayuntamiento en el acceso poniente de la Unidad Deportiva Cuauhtémoc.
+              </li>
+<li>
+<strong>Revisión de canchas y tolerancia:</strong> El Colegio Municipal de Árbitros realizará el pase de lista y verificación de mallas a las 11:00 hrs puntuales. La tolerancia estatutaria para el silbatazo inicial se mantendrá de 15 minutos improrrogables.
+              </li>
+<li>
+<strong>Acceso y seguridad para porras:</strong> Queda estrictamente restringido el ingreso de objetos contundentes, bengalas y bebidas alcohólicas en las inmediaciones de los campos 22 y 23.
+              </li>
+</ul>
+<p class="text-on-surface-variant font-body-sm text-body-sm italic">
+              "El deporte formativo y la sana convivencia como patrimonio de nuestra juventud moreliana."
+            </p>
+</div>
+</div>
+<!-- Attachment Box -->
+<div class="space-y-2">
+<span class="font-label-md text-label-md text-on-surface font-medium block">Documento Anexo Oficial (Opcional)</span>
+<div class="flex items-center justify-between p-space-md rounded-lg bg-surface-container-low shadow-sm">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded bg-error-container text-on-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">picture_as_pdf</span>
+</div>
+<div class="min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface block truncate">
+                  Anexo_Calendario_Oficial_Modificado_Liguilla_2025.pdf
+                </span>
+<span class="font-mono-data text-mono-data text-on-surface-variant text-xs">
+                  1.4 MB · Firmado digitalmente por Secretaría
+                </span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-2 text-on-surface-variant hover:text-primary rounded-lg transition-colors" title="Descargar anexo" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error rounded-lg transition-colors" title="Eliminar anexo" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION B: Visual Preview of how it looks in Public Web Portal -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md" id="public-preview-section">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">public</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Simulación de Visualización Pública</span>
+</div>
+<span class="px-2.5 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+            Portal: ligamorelia.org.mx/comunicados
+          </span>
+</div>
+<!-- Rendered Portal Public Card -->
+<div class="bg-surface rounded-xl overflow-hidden shadow-md">
+<!-- Institutional Header Bar -->
+<div class="bg-primary text-on-primary px-space-lg py-space-md flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-9 h-9 rounded bg-on-primary text-primary flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[22px]">sports_soccer</span>
+</div>
+<div>
+<span class="font-label-md text-label-md font-bold block leading-tight tracking-wide uppercase">
+                  Liga Municipal de Futbol Amateur Morelia A.C.
+                </span>
+<span class="font-label-sm text-label-sm opacity-90 block">
+                  Comité Ejecutivo · Secretaría General
+                </span>
+</div>
+</div>
+<div class="text-right hidden sm:block">
+<span class="font-mono-data text-mono-data text-xs font-semibold block">Circular No. COM-2025-029</span>
+<span class="text-xs opacity-75">Morelia, Michoacán</span>
+</div>
+</div>
+<!-- Card Inner Body -->
+<div class="p-space-xl space-y-space-md bg-surface-container-lowest">
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-sm">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                COMPETENCIA Y PROGRAMACIÓN
+              </span>
+<span class="font-mono-data text-mono-data text-on-surface-variant text-body-sm">
+                Publicación oficial: 24 de Febrero de 2025
+              </span>
+</div>
+<h3 class="font-headline-lg text-headline-lg font-bold text-on-surface leading-tight">
+              Ajuste extraordinario al calendario de Liguilla Libre Primera por empalme cívico
+            </h3>
+<div class="font-body-md text-body-md text-on-surface leading-relaxed space-y-3">
+<p>
+                Por acuerdo del Comité Ejecutivo y la Secretaría General de la Liga Municipal de Futbol Amateur Morelia A.C., se hace del conocimiento de todos los delegados, árbitros y afición en general lo siguiente:
+              </p>
+<div class="bg-surface-container-low p-space-md rounded-lg space-y-2">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">schedule</span>
+<div>
+<strong class="text-on-surface">Modificación de horarios:</strong>
+<span class="text-on-surface-variant"> Los cotejos de vuelta correspondientes a las Semifinales de Libre Primera se reprograman para las 11:30 hrs debido a eventos de atletismo municipal en el acceso poniente de la Unidad Deportiva Cuauhtémoc.</span>
+</div>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">sports</span>
+<div>
+<strong class="text-on-surface">Revisión de canchas:</strong>
+<span class="text-on-surface-variant"> Los silbantes designados efectuarán el marcaje reglamentario y cotejo de mallas 30 minutos previos.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Public Action Download Row -->
+<div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+<span>Publicado por el Comité Ejecutivo de la Liga Municipal de Futbol Amateur Morelia A.C. · Validez oficial</span>
+</div>
+<button class="h-10 px-space-md rounded-lg bg-surface-container-high hover:bg-surface-container text-on-surface font-label-md text-label-md font-medium flex items-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span>Descargar circular en PDF</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION C: Action Bar By Institutional Role -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<!-- SECRETARÍA VIEW BLOCK -->
+<div class="space-y-space-md" id="role-sec-controls">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">how_to_reg</span>
+<span class="font-headline-sm text-headline-sm font-bold">Acciones de Secretaría General</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Como Secretario General, una vez redactado el comunicado debe ser turnado a la Presidencia del Comité Ejecutivo para su firma electrónica y promulgación en estrados digitales.
+          </p>
+<div class="flex flex-wrap items-center justify-end gap-space-md pt-space-xs">
+<button class="h-11 px-space-lg rounded-lg bg-surface-container-high hover:bg-surface-container text-on-surface font-label-md text-label-md font-medium flex items-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Guardar Borrador</span>
+</button>
+<button class="h-11 px-space-lg rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center gap-2 shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Enviar a Aprobación de Presidencia</span>
+</button>
+</div>
+</div>
+<!-- PRESIDENTE VIEW BLOCK (Dictamen / Promulgación) -->
+<div class="p-space-lg rounded-xl bg-surface-container-low space-y-space-md hidden" id="role-pres-controls">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">gavel</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Dictamen y Promulgación de Presidencia</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+              Facultad Estatutaria Art. 21
+            </span>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface font-medium block">
+              Motivo de aprobación u observaciones reglamentarias <span class="text-error">*</span>
+</label>
+<textarea class="w-full p-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-inner" placeholder="Escriba los considerandos de la resolución o el motivo específico en caso de requerir modificaciones a la Secretaría..." rows="3"></textarea>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">info</span>
+              La publicación en el portal público genera notificación inmediata a los 142 clubes federados.
+            </span>
+</div>
+<div class="flex flex-wrap items-center justify-end gap-space-md pt-space-xs">
+<button class="h-11 px-space-lg rounded-lg bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim font-label-md text-label-md font-semibold flex items-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">assignment_return</span>
+<span>Devolver con Observaciones</span>
+</button>
+<button class="h-11 px-space-lg rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md font-bold flex items-center gap-2 shadow-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span>Aprobar y Publicar en Portal Oficial</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Regulatory Footer / Marco Jurídico Normativo -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-start gap-space-md">
+<span class="material-symbols-outlined text-primary text-[28px] shrink-0 mt-0.5">policy</span>
+<div class="space-y-0.5">
+<span class="font-label-md text-label-md font-bold text-on-surface block">
+          Marco Normativo de Difusión y Validez Jurídica
+        </span>
+<p class="max-w-4xl">
+          Conforme a los Estatutos Generales de la Liga Municipal de Futbol Amateur Morelia A.C. y el Reglamento del Sector Amateur de la Federación Mexicana de Fútbol Asociación (FMF), toda circular emitida a través de esta plataforma surte efectos de notificación oficial a las 24 horas de su publicación en el portal público o fijación en estrados digitales.
+        </p>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-mono-data text-mono-data text-xs block text-on-surface">Secretaría de Actas y Acuerdos</span>
+<span class="text-xs text-on-surface-variant">Periodo Constitucional 2024–2028</span>
+</div>
+</div>
+<!-- Client-side Micro-interactions -->
+<script>
+    (function() {
+      // Role Switcher interactivity
+      const secBtn = document.getElementById('role-sec-btn');
+      const presBtn = document.getElementById('role-pres-btn');
+      const secControls = document.getElementById('role-sec-controls');
+      const presControls = document.getElementById('role-pres-controls');
+
+      if (secBtn && presBtn && secControls && presControls) {
+        secBtn.addEventListener('click', function() {
+          secBtn.className = 'px-3 py-1.5 rounded-md text-on-primary bg-primary font-label-md text-label-md transition-all flex items-center gap-1.5 shadow-sm';
+          presBtn.className = 'px-3 py-1.5 rounded-md text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all flex items-center gap-1.5';
+          secControls.classList.remove('hidden');
+          presControls.classList.add('hidden');
+        });
+
+        presBtn.addEventListener('click', function() {
+          presBtn.className = 'px-3 py-1.5 rounded-md text-on-primary bg-primary font-label-md text-label-md transition-all flex items-center gap-1.5 shadow-sm';
+          secBtn.className = 'px-3 py-1.5 rounded-md text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all flex items-center gap-1.5';
+          presControls.classList.remove('hidden');
+          secControls.classList.add('hidden');
+        });
+      }
+
+      // Tab switcher interactivity
+      const tabEditorBtn = document.getElementById('tab-editor-btn');
+      const tabPreviewBtn = document.getElementById('tab-preview-btn');
+      const editorSection = document.getElementById('content-editor-section');
+      const previewSection = document.getElementById('public-preview-section');
+
+      if (tabEditorBtn && tabPreviewBtn && editorSection && previewSection) {
+        tabEditorBtn.addEventListener('click', function() {
+          tabEditorBtn.className = 'px-space-md py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center gap-2 shadow-sm';
+          tabPreviewBtn.className = 'px-space-md py-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md font-medium flex items-center gap-2';
+          editorSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+
+        tabPreviewBtn.addEventListener('click', function() {
+          tabPreviewBtn.className = 'px-space-md py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center gap-2 shadow-sm';
+          tabEditorBtn.className = 'px-space-md py-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md font-medium flex items-center gap-2';
+          previewSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+      }
+    })();
+  </script>
+</div></main></div></body></html>

@@ -1,0 +1,1041 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-fixed": "#9ef6b6", "outline-variant": "#bec9be", "inverse-primary": "#83d99c", "on-surface-variant": "#3f4940", "primary": "#004d27", "on-primary-fixed": "#00210e", "on-secondary": "#ffffff", "secondary-container": "#d8dff9", "tertiary-container": "#943e46", "tertiary": "#762730", "error": "#ba1a1a", "outline": "#6f7a70", "on-primary-fixed-variant": "#00522a", "background": "#f8f9ff", "primary-fixed-dim": "#83d99c", "on-background": "#0b1c30", "surface-dim": "#cbdbf5", "on-secondary-fixed": "#131b2e", "primary-container": "#006837", "on-tertiary-fixed-variant": "#7b2b34", "tertiary-fixed": "#ffdada", "on-secondary-fixed-variant": "#3f465b", "on-surface": "#0b1c30", "on-error": "#ffffff", "surface-bright": "#f8f9ff", "secondary": "#565e74", "surface-container-high": "#dce9ff", "secondary-fixed-dim": "#bec6e0", "inverse-on-surface": "#eaf1ff", "inverse-surface": "#213145", "surface-variant": "#d3e4fe", "surface-container-highest": "#d3e4fe", "on-tertiary": "#ffffff", "on-tertiary-container": "#ffc3c5", "error-container": "#ffdad6", "surface-container": "#e5eeff", "tertiary-fixed-dim": "#ffb3b6", "on-primary-container": "#8ee4a6", "on-secondary-container": "#5a6278", "on-primary": "#ffffff", "surface-tint": "#0b6d3b", "surface-container-lowest": "#ffffff", "surface": "#f8f9ff", "secondary-fixed": "#dae2fc", "surface-container-low": "#eff4ff", "on-error-container": "#93000a", "on-tertiary-fixed": "#40000c" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "1.5rem", "gutter": "1rem", "space-lg": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "gutter-desktop": "1.5rem", "margin": "1rem", "margin-desktop": "2rem", "space-md": "0.75rem" }, "fontFamily": { "label-md": ["Inter"], "headline-lg": ["Inter"], "body-sm": ["Inter"], "display-lg-mobile": ["Inter"], "mono-score": ["JetBrains Mono"], "label-sm": ["Inter"], "headline-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "mono-data": ["JetBrains Mono"], "body-md": ["Inter"], "display-lg": ["Inter"] }, "fontSize": { "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }], "mono-score": ["28px", { "lineHeight": "32px", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "mono-data": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "display-lg": ["36px", { "lineHeight": "44px", "fontWeight": "700" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-desktop flex items-center gap-space-sm bg-surface-container-low"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[22px]">sports_soccer</span></div><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-on-surface leading-tight tracking-tight truncate">SIGLIM</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate uppercase">Liga Morelia</span></div></div><div class="px-gutter-desktop py-space-sm bg-surface-container-low/50"><div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Administración</div></div><nav class="flex-1 px-gutter py-space-sm space-y-space-xs overflow-y-auto" data-active-classes="bg-primary-container text-on-primary font-headline-sm rounded-lg"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="inicio" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Inicio</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mi-club-organizacion" href="#"><span class="material-symbols-outlined text-[20px]">shield</span><span>Mi club / Organización</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="temporadas" href="#"><span class="material-symbols-outlined text-[20px]">emoji_events</span><span>Temporadas</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="cedulas-y-partidos" href="#"><span class="material-symbols-outlined text-[20px]">assignment</span><span>Cédulas y Partidos</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="jugadores" href="#"><span class="material-symbols-outlined text-[20px]">badge</span><span>Jugadores</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="roles-y-permisos" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Roles y Permisos</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="notificaciones" href="#"><span class="material-symbols-outlined text-[20px]">notifications</span><span>Notificaciones</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="tesoreria" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span>Tesorería</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="configuracion" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Configuración</span></a></nav><div class="p-gutter bg-surface-container-lowest"><div class="flex items-center gap-space-sm px-space-sm py-space-xs bg-surface-container rounded-lg"><span class="material-symbols-outlined text-primary-container text-[18px]">verified</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Federado FMF</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter-desktop flex items-center justify-between"><div class="flex items-center gap-space-md min-w-0"><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Órgano de Control Normativo y Registro de Cédulas</h1><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-low"><span class="inline-block w-2 h-2 rounded-full bg-primary-container"></span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Temporada 2025–2026 · Activa</span></div></div><div class="flex items-center gap-space-lg flex-shrink-0"><div class="relative flex items-center justify-center"><button aria-label="Notificaciones institucionales" class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></div><div class="flex items-center gap-space-md pl-space-sm"><div class="text-right hidden sm:block"><div class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Lic. Fernando Morales</div><div class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Administrador General</div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="relative pt-16 bg-background w-full px-gutter-desktop min-h-screen"><div class="flex flex-col w-full pb-margin-desktop">
+<!-- Sub-barra Institucional de Contexto Federado -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md py-space-md mb-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-11 h-11 rounded-lg bg-surface-container-high text-primary flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">shield</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Secretaría General · SIGLIM</span>
+<span class="text-outline-variant font-mono-data text-body-sm">/</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Libro de Gobierno</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Padrón Oficial de Clubes Afiliados</h2>
+</div>
+</div>
+<!-- Acciones Globales del Módulo -->
+<div class="flex items-center gap-space-sm">
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-primary-container"></span>
+<span>48 Clubes Registrados</span>
+</div>
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm h-11 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">file_download</span>
+<span>Exportar Padrón</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm h-11 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Afiliar Nuevo Club</span>
+</button>
+</div>
+</div>
+<!-- Layout Master-Detail (Split Panel) -->
+<div class="grid grid-cols-12 gap-gutter-desktop items-start">
+<!-- PANEL IZQUIERDO: MASTER LIST (5 de 12 columnas en escritorio grande) -->
+<section class="col-span-12 xl:col-span-5 flex flex-col gap-space-md bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<!-- Controles de Búsqueda y Filtrado -->
+<div class="flex flex-col gap-space-sm">
+<div class="relative w-full">
+<span class="absolute left-3.5 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline text-[20px]">search</span>
+<input class="w-full h-11 pl-10 pr-10 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-md text-body-md focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:outline-none transition-all" placeholder="Buscar club por nombre o folio..." type="text" value="">
+<button aria-label="Limpiar búsqueda" class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="relative flex-1">
+<select aria-label="Filtro de estado" class="w-full h-11 px-3 pr-8 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md appearance-none focus:outline-none focus:ring-2 focus:ring-primary">
+<option value="todos">Todos los estados</option>
+<option selected="" value="afiliado">Afiliado y Vigente</option>
+<option value="tramite">En trámite</option>
+<option value="suspendido">Suspendido / Con adeudo</option>
+<option value="baja">Baja temporal</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[20px]">arrow_drop_down</span>
+</div>
+<button class="h-11 px-space-md rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container flex items-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+<span class="hidden sm:inline">Filtros</span>
+</button>
+</div>
+</div>
+<!-- Conteo y Aviso de Integridad -->
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-space-xs">
+<span class="uppercase tracking-wider">6 de 48 Clubes mostrados</span>
+<span class="inline-flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[14px]">info</span>
+          Valores con marca son demostrativos
+        </span>
+</div>
+<!-- Lista / Tabla de Clubes -->
+<div class="flex flex-col gap-space-xs overflow-hidden" role="list">
+<!-- CLUB 1: Halcones FC (Activo / Seleccionado) -->
+<article class="p-space-md rounded-lg bg-primary/5 shadow-sm transition-all cursor-pointer relative" role="listitem">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container rounded-l-lg"></div>
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-lg bg-primary text-on-primary flex items-center justify-center font-display-lg-mobile text-headline-sm font-bold flex-shrink-0 shadow-sm">
+<span>H</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Halcones FC</h3>
+<span class="inline-block px-1.5 py-0.5 rounded bg-surface-container text-primary font-mono-data text-body-sm font-semibold">AF-014</span>
+</div>
+<div class="flex items-center gap-space-xs mt-0.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/10 text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                    AFILIADO · 2025–2026
+                  </span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary-container text-[20px] flex-shrink-0 mt-1">arrow_forward_ios</span>
+</div>
+<!-- Métricas en lista -->
+<div class="grid grid-cols-3 gap-space-xs mt-space-md pt-space-sm bg-surface-container-lowest/80 rounded-lg p-space-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Equipos</span>
+<div class="flex items-center gap-1">
+<span class="font-mono-data text-body-md text-on-surface font-semibold">6</span>
+<span class="inline-flex items-center text-[10px] text-tertiary font-label-sm" title="Dato preliminar para auditoría">
+<span class="material-symbols-outlined text-[12px]">info</span> No oficial
+                </span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Jugadores</span>
+<div class="flex items-center gap-1">
+<span class="font-mono-data text-body-md text-on-surface font-semibold">142</span>
+<span class="inline-flex items-center text-[10px] text-tertiary font-label-sm" title="Dato preliminar para auditoría">
+<span class="material-symbols-outlined text-[12px]">info</span> No oficial
+                </span>
+</div>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Adeudo Liga</span>
+<div class="flex items-center justify-end gap-1">
+<span class="font-mono-data text-body-md text-primary font-semibold">$0.00</span>
+<span class="inline-flex items-center text-[10px] text-tertiary font-label-sm" title="Dato preliminar para auditoría">
+<span class="material-symbols-outlined text-[12px]">info</span> No oficial
+                </span>
+</div>
+</div>
+</div>
+</article>
+<!-- CLUB 2: Deportivo Indeco -->
+<article class="p-space-md rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer" role="listitem">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-lg bg-secondary text-on-secondary flex items-center justify-center font-display-lg-mobile text-headline-sm font-bold flex-shrink-0">
+<span>DI</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Deportivo Indeco</h3>
+<span class="inline-block px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono-data text-body-sm">AF-008</span>
+</div>
+<div class="flex items-center gap-space-xs mt-0.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/10 text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                    AFILIADO · 2025–2026
+                  </span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] flex-shrink-0 mt-1">chevron_right</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs mt-space-sm pt-space-xs text-body-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Equipos</span>
+<span class="font-mono-data text-body-md text-on-surface">4 eq. <span class="text-[10px] text-secondary font-label-sm">[No oficial]</span></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Jugadores</span>
+<span class="font-mono-data text-body-md text-on-surface">88 jug. <span class="text-[10px] text-secondary font-label-sm">[No oficial]</span></span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Adeudo</span>
+<span class="font-mono-data text-body-md text-tertiary font-semibold">$1,200.00 <span class="text-[10px] text-secondary font-label-sm">[No oficial]</span></span>
+</div>
+</div>
+</article>
+<!-- CLUB 3: Real Atapaneo -->
+<article class="p-space-md rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer" role="listitem">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-lg bg-inverse-surface text-inverse-on-surface flex items-center justify-center font-display-lg-mobile text-headline-sm font-bold flex-shrink-0">
+<span>RA</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Real Atapaneo</h3>
+<span class="inline-block px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono-data text-body-sm">AF-022</span>
+</div>
+<div class="flex items-center gap-space-xs mt-0.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/10 text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                    AFILIADO · 2025–2026
+                  </span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] flex-shrink-0 mt-1">chevron_right</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs mt-space-sm pt-space-xs text-body-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Equipos</span>
+<span class="font-mono-data text-body-md text-on-surface">5 eq. <span class="text-[10px] text-secondary font-label-sm">[No oficial]</span></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Jugadores</span>
+<span class="font-mono-data text-body-md text-on-surface">116 jug. <span class="text-[10px] text-secondary font-label-sm">[No oficial]</span></span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Adeudo</span>
+<span class="font-mono-data text-body-md text-primary font-semibold">$0.00 <span class="text-[10px] text-secondary font-label-sm">[No oficial]</span></span>
+</div>
+</div>
+</article>
+<!-- CLUB 4: Fuerza Morelia -->
+<article class="p-space-md rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer" role="listitem">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-lg bg-tertiary-container text-on-tertiary flex items-center justify-center font-display-lg-mobile text-headline-sm font-bold flex-shrink-0">
+<span>FM</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Fuerza Morelia</h3>
+<span class="inline-block px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono-data text-body-sm">AF-031</span>
+</div>
+<div class="flex items-center gap-space-xs mt-0.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                    ADEUDO PARCIAL
+                  </span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] flex-shrink-0 mt-1">chevron_right</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs mt-space-sm pt-space-xs text-body-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Equipos</span>
+<span class="font-mono-data text-body-md text-on-surface">3 eq. <span class="text-[10px] text-secondary font-label-sm">[No oficial]</span></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Jugadores</span>
+<span class="font-mono-data text-body-md text-on-surface">64 jug. <span class="text-[10px] text-secondary font-label-sm">[No oficial]</span></span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Adeudo</span>
+<span class="font-mono-data text-body-md text-error font-semibold">$2,450.00 <span class="text-[10px] text-secondary font-label-sm">[No oficial]</span></span>
+</div>
+</div>
+</article>
+<!-- CLUB 5: Atlético Valladolid -->
+<article class="p-space-md rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer" role="listitem">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-lg bg-secondary-container text-on-secondary-fixed flex items-center justify-center font-display-lg-mobile text-headline-sm font-bold flex-shrink-0">
+<span>AV</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Atlético Valladolid</h3>
+<span class="inline-block px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono-data text-body-sm">AF-003</span>
+</div>
+<div class="flex items-center gap-space-xs mt-0.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/10 text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                    AFILIADO · 2025–2026
+                  </span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] flex-shrink-0 mt-1">chevron_right</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs mt-space-sm pt-space-xs text-body-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Equipos</span>
+<span class="font-mono-data text-body-md text-on-surface">8 eq. <span class="text-[10px] text-secondary font-label-sm">[No oficial]</span></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Jugadores</span>
+<span class="font-mono-data text-body-md text-on-surface">190 jug. <span class="text-[10px] text-secondary font-label-sm">[No oficial]</span></span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Adeudo</span>
+<span class="font-mono-data text-body-md text-primary font-semibold">$0.00 <span class="text-[10px] text-secondary font-label-sm">[No oficial]</span></span>
+</div>
+</div>
+</article>
+<!-- CLUB 6: Leones Negros Morelia -->
+<article class="p-space-md rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer" role="listitem">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-lg bg-on-surface text-surface flex items-center justify-center font-display-lg-mobile text-headline-sm font-bold flex-shrink-0">
+<span>LN</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Leones Negros Morelia</h3>
+<span class="inline-block px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono-data text-body-sm">AF-019</span>
+</div>
+<div class="flex items-center gap-space-xs mt-0.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/10 text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                    AFILIADO · 2025–2026
+                  </span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] flex-shrink-0 mt-1">chevron_right</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs mt-space-sm pt-space-xs text-body-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Equipos</span>
+<span class="font-mono-data text-body-md text-on-surface">4 eq. <span class="text-[10px] text-secondary font-label-sm">[No oficial]</span></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Jugadores</span>
+<span class="font-mono-data text-body-md text-on-surface">95 jug. <span class="text-[10px] text-secondary font-label-sm">[No oficial]</span></span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Adeudo</span>
+<span class="font-mono-data text-body-md text-primary font-semibold">$0.00 <span class="text-[10px] text-secondary font-label-sm">[No oficial]</span></span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- PANEL DERECHO: DETALLE DEL CLUB SELECCIONADO (7 de 12 columnas en escritorio) -->
+<main class="col-span-12 xl:col-span-7 flex flex-col gap-space-lg">
+<!-- Ficha de Encabezado Institucional del Club -->
+<header class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-lg">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<!-- Emblema Heráldico Gráfico del Club -->
+<div class="w-16 h-16 rounded-xl bg-primary-container text-on-primary flex items-center justify-center font-display-lg text-display-lg font-bold shadow-md relative overflow-hidden flex-shrink-0">
+<span class="material-symbols-outlined text-[40px] text-on-primary-container">sports_soccer</span>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-xs">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold">Halcones FC</h1>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                  AFILIADO Y CONVALIDADO · TEMPORADA 2025–2026
+                </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-0.5 text-on-surface-variant font-body-sm text-body-sm mt-1">
+<span class="font-mono-data font-semibold text-on-surface">REG-CLUB-1984-014</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>Fundado en 1984</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-primary font-medium">42 años de afiliación ininterrumpida</span>
+</div>
+</div>
+</div>
+<!-- Acciones de Cabecera -->
+<div class="flex items-center gap-space-xs self-stretch sm:self-auto justify-end">
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm h-11 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Editar Club</span>
+</button>
+<!-- Menú de Acciones Secundarias con dropdown script -->
+<div class="relative" id="dropdownMenuWrapper">
+<button aria-expanded="false" aria-label="Más acciones de club" class="w-11 h-11 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container flex items-center justify-center transition-colors" id="btnMoreActions" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<!-- Popover de Más Acciones -->
+<div class="hidden absolute right-0 mt-2 w-72 bg-surface-container-lowest rounded-xl shadow-xl z-30 p-space-xs flex-col gap-1" id="moreActionsMenu">
+<div class="px-space-sm py-space-xs font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">
+                  Actos Normativos / Liga
+                </div>
+<button class="w-full text-left flex items-start gap-space-sm px-space-sm py-space-sm rounded-lg hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors" onclick="alert('Normativa SIGLIM: El cambio de nombre social o distintivo deportivo exige acta notariada de asamblea extraordinaria, convalidación de mayoría calificada y dictamen de la Comisión de Honor y Justicia.');" type="button">
+<span class="material-symbols-outlined text-tertiary text-[20px] mt-0.5">swap_horiz</span>
+<div>
+<div class="font-semibold text-on-surface">Registrar cambio de nombre</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Requiere acta protocolizada de asamblea</div>
+</div>
+</button>
+<button class="w-full text-left flex items-start gap-space-sm px-space-sm py-space-sm rounded-lg hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-outline text-[20px] mt-0.5">lock_reset</span>
+<div>
+<div class="font-semibold text-on-surface">Reexpedir credenciales de club</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Generar sellos digitales 2025–2026</div>
+</div>
+</button>
+<div class="h-px bg-surface-container my-1"></div>
+<button class="w-full text-left flex items-start gap-space-sm px-space-sm py-space-sm rounded-lg hover:bg-error-container text-on-error-container font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px] mt-0.5">block</span>
+<div>
+<div class="font-semibold">Emitir suspensión preventiva</div>
+<div class="font-body-sm text-body-sm opacity-90 leading-tight">Por informe arbitral o sanción disciplinaria</div>
+</div>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Indicadores Clave en Cabecera -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-space-xs">
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Equipos Federados</span>
+<div class="flex items-baseline justify-between">
+<span class="font-mono-score text-mono-score text-on-surface">6</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Categorías activas</span>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Jugadores Activos</span>
+<span class="inline-flex items-center gap-0.5 text-[10px] text-tertiary font-label-sm" title="Dato sujeto a cierre de cédulas">
+<span class="material-symbols-outlined text-[13px]">info</span> No oficial
+              </span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-mono-score text-mono-score text-on-surface">142</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Con registro médico</span>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Estatus de Fianza</span>
+<span class="inline-flex items-center gap-0.5 text-[10px] text-tertiary font-label-sm" title="Valores preliminares en proceso de tesorería">
+<span class="material-symbols-outlined text-[13px]">info</span> No oficial
+              </span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-mono-score text-mono-score text-primary">$0.00</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Al corriente (2025)</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Contenedor con Sistema de Pestañas -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<!-- Tab Navigation Bar -->
+<div class="flex items-center bg-surface-container-low px-space-md pt-space-xs gap-space-xs overflow-x-auto" role="tablist">
+<button aria-selected="true" class="tab-btn px-space-lg py-space-md font-label-md text-label-md font-semibold text-primary border-b-2 border-primary transition-all whitespace-nowrap flex items-center gap-space-xs" onclick="switchClubTab('tab-datos', this)" role="tab" type="button">
+<span class="material-symbols-outlined text-[18px]">info</span>
+<span>Datos</span>
+</button>
+<button aria-selected="false" class="tab-btn px-space-lg py-space-md font-label-md text-label-md font-semibold text-on-surface-variant hover:text-on-surface transition-all whitespace-nowrap flex items-center gap-space-xs" onclick="switchClubTab('tab-directiva', this)" role="tab" type="button">
+<span class="material-symbols-outlined text-[18px]">groups</span>
+<span>Directiva</span>
+</button>
+<button aria-selected="false" class="tab-btn px-space-lg py-space-md font-label-md text-label-md font-semibold text-on-surface-variant hover:text-on-surface transition-all whitespace-nowrap flex items-center gap-space-xs" onclick="switchClubTab('tab-equipos', this)" role="tab" type="button">
+<span class="material-symbols-outlined text-[18px]">sports</span>
+<span>Equipos</span>
+</button>
+<button aria-selected="false" class="tab-btn px-space-lg py-space-md font-label-md text-label-md font-semibold text-on-surface-variant hover:text-on-surface transition-all whitespace-nowrap flex items-center gap-space-xs" onclick="switchClubTab('tab-afiliaciones', this)" role="tab" type="button">
+<span class="material-symbols-outlined text-[18px]">history_edu</span>
+<span>Afiliaciones</span>
+</button>
+</div>
+<!-- ============================================== -->
+<!-- PESTAÑA A: DATOS GENERALES Y COLORES REGISTRADOS -->
+<!-- ============================================== -->
+<div class="tab-content p-space-lg flex flex-col gap-space-xl" id="tab-datos">
+<!-- Bloque: Información General y Sede -->
+<div class="flex flex-col gap-space-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">location_on</span>
+<span>Información General Federada</span>
+</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Sede Social y Notificaciones</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Calle Vicente Santa María #450, Col. Centro, Morelia, Mich.</span>
+<span class="font-body-sm text-body-sm text-secondary">C.P. 58000 · Tel. (443) 312-8890</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Campo Base Asignado Oficial</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Cancha 12 - U.D. Cuauhtémoc (Policía y Tránsito)</span>
+<span class="font-body-sm text-body-sm text-primary font-medium">Superficie de pasto natural reglamentario · Con vestidores</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Identificación Fiscal / Régimen</span>
+<span class="font-mono-data text-body-md text-on-surface font-medium">HFC-841012-K78</span>
+<span class="font-body-sm text-body-sm text-secondary">Asociación Deportiva Civil Sin Fines de Lucro</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Representante Legal Acreditado</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Ing. Javier Carranza Silva</span>
+<span class="font-body-sm text-body-sm text-secondary">Poder Notarial No. 4,112 de Morelia</span>
+</div>
+</div>
+</div>
+<!-- Bloque: Colores del Uniforme como Muestras Visuales (Swatches) -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">palette</span>
+<span>Colores del Uniforme Homologados ante Colegio Arbitral</span>
+</h3>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Norma Oficial SIGLIM Art. 28</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Uniforme Local (Titular) -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Uniforme Titular (Local)</span>
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary-container font-label-sm text-label-sm font-semibold">Prioridad Cancha</span>
+</div>
+<!-- Swatches de color -->
+<div class="flex items-center gap-space-md py-space-xs">
+<div class="flex items-center gap-space-xs">
+<div class="w-10 h-10 rounded-lg shadow-sm flex items-center justify-center text-white font-mono-data text-[10px]" style="background-color: #0a5c36;">
+                      #0A5C36
+                    </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Verde Botella</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Camiseta y Short</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<div class="w-10 h-10 rounded-lg shadow-sm flex items-center justify-center text-on-surface font-mono-data text-[10px]" style="background-color: #ffffff;">
+                      #FFFFFF
+                    </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Blanco Óptico</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Franja y Números</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<div class="w-10 h-10 rounded-lg shadow-sm flex items-center justify-center text-on-surface font-mono-data text-[10px]" style="background-color: #d4af37;">
+                      #D4AF37
+                    </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Oro Clásico</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Calcetas</span>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container-lowest p-space-sm rounded-lg">
+<strong>Descripción en Cédula:</strong> Camiseta verde con franja diagonal blanca, dorsales blancos de 25 cm legibles en espalda, short verde bosque liso, calcetas en tono dorado distintivo.
+                </p>
+</div>
+<!-- Uniforme Visitante (Alternativo) -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Uniforme Alternativo (Visita)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold">Alto Contraste</span>
+</div>
+<!-- Swatches de color -->
+<div class="flex items-center gap-space-md py-space-xs">
+<div class="flex items-center gap-space-xs">
+<div class="w-10 h-10 rounded-lg shadow-sm flex items-center justify-center text-white font-mono-data text-[10px]" style="background-color: #0d1b2a;">
+                      #0D1B2A
+                    </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Azul Marino</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Camiseta y Calcetas</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<div class="w-10 h-10 rounded-lg shadow-sm flex items-center justify-center text-on-surface font-mono-data text-[10px]" style="background-color: #ffffff;">
+                      #FFFFFF
+                    </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Blanco</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Short y Vivos</span>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container-lowest p-space-sm rounded-lg">
+<strong>Descripción en Cédula:</strong> Camiseta azul marino oscuro con ribetes blancos en mangas, números termo-adheridos en blanco contrastante, short blanco liso, calcetas azul marino.
+                </p>
+</div>
+</div>
+</div>
+<!-- Documentación Estatutaria en Resguardo -->
+<div class="flex flex-col gap-space-sm">
+<h4 class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Documentación en Resguardo Oficial de la Liga</h4>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div class="flex items-center justify-between p-space-sm px-space-md rounded-lg bg-surface-container-lowest">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">description</span>
+<span class="font-body-md text-body-md text-on-surface">Acta Constitutiva Protocolizada</span>
+</div>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Vigente
+                </span>
+</div>
+<div class="flex items-center justify-between p-space-sm px-space-md rounded-lg bg-surface-container-lowest">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">verified_user</span>
+<span class="font-body-md text-body-md text-on-surface">Carta de No Adeudo 2024–2025</span>
+</div>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Convalidada
+                </span>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================== -->
+<!-- PESTAÑA B: DIRECTIVA OFICIAL REGISTRADA        -->
+<!-- ============================================== -->
+<div class="tab-content hidden p-space-lg flex flex-col gap-space-lg" id="tab-directiva">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Mesa Directiva Registrada ante la Liga</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Representantes con voz y voto estatutario en Asambleas Generales de Presidentes.</p>
+</div>
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm h-11 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-colors shadow-sm flex-shrink-0" onclick="alert('Se requiere folio de acta de asamblea de club para registrar cambio de directiva');" type="button">
+<span class="material-symbols-outlined text-[18px]">how_to_reg</span>
+<span>Registrar Cambio de Directiva</span>
+</button>
+</div>
+<!-- Tabla de Cargos Mandatados -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase">
+<th class="py-space-sm px-space-md">Cargo</th>
+<th class="py-space-sm px-space-md">Titular Registrado</th>
+<th class="py-space-sm px-space-md">Credencial Liga</th>
+<th class="py-space-sm px-space-md">Vigencia Desde</th>
+<th class="py-space-sm px-space-md text-right">Estatus Normativo</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-md text-body-md">
+<!-- 1. Presidente -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-md font-semibold text-on-surface">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">stars</span>
+<span>Presidente</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="font-semibold text-on-surface">Ing. Javier Carranza Silva</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Firma autógrafa registrada en Libro</div>
+</td>
+<td class="py-space-md px-space-md font-mono-data text-body-sm text-on-surface">CR-DIR-8401</td>
+<td class="py-space-md px-space-md font-mono-data text-body-sm text-on-surface-variant">15/Ago/2024</td>
+<td class="py-space-md px-space-md text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                      AUTORIZADO Y REGISTRADO
+                    </span>
+</td>
+</tr>
+<!-- 2. Secretario -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-md font-semibold text-on-surface">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">history_edu</span>
+<span>Secretario</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="font-semibold text-on-surface">Lic. Patricia Vega Méndez</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Enlace oficial de correspondencia</div>
+</td>
+<td class="py-space-md px-space-md font-mono-data text-body-sm text-on-surface">CR-DIR-8402</td>
+<td class="py-space-md px-space-md font-mono-data text-body-sm text-on-surface-variant">15/Ago/2024</td>
+<td class="py-space-md px-space-md text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                      AUTORIZADO Y REGISTRADO
+                    </span>
+</td>
+</tr>
+<!-- 3. Tesorero -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-md font-semibold text-on-surface">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">account_balance_wallet</span>
+<span>Tesorero</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="font-semibold text-on-surface">C.P. Mario Gómez Téllez</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Responsable fiscal de fianzas y pagos</div>
+</td>
+<td class="py-space-md px-space-md font-mono-data text-body-sm text-on-surface">CR-DIR-8403</td>
+<td class="py-space-md px-space-md font-mono-data text-body-sm text-on-surface-variant">15/Ago/2024</td>
+<td class="py-space-md px-space-md text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                      AUTORIZADO Y REGISTRADO
+                    </span>
+</td>
+</tr>
+<!-- 4. Delegado -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-md font-semibold text-on-surface">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">badge</span>
+<span>Delegado de Cancha</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="font-semibold text-on-surface">Julio César Ortiz</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Firma de cédulas arbitrales de jornada</div>
+</td>
+<td class="py-space-md px-space-md font-mono-data text-body-sm text-on-surface">CR-DEL-8404</td>
+<td class="py-space-md px-space-md font-mono-data text-body-sm text-on-surface-variant">01/Sep/2025</td>
+<td class="py-space-md px-space-md text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                      ACREDITADO ANTE LA LIGA
+                    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">verified_user</span>
+<div class="font-body-sm text-body-sm">
+<strong>Certificación de Secretaría:</strong> Las cuatro personas registradas cuentan con toma de nota validada por la Junta Directiva de la Liga Municipal y no cuentan con sanciones disciplinarias vigentes en el Registro Único de Federados.
+            </div>
+</div>
+</div>
+<!-- ============================================== -->
+<!-- PESTAÑA C: EQUIPOS REGISTRADOS EN TEMPORADA    -->
+<!-- ============================================== -->
+<div class="tab-content hidden p-space-lg flex flex-col gap-space-lg" id="tab-equipos">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Equipos registrados para la Temporada 2025–2026</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Inscritos formalmente en las distintas categorías de la Liga Municipal.</p>
+</div>
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm h-11 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-colors shadow-sm flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>+ Nuevo equipo</span>
+</button>
+</div>
+<!-- Tabla de Equipos -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase">
+<th class="py-space-sm px-space-md">Equipo</th>
+<th class="py-space-sm px-space-md">Categoría</th>
+<th class="py-space-sm px-space-md">Grupo</th>
+<th class="py-space-sm px-space-md">Estado</th>
+<th class="py-space-sm px-space-md text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-md text-body-md">
+<!-- Equipo 1 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-md">
+<div class="font-bold text-on-surface">Halcones FC Primera</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant font-mono-data">EQ-014-01 · 26 Jugadores</div>
+</td>
+<td class="py-space-md px-space-md font-medium text-on-surface">Libre Primera Especial</td>
+<td class="py-space-md px-space-md font-mono-data text-body-sm text-on-surface font-semibold">Grupo A</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                      ACTIVO
+                    </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors" type="button">
+                        Ver plantilla
+                      </button>
+<button aria-label="Gestionar bajas de equipo" class="p-1 rounded text-outline hover:text-tertiary transition-colors" title="Gestionar bajas" type="button">
+<span class="material-symbols-outlined text-[18px]">person_remove</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Equipo 2 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-md">
+<div class="font-bold text-on-surface">Halcones Reservas</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant font-mono-data">EQ-014-02 · 24 Jugadores</div>
+</td>
+<td class="py-space-md px-space-md font-medium text-on-surface">Libre Segunda Fuerza</td>
+<td class="py-space-md px-space-md font-mono-data text-body-sm text-on-surface font-semibold">Grupo B</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                      ACTIVO
+                    </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors" type="button">
+                        Ver plantilla
+                      </button>
+<button aria-label="Gestionar bajas de equipo" class="p-1 rounded text-outline hover:text-tertiary transition-colors" title="Gestionar bajas" type="button">
+<span class="material-symbols-outlined text-[18px]">person_remove</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Equipo 3 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-md">
+<div class="font-bold text-on-surface">Halcones Veteranos</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant font-mono-data">EQ-014-03 · 22 Jugadores</div>
+</td>
+<td class="py-space-md px-space-md font-medium text-on-surface">Veteranos Especiales (+34)</td>
+<td class="py-space-md px-space-md font-mono-data text-body-sm text-on-surface font-semibold">Grupo A</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                      ACTIVO
+                    </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors" type="button">
+                        Ver plantilla
+                      </button>
+<button aria-label="Gestionar bajas de equipo" class="p-1 rounded text-outline hover:text-tertiary transition-colors" title="Gestionar bajas" type="button">
+<span class="material-symbols-outlined text-[18px]">person_remove</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Equipo 4 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-md">
+<div class="font-bold text-on-surface">Halcones Juvenil Mayor</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant font-mono-data">EQ-014-04 · 25 Jugadores</div>
+</td>
+<td class="py-space-md px-space-md font-medium text-on-surface">Juvenil Mayor (Sub-17)</td>
+<td class="py-space-md px-space-md font-mono-data text-body-sm text-on-surface font-semibold">Grupo A</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                      ACTIVO
+                    </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors" type="button">
+                        Ver plantilla
+                      </button>
+<button aria-label="Gestionar bajas de equipo" class="p-1 rounded text-outline hover:text-tertiary transition-colors" title="Gestionar bajas" type="button">
+<span class="material-symbols-outlined text-[18px]">person_remove</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Equipo 5 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-md">
+<div class="font-bold text-on-surface">Halcones Infantil Sub-12</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant font-mono-data">EQ-014-05 · 23 Jugadores</div>
+</td>
+<td class="py-space-md px-space-md font-medium text-on-surface">Infantil Menor (Sub-12)</td>
+<td class="py-space-md px-space-md font-mono-data text-body-sm text-on-surface font-semibold">Grupo Único</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                      ACTIVO
+                    </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors" type="button">
+                        Ver plantilla
+                      </button>
+<button aria-label="Gestionar bajas de equipo" class="p-1 rounded text-outline hover:text-tertiary transition-colors" title="Gestionar bajas" type="button">
+<span class="material-symbols-outlined text-[18px]">person_remove</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Equipo 6 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-md">
+<div class="font-bold text-on-surface">Halcones Master Clásicos</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant font-mono-data">EQ-014-06 · 22 Jugadores</div>
+</td>
+<td class="py-space-md px-space-md font-medium text-on-surface">Diamante (+50)</td>
+<td class="py-space-md px-space-md font-mono-data text-body-sm text-on-surface font-semibold">Grupo B</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                      ACTIVO
+                    </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors" type="button">
+                        Ver plantilla
+                      </button>
+<button aria-label="Gestionar bajas de equipo" class="p-1 rounded text-outline hover:text-tertiary transition-colors" title="Gestionar bajas" type="button">
+<span class="material-symbols-outlined text-[18px]">person_remove</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- ============================================== -->
+<!-- PESTAÑA D: HISTORIAL DE AFILIACIONES           -->
+<!-- ============================================== -->
+<div class="tab-content hidden p-space-lg flex flex-col gap-space-lg" id="tab-afiliaciones">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Historial Inmutable de Afiliaciones Federadas</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Registro histórico asentado en los Libros de Gobierno de la Liga Municipal Morelia.</p>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary-container font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>42 TEMPORADAS ININTERRUMPIDAS</span>
+</div>
+</div>
+<!-- Timeline Reglamentaria -->
+<div class="flex flex-col gap-space-sm">
+<!-- 2025-2026 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<span class="font-mono-data text-headline-sm font-bold text-primary bg-primary/10 px-2.5 py-1 rounded-lg">2025–2026</span>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold">Afiliado y Participante Activo</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Convalidado en Libro de Gobierno · Folio AF-25-014 · 6 Equipos</div>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                TEMPORADA EN CURSO
+              </span>
+</div>
+<!-- 2024-2025 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<span class="font-mono-data text-headline-sm font-bold text-on-surface bg-surface-container px-2.5 py-1 rounded-lg">2024–2025</span>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold">Afiliado y Participante Pleno</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Subcampeón Libre Primera · Reconocimiento al Mérito Deportivo 2024</div>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">workspace_premium</span>
+                CERRADA · 100% CUMPLIMIENTO
+              </span>
+</div>
+<!-- 2023-2024 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<span class="font-mono-data text-headline-sm font-bold text-on-surface bg-surface-container px-2.5 py-1 rounded-lg">2023–2024</span>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold">Afiliado y Participante Pleno</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Cumplimiento al 100% de aportaciones y actas de convalidación</div>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                CERRADA REGULAR
+              </span>
+</div>
+<!-- 2022-2023 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<span class="font-mono-data text-headline-sm font-bold text-on-surface bg-surface-container px-2.5 py-1 rounded-lg">2022–2023</span>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold">Afiliado y Participante Pleno</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Participación regular en 5 categorías federadas</div>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                CERRADA REGULAR
+              </span>
+</div>
+<!-- 2021-2022 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<span class="font-mono-data text-headline-sm font-bold text-on-surface bg-surface-container px-2.5 py-1 rounded-lg">2021–2022</span>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold">Afiliado y Participante Pleno</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Reincorporación post-contingencia sanitaria · Registro formal validado</div>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                CERRADA REGULAR
+              </span>
+</div>
+</div>
+<!-- Certificación Notarial de Antigüedad -->
+<div class="p-space-md rounded-xl bg-surface-container flex items-center justify-between text-on-surface">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">verified</span>
+<div>
+<span class="font-headline-sm text-headline-sm font-semibold">Certificación Histórica de Afiliación</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">42 temporadas consecutivas sin sanción de desafiliación o pérdida de franquicia institucional.</p>
+</div>
+</div>
+<button class="px-space-md py-space-sm rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors shadow-sm whitespace-nowrap" type="button">
+              Descargar Constancia
+            </button>
+</div>
+</div>
+</section>
+</main>
+</div>
+</div>
+<script>
+  // Control interactivo de Pestañas
+  function switchClubTab(targetTabId, clickedBtn) {
+    // Ocultar todos los paneles
+    document.querySelectorAll('.tab-content').forEach(panel => {
+      panel.classList.add('hidden');
+    });
+
+    // Desactivar todos los botones
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.setAttribute('aria-selected', 'false');
+      btn.classList.remove('text-primary', 'border-b-2', 'border-primary');
+      btn.classList.add('text-on-surface-variant');
+    });
+
+    // Mostrar el panel seleccionado
+    const activePanel = document.getElementById(targetTabId);
+    if (activePanel) {
+      activePanel.classList.remove('hidden');
+    }
+
+    // Activar el botón correspondiente
+    if (clickedBtn) {
+      clickedBtn.setAttribute('aria-selected', 'true');
+      clickedBtn.classList.remove('text-on-surface-variant');
+      clickedBtn.classList.add('text-primary', 'border-b-2', 'border-primary');
+    }
+  }
+
+  // Control interactivo del menú desplegable "Más acciones"
+  document.addEventListener('DOMContentLoaded', () => {
+    const btnMore = document.getElementById('btnMoreActions');
+    const menu = document.getElementById('moreActionsMenu');
+
+    if (btnMore && menu) {
+      btnMore.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isExpanded = btnMore.getAttribute('aria-expanded') === 'true';
+        btnMore.setAttribute('aria-expanded', !isExpanded);
+        menu.classList.toggle('hidden');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!menu.contains(e.target) && !btnMore.contains(e.target)) {
+          menu.classList.add('hidden');
+          btnMore.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  });
+</script></main></div></body></html>
