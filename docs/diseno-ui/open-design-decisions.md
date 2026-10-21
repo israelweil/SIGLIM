@@ -20,7 +20,7 @@
 - **P-02**: Biblioteca de iconos: el HTML de Stitch usa Material Symbols; en React se usa
   **Lucide React** con el ícono equivalente de cada pantalla **[PROPUESTA]** (dependencia que se
   justifica al iniciar el frontend).
-- **P-03**: ~~Aprobar el prototipo generado con Stitch~~. Aprobado por el equipo el 20 de octubre de 2026 ([`pantallas/`](pantallas/README.md)); falta validarlo con la Liga (PEN-014). Las diferencias D-01 a D-12 y las preguntas Q-UI-01 a Q-UI-04 están en [`pantallas/README.md`](pantallas/README.md).
+- **P-03**: ~~Aprobar el prototipo generado con Stitch~~. Aprobado por el equipo el 20 de octubre de 2026 ([`pantallas/`](pantallas/README.md)); falta validarlo con la Liga (PEN-014). Las diferencias D-01 a D-12 y las preguntas Q-UI-01 a Q-UI-04 (tres resueltas; Q-UI-02 depende de PEN-030) están en [`pantallas/README.md`](pantallas/README.md).
 
 ## 4. Conflictos detectados entre el diseño de referencia y el ERS
 
