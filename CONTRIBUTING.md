@@ -50,8 +50,10 @@ Una historia está terminada cuando:
 
 ## 5. Historias de usuario
 
-Se registran como *Issues* con la plantilla **Historia de usuario** y se enlazan al tablero del
-sprint. Formato:
+Viven en **Jira** (proyecto SIGLIM) y se generan desde el backlog v4
+([`docs/planning/sprint-plan.md`](docs/planning/sprint-plan.md)); para agregar o cambiar historias se edita
+`docs/planning/fuente/datos.py` y se regenera el plan y el CSV. Usa la clave interna (H-xx, T-xx) en la
+rama y el commit (`feat/m07-h12-conflictos`, `Refs: H-12, RF-039`). Formato:
 
 > **Como** <perfil>, **quiero** <acción>, **para** <beneficio>.
 > Criterios de aceptación en Gherkin (Dado / Cuando / Entonces) y trazabilidad a RF/CU.

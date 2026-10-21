@@ -1,0 +1,1967 @@
+Issue ID,Parent,Issue Type,Summary,Description,Priority,Status,Story point estimate,Original Estimate,Labels,Labels,Labels,Labels
+1,,Epic,"[E01] M-01 Acceso, permisos y auditoría","Cuentas por invitación con Supabase Auth, roles con ámbito (liga, club, propio), autorización por permiso `modulo.recurso:ACCION` con denegación por defecto, control dual de permisos, consentimiento y auditoría inalterable. Incluye la base técnica de backend y frontend que comparten todos los módulos.
+
+h3. Trazabilidad
+RF-093 a RF-098, RF-134; RNF-003, RNF-012 a RNF-015; ADR-0003, ADR-0005, ADR-0007, ADR-0014
+
+Las épicas no se planifican en un sprint: se planifican sus historias y tareas.",,Por hacer,,,siglim-v4,m01,,
+2,,Epic,[E02] M-02 Temporadas y normativa,"Temporada activa única, categorías con jerarquía, grupos y parámetros deportivos versionados rotulados «No oficial» mientras sean [DEMO].
+
+h3. Trazabilidad
+RF-001 a RF-007, RF-099, RF-100
+
+Las épicas no se planifican en un sprint: se planifican sus historias y tareas.",,Por hacer,,,siglim-v4,m02,,
+3,,Epic,[E03] M-03 Organización deportiva,"Clubes, afiliación por temporada (tarjetón), directiva, equipos, personas por CURP y tutela de menores.
+
+h3. Trazabilidad
+RF-008 a RF-012, RF-101 a RF-106
+
+Las épicas no se planifican en un sprint: se planifican sus historias y tareas.",,Por hacer,,,siglim-v4,m03,,
+4,,Epic,[E04] M-04 Registro de jugadores y elegibilidad,"Alta y baja de jugadores con unicidad por CURP, documentos privados en AWS S3, validación del Secretario, estados del registro, elegibilidad y consulta propia.
+
+h3. Trazabilidad
+RF-013 a RF-020, RF-107 a RF-111, RF-144; RNF-018; ADR-0013
+
+Las épicas no se planifican en un sprint: se planifican sus historias y tareas.",,Por hacer,,,siglim-v4,m04,,
+5,,Epic,[E05] M-05 Árbitros y designaciones,"Árbitros presentados por los clubes, validación de la Comisión de Arbitraje y designación a partidos sin árbitros del propio club.
+
+h3. Trazabilidad
+RF-021 a RF-024, RF-112 a RF-115
+
+Las épicas no se planifican en un sprint: se planifican sus historias y tareas.",,Por hacer,,,siglim-v4,m05,,
+6,,Epic,[E06] M-06 Canchas y recursos,"Catálogo de canchas, disponibilidad y bloqueos; en backlog, sedes, comodatos y trámites de cancha.
+
+h3. Trazabilidad
+RF-027 a RF-032, RF-116 a RF-119
+
+Las épicas no se planifican en un sprint: se planifican sus historias y tareas.",,Por hacer,,,siglim-v4,m06,,
+7,,Epic,[E07] M-07 Programación manual,"Jornadas y partidos registrados a mano con detección de conflictos duros, ajustes con motivo y aprobación del Presidente antes de publicar.
+
+h3. Trazabilidad
+RF-033, RF-036, RF-039, RF-040, RF-120, RF-121
+
+Las épicas no se planifican en un sprint: se planifican sus historias y tareas.",,Por hacer,,,siglim-v4,m07,,
+8,,Epic,"[E08] M-08 Partidos, cédula y resultados","Máquina de estados del partido, captura y validación de la cédula, resultado oficial versionado y tabla calculada con desempates configurables.
+
+h3. Trazabilidad
+RF-025, RF-026, RF-043 a RF-056, RF-122 a RF-127
+
+Las épicas no se planifican en un sprint: se planifican sus historias y tareas.",,Por hacer,,,siglim-v4,m08,,
+9,,Epic,[E09] M-09 Disciplina,"Catálogos de incidencias y artículos, expedientes automáticos, resolución con sanción y efectos.
+
+h3. Trazabilidad
+RF-057 a RF-068, RF-128 a RF-133
+
+Las épicas no se planifican en un sprint: se planifican sus historias y tareas.",,Por hacer,,,siglim-v4,m09,,
+10,,Epic,[E10] M-10 Competencias y fases finales,"Ascensos y descensos con validación del Presidente y liguilla. Todo es backlog (B).
+
+h3. Trazabilidad
+RF-069 a RF-081
+
+Las épicas no se planifican en un sprint: se planifican sus historias y tareas.",,Por hacer,,,siglim-v4,m10,,
+11,,Epic,[E11] M-11 Portal público y publicación,"Portal de solo lectura con lo PUBLICADO (programación, resultados, tablas) y, en backlog, calendario, comunicados, sanciones, equipos y estadísticas con consentimiento.
+
+h3. Trazabilidad
+RF-082 a RF-090, RF-145; RNF-002
+
+Las épicas no se planifican en un sprint: se planifican sus historias y tareas.",,Por hacer,,,siglim-v4,m11,,
+12,,Epic,[E12] M-12 Reportes y exportación,"Reportes REP-001 a REP-014 y exportación a PDF y Excel. Todo es backlog (B).
+
+h3. Trazabilidad
+RF-091, RF-092
+
+Las épicas no se planifican en un sprint: se planifican sus historias y tareas.",,Por hacer,,,siglim-v4,m12,,
+13,,Epic,[E13] M-13 Tesorería y cobros,"Cobros manuales, pago en línea simulado, pagos externos con comprobante y adeudos; en backlog, tarifas, cobros automáticos y vencimientos.
+
+h3. Trazabilidad
+RF-135 a RF-141; ADR-0012
+
+Las épicas no se planifican en un sprint: se planifican sus historias y tareas.",,Por hacer,,,siglim-v4,m13,,
+14,,Epic,[E14] M-14 Notificaciones,"Avisos dentro de la aplicación; en backlog, correo (proveedor pendiente, PEN-034).
+
+h3. Trazabilidad
+RF-142, RF-143; ADR-0010
+
+Las épicas no se planifican en un sprint: se planifican sus historias y tareas.",,Por hacer,,,siglim-v4,m14,,
+15,1,Task,[T-01] Aplicar el esquema inicial en Supabase y registrar al administrador,"Crear el proyecto de Supabase de desarrollo del equipo, ejecutar la migración `20261020090000_esquema_inicial.sql` y dar de alta al primer Administrador general. Es requisito de todo lo demás: hoy la migración no está aplicada.
+
+h3. Resultado esperado
+Proyecto Supabase con el esquema `siglim`, semilla cargada y un administrador que puede iniciar sesión.
+
+h3. Trazabilidad
+Requisitos: DEC-42, ADR-0004, ADR-0014, RF-094
+
+h3. Dependencias
+Ninguna
+
+h3. Planificación
+Sprint: 1 · MoSCoW: Must · Prioridad: Highest · 1 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Highest,Por hacer,1,,siglim-v4,sprint-1,moscow-must,m01
+16,1,Task,[T-02] Crear el esqueleto del backend Spring Boot con seguridad y contexto de base de datos,"Proyecto Spring Boot 4.1 / Java 21 con Spring JDBC y los paquetes por módulo de ADR-0006. Incluye la validación del JWT de Supabase (ADR-0003), el contexto transaccional que fija el perfil y adopta `siglim_app` o `siglim_publico` (ADR-0014), el manejador global de errores RFC 9457 con la tabla HINT → HTTP de las convenciones de API §3.2 y el endpoint de salud.
+
+h3. Resultado esperado
+`./mvnw verify` en verde; `GET /api/v1/salud` responde; una petición con token válido ejecuta SQL como `siglim_app` con el perfil del usuario.
+
+h3. Trazabilidad
+Requisitos: RNF-003, RNF-011, RNF-013, RNF-019, ADR-0002, ADR-0003, ADR-0006, ADR-0014
+API: GET /api/v1/salud (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+T-01
+
+h3. Planificación
+Sprint: 1 · MoSCoW: Must · Prioridad: Highest · 3 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Highest,Por hacer,3,,siglim-v4,sprint-1,moscow-must,m01
+17,1,Task,[T-03] Crear el esqueleto del frontend React con el sistema de diseño aprobado,"Proyecto React 19 + TypeScript + Vite + Tailwind CSS 4 + TanStack Query. Tokens de `docs/diseno-ui/DESIGN.md`, layouts del portal (`/`) y de la aplicación interna (`/app`, barra lateral y superior), cliente HTTP que agrega el token y traduce los errores RFC 9457, y componentes base: botón, insignia de estado, insignia «No oficial», modal con motivo, alerta de bloqueo, estado vacío y de carga, páginas 403/404 (F-36 resuelto con DESIGN.md).
+
+h3. Resultado esperado
+`npm run lint && npm test && npm run build` en verde; los layouts se ven como F-01 y F-07 sin desplazamiento horizontal a 360 px.
+
+h3. Trazabilidad
+Requisitos: RNF-006, RNF-007, RNF-008, PEN-014
+Pantallas aprobadas: F-01, F-07, F-36 (docs/diseno-ui/pantallas)
+
+h3. Dependencias
+Ninguna
+
+h3. Planificación
+Sprint: 1 · MoSCoW: Must · Prioridad: Highest · 3 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Highest,Por hacer,3,,siglim-v4,sprint-1,moscow-must,m01
+18,1,Story,[H-01] Iniciar sesión y ver el panel con mis módulos permitidos,"*Como* usuario interno de la Liga, *quiero* iniciar sesión con mi correo y contraseña y llegar a un panel que muestre solo los módulos que mis permisos me dejan usar, *para* trabajar sin ver ni intentar acciones que no me corresponden.
+
+Inicio de sesión solo con correo (Q-UI-01) en la pantalla F-05 aprobada, recuperación de contraseña de Supabase, cierre de sesión y `GET /api/v1/yo` con perfil, asignaciones y permisos efectivos. El panel (F-07/F-08) es por ahora el marco con la navegación filtrada; sus tarjetas de pendientes se completan en cada módulo. El 2FA y «Mantener sesión activa» no se implementan (PEN-044 y PEN-030).
+
+h3. Criterios de aceptación
+# Dado un usuario invitado y activo, cuando ingresa correo y contraseña correctos, entonces llega a `/app` y ve su nombre, rol y ámbito en la barra superior.
+# Dado un correo o contraseña incorrectos, cuando intenta entrar, entonces ve «Correo o contraseña incorrectos» sin revelar cuál falló.
+# Dado un usuario con rol Capturista, cuando abre el panel, entonces la barra lateral solo muestra los módulos de sus permisos según `GET /api/v1/yo`.
+# Dada una sesión iniciada, cuando cierra sesión, entonces el token se elimina y `/app` redirige al inicio de sesión.
+# La pantalla no ofrece registro libre, folio, proveedores externos ni 2FA.
+
+h3. Trazabilidad
+Requisitos: RF-094, RNF-013, RNF-014, UI-001, UI-002, VAL-015
+Pantallas aprobadas: F-05, F-07, F-08 (docs/diseno-ui/pantallas)
+API: GET /api/v1/yo (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+T-02, T-03
+
+h3. Planificación
+Sprint: 1 · MoSCoW: Must · Prioridad: Highest · 2 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Highest,Por hacer,2,,siglim-v4,sprint-1,moscow-must,m01
+19,1,Story,[H-02] Autorizar cada operación por permiso y ámbito y auditar las operaciones críticas,"*Como* Presidente del Comité Ejecutivo, *quiero* que cada acción se permita solo con el permiso y el ámbito correctos y que las operaciones críticas queden auditadas, *para* confiar en que nadie actúa fuera de su función y poder rastrear cualquier cambio.
+
+Servicio `autorizacion.exigir(permiso, objetivo)` de ADR-0007 con denegación por defecto, filtro por ámbito en listados, respuesta 404 fuera de ámbito, y servicio de auditoría que todos los módulos usan en la misma transacción. Es la base que reutilizan todas las historias siguientes.
+
+h3. Criterios de aceptación
+# Dado un usuario sin el permiso, cuando llama a un endpoint protegido, entonces recibe 403 con `codigo` VAL-015.
+# Dado un usuario con ámbito CLUB, cuando consulta un recurso de otro club, entonces recibe 404 sin revelar que existe (VAL-024).
+# Dado un listado, cuando lo consulta un usuario de club, entonces solo recibe filas de su club y el total cuenta solo esas.
+# Dada una operación crítica, cuando se confirma, entonces existe un registro de auditoría con usuario, fecha, módulo, acción, entidad y motivo, y nadie puede modificarlo (RNF-015).
+
+h3. Trazabilidad
+Requisitos: RF-093, RNF-003, RNF-012, RNF-015, VAL-015, VAL-016, VAL-024
+Pantallas aprobadas: F-36 (docs/diseno-ui/pantallas)
+API: Todos (§5 de las convenciones de API) (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-01
+
+h3. Planificación
+Sprint: 2 · MoSCoW: Must · Prioridad: Highest · 3 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Highest,Por hacer,3,,siglim-v4,sprint-2,moscow-must,m01
+20,1,Story,[H-03] Invitar usuarios y asignarles roles con ámbito,"*Como* Administrador general, *quiero* invitar cuentas y asignarles uno o más roles con su ámbito, *para* que cada integrante de la Liga y de los clubes trabaje con sus permisos.
+
+Pantalla F-12. La invitación usa Supabase Auth (correo integrado mientras se define PEN-034) y crea el perfil; las asignaciones llevan rol, ámbito y club cuando el ámbito es Club.
+
+h3. Criterios de aceptación
+# Dado el Administrador, cuando invita un correo con rol y ámbito, entonces se crea el perfil, la asignación y el usuario recibe la invitación.
+# Dada una asignación con ámbito CLUB, cuando se guarda sin club, entonces se rechaza con 400.
+# Dada una cuenta, cuando el Administrador la desactiva con motivo, entonces ya no puede operar y el cambio queda auditado.
+# Dado el Administrador, cuando intenta cambiar las asignaciones de su propio rol, entonces se rechaza (VAL-022).
+
+h3. Trazabilidad
+Requisitos: RF-094, VAL-022, UI-029
+Pantallas aprobadas: F-12 (docs/diseno-ui/pantallas)
+API: GET/POST /usuarios; PATCH /usuarios/{id}; POST /usuarios/{id}/asignaciones; POST /asignaciones-rol/{id}/revocacion (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-02
+
+h3. Planificación
+Sprint: 2 · MoSCoW: Must · Prioridad: High · 2 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",High,Por hacer,2,,siglim-v4,sprint-2,moscow-must,m01
+21,2,Story,[H-04] Gestionar temporadas con una sola activa y proteger las cerradas,"*Como* Administrador general, *quiero* crear, activar y cerrar temporadas, *para* trabajar siempre sobre una temporada vigente sin alterar el histórico.
+
+Pantalla F-10. Activar exige categorías, grupos y parámetros (lista de verificación); cerrar pide motivo y no se deshace. Las temporadas cerradas son solo lectura.
+
+h3. Criterios de aceptación
+# Dada una temporada ACTIVA, cuando se intenta activar otra, entonces se rechaza con el mensaje de la temporada activa.
+# Dada una temporada sin parámetros, cuando se intenta activar, entonces se rechaza (RF-100) y la lista de verificación muestra lo que falta.
+# Dada una temporada CERRADA, cuando se intenta editar, entonces se rechaza y sus datos se conservan.
+# El cierre pide motivo y queda en auditoría.
+
+h3. Trazabilidad
+Requisitos: RF-001, RF-003, UI-003, RN-005
+Pantallas aprobadas: F-10 (docs/diseno-ui/pantallas)
+API: GET/POST/PATCH /temporadas; POST /temporadas/{id}/activacion; POST /temporadas/{id}/cierre (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-02
+
+h3. Planificación
+Sprint: 2 · MoSCoW: Must · Prioridad: High · 2 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",High,Por hacer,2,,siglim-v4,sprint-2,moscow-must,m02
+22,2,Story,"[H-05] Configurar categorías, grupos y parámetros deportivos versionados","*Como* Administrador general, *quiero* definir las categorías con su jerarquía, los grupos y los parámetros deportivos de la temporada, *para* que la programación, la tabla y la cédula usen reglas configuradas y rastreables.
+
+Pantalla F-11. Categorías con orden y categoría superior inmediata; categorías de la temporada; grupos; parámetros (puntos, desempates, duración y bloque de cancha, marcador por default, plazo de cédula, liguilla, ascensos) guardados como versión nueva y rotulados «No oficial» mientras sean [DEMO].
+
+h3. Criterios de aceptación
+# Dada una categoría, cuando se define su categoría superior inmediata, entonces la jerarquía se guarda sin cambios de código (RF-099).
+# Dados parámetros vigentes, cuando se guardan cambios, entonces se crea una versión nueva y la anterior se conserva (RF-006).
+# Los valores de demostración se muestran con la insignia «No oficial».
+# Los criterios de desempate se ordenan y nunca incluyen el nombre del equipo (RF-050).
+
+h3. Trazabilidad
+Requisitos: RF-004, RF-005, RF-006, RF-099, RF-100, RNF-005, UI-004, DEC-25, DEC-26, DEC-27
+Pantallas aprobadas: F-11 (docs/diseno-ui/pantallas)
+API: GET/POST/PATCH /categorias; GET/POST /temporadas/{id}/categorias; GET/POST/PATCH /grupos; GET/POST /temporadas/{id}/parametros (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-04
+
+h3. Planificación
+Sprint: 2 · MoSCoW: Must · Prioridad: High · 3 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",High,Por hacer,3,,siglim-v4,sprint-2,moscow-must,m02
+23,3,Story,[H-06] Registrar clubes y sus equipos en la categoría y grupo de la temporada,"*Como* Secretario de la Liga, *quiero* registrar los clubes y sus equipos en una categoría y grupo, *para* tener la estructura sobre la que se registran jugadores y se programan partidos.
+
+Pantalla F-15 (sin «A.C.», sellos FMF ni exportación: D-01, D-06). La Directiva de club consulta y edita solo los suyos. La baja de un equipo es cambio de estado con motivo.
+
+h3. Criterios de aceptación
+# Dado el Secretario, cuando registra un club y un equipo en un grupo de la temporada activa, entonces ambos aparecen en el detalle del club.
+# Dada la Directiva de un club, cuando lista equipos, entonces solo ve los de su club.
+# Dado un equipo con historial, cuando se da de baja, entonces queda en estado BAJA con motivo y no se borra (RN-005).
+
+h3. Trazabilidad
+Requisitos: RF-008, RF-009, UI-005, RN-005
+Pantallas aprobadas: F-15 (docs/diseno-ui/pantallas)
+API: GET/POST/PATCH /clubes; GET/POST/PATCH /equipos; POST /equipos/{id}/baja (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-05
+
+h3. Planificación
+Sprint: 2 · MoSCoW: Must · Prioridad: High · 2 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",High,Por hacer,2,,siglim-v4,sprint-2,moscow-must,m03
+24,6,Story,[H-07] Registrar canchas con su disponibilidad y bloqueos,"*Como* Administrador general, *quiero* registrar canchas, su disponibilidad y sus bloqueos con motivo, *para* que la programación solo use canchas disponibles.
+
+Pantalla F-21 con calendario semanal. Bloquear un horario con partidos programados muestra los partidos afectados para reprogramarlos a mano (propuesta de PEN-007; no se reprograma solo).
+
+h3. Criterios de aceptación
+# Dada una cancha, cuando se registra con ubicación y propietario, entonces aparece en el catálogo.
+# Dado un intervalo, cuando se registra disponibilidad o bloqueo con motivo, entonces se ve en el calendario semanal.
+# Dado un bloqueo sobre partidos programados, cuando se intenta guardar, entonces se listan los partidos afectados y no se reprograma ninguno automáticamente.
+# Una cancha inactiva o bloqueada no puede usarse en la programación (VAL-005).
+
+h3. Trazabilidad
+Requisitos: RF-027, RF-029, RF-030, VAL-005, UI-008, PEN-007
+Pantallas aprobadas: F-21 (docs/diseno-ui/pantallas)
+API: GET/POST/PATCH /canchas; GET/POST /canchas/{id}/disponibilidad; GET /canchas/{id}/ocupacion (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-02
+
+h3. Planificación
+Sprint: 2 · MoSCoW: Must · Prioridad: High · 3 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",High,Por hacer,3,,siglim-v4,sprint-2,moscow-must,m06
+25,4,Task,[T-04] Configurar AWS S3 y el servicio de almacenamiento de documentos,"Crear la cuenta de AWS del equipo, el bucket privado con Block Public Access, cifrado SSE-S3 y versionado, el usuario IAM con Put/Get sobre `liga/*`, y el componente `compartido.almacenamiento.AlmacenamientoDocumentos` con carga, validación por firma binaria y URL prefirmadas de 60 s (ADR-0013). Agrega la dependencia `software.amazon.awssdk:s3`.
+
+h3. Resultado esperado
+Prueba de integración que sube un PDF, rechaza un ejecutable renombrado y genera una URL prefirmada que expira; credenciales solo en `backend/.env`.
+
+h3. Trazabilidad
+Requisitos: RNF-018, ADR-0013, DEC-45, RF-108
+API: GET /documentos/{id}/enlace (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+T-02
+
+h3. Planificación
+Sprint: 2 · MoSCoW: Must · Prioridad: High · 2 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",High,Por hacer,2,,siglim-v4,sprint-2,moscow-must,m04
+26,3,Story,[H-08] Solicitar y aprobar la afiliación del club por temporada (tarjetón),"*Como* Directiva de club, *quiero* capturar el tarjetón de mi club y enviarlo a aprobación, *para* que mi club quede afiliado a la temporada.
+
+Pantalla F-16: vista de captura (Directiva) y de revisión (Presidente). Folio asignado por el sistema; aprobación o rechazo con observaciones.
+
+h3. Criterios de aceptación
+# Dada la Directiva, cuando envía el tarjetón completo, entonces queda SOLICITADA con folio.
+# Dado el Presidente, cuando aprueba o rechaza, entonces el estado cambia, se registran quién y cuándo, y el rechazo exige observaciones.
+# Dado un usuario de otro club, cuando consulta la afiliación, entonces recibe 404.
+
+h3. Trazabilidad
+Requisitos: RF-101, UI-023, DEC-09
+Pantallas aprobadas: F-16 (docs/diseno-ui/pantallas)
+API: GET/POST/PATCH /afiliaciones; POST /afiliaciones/{id}/resolucion (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-06
+
+h3. Planificación
+Sprint: 3 · MoSCoW: Must · Prioridad: High · 2 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",High,Por hacer,2,,siglim-v4,sprint-3,moscow-must,m03
+27,4,Story,[H-09] Registrar un jugador por CURP con tutor y consentimiento,"*Como* Directiva de club, *quiero* registrar jugadores en mis equipos usando su CURP, *para* que cada persona tenga un solo registro activo por temporada y los menores tengan tutor.
+
+Pasos 1, 2 y 4 del asistente F-18 y la pantalla F-06. Reutiliza la persona si la CURP existe; rechaza CURP con registro activo e indica club y equipo; para menores exige tutor vigente y su consentimiento con versión del aviso. Sin validación con RENAPO (D-03). El texto del aviso viene de `avisos_privacidad` (PEN-039). Conserva el historial de pertenencia.
+
+h3. Criterios de aceptación
+# Dada una CURP nueva, cuando se registra al jugador, entonces se crea la persona y el registro queda PENDIENTE_VALIDACION.
+# Dada una CURP con registro activo en la temporada, cuando se intenta registrar, entonces se rechaza con el club y el equipo donde está (VAL-017).
+# Dado un menor sin tutor o sin consentimiento, cuando se envía, entonces no se completa el registro (VAL-025).
+# Dada una persona ya existente, cuando se registra en otra temporada, entonces se reutiliza su identidad sin duplicarla (RF-010).
+
+h3. Trazabilidad
+Requisitos: RF-010, RF-011, RF-012, RF-013, RF-097, RF-106, RF-107, VAL-017, VAL-025, UI-006, UI-033
+Pantallas aprobadas: F-17, F-18, F-06 (docs/diseno-ui/pantallas)
+API: GET/POST /personas; POST /personas/{id}/tutelas; POST /personas/{id}/consentimientos; GET /avisos-privacidad/vigente; POST /registros-jugador; GET /registros-jugador (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-06, H-08
+
+h3. Planificación
+Sprint: 3 · MoSCoW: Must · Prioridad: Highest · 3 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Highest,Por hacer,3,,siglim-v4,sprint-3,moscow-must,m04
+28,4,Story,[H-10] Cargar documentos del jugador y validar el registro,"*Como* Secretario de la Liga, *quiero* revisar los documentos de cada registro y validarlo o rechazarlo, *para* que solo jueguen personas con identidad comprobada.
+
+Paso 3 de F-18 (carga) y pantalla F-19 (validación). Los requisitos dependen del tipo de categoría; los archivos van a S3 y se ven con URL prefirmada de 60 s. Validar exige todos los documentos aprobados.
+
+h3. Criterios de aceptación
+# Dado un registro, cuando la Directiva carga los documentos requeridos, entonces quedan PENDIENTE con tipo, tamaño y hash.
+# Dado un archivo que no es JPEG, PNG, WebP ni PDF por su firma, cuando se carga, entonces se rechaza con 415.
+# Dado el Secretario, cuando aprueba todos los documentos y valida, entonces el registro pasa a ACTIVO; si rechaza, exige observaciones y pasa a RECHAZADO.
+# La URL de un documento expira a los 60 s y no se guarda ni se registra (RNF-018).
+# Faltando un documento obligatorio, el registro no puede validarse (VAL-001).
+
+h3. Trazabilidad
+Requisitos: RF-108, RF-109, RF-017, VAL-001, RNF-018, UI-024
+Pantallas aprobadas: F-18, F-19 (docs/diseno-ui/pantallas)
+API: POST /registros-jugador/{id}/documentos; GET /registros-jugador/{id}/requisitos; GET /documentos/{id}/enlace; POST /documentos/{id}/validacion; POST /registros-jugador/{id}/validacion (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-09, T-04
+
+h3. Planificación
+Sprint: 3 · MoSCoW: Must · Prioridad: Highest · 3 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Highest,Por hacer,3,,siglim-v4,sprint-3,moscow-must,m04
+29,5,Story,[H-11] Presentar árbitros del club y validarlos,"*Como* Comisión de Arbitraje, *quiero* validar o rechazar a los árbitros que presentan los clubes, *para* contar con un catálogo de árbitros validados para designar.
+
+Pantalla F-20 con vista de la Comisión y del club. Los árbitros los presenta el club (DEC-17), no un colegio (D-02). La cuota de árbitros por club es backlog (RF-114).
+
+h3. Criterios de aceptación
+# Dada la Directiva, cuando presenta un árbitro, entonces queda PROPUESTO ligado a su club.
+# Dada la Comisión, cuando valida o rechaza con observaciones, entonces cambia su estado y queda auditado.
+# Solo los árbitros VALIDADO aparecen en el catálogo para designar.
+
+h3. Trazabilidad
+Requisitos: RF-021, RF-112, RF-113, UI-007
+Pantallas aprobadas: F-20 (docs/diseno-ui/pantallas)
+API: GET/POST /arbitros; POST /arbitros/{id}/validacion (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-09
+
+h3. Planificación
+Sprint: 3 · MoSCoW: Must · Prioridad: High · 2 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",High,Por hacer,2,,siglim-v4,sprint-3,moscow-must,m05
+30,7,Story,[H-12] Programar una jornada con detección de conflictos explicada,"*Como* Programador de partidos, *quiero* registrar a mano los partidos de una jornada y que el sistema rechace los conflictos explicándome la causa, *para* publicar una programación sin choques de equipos ni de canchas.
+
+Pantalla F-22. Registrar y ajustar partidos solo con la jornada en BORRADOR; cada ajuste lleva motivo. El servicio valida antes de escribir VAL-003 (equipo en el mismo bloque), VAL-004 (cancha ocupada), VAL-005 (cancha no disponible) y VAL-006 (equipo con baja o sanción), usando el bloque de cancha de la categoría; el trigger y la restricción GiST son la última garantía. La verificación devuelve todos los conflictos sin guardar. La advertencia de localía es backlog (RF-120).
+
+h3. Criterios de aceptación
+# Dado un partido cuya cancha ya está ocupada en el bloque, cuando se guarda, entonces se rechaza con 409 VAL-004 y el mensaje nombra el otro partido, la cancha y el horario.
+# Dado un equipo con otro partido en el bloque, cuando se guarda, entonces se rechaza con VAL-003.
+# Dada una cancha bloqueada o inactiva, cuando se asigna, entonces se rechaza con VAL-005.
+# Dada una jornada, cuando se pide «Verificar conflictos», entonces se listan todos sin guardar.
+# Dado un ajuste a un partido existente, cuando se guarda sin motivo, entonces se rechaza; con motivo, queda en el historial y la auditoría (RF-040).
+
+h3. Trazabilidad
+Requisitos: RF-033, RF-036, RF-039, RF-040, VAL-003, VAL-004, VAL-005, VAL-006, UI-009, RF-032
+Pantallas aprobadas: F-22 (docs/diseno-ui/pantallas)
+API: GET/POST /jornadas; GET /jornadas/{id}; POST /jornadas/{id}/partidos; PATCH /partidos/{id}; POST /jornadas/{id}/verificacion (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-07, H-05, H-06
+
+h3. Planificación
+Sprint: 3 · MoSCoW: Must · Prioridad: Highest · 5 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Highest,Por hacer,5,,siglim-v4,sprint-3,moscow-must,m07
+31,7,Story,[H-13] Enviar la jornada a aprobación y publicarla,"*Como* Presidente del Comité Ejecutivo, *quiero* revisar la jornada que envía el Programador y aprobarla o devolverla, *para* que solo se publique la programación autorizada.
+
+Pantallas F-22 (envío) y F-23 (revisión). Flujo BORRADOR → REVISION → PUBLICADO; quien programa no aprueba (par incompatible). Al publicar, la jornada aparece en el portal.
+
+h3. Criterios de aceptación
+# Dada una jornada sin conflictos, cuando el Programador la envía, entonces pasa a REVISION.
+# Dada una jornada en REVISION, cuando el Presidente la aprueba, entonces pasa a PUBLICADO y queda visible en `v_publica_programacion`.
+# Dada una devolución, cuando no lleva observaciones, entonces se rechaza; con observaciones vuelve a BORRADOR.
+# Un usuario con permiso de editar la jornada no puede aprobarla.
+
+h3. Trazabilidad
+Requisitos: RF-121, RF-090, UI-009, DD-008
+Pantallas aprobadas: F-22, F-23 (docs/diseno-ui/pantallas)
+API: POST /jornadas/{id}/envio; POST /jornadas/{id}/resolucion; GET /publicaciones/pendientes (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-12
+
+h3. Planificación
+Sprint: 3 · MoSCoW: Must · Prioridad: Highest · 2 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Highest,Por hacer,2,,siglim-v4,sprint-3,moscow-must,m07
+32,5,Story,[H-14] Designar árbitros a los partidos de una jornada,"*Como* Comisión de Arbitraje, *quiero* designar árbitro central y asistentes a cada partido, *para* que cada partido tenga quién valide su cédula.
+
+Pantalla F-24. Rechaza árbitros del club de cualquiera de los equipos (VAL-019) y advierte choques de horario del árbitro (RF-039).
+
+h3. Criterios de aceptación
+# Dado un árbitro del mismo club que un equipo del partido, cuando se designa, entonces se rechaza con VAL-019.
+# Dado un árbitro ya designado en otro partido a la misma hora, cuando se designa, entonces se rechaza con el conflicto explicado.
+# Dada una designación válida, cuando se guarda, entonces el árbitro ve el partido en «Mis designaciones».
+
+h3. Trazabilidad
+Requisitos: RF-023, RF-115, RF-039, VAL-019, UI-025
+Pantallas aprobadas: F-24 (docs/diseno-ui/pantallas)
+API: GET /designaciones; POST /partidos/{id}/designaciones; GET /mis-designaciones (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-11, H-13
+
+h3. Planificación
+Sprint: 4 · MoSCoW: Must · Prioridad: High · 2 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",High,Por hacer,2,,siglim-v4,sprint-4,moscow-must,m05
+33,8,Story,[H-15] Gestionar el estado del partido con motivo e historial,"*Como* Programador de partidos, *quiero* suspender, reprogramar o cancelar un partido con motivo y ver su historial, *para* reflejar lo que pasa en la cancha sin perder la trazabilidad.
+
+Pantalla F-25. Máquina de estados DEC-23 (ERS §4.3.1); `accionesPermitidas` según estado y permisos. Tarea programada idempotente (ADR-0009) que pasa los partidos a EN_CURSO a su hora. Los partidos no se borran. Sin avisos por SMS (D-04).
+
+h3. Criterios de aceptación
+# Dado un partido PROGRAMADO, cuando se reprograma con nueva fecha y motivo, entonces pasa a REPROGRAMADO y el historial guarda usuario, fecha y motivo.
+# Dada una transición no permitida (por ejemplo, suspender un PROGRAMADO), cuando se intenta, entonces se rechaza con 409 VAL-008/RF-046.
+# Dada la hora de inicio, cuando corre la tarea programada, entonces el partido pasa a EN_CURSO una sola vez aunque la tarea se repita.
+# El detalle muestra solo las acciones permitidas para el estado y el usuario.
+
+h3. Trazabilidad
+Requisitos: RF-043, RF-044, RF-045, RF-046, RF-127, VAL-008, RN-021, UI-010
+Pantallas aprobadas: F-25 (docs/diseno-ui/pantallas)
+API: GET /partidos; GET /partidos/{id}; GET /partidos/{id}/historial; POST /partidos/{id}/transiciones (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-13
+
+h3. Planificación
+Sprint: 4 · MoSCoW: Must · Prioridad: Highest · 3 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Highest,Por hacer,3,,siglim-v4,sprint-4,moscow-must,m08
+34,8,Story,[H-16] Capturar la cédula del partido y enviarla a validación,"*Como* Capturista, *quiero* capturar alineaciones, marcador, goles, tarjetas, sustituciones, incidencias y observaciones del partido, *para* que el árbitro valide un registro completo y el resultado pueda oficializarse.
+
+Pantalla F-26. La cédula se abre con el partido EN_CURSO. Alineación con validación de elegibilidad (registro activo, validado, sin sanción; categoría inmediata superior del mismo club), no presentación con marcador por default de los parámetros («No oficial»), incidencias con involucrados y envío con campos obligatorios completos. Sin reglas inventadas como «5 amarillas» o «mínimo 7 titulares» (D-07); el mínimo de jugadores, si se exige, es parámetro [PROPUESTA].
+
+h3. Criterios de aceptación
+# Dado un jugador sin registro activo o con sanción vigente, cuando se agrega a la alineación, entonces se rechaza con la causa (VAL-002, RF-020).
+# Dado un jugador de otro equipo del club que no está en la categoría inmediata inferior, cuando se alinea, entonces se rechaza (VAL-018).
+# Dada la no presentación de un equipo, cuando se marca, entonces se aplica el marcador por default configurado.
+# Dada una cédula incompleta, cuando se envía, entonces se rechaza listando lo que falta (VAL-020); completa, pasa a PENDIENTE_VALIDACION.
+# Una cédula en validación o aprobada no se edita.
+
+h3. Trazabilidad
+Requisitos: RF-025, RF-026, RF-047, RF-122, RF-126, RF-019, RF-020, RF-110, VAL-002, VAL-018, VAL-020, UI-011
+Pantallas aprobadas: F-26 (docs/diseno-ui/pantallas)
+API: GET/POST /partidos/{id}/cedula; PUT /cedulas/{id}/alineaciones; PUT /cedulas/{id}/marcador; POST /cedulas/{id}/eventos; POST /cedulas/{id}/incidencias; POST /cedulas/{id}/envio; GET /registros-jugador/{id}/elegibilidad (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-15, H-10
+
+h3. Planificación
+Sprint: 4 · MoSCoW: Must · Prioridad: Highest · 5 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Highest,Por hacer,5,,siglim-v4,sprint-4,moscow-must,m08
+35,8,Story,[H-17] Validar la cédula y oficializar el resultado,"*Como* Árbitro designado, *quiero* aprobar la cédula de mi partido o devolverla con observaciones, *para* que el resultado quede oficial solo con mi validación.
+
+Pantallas F-27 (árbitro, móvil) y F-28 (Comisión). Aprobar finaliza el partido, registra el resultado oficial versionado y lo publica; quien capturó no aprueba (VAL-021). Al vencer el plazo configurado (48 h [DEMO]) la Comisión puede aprobar (tarea programada). Abrir expedientes al aprobar es parte de la historia de disciplina (Should).
+
+h3. Criterios de aceptación
+# Dada una cédula PENDIENTE_VALIDACION, cuando el árbitro central designado la aprueba, entonces el partido pasa a FINALIZADO y existe un resultado oficial vigente visible en el portal.
+# Dada una devolución, cuando no lleva observaciones, entonces se rechaza; con observaciones, la cédula pasa a DEVUELTA y el capturista puede reabrirla.
+# Dado quien capturó la cédula, cuando intenta aprobarla, entonces se rechaza con VAL-021.
+# Dado el plazo vencido, cuando la Comisión aprueba, entonces se registra como aprobada por comisión; antes del plazo se rechaza (RF-124).
+# Ninguna otra vía crea un resultado oficial (RF-048, VAL-009).
+
+h3. Trazabilidad
+Requisitos: RF-048, RF-123, RF-124, RF-125, RF-056, VAL-009, VAL-021, UI-014
+Pantallas aprobadas: F-27, F-28 (docs/diseno-ui/pantallas)
+API: GET /cedulas; POST /cedulas/{id}/aprobacion; POST /cedulas/{id}/devolucion; POST /cedulas/{id}/reapertura (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-16, H-14
+
+h3. Planificación
+Sprint: 4 · MoSCoW: Must · Prioridad: Highest · 3 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Highest,Por hacer,3,,siglim-v4,sprint-4,moscow-must,m08
+36,8,Story,[H-18] Consultar la tabla de posiciones con desempates y sorteo,"*Como* Presidente del Comité Ejecutivo, *quiero* ver la tabla calculada de cada grupo con el criterio que definió cada empate, *para* conocer la clasificación oficial y resolver por sorteo los empates que persistan.
+
+Pantalla F-29. La tabla sale de `calcular_tabla` con los parámetros vigentes; distingue dato oficial de indicador calculado y rotula «No oficial» los parámetros [DEMO]. El sorteo se registra con motivo.
+
+h3. Criterios de aceptación
+# Dado un grupo con resultados oficiales, cuando se consulta, entonces muestra PJ, PG, PE, PP, GF, GC, DG y puntos según los parámetros (RF-049).
+# Dados equipos empatados, cuando se aplican los criterios, entonces el orden sigue la configuración y nunca el nombre del equipo (RF-050).
+# Dado un empate persistente, cuando se registra el sorteo, entonces la tabla lo aplica.
+# Los indicadores calculados se distinguen del dato oficial (RF-055).
+
+h3. Trazabilidad
+Requisitos: RF-049, RF-050, RF-053, RF-055, VAL-011, UI-012, RN-022
+Pantallas aprobadas: F-29 (docs/diseno-ui/pantallas)
+API: GET /grupos/{id}/tabla; POST /grupos/{id}/sorteos (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-17
+
+h3. Planificación
+Sprint: 4 · MoSCoW: Must · Prioridad: High · 2 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",High,Por hacer,2,,siglim-v4,sprint-4,moscow-must,m08
+37,11,Story,"[H-19] Consultar en el portal la programación, los resultados y las tablas publicadas","*Como* usuario público, *quiero* ver la programación de la semana, los resultados oficiales y las tablas con filtros, *para* seguir la liga sin pedir información a nadie.
+
+Pantallas F-01 a F-04. Endpoints `/api/v1/publico/**` con el rol `siglim_publico` sobre las vistas `v_publica_*` y `calcular_tabla`; filtros por semana, categoría, grupo y equipo; sin buscador global, sin tiempo real (D-09) y sin datos personales.
+
+h3. Criterios de aceptación
+# Dada una jornada en REVISION, cuando se consulta el portal, entonces no aparece (VAL-014).
+# Dado un resultado de cédula aprobada, cuando se consulta, entonces aparece con su marcador y «Por default» si aplica.
+# Dados los filtros de categoría, grupo y equipo, cuando se aplican, entonces la lista se ajusta (RF-089).
+# El portal funciona sin sesión, a 360 px sin desplazamiento horizontal y no muestra datos personales.
+
+h3. Trazabilidad
+Requisitos: RF-056, RF-082, RF-083, RF-084, RF-089, VAL-014, RNF-002, RNF-012, UI-020
+Pantallas aprobadas: F-01, F-02, F-03, F-04 (docs/diseno-ui/pantallas)
+API: GET /publico/temporada; GET /publico/programacion; GET /publico/resultados; GET /publico/grupos/{id}/tabla (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-13, H-17, H-18
+
+h3. Planificación
+Sprint: 4 · MoSCoW: Must · Prioridad: Highest · 3 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Highest,Por hacer,3,,siglim-v4,sprint-4,moscow-must,m11
+38,11,Task,[T-05] Probar de extremo a extremo el flujo central y preparar la demostración,"Recorrido completo con datos de prueba (`seed.sql` del equipo, no en la migración): temporada → club → registro validado → jornada aprobada → designación → partido → cédula validada → tabla → portal. Incluye la medición básica del portal (RNF-002) y el guion de la demostración en local con el proyecto Supabase de desarrollo (PEN-036 y PEN-037 siguen abiertos).
+
+h3. Resultado esperado
+Escenario de punta a punta reproducible, reporte de aceptación por historia y guion de la demo.
+
+h3. Trazabilidad
+Requisitos: RNF-002, RNF-006, RNF-016, PEN-036, PEN-037, ERS §3.4.3
+
+h3. Dependencias
+H-19, H-17
+
+h3. Planificación
+Sprint: 4 · MoSCoW: Must · Prioridad: High · 2 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",High,Por hacer,2,,siglim-v4,sprint-4,moscow-must,m11
+39,1,Story,[H-20] Editar los permisos de un rol con control dual,"*Como* Administrador general, *quiero* modificar los permisos de los roles, con aprobación del Presidente cuando combinen permisos incompatibles, *para* adaptar la matriz sin concentrar funciones.
+
+Pantalla F-13. No se editan los permisos del propio rol (VAL-022); un par incompatible queda SOLICITADO hasta que el Presidente lo resuelva (VAL-023), y quien solicita no aprueba.
+
+h3. Criterios de aceptación
+# Dado un cambio sin pares incompatibles, cuando se guarda con motivo, entonces se aplica y se audita.
+# Dado un cambio con un par incompatible, cuando se guarda, entonces responde 202 y queda pendiente.
+# Dado el Presidente, cuando aprueba o rechaza con motivo, entonces se aplica o descarta.
+# Dado el Administrador, cuando edita su propio rol, entonces se rechaza (VAL-022).
+
+h3. Trazabilidad
+Requisitos: RF-095, RF-096, VAL-022, VAL-023, UI-029, RN-053
+Pantallas aprobadas: F-13 (docs/diseno-ui/pantallas)
+API: GET /roles; PATCH /roles/{id}/permisos; GET /solicitudes-cambio-permisos; POST /solicitudes-cambio-permisos/{id}/resolucion (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-03
+
+h3. Planificación
+Sprint: sin asignar (núcleo no comprometido) · MoSCoW: Should · Prioridad: Medium · 3 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Medium,Por hacer,3,,siglim-v4,backlog,moscow-should,m01
+40,1,Story,[H-21] Consultar la auditoría con filtros,"*Como* Presidente del Comité Ejecutivo, *quiero* consultar la auditoría por usuario, módulo, acción y fecha, *para* rastrear quién hizo cada cambio crítico.
+
+Pantalla F-14 de solo lectura (sin «PDF firmado»: D-05, D-06).
+
+h3. Criterios de aceptación
+# Dados filtros, cuando se consulta, entonces se listan los registros paginados.
+# Al expandir un registro se ve el detalle y el motivo completo.
+# Ningún usuario puede modificar ni borrar registros.
+
+h3. Trazabilidad
+Requisitos: RF-134, UI-022, RNF-015
+Pantallas aprobadas: F-14 (docs/diseno-ui/pantallas)
+API: GET /auditoria (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-02
+
+h3. Planificación
+Sprint: sin asignar (núcleo no comprometido) · MoSCoW: Should · Prioridad: Medium · 2 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Medium,Por hacer,2,,siglim-v4,backlog,moscow-should,m01
+41,3,Story,[H-22] Registrar la directiva del club y sus cambios,"*Como* Directiva de club, *quiero* registrar los cargos de la directiva y sus cambios, *para* que la Liga sepa quién representa al club.
+
+Pestaña «Directiva» de F-15; los cambios se autorizan con fecha.
+
+h3. Criterios de aceptación
+# Dado un cambio de cargo, cuando se registra, entonces queda con vigencia desde y pendiente de autorización.
+# Dada la autorización, cuando se aprueba, entonces el cargo anterior termina su vigencia.
+
+h3. Trazabilidad
+Requisitos: RF-102, UI-005
+Pantallas aprobadas: F-15 (docs/diseno-ui/pantallas)
+API: GET/POST /clubes/{id}/directiva; POST /cargos-directiva/{id}/autorizacion (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-06
+
+h3. Planificación
+Sprint: sin asignar (núcleo no comprometido) · MoSCoW: Should · Prioridad: Medium · 2 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Medium,Por hacer,2,,siglim-v4,backlog,moscow-should,m03
+42,4,Story,[H-23] Dar de baja a un jugador conservando su historial,"*Como* Directiva de club, *quiero* dar de baja a un jugador con fecha y motivo, *para* mantener al día la plantilla sin perder el historial.
+
+Modal de baja de F-17. La baja es cambio de estado; el historial de estados lo conserva el trigger.
+
+h3. Criterios de aceptación
+# Dado un registro ACTIVO, cuando se da de baja con motivo, entonces pasa a BAJA y conserva su historial.
+# Sin motivo, se rechaza (RN-021).
+
+h3. Trazabilidad
+Requisitos: RF-014, RF-017, UI-006
+Pantallas aprobadas: F-17 (docs/diseno-ui/pantallas)
+API: POST /registros-jugador/{id}/baja (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-10
+
+h3. Planificación
+Sprint: sin asignar (núcleo no comprometido) · MoSCoW: Should · Prioridad: Medium · 2 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Medium,Por hacer,2,,siglim-v4,backlog,moscow-should,m04
+43,4,Story,[H-24] Consultar mi información como jugador o tutor,"*Como* jugador o tutor de un menor, *quiero* consultar registro, documentos, elegibilidad, partidos y sanciones, *para* saber si puedo jugar y por qué.
+
+Pantalla F-35 (móvil). Ámbito PROPIO; el tutor elige entre sus menores. Sin datos de RENAPO (D-03).
+
+h3. Criterios de aceptación
+# Dado un tutor con dos menores, cuando abre la pantalla, entonces puede elegir a cada uno.
+# Dado un jugador suspendido, cuando consulta, entonces ve la causa y la vigencia.
+# Ningún otro usuario de ámbito PROPIO ve esta información (404).
+
+h3. Trazabilidad
+Requisitos: RF-144, UI-032, RNF-012
+Pantallas aprobadas: F-35 (docs/diseno-ui/pantallas)
+API: GET /mi-informacion (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-10
+
+h3. Planificación
+Sprint: sin asignar (núcleo no comprometido) · MoSCoW: Should · Prioridad: Medium · 3 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Medium,Por hacer,3,,siglim-v4,backlog,moscow-should,m04
+44,14,Story,[H-25] Recibir avisos dentro de la aplicación,"*Como* usuario interno, *quiero* recibir avisos de los eventos que me corresponden y marcarlos como leídos, *para* atender a tiempo cédulas, trámites y cobros.
+
+Pantalla F-09 y la campana. Eventos de RF-142 escritos en la misma transacción (ADR-0010); consulta al cargar y cada 60 s [PROPUESTA]; sin correo (RF-143 es B y PEN-034 está abierto).
+
+h3. Criterios de aceptación
+# Dada una cédula enviada, cuando se confirma, entonces el árbitro designado recibe un aviso.
+# Dado un aviso, cuando se abre, entonces lleva a la pantalla del trámite y queda leído.
+# El contador de no leídas se actualiza al cargar y cada 60 s mientras la pestaña está visible.
+
+h3. Trazabilidad
+Requisitos: RF-142, RF-122, UI-030
+Pantallas aprobadas: F-09 (docs/diseno-ui/pantallas)
+API: GET /notificaciones; POST /notificaciones/{id}/lectura; POST /notificaciones/lectura (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-17
+
+h3. Planificación
+Sprint: sin asignar (núcleo no comprometido) · MoSCoW: Should · Prioridad: Medium · 3 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Medium,Por hacer,3,,siglim-v4,backlog,moscow-should,m14
+45,9,Story,[H-26] Configurar los catálogos de incidencias y artículos,"*Como* Comisión Disciplinaria, *quiero* configurar tipos de incidencia y artículos del reglamento, *para* resolver con el catálogo vigente.
+
+Pantalla F-32. El catálogo es [DEMO] hasta cargar el Reglamento (PEN-021) y se rotula «No oficial».
+
+h3. Criterios de aceptación
+# Dado un tipo de incidencia, cuando se marca «abre expediente», entonces la aprobación de una cédula con esa incidencia abrirá uno.
+# Los artículos guardan sanción, sujeto, efecto y aplicación automática.
+# Los elementos de demostración llevan la insignia «No oficial».
+
+h3. Trazabilidad
+Requisitos: RF-128, RF-129, RF-060, UI-026, PEN-021
+Pantallas aprobadas: F-32 (docs/diseno-ui/pantallas)
+API: GET/POST/PATCH /tipos-incidencia; GET/POST/PATCH /articulos (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-02
+
+h3. Planificación
+Sprint: sin asignar (núcleo no comprometido) · MoSCoW: Should · Prioridad: Medium · 2 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Medium,Por hacer,2,,siglim-v4,backlog,moscow-should,m09
+46,9,Story,[H-27] Abrir expedientes desde la cédula y resolverlos con sanción,"*Como* Comisión Disciplinaria, *quiero* revisar los expedientes abiertos por las incidencias y resolverlos con un artículo y su sanción, *para* aplicar el reglamento con vigencia y efecto en la elegibilidad.
+
+Pantallas F-30 y F-31. Apertura automática al aprobarse la cédula; resolución inmutable con vigencia; la sanción vigente bloquea la alineación (RN-057). Sin artículos inventados (D-07).
+
+h3. Criterios de aceptación
+# Dada una cédula aprobada con incidencia que abre expediente, entonces se crea un expediente ABIERTO con sus involucrados.
+# Dada una resolución con artículo y fundamentos, cuando se emite, entonces el expediente pasa a RESUELTO y la sanción calcula su vigencia.
+# Dado un jugador suspendido, cuando se alinea, entonces se rechaza (RF-064).
+# Las resoluciones no se modifican (RF-065).
+# Sin artículo identificado, el expediente queda en revisión (VAL-012).
+
+h3. Trazabilidad
+Requisitos: RF-057, RF-058, RF-062, RF-063, RF-064, RF-065, VAL-012, VAL-013, UI-015
+Pantallas aprobadas: F-30, F-31 (docs/diseno-ui/pantallas)
+API: GET/POST /expedientes; POST /expedientes/{id}/revision; POST /expedientes/{id}/resoluciones; GET /sanciones (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-17, H-26
+
+h3. Planificación
+Sprint: sin asignar (núcleo no comprometido) · MoSCoW: Should · Prioridad: Medium · 5 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Medium,Por hacer,5,,siglim-v4,backlog,moscow-should,m09
+47,8,Story,[H-28] Corregir un resultado oficial por resolución conservando la versión anterior,"*Como* Comisión Disciplinaria, *quiero* que una resolución pueda cambiar un resultado oficial, *para* aplicar el reglamento sin perder la versión original.
+
+Solo por resolución disciplinaria (VAL-010); la versión anterior deja de ser vigente y la tabla se recalcula. El portal muestra «Resultado modificado por resolución» (F-03).
+
+h3. Criterios de aceptación
+# Dada una resolución, cuando corrige el resultado, entonces existe una versión nueva vigente y la anterior se conserva.
+# Sin resolución, la corrección se rechaza con 403 VAL-010.
+# La tabla refleja el resultado vigente.
+
+h3. Trazabilidad
+Requisitos: RF-052, RN-024, VAL-010
+Pantallas aprobadas: F-25, F-03 (docs/diseno-ui/pantallas)
+API: GET /partidos/{id}/resultados (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-27
+
+h3. Planificación
+Sprint: sin asignar (núcleo no comprometido) · MoSCoW: Should · Prioridad: Medium · 2 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Medium,Por hacer,2,,siglim-v4,backlog,moscow-should,m08
+48,13,Story,[H-29] Crear cobros manuales y consultar adeudos,"*Como* Tesorero de la Liga, *quiero* crear cobros a clubes o equipos y ver los adeudos, *para* dar seguimiento a lo que se debe.
+
+Pantalla F-33 (sin «retención de cédula» ni «Art. 88»: D-07).
+
+h3. Criterios de aceptación
+# Dado un cobro con concepto, monto y periodo, cuando se crea, entonces queda PENDIENTE.
+# Los adeudos se suman por club y equipo según el ámbito del usuario.
+# La Directiva solo ve los cobros de su club.
+
+h3. Trazabilidad
+Requisitos: RF-137, RF-140, UI-027
+Pantallas aprobadas: F-33, F-08 (docs/diseno-ui/pantallas)
+API: GET/POST /cobros; GET /adeudos (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-06
+
+h3. Planificación
+Sprint: sin asignar (núcleo no comprometido) · MoSCoW: Should · Prioridad: Medium · 3 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Medium,Por hacer,3,,siglim-v4,backlog,moscow-should,m13
+49,13,Story,[H-30] Pagar un cobro en línea de forma simulada,"*Como* Directiva de club, *quiero* pagar un cobro pendiente con el pago simulado, *para* liquidar adeudos sin acudir a Tesorería.
+
+Pantalla F-34 (móvil). Pasarela simulada de ADR-0012 con referencia `SIM-…`; sin datos de tarjeta, sin «SPEI» ni QR (D-10).
+
+h3. Criterios de aceptación
+# Dado un cobro PENDIENTE, cuando se aprueba la simulación, entonces queda PAGADO con un pago `EN_LINEA_SIMULADO`.
+# Si se rechaza, queda RECHAZADO y puede reintentarse.
+# Un cobro pagado o vencido no se paga en línea (VAL-028).
+# La pantalla muestra «Pago simulado: no se realiza ningún cargo».
+
+h3. Trazabilidad
+Requisitos: RF-138, VAL-028, RNF-004, DEC-37
+Pantallas aprobadas: F-34 (docs/diseno-ui/pantallas)
+API: POST /cobros/{id}/intentos-pago; POST /intentos-pago/{id}/confirmacion (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-29
+
+h3. Planificación
+Sprint: sin asignar (núcleo no comprometido) · MoSCoW: Should · Prioridad: Medium · 3 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Medium,Por hacer,3,,siglim-v4,backlog,moscow-should,m13
+50,13,Story,[H-31] Registrar un pago recibido fuera del sistema con su comprobante,"*Como* Tesorero de la Liga, *quiero* registrar pagos en efectivo o transferencia con comprobante, *para* reflejar lo cobrado en ventanilla.
+
+Modal de F-33. Aplica a cobros PENDIENTE o VENCIDO; el comprobante va a S3.
+
+h3. Criterios de aceptación
+# Dado un cobro pendiente o vencido, cuando se registra el pago con comprobante, entonces queda PAGADO.
+# El pago debe cubrir el monto total (RF-139).
+# Un cobro pagado no admite otro pago (VAL-028).
+
+h3. Trazabilidad
+Requisitos: RF-139, VAL-028, RNF-018
+Pantallas aprobadas: F-33 (docs/diseno-ui/pantallas)
+API: POST /cobros/{id}/pagos; GET /cobros/{id}/pagos (docs/arquitectura/convenciones-api.md)
+
+h3. Dependencias
+H-29, T-04
+
+h3. Planificación
+Sprint: sin asignar (núcleo no comprometido) · MoSCoW: Should · Prioridad: Medium · 2 SP
+
+h3. Terminado
+Cumple los criterios y la Definición de Terminado de CONTRIBUTING.md §4: compila, pruebas de la regla y de su error (incluidas 401/403/404), auditoría de operaciones críticas, documentación actualizada y PR aprobado.",Medium,Por hacer,2,,siglim-v4,backlog,moscow-should,m13
+51,1,Story,[B-01] Atender solicitudes ARCO,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-098
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 2 SP (estimación gruesa)",Low,Por hacer,2,,siglim-v4,backlog,entrega-b,m01
+52,2,Story,[B-02] Asociar la convocatoria a la temporada,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-002
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 1 SP (estimación gruesa)",Low,Por hacer,1,,siglim-v4,backlog,entrega-b,m02
+53,2,Story,[B-03] Registrar reglas interpretadas pendientes de autorización,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-007
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 2 SP (estimación gruesa)",Low,Por hacer,2,,siglim-v4,backlog,entrega-b,m02
+54,3,Story,[B-04] Registrar el cambio de nombre de un club como club nuevo,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-105
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 1 SP (estimación gruesa)",Low,Por hacer,1,,siglim-v4,backlog,entrega-b,m03
+55,3,Story,[B-05] Registrar la venta de un equipo y la conservación de plaza,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-103, RF-104, UI-034
+Pantallas aprobadas: B-09
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 3 SP (estimación gruesa)",Low,Por hacer,3,,siglim-v4,backlog,entrega-b,m03
+56,4,Story,[B-06] Renovar registros y transferir jugadores entre temporadas,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-015, RF-016, RF-111, VAL-026
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 3 SP (estimación gruesa)",Low,Por hacer,3,,siglim-v4,backlog,entrega-b,m04
+57,4,Story,[B-07] Consultar el historial de cambios de un registro,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-018
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 1 SP (estimación gruesa)",Low,Por hacer,1,,siglim-v4,backlog,entrega-b,m04
+58,5,Story,[B-08] Verificar la cuota de árbitros por club,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-114
+Pantallas aprobadas: F-20
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 1 SP (estimación gruesa)",Low,Por hacer,1,,siglim-v4,backlog,entrega-b,m05
+59,5,Story,[B-09] Registrar la disponibilidad arbitral,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-022
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 2 SP (estimación gruesa)",Low,Por hacer,2,,siglim-v4,backlog,entrega-b,m05
+60,5,Story,[B-10] Consultar el historial de designaciones,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-024
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 1 SP (estimación gruesa)",Low,Por hacer,1,,siglim-v4,backlog,entrega-b,m05
+61,6,Story,[B-11] Agrupar canchas por sede,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-028
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 1 SP (estimación gruesa)",Low,Por hacer,1,,siglim-v4,backlog,entrega-b,m06
+62,6,Story,[B-12] Registrar mantenimiento tipificado de canchas,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-031
+Pantallas aprobadas: F-21
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 1 SP (estimación gruesa)",Low,Por hacer,1,,siglim-v4,backlog,entrega-b,m06
+63,6,Story,[B-13] Registrar horarios de cancha de club y comodato,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-119
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 2 SP (estimación gruesa)",Low,Por hacer,2,,siglim-v4,backlog,entrega-b,m06
+64,6,Story,"[B-14] Gestionar solicitudes de préstamo, comodato y oferta de cancha con oficio","Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-116, RF-117, RF-118, UI-028
+Pantallas aprobadas: B-07
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 5 SP (estimación gruesa)",Low,Por hacer,5,,siglim-v4,backlog,entrega-b,m06
+65,7,Story,[B-15] Advertir las reglas de localía y aceptar con motivo,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-120, VAL-027
+Pantallas aprobadas: F-22
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 2 SP (estimación gruesa)",Low,Por hacer,2,,siglim-v4,backlog,entrega-b,m07
+66,8,Story,[B-16] Conservar el histórico de la tabla por jornada,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-051
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 2 SP (estimación gruesa)",Low,Por hacer,2,,siglim-v4,backlog,entrega-b,m08
+67,11,Story,[B-17] Calcular y publicar estadísticas de jugador con consentimiento,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-054, RF-145, UI-013
+Pantallas aprobadas: B-01
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 3 SP (estimación gruesa)",Low,Por hacer,3,,siglim-v4,backlog,entrega-b,m11
+68,9,Story,[B-18] Adjuntar evidencias al expediente,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-059
+Pantallas aprobadas: F-30
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 2 SP (estimación gruesa)",Low,Por hacer,2,,siglim-v4,backlog,entrega-b,m09
+69,9,Story,[B-19] Proponer la sanción según el artículo,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-061
+Pantallas aprobadas: F-31
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 1 SP (estimación gruesa)",Low,Por hacer,1,,siglim-v4,backlog,entrega-b,m09
+70,9,Story,[B-20] Gestionar la lista de castigados y publicar sanciones,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-066, RF-068, UI-016
+Pantallas aprobadas: B-02
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 2 SP (estimación gruesa)",Low,Por hacer,2,,siglim-v4,backlog,entrega-b,m09
+71,9,Story,[B-21] Interponer y resolver recursos de inconformidad,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-067, UI-017
+Pantallas aprobadas: B-03
+
+h3. Nota
+Plazo pendiente (PEN-041).
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 3 SP (estimación gruesa)",Low,Por hacer,3,,siglim-v4,backlog,entrega-b,m09
+72,9,Story,"[B-22] Aplicar efectos automáticos: baja, sanción retroactiva y partidos restantes","Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-130, RF-131, RF-132
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 5 SP (estimación gruesa)",Low,Por hacer,5,,siglim-v4,backlog,entrega-b,m09
+73,9,Story,[B-23] Generar el cobro de una multa,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-133
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 1 SP (estimación gruesa)",Low,Por hacer,1,,siglim-v4,backlog,entrega-b,m09
+74,10,Story,[B-24] Proponer y validar ascensos y descensos,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-069, RF-070, RF-071, RF-072, RF-073, RF-074, RF-075, UI-018
+Pantallas aprobadas: B-04
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 5 SP (estimación gruesa)",Low,Por hacer,5,,siglim-v4,backlog,entrega-b,m10
+75,10,Story,[B-25] Configurar y jugar la liguilla,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-076, RF-077, RF-078, RF-079, RF-080, RF-081, UI-019
+Pantallas aprobadas: B-05
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 8 SP (estimación gruesa)",Low,Por hacer,8,,siglim-v4,backlog,entrega-b,m10
+76,11,Story,"[B-26] Ampliar el portal: calendario, comunicados, sanciones y equipos","Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-085, RF-086, RF-087, RF-088
+Pantallas aprobadas: B-10
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 3 SP (estimación gruesa)",Low,Por hacer,3,,siglim-v4,backlog,entrega-b,m11
+77,11,Story,"[B-27] Redactar, aprobar y publicar comunicados","Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-090, UI-031
+Pantallas aprobadas: B-08
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 2 SP (estimación gruesa)",Low,Por hacer,2,,siglim-v4,backlog,entrega-b,m11
+78,12,Story,[B-28] Generar y exportar reportes REP-001 a REP-014,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-091, RF-092, UI-021
+Pantallas aprobadas: B-06
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 5 SP (estimación gruesa)",Low,Por hacer,5,,siglim-v4,backlog,entrega-b,m12
+79,13,Story,[B-29] Configurar tarifas de arbitraje y cancha,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-135
+
+h3. Nota
+Tarifas reales pendientes (PEN-042).
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 2 SP (estimación gruesa)",Low,Por hacer,2,,siglim-v4,backlog,entrega-b,m13
+80,13,Story,[B-30] Generar cobros automáticos al publicar la jornada,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-136
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 3 SP (estimación gruesa)",Low,Por hacer,3,,siglim-v4,backlog,entrega-b,m13
+81,13,Story,[B-31] Vencer cobros no pagados,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-141
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 2 SP (estimación gruesa)",Low,Por hacer,2,,siglim-v4,backlog,entrega-b,m13
+82,14,Story,[B-32] Enviar los avisos por correo,"Historia de entrega B (backlog priorizado, ERS). Se desglosa en subtareas y criterios de aceptación detallados cuando entre a un sprint (AGENTS.md §3.1).
+
+h3. Trazabilidad
+Requisitos: RF-143
+
+h3. Nota
+Bloqueada hasta elegir proveedor (PEN-034, DEC-46).
+
+h3. Planificación
+Sin sprint · MoSCoW: Could · Prioridad: Low · 3 SP (estimación gruesa)",Low,Por hacer,3,,siglim-v4,backlog,entrega-b,m14
+83,15,Subtask,[T-01.1] Crear el proyecto Supabase y aplicar la migración,"Parte de T-01: Aplicar el esquema inicial en Supabase y registrar al administrador.
+
+h3. Terminado cuando
+La migración corre sin errores en el SQL Editor; `siglim` no aparece en Exposed schemas; las credenciales quedan solo en los `.env` locales de cada integrante.
+
+h3. Estimación
+1.5 h · capa: infra",,Por hacer,,5400,siglim-v4,sprint-1,infra,
+84,15,Subtask,[T-01.2] Registrar al Administrador general y verificar la semilla,"Parte de T-01: Aplicar el esquema inicial en Supabase y registrar al administrador.
+
+h3. Terminado cuando
+Usuario invitado en Authentication; `registrar_administrador_inicial` devuelve su perfil; consulta de verificación: 13 roles, 73 permisos, 1 liga.
+
+h3. Estimación
+1.5 h · capa: bd",,Por hacer,,5400,siglim-v4,sprint-1,bd,
+85,16,Subtask,[T-02.1] Generar el proyecto con paquetes por módulo y configuración por variables de entorno,"Parte de T-02: Crear el esqueleto del backend Spring Boot con seguridad y contexto de base de datos.
+
+h3. Terminado cuando
+Estructura `mx.tecnm.morelia.siglim.<modulo>`; `backend/.env.example` documenta cada variable; sin secretos en el repositorio.
+
+h3. Estimación
+2 h · capa: backend",,Por hacer,,7200,siglim-v4,sprint-1,backend,
+86,16,Subtask,[T-02.2] Validar el JWT de Supabase con JWKS,"Parte de T-02: Crear el esqueleto del backend Spring Boot con seguridad y contexto de base de datos.
+
+h3. Terminado cuando
+Peticiones sin token o con token vencido responden 401 `NO_AUTENTICADO`; prueba automatizada.
+
+h3. Estimación
+2 h · capa: backend",,Por hacer,,7200,siglim-v4,sprint-1,backend,
+87,16,Subtask,[T-02.3] Implementar el contexto transaccional (`set_config` + `SET LOCAL ROLE`),"Parte de T-02: Crear el esqueleto del backend Spring Boot con seguridad y contexto de base de datos.
+
+h3. Terminado cuando
+Prueba de integración contra PostgreSQL local: el trigger de auditoría registra el perfil del token; sin contexto, RLS niega.
+
+h3. Estimación
+3 h · capa: backend",,Por hacer,,10800,siglim-v4,sprint-1,backend,
+88,16,Subtask,[T-02.4] Implementar el manejador de errores RFC 9457 y la tabla HINT → HTTP,"Parte de T-02: Crear el esqueleto del backend Spring Boot con seguridad y contexto de base de datos.
+
+h3. Terminado cuando
+Pruebas: `P0001` con HINT `VAL-003` → 409; `23P01` → 409 `VAL-004`; `42501` en lectura → 404.
+
+h3. Estimación
+2 h · capa: backend",,Por hacer,,7200,siglim-v4,sprint-1,backend,
+89,17,Subtask,"[T-03.1] Generar el proyecto y configurar tokens, tipografía y rutas","Parte de T-03: Crear el esqueleto del frontend React con el sistema de diseño aprobado.
+
+h3. Terminado cuando
+Colores, tipografías (Inter, JetBrains Mono) y radios de DESIGN.md como tokens de Tailwind; rutas `/` y `/app` con `RutaProtegida`.
+
+h3. Estimación
+2 h · capa: frontend",,Por hacer,,7200,siglim-v4,sprint-1,frontend,
+90,17,Subtask,[T-03.2] Construir los layouts del portal y de la aplicación interna,"Parte de T-03: Crear el esqueleto del frontend React con el sistema de diseño aprobado.
+
+h3. Terminado cuando
+Encabezado del portal y barra lateral colapsable; responsivos desde 360 px; foco visible.
+
+h3. Estimación
+3 h · capa: frontend",,Por hacer,,10800,siglim-v4,sprint-1,frontend,
+91,17,Subtask,[T-03.3] Construir los componentes base y las páginas de estado,"Parte de T-03: Crear el esqueleto del frontend React con el sistema de diseño aprobado.
+
+h3. Terminado cuando
+Botones, insignias con ícono y texto, modal de motivo (mínimo 10 caracteres), alerta de bloqueo, vacío, carga, 403 y 404, con pruebas de componente.
+
+h3. Estimación
+2.5 h · capa: frontend",,Por hacer,,9000,siglim-v4,sprint-1,frontend,
+92,17,Subtask,[T-03.4] Crear el cliente API con manejo de `ApiError`,"Parte de T-03: Crear el esqueleto del frontend React con el sistema de diseño aprobado.
+
+h3. Terminado cuando
+Agrega `Authorization`, expone `problema.codigo` y `errores`; prueba unitaria con un 409.
+
+h3. Estimación
+1.5 h · capa: frontend",,Por hacer,,5400,siglim-v4,sprint-1,frontend,
+93,18,Subtask,[H-01.1] Implementar `GET /api/v1/yo` con asignaciones y permisos efectivos,"Parte de H-01: Iniciar sesión y ver el panel con mis módulos permitidos.
+
+h3. Terminado cuando
+Devuelve perfil, asignaciones (rol, ámbito, club) y lista de permisos; pruebas 200 y 401.
+
+h3. Estimación
+2 h · capa: backend",,Por hacer,,7200,siglim-v4,sprint-1,backend,
+94,18,Subtask,[H-01.2] Construir la pantalla de inicio de sesión (F-05) con Supabase Auth,"Parte de H-01: Iniciar sesión y ver el panel con mis módulos permitidos.
+
+h3. Terminado cuando
+Correo, contraseña, mostrar/ocultar, recuperar contraseña y mensajes de error; sin folio ni 2FA.
+
+h3. Estimación
+2 h · capa: frontend",,Por hacer,,7200,siglim-v4,sprint-1,frontend,
+95,18,Subtask,[H-01.3] Filtrar la navegación del panel por permisos,"Parte de H-01: Iniciar sesión y ver el panel con mis módulos permitidos.
+
+h3. Terminado cuando
+La barra lateral se arma desde `/yo`; prueba con dos roles distintos.
+
+h3. Estimación
+1 h · capa: frontend",,Por hacer,,3600,siglim-v4,sprint-1,frontend,
+96,18,Subtask,[H-01.4] Prueba de aceptación del inicio y cierre de sesión,"Parte de H-01: Iniciar sesión y ver el panel con mis módulos permitidos.
+
+h3. Terminado cuando
+Escenarios de los criterios automatizados o documentados con evidencia.
+
+h3. Estimación
+1 h · capa: pruebas",,Por hacer,,3600,siglim-v4,sprint-1,pruebas,
+97,19,Subtask,[H-02.1] Implementar `autorizacion.exigir` y el objetivo por ámbito,"Parte de H-02: Autorizar cada operación por permiso y ámbito y auditar las operaciones críticas.
+
+h3. Terminado cuando
+Pruebas parametrizadas LIGA, CLUB y PROPIO; sin coincidencia → 403.
+
+h3. Estimación
+3 h · capa: backend",,Por hacer,,10800,siglim-v4,sprint-2,backend,
+98,19,Subtask,[H-02.2] Implementar el servicio transversal de auditoría,"Parte de H-02: Autorizar cada operación por permiso y ámbito y auditar las operaciones críticas.
+
+h3. Terminado cuando
+Registro en la misma transacción; prueba de que UPDATE/DELETE sobre `auditoria` fallan.
+
+h3. Estimación
+2 h · capa: backend",,Por hacer,,7200,siglim-v4,sprint-2,backend,
+99,19,Subtask,[H-02.3] Crear el arnés de pruebas 401/403/404 reutilizable por endpoint,"Parte de H-02: Autorizar cada operación por permiso y ámbito y auditar las operaciones críticas.
+
+h3. Terminado cuando
+Utilidad de pruebas que cada historia usa para sus endpoints (RNF-003).
+
+h3. Estimación
+2 h · capa: pruebas",,Por hacer,,7200,siglim-v4,sprint-2,pruebas,
+100,19,Subtask,[H-02.4] Ocultar en la interfaz las acciones sin permiso y manejar 403/404,"Parte de H-02: Autorizar cada operación por permiso y ámbito y auditar las operaciones críticas.
+
+h3. Terminado cuando
+Componentes condicionados por permisos; páginas 403/404 en uso.
+
+h3. Estimación
+2 h · capa: frontend",,Por hacer,,7200,siglim-v4,sprint-2,frontend,
+101,20,Subtask,"[H-03.1] Endpoints de usuarios, invitación y asignaciones","Parte de H-03: Invitar usuarios y asignarles roles con ámbito.
+
+h3. Terminado cuando
+Invitación vía API de administración de Supabase desde el backend; pruebas 201, 400, 403.
+
+h3. Estimación
+3 h · capa: backend",,Por hacer,,10800,siglim-v4,sprint-2,backend,
+102,20,Subtask,[H-03.2] Pantalla de usuarios con panel lateral e invitación (F-12),"Parte de H-03: Invitar usuarios y asignarles roles con ámbito.
+
+h3. Terminado cuando
+Tabla con filtros, modal de invitación y revocación con motivo.
+
+h3. Estimación
+2.5 h · capa: frontend",,Por hacer,,9000,siglim-v4,sprint-2,frontend,
+103,20,Subtask,[H-03.3] Pruebas de aceptación de invitación y desactivación,"Parte de H-03: Invitar usuarios y asignarles roles con ámbito.
+
+h3. Terminado cuando
+Escenarios de los criterios con evidencia.
+
+h3. Estimación
+0.5 h · capa: pruebas",,Por hacer,,1800,siglim-v4,sprint-2,pruebas,
+104,21,Subtask,[H-04.1] Endpoints de temporadas con activación y cierre,"Parte de H-04: Gestionar temporadas con una sola activa y proteger las cerradas.
+
+h3. Terminado cuando
+Transiciones según `estado_temporada`; pruebas de la regla de una activa y de solo lectura.
+
+h3. Estimación
+3 h · capa: backend",,Por hacer,,10800,siglim-v4,sprint-2,backend,
+105,21,Subtask,[H-04.2] Pantalla de temporadas con lista de verificación (F-10),"Parte de H-04: Gestionar temporadas con una sola activa y proteger las cerradas.
+
+h3. Terminado cuando
+Tabla, botón de activar deshabilitado con explicación, modal de cierre con motivo.
+
+h3. Estimación
+2.5 h · capa: frontend",,Por hacer,,9000,siglim-v4,sprint-2,frontend,
+106,21,Subtask,[H-04.3] Prueba de aceptación del ciclo de vida de la temporada,"Parte de H-04: Gestionar temporadas con una sola activa y proteger las cerradas.
+
+h3. Terminado cuando
+Evidencia de los criterios.
+
+h3. Estimación
+0.5 h · capa: pruebas",,Por hacer,,1800,siglim-v4,sprint-2,pruebas,
+107,22,Subtask,"[H-05.1] Endpoints de categorías, categorías de temporada y grupos","Parte de H-05: Configurar categorías, grupos y parámetros deportivos versionados.
+
+h3. Terminado cuando
+CRUD con validación de jerarquía; pruebas de permisos.
+
+h3. Estimación
+3 h · capa: backend",,Por hacer,,10800,siglim-v4,sprint-2,backend,
+108,22,Subtask,[H-05.2] Endpoints de versiones de parámetros con `esDemo`,"Parte de H-05: Configurar categorías, grupos y parámetros deportivos versionados.
+
+h3. Terminado cuando
+POST crea versión; GET devuelve vigente e historial; pruebas.
+
+h3. Estimación
+2 h · capa: backend",,Por hacer,,7200,siglim-v4,sprint-2,backend,
+109,22,Subtask,[H-05.3] Pantalla de estructura y parámetros con pestañas (F-11),"Parte de H-05: Configurar categorías, grupos y parámetros deportivos versionados.
+
+h3. Terminado cuando
+Lista arrastrable de categorías y desempates; historial de versiones; insignias «No oficial».
+
+h3. Estimación
+3 h · capa: frontend",,Por hacer,,10800,siglim-v4,sprint-2,frontend,
+110,22,Subtask,[H-05.4] Prueba de aceptación de versionado de parámetros,"Parte de H-05: Configurar categorías, grupos y parámetros deportivos versionados.
+
+h3. Terminado cuando
+Evidencia de los criterios.
+
+h3. Estimación
+1 h · capa: pruebas",,Por hacer,,3600,siglim-v4,sprint-2,pruebas,
+111,23,Subtask,[H-06.1] Endpoints de clubes y equipos con ámbito de club,"Parte de H-06: Registrar clubes y sus equipos en la categoría y grupo de la temporada.
+
+h3. Terminado cuando
+Pruebas de ámbito y de baja sin borrado.
+
+h3. Estimación
+3 h · capa: backend",,Por hacer,,10800,siglim-v4,sprint-2,backend,
+112,23,Subtask,[H-06.2] Pantalla de clubes con detalle y pestaña de equipos (F-15),"Parte de H-06: Registrar clubes y sus equipos en la categoría y grupo de la temporada.
+
+h3. Terminado cuando
+Lista, detalle, alta de equipo y baja con motivo; sin exportar.
+
+h3. Estimación
+2.5 h · capa: frontend",,Por hacer,,9000,siglim-v4,sprint-2,frontend,
+113,23,Subtask,[H-06.3] Prueba de aceptación de clubes y equipos,"Parte de H-06: Registrar clubes y sus equipos en la categoría y grupo de la temporada.
+
+h3. Terminado cuando
+Evidencia de los criterios.
+
+h3. Estimación
+0.5 h · capa: pruebas",,Por hacer,,1800,siglim-v4,sprint-2,pruebas,
+114,24,Subtask,"[H-07.1] Endpoints de canchas, disponibilidad y ocupación","Parte de H-07: Registrar canchas con su disponibilidad y bloqueos.
+
+h3. Terminado cuando
+Intervalos `tstzrange` como `{desde, hasta}`; pruebas de traslape y de bloqueo con partidos.
+
+h3. Estimación
+4 h · capa: backend",,Por hacer,,14400,siglim-v4,sprint-2,backend,
+115,24,Subtask,[H-07.2] Pantalla de canchas con calendario semanal y modal de bloqueo (F-21),"Parte de H-07: Registrar canchas con su disponibilidad y bloqueos.
+
+h3. Terminado cuando
+Bloques Disponible/Bloqueo/Mantenimiento/Partido; aviso de partidos afectados.
+
+h3. Estimación
+4 h · capa: frontend",,Por hacer,,14400,siglim-v4,sprint-2,frontend,
+116,24,Subtask,[H-07.3] Prueba de aceptación de disponibilidad y bloqueo,"Parte de H-07: Registrar canchas con su disponibilidad y bloqueos.
+
+h3. Terminado cuando
+Evidencia de los criterios.
+
+h3. Estimación
+1 h · capa: pruebas",,Por hacer,,3600,siglim-v4,sprint-2,pruebas,
+117,25,Subtask,"[T-04.1] Crear la cuenta de AWS, el bucket privado y el usuario IAM de mínimo privilegio","Parte de T-04: Configurar AWS S3 y el servicio de almacenamiento de documentos.
+
+h3. Terminado cuando
+Block Public Access activo; política solo Put/Get en `liga/*`; región documentada en `.env.example`.
+
+h3. Estimación
+2 h · capa: infra",,Por hacer,,7200,siglim-v4,sprint-2,infra,
+118,25,Subtask,[T-04.2] Implementar `AlmacenamientoDocumentos` con firma binaria y URL prefirmada,"Parte de T-04: Configurar AWS S3 y el servicio de almacenamiento de documentos.
+
+h3. Terminado cuando
+JPEG, PNG, WebP y PDF de hasta 5 MB [PROPUESTA]; 413 y 415 según convenciones.
+
+h3. Estimación
+3 h · capa: backend",,Por hacer,,10800,siglim-v4,sprint-2,backend,
+119,25,Subtask,[T-04.3] Prueba de integración con S3 y nota de costos,"Parte de T-04: Configurar AWS S3 y el servicio de almacenamiento de documentos.
+
+h3. Terminado cuando
+Prueba ejecutable con perfil local; nota de costo esperado en el README del backend.
+
+h3. Estimación
+1 h · capa: pruebas",,Por hacer,,3600,siglim-v4,sprint-2,pruebas,
+120,26,Subtask,[H-08.1] Endpoints de afiliación con folio y resolución,"Parte de H-08: Solicitar y aprobar la afiliación del club por temporada (tarjetón).
+
+h3. Terminado cuando
+Pruebas de estados y de ámbito.
+
+h3. Estimación
+2.5 h · capa: backend",,Por hacer,,9000,siglim-v4,sprint-3,backend,
+121,26,Subtask,[H-08.2] Pantalla de tarjetón con vistas de captura y revisión (F-16),"Parte de H-08: Solicitar y aprobar la afiliación del club por temporada (tarjetón).
+
+h3. Terminado cuando
+Formulario por secciones y modales de aprobar/rechazar.
+
+h3. Estimación
+3 h · capa: frontend",,Por hacer,,10800,siglim-v4,sprint-3,frontend,
+122,26,Subtask,[H-08.3] Prueba de aceptación de la afiliación,"Parte de H-08: Solicitar y aprobar la afiliación del club por temporada (tarjetón).
+
+h3. Terminado cuando
+Evidencia de los criterios.
+
+h3. Estimación
+0.5 h · capa: pruebas",,Por hacer,,1800,siglim-v4,sprint-3,pruebas,
+123,27,Subtask,"[H-09.1] Endpoints de personas, tutela y consentimiento","Parte de H-09: Registrar un jugador por CURP con tutor y consentimiento.
+
+h3. Terminado cuando
+POST con CURP existente responde 409 con el id; pruebas de tutela y consentimiento.
+
+h3. Estimación
+3 h · capa: backend",,Por hacer,,10800,siglim-v4,sprint-3,backend,
+124,27,Subtask,[H-09.2] Endpoint de alta de registro con unicidad por CURP,"Parte de H-09: Registrar un jugador por CURP con tutor y consentimiento.
+
+h3. Terminado cuando
+Traduce VAL-017 y VAL-025 con mensaje explicativo; pruebas.
+
+h3. Estimación
+2 h · capa: backend",,Por hacer,,7200,siglim-v4,sprint-3,backend,
+125,27,Subtask,"[H-09.3] Asistente de alta (pasos 1, 2 y 4) y pantalla de consentimiento (F-18, F-06)","Parte de H-09: Registrar un jugador por CURP con tutor y consentimiento.
+
+h3. Terminado cuando
+Búsqueda por CURP, datos y tutor, consentimiento; mensajes de bloqueo.
+
+h3. Estimación
+3 h · capa: frontend",,Por hacer,,10800,siglim-v4,sprint-3,frontend,
+126,27,Subtask,[H-09.4] Plantilla del equipo (F-17),"Parte de H-09: Registrar un jugador por CURP con tutor y consentimiento.
+
+h3. Terminado cuando
+Lista con estado, CURP enmascarada y elegibilidad.
+
+h3. Estimación
+1 h · capa: frontend",,Por hacer,,3600,siglim-v4,sprint-3,frontend,
+127,28,Subtask,"[H-10.1] Endpoints de carga, requisitos, enlace y validación de documentos","Parte de H-10: Cargar documentos del jugador y validar el registro.
+
+h3. Terminado cuando
+Usa `AlmacenamientoDocumentos`; pruebas 413/415, ámbito y expiración.
+
+h3. Estimación
+3 h · capa: backend",,Por hacer,,10800,siglim-v4,sprint-3,backend,
+128,28,Subtask,[H-10.2] Endpoint de validación del registro,"Parte de H-10: Cargar documentos del jugador y validar el registro.
+
+h3. Terminado cuando
+Transición con observaciones; prueba de VAL-001.
+
+h3. Estimación
+1.5 h · capa: backend",,Por hacer,,5400,siglim-v4,sprint-3,backend,
+129,28,Subtask,"[H-10.3] Paso 3 del asistente y bandeja de validación (F-18, F-19)","Parte de H-10: Cargar documentos del jugador y validar el registro.
+
+h3. Terminado cuando
+Carga con vista previa; visor seguro; aprobar/rechazar con observaciones.
+
+h3. Estimación
+3.5 h · capa: frontend",,Por hacer,,12600,siglim-v4,sprint-3,frontend,
+130,28,Subtask,[H-10.4] Prueba de aceptación del registro completo,"Parte de H-10: Cargar documentos del jugador y validar el registro.
+
+h3. Terminado cuando
+Alta → documentos → validación.
+
+h3. Estimación
+1 h · capa: pruebas",,Por hacer,,3600,siglim-v4,sprint-3,pruebas,
+131,29,Subtask,[H-11.1] Endpoints de árbitros con validación,"Parte de H-11: Presentar árbitros del club y validarlos.
+
+h3. Terminado cuando
+Pruebas de estados y ámbito.
+
+h3. Estimación
+2.5 h · capa: backend",,Por hacer,,9000,siglim-v4,sprint-3,backend,
+132,29,Subtask,[H-11.2] Pantalla de árbitros con vistas Comisión y club (F-20),"Parte de H-11: Presentar árbitros del club y validarlos.
+
+h3. Terminado cuando
+Pestañas por estado; modales de registro y rechazo; sin «Colegio».
+
+h3. Estimación
+3 h · capa: frontend",,Por hacer,,10800,siglim-v4,sprint-3,frontend,
+133,29,Subtask,[H-11.3] Prueba de aceptación de árbitros,"Parte de H-11: Presentar árbitros del club y validarlos.
+
+h3. Terminado cuando
+Evidencia de los criterios.
+
+h3. Estimación
+0.5 h · capa: pruebas",,Por hacer,,1800,siglim-v4,sprint-3,pruebas,
+134,30,Subtask,[H-12.1] Endpoints de jornadas y partidos en borrador,"Parte de H-12: Programar una jornada con detección de conflictos explicada.
+
+h3. Terminado cuando
+Registro y ajuste con motivo; pruebas de estado BORRADOR.
+
+h3. Estimación
+3 h · capa: backend",,Por hacer,,10800,siglim-v4,sprint-3,backend,
+135,30,Subtask,[H-12.2] Validador de conflictos VAL-003 a VAL-006 en el servicio,"Parte de H-12: Programar una jornada con detección de conflictos explicada.
+
+h3. Terminado cuando
+Usa el bloque de cancha de los parámetros; mensajes explicativos; pruebas por cada regla.
+
+h3. Estimación
+4 h · capa: backend",,Por hacer,,14400,siglim-v4,sprint-3,backend,
+136,30,Subtask,[H-12.3] Endpoint de verificación y traducción de errores del trigger,"Parte de H-12: Programar una jornada con detección de conflictos explicada.
+
+h3. Terminado cuando
+Devuelve conflictos y advertencias; prueba de que el trigger respalda al servicio.
+
+h3. Estimación
+2 h · capa: backend",,Por hacer,,7200,siglim-v4,sprint-3,backend,
+137,30,Subtask,[H-12.4] Pantalla de programación con validación en línea (F-22),"Parte de H-12: Programar una jornada con detección de conflictos explicada.
+
+h3. Terminado cuando
+Tabla editable, filas con conflicto marcadas con su explicación, botón de envío deshabilitado con conflictos.
+
+h3. Estimación
+4 h · capa: frontend",,Por hacer,,14400,siglim-v4,sprint-3,frontend,
+138,30,Subtask,[H-12.5] Prueba de aceptación de conflictos,"Parte de H-12: Programar una jornada con detección de conflictos explicada.
+
+h3. Terminado cuando
+Un escenario por regla, con evidencia.
+
+h3. Estimación
+2 h · capa: pruebas",,Por hacer,,7200,siglim-v4,sprint-3,pruebas,
+139,31,Subtask,"[H-13.1] Endpoints de envío, resolución y pendientes de publicación","Parte de H-13: Enviar la jornada a aprobación y publicarla.
+
+h3. Terminado cuando
+Transiciones con historial; pruebas de separación de funciones.
+
+h3. Estimación
+2.5 h · capa: backend",,Por hacer,,9000,siglim-v4,sprint-3,backend,
+140,31,Subtask,[H-13.2] Pantalla de revisión de la jornada (F-23) y envío desde F-22,"Parte de H-13: Enviar la jornada a aprobación y publicarla.
+
+h3. Terminado cuando
+Resumen, tabla de solo lectura, modales de aprobar y devolver.
+
+h3. Estimación
+3 h · capa: frontend",,Por hacer,,10800,siglim-v4,sprint-3,frontend,
+141,31,Subtask,[H-13.3] Prueba de aceptación del flujo de publicación,"Parte de H-13: Enviar la jornada a aprobación y publicarla.
+
+h3. Terminado cuando
+Evidencia de los criterios.
+
+h3. Estimación
+0.5 h · capa: pruebas",,Por hacer,,1800,siglim-v4,sprint-3,pruebas,
+142,32,Subtask,[H-14.1] Endpoints de designación y mis designaciones,"Parte de H-14: Designar árbitros a los partidos de una jornada.
+
+h3. Terminado cuando
+Pruebas VAL-019 y choque de horario.
+
+h3. Estimación
+2.5 h · capa: backend",,Por hacer,,9000,siglim-v4,sprint-4,backend,
+143,32,Subtask,[H-14.2] Pantalla de designación con selectores filtrados (F-24),"Parte de H-14: Designar árbitros a los partidos de una jornada.
+
+h3. Terminado cuando
+Árbitros no elegibles deshabilitados con su causa; indicador de avance.
+
+h3. Estimación
+3 h · capa: frontend",,Por hacer,,10800,siglim-v4,sprint-4,frontend,
+144,32,Subtask,[H-14.3] Prueba de aceptación de designación,"Parte de H-14: Designar árbitros a los partidos de una jornada.
+
+h3. Terminado cuando
+Evidencia de los criterios.
+
+h3. Estimación
+0.5 h · capa: pruebas",,Por hacer,,1800,siglim-v4,sprint-4,pruebas,
+145,33,Subtask,[H-15.1] Endpoints de partido con `accionesPermitidas` y transiciones,"Parte de H-15: Gestionar el estado del partido con motivo e historial.
+
+h3. Terminado cuando
+Pruebas de cada transición permitida y prohibida.
+
+h3. Estimación
+3 h · capa: backend",,Por hacer,,10800,siglim-v4,sprint-4,backend,
+146,33,Subtask,[H-15.2] Tarea programada que inicia los partidos a su hora,"Parte de H-15: Gestionar el estado del partido con motivo e historial.
+
+h3. Terminado cuando
+Idempotente con usuario Sistema; prueba de doble ejecución.
+
+h3. Estimación
+2 h · capa: backend",,Por hacer,,7200,siglim-v4,sprint-4,backend,
+147,33,Subtask,[H-15.3] Pantalla de detalle del partido con pestañas e historial (F-25),"Parte de H-15: Gestionar el estado del partido con motivo e historial.
+
+h3. Terminado cuando
+Barra de acciones según estado; modal de reprogramación con motivo.
+
+h3. Estimación
+3 h · capa: frontend",,Por hacer,,10800,siglim-v4,sprint-4,frontend,
+148,33,Subtask,[H-15.4] Prueba de aceptación de estados del partido,"Parte de H-15: Gestionar el estado del partido con motivo e historial.
+
+h3. Terminado cuando
+Evidencia de los criterios.
+
+h3. Estimación
+1 h · capa: pruebas",,Por hacer,,3600,siglim-v4,sprint-4,pruebas,
+149,34,Subtask,"[H-16.1] Endpoints de cédula, alineación con elegibilidad y marcador","Parte de H-16: Capturar la cédula del partido y enviarla a validación.
+
+h3. Terminado cuando
+Errores por jugador en `errores`; pruebas VAL-002, VAL-018 y default.
+
+h3. Estimación
+4 h · capa: backend",,Por hacer,,14400,siglim-v4,sprint-4,backend,
+150,34,Subtask,"[H-16.2] Endpoints de eventos, incidencias y envío a validación","Parte de H-16: Capturar la cédula del partido y enviarla a validación.
+
+h3. Terminado cuando
+Pruebas VAL-020 y bloqueo de edición fuera de EN_CAPTURA.
+
+h3. Estimación
+3 h · capa: backend",,Por hacer,,10800,siglim-v4,sprint-4,backend,
+151,34,Subtask,[H-16.3] Pantalla de captura de cédula (F-26),"Parte de H-16: Capturar la cédula del partido y enviarla a validación.
+
+h3. Terminado cuando
+Tres columnas, línea de eventos, incidencias, guardado y validación previa al envío.
+
+h3. Estimación
+6 h · capa: frontend",,Por hacer,,21600,siglim-v4,sprint-4,frontend,
+152,34,Subtask,[H-16.4] Prueba de aceptación de captura,"Parte de H-16: Capturar la cédula del partido y enviarla a validación.
+
+h3. Terminado cuando
+Escenarios de elegibilidad, default y envío.
+
+h3. Estimación
+2 h · capa: pruebas",,Por hacer,,7200,siglim-v4,sprint-4,pruebas,
+153,35,Subtask,"[H-17.1] Endpoints de aprobación, devolución y reapertura","Parte de H-17: Validar la cédula y oficializar el resultado.
+
+h3. Terminado cuando
+Transacción atómica cédula + partido + resultado + auditoría (RNF-004); pruebas VAL-021.
+
+h3. Estimación
+3.5 h · capa: backend",,Por hacer,,12600,siglim-v4,sprint-4,backend,
+154,35,Subtask,[H-17.2] Tarea programada del plazo vencido,"Parte de H-17: Validar la cédula y oficializar el resultado.
+
+h3. Terminado cuando
+Marca `plazo_vencido` de forma idempotente; prueba.
+
+h3. Estimación
+1.5 h · capa: backend",,Por hacer,,5400,siglim-v4,sprint-4,backend,
+155,35,Subtask,[H-17.3] Pantallas de validación del árbitro (F-27) y de la Comisión (F-28),"Parte de H-17: Validar la cédula y oficializar el resultado.
+
+h3. Terminado cuando
+Móvil con hoja de devolución; bandeja con plazo y aprobación por vencimiento.
+
+h3. Estimación
+3 h · capa: frontend",,Por hacer,,10800,siglim-v4,sprint-4,frontend,
+156,35,Subtask,[H-17.4] Prueba de aceptación de la oficialización,"Parte de H-17: Validar la cédula y oficializar el resultado.
+
+h3. Terminado cuando
+Evidencia de los criterios.
+
+h3. Estimación
+1 h · capa: pruebas",,Por hacer,,3600,siglim-v4,sprint-4,pruebas,
+157,36,Subtask,[H-18.1] Endpoints de tabla y sorteo,"Parte de H-18: Consultar la tabla de posiciones con desempates y sorteo.
+
+h3. Terminado cuando
+Pruebas con el conjunto de desempates de `prueba_tabla.sql`.
+
+h3. Estimación
+2.5 h · capa: backend",,Por hacer,,9000,siglim-v4,sprint-4,backend,
+158,36,Subtask,[H-18.2] Pantalla de tabla interna con modal de sorteo (F-29),"Parte de H-18: Consultar la tabla de posiciones con desempates y sorteo.
+
+h3. Terminado cuando
+Tooltip de criterio; insignias.
+
+h3. Estimación
+3 h · capa: frontend",,Por hacer,,10800,siglim-v4,sprint-4,frontend,
+159,36,Subtask,[H-18.3] Prueba de aceptación de la tabla,"Parte de H-18: Consultar la tabla de posiciones con desempates y sorteo.
+
+h3. Terminado cuando
+Evidencia con empates.
+
+h3. Estimación
+0.5 h · capa: pruebas",,Por hacer,,1800,siglim-v4,sprint-4,pruebas,
+160,37,Subtask,[H-19.1] Endpoints públicos sobre las vistas con caché,"Parte de H-19: Consultar en el portal la programación, los resultados y las tablas publicadas.
+
+h3. Terminado cuando
+Rol `siglim_publico`; `Cache-Control` 60 s; pruebas.
+
+h3. Estimación
+2.5 h · capa: backend",,Por hacer,,9000,siglim-v4,sprint-4,backend,
+161,37,Subtask,"[H-19.2] Páginas del portal: programación, resultados y tabla (F-01 a F-04)","Parte de H-19: Consultar en el portal la programación, los resultados y las tablas publicadas.
+
+h3. Terminado cuando
+Escritorio y móvil; hoja de filtros en móvil.
+
+h3. Estimación
+5 h · capa: frontend",,Por hacer,,18000,siglim-v4,sprint-4,frontend,
+162,37,Subtask,[H-19.3] Prueba de aceptación del portal,"Parte de H-19: Consultar en el portal la programación, los resultados y las tablas publicadas.
+
+h3. Terminado cuando
+Solo lo publicado; filtros; 360 px.
+
+h3. Estimación
+1.5 h · capa: pruebas",,Por hacer,,5400,siglim-v4,sprint-4,pruebas,
+163,38,Subtask,[T-05.1] Crear `supabase/seed.sql` con datos ficticios del recorrido,"Parte de T-05: Probar de extremo a extremo el flujo central y preparar la demostración.
+
+h3. Terminado cuando
+Datos sin personas reales; se carga después de la migración.
+
+h3. Estimación
+1.5 h · capa: bd",,Por hacer,,5400,siglim-v4,sprint-4,bd,
+164,38,Subtask,[T-05.2] Ejecutar el recorrido completo y registrar evidencias,"Parte de T-05: Probar de extremo a extremo el flujo central y preparar la demostración.
+
+h3. Terminado cuando
+Reporte de aceptación por historia con capturas.
+
+h3. Estimación
+2.5 h · capa: pruebas",,Por hacer,,9000,siglim-v4,sprint-4,pruebas,
+165,38,Subtask,[T-05.3] Medir tiempos del portal y operaciones internas,"Parte de T-05: Probar de extremo a extremo el flujo central y preparar la demostración.
+
+h3. Terminado cuando
+p95 medido y comparado con RNF-002/RNF-016; la herramienta se justifica en el reporte.
+
+h3. Estimación
+1 h · capa: pruebas",,Por hacer,,3600,siglim-v4,sprint-4,pruebas,
+166,38,Subtask,[T-05.4] Guion de la demostración del incremento final,"Parte de T-05: Probar de extremo a extremo el flujo central y preparar la demostración.
+
+h3. Terminado cuando
+Pasos, usuarios de prueba y datos.
+
+h3. Estimación
+1 h · capa: docs",,Por hacer,,3600,siglim-v4,sprint-4,docs,
+167,39,Subtask,"[H-20.1] Endpoints de roles, permisos y solicitudes","Parte de H-20: Editar los permisos de un rol con control dual.
+
+h3. Terminado cuando
+Pruebas 200, 202, VAL-022 y separación.
+
+h3. Estimación
+4 h · capa: backend",,Por hacer,,14400,siglim-v4,backlog,backend,
+168,39,Subtask,[H-20.2] Pantalla de matriz de permisos y solicitudes (F-13),"Parte de H-20: Editar los permisos de un rol con control dual.
+
+h3. Terminado cuando
+Pestañas y modales de dictamen.
+
+h3. Estimación
+4 h · capa: frontend",,Por hacer,,14400,siglim-v4,backlog,frontend,
+169,39,Subtask,[H-20.3] Prueba de aceptación del control dual,"Parte de H-20: Editar los permisos de un rol con control dual.
+
+h3. Terminado cuando
+Evidencia de los criterios.
+
+h3. Estimación
+1 h · capa: pruebas",,Por hacer,,3600,siglim-v4,backlog,pruebas,
+170,40,Subtask,[H-21.1] Endpoint de consulta de auditoría,"Parte de H-21: Consultar la auditoría con filtros.
+
+h3. Terminado cuando
+Filtros y paginación de 50; pruebas de permisos.
+
+h3. Estimación
+2 h · capa: backend",,Por hacer,,7200,siglim-v4,backlog,backend,
+171,40,Subtask,[H-21.2] Pantalla de auditoría (F-14),"Parte de H-21: Consultar la auditoría con filtros.
+
+h3. Terminado cuando
+Filtros, tabla densa y fila expandible.
+
+h3. Estimación
+3 h · capa: frontend",,Por hacer,,10800,siglim-v4,backlog,frontend,
+172,40,Subtask,[H-21.3] Prueba de aceptación de auditoría,"Parte de H-21: Consultar la auditoría con filtros.
+
+h3. Terminado cuando
+Evidencia.
+
+h3. Estimación
+1 h · capa: pruebas",,Por hacer,,3600,siglim-v4,backlog,pruebas,
+173,41,Subtask,[H-22.1] Endpoints de directiva con vigencia y autorización,"Parte de H-22: Registrar la directiva del club y sus cambios.
+
+h3. Terminado cuando
+Pruebas.
+
+h3. Estimación
+2.5 h · capa: backend",,Por hacer,,9000,siglim-v4,backlog,backend,
+174,41,Subtask,[H-22.2] Pestaña de directiva en F-15,"Parte de H-22: Registrar la directiva del club y sus cambios.
+
+h3. Terminado cuando
+Lista de cargos y registro de cambio.
+
+h3. Estimación
+3 h · capa: frontend",,Por hacer,,10800,siglim-v4,backlog,frontend,
+175,41,Subtask,[H-22.3] Prueba de aceptación de directiva,"Parte de H-22: Registrar la directiva del club y sus cambios.
+
+h3. Terminado cuando
+Evidencia.
+
+h3. Estimación
+0.5 h · capa: pruebas",,Por hacer,,1800,siglim-v4,backlog,pruebas,
+176,42,Subtask,[H-23.1] Endpoint de baja de registro,"Parte de H-23: Dar de baja a un jugador conservando su historial.
+
+h3. Terminado cuando
+Pruebas de transición y motivo.
+
+h3. Estimación
+2 h · capa: backend",,Por hacer,,7200,siglim-v4,backlog,backend,
+177,42,Subtask,[H-23.2] Modal de baja en la plantilla (F-17),"Parte de H-23: Dar de baja a un jugador conservando su historial.
+
+h3. Terminado cuando
+Motivo obligatorio y advertencia.
+
+h3. Estimación
+3 h · capa: frontend",,Por hacer,,10800,siglim-v4,backlog,frontend,
+178,42,Subtask,[H-23.3] Prueba de aceptación de baja,"Parte de H-23: Dar de baja a un jugador conservando su historial.
+
+h3. Terminado cuando
+Evidencia.
+
+h3. Estimación
+1 h · capa: pruebas",,Por hacer,,3600,siglim-v4,backlog,pruebas,
+179,43,Subtask,[H-24.1] Endpoint `GET /mi-informacion`,"Parte de H-24: Consultar mi información como jugador o tutor.
+
+h3. Terminado cuando
+Ámbito PROPIO con tutela; pruebas.
+
+h3. Estimación
+3 h · capa: backend",,Por hacer,,10800,siglim-v4,backlog,backend,
+180,43,Subtask,[H-24.2] Pantalla móvil de mi información (F-35),"Parte de H-24: Consultar mi información como jugador o tutor.
+
+h3. Terminado cuando
+Selector de menor y secciones.
+
+h3. Estimación
+4.5 h · capa: frontend",,Por hacer,,16200,siglim-v4,backlog,frontend,
+181,43,Subtask,[H-24.3] Prueba de aceptación de consulta propia,"Parte de H-24: Consultar mi información como jugador o tutor.
+
+h3. Terminado cuando
+Evidencia.
+
+h3. Estimación
+1.5 h · capa: pruebas",,Por hacer,,5400,siglim-v4,backlog,pruebas,
+182,44,Subtask,[H-25.1] Módulo de notificaciones con escucha de eventos de dominio,"Parte de H-25: Recibir avisos dentro de la aplicación.
+
+h3. Terminado cuando
+Pruebas por evento.
+
+h3. Estimación
+4 h · capa: backend",,Por hacer,,14400,siglim-v4,backlog,backend,
+183,44,Subtask,[H-25.2] Pantalla de notificaciones y panel de la campana (F-09),"Parte de H-25: Recibir avisos dentro de la aplicación.
+
+h3. Terminado cuando
+Pestañas y marcar leídas.
+
+h3. Estimación
+4 h · capa: frontend",,Por hacer,,14400,siglim-v4,backlog,frontend,
+184,44,Subtask,[H-25.3] Prueba de aceptación de avisos,"Parte de H-25: Recibir avisos dentro de la aplicación.
+
+h3. Terminado cuando
+Evidencia.
+
+h3. Estimación
+1 h · capa: pruebas",,Por hacer,,3600,siglim-v4,backlog,pruebas,
+185,45,Subtask,[H-26.1] Endpoints de catálogos disciplinarios,"Parte de H-26: Configurar los catálogos de incidencias y artículos.
+
+h3. Terminado cuando
+Pruebas de permisos.
+
+h3. Estimación
+2.5 h · capa: backend",,Por hacer,,9000,siglim-v4,backlog,backend,
+186,45,Subtask,[H-26.2] Pantalla de catálogos con pestañas (F-32),"Parte de H-26: Configurar los catálogos de incidencias y artículos.
+
+h3. Terminado cuando
+Formulario lateral de edición.
+
+h3. Estimación
+3 h · capa: frontend",,Por hacer,,10800,siglim-v4,backlog,frontend,
+187,45,Subtask,[H-26.3] Prueba de aceptación de catálogos,"Parte de H-26: Configurar los catálogos de incidencias y artículos.
+
+h3. Terminado cuando
+Evidencia.
+
+h3. Estimación
+0.5 h · capa: pruebas",,Por hacer,,1800,siglim-v4,backlog,pruebas,
+188,46,Subtask,[H-27.1] Apertura automática de expedientes por evento de cédula aprobada,"Parte de H-27: Abrir expedientes desde la cédula y resolverlos con sanción.
+
+h3. Terminado cuando
+Pruebas.
+
+h3. Estimación
+3 h · capa: backend",,Por hacer,,10800,siglim-v4,backlog,backend,
+189,46,Subtask,[H-27.2] Endpoints de revisión y resolución con sanciones,"Parte de H-27: Abrir expedientes desde la cédula y resolverlos con sanción.
+
+h3. Terminado cuando
+Inmutabilidad y vigencia probadas.
+
+h3. Estimación
+4 h · capa: backend",,Por hacer,,14400,siglim-v4,backlog,backend,
+190,46,Subtask,"[H-27.3] Pantallas de expedientes y resolución (F-30, F-31)","Parte de H-27: Abrir expedientes desde la cédula y resolverlos con sanción.
+
+h3. Terminado cuando
+Vista previa de efectos.
+
+h3. Estimación
+6 h · capa: frontend",,Por hacer,,21600,siglim-v4,backlog,frontend,
+191,46,Subtask,[H-27.4] Prueba de aceptación de disciplina,"Parte de H-27: Abrir expedientes desde la cédula y resolverlos con sanción.
+
+h3. Terminado cuando
+Escenario incidencia → sanción → bloqueo.
+
+h3. Estimación
+2 h · capa: pruebas",,Por hacer,,7200,siglim-v4,backlog,pruebas,
+192,47,Subtask,[H-28.1] Servicio de corrección por resolución,"Parte de H-28: Corregir un resultado oficial por resolución conservando la versión anterior.
+
+h3. Terminado cuando
+Pruebas de versión y VAL-010.
+
+h3. Estimación
+2.5 h · capa: backend",,Por hacer,,9000,siglim-v4,backlog,backend,
+193,47,Subtask,[H-28.2] Pestaña de resultados en F-25 y rótulo en F-03,"Parte de H-28: Corregir un resultado oficial por resolución conservando la versión anterior.
+
+h3. Terminado cuando
+Versiones visibles.
+
+h3. Estimación
+2.5 h · capa: frontend",,Por hacer,,9000,siglim-v4,backlog,frontend,
+194,47,Subtask,[H-28.3] Prueba de aceptación de corrección,"Parte de H-28: Corregir un resultado oficial por resolución conservando la versión anterior.
+
+h3. Terminado cuando
+Evidencia con la tabla.
+
+h3. Estimación
+1 h · capa: pruebas",,Por hacer,,3600,siglim-v4,backlog,pruebas,
+195,48,Subtask,[H-29.1] Endpoints de cobros y adeudos,"Parte de H-29: Crear cobros manuales y consultar adeudos.
+
+h3. Terminado cuando
+Montos `BigDecimal`; pruebas de ámbito.
+
+h3. Estimación
+3 h · capa: backend",,Por hacer,,10800,siglim-v4,backlog,backend,
+196,48,Subtask,[H-29.2] Pantalla de tesorería (F-33) y tarjeta de adeudos en F-08,"Parte de H-29: Crear cobros manuales y consultar adeudos.
+
+h3. Terminado cuando
+Modal de nuevo cobro.
+
+h3. Estimación
+5 h · capa: frontend",,Por hacer,,18000,siglim-v4,backlog,frontend,
+197,48,Subtask,[H-29.3] Prueba de aceptación de cobros,"Parte de H-29: Crear cobros manuales y consultar adeudos.
+
+h3. Terminado cuando
+Evidencia.
+
+h3. Estimación
+1 h · capa: pruebas",,Por hacer,,3600,siglim-v4,backlog,pruebas,
+198,49,Subtask,[H-30.1] `PasarelaSimulada` con intentos y confirmación atómica,"Parte de H-30: Pagar un cobro en línea de forma simulada.
+
+h3. Terminado cuando
+Pruebas VAL-028 y concurrencia.
+
+h3. Estimación
+4 h · capa: backend",,Por hacer,,14400,siglim-v4,backlog,backend,
+199,49,Subtask,[H-30.2] Flujo móvil de pago simulado (F-34),"Parte de H-30: Pagar un cobro en línea de forma simulada.
+
+h3. Terminado cuando
+Tres pasos y comprobante.
+
+h3. Estimación
+4 h · capa: frontend",,Por hacer,,14400,siglim-v4,backlog,frontend,
+200,49,Subtask,[H-30.3] Prueba de aceptación del pago simulado,"Parte de H-30: Pagar un cobro en línea de forma simulada.
+
+h3. Terminado cuando
+Evidencia.
+
+h3. Estimación
+1 h · capa: pruebas",,Por hacer,,3600,siglim-v4,backlog,pruebas,
+201,50,Subtask,[H-31.1] Endpoint de pago externo con comprobante,"Parte de H-31: Registrar un pago recibido fuera del sistema con su comprobante.
+
+h3. Terminado cuando
+Pruebas.
+
+h3. Estimación
+2.5 h · capa: backend",,Por hacer,,9000,siglim-v4,backlog,backend,
+202,50,Subtask,[H-31.2] Modal de registro de pago en F-33,"Parte de H-31: Registrar un pago recibido fuera del sistema con su comprobante.
+
+h3. Terminado cuando
+Carga del comprobante.
+
+h3. Estimación
+3 h · capa: frontend",,Por hacer,,10800,siglim-v4,backlog,frontend,
+203,50,Subtask,[H-31.3] Prueba de aceptación del pago externo,"Parte de H-31: Registrar un pago recibido fuera del sistema con su comprobante.
+
+h3. Terminado cuando
+Evidencia.
+
+h3. Estimación
+0.5 h · capa: pruebas",,Por hacer,,1800,siglim-v4,backlog,pruebas,

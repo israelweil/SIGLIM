@@ -5,7 +5,7 @@
 > actualicen contra una sola fuente.
 >
 > **Vigencia.** Las decisiones DEC-01 a DEC-44 están **integradas en el ERS Rev. 0.4**, y DEC-45 y
-> DEC-46 en la Rev. 0.4.1 ([`../ERS.md`](../ERS.md)), que vuelve a ser la fuente principal. Este
+> DEC-46 en la Rev. 0.4.1; DEC-47 (planificación) y DEC-48 (inicio de sesión) se integran en la siguiente revisión ([`../ERS.md`](../ERS.md)), que vuelve a ser la fuente principal. Este
 > archivo queda como evidencia de origen de cada requisito.
 >
 > **Fecha de corte:** 20 de octubre de 2026.
@@ -121,6 +121,8 @@ Separación de funciones verificada: captura (Capturista) ≠ validación de la 
 | DEC-44 | El backlog v3 y los 81 issues de Jira se reemplazarán **después** de aprobar el ERS Rev. 0.4. BUG-002 se conserva; BUG-001 se descarta por DEC-21. | EQ | Aprobada (equipo) | Backlog v3; Jira |
 | DEC-45 | **Almacenamiento de archivos:** los datos se guardan en Supabase (PostgreSQL) y las **imágenes y documentos en AWS S3**; en Supabase se guarda la URL de cada archivo. Por estándar (RNF-018), el bucket es privado y la URL guardada no es pública: se lee con una URL prefirmada de vigencia corta. | EQ, EST | Aprobada (equipo) | ADR-0013 (reemplaza ADR-0008); tabla `documentos` |
 | DEC-46 | **Correo:** por ahora el volumen será bajo. La elección del proveedor de correo queda **pendiente** (PEN-034) hasta más adelante; se mantiene el mecanismo de ADR-0010 (SMTP y bandeja de salida). | EQ | Aprobada (equipo) · proveedor pendiente | ADR-0010; PEN-034 |
+| DEC-47 | **Backlog v4 y Jira:** se eliminan los 81 issues del backlog v3 (incluidos BUG-001 y BUG-002; este último quedó resuelto por el nuevo `calcular_tabla`, que desempata por sorteo y nunca por nombre). Jerarquía en Jira *team-managed*: Épica → Historia → Subtarea y Épica → Tarea → Subtarea para trabajo técnico. Sprint 1 del 12 al 26 de octubre; Sprints 2 a 4 de dos semanas hasta el 7 de diciembre; capacidad de 10 h por persona por semana. Dentro del núcleo se prioriza con MoSCoW: el flujo central se compromete y el resto del núcleo y lo B quedan sin sprint. La demostración es local mientras PEN-036 y PEN-037 sigan abiertos. | EQ | Aprobada (equipo) | [`../../planning/sprint-plan.md`](../../planning/sprint-plan.md); `backlog-siglim.csv`; Jira |
+| DEC-48 | **Inicio de sesión:** solo con correo y contraseña (sin «Folio federativo»). El **segundo factor (2FA)** y «Mantener sesión activa» quedan **pendientes** (PEN-044, propuesto para la siguiente revisión del ERS) y no se implementan. | EQ | Aprobada (equipo) · 2FA pendiente | UI-001; F-05; RNF-014 |
 
 ## 10. Pendientes que siguen abiertos
 
@@ -135,6 +137,7 @@ No bloquean la Rev. 0.4; se registran como **[PENDIENTE]** y se resuelven como v
 | Validación formal de la matriz de permisos | Liga y profesor |
 | Proveedor de correo (PEN-034) | Equipo, más adelante (DEC-46) |
 | Ambientes, alojamiento y dominio (PEN-036, PEN-037) | Liga y equipo |
+| Segundo factor de autenticación y sesión persistente (PEN-044, DEC-48) | Equipo |
 
 ## 11. Orden de actualización de documentos
 
@@ -143,4 +146,4 @@ No bloquean la Rev. 0.4; se registran como **[PENDIENTE]** y se resuelven como v
 3. Arquitectura, diseño jerárquico y ADR nuevas (autorización por permiso y ámbito, almacenamiento de documentos, tareas programadas, correo, preparación multiliga, pago simulado; aceptación de ADR-0003 y ADR-0005) ([`../../arquitectura/arquitectura-y-diseno-jerarquico.md`](../../arquitectura/arquitectura-y-diseno-jerarquico.md), ADR-0003 y ADR-0005 a ADR-0012). **Hecho.**
 4. Diccionario de datos y nueva migración inicial (DEC-42) ([`../../base-de-datos/diccionario-de-datos.md`](../../base-de-datos/diccionario-de-datos.md), `supabase/migrations/20261020090000_esquema_inicial.sql`, ADR-0013 y ADR-0014). **Hecho.**
 5. Convenciones de API v2.0 ([`../../arquitectura/convenciones-api.md`](../../arquitectura/convenciones-api.md)) y diseño UI: C-03 y C-04 reabiertos y resueltos, prompts de Stitch por pantalla ([`../../diseno-ui/prompts-stitch.md`](../../diseno-ui/prompts-stitch.md)). **Hecho**. Prototipo de 45 pantallas aprobado por el equipo el 20 de octubre de 2026 ([`../../diseno-ui/pantallas/`](../../diseno-ui/pantallas/README.md)); falta validarlo con la Liga (PEN-014).
-6. Backlog v4 y reemplazo de Jira (DEC-44).
+6. Backlog v4 y reemplazo de Jira (DEC-44, DEC-47): [`../../planning/sprint-plan.md`](../../planning/sprint-plan.md) y [`../../planning/backlog-siglim.csv`](../../planning/backlog-siglim.csv). **Hecho** el backlog; falta que el equipo elimine los issues anteriores e importe el CSV.
