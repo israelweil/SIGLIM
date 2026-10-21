@@ -90,7 +90,7 @@ formulario a la derecha. Lo que se implementa:
   enlaces al portal y al aviso de privacidad, y el aviso para tutores (UI-001).
 
 Lo que **no** se implementa: acceso con «Folio federativo» (descartado, Q-UI-01); «2FA Federativo
-Activo» y «Mantener sesión activa» hasta que se defina la política de sesión (PEN-030, Q-UI-02);
+Activo» y «Mantener sesión activa», pendientes por decisión del equipo (PEN-044, DEC-48, Q-UI-02);
 los datos y sellos institucionales del panel izquierdo (§3).
 
 ## 3. Diferencias con el ERS que no se implementan
@@ -118,6 +118,6 @@ cuando sea texto de ejemplo, se reemplaza por datos reales del backend.
 | ID | Pregunta | Respuesta del equipo (20 oct 2026) | Afecta |
 | --- | --- | --- | --- |
 | Q-UI-01 | ¿Inicio de sesión con «Folio federativo» además del correo? | **Solo correo.** | F-05, RF-094 |
-| Q-UI-02 | ¿Segundo factor (2FA) y «Mantener sesión activa»? | Abierta: depende de la política de sesión (PEN-030). No se implementa mientras tanto. | F-05, RNF-014 |
+| Q-UI-02 | ¿Segundo factor (2FA) y «Mantener sesión activa»? | **Pendiente** por decisión del equipo (PEN-044, DEC-48). No se implementa. | F-05, RNF-014 |
 | Q-UI-03 | ¿F-36 en Stitch o directamente con `DESIGN.md`? | **Con `DESIGN.md`**, sin generar el frame. | F-36 |
 | Q-UI-04 | ¿Se conserva la fotografía de F-05? | **Sí**: es una imagen generada, no de un lugar real. | F-05 |
