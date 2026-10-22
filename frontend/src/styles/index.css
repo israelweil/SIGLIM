@@ -91,6 +91,16 @@
   --color-warning: #f59e0b;
   --color-info: #2563eb;
 
+  /* Hover del botón destructivo y texto de las insignias de estado (DESIGN.md, Components). */
+  --color-error-hover: #dc2626;
+  --color-success-strong: #065f46;
+  --color-error-strong: #991b1b;
+  --color-warning-strong: #92400e;
+  --color-info-strong: #1e40af;
+
+  /* Nivel 3 de elevación: modales y desplegables (DESIGN.md, Elevation & Depth). */
+  --shadow-overlay: 0px 4px 12px rgba(15, 23, 42, 0.08);
+
   /*
    * Radios: el texto fija 8 px para controles (md) y 8-12 px para tarjetas (lg);
    * sm y xl conservan los valores del bloque YAML de DESIGN.md.

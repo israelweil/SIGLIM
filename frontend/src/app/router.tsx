@@ -4,6 +4,7 @@ import { InternalLayout } from '@/layouts/InternalLayout'
 import { PublicLayout } from '@/layouts/PublicLayout'
 import { seccionesApp } from '@/layouts/navegacion'
 import { EnConstruccion } from '@/pages/EnConstruccion'
+import { PaginaNoEncontrada } from '@/pages/PaginaNoEncontrada'
 
 const paginasApp = seccionesApp.map(({ nombre, ruta }) => ({
   path: ruta,
@@ -55,6 +56,7 @@ export const rutas: RouteObject[] = [
           />
         ),
       },
+      { path: '*', element: <PaginaNoEncontrada /> },
     ],
   },
   {
@@ -71,7 +73,10 @@ export const rutas: RouteObject[] = [
     children: [
       {
         element: <InternalLayout />,
-        children: paginasApp,
+        children: [
+          ...paginasApp,
+          { path: '/app/*', element: <PaginaNoEncontrada rutaInicio="/app" /> },
+        ],
       },
     ],
   },
