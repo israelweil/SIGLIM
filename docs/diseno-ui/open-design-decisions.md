@@ -17,9 +17,11 @@
 ## 3. Puntos Pendientes de Validación por el Equipo
 - **P-01**: ~~Notificaciones en tiempo real para cambios de marcador~~. Resuelto: no hay tiempo
   real; los avisos se consultan al cargar y cada 60 s **[PROPUESTA]** (convenciones de API §6.14).
-- **P-02**: Biblioteca de iconos: el HTML de Stitch usa Material Symbols; en React se usa
-  **Lucide React** con el ícono equivalente de cada pantalla **[PROPUESTA]** (dependencia que se
-  justifica al iniciar el frontend).
+- **P-02**: ~~Biblioteca de iconos~~. Resuelto: aprobado por el equipo el 22 de octubre de 2026.
+  El HTML de Stitch usa Material Symbols; en React se usa **Lucide React** (`lucide-react`) con el
+  ícono equivalente de cada pantalla. Se eligió porque importa cada ícono por separado (el build
+  solo incluye los usados), trae tipos de TypeScript y no depende de una fuente externa. Uso en
+  [`frontend/AGENTS.md`](../../frontend/AGENTS.md).
 - **P-03**: ~~Aprobar el prototipo generado con Stitch~~. Aprobado por el equipo el 20 de octubre de 2026 ([`pantallas/`](pantallas/README.md)); falta validarlo con la Liga (PEN-014). Las diferencias D-01 a D-12 y las preguntas Q-UI-01 a Q-UI-04 (tres resueltas; Q-UI-02 depende de PEN-030) están en [`pantallas/README.md`](pantallas/README.md).
 
 ## 4. Conflictos detectados entre el diseño de referencia y el ERS
