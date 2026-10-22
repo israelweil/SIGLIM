@@ -10,6 +10,7 @@ roles: [ADR-0014](../docs/arquitectura/adr/0014-esquema-propio-y-roles-de-base-d
 | Archivo | Qué contiene |
 | --- | --- |
 | `migrations/20261020090000_esquema_inicial.sql` | Migración inicial de la Rev. 0.4.1 (DEC-42): esquema `siglim`, roles `siglim_app` y `siglim_publico`, enums, 72 tablas, índices, triggers de reglas e historial, `calcular_tabla`, vistas `v_publica_*`, RLS por ámbito, comentarios de columnas y semilla (liga, perfil Sistema, 13 roles, permisos del Apéndice E, catálogos `[DEMO]`). Se ejecuta en una sola transacción. |
+| `migrations/20261022143000_fijar_search_path_error_negocio.sql` | Fija el `search_path` de `error_negocio` (aviso 0011 del asesor de seguridad de Supabase). Sin cambio de comportamiento. |
 | `pruebas/` | Pruebas SQL de los flujos (P-01 a P-11) y de los desempates, con un simulador mínimo de Supabase para PostgreSQL local. Ver [`pruebas/README.md`](pruebas/README.md). |
 
 La migración de la Rev. 0.3 quedó en
