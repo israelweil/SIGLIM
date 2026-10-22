@@ -28,6 +28,17 @@ tiene un formato incorrecto, la aplicación no arranca y el error dice cuál es.
 (`VariablesEntornoDocumentadasTest`) falla si `application.yml` usa una variable que no esté en
 `.env.example`: al agregar una, documéntala ahí en el mismo PR.
 
+## Autenticación
+
+La API valida el `access_token` de Supabase Auth (`Authorization: Bearer <token>`) con las llaves
+públicas del proyecto (`<SUPABASE_URL>/auth/v1/.well-known/jwks.json`, ES256), sin llamar a
+Supabase en cada petición (ADR-0003). Solo son públicas `GET /api/v1/salud`,
+`GET /api/v1/publico/**` y `GET /actuator/health`; todo lo demás responde
+`401` con `codigo: "NO_AUTENTICADO"` si no hay token o si está vencido o no es válido.
+
+Para probar a mano con un token real, inicia sesión con la API de Supabase Auth y copia el
+`access_token` (vive 1 hora). **No lo pegues en chats ni lo guardes en el repositorio.**
+
 ## Ejecutar
 
 ```bash
