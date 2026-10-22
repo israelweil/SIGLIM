@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
  * {@code GET /api/v1/salud}: confirma que la API está en ejecución.
  *
  * <p>Es la única ruta fuera de {@code /api/v1/publico/**} que no exige token (convenciones de API
- * §5); T-02.2 debe dejarla abierta al configurar la seguridad. Solo responde que el proceso vive:
+ * §5); {@code SeguridadConfig} la deja abierta. Solo responde que el proceso vive:
  * no consulta la base de datos ni revela versiones o configuración. El estado detallado de la base
  * de datos está en {@code /actuator/health} (RNF-001, RNF-011).
  *
