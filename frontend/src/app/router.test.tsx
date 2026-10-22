@@ -44,6 +44,14 @@ describe('router', () => {
     ).toBeInTheDocument()
   })
 
+  it('muestra la página 404 en una ruta inexistente', () => {
+    montar('/ruta-que-no-existe')
+
+    expect(
+      screen.getByRole('heading', { name: 'No encontramos lo que buscas' }),
+    ).toBeInTheDocument()
+  })
+
   it('envía /app al inicio de sesión cuando no hay sesión', async () => {
     montar('/app')
 
