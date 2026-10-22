@@ -22,4 +22,17 @@ describe('PaginaNoEncontrada', () => {
       '/',
     )
   })
+
+  it('lleva «Volver al inicio» a la ruta indicada', () => {
+    render(
+      <MemoryRouter>
+        <PaginaNoEncontrada rutaInicio="/app" />
+      </MemoryRouter>,
+    )
+
+    expect(screen.getByRole('link', { name: 'Volver al inicio' })).toHaveAttribute(
+      'href',
+      '/app',
+    )
+  })
 })

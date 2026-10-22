@@ -73,7 +73,10 @@ export const rutas: RouteObject[] = [
     children: [
       {
         element: <InternalLayout />,
-        children: paginasApp,
+        children: [
+          ...paginasApp,
+          { path: '/app/*', element: <PaginaNoEncontrada rutaInicio="/app" /> },
+        ],
       },
     ],
   },

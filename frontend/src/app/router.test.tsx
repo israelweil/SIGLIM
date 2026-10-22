@@ -75,4 +75,24 @@ describe('router', () => {
       screen.getByRole('navigation', { name: 'Menú Ejecutivo' }),
     ).toBeInTheDocument()
   })
+
+  it('con sesión, /app/inexistente muestra la 404 dentro de la aplicación interna', async () => {
+    obtenerSesion.mockResolvedValue({
+      data: { session: { access_token: 'token-de-prueba' } },
+      error: null,
+    })
+
+    montar('/app/inexistente')
+
+    expect(
+      await screen.findByRole('heading', { name: 'No encontramos lo que buscas' }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('navigation', { name: 'Menú Ejecutivo' }),
+    ).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Volver al inicio' })).toHaveAttribute(
+      'href',
+      '/app',
+    )
+  })
 })
