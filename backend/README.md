@@ -54,6 +54,11 @@ Para probar a mano con un token real, inicia sesión con la API de Supabase Auth
 ./mvnw verify
 ```
 
+`verify` corre las pruebas unitarias y de controlador (surefire) y después las de integración `*IT`
+(failsafe), que levantan PostgreSQL 17 en un contenedor con el esquema de `supabase/migrations/`.
+Estas requieren **Docker Desktop encendido**; sin Docker se omiten y el resumen de failsafe muestra
+`Skipped`.
+
 ## Abrir en el IDE
 
 IntelliJ IDEA: *File → Open* → selecciona `backend/pom.xml` → *Open as Project*.

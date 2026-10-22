@@ -2,7 +2,7 @@
 <!--
   SIGLIM · Backend (API REST)
   Monolito modular por paquetes con Spring JDBC (ADR-0002, ADR-0006).
-  Tareas: T-02.1, T-02.2 · Refs: RNF-019, ADR-0002, ADR-0006, ADR-0014
+  Tareas: T-02.1, T-02.2, T-02.3 · Refs: RNF-019, ADR-0002, ADR-0006, ADR-0014
 
   Dependencias de esta tarea y por qué están:
   - webmvc:     API REST en /api/v1 (convenciones-api.md).
@@ -11,6 +11,8 @@
   - validation: Jakarta Validation de DTO y de la configuración (falla al arrancar si falta una variable).
   - actuator:   /actuator/health para el monitoreo (RNF-001, RNF-011).
   - security-oauth2-resource-server: valida el JWT de Supabase Auth con su JWKS (T-02.2, ADR-0003).
+  Pruebas de integración con BD (T-02.3, decisión del equipo del 22 oct 2026): Testcontainers con
+  PostgreSQL 17 (la versión de Supabase). Requieren Docker; sin Docker se omiten (*IT con failsafe).
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -74,6 +76,17 @@
             <artifactId>spring-boot-starter-security-oauth2-resource-server-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- Pruebas de integración con PostgreSQL real en un contenedor (Testcontainers 2). -->
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>testcontainers-postgresql</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>testcontainers-junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -81,6 +94,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!-- Ejecuta las pruebas *IT (integración) en `mvnw verify`, después de las unitarias. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
             </plugin>
         </plugins>
     </build>

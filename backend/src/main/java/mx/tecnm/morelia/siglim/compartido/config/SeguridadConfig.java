@@ -2,12 +2,12 @@ package mx.tecnm.morelia.siglim.compartido.config;
 
 import java.time.Duration;
 import java.util.List;
+import mx.tecnm.morelia.siglim.compartido.contexto.ConvertidorAutenticacion;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -42,7 +42,7 @@ public class SeguridadConfig {
 
     @Bean
     SecurityFilterChain cadenaSeguridad(HttpSecurity http, PuntoEntradaNoAutenticado puntoEntrada,
-            SiglimPropiedades propiedades) throws Exception {
+            ConvertidorAutenticacion convertidor, SiglimPropiedades propiedades) throws Exception {
         http
                 // La fuente se pasa explícita: con cors(withDefaults()) Spring Security solo busca un
                 // bean llamado exactamente «corsConfigurationSource» y, si no lo encuentra, deja pasar
@@ -59,7 +59,8 @@ public class SeguridadConfig {
                         .requestMatchers("/error").permitAll()
                         .anyRequest().authenticated())
                 .oauth2ResourceServer(recurso -> recurso
-                        .jwt(Customizer.withDefaults())
+                        // Tras validar el token, resuelve el perfil de SIGLIM (T-02.3, ADR-0003 punto 6).
+                        .jwt(jwt -> jwt.jwtAuthenticationConverter(convertidor))
                         .authenticationEntryPoint(puntoEntrada))
                 .exceptionHandling(excepciones -> excepciones.authenticationEntryPoint(puntoEntrada));
         return http.build();
