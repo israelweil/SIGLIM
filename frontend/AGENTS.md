@@ -64,7 +64,9 @@ src/
 - **Tipos:** sin `any`. Los tipos de DTO van en `features/<modulo>/tipos.ts` con los mismos
   nombres camelCase del API. Importa con el alias `@/`.
 - **Componentes:** funciones con props tipadas; un componente por archivo con su mismo nombre.
-- **Iconos:** la librería está pendiente (P-02 en `open-design-decisions.md`); no agregues una sin acordarlo.
+- **Iconos:** se usa **Lucide React** (`lucide-react`), la opción propuesta en P-02 de
+  `open-design-decisions.md`. Los iconos decorativos llevan `aria-hidden="true"`; los interactivos,
+  `aria-label`.
 
 ## Pruebas
 
