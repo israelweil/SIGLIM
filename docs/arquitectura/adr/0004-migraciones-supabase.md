@@ -28,4 +28,7 @@ esquema real y el documentado divergen.
 
 ## Consecuencias
 - Aplicar: SQL Editor de Supabase (orden por nombre) o `supabase db push` con la CLI.
+- **Actualización 2026-10-22:** el proyecto compartido está vinculado a GitHub y la integración de
+  Supabase aplica las migraciones pendientes al fusionar en `main`. En ese proyecto no se aplican
+  migraciones a mano; detalle en [`supabase/README.md`](../../../supabase/README.md).
 - Con la CLI y Docker, `supabase start` levanta un entorno local completo (Auth incluido).
