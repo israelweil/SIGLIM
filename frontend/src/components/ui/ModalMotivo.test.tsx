@@ -98,6 +98,15 @@ describe('ModalMotivo', () => {
     expect(onConfirmar).not.toHaveBeenCalled()
   })
 
+  it('cuenta los caracteres del motivo sin los espacios de los extremos', async () => {
+    render(<Escenario />)
+    await abrir()
+
+    await userEvent.type(screen.getByLabelText(/Motivo/), '   corto   ')
+
+    expect(screen.getByText('5/500')).toBeInTheDocument()
+  })
+
   it('limita el motivo a 500 caracteres', async () => {
     render(<Escenario />)
     await abrir()

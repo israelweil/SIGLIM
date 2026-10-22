@@ -126,7 +126,7 @@ export function ModalMotivo({
             <p id={idAyuda} className="flex justify-between gap-2 text-body-sm text-text-muted">
               <span>Mínimo {MINIMO_MOTIVO} caracteres. Quedará en el historial.</span>
               <span className="font-mono">
-                {motivo.length}/{MAXIMO_MOTIVO}
+                {longitud}/{MAXIMO_MOTIVO}
               </span>
             </p>
             {mostrarError && !motivoValido && (
