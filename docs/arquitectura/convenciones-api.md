@@ -139,6 +139,8 @@ propiedades de extensión: `codigo` (siempre) y `errores` (cuando hay campos se�
 | `403` | El usuario no tiene el permiso (denegación por defecto) | `VAL-015` |
 | `403` | Separación de funciones de la persona: aprobar la cédula que capturó, cambiar permisos de su propio rol, corregir un resultado sin resolución | `VAL-021`, `VAL-022`, `VAL-010` |
 | `404` | El recurso no existe **o** está fuera del ámbito del usuario (no se revela cuál de los dos) | `NO_ENCONTRADO` (VAL-024) |
+| `405` | El recurso existe pero no admite ese método (la respuesta incluye la cabecera `Allow`) | `METODO_NO_PERMITIDO` |
+| `406`, `415` | La petición no envía o no acepta JSON (`Content-Type`, `Accept`) | `FORMATO_NO_SOPORTADO` |
 | `409` | Conflicto con el estado actual de otros datos: programación, unicidad, estado que no admite la acción, cobro ya pagado | `VAL-003` a `VAL-006`, `VAL-008`, `VAL-017`, `VAL-026`, `VAL-028`, `RF-046`, `RN-021`… |
 | `413` | Archivo mayor que el límite (§7) | `ARCHIVO_DEMASIADO_GRANDE` |
 | `415` | Tipo de archivo no permitido por su firma binaria (§7) | `TIPO_ARCHIVO_NO_PERMITIDO` |
@@ -163,11 +165,13 @@ la excepción:
 | `23505` | Índices únicos (CURP activa en la temporada, folio, una temporada activa, resultado vigente…) | `409`; el código sale del comentario de la restricción o del índice; si no tiene, `DUPLICADO` |
 | `23503` | Llave foránea | `422`, `REFERENCIA_INVALIDA` |
 | `23514` | `CHECK` | `400`, `VALIDACION` |
-| `42501` | Privilegio o política RLS | `404` si fue una lectura (VAL-024); `403`, `VAL-015`, si fue una escritura |
+| `42501` | Privilegio o política RLS | `404` si fue una lectura (`GET` o `HEAD`; VAL-024); `403`, `VAL-015`, si fue una escritura |
 | `40001`, `40P01` | Serialización o interbloqueo | `409`, `CONCURRENCIA`; la interfaz pide recargar |
+| `08xxx`, `53300`, `57P01`–`57P03` | Sin conexión, demasiadas conexiones o servidor reiniciándose | `503`, `SERVICIO_NO_DISPONIBLE` |
 
-El mapeo `HINT → HTTP` vive en una sola tabla del backend (`compartido.errores`) para que el mismo
-código responda siempre con el mismo estado. Mapeo inicial de los códigos que lanza la migración
+El mapeo `HINT → HTTP` vive en una sola tabla del backend (`compartido.error.TablaCodigosHttp`) para
+que el mismo código responda siempre con el mismo estado. `error_negocio` arma `MESSAGE` como
+«`VAL-003: texto`»; el `detail` lleva solo el texto. Mapeo inicial de los códigos que lanza la migración
 `20261020090000_esquema_inicial.sql`:
 
 | HTTP | Códigos en `HINT` | Qué significan |
@@ -183,7 +187,9 @@ casos **antes** de escribir: la observación faltante responde `400 VALIDACION` 
 designado, `403 VAL-015`; por eso en la base solo llegan como `409`.
 
 Un código nuevo en la base exige agregarlo a esta tabla en el mismo PR. Si llega un código sin
-mapeo, el backend responde `409` y lo registra en la bitácora como advertencia.
+mapeo, el backend responde `409` y lo registra en la bitácora como advertencia. La prueba
+`TablaCodigosHttpTest` compara la tabla del backend con esta y con los `error_negocio(...)` de las
+migraciones: si divergen, `mvnw verify` falla.
 
 ## 4. Listas, filtros y paginación
 

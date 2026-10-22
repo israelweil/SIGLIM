@@ -64,9 +64,12 @@ repositorio + prueba del servicio).
 
 - **Un módulo no usa el repositorio de otro**; llama a su `Service` público.
 - **Transacciones en el servicio**, nunca en el controlador. `readOnly = true` para consultas.
-- **Errores de negocio:** lanza `ReglaNegocioException.conflicto("VAL-004", "mensaje para el usuario")`;
-  el `ManejadorGlobalErrores` la convierte a `application/problem+json`. No devuelvas
-  `ResponseEntity` con mapas de error hechos a mano.
+- **Errores de negocio:** lanza `ReglaNegocioException.conflicto("VAL-004", "mensaje para el usuario")`
+  (también `invalida` 400, `prohibida` 403 y `noProcesable` 422, según convenciones §3.1); el
+  `ManejadorGlobalErrores` la convierte a `application/problem+json`. No devuelvas
+  `ResponseEntity` con mapas de error hechos a mano. Los errores de PostgreSQL los traduce
+  `TraductorErroresBd` por **SQLSTATE**, nunca por el texto del mensaje; un código nuevo en
+  `error_negocio(...)` va también en `TablaCodigosHttp` y en convenciones §3.2.
 - **Recurso inexistente:** `RecursoNoEncontradoException`.
 - **SQL:** solo nombres del diccionario de datos; columnas `snake_case` se mapean a campos
   `camelCase` del `record` automáticamente (`query(MiDto.class)`). Fechas con `OffsetDateTime`
