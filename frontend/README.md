@@ -36,5 +36,6 @@ cp .env.example .env.local    # Windows: copy .env.example .env.local
 | Ruta | Pantalla | Acceso |
 | --- | --- | --- |
 | `/`, `/resultados`, `/tabla` | Portal público (UI-020) | Público |
+| `/aviso-de-privacidad` | Aviso de privacidad (UI-033) | Público |
 | `/login` | Inicio de sesión (UI-001) | Público |
 | `/app/**` | Aplicación interna por módulo | Sesión iniciada |

@@ -1,3 +1,14 @@
+/*
+ * Tipografías autoalojadas (DESIGN.md): Inter y JetBrains Mono se empaquetan
+ * con @fontsource para que la aplicación no dependa de un CDN externo.
+ */
+@import "@fontsource/inter/latin-400.css";
+@import "@fontsource/inter/latin-500.css";
+@import "@fontsource/inter/latin-600.css";
+@import "@fontsource/inter/latin-700.css";
+@import "@fontsource/jetbrains-mono/latin-500.css";
+@import "@fontsource/jetbrains-mono/latin-700.css";
+
 @import "tailwindcss";
 
 /*
@@ -98,5 +109,11 @@
     color: var(--color-text-main);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+  }
+
+  /* Foco visible en todos los elementos interactivos (RNF-008, DESIGN.md). */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
   }
 }

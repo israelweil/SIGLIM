@@ -1,16 +1,61 @@
 import { createBrowserRouter, type RouteObject } from 'react-router'
 import { RutaProtegida } from '@/app/RutaProtegida'
+import { InternalLayout } from '@/layouts/InternalLayout'
+import { PublicLayout } from '@/layouts/PublicLayout'
+import { seccionesApp } from '@/layouts/navegacion'
 import { EnConstruccion } from '@/pages/EnConstruccion'
+
+const paginasApp = seccionesApp.map(({ nombre, ruta }) => ({
+  path: ruta,
+  element: (
+    <EnConstruccion
+      titulo={nombre}
+      descripcion="Módulo de la aplicación interna en construcción."
+    />
+  ),
+}))
 
 export const rutas: RouteObject[] = [
   {
-    path: '/',
-    element: (
-      <EnConstruccion
-        titulo="SIGLIM"
-        descripcion="Portal público en construcción."
-      />
-    ),
+    element: <PublicLayout />,
+    children: [
+      {
+        path: '/',
+        element: (
+          <EnConstruccion
+            titulo="Programación"
+            descripcion="Portal público en construcción: programación de la jornada."
+          />
+        ),
+      },
+      {
+        path: '/resultados',
+        element: (
+          <EnConstruccion
+            titulo="Resultados"
+            descripcion="Portal público en construcción: resultados oficiales."
+          />
+        ),
+      },
+      {
+        path: '/tabla',
+        element: (
+          <EnConstruccion
+            titulo="Tablas de posiciones"
+            descripcion="Portal público en construcción: tabla calculada por grupo."
+          />
+        ),
+      },
+      {
+        path: '/aviso-de-privacidad',
+        element: (
+          <EnConstruccion
+            titulo="Aviso de privacidad"
+            descripcion="El texto del aviso lo define la Liga (PEN-039, DEC-40)."
+          />
+        ),
+      },
+    ],
   },
   {
     path: '/login',
@@ -25,13 +70,8 @@ export const rutas: RouteObject[] = [
     element: <RutaProtegida />,
     children: [
       {
-        path: '/app',
-        element: (
-          <EnConstruccion
-            titulo="Panel de inicio"
-            descripcion="Aplicación interna en construcción."
-          />
-        ),
+        element: <InternalLayout />,
+        children: paginasApp,
       },
     ],
   },
