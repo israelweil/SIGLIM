@@ -1,0 +1,40 @@
+# Configuración del backend de SIGLIM.
+# Todo valor que cambia entre equipos o entornos, o que es secreto, viene de una variable de
+# entorno documentada en backend/.env.example (T-02.1, RNF-019). Este archivo no contiene secretos.
+
+spring:
+  application:
+    name: siglim
+  config:
+    # Lee backend/.env (ignorado por git) si existe. Las variables reales del sistema tienen
+    # prioridad, así que en un servidor basta con definirlas sin crear el archivo.
+    import: optional:file:.env[.properties]
+
+  # PostgreSQL de Supabase con el pooler en modo transacción (ADR-0014, punto 5).
+  # El esquema es siglim (currentSchema en DB_URL); el backend no ejecuta DDL (ADR-0004).
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    hikari:
+      # [PROPUESTA] Pocas conexiones: el pooler de Supabase ya multiplexa y el plan gratuito
+      # limita las conexiones simultáneas.
+      maximum-pool-size: 5
+      pool-name: siglim
+
+# Propiedades propias (SiglimPropiedades). Se validan al arrancar.
+siglim:
+  supabase:
+    url: ${SUPABASE_URL}
+  cors:
+    origenes: ${SIGLIM_CORS_ORIGEN}
+
+# Monitoreo (RNF-001, RNF-011): solo /actuator/health, sin detalles internos hacia afuera.
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: never
