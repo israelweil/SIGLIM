@@ -2,12 +2,13 @@
 <!--
   SIGLIM · Backend (API REST)
   Monolito modular por paquetes con Spring JDBC (ADR-0002, ADR-0006).
-  Tareas: T-02.1, T-02.2, T-02.3 · Refs: RNF-019, ADR-0002, ADR-0006, ADR-0014
+  Tareas: T-02.1, T-02.2, T-02.3, T-02.4 · Refs: RNF-019, ADR-0002, ADR-0006, ADR-0014
 
   Dependencias de esta tarea y por qué están:
   - webmvc:     API REST en /api/v1 (convenciones-api.md).
   - jdbc:       JdbcClient con SQL explícito; sin JPA ni ddl-auto (ADR-0002, ADR-0004).
-  - postgresql: controlador JDBC para Supabase (solo en ejecución).
+  - postgresql: controlador JDBC para Supabase. En compilación (no solo en ejecución) porque el
+                manejador de errores lee HINT y restricción de PSQLException (T-02.4, convenciones §3.2).
   - validation: Jakarta Validation de DTO y de la configuración (falla al arrancar si falta una variable).
   - actuator:   /actuator/health para el monitoreo (RNF-001, RNF-011).
   - security-oauth2-resource-server: valida el JWT de Supabase Auth con su JWKS (T-02.2, ADR-0003).
@@ -61,7 +62,6 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <scope>runtime</scope>
         </dependency>
 
         <!-- Pruebas: JUnit 5, AssertJ, Mockito y MockMvcTester (@WebMvcTest). -->

@@ -18,6 +18,8 @@ import java.util.UUID;
 import java.util.function.Consumer;
 import mx.tecnm.morelia.siglim.compartido.contexto.ConvertidorAutenticacion;
 import mx.tecnm.morelia.siglim.compartido.contexto.ResolutorPerfil;
+import mx.tecnm.morelia.siglim.compartido.error.DescripcionRestricciones;
+import mx.tecnm.morelia.siglim.compartido.error.TraductorErroresBd;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
@@ -41,11 +43,16 @@ import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
  * tiene el perfil activo {@link #PERFIL_ID}, {@link #SUJETO_PERFIL_INACTIVO} uno desactivado y
  * cualquier otro {@code sub} no tiene perfil.
  *
+ * <p>También registra el {@link TraductorErroresBd} que necesita el manejador global de errores
+ * (un {@code @RestControllerAdvice}, que toda prueba {@code @WebMvcTest} carga), con el comentario
+ * de {@code ex_partidos_cancha_ocupada} de la migración y sin consultar la base de datos.
+ *
  * <p>Uso: {@code @Import(SeguridadPrueba.class)} y, en {@code @WebMvcTest(properties = …)},
  * {@code SUPABASE_URL=} {@link #URL_SUPABASE} y {@code SIGLIM_CORS_ORIGEN=} {@link #ORIGEN_FRONTEND}.
  */
 @TestConfiguration(proxyBeanMethods = false)
-@Import({SeguridadConfig.class, PuntoEntradaNoAutenticado.class, ConvertidorAutenticacion.class})
+@Import({SeguridadConfig.class, PuntoEntradaNoAutenticado.class, ConvertidorAutenticacion.class,
+        TraductorErroresBd.class})
 public class SeguridadPrueba {
 
     public static final String URL_SUPABASE = "https://proyecto-prueba.supabase.co";
@@ -79,6 +86,13 @@ public class SeguridadPrueba {
      * se deba a la firma y no a una llave inexistente.
      */
     static final KeyPair LLAVE_AJENA = generarLlaveEc();
+
+    @Bean
+    DescripcionRestricciones descripcionRestriccionesPrueba() {
+        return nombre -> "ex_partidos_cancha_ocupada".equals(nombre)
+                ? Optional.of("VAL-004: la cancha ya está ocupada en ese horario.")
+                : Optional.empty();
+    }
 
     @Bean
     ResolutorPerfil resolutorPerfilPrueba() {
