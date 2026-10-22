@@ -41,10 +41,13 @@ public class SeguridadConfig {
     private static final Duration CORS_CACHE_PREVIA = Duration.ofHours(1);
 
     @Bean
-    SecurityFilterChain cadenaSeguridad(HttpSecurity http, PuntoEntradaNoAutenticado puntoEntrada)
-            throws Exception {
+    SecurityFilterChain cadenaSeguridad(HttpSecurity http, PuntoEntradaNoAutenticado puntoEntrada,
+            SiglimPropiedades propiedades) throws Exception {
         http
-                .cors(Customizer.withDefaults())
+                // La fuente se pasa explícita: con cors(withDefaults()) Spring Security solo busca un
+                // bean llamado exactamente «corsConfigurationSource» y, si no lo encuentra, deja pasar
+                // cualquier origen sin cabeceras CORS (error detectado por SeguridadConfigTest).
+                .cors(cors -> cors.configurationSource(fuenteCors(propiedades)))
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(sesion -> sesion.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(rutas -> rutas
@@ -62,8 +65,12 @@ public class SeguridadConfig {
         return http.build();
     }
 
-    @Bean
-    CorsConfigurationSource configuracionCors(SiglimPropiedades propiedades) {
+    /**
+     * Política CORS: solo los orígenes de {@code SIGLIM_CORS_ORIGEN}. No es un bean para evitar la
+     * ambigüedad con {@code HandlerMappingIntrospector}, que también es un
+     * {@link CorsConfigurationSource}.
+     */
+    static CorsConfigurationSource fuenteCors(SiglimPropiedades propiedades) {
         CorsConfiguration cors = new CorsConfiguration();
         cors.setAllowedOrigins(propiedades.cors().origenes());
         cors.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));

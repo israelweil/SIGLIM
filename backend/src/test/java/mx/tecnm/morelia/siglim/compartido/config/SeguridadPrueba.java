@@ -13,7 +13,6 @@ import java.security.spec.ECGenParameterSpec;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.List;
-import java.util.UUID;
 import java.util.function.Consumer;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -47,16 +46,27 @@ public class SeguridadPrueba {
     /** Usuario de Supabase Auth de los tokens de prueba. */
     public static final String SUJETO = "6f1d2a3b-4c5d-4e6f-8a9b-0c1d2e3f4a5b";
 
+    /**
+     * Identificador de llave ({@code kid}) común al JWKS y a los tokens de prueba. Debe coincidir:
+     * el decodificador elige la llave del JWKS por el {@code kid} del encabezado, y si no coincide
+     * rechaza todo token antes de revisar la firma o los reclamos, con lo que las pruebas de
+     * rechazo pasarían por una razón equivocada.
+     */
+    static final String KID = "llave-prueba-es256";
+
     /** Llave con la que «firma Supabase» en las pruebas; su parte pública es el JWKS. */
     static final KeyPair LLAVE_PROYECTO = generarLlaveEc();
 
-    /** Llave de un atacante o de otro proyecto: sus firmas no deben aceptarse. */
+    /**
+     * Llave de un atacante o de otro proyecto. Firma con el mismo {@link #KID} para que el rechazo
+     * se deba a la firma y no a una llave inexistente.
+     */
     static final KeyPair LLAVE_AJENA = generarLlaveEc();
 
     @Bean
     JwtDecoder decodificadorJwtPrueba() {
         ECKey publica = new ECKey.Builder(Curve.P_256, (ECPublicKey) LLAVE_PROYECTO.getPublic())
-                .keyID(UUID.randomUUID().toString())
+                .keyID(KID)
                 .build();
         NimbusJwtDecoder decodificador = NimbusJwtDecoder
                 .withJwkSource(new ImmutableJWKSet<SecurityContext>(new JWKSet(publica)))
@@ -92,6 +102,7 @@ public class SeguridadPrueba {
 
         NimbusJwtEncoder codificador = NimbusJwtEncoder
                 .withKeyPair((ECPublicKey) llave.getPublic(), (ECPrivateKey) llave.getPrivate())
+                .jwkPostProcessor(jwk -> jwk.keyID(KID))
                 .build();
         return codificador
                 .encode(JwtEncoderParameters.from(JwsHeader.with(SignatureAlgorithm.ES256).build(), reclamos.build()))
