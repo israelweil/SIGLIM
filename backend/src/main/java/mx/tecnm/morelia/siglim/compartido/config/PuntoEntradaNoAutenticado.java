@@ -10,6 +10,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ProblemDetail;
+import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
@@ -27,7 +28,12 @@ import tools.jackson.databind.json.JsonMapper;
  * dar pistas a quien prueba tokens falsificados; la causa solo va a la bitácora en nivel DEBUG y
  * nunca incluye el token (RNF-011).
  *
- * <p>Refs: T-02.2, RNF-003, VAL-015
+ * <p>También responde 401 cuando el token es válido pero la cuenta no tiene un perfil activo en
+ * SIGLIM (ADR-0003 punto 6; decisión del equipo del 22 de octubre de 2026), para que el frontend
+ * cierre la sesión. El mensaje no distingue «sin perfil» de «perfil desactivado», para no revelar
+ * qué cuentas existen.
+ *
+ * <p>Refs: T-02.2, T-02.3, RNF-003, VAL-015
  */
 @Component
 public class PuntoEntradaNoAutenticado implements AuthenticationEntryPoint {
@@ -38,6 +44,8 @@ public class PuntoEntradaNoAutenticado implements AuthenticationEntryPoint {
     static final String DETALLE_SIN_TOKEN = "Inicia sesión para continuar.";
     static final String DETALLE_TOKEN_INVALIDO =
             "Tu sesión expiró o no es válida. Vuelve a iniciar sesión.";
+    static final String DETALLE_CUENTA_NO_ACTIVA =
+            "Tu cuenta no está activa en SIGLIM. Si crees que es un error, contacta al administrador de la liga.";
 
     private final JsonMapper json;
 
@@ -48,14 +56,17 @@ public class PuntoEntradaNoAutenticado implements AuthenticationEntryPoint {
     @Override
     public void commence(HttpServletRequest peticion, HttpServletResponse respuesta,
             AuthenticationException causa) throws IOException {
-        boolean conToken = causa instanceof OAuth2AuthenticationException;
+        boolean cuentaNoActiva = causa instanceof DisabledException;
+        boolean conToken = cuentaNoActiva || causa instanceof OAuth2AuthenticationException;
         if (conToken) {
             log.debug("Token rechazado en {} {}: {}", peticion.getMethod(), peticion.getRequestURI(),
                     causa.getMessage());
         }
 
+        String detalle = cuentaNoActiva ? DETALLE_CUENTA_NO_ACTIVA
+                : conToken ? DETALLE_TOKEN_INVALIDO : DETALLE_SIN_TOKEN;
         ProblemDetail problema = ProblemaHttp.crear(HttpStatus.UNAUTHORIZED, CODIGO, "No autenticado",
-                conToken ? DETALLE_TOKEN_INVALIDO : DETALLE_SIN_TOKEN, peticion.getRequestURI());
+                detalle, peticion.getRequestURI());
 
         respuesta.setStatus(HttpStatus.UNAUTHORIZED.value());
         respuesta.setHeader(HttpHeaders.WWW_AUTHENTICATE, conToken ? "Bearer error=\"invalid_token\"" : "Bearer");

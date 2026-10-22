@@ -71,10 +71,13 @@ repositorio + prueba del servicio).
 - **SQL:** solo nombres del diccionario de datos; columnas `snake_case` se mapean a campos
   `camelCase` del `record` automáticamente (`query(MiDto.class)`). Fechas con `OffsetDateTime`
   (`timestamptz`) o `LocalDate` (`date`).
-- **Esquema y conexión:** las tablas están en el esquema `siglim` (URL de JDBC con
-  `currentSchema=siglim`). Cada transacción fija el contexto y adopta `siglim_app` (o
-  `siglim_publico` en el portal) como indica [ADR-0014](../docs/arquitectura/adr/0014-esquema-propio-y-roles-de-base-de-datos.md);
-  se implementa una sola vez en `compartido`.
+- **Esquema y conexión:** las tablas están en el esquema `siglim`. `GestorTransaccionesSiglim`
+  (`compartido.contexto`) fija en **cada transacción** los claims con el perfil, `search_path` y el
+  rol: `siglim_app` con sesión, `siglim_publico` sin ella ([ADR-0014](../docs/arquitectura/adr/0014-esquema-propio-y-roles-de-base-de-datos.md)).
+  No lo repitas en repositorios. **Todo SQL va dentro de un `@Transactional` del servicio:** fuera de
+  una transacción la consulta corre con el usuario de conexión, que es dueño de las tablas y se
+  salta RLS. La única excepción es `seguridad.ResolutorPerfilJdbc`, que busca el perfil antes de que
+  exista contexto.
 - **Funciones y vistas del esquema:** úsalas en lugar de reimplementarlas: `calcular_tabla(grupo)` y
   las vistas `v_publica_*` para el portal. Los triggers ya validan transiciones y conflictos y
   responden con el código del ERS en `HINT`: tradúcelo a RFC 9457, pero valida antes en el servicio
@@ -91,7 +94,8 @@ repositorio + prueba del servicio).
   (ADR-0009). Usa el `Clock` inyectable, nunca `now()` directo en Java.
 - **Usuario actual:** `UsuarioActual.idRequerido()` (UUID = `perfiles.id`, que también va en el claim
   `perfil_id`). Llena `creado_por`, `validado_por`, etc. explícitamente; los historiales los llenan
-  los triggers. En cambios de estado fija `siglim.motivo` (RN-021).
+  los triggers. En cambios de estado llama `motivoOperacion.fijar(motivo)` dentro de la transacción,
+  antes del cambio (fija `siglim.motivo`, RN-021).
 - **Configuración:** variables nuevas en `application.yml` con `${VARIABLE}` y documentadas en
   `.env.example`. Propiedades propias bajo el prefijo `siglim.`.
 - **Sin** JPA, Lombok, `ddl-auto`, Flyway ni dependencias nuevas sin justificar.
@@ -101,5 +105,9 @@ repositorio + prueba del servicio).
 - **Unitarias** (obligatorias): reglas del servicio con Mockito, sin Spring ni BD. Nombre del
   método en español; `@DisplayName` con el ID del requisito.
 - **De controlador** (`@WebMvcTest` + `@MockitoBean`): códigos HTTP, validación y formato de error.
-- **De integración con BD:** pendientes de decidir (Testcontainers o un proyecto Supabase de
-  pruebas); no las agregues sin acordarlo.
+- **De integración con BD** (decisión del equipo del 22 oct 2026): **Testcontainers** con
+  `postgres:17-alpine` (la versión de Supabase), clases `*IT` que corre failsafe en `mvnw verify`.
+  Cargan la simulación de Supabase y todas las migraciones como `supabase/pruebas/ejecutar.sh`;
+  usa `compartido.contexto.ContextoTransaccionIT` como plantilla. Requieren **Docker** encendido; sin
+  Docker se omiten (`@Testcontainers(disabledWithoutDocker = true)`), así que antes de dar por
+  terminada una tarea con BD verifica que se ejecutaron (`Tests run` de failsafe).

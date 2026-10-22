@@ -13,7 +13,11 @@ import java.security.spec.ECGenParameterSpec;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 import java.util.function.Consumer;
+import mx.tecnm.morelia.siglim.compartido.contexto.ConvertidorAutenticacion;
+import mx.tecnm.morelia.siglim.compartido.contexto.ResolutorPerfil;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
@@ -33,11 +37,15 @@ import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
  * lugar del JWKS de Supabase, una llave EC P-256 (ES256, el algoritmo del proyecto) generada al
  * vuelo. Así las pruebas firman tokens reales sin red ni secretos.
  *
+ * <p>El perfil de SIGLIM se resuelve con un {@link ResolutorPerfil} en memoria: {@link #SUJETO}
+ * tiene el perfil activo {@link #PERFIL_ID}, {@link #SUJETO_PERFIL_INACTIVO} uno desactivado y
+ * cualquier otro {@code sub} no tiene perfil.
+ *
  * <p>Uso: {@code @Import(SeguridadPrueba.class)} y, en {@code @WebMvcTest(properties = …)},
  * {@code SUPABASE_URL=} {@link #URL_SUPABASE} y {@code SIGLIM_CORS_ORIGEN=} {@link #ORIGEN_FRONTEND}.
  */
 @TestConfiguration(proxyBeanMethods = false)
-@Import({SeguridadConfig.class, PuntoEntradaNoAutenticado.class})
+@Import({SeguridadConfig.class, PuntoEntradaNoAutenticado.class, ConvertidorAutenticacion.class})
 public class SeguridadPrueba {
 
     public static final String URL_SUPABASE = "https://proyecto-prueba.supabase.co";
@@ -45,6 +53,15 @@ public class SeguridadPrueba {
 
     /** Usuario de Supabase Auth de los tokens de prueba. */
     public static final String SUJETO = "6f1d2a3b-4c5d-4e6f-8a9b-0c1d2e3f4a5b";
+
+    /** Perfil de SIGLIM activo de {@link #SUJETO}. */
+    public static final UUID PERFIL_ID = UUID.fromString("0b7c3e1a-2d4f-4a6b-9c8d-7e6f5a4b3c2d");
+
+    /** Cuenta de Supabase Auth cuyo perfil de SIGLIM está desactivado. */
+    public static final String SUJETO_PERFIL_INACTIVO = "1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d";
+
+    /** Cuenta de Supabase Auth sin perfil en SIGLIM (como una invitación sin completar). */
+    public static final String SUJETO_SIN_PERFIL = "9f8e7d6c-5b4a-4392-8170-6f5e4d3c2b1a";
 
     /**
      * Identificador de llave ({@code kid}) común al JWKS y a los tokens de prueba. Debe coincidir:
@@ -62,6 +79,19 @@ public class SeguridadPrueba {
      * se deba a la firma y no a una llave inexistente.
      */
     static final KeyPair LLAVE_AJENA = generarLlaveEc();
+
+    @Bean
+    ResolutorPerfil resolutorPerfilPrueba() {
+        return usuarioAuthId -> {
+            if (usuarioAuthId.equals(UUID.fromString(SUJETO))) {
+                return Optional.of(new ResolutorPerfil.PerfilSesion(PERFIL_ID, true));
+            }
+            if (usuarioAuthId.equals(UUID.fromString(SUJETO_PERFIL_INACTIVO))) {
+                return Optional.of(new ResolutorPerfil.PerfilSesion(UUID.randomUUID(), false));
+            }
+            return Optional.empty();
+        };
+    }
 
     @Bean
     JwtDecoder decodificadorJwtPrueba() {

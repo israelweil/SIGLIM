@@ -82,11 +82,37 @@ class SeguridadConfigTest {
         }
 
         @Test
-        @DisplayName("ADR-0003: token válido de Supabase pasa y expone el sub del usuario")
+        @DisplayName("ADR-0003: token válido de Supabase pasa y expone el sub y el perfil de SIGLIM")
         void tokenValidoPasa() {
-            assertThat(getConToken(PROTEGIDO, SeguridadPrueba.tokenValido()))
-                    .hasStatusOk()
-                    .bodyJson().extractingPath("$.sub").isEqualTo(SeguridadPrueba.SUJETO);
+            MvcTestResult resultado = getConToken(PROTEGIDO, SeguridadPrueba.tokenValido());
+
+            assertThat(resultado).hasStatusOk();
+            assertThat(resultado).bodyJson().extractingPath("$.sub").isEqualTo(SeguridadPrueba.SUJETO);
+            assertThat(resultado).bodyJson().extractingPath("$.perfilId")
+                    .isEqualTo(SeguridadPrueba.PERFIL_ID.toString());
+        }
+    }
+
+    @Nested
+    @DisplayName("Cuenta de Supabase sin perfil activo en SIGLIM (ADR-0003 punto 6)")
+    class CuentaSinPerfilActivo {
+
+        private void cuentaNoActiva(String sub) {
+            String token = SeguridadPrueba.token(SeguridadPrueba.LLAVE_PROYECTO, reclamos -> reclamos.subject(sub));
+            esNoAutenticado(getConToken(PROTEGIDO, token),
+                    PuntoEntradaNoAutenticado.DETALLE_CUENTA_NO_ACTIVA, "Bearer error=\"invalid_token\"");
+        }
+
+        @Test
+        @DisplayName("T-02.3: token válido sin perfil en SIGLIM responde 401 NO_AUTENTICADO")
+        void sinPerfil() {
+            cuentaNoActiva(SeguridadPrueba.SUJETO_SIN_PERFIL);
+        }
+
+        @Test
+        @DisplayName("T-02.3: token válido con perfil desactivado responde 401 NO_AUTENTICADO")
+        void perfilDesactivado() {
+            cuentaNoActiva(SeguridadPrueba.SUJETO_PERFIL_INACTIVO);
         }
     }
 
