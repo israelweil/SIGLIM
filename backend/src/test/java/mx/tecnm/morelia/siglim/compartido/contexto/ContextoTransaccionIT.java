@@ -156,7 +156,11 @@ class ContextoTransaccionIT {
         assertThatThrownBy(() -> plantilla.execute(estado ->
                 jdbc.sql("SELECT count(*) FROM perfiles").query(Long.class).single()))
                 .isInstanceOf(DataAccessException.class)
-                .hasMessageContaining("permission denied");
+                // Se compara el SQLSTATE y no el texto: Spring 7 no copia el mensaje de la causa y
+                // PostgreSQL traduce sus mensajes según el idioma del servidor.
+                .rootCause()
+                .isInstanceOfSatisfying(SQLException.class, error ->
+                        assertThat(error.getSQLState()).as("42501 insufficient_privilege").isEqualTo("42501"));
     }
 
     @Test
