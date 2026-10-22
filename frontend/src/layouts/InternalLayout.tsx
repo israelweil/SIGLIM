@@ -12,6 +12,10 @@ import { seccionesApp } from '@/layouts/navegacion'
 const clasesSalto =
   'sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-label-md focus:text-on-primary'
 
+/** Elementos que pueden recibir el foco con Tab dentro del menú móvil. */
+const selectorEnfocables =
+  'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+
 const clasesSeccion = ({ isActive }: { isActive: boolean }) =>
   [
     'flex min-h-11 items-center gap-3 rounded-md px-3 text-label-md transition-colors',
@@ -29,6 +33,7 @@ export function InternalLayout() {
   const [colapsada, setColapsada] = useState(false)
   const cerrarRef = useRef<HTMLButtonElement>(null)
   const abrirRef = useRef<HTMLButtonElement>(null)
+  const dialogoRef = useRef<HTMLDivElement>(null)
   const { pathname } = useLocation()
 
   const cerrarMenu = useCallback(() => {
@@ -53,6 +58,44 @@ export function InternalLayout() {
     const alPresionar = (evento: KeyboardEvent) => {
       if (evento.key === 'Escape') {
         cerrarMenu()
+        return
+      }
+
+      if (evento.key === 'Tab') {
+        atraparFoco(evento)
+      }
+    }
+
+    /*
+     * Trampa de foco del diálogo modal (WCAG 2.1: 2.4.3, RNF-008): con el menú
+     * abierto, Tab y Mayús+Tab recorren solo sus elementos y dan la vuelta.
+     */
+    const atraparFoco = (evento: KeyboardEvent) => {
+      const dialogo = dialogoRef.current
+
+      if (!dialogo) {
+        return
+      }
+
+      const enfocables = Array.from(
+        dialogo.querySelectorAll<HTMLElement>(selectorEnfocables),
+      )
+
+      if (enfocables.length === 0) {
+        return
+      }
+
+      const primero = enfocables[0]
+      const ultimo = enfocables[enfocables.length - 1]
+      const activo = document.activeElement
+      const fueraDelDialogo = !dialogo.contains(activo)
+
+      if (evento.shiftKey && (activo === primero || fueraDelDialogo)) {
+        evento.preventDefault()
+        ultimo.focus()
+      } else if (!evento.shiftKey && (activo === ultimo || fueraDelDialogo)) {
+        evento.preventDefault()
+        primero.focus()
       }
     }
 
@@ -76,6 +119,7 @@ export function InternalLayout() {
           type="button"
           aria-label={menuAbierto ? 'Cerrar menú' : 'Abrir menú'}
           aria-expanded={menuAbierto}
+          aria-controls="menu-movil"
           onClick={() => (menuAbierto ? cerrarMenu() : setMenuAbierto(true))}
           className="inline-flex size-11 items-center justify-center rounded-md border border-border text-text-main transition-colors hover:bg-background lg:hidden"
         >
@@ -176,6 +220,8 @@ export function InternalLayout() {
             className="absolute inset-0 bg-surface-dark/50"
           />
           <div
+            ref={dialogoRef}
+            id="menu-movil"
             role="dialog"
             aria-modal="true"
             aria-label="Menú Ejecutivo"

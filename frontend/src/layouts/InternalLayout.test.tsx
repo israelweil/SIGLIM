@@ -89,6 +89,30 @@ describe('InternalLayout', () => {
     expect(abrir).toHaveFocus()
   })
 
+  it('RNF-008: el foco no sale del menú móvil al recorrerlo con Tab', async () => {
+    const usuario = userEvent.setup()
+    montar()
+
+    await usuario.click(screen.getByRole('button', { name: 'Abrir menú' }))
+
+    const dialogo = screen.getByRole('dialog', { name: 'Menú Ejecutivo' })
+    const cerrar = within(dialogo).getByRole('button', { name: 'Cerrar menú' })
+    const ultimo = within(dialogo).getByRole('link', { name: 'Administración' })
+
+    expect(cerrar).toHaveFocus()
+
+    await usuario.tab({ shift: true })
+    expect(ultimo).toHaveFocus()
+
+    await usuario.tab()
+    expect(cerrar).toHaveFocus()
+
+    for (let paso = 0; paso < 10; paso += 1) {
+      await usuario.tab()
+      expect(dialogo).toContainElement(document.activeElement as HTMLElement)
+    }
+  })
+
   it('cierra el menú móvil con su botón', async () => {
     const usuario = userEvent.setup()
     montar()
