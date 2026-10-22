@@ -16,9 +16,31 @@ roles: [ADR-0014](../docs/arquitectura/adr/0014-esquema-propio-y-roles-de-base-d
 La migración de la Rev. 0.3 quedó en
 [`docs/base-de-datos/historico/`](../docs/base-de-datos/historico/) y no se aplica.
 
-## Aplicar el esquema en un proyecto nuevo
+## Proyecto compartido del equipo: las migraciones se aplican al fusionar
 
-**Opción A — SQL Editor (sin instalar nada):**
+El proyecto **SIGLIM** de Supabase está conectado al repositorio con la integración de GitHub de
+Supabase. Al fusionar en `main`, la verificación **«Supabase Preview»** compara
+`supabase/migrations/` con el historial del proyecto (`supabase_migrations.schema_migrations`) y
+aplica solo las migraciones que no estén registradas.
+
+- **No apliques migraciones a mano** (SQL Editor) en el proyecto compartido: el SQL Editor no
+  registra la migración en el historial y la integración intentará aplicarla otra vez al siguiente
+  merge.
+- Si ya se aplicó una a mano, regístrala como aplicada (equivale a
+  `supabase migration repair --status applied <versión>`):
+  ```sql
+  INSERT INTO supabase_migrations.schema_migrations (version, name)
+  VALUES ('AAAAMMDDHHMMSS', 'descripcion') ON CONFLICT (version) DO NOTHING;
+  ```
+- Antecedente: la migración inicial se aplicó con el SQL Editor y el historial quedó vacío; al
+  fusionar el PR #10, la integración intentó repetirla y falló con `schema "siglim" already exists`
+  (sin aplicar nada, porque va en una transacción). Se corrigió registrando `20261020090000` y
+  `20261022143000` el 22 de octubre de 2026.
+
+## Aplicar el esquema en un proyecto nuevo (personal o de pruebas)
+
+**Opción A — SQL Editor (sin instalar nada):** no registra el historial; úsala solo en proyectos
+que no estén vinculados a GitHub.
 1. Abre tu proyecto en Supabase → *SQL Editor* → *New query*.
 2. Pega el contenido completo de `migrations/20261020090000_esquema_inicial.sql` y pulsa *Run*.
    Si algo falla, nada queda aplicado (todo va en una transacción).
