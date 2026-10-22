@@ -1,13 +1,14 @@
 # Diccionario de datos
 
 **SIGLIM · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia**  
-Versión 2.0 · 20 de octubre de 2026 · PostgreSQL 15+ en Supabase · Alineado con el [ERS Rev. 0.4.1](../requisitos/ERS.md) y la [arquitectura v2.1](../arquitectura/arquitectura-y-diseno-jerarquico.md)
+Versión 2.1 · 22 de octubre de 2026 · PostgreSQL 15+ en Supabase · Alineado con el [ERS Rev. 0.4.1](../requisitos/ERS.md) y la [arquitectura v2.1](../arquitectura/arquitectura-y-diseno-jerarquico.md)
 
 > [!NOTE]
 > Este diccionario describe la migración
 > [`20261020090000_esquema_inicial.sql`](../../supabase/migrations/20261020090000_esquema_inicial.sql), que
 > reemplaza el esquema de la Rev. 0.3 (DEC-42). Se generó leyendo el catálogo de PostgreSQL después
 > de aplicar la migración, por lo que tablas, tipos, restricciones e índices coinciden con el script.
+> Las migraciones posteriores se registran en el historial de versiones.
 > La versión anterior está en [`historico/`](historico/).
 
 ## Control del documento
@@ -16,6 +17,7 @@ Versión 2.0 · 20 de octubre de 2026 · PostgreSQL 15+ en Supabase · Alineado 
 | --- | --- | --- |
 | 1.0 | 7 de octubre de 2026 | 22 tablas del alcance de la Rev. 0.3 en el esquema `public`. |
 | 2.0 | 20 de octubre de 2026 | 72 tablas del alcance de la Rev. 0.4 en el esquema `siglim`; permisos con ámbito, cédula, disciplina, tesorería, notificaciones y documentos en AWS S3; RLS por ámbito; pruebas de integración. |
+| 2.1 | 22 de octubre de 2026 | Migración `20261022143000_fijar_search_path_error_negocio.sql`: `error_negocio` fija `search_path = siglim, pg_temp` como el resto de las funciones (aviso 0011 del asesor de seguridad). Sin cambios en tablas ni en el comportamiento. |
 
 ## 1. Propósito y alcance
 
@@ -1804,7 +1806,7 @@ Restricciones, índices y triggers:
 | `club_visible(p_club uuid)` | `boolean` | SECURITY DEFINER | Verdadero si el club está en el ámbito del usuario (liga o su club). |
 | `clubes_usuario()` | `SETOF uuid` | SECURITY DEFINER | Clubes de las asignaciones activas con ámbito CLUB del usuario actual. |
 | `cobro_visible(p_cobro uuid)` | `boolean` | SECURITY DEFINER | Verdadero si el cobro pertenece a un club del ámbito del usuario. |
-| `error_negocio(p_codigo text, p_mensaje text)` | `void` | invocador | Lanza un error de negocio con el código del ERS (VAL-xxx, RN-xxx) en HINT para que el backend lo traduzca a RFC 9457. |
+| `error_negocio(p_codigo text, p_mensaje text)` | `void` | invocador | Lanza un error de negocio (SQLSTATE `P0001`) con el código del ERS (VAL-xxx, RN-xxx) en HINT para que el backend lo traduzca a RFC 9457. `search_path` fijo desde la versión 2.1. |
 | `es_menor(p_persona uuid, p_fecha date DEFAULT CURRENT_DATE)` | `boolean` | invocador | Verdadero si la persona tiene menos de 18 años en la fecha indicada (RN-055). |
 | `es_titular(p_persona uuid)` | `boolean` | SECURITY DEFINER | Verdadero si la persona es el usuario actual o un menor bajo su tutela (ámbito propio, RF-144). |
 | `es_usuario_liga()` | `boolean` | SECURITY DEFINER | Verdadero si el usuario actual tiene una asignación activa con ámbito LIGA. |
