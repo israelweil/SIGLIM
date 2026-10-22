@@ -18,10 +18,15 @@ cp .env.example .env    # Windows: copy .env.example .env
 
 | Variable | Descripción |
 | --- | --- |
-| `DB_URL` | Cadena JDBC de Supabase (Database → Connect → JDBC; *Session pooler* si no tienes IPv6) |
-| `DB_USERNAME` / `DB_PASSWORD` | Credenciales de la base de datos |
-| `SUPABASE_URL` | `https://<ref>.supabase.co`; de aquí se derivan el JWKS y el emisor del JWT |
-| `CORS_ORIGENES` | Orígenes del frontend permitidos, separados por coma |
+| `DB_URL` | Cadena JDBC de Supabase (Connect → JDBC → *Transaction pooler*, puerto 6543) terminada en `?currentSchema=siglim&prepareThreshold=0` (ADR-0014) |
+| `DB_USERNAME` / `DB_PASSWORD` | Usuario del pooler (`postgres.<ref>`) y contraseña de la base de datos |
+| `SUPABASE_URL` | `https://<ref>.supabase.co`, sin diagonal final; de aquí se derivan el JWKS y el emisor del JWT |
+| `SIGLIM_CORS_ORIGEN` | Orígenes del frontend permitidos, separados por coma (convenciones de API §5) |
+
+El detalle y los valores de ejemplo están en [`.env.example`](.env.example). Si falta una variable o
+tiene un formato incorrecto, la aplicación no arranca y el error dice cuál es. Una prueba
+(`VariablesEntornoDocumentadasTest`) falla si `application.yml` usa una variable que no esté en
+`.env.example`: al agregar una, documéntala ahí en el mismo PR.
 
 ## Ejecutar
 
@@ -30,7 +35,7 @@ cp .env.example .env    # Windows: copy .env.example .env
 ```
 
 - Salud: <http://localhost:8080/actuator/health>
-- Ejemplo público: <http://localhost:8080/api/v1/publico/programacion?desde=2026-10-12T00:00:00-06:00&hasta=2026-10-19T00:00:00-06:00>
+- API en ejecución: <http://localhost:8080/api/v1/salud> → `{"estado":"OK"}`
 
 ## Probar
 
