@@ -235,7 +235,26 @@ GET /api/v1/partidos?jornadaId=…&estado=PROGRAMADO&pagina=0&tamano=20&orden=in
   ámbito: `404`.
 - **Lo que sabe la interfaz.** `GET /api/v1/yo` devuelve el perfil, las asignaciones de rol con su
   ámbito y club, y los permisos efectivos. El frontend oculta lo que no aplica, pero **no es
-  barrera**: el backend vuelve a verificar.
+  barrera**: el backend vuelve a verificar. Solo exige sesión y responde con
+  `Cache-Control: no-store`. Las asignaciones son las activas, ordenadas por ámbito (`LIGA`,
+  `CLUB`, `PROPIO`) y nombre del rol; los permisos son la unión de los de esos roles, sin
+  duplicados por `(codigo, ambito, clubId)` y ordenados por código:
+
+  ```json
+  {
+    "perfil": { "id": "…", "nombreMostrado": "Ana López", "correo": "ana@ejemplo.mx" },
+    "asignaciones": [
+      { "id": "…", "rol": { "codigo": "PROGRAMADOR", "nombre": "Programador de partidos" },
+        "ambito": "LIGA", "club": null },
+      { "id": "…", "rol": { "codigo": "DIRECTIVA_CLUB", "nombre": "Directiva de club" },
+        "ambito": "CLUB", "club": { "id": "…", "nombre": "Club Halcones" } }
+    ],
+    "permisos": [
+      { "codigo": "partidos.partido:CONSULTAR", "modulo": "M-08", "ambito": "LIGA", "clubId": null },
+      { "codigo": "partidos.partido:CONSULTAR", "modulo": "M-08", "ambito": "CLUB", "clubId": "…" }
+    ]
+  }
+  ```
 - **Motivo.** Las acciones que el ERS marca con motivo lo exigen en el cuerpo (`"motivo"`, mínimo
   10 caracteres **[PROPUESTA]**); sin él, `400`. El servicio lo fija como `siglim.motivo` para el
   historial y la auditoría (RN-021, RF-093).

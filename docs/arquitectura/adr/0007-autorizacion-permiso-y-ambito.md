@@ -41,8 +41,10 @@ lo que impide que los permisos sean configurables (DP-008).
   falta del permiso responde **403**. Las convenciones de API (paso 5) fijan el formato.
 - Las asignaciones del usuario se leen **una vez por petición**, sin caché entre peticiones, para
   que un cambio de permisos surta efecto de inmediato (ADR-0003).
-- El código **nunca** compara nombres de rol. `GET /api/v1/yo/permisos` devuelve los permisos
+- El código **nunca** compara nombres de rol. `GET /api/v1/yo` devuelve los permisos
   efectivos con su ámbito para que el frontend oculte lo que no aplica; el frontend no es barrera.
+- Actualización 2026-10-23 (H-01.1): un solo endpoint, decisión del equipo. `GET /api/v1/yo`
+  reúne el perfil, las asignaciones y los permisos efectivos; no existe `GET /api/v1/yo/permisos`.
 
 ### 3. Control dual (RF-095, RF-096, RN-053)
 - Al editar los permisos de un rol, el servicio rechaza el cambio si el rol pertenece al propio
