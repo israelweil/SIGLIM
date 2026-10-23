@@ -78,6 +78,9 @@ async function leerProblema(respuesta: Response): Promise<Problema> {
 /**
  * Ejecuta una petición al API, agrega el token de Supabase y convierte los
  * errores RFC 9457 en `ApiError` (T-03.4, convenciones de API §3).
+ *
+ * Una respuesta exitosa sin cuerpo (204, o 200/201 construidos con `build()`)
+ * resuelve `undefined` en lugar de fallar al intentar leer JSON.
  */
 export async function peticion<T>(
   ruta: string,
@@ -125,15 +128,13 @@ export async function peticion<T>(
     })
   }
 
-  if (respuesta.status === 204) {
-    return undefined as T
-  }
-
   if (!respuesta.ok) {
     throw new ApiError(await leerProblema(respuesta))
   }
 
-  return (await respuesta.json()) as T
+  const texto = await respuesta.text()
+
+  return (texto ? JSON.parse(texto) : undefined) as T
 }
 
 export const api = {

@@ -19,6 +19,7 @@ type RespuestaSimulada = {
   ok: boolean
   status: number
   headers: { get(nombre: string): string | null }
+  text(): Promise<string>
   json(): Promise<unknown>
 }
 
@@ -30,7 +31,14 @@ function respuestaJson(status: number, cuerpo: unknown): RespuestaSimulada {
       get: (nombre) =>
         nombre.toLowerCase() === 'content-type' ? 'application/json' : null,
     },
-    json: async () => cuerpo,
+    text: async () => (cuerpo === undefined ? '' : JSON.stringify(cuerpo) ?? ''),
+    json: async () => {
+      if (cuerpo === undefined) {
+        throw new SyntaxError('Unexpected end of JSON input')
+      }
+
+      return cuerpo
+    },
   }
 }
 
@@ -101,6 +109,14 @@ describe('api', () => {
     )
   })
 
+  it('devuelve undefined en un 201 sin cuerpo', async () => {
+    simularFetch(respuestaJson(201, undefined))
+
+    await expect(
+      api.post('/temporadas', { nombre: '2026/27' }),
+    ).resolves.toBeUndefined()
+  })
+
   it('expone problema.codigo y errores en un 409', async () => {
     simularFetch(
       respuestaProblema(409, {
@@ -140,6 +156,7 @@ describe('api', () => {
       ok: false,
       status: 401,
       headers: { get: () => 'text/html' },
+      text: async () => '<html>No autenticado</html>',
       json: async () => ({}),
     })
 
