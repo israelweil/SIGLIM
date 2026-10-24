@@ -21,6 +21,10 @@ cp .env.example .env.local    # Windows: copy .env.example .env.local
 | `VITE_SUPABASE_PUBLISHABLE_KEY` | Clave pública (*publishable* o *anon*). Nunca la `service_role` |
 | `VITE_API_URL` | Base del API; por defecto `/api/v1` (proxy de Vite al backend) |
 
+Para la recuperación de contraseña, agrega `<origen>/restablecer-contrasena` a las **Redirect URLs**
+permitidas en Supabase Auth (por ejemplo, `http://localhost:5173/restablecer-contrasena` en
+desarrollo).
+
 ## Scripts
 
 | Comando | Qué hace |
@@ -38,4 +42,5 @@ cp .env.example .env.local    # Windows: copy .env.example .env.local
 | `/`, `/resultados`, `/tabla` | Portal público (UI-020) | Público |
 | `/aviso-de-privacidad` | Aviso de privacidad (UI-033) | Público |
 | `/login` | Inicio de sesión (UI-001) | Público |
+| `/restablecer-contrasena` | Restablecer contraseña con el enlace de Supabase Auth | Público con enlace válido |
 | `/app/**` | Aplicación interna por módulo | Sesión iniciada |
