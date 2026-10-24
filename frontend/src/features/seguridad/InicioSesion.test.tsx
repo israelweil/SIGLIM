@@ -260,4 +260,12 @@ describe('InicioSesion', () => {
       ),
     ).toBeInTheDocument()
   })
+
+  it('H-01.3: avisa cuando la sesión venció', async () => {
+    montar({ pathname: '/login', state: { sesionExpirada: true } })
+
+    expect(
+      await screen.findByText('Tu sesión venció. Inicia sesión de nuevo.'),
+    ).toBeInTheDocument()
+  })
 })

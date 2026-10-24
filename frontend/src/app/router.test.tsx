@@ -1,9 +1,13 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { render, screen } from '@testing-library/react'
 import { createMemoryRouter, RouterProvider } from 'react-router'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { rutas } from '@/app/router'
 
-const { obtenerSesion } = vi.hoisted(() => ({ obtenerSesion: vi.fn() }))
+const { obtenerSesion, obtenerYo } = vi.hoisted(() => ({
+  obtenerSesion: vi.fn(),
+  obtenerYo: vi.fn(),
+}))
 
 vi.mock('@/lib/supabase', () => ({
   supabase: {
@@ -13,16 +17,37 @@ vi.mock('@/lib/supabase', () => ({
   },
 }))
 
+vi.mock('@/lib/api/cliente', () => ({
+  api: { get: obtenerYo },
+}))
+
 function montar(ruta: string) {
+  const clienteConsultas = new QueryClient({
+    defaultOptions: { queries: { retry: false } },
+  })
   const enrutador = createMemoryRouter(rutas, { initialEntries: [ruta] })
 
-  render(<RouterProvider router={enrutador} />)
+  render(
+    <QueryClientProvider client={clienteConsultas}>
+      <RouterProvider router={enrutador} />
+    </QueryClientProvider>,
+  )
 }
 
 describe('router', () => {
   beforeEach(() => {
     obtenerSesion.mockReset()
+    obtenerYo.mockReset()
     obtenerSesion.mockResolvedValue({ data: { session: null }, error: null })
+    obtenerYo.mockResolvedValue({
+      perfil: {
+        id: 'perfil-1',
+        nombreMostrado: 'Ana Pérez',
+        correo: null,
+      },
+      asignaciones: [],
+      permisos: [],
+    })
   })
 
   it('muestra el portal público en /', () => {

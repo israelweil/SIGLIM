@@ -1,6 +1,7 @@
 import { createBrowserRouter, type RouteObject } from 'react-router'
 import { RutaProtegida } from '@/app/RutaProtegida'
 import { InicioSesion } from '@/features/seguridad/InicioSesion'
+import { ProveedorSesionActual } from '@/features/seguridad/ProveedorSesionActual'
 import { RestablecerContrasena } from '@/features/seguridad/RestablecerContrasena'
 import { InternalLayout } from '@/layouts/InternalLayout'
 import { PublicLayout } from '@/layouts/PublicLayout'
@@ -73,7 +74,11 @@ export const rutas: RouteObject[] = [
     element: <RutaProtegida />,
     children: [
       {
-        element: <InternalLayout />,
+        element: (
+          <ProveedorSesionActual>
+            <InternalLayout />
+          </ProveedorSesionActual>
+        ),
         children: [
           ...paginasApp,
           { path: '/app/*', element: <PaginaNoEncontrada rutaInicio="/app" /> },

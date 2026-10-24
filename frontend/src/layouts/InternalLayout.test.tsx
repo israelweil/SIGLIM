@@ -1,39 +1,135 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter, Route, Routes } from 'react-router'
-import { describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { ProveedorSesionActual } from '@/features/seguridad/ProveedorSesionActual'
+import type { Permiso, Yo } from '@/features/seguridad/tipos'
 import { InternalLayout } from '@/layouts/InternalLayout'
 
-function montar() {
+const { obtenerYo, cerrarSesion } = vi.hoisted(() => ({
+  obtenerYo: vi.fn(),
+  cerrarSesion: vi.fn(),
+}))
+
+vi.mock('@/lib/api/cliente', () => ({
+  api: { get: obtenerYo },
+}))
+
+vi.mock('@/lib/supabase', () => ({
+  supabase: { auth: { signOut: cerrarSesion } },
+}))
+
+function permiso(codigo: string, modulo: string): Permiso {
+  return { codigo, modulo, ambito: 'LIGA', clubId: null }
+}
+
+const yoCapturista: Yo = {
+  perfil: {
+    id: 'perfil-capturista',
+    nombreMostrado: 'Leonardo López',
+    correo: 'capturista@ejemplo.mx',
+  },
+  asignaciones: [
+    {
+      id: 'asignacion-capturista',
+      rol: { codigo: 'CAPTURISTA', nombre: 'Capturista' },
+      ambito: 'LIGA',
+      club: null,
+    },
+  ],
+  permisos: [
+    permiso('partidos.partido:CONSULTAR', 'M-08'),
+    permiso('partidos.cedula:CONSULTAR', 'M-08'),
+    permiso('partidos.cedula:CAPTURAR', 'M-08'),
+    permiso('notificaciones.aviso:CONSULTAR', 'M-14'),
+  ],
+}
+
+const yoPresidente: Yo = {
+  perfil: {
+    id: 'perfil-presidente',
+    nombreMostrado: 'Ramón Medina',
+    correo: 'presidente@ejemplo.mx',
+  },
+  asignaciones: [
+    {
+      id: 'asignacion-presidente',
+      rol: { codigo: 'PRESIDENTE', nombre: 'Presidente del Comité Ejecutivo' },
+      ambito: 'LIGA',
+      club: null,
+    },
+  ],
+  permisos: [
+    permiso('seguridad.rol:CONSULTAR', 'M-01'),
+    permiso('temporadas.temporada:CONSULTAR', 'M-02'),
+    permiso('organizacion.club:CONSULTAR', 'M-03'),
+    permiso('canchas.cancha:CONSULTAR', 'M-06'),
+    permiso('programacion.jornada:CONSULTAR', 'M-07'),
+    permiso('partidos.partido:CONSULTAR', 'M-08'),
+    permiso('disciplina.expediente:CONSULTAR', 'M-09'),
+    permiso('competencias.propuesta:APROBAR', 'M-10'),
+    permiso('publicacion.comunicado:APROBAR', 'M-11'),
+    permiso('reportes.reporte:CONSULTAR', 'M-12'),
+    permiso('notificaciones.aviso:CONSULTAR', 'M-14'),
+  ],
+}
+
+async function montar(yo: Yo = yoPresidente) {
+  obtenerYo.mockResolvedValue(yo)
+
+  const clienteConsultas = new QueryClient({
+    defaultOptions: { queries: { retry: false } },
+  })
+
   render(
-    <MemoryRouter initialEntries={['/app']}>
-      <Routes>
-        <Route element={<InternalLayout />}>
-          <Route path="/app" element={<p>Panel de inicio</p>} />
-        </Route>
-      </Routes>
-    </MemoryRouter>,
+    <QueryClientProvider client={clienteConsultas}>
+      <MemoryRouter initialEntries={['/app']}>
+        <Routes>
+          <Route path="/login" element={<h1>Iniciar sesión</h1>} />
+          <Route
+            element={
+              <ProveedorSesionActual>
+                <InternalLayout />
+              </ProveedorSesionActual>
+            }
+          >
+            <Route path="/app" element={<p>Panel de inicio</p>} />
+          </Route>
+        </Routes>
+      </MemoryRouter>
+    </QueryClientProvider>,
   )
+
+  await screen.findByRole('navigation', { name: 'Menú Ejecutivo' })
 }
 
 describe('InternalLayout', () => {
-  it('muestra el Menú Ejecutivo de F-07 y la barra superior', () => {
-    montar()
+  beforeEach(() => {
+    obtenerYo.mockReset()
+    cerrarSesion.mockReset()
+    cerrarSesion.mockResolvedValue({ error: null })
+  })
+
+  it('muestra el Menú Ejecutivo de F-07 y la identidad de la barra superior', async () => {
+    await montar()
 
     const menu = screen.getByRole('navigation', { name: 'Menú Ejecutivo' })
 
-    expect(
-      within(menu).getByRole('link', { name: 'Inicio' }),
-    ).toHaveAttribute('href', '/app')
+    expect(within(menu).getByRole('link', { name: 'Inicio' })).toHaveAttribute(
+      'href',
+      '/app',
+    )
     expect(
       within(menu).getByRole('link', { name: 'Organización' }),
     ).toHaveAttribute('href', '/app/organizacion')
     expect(
       within(menu).getByRole('link', { name: 'Programación' }),
     ).toHaveAttribute('href', '/app/programacion')
-    expect(
-      within(menu).getByRole('link', { name: 'Partidos' }),
-    ).toHaveAttribute('href', '/app/partidos')
+    expect(within(menu).getByRole('link', { name: 'Partidos' })).toHaveAttribute(
+      'href',
+      '/app/partidos',
+    )
     expect(
       within(menu).getByRole('link', { name: 'Disciplina' }),
     ).toHaveAttribute('href', '/app/disciplina')
@@ -44,12 +140,64 @@ describe('InternalLayout', () => {
     expect(
       screen.getByRole('link', { name: 'SIGLIM, aplicación interna' }),
     ).toHaveAttribute('href', '/app')
-    expect(screen.getByText('Sesión activa')).toBeInTheDocument()
+    expect(screen.getByText('Ramón Medina')).toBeInTheDocument()
+    expect(
+      screen.getByText('Presidente del Comité Ejecutivo · Liga'),
+    ).toBeInTheDocument()
+  })
+
+  it('H-01.3: el Capturista solo ve Inicio y Partidos, sin notificaciones', async () => {
+    const usuario = userEvent.setup()
+    await montar(yoCapturista)
+
+    expect(obtenerYo).toHaveBeenCalledWith('/yo')
+
+    const menu = screen.getByRole('navigation', { name: 'Menú Ejecutivo' })
+
+    expect(within(menu).getByRole('link', { name: 'Inicio' })).toBeInTheDocument()
+    expect(within(menu).getByRole('link', { name: 'Partidos' })).toBeInTheDocument()
+    expect(
+      within(menu).queryByRole('link', { name: 'Organización' }),
+    ).not.toBeInTheDocument()
+    expect(
+      within(menu).queryByRole('link', { name: 'Programación' }),
+    ).not.toBeInTheDocument()
+    expect(
+      within(menu).queryByRole('link', { name: 'Disciplina' }),
+    ).not.toBeInTheDocument()
+    expect(
+      within(menu).queryByRole('link', { name: 'Administración' }),
+    ).not.toBeInTheDocument()
+    expect(
+      within(menu).queryByRole('link', { name: 'Notificaciones' }),
+    ).not.toBeInTheDocument()
+    expect(screen.getByText('Leonardo López')).toBeInTheDocument()
+    expect(screen.getByText('Capturista · Liga')).toBeInTheDocument()
+
+    await usuario.click(screen.getByRole('button', { name: 'Abrir menú' }))
+
+    const dialogo = screen.getByRole('dialog', { name: 'Menú Ejecutivo' })
+    expect(within(dialogo).getAllByRole('link')).toHaveLength(2)
+    expect(
+      within(dialogo).getByRole('link', { name: 'Partidos' }),
+    ).toHaveAttribute('href', '/app/partidos')
+  })
+
+  it('H-01.3: cierra la sesión y vuelve al inicio de sesión', async () => {
+    const usuario = userEvent.setup()
+    await montar(yoCapturista)
+
+    await usuario.click(screen.getByRole('button', { name: 'Cerrar sesión' }))
+
+    expect(
+      await screen.findByRole('heading', { name: 'Iniciar sesión' }),
+    ).toBeInTheDocument()
+    expect(cerrarSesion).toHaveBeenCalledTimes(1)
   })
 
   it('colapsa y expande la barra lateral', async () => {
     const usuario = userEvent.setup()
-    montar()
+    await montar()
 
     const boton = screen.getByRole('button', { name: 'Colapsar menú' })
     expect(boton).toHaveAttribute('aria-expanded', 'true')
@@ -70,7 +218,7 @@ describe('InternalLayout', () => {
 
   it('abre el menú móvil, navega y devuelve el foco', async () => {
     const usuario = userEvent.setup()
-    montar()
+    await montar()
 
     const abrir = screen.getByRole('button', { name: 'Abrir menú' })
 
@@ -91,7 +239,7 @@ describe('InternalLayout', () => {
 
   it('RNF-008: el foco no sale del menú móvil al recorrerlo con Tab', async () => {
     const usuario = userEvent.setup()
-    montar()
+    await montar()
 
     await usuario.click(screen.getByRole('button', { name: 'Abrir menú' }))
 
@@ -115,7 +263,7 @@ describe('InternalLayout', () => {
 
   it('cierra el menú móvil con su botón', async () => {
     const usuario = userEvent.setup()
-    montar()
+    await montar()
 
     await usuario.click(screen.getByRole('button', { name: 'Abrir menú' }))
 

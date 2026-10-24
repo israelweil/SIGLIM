@@ -25,6 +25,7 @@ type Modo = 'acceso' | 'recuperacion'
 type EstadoUbicacion = {
   desde?: unknown
   restablecida?: boolean
+  sesionExpirada?: boolean
 } | null
 
 /**
@@ -191,6 +192,19 @@ export function InicioSesion() {
               : 'Escribe el correo de tu cuenta y te enviaremos un enlace para restablecer la contraseña.'}
           </p>
         </div>
+
+        {estadoUbicacion?.sesionExpirada && modo === 'acceso' && (
+          <div
+            role="status"
+            className="flex items-start gap-2 rounded-lg border border-warning/40 bg-warning/8 p-3 text-body-md"
+          >
+            <CircleAlert
+              aria-hidden="true"
+              className="mt-0.5 size-5 shrink-0 text-warning-strong"
+            />
+            <p>Tu sesión venció. Inicia sesión de nuevo.</p>
+          </div>
+        )}
 
         {estadoUbicacion?.restablecida && modo === 'acceso' && (
           <div
