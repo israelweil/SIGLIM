@@ -1,13 +1,19 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router'
 import {
+  LogOut,
   Menu,
   PanelLeftClose,
   PanelLeftOpen,
   UserRound,
   X,
 } from 'lucide-react'
-import { seccionesApp } from '@/layouts/navegacion'
+import { useSesionActual } from '@/features/seguridad/ProveedorSesionActual'
+import {
+  descripcionDeAcceso,
+  useCerrarSesion,
+} from '@/features/seguridad/sesion'
+import { seccionesPermitidas } from '@/layouts/navegacion'
 
 const clasesSalto =
   'sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-label-md focus:text-on-primary'
@@ -26,7 +32,7 @@ const clasesSeccion = ({ isActive }: { isActive: boolean }) =>
 
 /**
  * Barra superior y barra lateral colapsable de la aplicación interna (F-07).
- * El nombre, rol y ámbito del usuario los sustituirá H-01 desde `/yo`.
+ * La identidad y las secciones visibles salen de `GET /api/v1/yo` (H-01.3).
  */
 export function InternalLayout() {
   const [menuAbierto, setMenuAbierto] = useState(false)
@@ -35,6 +41,10 @@ export function InternalLayout() {
   const abrirRef = useRef<HTMLButtonElement>(null)
   const dialogoRef = useRef<HTMLDivElement>(null)
   const { pathname } = useLocation()
+  const { yo } = useSesionActual()
+  const { cerrar, cerrando } = useCerrarSesion()
+  const secciones = seccionesPermitidas(yo.permisos)
+  const detalleAcceso = descripcionDeAcceso(yo.asignaciones)
 
   const cerrarMenu = useCallback(() => {
     setMenuAbierto(false)
@@ -164,9 +174,32 @@ export function InternalLayout() {
           </span>
         </Link>
 
-        <div className="ml-auto flex items-center gap-2 text-label-md text-text-muted">
-          <UserRound aria-hidden="true" className="size-5" />
-          <span className="hidden sm:inline">Sesión activa</span>
+        <div className="ml-auto flex min-w-0 items-center gap-2">
+          <div className="flex min-w-0 flex-col text-right">
+            <span className="max-w-[7rem] truncate text-label-md text-text-main sm:max-w-[12rem]">
+              {yo.perfil.nombreMostrado}
+            </span>
+            <span className="max-w-[7rem] truncate text-body-sm text-text-muted sm:max-w-[14rem]">
+              {detalleAcceso}
+            </span>
+          </div>
+          <span
+            aria-hidden="true"
+            className="grid size-8 shrink-0 place-items-center rounded-full bg-primary text-on-primary"
+          >
+            <UserRound className="size-4" />
+          </span>
+          <button
+            type="button"
+            aria-label="Cerrar sesión"
+            aria-busy={cerrando || undefined}
+            disabled={cerrando}
+            onClick={() => void cerrar()}
+            className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-md border border-border px-2 text-label-md text-text-main transition-colors hover:bg-background disabled:cursor-not-allowed disabled:opacity-50 sm:px-3"
+          >
+            <LogOut aria-hidden="true" className="size-4 shrink-0" />
+            <span className="hidden sm:inline">Cerrar sesión</span>
+          </button>
         </div>
       </header>
 
@@ -186,7 +219,7 @@ export function InternalLayout() {
               Menú Ejecutivo
             </p>
           )}
-          {seccionesApp.map((seccion) => {
+          {secciones.map((seccion) => {
             const Icono = seccion.icono
 
             return (
@@ -245,7 +278,7 @@ export function InternalLayout() {
               aria-label="Menú Ejecutivo"
               className="flex flex-1 flex-col gap-1 overflow-y-auto p-2"
             >
-              {seccionesApp.map((seccion) => {
+              {secciones.map((seccion) => {
                 const Icono = seccion.icono
 
                 return (
