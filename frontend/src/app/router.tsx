@@ -1,5 +1,7 @@
 import { createBrowserRouter, type RouteObject } from 'react-router'
 import { RutaProtegida } from '@/app/RutaProtegida'
+import { InicioSesion } from '@/features/seguridad/InicioSesion'
+import { RestablecerContrasena } from '@/features/seguridad/RestablecerContrasena'
 import { InternalLayout } from '@/layouts/InternalLayout'
 import { PublicLayout } from '@/layouts/PublicLayout'
 import { seccionesApp } from '@/layouts/navegacion'
@@ -61,12 +63,11 @@ export const rutas: RouteObject[] = [
   },
   {
     path: '/login',
-    element: (
-      <EnConstruccion
-        titulo="Iniciar sesión"
-        descripcion="Pantalla en construcción."
-      />
-    ),
+    element: <InicioSesion />,
+  },
+  {
+    path: '/restablecer-contrasena',
+    element: <RestablecerContrasena />,
   },
   {
     element: <RutaProtegida />,
