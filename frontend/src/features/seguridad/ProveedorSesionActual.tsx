@@ -46,7 +46,8 @@ export function ProveedorSesionActual({ children }: Props) {
   const ubicacion = useLocation()
   const clienteConsultas = useQueryClient()
   const redirigiendo = useRef(false)
-  const sesionVencida = error instanceof ApiError && error.estado === 401
+  // Se decide por el código del problema, no por el estado HTTP (ApiError, convenciones §3).
+  const sesionVencida = error instanceof ApiError && error.codigo === 'NO_AUTENTICADO'
 
   useEffect(() => {
     if (!sesionVencida || redirigiendo.current) {
