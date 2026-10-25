@@ -18,6 +18,7 @@ agente de IA, léela en el orden de la tabla.
 | — | [`requisitos/historico/`](requisitos/historico/), [`requisitos/bpmn/historico/`](requisitos/bpmn/historico/), [`arquitectura/historico/`](arquitectura/historico/) y [`base-de-datos/historico/`](base-de-datos/historico/) | Versiones anteriores **reemplazadas** (ERS Rev. 0.1 y 0.3, BPMN 1.0, arquitectura 1.0 con su DOCX original y figuras, convenciones de API 1.0, diccionario 1.0 y migración de la Rev. 0.3). Solo como referencia histórica. | Nunca para implementar. |
 | 10 | [`requisitos/decisiones/registro-de-decisiones.md`](requisitos/decisiones/registro-de-decisiones.md) | Decisiones DEC-01 a DEC-48 con su origen; integradas en el ERS Rev. 0.4 y 0.4.1 salvo DEC-47 y DEC-48. | Para rastrear por qué existe un requisito. |
 | 11 | [`planning/sprint-plan.md`](planning/sprint-plan.md) | Backlog v4: épicas, historias, tareas y subtareas por sprint con su CSV para Jira ([`planning/backlog-siglim.csv`](planning/backlog-siglim.csv)). | Para saber qué se hace en cada sprint y en qué orden. |
+| 12 | [`pruebas/aceptacion/`](pruebas/aceptacion/README.md) | Pruebas de aceptación por historia: escenarios por criterio, evidencias y resultado. | Para cerrar una historia o comprobar qué se verificó. |
 | — | [`requisitos/fuentes/`](requisitos/fuentes/) | Documentación técnica base, transcripción del levantamiento (R2) y formatos de carta del cliente. | Para rastrear de dónde salió un requisito o una figura. |
 
 ## Jerarquía de fuentes de verdad
