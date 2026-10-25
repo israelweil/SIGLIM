@@ -1,10 +1,97 @@
 # Plan de sprints — SIGLIM (backlog v4)
 
 **SIGLIM · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia**  
-Versión 4.0 · 20 de octubre de 2026 · Alineado con el [ERS Rev. 0.4.1](../requisitos/ERS.md), la [arquitectura v2.1](../arquitectura/arquitectura-y-diseno-jerarquico.md), las [convenciones de API v2.0](../arquitectura/convenciones-api.md) y las [pantallas aprobadas](../diseno-ui/pantallas/README.md)
+Versión 4.1 · 25 de octubre de 2026 (replanificación DEC-50; línea base 4.0 del 20 de octubre) · Alineado con el [ERS Rev. 0.4.1](../requisitos/ERS.md), la [arquitectura v2.1](../arquitectura/arquitectura-y-diseno-jerarquico.md), las [convenciones de API v2.0](../arquitectura/convenciones-api.md) y las [pantallas aprobadas](../diseno-ui/pantallas/README.md)
 
 > [!NOTE]
 > Este archivo y [`backlog-siglim.csv`](backlog-siglim.csv) se generan juntos con [`fuente/generar.py`](fuente/generar.py) a partir de [`fuente/datos.py`](fuente/datos.py). Para cambiar el backlog, edita `datos.py` y vuelve a generar: así el plan y el CSV no se desalinean. Reemplaza al backlog v3 y a los 81 issues anteriores de Jira (DEC-44, DEC-47).
+
+## Replanificación vigente (DEC-50)
+
+> [!IMPORTANT]
+> El 25 de octubre de 2026 el equipo asignó a los Sprints 2 a 4 todo el núcleo Should y todo lo B ([DEC-50](../requisitos/decisiones/registro-de-decisiones.md)), adelantando la mayor parte al Sprint 2. Las secciones 1 a 9 conservan la **línea base** que generó el CSV importado; esta sección manda sobre ellas. Las fechas, los responsables y el estado de cada subtarea viven en Jira (etiqueta `sprint-N`).
+
+| Sprint | Línea base (Must) | Should agregado | B agregado | Total | Capacidad calculada |
+| --- | --- | --- | --- | --- | --- |
+| 1 | 9 SP · 27 h | 0 SP · 0 h | 0 SP · 0 h | **9 SP · 27 h** | 9 SP · 27 h |
+| 2 | 17 SP · 51 h | 17 SP · 51 h | 17 SP · 51 h | **51 SP · 153 h** | 18 SP · 54 h |
+| 3 | 17 SP · 51 h | 5 SP · 15 h | 19 SP · 57 h | **41 SP · 123 h** | 18 SP · 54 h |
+| 4 | 20 SP · 60 h | 10 SP · 30 h | 44 SP · 132 h | **74 SP · 222 h** | 20 SP · 60 h |
+
+Las horas de lo B en los Sprints 3 y 4 son estimación gruesa (SP × 3): sus subtareas se crean al refinarlas.
+
+### Sprint 2 replanificado
+
+| Clave | Tipo | Elemento | SP | Horas | Responsable |
+| --- | --- | --- | --- | --- | --- |
+| H-02 | Historia (Must) | Autorizar cada operación por permiso y ámbito y auditar las operaciones críticas | 3 | 9 | Israel |
+| H-03 | Historia (Must) | Invitar usuarios y asignarles roles con ámbito | 2 | 6 | Geovani |
+| H-04 | Historia (Must) | Gestionar temporadas con una sola activa y proteger las cerradas | 2 | 6 | Geovani |
+| H-05 | Historia (Must) | Configurar categorías, grupos y parámetros deportivos versionados | 3 | 9 | Israel |
+| H-06 | Historia (Must) | Registrar clubes y sus equipos en la categoría y grupo de la temporada | 2 | 6 | Leonardo |
+| H-07 | Historia (Must) | Registrar canchas con su disponibilidad y bloqueos | 3 | 9 | Leonardo |
+| T-04 | Tarea (Must) | Configurar AWS S3 y el servicio de almacenamiento de documentos | 2 | 6 | Leonardo |
+| H-20 | Historia (Should) | Editar los permisos de un rol con control dual | 3 | 9 | Israel |
+| H-21 | Historia (Should) | Consultar la auditoría con filtros | 2 | 6 | Leonardo |
+| H-22 | Historia (Should) | Registrar la directiva del club y sus cambios | 2 | 6 | Israel |
+| H-26 | Historia (Should) | Configurar los catálogos de incidencias y artículos | 2 | 6 | Israel |
+| H-29 | Historia (Should) | Crear cobros manuales y consultar adeudos | 3 | 9 | Geovani |
+| H-30 | Historia (Should) | Pagar un cobro en línea de forma simulada | 3 | 9 | Geovani |
+| H-31 | Historia (Should) | Registrar un pago recibido fuera del sistema con su comprobante | 2 | 6 | Leonardo |
+| B-02 | Historia B | Asociar la convocatoria a la temporada | 1 | 3 | Geovani |
+| B-03 | Historia B | Registrar reglas interpretadas pendientes de autorización | 2 | 6 | Israel |
+| B-04 | Historia B | Registrar el cambio de nombre de un club como club nuevo | 1 | 3 | Leonardo |
+| B-05 | Historia B | Registrar la venta de un equipo y la conservación de plaza | 3 | 9 | Geovani |
+| B-11 | Historia B | Agrupar canchas por sede | 1 | 3 | Leonardo |
+| B-12 | Historia B | Registrar mantenimiento tipificado de canchas | 1 | 3 | Leonardo |
+| B-13 | Historia B | Registrar horarios de cancha de club y comodato | 2 | 6 | Leonardo |
+| B-27 | Historia B | Redactar, aprobar y publicar comunicados | 2 | 6 | Geovani |
+| B-29 | Historia B | Configurar tarifas de arbitraje y cancha | 2 | 6 | Israel |
+| B-31 | Historia B | Vencer cobros no pagados | 2 | 6 | Leonardo |
+
+**Reglas de trabajo del Sprint 2**
+
+1. **Orden:** Must → Should → B. Si en la revisión de mitad de sprint (1 de noviembre) los Must van atrasados, se retiran primero las B y después las Should, y regresan al backlog con su etiqueta.
+2. **Ruta crítica:** H-02 (autorización y auditoría, 26–29 oct) → H-04.1 (temporadas, 30–31 oct) → H-05.1 (categorías, 1–2 nov) → H-06.1 (clubes y equipos, 3 nov). Todo lo que usa clubes (H-22, H-29, B-04, B-05, B-13) empieza después de H-06.1; lo que extiende una pantalla (B-02 en F-10, B-04 y H-22 en F-15, B-11 y B-12 en F-21, H-31 y B-31 en F-33) empieza después de que esa pantalla existe.
+3. **Pruebas cruzadas:** cada prueba de aceptación la hace un integrante distinto de quien implementó.
+4. **Capacidad:** la carga supera la capacidad calculada con la velocidad del Sprint 1 (9 SP); es una decisión consciente del equipo (DEC-50) que se revisa en la retrospectiva con la velocidad real.
+
+### Agregado al Sprint 3
+
+| Clave | Elemento | SP |
+| --- | --- | --- |
+| H-23 | Dar de baja a un jugador conservando su historial (Should) | 2 |
+| H-24 | Consultar mi información como jugador o tutor (Should) | 3 |
+| B-01 | Atender solicitudes ARCO | 2 |
+| B-06 | Renovar registros y transferir jugadores entre temporadas | 3 |
+| B-07 | Consultar el historial de cambios de un registro | 1 |
+| B-08 | Verificar la cuota de árbitros por club | 1 |
+| B-09 | Registrar la disponibilidad arbitral | 2 |
+| B-14 | Gestionar solicitudes de préstamo, comodato y oferta de cancha con oficio | 5 |
+| B-15 | Advertir las reglas de localía y aceptar con motivo | 2 |
+| B-30 | Generar cobros automáticos al publicar la jornada | 3 |
+
+### Agregado al Sprint 4
+
+| Clave | Elemento | SP |
+| --- | --- | --- |
+| H-25 | Recibir avisos dentro de la aplicación (Should) | 3 |
+| H-27 | Abrir expedientes desde la cédula y resolverlos con sanción (Should) | 5 |
+| H-28 | Corregir un resultado oficial por resolución conservando la versión anterior (Should) | 2 |
+| B-10 | Consultar el historial de designaciones | 1 |
+| B-16 | Conservar el histórico de la tabla por jornada | 2 |
+| B-17 | Calcular y publicar estadísticas de jugador con consentimiento | 3 |
+| B-18 | Adjuntar evidencias al expediente | 2 |
+| B-19 | Proponer la sanción según el artículo | 1 |
+| B-20 | Gestionar la lista de castigados y publicar sanciones | 2 |
+| B-21 | Interponer y resolver recursos de inconformidad | 3 |
+| B-22 | Aplicar efectos automáticos: baja, sanción retroactiva y partidos restantes | 5 |
+| B-23 | Generar el cobro de una multa | 1 |
+| B-24 | Proponer y validar ascensos y descensos | 5 |
+| B-25 | Configurar y jugar la liguilla | 8 |
+| B-26 | Ampliar el portal: calendario, comunicados, sanciones y equipos | 3 |
+| B-28 | Generar y exportar reportes REP-001 a REP-014 | 5 |
+| B-32 | Enviar los avisos por correo | 3 |
 
 ## 1. Resumen y supuestos
 
@@ -12,8 +99,8 @@ Versión 4.0 · 20 de octubre de 2026 · Alineado con el [ERS Rev. 0.4.1](../req
 | --- | --- |
 | Elementos | 14 épicas · 63 historias (31 del núcleo y 32 de entrega B) · 5 tareas · 121 subtareas · **203 filas** |
 | Comprometido en sprints (Must) | 63 SP · 189 h |
-| Núcleo no comprometido (Should, sin sprint) | 12 historias · 32 SP |
-| Backlog B (Could, sin sprint ni subtareas) | 32 historias · 80 SP |
+| Núcleo no comprometido (Should, sin sprint en la línea base) | 12 historias · 32 SP · asignadas por DEC-50 |
+| Backlog B (Could, sin sprint en la línea base) | 32 historias · 80 SP · asignadas por DEC-50 |
 | Equipo | 3 integrantes; 10 h por persona por semana (supuesto aprobado el 20 oct 2026) |
 | Equivalencia | 1 SP ≈ 3 h del equipo; solo para comprobar capacidad. Se recalibra con la velocidad real del Sprint 2. |
 | Jerarquía en Jira | Épica → Historia → Subtarea; y Épica → Tarea → Subtarea para trabajo técnico sin usuario final. Jira *team-managed* no permite una Tarea hija de una Historia (DEC-47). |
@@ -564,11 +651,13 @@ Recorrido completo: designar árbitros, iniciar el partido, capturar la cédula 
 
 **Incremento terminado cuando:** todas las historias del sprint cumplen sus criterios y la Definición de Terminado, el recorrido demostrable funciona en `main` con la migración vigente y no quedan defectos críticos abiertos.
 
-## 5. Núcleo no comprometido (Should, sin sprint)
+## 5. Núcleo no comprometido (Should)
 
 12 historias, 32 SP, con subtareas listas. Entran al sprint en que haya capacidad, en este orden sugerido: disciplina (H-26, H-27, H-28), tesorería (H-29, H-30, H-31), avisos (H-25) y el resto.
 
-- **H-20 · Historia** — Editar los permisos de un rol con control dual · **3 SP** · Medium · épica E01
+El sprint vigente de cada historia es el de la replanificación (DEC-50), indicado en su primera línea.
+
+- **H-20 · Historia** — Editar los permisos de un rol con control dual · **3 SP** · Medium · épica E01 · **Sprint 2 (DEC-50)**
   - *Como* Administrador general, *quiero* modificar los permisos de los roles, con aprobación del Presidente cuando combinen permisos incompatibles, *para* adaptar la matriz sin concentrar funciones.
   - Requisitos: RF-095, RF-096, VAL-022, VAL-023, UI-029, RN-053
   - Pantallas: F-13
@@ -585,7 +674,7 @@ Recorrido completo: designar árbitros, iniciar el partido, capturar la cédula 
       Terminado cuando: Pestañas y modales de dictamen.
     - **H-20.3** Prueba de aceptación del control dual — 1 h · `pruebas`  
       Terminado cuando: Evidencia de los criterios.
-- **H-21 · Historia** — Consultar la auditoría con filtros · **2 SP** · Medium · épica E01
+- **H-21 · Historia** — Consultar la auditoría con filtros · **2 SP** · Medium · épica E01 · **Sprint 2 (DEC-50)**
   - *Como* Presidente del Comité Ejecutivo, *quiero* consultar la auditoría por usuario, módulo, acción y fecha, *para* rastrear quién hizo cada cambio crítico.
   - Requisitos: RF-134, UI-022, RNF-015
   - Pantallas: F-14
@@ -601,7 +690,7 @@ Recorrido completo: designar árbitros, iniciar el partido, capturar la cédula 
       Terminado cuando: Filtros, tabla densa y fila expandible.
     - **H-21.3** Prueba de aceptación de auditoría — 1 h · `pruebas`  
       Terminado cuando: Evidencia.
-- **H-22 · Historia** — Registrar la directiva del club y sus cambios · **2 SP** · Medium · épica E03
+- **H-22 · Historia** — Registrar la directiva del club y sus cambios · **2 SP** · Medium · épica E03 · **Sprint 2 (DEC-50)**
   - *Como* Directiva de club, *quiero* registrar los cargos de la directiva y sus cambios, *para* que la Liga sepa quién representa al club.
   - Requisitos: RF-102, UI-005
   - Pantallas: F-15
@@ -616,7 +705,7 @@ Recorrido completo: designar árbitros, iniciar el partido, capturar la cédula 
       Terminado cuando: Lista de cargos y registro de cambio.
     - **H-22.3** Prueba de aceptación de directiva — 0.5 h · `pruebas`  
       Terminado cuando: Evidencia.
-- **H-23 · Historia** — Dar de baja a un jugador conservando su historial · **2 SP** · Medium · épica E04
+- **H-23 · Historia** — Dar de baja a un jugador conservando su historial · **2 SP** · Medium · épica E04 · **Sprint 3 (DEC-50)**
   - *Como* Directiva de club, *quiero* dar de baja a un jugador con fecha y motivo, *para* mantener al día la plantilla sin perder el historial.
   - Requisitos: RF-014, RF-017, UI-006
   - Pantallas: F-17
@@ -631,7 +720,7 @@ Recorrido completo: designar árbitros, iniciar el partido, capturar la cédula 
       Terminado cuando: Motivo obligatorio y advertencia.
     - **H-23.3** Prueba de aceptación de baja — 1 h · `pruebas`  
       Terminado cuando: Evidencia.
-- **H-24 · Historia** — Consultar mi información como jugador o tutor · **3 SP** · Medium · épica E04
+- **H-24 · Historia** — Consultar mi información como jugador o tutor · **3 SP** · Medium · épica E04 · **Sprint 3 (DEC-50)**
   - *Como* jugador o tutor de un menor, *quiero* consultar registro, documentos, elegibilidad, partidos y sanciones, *para* saber si puedo jugar y por qué.
   - Requisitos: RF-144, UI-032, RNF-012
   - Pantallas: F-35
@@ -647,7 +736,7 @@ Recorrido completo: designar árbitros, iniciar el partido, capturar la cédula 
       Terminado cuando: Selector de menor y secciones.
     - **H-24.3** Prueba de aceptación de consulta propia — 1.5 h · `pruebas`  
       Terminado cuando: Evidencia.
-- **H-25 · Historia** — Recibir avisos dentro de la aplicación · **3 SP** · Medium · épica E14
+- **H-25 · Historia** — Recibir avisos dentro de la aplicación · **3 SP** · Medium · épica E14 · **Sprint 4 (DEC-50)**
   - *Como* usuario interno, *quiero* recibir avisos de los eventos que me corresponden y marcarlos como leídos, *para* atender a tiempo cédulas, trámites y cobros.
   - Requisitos: RF-142, RF-122, UI-030
   - Pantallas: F-09
@@ -663,7 +752,7 @@ Recorrido completo: designar árbitros, iniciar el partido, capturar la cédula 
       Terminado cuando: Pestañas y marcar leídas.
     - **H-25.3** Prueba de aceptación de avisos — 1 h · `pruebas`  
       Terminado cuando: Evidencia.
-- **H-26 · Historia** — Configurar los catálogos de incidencias y artículos · **2 SP** · Medium · épica E09
+- **H-26 · Historia** — Configurar los catálogos de incidencias y artículos · **2 SP** · Medium · épica E09 · **Sprint 2 (DEC-50)**
   - *Como* Comisión Disciplinaria, *quiero* configurar tipos de incidencia y artículos del reglamento, *para* resolver con el catálogo vigente.
   - Requisitos: RF-128, RF-129, RF-060, UI-026, PEN-021
   - Pantallas: F-32
@@ -679,7 +768,7 @@ Recorrido completo: designar árbitros, iniciar el partido, capturar la cédula 
       Terminado cuando: Formulario lateral de edición.
     - **H-26.3** Prueba de aceptación de catálogos — 0.5 h · `pruebas`  
       Terminado cuando: Evidencia.
-- **H-27 · Historia** — Abrir expedientes desde la cédula y resolverlos con sanción · **5 SP** · Medium · épica E09
+- **H-27 · Historia** — Abrir expedientes desde la cédula y resolverlos con sanción · **5 SP** · Medium · épica E09 · **Sprint 4 (DEC-50)**
   - *Como* Comisión Disciplinaria, *quiero* revisar los expedientes abiertos por las incidencias y resolverlos con un artículo y su sanción, *para* aplicar el reglamento con vigencia y efecto en la elegibilidad.
   - Requisitos: RF-057, RF-058, RF-062, RF-063, RF-064, RF-065, VAL-012, VAL-013, UI-015
   - Pantallas: F-30, F-31
@@ -699,7 +788,7 @@ Recorrido completo: designar árbitros, iniciar el partido, capturar la cédula 
       Terminado cuando: Vista previa de efectos.
     - **H-27.4** Prueba de aceptación de disciplina — 2 h · `pruebas`  
       Terminado cuando: Escenario incidencia → sanción → bloqueo.
-- **H-28 · Historia** — Corregir un resultado oficial por resolución conservando la versión anterior · **2 SP** · Medium · épica E08
+- **H-28 · Historia** — Corregir un resultado oficial por resolución conservando la versión anterior · **2 SP** · Medium · épica E08 · **Sprint 4 (DEC-50)**
   - *Como* Comisión Disciplinaria, *quiero* que una resolución pueda cambiar un resultado oficial, *para* aplicar el reglamento sin perder la versión original.
   - Requisitos: RF-052, RN-024, VAL-010
   - Pantallas: F-25, F-03
@@ -715,7 +804,7 @@ Recorrido completo: designar árbitros, iniciar el partido, capturar la cédula 
       Terminado cuando: Versiones visibles.
     - **H-28.3** Prueba de aceptación de corrección — 1 h · `pruebas`  
       Terminado cuando: Evidencia con la tabla.
-- **H-29 · Historia** — Crear cobros manuales y consultar adeudos · **3 SP** · Medium · épica E13
+- **H-29 · Historia** — Crear cobros manuales y consultar adeudos · **3 SP** · Medium · épica E13 · **Sprint 2 (DEC-50)**
   - *Como* Tesorero de la Liga, *quiero* crear cobros a clubes o equipos y ver los adeudos, *para* dar seguimiento a lo que se debe.
   - Requisitos: RF-137, RF-140, UI-027
   - Pantallas: F-33, F-08
@@ -731,7 +820,7 @@ Recorrido completo: designar árbitros, iniciar el partido, capturar la cédula 
       Terminado cuando: Modal de nuevo cobro.
     - **H-29.3** Prueba de aceptación de cobros — 1 h · `pruebas`  
       Terminado cuando: Evidencia.
-- **H-30 · Historia** — Pagar un cobro en línea de forma simulada · **3 SP** · Medium · épica E13
+- **H-30 · Historia** — Pagar un cobro en línea de forma simulada · **3 SP** · Medium · épica E13 · **Sprint 2 (DEC-50)**
   - *Como* Directiva de club, *quiero* pagar un cobro pendiente con el pago simulado, *para* liquidar adeudos sin acudir a Tesorería.
   - Requisitos: RF-138, VAL-028, RNF-004, DEC-37
   - Pantallas: F-34
@@ -748,7 +837,7 @@ Recorrido completo: designar árbitros, iniciar el partido, capturar la cédula 
       Terminado cuando: Tres pasos y comprobante.
     - **H-30.3** Prueba de aceptación del pago simulado — 1 h · `pruebas`  
       Terminado cuando: Evidencia.
-- **H-31 · Historia** — Registrar un pago recibido fuera del sistema con su comprobante · **2 SP** · Medium · épica E13
+- **H-31 · Historia** — Registrar un pago recibido fuera del sistema con su comprobante · **2 SP** · Medium · épica E13 · **Sprint 2 (DEC-50)**
   - *Como* Tesorero de la Liga, *quiero* registrar pagos en efectivo o transferencia con comprobante, *para* reflejar lo cobrado en ventanilla.
   - Requisitos: RF-139, VAL-028, RNF-018
   - Pantallas: F-33
@@ -765,42 +854,42 @@ Recorrido completo: designar árbitros, iniciar el partido, capturar la cédula 
     - **H-31.3** Prueba de aceptación del pago externo — 0.5 h · `pruebas`  
       Terminado cuando: Evidencia.
 
-## 6. Backlog B (sin sprint)
+## 6. Backlog B
 
-| Clave | Épica | Historia | Requisitos | SP | Nota |
-| --- | --- | --- | --- | --- | --- |
-| B-01 | E01 | Atender solicitudes ARCO | RF-098 | 2 | — |
-| B-02 | E02 | Asociar la convocatoria a la temporada | RF-002 | 1 | — |
-| B-03 | E02 | Registrar reglas interpretadas pendientes de autorización | RF-007 | 2 | — |
-| B-04 | E03 | Registrar el cambio de nombre de un club como club nuevo | RF-105 | 1 | — |
-| B-05 | E03 | Registrar la venta de un equipo y la conservación de plaza | RF-103, RF-104, UI-034 | 3 | — |
-| B-06 | E04 | Renovar registros y transferir jugadores entre temporadas | RF-015, RF-016, RF-111, VAL-026 | 3 | — |
-| B-07 | E04 | Consultar el historial de cambios de un registro | RF-018 | 1 | — |
-| B-08 | E05 | Verificar la cuota de árbitros por club | RF-114 | 1 | — |
-| B-09 | E05 | Registrar la disponibilidad arbitral | RF-022 | 2 | — |
-| B-10 | E05 | Consultar el historial de designaciones | RF-024 | 1 | — |
-| B-11 | E06 | Agrupar canchas por sede | RF-028 | 1 | — |
-| B-12 | E06 | Registrar mantenimiento tipificado de canchas | RF-031 | 1 | — |
-| B-13 | E06 | Registrar horarios de cancha de club y comodato | RF-119 | 2 | — |
-| B-14 | E06 | Gestionar solicitudes de préstamo, comodato y oferta de cancha con oficio | RF-116, RF-117, RF-118, UI-028 | 5 | — |
-| B-15 | E07 | Advertir las reglas de localía y aceptar con motivo | RF-120, VAL-027 | 2 | — |
-| B-16 | E08 | Conservar el histórico de la tabla por jornada | RF-051 | 2 | — |
-| B-17 | E11 | Calcular y publicar estadísticas de jugador con consentimiento | RF-054, RF-145, UI-013 | 3 | — |
-| B-18 | E09 | Adjuntar evidencias al expediente | RF-059 | 2 | — |
-| B-19 | E09 | Proponer la sanción según el artículo | RF-061 | 1 | — |
-| B-20 | E09 | Gestionar la lista de castigados y publicar sanciones | RF-066, RF-068, UI-016 | 2 | — |
-| B-21 | E09 | Interponer y resolver recursos de inconformidad | RF-067, UI-017 | 3 | Plazo pendiente (PEN-041). |
-| B-22 | E09 | Aplicar efectos automáticos: baja, sanción retroactiva y partidos restantes | RF-130, RF-131, RF-132 | 5 | — |
-| B-23 | E09 | Generar el cobro de una multa | RF-133 | 1 | — |
-| B-24 | E10 | Proponer y validar ascensos y descensos | RF-069, RF-070, RF-071, RF-072, RF-073, RF-074, RF-075, UI-018 | 5 | — |
-| B-25 | E10 | Configurar y jugar la liguilla | RF-076, RF-077, RF-078, RF-079, RF-080, RF-081, UI-019 | 8 | — |
-| B-26 | E11 | Ampliar el portal: calendario, comunicados, sanciones y equipos | RF-085, RF-086, RF-087, RF-088 | 3 | — |
-| B-27 | E11 | Redactar, aprobar y publicar comunicados | RF-090, UI-031 | 2 | — |
-| B-28 | E12 | Generar y exportar reportes REP-001 a REP-014 | RF-091, RF-092, UI-021 | 5 | — |
-| B-29 | E13 | Configurar tarifas de arbitraje y cancha | RF-135 | 2 | Tarifas reales pendientes (PEN-042). |
-| B-30 | E13 | Generar cobros automáticos al publicar la jornada | RF-136 | 3 | — |
-| B-31 | E13 | Vencer cobros no pagados | RF-141 | 2 | — |
-| B-32 | E14 | Enviar los avisos por correo | RF-143 | 3 | Bloqueada hasta elegir proveedor (PEN-034, DEC-46). |
+| Clave | Épica | Historia | Requisitos | SP | Sprint (DEC-50) | Nota |
+| --- | --- | --- | --- | --- | --- | --- |
+| B-01 | E01 | Atender solicitudes ARCO | RF-098 | 2 | 3 | — |
+| B-02 | E02 | Asociar la convocatoria a la temporada | RF-002 | 1 | 2 | — |
+| B-03 | E02 | Registrar reglas interpretadas pendientes de autorización | RF-007 | 2 | 2 | — |
+| B-04 | E03 | Registrar el cambio de nombre de un club como club nuevo | RF-105 | 1 | 2 | — |
+| B-05 | E03 | Registrar la venta de un equipo y la conservación de plaza | RF-103, RF-104, UI-034 | 3 | 2 | — |
+| B-06 | E04 | Renovar registros y transferir jugadores entre temporadas | RF-015, RF-016, RF-111, VAL-026 | 3 | 3 | — |
+| B-07 | E04 | Consultar el historial de cambios de un registro | RF-018 | 1 | 3 | — |
+| B-08 | E05 | Verificar la cuota de árbitros por club | RF-114 | 1 | 3 | — |
+| B-09 | E05 | Registrar la disponibilidad arbitral | RF-022 | 2 | 3 | — |
+| B-10 | E05 | Consultar el historial de designaciones | RF-024 | 1 | 4 | — |
+| B-11 | E06 | Agrupar canchas por sede | RF-028 | 1 | 2 | — |
+| B-12 | E06 | Registrar mantenimiento tipificado de canchas | RF-031 | 1 | 2 | — |
+| B-13 | E06 | Registrar horarios de cancha de club y comodato | RF-119 | 2 | 2 | — |
+| B-14 | E06 | Gestionar solicitudes de préstamo, comodato y oferta de cancha con oficio | RF-116, RF-117, RF-118, UI-028 | 5 | 3 | — |
+| B-15 | E07 | Advertir las reglas de localía y aceptar con motivo | RF-120, VAL-027 | 2 | 3 | — |
+| B-16 | E08 | Conservar el histórico de la tabla por jornada | RF-051 | 2 | 4 | — |
+| B-17 | E11 | Calcular y publicar estadísticas de jugador con consentimiento | RF-054, RF-145, UI-013 | 3 | 4 | — |
+| B-18 | E09 | Adjuntar evidencias al expediente | RF-059 | 2 | 4 | — |
+| B-19 | E09 | Proponer la sanción según el artículo | RF-061 | 1 | 4 | — |
+| B-20 | E09 | Gestionar la lista de castigados y publicar sanciones | RF-066, RF-068, UI-016 | 2 | 4 | — |
+| B-21 | E09 | Interponer y resolver recursos de inconformidad | RF-067, UI-017 | 3 | 4 | Plazo pendiente (PEN-041). |
+| B-22 | E09 | Aplicar efectos automáticos: baja, sanción retroactiva y partidos restantes | RF-130, RF-131, RF-132 | 5 | 4 | — |
+| B-23 | E09 | Generar el cobro de una multa | RF-133 | 1 | 4 | — |
+| B-24 | E10 | Proponer y validar ascensos y descensos | RF-069, RF-070, RF-071, RF-072, RF-073, RF-074, RF-075, UI-018 | 5 | 4 | — |
+| B-25 | E10 | Configurar y jugar la liguilla | RF-076, RF-077, RF-078, RF-079, RF-080, RF-081, UI-019 | 8 | 4 | — |
+| B-26 | E11 | Ampliar el portal: calendario, comunicados, sanciones y equipos | RF-085, RF-086, RF-087, RF-088 | 3 | 4 | — |
+| B-27 | E11 | Redactar, aprobar y publicar comunicados | RF-090, UI-031 | 2 | 2 | — |
+| B-28 | E12 | Generar y exportar reportes REP-001 a REP-014 | RF-091, RF-092, UI-021 | 5 | 4 | — |
+| B-29 | E13 | Configurar tarifas de arbitraje y cancha | RF-135 | 2 | 2 | Tarifas reales pendientes (PEN-042). |
+| B-30 | E13 | Generar cobros automáticos al publicar la jornada | RF-136 | 3 | 3 | — |
+| B-31 | E13 | Vencer cobros no pagados | RF-141 | 2 | 2 | — |
+| B-32 | E14 | Enviar los avisos por correo | RF-143 | 3 | 4 | Bloqueada hasta elegir proveedor (PEN-034, DEC-46). |
 
 ## 7. Dependencias críticas
 
@@ -895,7 +984,7 @@ Las claves visibles las asigna Jira y continuarán después de SCRUM-159; el `Is
 
 1. En el Backlog del tablero, filtrar por la etiqueta `sprint-1` y arrastrar las historias y tareas (las subtareas viajan con su padre) al **Sprint 1** activo.
 2. Crear los Sprints 2, 3 y 4 con las fechas de la sección 2 y repetir con `sprint-2`, `sprint-3` y `sprint-4`. No iniciar un sprint hasta cerrar el anterior.
-3. Lo etiquetado `backlog` se queda en el Backlog: 12 historias Should con subtareas y 32 historias B.
+3. En la importación, lo etiquetado `backlog` (12 historias Should y 32 historias B) se quedó en el Backlog. Desde la replanificación (DEC-50) esas historias llevan la etiqueta `sprint-N` de su sprint.
 4. Las épicas no se asignan a ningún sprint.
 
 ## 10. Verificación después de importar

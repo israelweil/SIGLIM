@@ -5,10 +5,10 @@
 > actualicen contra una sola fuente.
 >
 > **Vigencia.** Las decisiones DEC-01 a DEC-44 están **integradas en el ERS Rev. 0.4**, y DEC-45 y
-> DEC-46 en la Rev. 0.4.1; DEC-47 (planificación) y DEC-48 (inicio de sesión) se integran en la siguiente revisión ([`../ERS.md`](../ERS.md)), que vuelve a ser la fuente principal. Este
+> DEC-46 en la Rev. 0.4.1; DEC-47 y DEC-50 (planificación), DEC-48 (inicio de sesión) y DEC-49 (cambio de nombre de club) se integran en la siguiente revisión ([`../ERS.md`](../ERS.md)), que vuelve a ser la fuente principal. Este
 > archivo queda como evidencia de origen de cada requisito.
 >
-> **Fecha de corte:** 20 de octubre de 2026.
+> **Fecha de corte:** 25 de octubre de 2026.
 
 ## 1. Convenciones
 
@@ -44,6 +44,7 @@ Ninguna decisión de este registro se presenta como aprobada por la Liga.
 | DEC-13 | **Transferencias:** nunca dentro de una temporada. Entre temporadas, la restricción es **configurable** según las reglas de la liga y no impide de forma permanente que un jugador cambie de club. Se conserva el historial de clubes de cada jugador. | R2, EQ | Aprobada (equipo) | RF-015, RF-016, RF-018 (se reincorporan) |
 | DEC-14 | **Venta de equipo:** el cambio de propietario es una operación distinta de las transferencias de jugadores. La conservación de la categoría y de la plaza deportiva es otra operación independiente. Ambas las autoriza la directiva de la liga (Presidente del Comité Ejecutivo) y surten efecto **al cierre de la temporada**. Se conserva el historial de propietarios con fechas y autorizaciones. | R2, EQ | Aprobada (equipo) | RF-008, RF-009; equipos |
 | DEC-15 | Si un club **cambia de nombre**, pierde su historial: se registra como club nuevo y el anterior queda cerrado. | R2, EQ | Aprobada (equipo) | RN-005 (excepción explícita) |
+| DEC-49 | **Cambio de nombre con temporada en curso** (precisa DEC-15): el cambio de nombre se **rechaza (409)** mientras el club tenga equipos inscritos en la temporada ACTIVA; se registra entre temporadas. Así los partidos, resultados y cédulas de la temporada en curso no pasan a un club «nuevo», lo que contradiría DEC-15. Un nombre ya usado en la liga también se rechaza con 409. La regla puede relajarse después sin migrar datos. | EQ | Aprobada (equipo) · 25-oct-2026 | RF-105, RN-041; B-04 (SCRUM-213); `POST /clubes/{id}/cambio-nombre` |
 | DEC-16 | **Categorías:** estructura Temporada → Categoría → Grupo → Equipos → Partidos. Las programaciones observadas incluyen Primera Especial, Primera Fuerza, Reserva, Intermedia, Segunda, Tercera, Juvenil, Cuarta y Veteranos. Una categoría puede tener uno o varios grupos y un equipo pertenece a una categoría y grupo durante una temporada. El **orden y la jerarquía** de las categorías son configurables y no están fijos en el código, de modo que se pueden agregar categorías sin rediseñar la base de datos. | EQ | Aprobada (equipo) | RF-004, RF-005, RN-003, RNF-005 |
 
 ## 4. Árbitros, cédula y resultados
@@ -123,6 +124,7 @@ Separación de funciones verificada: captura (Capturista) ≠ validación de la 
 | DEC-46 | **Correo:** por ahora el volumen será bajo. La elección del proveedor de correo queda **pendiente** (PEN-034) hasta más adelante; se mantiene el mecanismo de ADR-0010 (SMTP y bandeja de salida). | EQ | Aprobada (equipo) · proveedor pendiente | ADR-0010; PEN-034 |
 | DEC-47 | **Backlog v4 y Jira:** se eliminan los 81 issues del backlog v3 (incluidos BUG-001 y BUG-002; este último quedó resuelto por el nuevo `calcular_tabla`, que desempata por sorteo y nunca por nombre). Jerarquía en Jira *team-managed*: Épica → Historia → Subtarea y Épica → Tarea → Subtarea para trabajo técnico. Sprint 1 del 12 al 26 de octubre; Sprints 2 a 4 de dos semanas hasta el 7 de diciembre; capacidad de 10 h por persona por semana. Dentro del núcleo se prioriza con MoSCoW: el flujo central se compromete y el resto del núcleo y lo B quedan sin sprint. La demostración es local mientras PEN-036 y PEN-037 sigan abiertos. | EQ | Aprobada (equipo) | [`../../planning/sprint-plan.md`](../../planning/sprint-plan.md); `backlog-siglim.csv`; Jira |
 | DEC-48 | **Inicio de sesión:** solo con correo y contraseña (sin «Folio federativo»). El **segundo factor (2FA)** y «Mantener sesión activa» quedan **pendientes** (PEN-044, propuesto para la siguiente revisión del ERS) y no se implementan. | EQ | Aprobada (equipo) · 2FA pendiente | UI-001; F-05; RNF-014 |
+| DEC-50 | **Replanificación del Sprint 2** (25-oct-2026): el equipo compromete el Sprint 2 original (17 SP) y además adelanta las historias Should H-20, H-21, H-22, H-26, H-29, H-30 y H-31 y diez historias B (B-02, B-03, B-04, B-05, B-11, B-12, B-13, B-27, B-29, B-31), argumentando que el uso de IA aumenta su velocidad. El resto del núcleo Should y de lo B se distribuye en los Sprints 3 y 4 con etiquetas `sprint-N` en Jira. Los tres integrantes programan; cada prueba de aceptación la hace un integrante distinto de quien implementó. Orden de trabajo: Must → Should → B; si en la revisión de mitad de sprint (1-nov) los Must van atrasados, se retiran primero las B y luego las Should. Se registra el riesgo: ≈ 153 h estimadas contra ≈ 54 h de capacidad calculada con la velocidad del Sprint 1. | EQ | Aprobada (equipo) | [`../../planning/sprint-plan.md`](../../planning/sprint-plan.md); Jira (Sprint 2) |
 
 ## 10. Pendientes que siguen abiertos
 

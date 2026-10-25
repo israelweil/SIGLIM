@@ -878,6 +878,32 @@ BACKLOG_B = [
     ('B-32', 'E14', 'Enviar los avisos por correo', ['RF-143'], [], 3, 'Bloqueada hasta elegir proveedor (PEN-034, DEC-46).'),
 ]
 
+# ---------------------------------------------------------------------------
+# Replanificación del 25 oct 2026 (DEC-50). El núcleo Should y lo B se asignan a los Sprints 2 a 4.
+# La línea base de arriba (Should y B sin sprint) se conserva porque es la que generó el CSV ya importado;
+# esta tabla refleja las etiquetas `sprint-N` que esos issues tienen hoy en Jira.
+# ---------------------------------------------------------------------------
+REPLAN_FECHA = '25 de octubre de 2026'
+REPLAN = {
+    2: ['H-20', 'H-21', 'H-22', 'H-26', 'H-29', 'H-30', 'H-31',
+        'B-02', 'B-03', 'B-04', 'B-05', 'B-11', 'B-12', 'B-13', 'B-27', 'B-29', 'B-31'],
+    3: ['H-23', 'H-24', 'B-01', 'B-06', 'B-07', 'B-08', 'B-09', 'B-14', 'B-15', 'B-30'],
+    4: ['H-25', 'H-27', 'H-28', 'B-10', 'B-16', 'B-17', 'B-18', 'B-19', 'B-20', 'B-21', 'B-22', 'B-23',
+        'B-24', 'B-25', 'B-26', 'B-28', 'B-32'],
+}
+# Horas de las subtareas creadas en Jira (SCRUM-366 a SCRUM-396) para las historias B del Sprint 2.
+HORAS_B = {'B-02': 3, 'B-03': 6, 'B-04': 3, 'B-05': 9, 'B-11': 3, 'B-12': 3, 'B-13': 6, 'B-27': 6,
+           'B-29': 6, 'B-31': 6}
+# Responsable de cada historia y tarea del Sprint 2 (Jira, 25 oct 2026). Las pruebas de aceptación las hace
+# otro integrante: Leonardo prueba lo de Israel, Israel lo de Geovani y Geovani lo de Leonardo.
+RESPONSABLE_S2 = {
+    'H-02': 'Israel', 'H-03': 'Geovani', 'H-04': 'Geovani', 'H-05': 'Israel', 'H-06': 'Leonardo',
+    'H-07': 'Leonardo', 'T-04': 'Leonardo', 'H-20': 'Israel', 'H-21': 'Leonardo', 'H-22': 'Israel',
+    'H-26': 'Israel', 'H-29': 'Geovani', 'H-30': 'Geovani', 'H-31': 'Leonardo', 'B-02': 'Geovani',
+    'B-03': 'Israel', 'B-04': 'Leonardo', 'B-05': 'Geovani', 'B-11': 'Leonardo', 'B-12': 'Leonardo',
+    'B-13': 'Leonardo', 'B-27': 'Geovani', 'B-29': 'Israel', 'B-31': 'Leonardo',
+}
+
 # Requisitos fuera de la planificación por estar pendientes o fuera de alcance
 EXCLUIDOS = [
     ('2FA y «Mantener sesión activa»', 'PEN-044 (nuevo) y PEN-030', 'Pendiente por decisión del equipo (20 oct 2026).'),
