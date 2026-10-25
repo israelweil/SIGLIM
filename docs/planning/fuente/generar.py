@@ -11,7 +11,8 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from datos import (BACKLOG_B, EPICAS, EXCLUIDOS, HORAS_POR_SP, ITEMS, SPRINTS)  # noqa: E402
+from datos import (BACKLOG_B, EPICAS, EXCLUIDOS, HORAS_B, HORAS_POR_SP, ITEMS, REPLAN, REPLAN_FECHA,  # noqa: E402
+                   RESPONSABLE_S2, SPRINTS)
 
 RAIZ = Path(__file__).resolve().parents[3]
 CSV_SALIDA = RAIZ / 'docs/planning/backlog-siglim.csv'
@@ -163,6 +164,41 @@ for k, ep, titulo, rf, ui, sp, nota in BACKLOG_B:
         if not any(PANTALLAS.glob(f'{u}-*')):
             errores.append(f'{k}: pantalla {u} no existe')
 
+# Replanificación (DEC-50): cada Should y cada B, exactamente una vez; dependencias en el mismo sprint o antes.
+por_k = {it['k']: it for it in ITEMS}
+sprint_replan = {}
+for s_, claves_ in REPLAN.items():
+    if s_ not in SPRINTS:
+        errores.append(f'Replanificación: sprint {s_} inexistente')
+    for c in claves_:
+        if c in sprint_replan:
+            errores.append(f'Replanificación: {c} aparece dos veces')
+        sprint_replan[c] = s_
+_sin_sprint = {it['k'] for it in ITEMS if not it['sprint']} | {b[0] for b in BACKLOG_B}
+for c in sorted(_sin_sprint - set(sprint_replan)):
+    errores.append(f'Replanificación: {c} no tiene sprint')
+for c in sorted(set(sprint_replan) - _sin_sprint):
+    errores.append(f'Replanificación: {c} no es Should ni B')
+for c in HORAS_B:
+    if sprint_replan.get(c) != 2:
+        errores.append(f'Replanificación: horas de {c} sin estar en el Sprint 2')
+for c in RESPONSABLE_S2:
+    if c not in _sin_sprint and (por_k.get(c) or {}).get('sprint') != 2:
+        errores.append(f'Replanificación: responsable de {c} sin estar en el Sprint 2')
+
+
+def sprint_vigente(clave):
+    it = por_k.get(clave)
+    return (it['sprint'] if it and it['sprint'] else None) or sprint_replan.get(clave)
+
+
+for it in ITEMS:
+    for d in it['dep']:
+        if d in por_k and sprint_vigente(d) and sprint_vigente(it['k']) and \
+                sprint_vigente(d) > sprint_vigente(it['k']):
+            errores.append(f"Replanificación: {it['k']} (S{sprint_vigente(it['k'])}) depende de {d} "
+                           f"(S{sprint_vigente(d)})")
+
 # Capacidad por sprint
 sp_sprint = defaultdict(float)
 h_sprint = defaultdict(float)
@@ -272,7 +308,7 @@ A = md.append
 A('# Plan de sprints — SIGLIM (backlog v4)')
 A('')
 A('**SIGLIM · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia**  ')
-A('Versión 4.0 · 20 de octubre de 2026 · Alineado con el [ERS Rev. 0.4.1](../requisitos/ERS.md), la '
+A(f'Versión 4.1 · {REPLAN_FECHA} (replanificación DEC-50; línea base 4.0 del 20 de octubre) · Alineado con el [ERS Rev. 0.4.1](../requisitos/ERS.md), la '
   '[arquitectura v2.1](../arquitectura/arquitectura-y-diseno-jerarquico.md), las '
   '[convenciones de API v2.0](../arquitectura/convenciones-api.md) y las '
   '[pantallas aprobadas](../diseno-ui/pantallas/README.md)')
@@ -283,6 +319,72 @@ A('> Este archivo y [`backlog-siglim.csv`](backlog-siglim.csv) se generan juntos
   'backlog, edita `datos.py` y vuelve a generar: así el plan y el CSV no se desalinean. Reemplaza al backlog v3 '
   'y a los 81 issues anteriores de Jira (DEC-44, DEC-47).')
 A('')
+# --- Replanificación vigente (DEC-50) ---
+b_por_k = {b[0]: b for b in BACKLOG_B}
+
+
+def datos_replan(c):
+    """(tipo, título, SP, horas) de un elemento Should o B."""
+    if c in por_k:
+        it = por_k[c]
+        return it['tipo'], it['titulo'], it['sp'], sum(x['horas'] for x in it['sub'])
+    b = b_por_k[c]
+    return 'Historia B', b[2], b[5], HORAS_B.get(c, b[5] * HORAS_POR_SP)
+
+
+A('## Replanificación vigente (DEC-50)')
+A('')
+A('> [!IMPORTANT]')
+A(f'> El {REPLAN_FECHA} el equipo asignó a los Sprints 2 a 4 todo el núcleo Should y todo lo B '
+  '([DEC-50](../requisitos/decisiones/registro-de-decisiones.md)), adelantando la mayor parte al Sprint 2. '
+  'Las secciones 1 a 9 conservan la **línea base** que generó el CSV importado; esta sección manda sobre ellas. '
+  'Las fechas, los responsables y el estado de cada subtarea viven en Jira (etiqueta `sprint-N`).')
+A('')
+A('| Sprint | Línea base (Must) | Should agregado | B agregado | Total | Capacidad calculada |')
+A('| --- | --- | --- | --- | --- | --- |')
+for s_, c_ in SPRINTS.items():
+    sh = [datos_replan(c) for c in REPLAN.get(s_, []) if c in por_k]
+    bb = [datos_replan(c) for c in REPLAN.get(s_, []) if c in b_por_k]
+    tot_sp = sp_sprint[s_] + sum(x[2] for x in sh) + sum(x[2] for x in bb)
+    tot_h = h_sprint[s_] + sum(x[3] for x in sh) + sum(x[3] for x in bb)
+    A(f"| {s_} | {sp_sprint[s_]:g} SP · {h_sprint[s_]:g} h | {sum(x[2] for x in sh)} SP · {sum(x[3] for x in sh):g} h "
+      f"| {sum(x[2] for x in bb)} SP · {sum(x[3] for x in bb):g} h | **{tot_sp:g} SP · {tot_h:g} h** "
+      f"| {c_['capacidad_sp']} SP · {c_['capacidad_h']} h |")
+A('')
+A('Las horas de lo B en los Sprints 3 y 4 son estimación gruesa (SP × 3): sus subtareas se crean al refinarlas.')
+A('')
+A('### Sprint 2 replanificado')
+A('')
+A('| Clave | Tipo | Elemento | SP | Horas | Responsable |')
+A('| --- | --- | --- | --- | --- | --- |')
+for it in items_sprint[2]:
+    A(f"| {it['k']} | {it['tipo']} (Must) | {it['titulo']} | {it['sp']} | "
+      f"{sum(x['horas'] for x in it['sub']):g} | {RESPONSABLE_S2.get(it['k'], '—')} |")
+for c in REPLAN[2]:
+    t, ti, sp_, h_ = datos_replan(c)
+    A(f"| {c} | {t if c in b_por_k else t + ' (Should)'} | {ti} | {sp_} | {h_:g} | {RESPONSABLE_S2.get(c, '—')} |")
+A('')
+A('**Reglas de trabajo del Sprint 2**')
+A('')
+A('1. **Orden:** Must → Should → B. Si en la revisión de mitad de sprint (1 de noviembre) los Must van atrasados, '
+  'se retiran primero las B y después las Should, y regresan al backlog con su etiqueta.')
+A('2. **Ruta crítica:** H-02 (autorización y auditoría, 26–29 oct) → H-04.1 (temporadas, 30–31 oct) → H-05.1 '
+  '(categorías, 1–2 nov) → H-06.1 (clubes y equipos, 3 nov). Todo lo que usa clubes (H-22, H-29, B-04, B-05, '
+  'B-13) empieza después de H-06.1; lo que extiende una pantalla (B-02 en F-10, B-04 y H-22 en F-15, B-11 y '
+  'B-12 en F-21, H-31 y B-31 en F-33) empieza después de que esa pantalla existe.')
+A('3. **Pruebas cruzadas:** cada prueba de aceptación la hace un integrante distinto de quien implementó.')
+A('4. **Capacidad:** la carga supera la capacidad calculada con la velocidad del Sprint 1 (9 SP); es una '
+  'decisión consciente del equipo (DEC-50) que se revisa en la retrospectiva con la velocidad real.')
+A('')
+for s_ in (3, 4):
+    A(f'### Agregado al Sprint {s_}')
+    A('')
+    A('| Clave | Elemento | SP |')
+    A('| --- | --- | --- |')
+    for c in REPLAN[s_]:
+        t, ti, sp_, h_ = datos_replan(c)
+        A(f"| {c} | {ti}{' (Should)' if c in por_k else ''} | {sp_} |")
+    A('')
 A('## 1. Resumen y supuestos')
 A('')
 A('| Concepto | Valor |')
@@ -290,8 +392,8 @@ A('| --- | --- |')
 A(f"| Elementos | {cuenta['Épica']} épicas · {cuenta['Historia']} historias ({cuenta['Historia'] - n_b} del núcleo y "
   f"{n_b} de entrega B) · {cuenta['Tarea']} tareas · {cuenta['Subtarea']} subtareas · **{len(filas)} filas** |")
 A(f'| Comprometido en sprints (Must) | {sp_must:g} SP · {sum(h_sprint.values()):g} h |')
-A(f'| Núcleo no comprometido (Should, sin sprint) | {len(should)} historias · {sp_should} SP |')
-A(f'| Backlog B (Could, sin sprint ni subtareas) | {n_b} historias · {sp_b} SP |')
+A(f'| Núcleo no comprometido (Should, sin sprint en la línea base) | {len(should)} historias · {sp_should} SP · asignadas por DEC-50 |')
+A(f'| Backlog B (Could, sin sprint en la línea base) | {n_b} historias · {sp_b} SP · asignadas por DEC-50 |')
 A('| Equipo | 3 integrantes; 10 h por persona por semana (supuesto aprobado el 20 oct 2026) |')
 A(f'| Equivalencia | 1 SP ≈ {HORAS_POR_SP} h del equipo; solo para comprobar capacidad. Se recalibra con la '
   'velocidad real del Sprint 2. |')
@@ -386,20 +488,24 @@ for s, c in SPRINTS.items():
       'Terminado, el recorrido demostrable funciona en `main` con la migración vigente y no quedan defectos '
       'críticos abiertos.')
     A('')
-A('## 5. Núcleo no comprometido (Should, sin sprint)')
+A('## 5. Núcleo no comprometido (Should)')
 A('')
 A(f'{len(should)} historias, {sp_should} SP, con subtareas listas. Entran al sprint en que haya capacidad, en este '
   'orden sugerido: disciplina (H-26, H-27, H-28), tesorería (H-29, H-30, H-31), avisos (H-25) y el resto.')
 A('')
+A('El sprint vigente de cada historia es el de la replanificación (DEC-50), indicado en su primera línea.')
+A('')
 for it in should:
-    md.extend(bloque_item(it))
+    b_ = bloque_item(it)
+    b_[0] += f" · **Sprint {sprint_replan[it['k']]} (DEC-50)**"
+    md.extend(b_)
 A('')
-A('## 6. Backlog B (sin sprint)')
+A('## 6. Backlog B')
 A('')
-A('| Clave | Épica | Historia | Requisitos | SP | Nota |')
-A('| --- | --- | --- | --- | --- | --- |')
+A('| Clave | Épica | Historia | Requisitos | SP | Sprint (DEC-50) | Nota |')
+A('| --- | --- | --- | --- | --- | --- | --- |')
 for k, ep, titulo, rf, ui, sp, nota in BACKLOG_B:
-    A(f"| {k} | {ep} | {titulo} | {', '.join(rf)} | {sp} | {nota or '—'} |")
+    A(f"| {k} | {ep} | {titulo} | {', '.join(rf)} | {sp} | {sprint_replan[k]} | {nota or '—'} |")
 A('')
 A('## 7. Dependencias críticas')
 A('')
@@ -463,7 +569,8 @@ A('1. En el Backlog del tablero, filtrar por la etiqueta `sprint-1` y arrastrar 
   'subtareas viajan con su padre) al **Sprint 1** activo.')
 A('2. Crear los Sprints 2, 3 y 4 con las fechas de la sección 2 y repetir con `sprint-2`, `sprint-3` y '
   '`sprint-4`. No iniciar un sprint hasta cerrar el anterior.')
-A(f'3. Lo etiquetado `backlog` se queda en el Backlog: {len(should)} historias Should con subtareas y {n_b} historias B.')
+A(f'3. En la importación, lo etiquetado `backlog` ({len(should)} historias Should y {n_b} historias B) se quedó en el '
+  'Backlog. Desde la replanificación (DEC-50) esas historias llevan la etiqueta `sprint-N` de su sprint.')
 A('4. Las épicas no se asignan a ningún sprint.')
 A('')
 A('## 10. Verificación después de importar')
