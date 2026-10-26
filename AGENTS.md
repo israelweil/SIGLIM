@@ -45,6 +45,10 @@ menor autoridad: ver los conflictos C-01 a C-08 en
 > ([`docs/planning/sprint-plan.md`](docs/planning/sprint-plan.md)): implementa solo historias de un
 > sprint y cita su clave (H-xx, T-xx) en la rama, el commit y el PR.
 
+> 🌿 **Ramas (DEC-51):** todo el trabajo sale de `develop` y vuelve a `develop` por Pull Request;
+> nunca crees una rama desde `main` ni abras un PR hacia `main`. `main` solo recibe `develop` al
+> cerrar cada sprint. Detalle en [`CONTRIBUTING.md`](CONTRIBUTING.md) §1.
+
 1. **Entrega `N`** (núcleo comprometido): se implementa en los Sprints. **Entrega `B`** (backlog
    priorizado): solo cuando su historia entre a un Sprint. **Entrega `F`** (ERS §2.6): nunca, aunque
    parezca fácil: programación automática, pasarela de pago real, reconocimiento facial,
@@ -145,7 +149,8 @@ Los triggers validan las transiciones y lanzan errores con el código del ERS en
   Usa los nombres exactos de tablas y columnas del diccionario.
 - **API:** sigue [`convenciones-api.md`](docs/arquitectura/convenciones-api.md): `/api/v1`, JSON
   camelCase, errores RFC 9457 con `codigo`, acciones de estado como `POST` a sub-recursos.
-- **Commits:** Conventional Commits con `Refs: RF-xxx` (ver [`CONTRIBUTING.md`](CONTRIBUTING.md)).
+- **Commits y ramas:** Conventional Commits con `Refs: RF-xxx`; ramas desde `develop` y PR hacia
+  `develop` (ver [`CONTRIBUTING.md`](CONTRIBUTING.md)).
 - Cambios pequeños y enfocados en la tarea. No reformatees ni renombres archivos ajenos a ella.
 
 ## 9. Seguridad
