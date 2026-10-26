@@ -54,7 +54,7 @@ describe('router', () => {
     montar('/')
 
     expect(
-      screen.getByRole('heading', { name: 'Programación de la semana' }),
+      screen.getByRole('heading', { name: 'Programación' }),
     ).toBeInTheDocument()
     expect(
       screen.getByRole('link', { name: 'SIGLIM, portal público' }),
@@ -65,23 +65,7 @@ describe('router', () => {
     montar('/resultados')
 
     expect(
-      screen.getByRole('heading', { name: 'Resultados oficiales' }),
-    ).toBeInTheDocument()
-  })
-
-  it('muestra la tabla de posiciones del portal en /tabla', () => {
-    montar('/tabla')
-
-    expect(
-      screen.getByRole('heading', { name: 'Tabla de posiciones' }),
-    ).toBeInTheDocument()
-  })
-
-  it('muestra el aviso de privacidad en /aviso-de-privacidad', () => {
-    montar('/aviso-de-privacidad')
-
-    expect(
-      screen.getByRole('heading', { name: 'Aviso de privacidad' }),
+      screen.getByRole('heading', { name: 'Resultados' }),
     ).toBeInTheDocument()
   })
 

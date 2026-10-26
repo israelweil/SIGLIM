@@ -1,9 +1,5 @@
 import { createBrowserRouter, type RouteObject } from 'react-router'
 import { RutaProtegida } from '@/app/RutaProtegida'
-import { PortalAvisoPrivacidad } from '@/features/portal/PortalAvisoPrivacidad'
-import { PortalProgramacion } from '@/features/portal/PortalProgramacion'
-import { PortalResultados } from '@/features/portal/PortalResultados'
-import { PortalTabla } from '@/features/portal/PortalTabla'
 import { InicioSesion } from '@/features/seguridad/InicioSesion'
 import { ProveedorSesionActual } from '@/features/seguridad/ProveedorSesionActual'
 import { RestablecerContrasena } from '@/features/seguridad/RestablecerContrasena'
@@ -27,10 +23,42 @@ export const rutas: RouteObject[] = [
   {
     element: <PublicLayout />,
     children: [
-      { path: '/', element: <PortalProgramacion /> },
-      { path: '/resultados', element: <PortalResultados /> },
-      { path: '/tabla', element: <PortalTabla /> },
-      { path: '/aviso-de-privacidad', element: <PortalAvisoPrivacidad /> },
+      {
+        path: '/',
+        element: (
+          <EnConstruccion
+            titulo="Programación"
+            descripcion="Portal público en construcción: programación de la jornada."
+          />
+        ),
+      },
+      {
+        path: '/resultados',
+        element: (
+          <EnConstruccion
+            titulo="Resultados"
+            descripcion="Portal público en construcción: resultados oficiales."
+          />
+        ),
+      },
+      {
+        path: '/tabla',
+        element: (
+          <EnConstruccion
+            titulo="Tablas de posiciones"
+            descripcion="Portal público en construcción: tabla calculada por grupo."
+          />
+        ),
+      },
+      {
+        path: '/aviso-de-privacidad',
+        element: (
+          <EnConstruccion
+            titulo="Aviso de privacidad"
+            descripcion="El texto del aviso lo define la Liga (PEN-039, DEC-40)."
+          />
+        ),
+      },
       { path: '*', element: <PaginaNoEncontrada /> },
     ],
   },

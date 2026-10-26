@@ -23,11 +23,6 @@ Supabase. Al fusionar en `main`, la verificación **«Supabase Preview»** compa
 `supabase/migrations/` con el historial del proyecto (`supabase_migrations.schema_migrations`) y
 aplica solo las migraciones que no estén registradas.
 
-> ⚠️ **Flujo con `develop` (DEC-51).** `main` solo recibe `develop` al cerrar cada sprint, así que
-> una migración fusionada en `develop` **no** se aplica al proyecto compartido hasta ese cierre. El
-> equipo debe acordar cómo aplicarla antes (pendiente en DEC-51); mientras tanto, avisa al equipo
-> antes de fusionar en `develop` un PR con migración.
-
 - **No apliques migraciones a mano** (SQL Editor) en el proyecto compartido: el SQL Editor no
   registra la migración en el historial y la integración intentará aplicarla otra vez al siguiente
   merge.
