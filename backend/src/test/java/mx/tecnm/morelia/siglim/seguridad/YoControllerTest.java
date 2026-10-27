@@ -26,6 +26,8 @@ import org.springframework.test.web.servlet.assertj.MvcTestResult;
 /** Prueba de controlador de {@code GET /api/v1/yo} con la cadena de seguridad real. */
 @WebMvcTest(controllers = YoController.class, properties = {
         "SUPABASE_URL=" + SeguridadPrueba.URL_SUPABASE,
+        "SIGLIM_S3_BUCKET=siglim-documentos-prueba",
+        "AWS_REGION=us-east-2",
         "SIGLIM_CORS_ORIGEN=" + SeguridadPrueba.ORIGEN_FRONTEND
 })
 @Import(SeguridadPrueba.class)

@@ -30,6 +30,8 @@ import org.springframework.test.web.servlet.assertj.MvcTestResult;
  */
 @WebMvcTest(controllers = RecursosPruebaController.class, properties = {
         "SUPABASE_URL=" + SeguridadPrueba.URL_SUPABASE,
+        "SIGLIM_S3_BUCKET=siglim-documentos-prueba",
+        "AWS_REGION=us-east-2",
         "SIGLIM_CORS_ORIGEN=" + SeguridadPrueba.ORIGEN_FRONTEND
 })
 @Import(SeguridadPrueba.class)

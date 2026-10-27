@@ -6,6 +6,7 @@ import jakarta.validation.constraints.Size;
 import org.postgresql.util.PSQLException;
 import org.postgresql.util.ServerErrorMessage;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.util.unit.DataSize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
 
 /** Rutas que solo existen en las pruebas para lanzar cada tipo de error. No forman parte de la API. */
 @RestController
@@ -42,6 +44,27 @@ class ErroresPruebaController {
     @GetMapping("/inesperado")
     String inesperado() {
         throw new IllegalStateException("detalle interno que nunca debe salir: SELECT * FROM siglim.perfiles");
+    }
+
+    @GetMapping("/archivo/grande")
+    String archivoGrande() {
+        throw ArchivoRechazadoException.demasiadoGrande(DataSize.ofMegabytes(5));
+    }
+
+    @GetMapping("/archivo/tipo")
+    String archivoTipo() {
+        throw ArchivoRechazadoException.tipoNoPermitido();
+    }
+
+    /** Lo que lanza Spring cuando la petición multipart excede {@code spring.servlet.multipart}. */
+    @GetMapping("/archivo/limite-spring")
+    String archivoLimiteSpring() {
+        throw new MaxUploadSizeExceededException(DataSize.ofMegabytes(5).toBytes());
+    }
+
+    @GetMapping("/archivo/s3-caido")
+    String archivoS3Caido() {
+        throw new ServicioNoDisponibleException("S3 no respondió (prueba)", new IllegalStateException("causa"));
     }
 
     /** Simula el error que Spring entrega cuando PostgreSQL rechaza la operación. */

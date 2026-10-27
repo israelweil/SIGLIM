@@ -22,6 +22,8 @@ import org.springframework.boot.test.context.SpringBootTest;
         "DB_USERNAME=prueba",
         "DB_PASSWORD=prueba",
         "SUPABASE_URL=https://proyecto-prueba.supabase.co",
+        "SIGLIM_S3_BUCKET=siglim-documentos-prueba",
+        "AWS_REGION=us-east-2",
         "SIGLIM_CORS_ORIGEN=http://localhost:5173,https://siglim.ejemplo.mx"
 })
 class SiglimApplicationTest {
