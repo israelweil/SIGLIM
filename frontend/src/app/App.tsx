@@ -14,7 +14,12 @@ const clienteConsultas = new QueryClient({
 export function App() {
   return (
     <QueryClientProvider client={clienteConsultas}>
-      <RouterProvider router={router} />
+      {/*
+       * `useTransitions` expone el estado de carga mientras se descarga el
+       * fragmento de una ruta, y así `InternalLayout` puede mostrar `EstadoCarga`
+       * al navegar entre módulos (DT-01, RNF-007).
+       */}
+      <RouterProvider router={router} useTransitions />
     </QueryClientProvider>
   )
 }
