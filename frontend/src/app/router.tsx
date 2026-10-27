@@ -1,26 +1,39 @@
 import { createBrowserRouter, type RouteObject } from 'react-router'
-import { RutaProtegida } from '@/app/RutaProtegida'
+import { CargandoPagina } from '@/app/CargandoPagina'
 import { PortalAvisoPrivacidad } from '@/features/portal/PortalAvisoPrivacidad'
 import { PortalProgramacion } from '@/features/portal/PortalProgramacion'
 import { PortalResultados } from '@/features/portal/PortalResultados'
 import { PortalTabla } from '@/features/portal/PortalTabla'
-import { InicioSesion } from '@/features/seguridad/InicioSesion'
-import { ProveedorSesionActual } from '@/features/seguridad/ProveedorSesionActual'
-import { RestablecerContrasena } from '@/features/seguridad/RestablecerContrasena'
-import { InternalLayout } from '@/layouts/InternalLayout'
 import { PublicLayout } from '@/layouts/PublicLayout'
 import { seccionesApp } from '@/layouts/navegacion'
-import { EnConstruccion } from '@/pages/EnConstruccion'
 import { PaginaNoEncontrada } from '@/pages/PaginaNoEncontrada'
 
-const paginasApp = seccionesApp.map(({ nombre, ruta }) => ({
+/*
+ * El portal público se importa de forma estática: es el fragmento inicial que
+ * descarga un visitante. La autenticación, la aplicación interna y cada módulo
+ * de `/app` se cargan bajo demanda (DT-01, RNF-007).
+ */
+
+/**
+ * Marcador de cada módulo de `/app` en un fragmento aparte. Hoy los seis
+ * comparten `EnConstruccion`; cuando el módulo tenga sus pantallas reales, su
+ * import apuntará a ellas y el fragmento se separará solo.
+ */
+const paginasApp: RouteObject[] = seccionesApp.map(({ nombre, ruta }) => ({
   path: ruta,
-  element: (
-    <EnConstruccion
-      titulo={nombre}
-      descripcion="Módulo de la aplicación interna en construcción."
-    />
-  ),
+  lazy: async () => {
+    const { EnConstruccion } = await import('@/pages/EnConstruccion')
+
+    return {
+      element: (
+        <EnConstruccion
+          titulo={nombre}
+          descripcion="Módulo de la aplicación interna en construcción."
+        />
+      ),
+    }
+  },
+  HydrateFallback: CargandoPagina,
 }))
 
 export const rutas: RouteObject[] = [
@@ -36,21 +49,38 @@ export const rutas: RouteObject[] = [
   },
   {
     path: '/login',
-    element: <InicioSesion />,
+    lazy: async () => {
+      const { InicioSesion } = await import('@/features/seguridad/InicioSesion')
+
+      return { Component: InicioSesion }
+    },
+    HydrateFallback: CargandoPagina,
   },
   {
     path: '/restablecer-contrasena',
-    element: <RestablecerContrasena />,
+    lazy: async () => {
+      const { RestablecerContrasena } = await import(
+        '@/features/seguridad/RestablecerContrasena'
+      )
+
+      return { Component: RestablecerContrasena }
+    },
+    HydrateFallback: CargandoPagina,
   },
   {
-    element: <RutaProtegida />,
+    lazy: async () => {
+      const { RutaProtegida } = await import('@/app/RutaProtegida')
+
+      return { Component: RutaProtegida }
+    },
+    HydrateFallback: CargandoPagina,
     children: [
       {
-        element: (
-          <ProveedorSesionActual>
-            <InternalLayout />
-          </ProveedorSesionActual>
-        ),
+        lazy: async () => {
+          const { AplicacionInterna } = await import('@/layouts/AplicacionInterna')
+
+          return { Component: AplicacionInterna }
+        },
         children: [
           ...paginasApp,
           { path: '/app/*', element: <PaginaNoEncontrada rutaInicio="/app" /> },
