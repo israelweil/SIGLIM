@@ -49,7 +49,7 @@ src/
 - **Estilos:** solo utilidades de Tailwind con los tokens de `styles/index.css`
   (`bg-primary`, `text-text-muted`, `border-border`, `bg-surface-dark`…). **Prohibido** escribir
   colores HEX en componentes o crear archivos `.css` por componente.
-- **Diseño:** sigue [`DESIGN.md`](../docs/diseno-ui/DESIGN.md) y las pantallas aprobadas de
+- **Diseño:** sigue [`DESIGN.md`](../DESIGN.md) y las pantallas aprobadas de
   [`docs/diseno-ui/pantallas/`](../docs/diseno-ui/pantallas/README.md). El `code.html` de cada
   pantalla es referencia visual: **no lo copies**; reconstruye en React con los tokens y
   componentes del proyecto. No implementes las diferencias D-01 a D-12 ni los conflictos C-01 a

@@ -40,7 +40,7 @@ menor autoridad: ver los conflictos C-01 a C-08 en
 > ⚠️ **Antes de programar:** la arquitectura, los ADR, el diccionario de datos, la migración y las
 > convenciones de API ya reflejan la Rev. 0.4.1. El prototipo de pantallas está aprobado por el
 > equipo ([`docs/diseno-ui/pantallas/`](docs/diseno-ui/pantallas/README.md) y
-> [`DESIGN.md`](docs/diseno-ui/DESIGN.md)); sus diferencias D-01 a D-12 con el ERS no se
+> [`DESIGN.md`](DESIGN.md)); sus diferencias D-01 a D-12 con el ERS no se
 > implementan. El trabajo se toma del **backlog v4**
 > ([`docs/planning/sprint-plan.md`](docs/planning/sprint-plan.md)): implementa solo historias de un
 > sprint y cita su clave (H-xx, T-xx) en la rama, el commit y el PR.
@@ -158,9 +158,9 @@ Los triggers validan las transiciones y lanzan errores con el código del ERS en
 - Cambios pequeños y enfocados en la tarea. No reformatees ni renombres archivos ajenos a ella.
 - **Diseño de interfaz (solo `frontend/`):** al crear o modificar UI (componentes, pantallas,
   estilos, layout, textos de interfaz) usa la skill `impeccable` y, antes de cerrar una pantalla,
-  pásale `/impeccable polish`. Su fuente de verdad visual es
-  [`docs/diseno-ui/DESIGN.md`](docs/diseno-ui/DESIGN.md) y el resto de `docs/diseno-ui/`: no crees
-  un `DESIGN.md` paralelo en la raíz. Si una sugerencia de la skill contradice esos documentos o
+  pásale `/impeccable polish`. Su fuente de verdad visual es [`DESIGN.md`](DESIGN.md) (en la
+  raíz, donde la skill lo detecta) y el resto de `docs/diseno-ui/`: no lo muevas ni crees copias
+  en otras carpetas. Si una sugerencia de la skill contradice esos documentos o
   el ERS, ganan ellos (sección 2). No la uses en tareas de backend, base de datos o documentación.
 
 ## 9. Seguridad

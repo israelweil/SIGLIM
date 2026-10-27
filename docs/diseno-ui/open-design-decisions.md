@@ -1,7 +1,7 @@
 # Decisiones de Diseño Pendientes y Observaciones - SIGLIM
 
 > Actualizado al ERS Rev. 0.4.1 (20 de octubre de 2026). Las pantallas aprobadas están en
-> [`pantallas/`](pantallas/README.md) y el sistema visual en [`DESIGN.md`](DESIGN.md).
+> [`pantallas/`](pantallas/README.md) y el sistema visual en [`DESIGN.md`](../../DESIGN.md).
 
 ## 1. Decisiones Observadas (Confirmadas por Referencias Visuales)
 - Uso de la paleta verde esmeralda (`#006837`) como color primario institucional.

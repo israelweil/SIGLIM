@@ -8,7 +8,7 @@ exportó con la opción *.zip* de Stitch. Cada carpeta tiene:
 - `code.html`: HTML con Tailwind (desde CDN) y JavaScript de las interacciones dentro de la
   pantalla. Se abre directo en el navegador.
 
-El sistema visual (colores, tipografía, espaciado, componentes) está en [`../DESIGN.md`](../DESIGN.md).
+El sistema visual (colores, tipografía, espaciado, componentes) está en [`DESIGN.md`](../../../DESIGN.md).
 
 > [!IMPORTANT]
 > El prototipo es la **referencia visual y de interacción**, no la fuente de los requisitos ni del
@@ -75,7 +75,7 @@ ERS §3.1.1: inicio de sesión → panel con los módulos permitidos y notificac
 tarjeta de pendientes lleva a la pantalla de su trámite.
 
 **Responsivo.** Solo F-02, F-27, F-34 y F-35 tienen diseño móvil. Las demás pantallas se adaptan
-con los puntos de quiebre de [`../DESIGN.md`](../DESIGN.md) (escritorio ≥ 1024 px, tableta,
+con los puntos de quiebre de [`DESIGN.md`](../../../DESIGN.md) (escritorio ≥ 1024 px, tableta,
 móvil < 768 px) y deben funcionar desde 360 px sin desplazamiento horizontal (RNF-007).
 
 ## 2. Cambio del equipo: inicio de sesión (F-05)
