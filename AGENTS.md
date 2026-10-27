@@ -156,6 +156,12 @@ Los triggers validan las transiciones y lanzan errores con el código del ERS en
 - **Commits y ramas:** Conventional Commits con `Refs: RF-xxx`; ramas desde `develop` y PR hacia
   `develop` (ver [`CONTRIBUTING.md`](CONTRIBUTING.md)).
 - Cambios pequeños y enfocados en la tarea. No reformatees ni renombres archivos ajenos a ella.
+- **Diseño de interfaz (solo `frontend/`):** al crear o modificar UI (componentes, pantallas,
+  estilos, layout, textos de interfaz) usa la skill `impeccable` y, antes de cerrar una pantalla,
+  pásale `/impeccable polish`. Su fuente de verdad visual es
+  [`docs/diseno-ui/DESIGN.md`](docs/diseno-ui/DESIGN.md) y el resto de `docs/diseno-ui/`: no crees
+  un `DESIGN.md` paralelo en la raíz. Si una sugerencia de la skill contradice esos documentos o
+  el ERS, ganan ellos (sección 2). No la uses en tareas de backend, base de datos o documentación.
 
 ## 9. Seguridad
 
