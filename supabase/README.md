@@ -19,18 +19,25 @@ La migración de la Rev. 0.3 quedó en
 ## Proyecto compartido del equipo: las migraciones se aplican al fusionar
 
 El proyecto **SIGLIM** de Supabase está conectado al repositorio con la integración de GitHub de
-Supabase. Al fusionar en `main`, la verificación **«Supabase Preview»** compara
-`supabase/migrations/` con el historial del proyecto (`supabase_migrations.schema_migrations`) y
-aplica solo las migraciones que no estén registradas.
+Supabase, con **`develop` como rama de producción**
+([DEC-52](../docs/requisitos/decisiones/registro-de-decisiones.md)). Al fusionar un PR en `develop`,
+la verificación **«Supabase Preview»** compara `supabase/migrations/` con el historial del proyecto
+(`supabase_migrations.schema_migrations`) y aplica solo las migraciones que no estén registradas.
+El PR de cierre de sprint (`develop → main`) ya no aplica nada: esas migraciones ya están.
 
-> ⚠️ **Flujo con `develop` (DEC-51).** `main` solo recibe `develop` al cerrar cada sprint, así que
-> una migración fusionada en `develop` **no** se aplica al proyecto compartido hasta ese cierre. El
-> equipo debe acordar cómo aplicarla antes (pendiente en DEC-51); mientras tanto, avisa al equipo
-> antes de fusionar en `develop` un PR con migración.
+> 🗄️ **Lo que se fusiona en `develop` llega de inmediato a la base que usa todo el equipo.** Antes
+> de fusionar un PR con migración, deben pasar `pruebas/ejecutar.sh` y `./mvnw verify` (backend).
+> Después del merge, confirma que se aplicó: *Database → Migrations* en el panel de Supabase, o
+> `supabase migration list` con la CLI vinculada. Si la verificación «Supabase Preview» falla, no
+> se aplicó nada (la migración va en una transacción): corrige con **otra** migración en un PR nuevo.
+
+**Configuración de la integración** (ya hecha; anotada para rehacerla si se reconecta el proyecto):
+*Project Settings → Integrations → GitHub Integration*: repositorio `israelweil/SIGLIM`, *Working
+directory* `.`, **Production branch `develop`** y **Deploy to production** activado.
 
 - **No apliques migraciones a mano** (SQL Editor) en el proyecto compartido: el SQL Editor no
   registra la migración en el historial y la integración intentará aplicarla otra vez al siguiente
-  merge.
+  merge en `develop`.
 - Si ya se aplicó una a mano, regístrala como aplicada (equivale a
   `supabase migration repair --status applied <versión>`):
   ```sql
