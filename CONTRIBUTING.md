@@ -31,11 +31,11 @@ Decisión del equipo del 26 de octubre de 2026 ([DEC-51](docs/requisitos/decisio
 - Una corrección urgente sobre lo ya demostrado también sale de `develop` y llega a `main` en el
   siguiente cierre de sprint.
 
-> ⚠️ **Migraciones de base de datos.** La integración de Supabase aplica las migraciones al
-> fusionar en `main` ([`supabase/README.md`](supabase/README.md)). Con este flujo, una migración
-> fusionada en `develop` no llega al proyecto compartido hasta el cierre del sprint. Antes de
-> fusionar en `develop` un PR con migración, avisa al equipo para acordar cómo aplicarla (pendiente
-> en DEC-51).
+> 🗄️ **Migraciones de base de datos (DEC-52).** La integración de Supabase usa `develop` como
+> rama de producción: una migración se aplica al proyecto compartido **en cuanto su PR se fusiona
+> en `develop`**. Por eso, antes de fusionarlo deben pasar `supabase/pruebas/ejecutar.sh` y
+> `./mvnw verify`, y después se confirma que quedó aplicada. Nunca se aplica a mano con el SQL
+> Editor. Detalle en [`supabase/README.md`](supabase/README.md).
 
 Nombres de las ramas de trabajo (todas salen de `develop`):
 

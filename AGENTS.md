@@ -86,6 +86,7 @@ frontend/             React 19 · TypeScript · Vite · Tailwind CSS 4 · TanSta
 | Instalar frontend | `frontend/` | `npm install` |
 | Ejecutar frontend | `frontend/` | `npm run dev` |
 | Verificar frontend | `frontend/` | `npm run lint && npm test && npm run build` |
+| Probar el esquema (migraciones) | `supabase/pruebas/` | `PGHOST=localhost PGPORT=5432 PGUSER=postgres ./ejecutar.sh` |
 
 Antes de dar una tarea por terminada, ejecuta la verificación del subproyecto que tocaste y
 reporta el resultado real. Si no pudiste ejecutarla, dilo.
@@ -146,7 +147,10 @@ Los triggers validan las transiciones y lanzan errores con el código del ERS en
   `@DisplayName` de las pruebas (`RF-039: rechaza cancha ocupada`).
 - **Base de datos:** nunca modifiques una migración existente; crea una nueva en
   `supabase/migrations/AAAAMMDDHHMMSS_descripcion.sql` y actualiza el diccionario en el mismo cambio.
-  Usa los nombres exactos de tablas y columnas del diccionario.
+  Usa los nombres exactos de tablas y columnas del diccionario. La migración se aplica **sola** al
+  proyecto compartido de Supabase cuando su PR se fusiona en `develop` (DEC-52): antes, haz que
+  pasen `supabase/pruebas/ejecutar.sh` y `./mvnw verify`, y nunca propongas aplicarla con el SQL
+  Editor ni con `supabase db push` contra el proyecto compartido.
 - **API:** sigue [`convenciones-api.md`](docs/arquitectura/convenciones-api.md): `/api/v1`, JSON
   camelCase, errores RFC 9457 con `codigo`, acciones de estado como `POST` a sub-recursos.
 - **Commits y ramas:** Conventional Commits con `Refs: RF-xxx`; ramas desde `develop` y PR hacia
