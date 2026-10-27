@@ -165,7 +165,55 @@ class AuditoriaServiceIT extends BaseDatosPrueba {
         assertThat(error.getServerErrorMessage().getHint()).contains("RNF-015");
     }
 
+    @Test
+    @DisplayName("RNF-015: siglim_app no puede vaciar la auditoría con TRUNCATE (42501)")
+    void appNoTrunca() {
+        registrarFila();
+        assertThat(errorDe(() -> enTransaccion(() -> jdbc.sql("TRUNCATE auditoria").update()))
+                .getSQLState()).isEqualTo("42501");
+    }
+
+    @Test
+    @DisplayName("RNF-015: ni el dueño del esquema puede vaciarla con TRUNCATE: P0001 con HINT RNF-015")
+    void duenoNoTrunca() {
+        String entidadId = entidadDeFila(registrarFila());
+        PSQLException error = errorDe(() -> truncarSinConfirmar("TRUNCATE siglim.auditoria"));
+        assertThat(error.getSQLState()).isEqualTo("P0001");
+        assertThat(error.getServerErrorMessage().getHint()).contains("RNF-015");
+        assertThat(contar(entidadId)).isEqualTo(1);
+    }
+
+    @Test
+    @DisplayName("RNF-015: TRUNCATE ... CASCADE sobre una tabla referenciada tampoco vacía la auditoría")
+    void duenoNoTruncaPorCascada() {
+        String entidadId = entidadDeFila(registrarFila());
+        PSQLException error = errorDe(() -> truncarSinConfirmar("TRUNCATE siglim.perfiles CASCADE"));
+        assertThat(error.getSQLState()).isEqualTo("P0001");
+        assertThat(error.getServerErrorMessage().getHint()).contains("RNF-015");
+        assertThat(contar(entidadId)).isEqualTo(1);
+    }
+
     // ── Apoyo ─────────────────────────────────────────────────────────────────────────────────
+
+    /**
+     * Ejecuta un TRUNCATE como dueño del esquema dentro de un bloque {@code DO} que falla si el
+     * TRUNCATE se acepta. El bloque es atómico: si el trigger faltara, la prueba falla con XX000 y
+     * nada se vacía, así que no deja sin datos al resto de las pruebas que comparten el contenedor.
+     */
+    private void truncarSinConfirmar(String truncate) {
+        jdbc.sql("""
+                DO $$
+                BEGIN
+                  %s;
+                  RAISE EXCEPTION 'El TRUNCATE se aceptó' USING ERRCODE = 'XX000';
+                END $$
+                """.formatted(truncate)).update();
+    }
+
+    private String entidadDeFila(long id) {
+        return jdbc.sql("SELECT entidad_id FROM siglim.auditoria WHERE id = :id")
+                .param("id", id).query(String.class).single();
+    }
 
     private static EventoAuditoria evento(String entidadId, String motivo, Map<String, Object> detalle) {
         return new EventoAuditoria(LIGA, "M-03", "CREAR_CLUB", "clubes", entidadId, motivo, detalle);
