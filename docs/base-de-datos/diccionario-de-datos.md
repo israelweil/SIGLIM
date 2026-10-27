@@ -1,7 +1,7 @@
 # Diccionario de datos
 
 **SIGLIM · Sistema de Gestión de la Liga Municipal de Futbol Amateur Morelia**  
-Versión 2.1 · 22 de octubre de 2026 · PostgreSQL 15+ en Supabase · Alineado con el [ERS Rev. 0.4.1](../requisitos/ERS.md) y la [arquitectura v2.1](../arquitectura/arquitectura-y-diseno-jerarquico.md)
+Versión 2.2 · 27 de octubre de 2026 · PostgreSQL 15+ en Supabase · Alineado con el [ERS Rev. 0.4.1](../requisitos/ERS.md) y la [arquitectura v2.1](../arquitectura/arquitectura-y-diseno-jerarquico.md)
 
 > [!NOTE]
 > Este diccionario describe la migración
@@ -18,6 +18,7 @@ Versión 2.1 · 22 de octubre de 2026 · PostgreSQL 15+ en Supabase · Alineado 
 | 1.0 | 7 de octubre de 2026 | 22 tablas del alcance de la Rev. 0.3 en el esquema `public`. |
 | 2.0 | 20 de octubre de 2026 | 72 tablas del alcance de la Rev. 0.4 en el esquema `siglim`; permisos con ámbito, cédula, disciplina, tesorería, notificaciones y documentos en AWS S3; RLS por ámbito; pruebas de integración. |
 | 2.1 | 22 de octubre de 2026 | Migración `20261022143000_fijar_search_path_error_negocio.sql`: `error_negocio` fija `search_path = siglim, pg_temp` como el resto de las funciones (aviso 0011 del asesor de seguridad). Sin cambios en tablas ni en el comportamiento. |
+| 2.2 | 27 de octubre de 2026 | Migración `20261027140000_proteger_inmutables_truncate.sql` (SCRUM-397): `auditoria`, `resoluciones` y `parametros_temporada` agregan un trigger `BEFORE TRUNCATE ... FOR EACH STATEMENT` que reutiliza `tg_inmutable()`, porque los triggers por fila no se disparan con `TRUNCATE`. Rechaza el vaciado directo y por cascada con `P0001` y HINT `RNF-015`. Sin cambios en columnas. |
 
 ## 1. Propósito y alcance
 
@@ -256,6 +257,7 @@ Restricciones, índices y triggers:
 - Índice `ix_auditoria_fecha`: `USING btree (ocurrido_en DESC)`
 - Índice `ix_auditoria_perfil`: `USING btree (perfil_id, ocurrido_en DESC)`
 - Trigger `tg_auditoria_inmutable` (before delete or update) → `tg_inmutable()`
+- Trigger `tg_auditoria_sin_truncate` (before truncate, por sentencia) → `tg_inmutable()`
 
 #### `avisos_privacidad`
 
@@ -564,6 +566,7 @@ Restricciones, índices y triggers:
 - `ck_parametros_tiempos`: `CHECK (((duracion_juego_min > 0) AND (bloque_cancha_min >= duracion_juego_min) AND (plazo_validacion_cedula > '00:00:00'::interval)))`
 - `parametros_temporada_temporada_id_version_key`: `UNIQUE (temporada_id, version)`
 - Trigger `tg_parametros_inmutable` (before delete or update) → `tg_inmutable()`
+- Trigger `tg_parametros_sin_truncate` (before truncate, por sentencia) → `tg_inmutable()`
 - Trigger `tg_parametros_version` (before insert) → `tg_parametros_version()`
 
 #### `temporadas`
@@ -1444,6 +1447,7 @@ Restricciones, índices y triggers:
 
 - `ck_resoluciones_articulo`: `CHECK ((sin_sancion OR (articulo_id IS NOT NULL)))`
 - Trigger `tg_resoluciones_inmutable` (before delete or update) → `tg_inmutable()`
+- Trigger `tg_resoluciones_sin_truncate` (before truncate, por sentencia) → `tg_inmutable()`
 
 #### `sanciones`
 
@@ -2072,7 +2076,7 @@ Ningún rol de la matriz inicial contiene un par incompatible.
 | RF-057, RF-062 a RF-065 | Expediente, resolución inmutable y sanción | `expedientes`, `resoluciones`, `sanciones` |
 | RF-090, RF-121, DD-008 | Publicación con aprobación del Presidente | `tg_publicacion_estado`, `historial_publicacion` |
 | RF-136 a RF-141, VAL-028 | Cobros, pago simulado y vencimiento | `cobros`, `intentos_pago`, `pagos`, `tg_cobros_estado`, `tg_pagos_validar` |
-| RF-093, RNF-015 | Auditoría inalterable | `auditoria` (solo INSERT/SELECT), `tg_auditoria_inmutable` |
+| RF-093, RNF-015 | Auditoría inalterable | `auditoria` (solo INSERT/SELECT), `tg_auditoria_inmutable`, `tg_auditoria_sin_truncate`; también `tg_resoluciones_sin_truncate` y `tg_parametros_sin_truncate` |
 | RF-095, RF-096, VAL-022, VAL-023 | Permisos configurables y control dual | `rol_permisos`, `pares_incompatibles`, `solicitudes_cambio_permisos`, `tg_rol_permisos_propio` |
 | RN-054, RNF-012, VAL-024 | Ámbito de club y datos personales | Políticas RLS (§9.1) |
 | RNF-018, RF-108 | Documentos privados | `documentos` (bucket, clave y URL de S3) |
@@ -2083,7 +2087,8 @@ Ningún rol de la matriz inicial contiene un par incompatible.
 
 [`supabase/pruebas/`](../../supabase/pruebas/) contiene una simulación mínima de Supabase y pruebas que
 recorren P-01, P-02, P-03, P-05, P-06 y P-11 con el rol `siglim_app` y verifican 50 reglas (conflictos,
-separación de funciones, RLS por ámbito, inmutabilidad, desempates). Se ejecutan con
+separación de funciones, RLS por ámbito, inmutabilidad, desempates). Desde la versión 2.2 también
+comprueban que las tablas inmutables no se vacían con `TRUNCATE`, directo ni por cascada. Se ejecutan con
 `supabase/pruebas/ejecutar.sh` contra un PostgreSQL local.
 
 ## 13. Cambios respecto a la versión 1.0

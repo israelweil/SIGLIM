@@ -379,4 +379,25 @@ FROM siglim.roles r, siglim.permisos p WHERE r.codigo = 'CAPTURISTA' AND p.codig
 SELECT prueba.espera_error($$UPDATE siglim.solicitudes_cambio_permisos SET estado = 'APROBADO', resuelto_por = siglim.usuario_actual(), resuelto_en = now()$$, 'ck_solicitudes_permisos_dual');
 COMMIT;
 
+-- ================= Inmutables contra TRUNCATE (SCRUM-397) =============================
+-- siglim_app no tiene el privilegio; el dueño del esquema choca con el trigger de sentencia.
+BEGIN;
+SET LOCAL ROLE siglim_app;
+SELECT prueba.espera_error($$TRUNCATE siglim.auditoria$$, 'permission denied');
+COMMIT;
+BEGIN;   -- como dueño del esquema (sin SET ROLE)
+SELECT count(*) AS n_auditoria FROM siglim.auditoria \gset
+SELECT prueba.espera_error($$TRUNCATE siglim.auditoria$$, 'RNF-015');
+-- resoluciones y parametros_temporada son referenciadas por otras tablas: sin CASCADE ya las
+-- protege la llave foránea, así que se prueba la variante con CASCADE, que sí llegaba a vaciarlas.
+SELECT prueba.espera_error($$TRUNCATE siglim.resoluciones CASCADE$$, 'RNF-015');
+SELECT prueba.espera_error($$TRUNCATE siglim.parametros_temporada CASCADE$$, 'RNF-015');
+SELECT prueba.espera_error($$TRUNCATE siglim.perfiles CASCADE$$, 'RNF-015');
+SELECT prueba.verifica((SELECT count(*) FROM siglim.auditoria) = :n_auditoria,
+  'RNF-015: la auditoría conserva sus filas tras los TRUNCATE rechazados');
+SELECT prueba.verifica((SELECT count(*) FROM siglim.resoluciones) > 0
+  AND (SELECT count(*) FROM siglim.parametros_temporada) > 0,
+  'RNF-015: resoluciones y parámetros conservan sus filas');
+COMMIT;
+
 SELECT 'PRUEBAS COMPLETADAS' AS resultado;
