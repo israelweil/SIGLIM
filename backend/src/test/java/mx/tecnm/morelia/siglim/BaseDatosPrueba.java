@@ -38,6 +38,8 @@ import org.testcontainers.utility.MountableFile;
  */
 @SpringBootTest(properties = {
         "SUPABASE_URL=https://proyecto-prueba.supabase.co",
+        "SIGLIM_S3_BUCKET=siglim-documentos-prueba",
+        "AWS_REGION=us-east-2",
         "SIGLIM_CORS_ORIGEN=http://localhost:5173",
         "spring.datasource.hikari.maximum-pool-size=1"
 })

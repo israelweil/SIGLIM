@@ -48,7 +48,9 @@ import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
  * de {@code ex_partidos_cancha_ocupada} de la migración y sin consultar la base de datos.
  *
  * <p>Uso: {@code @Import(SeguridadPrueba.class)} y, en {@code @WebMvcTest(properties = …)},
- * {@code SUPABASE_URL=} {@link #URL_SUPABASE} y {@code SIGLIM_CORS_ORIGEN=} {@link #ORIGEN_FRONTEND}.
+ * {@code SUPABASE_URL=} {@link #URL_SUPABASE}, {@code SIGLIM_CORS_ORIGEN=} {@link #ORIGEN_FRONTEND}
+ * y las variables de S3 ({@code SIGLIM_S3_BUCKET}, {@code AWS_REGION}) que valida
+ * {@link SiglimPropiedades}.
  */
 @TestConfiguration(proxyBeanMethods = false)
 @Import({SeguridadConfig.class, PuntoEntradaNoAutenticado.class, ConvertidorAutenticacion.class,

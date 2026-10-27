@@ -25,7 +25,7 @@ Mockito y AssertJ.
 ```text
 mx.tecnm.morelia.siglim
 ├── compartido/      config (seguridad, CORS, tareas), error (RFC 9457), contexto de usuario (ADR-0005),
-│                    almacenamiento (ADR-0008), reloj
+│                    almacenamiento (ADR-0013), reloj
 ├── auditoria/       M-01  auditoría inalterable
 ├── seguridad/       M-01  perfiles, roles, permisos con ámbito, control dual, consentimiento (ADR-0007)
 ├── temporadas/      M-02
