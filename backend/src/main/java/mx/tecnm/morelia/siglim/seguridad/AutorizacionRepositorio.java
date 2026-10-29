@@ -3,8 +3,8 @@ package mx.tecnm.morelia.siglim.seguridad;
 import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
 import org.springframework.jdbc.core.simple.JdbcClient;
+import org.springframework.jdbc.support.SqlArrayValue;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
  * es titular el usuario. Corren dentro de la transacción del servicio, con {@code siglim_app} y el
  * {@code search_path} que fija {@code GestorTransaccionesSiglim}.
  *
- * <p>Refs: H-02.1, RF-094, RN-054, ADR-0007
+ * <p>Refs: H-02.1, RF-094, RF-144, RN-054, ADR-0007
  */
 @Repository
 class AutorizacionRepositorio {
@@ -51,19 +51,22 @@ class AutorizacionRepositorio {
      * <p>Usa {@code es_titular}, la misma función que las políticas RLS: así la regla del servicio
      * y la de la base no pueden divergir (ADR-0007 §4). Toma al usuario de
      * {@code siglim.usuario_actual()}, el claim que fija la transacción.
+     *
+     * <p>Las personas van como un arreglo {@code uuid[]} ({@code SqlArrayValue}), no como texto
+     * unido por comas: así el conjunto vacío es un arreglo vacío y un UUID no depende de cómo se
+     * separe.
      */
     boolean esTitularDeAlguna(Collection<UUID> personas) {
         if (personas.isEmpty()) {
             return false;
         }
-        String lista = personas.stream().map(UUID::toString).collect(Collectors.joining(","));
         return jdbc.sql("""
                         SELECT EXISTS (
                                  SELECT 1
-                                   FROM unnest(string_to_array(CAST(:personas AS text), ',')::uuid[]) AS t (persona)
+                                   FROM unnest(CAST(:personas AS uuid[])) AS t (persona)
                                   WHERE es_titular(t.persona))
                         """)
-                .param("personas", lista)
+                .param("personas", new SqlArrayValue("uuid", personas.toArray()))
                 .query(Boolean.class)
                 .single();
     }

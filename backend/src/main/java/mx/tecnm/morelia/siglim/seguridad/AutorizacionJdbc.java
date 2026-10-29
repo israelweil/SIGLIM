@@ -1,6 +1,8 @@
 package mx.tecnm.morelia.siglim.seguridad;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 import mx.tecnm.morelia.siglim.compartido.contexto.UsuarioActual;
 import mx.tecnm.morelia.siglim.compartido.error.ErroresTecnicos;
@@ -8,6 +10,7 @@ import mx.tecnm.morelia.siglim.compartido.error.RecursoNoEncontradoException;
 import mx.tecnm.morelia.siglim.compartido.error.ReglaNegocioException;
 import mx.tecnm.morelia.siglim.seguridad.AutorizacionRepositorio.AsignacionPermiso;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -25,7 +28,11 @@ import org.springframework.transaction.annotation.Transactional;
  * <p>La titularidad se consulta solo cuando hace falta: un permiso de liga o de club resuelve sin
  * tocar las personas del objetivo.
  *
- * <p>Refs: H-02.1, RF-094, RN-054, RNF-003, VAL-015, VAL-024, DD-009, DP-008, ADR-0007
+ * <p>Las asignaciones se leen en cada llamada, sin caché: un cambio de permisos surte efecto en la
+ * siguiente operación, también fuera de una petición HTTP (por ejemplo, una tarea programada que
+ * cambia los permisos a mitad del proceso).
+ *
+ * <p>Refs: H-02.1, RF-094, RF-144, RN-054, RNF-003, VAL-015, VAL-024, DD-009, DP-008, ADR-0007
  */
 @Service
 class AutorizacionJdbc implements Autorizacion {
@@ -41,21 +48,61 @@ class AutorizacionJdbc implements Autorizacion {
         this.repositorio = repositorio;
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * <p>{@code MANDATORY}: corre dentro de la transacción del servicio, que ya fijó el contexto de
+     * usuario y el {@code search_path} (ADR-0014).
+     */
     @Override
-    @Transactional(readOnly = true)
+    @Transactional(readOnly = true, propagation = Propagation.MANDATORY)
     public void exigir(String permiso, ObjetivoAutorizacion objetivo) {
-        UUID perfilId = UsuarioActual.idRequerido();
-        List<AsignacionPermiso> asignaciones = repositorio.listarAsignacionesDelPermiso(perfilId, permiso);
-        if (asignaciones.isEmpty()) {
-            throw ReglaNegocioException.prohibida(ErroresTecnicos.SIN_PERMISO,
-                    "Tu cuenta no tiene el permiso necesario para esta operación.");
-        }
+        List<AsignacionPermiso> asignaciones = asignacionesQueOtorgan(permiso);
         if (!alcanzaElObjetivo(asignaciones, objetivo)) {
             // Igual que un recurso inexistente: no se revela si existe (VAL-024). El detalle solo
             // va a la bitácora.
             throw new RecursoNoEncontradoException(
                     "El permiso " + permiso + " no alcanza el ámbito del recurso solicitado");
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>{@code MANDATORY}: igual que {@link #exigir}, corre dentro de la transacción del servicio.
+     */
+    @Override
+    @Transactional(readOnly = true, propagation = Propagation.MANDATORY)
+    public AlcanceAutorizacion alcance(String permiso) {
+        boolean todaLaLiga = false;
+        boolean propio = false;
+        Set<UUID> clubes = new HashSet<>();
+        for (AsignacionPermiso asignacion : asignacionesQueOtorgan(permiso)) {
+            switch (asignacion.ambito()) {
+                case AMBITO_LIGA -> todaLaLiga = true;
+                case AMBITO_CLUB -> {
+                    if (asignacion.clubId() != null) {
+                        clubes.add(asignacion.clubId());
+                    }
+                }
+                case AMBITO_PROPIO -> propio = true;
+                default -> {
+                    // Un ámbito que este backend no conoce no aporta nada al alcance.
+                }
+            }
+        }
+        return new AlcanceAutorizacion(todaLaLiga, clubes, propio);
+    }
+
+    /** Asignaciones activas que otorgan el permiso o 403 {@code VAL-015} si no hay ninguna. */
+    private List<AsignacionPermiso> asignacionesQueOtorgan(String permiso) {
+        List<AsignacionPermiso> asignaciones =
+                repositorio.listarAsignacionesDelPermiso(UsuarioActual.idRequerido(), permiso);
+        if (asignaciones.isEmpty()) {
+            throw ReglaNegocioException.prohibida(ErroresTecnicos.SIN_PERMISO,
+                    "Tu cuenta no tiene el permiso necesario para esta operación.");
+        }
+        return asignaciones;
     }
 
     private boolean alcanzaElObjetivo(List<AsignacionPermiso> asignaciones, ObjetivoAutorizacion objetivo) {

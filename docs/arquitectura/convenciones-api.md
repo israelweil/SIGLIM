@@ -213,8 +213,8 @@ GET /api/v1/partidos?jornadaId=…&estado=PROGRAMADO&pagina=0&tamano=20&orden=in
   (`estado=PROGRAMADO,REPROGRAMADO`). Rangos de fecha: `desde` (incluido) y `hasta` (excluido).
 - `q` es una búsqueda de texto **solo** dentro de un listado (nombre de club, de equipo o de
   persona); no existe buscador general (RF-089).
-- Los listados **filtran por ámbito en el SQL**: una directiva de club solo recibe filas de su club
-  y `totalElementos` cuenta solo esas (ADR-0007).
+- Los listados **filtran por ámbito en el SQL** con `autorizacion.alcance(permiso)`: una directiva
+  de club solo recibe filas de su club y `totalElementos` cuenta solo esas (ADR-0007).
 - Los catálogos pequeños (categorías, tipos de incidencia, tipos de documento, permisos) pueden
   responder un arreglo sin envoltura de paginación; lo indica el endpoint.
 
@@ -228,8 +228,9 @@ GET /api/v1/partidos?jornadaId=…&estado=PROGRAMADO&pagina=0&tamano=20&orden=in
   `siglim_publico` en el portal (ADR-0014). Ningún endpoint recibe el `perfilId` del usuario
   actual en el cuerpo: sale del token.
 - **Autorización.** Cada método de servicio llama `autorizacion.exigir("modulo.recurso:ACCION",
-  objetivo)`; el catálogo de permisos es el de la migración (73 códigos, Apéndice E del ERS). Nunca
-  se compara el nombre del rol (ADR-0007).
+  objetivo)`; los listados filtran con `autorizacion.alcance(permiso)` en el `WHERE` y en el
+  `COUNT`. El catálogo de permisos es el de la migración (73 códigos, Apéndice E del ERS). Nunca se
+  compara el nombre del rol (ADR-0007).
 - **Ámbito.** `LIGA` permite toda la liga; `CLUB`, solo los recursos de su club; `PROPIO`, solo
   aquellos de los que la persona es titular (jugador, tutor del menor, árbitro designado). Fuera de
   ámbito: `404`.

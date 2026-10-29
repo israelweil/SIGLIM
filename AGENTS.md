@@ -62,8 +62,9 @@ menor autoridad: ver los conflictos C-01 a C-08 en
 4. **No inventes reglas de negocio** (RN-006, RN-035). Si una regla no está escrita, usa un valor
    configurable, márcalo `[PROPUESTA]` en un comentario y menciónalo en tu respuesta.
 5. **Permisos:** nunca decidas por el nombre del rol; usa el permiso `modulo.recurso:ACCION` más el
-   **ámbito** (liga, club o propio) con `autorizacion.exigir(...)` (ADR-0007). La matriz inicial está
-   en el Apéndice E del ERS y es configurable.
+   **ámbito** (liga, club o propio) con `autorizacion.exigir(...)` (ADR-0007). Para **listados**, usa
+   `autorizacion.alcance(permiso)` en el `WHERE` y en el `COUNT`. La matriz inicial está en el
+   Apéndice E del ERS y es configurable.
 6. Los datos de las capturas de diseño ("Liga Apex", "Temporada 2024/25", "Primera División") son
    de ejemplo, no requisitos.
 

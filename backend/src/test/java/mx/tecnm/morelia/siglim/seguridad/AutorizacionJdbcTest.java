@@ -40,6 +40,8 @@ class AutorizacionJdbcTest {
     private static final UUID CLUB_AJENO = UUID.fromString("44444444-4444-4444-8444-444444444444");
     private static final UUID PERSONA_PROPIA = UUID.fromString("55555555-5555-4555-8555-555555555555");
     private static final UUID PERSONA_MENOR = UUID.fromString("66666666-6666-4666-8666-666666666666");
+    private static final UUID PERSONA_COMPANERO = UUID.fromString("77777777-7777-4777-8777-777777777777");
+    private static final UUID PERSONA_ARBITRO = UUID.fromString("88888888-8888-4888-8888-888888888888");
     private static final String PERMISO = "registros.registro:CONSULTAR";
 
     private final AutorizacionRepositorio repositorio = mock(AutorizacionRepositorio.class);
@@ -74,7 +76,13 @@ class AutorizacionJdbcTest {
                 new Caso("PROPIO alcanza al menor bajo tutela", propio(),
                         ObjetivoAutorizacion.dePersonas(PERSONA_MENOR), true),
                 new Caso("CLUB alcanza el registro de su club y de su jugador", club(CLUB_PROPIO),
-                        ObjetivoAutorizacion.deClubesYPersonas(List.of(CLUB_PROPIO), List.of(PERSONA_MENOR)), false));
+                        ObjetivoAutorizacion.deClubesYPersonas(List.of(CLUB_PROPIO), List.of(PERSONA_MENOR)), false),
+                new Caso("PROPIO alcanza el partido de su equipo", propio(),
+                        ObjetivoAutorizacion.deClubesYPersonas(List.of(CLUB_PROPIO, CLUB_AJENO),
+                                List.of(PERSONA_COMPANERO, PERSONA_PROPIA)), true),
+                new Caso("PROPIO alcanza el partido donde está designado como árbitro", propio(),
+                        ObjetivoAutorizacion.deClubesYPersonas(List.of(CLUB_AJENO),
+                                List.of(PERSONA_ARBITRO)), true));
     }
 
     static Stream<Caso> casosFueraDeAlcance() {
@@ -158,6 +166,76 @@ class AutorizacionJdbcTest {
         assertThatThrownBy(() -> autorizacion.exigir(PERMISO, ObjetivoAutorizacion.deLiga()))
                 .isInstanceOf(IllegalStateException.class);
         verifyNoInteractions(repositorio);
+    }
+
+    // ── Alcance para listados (H-02 criterio 3) ────────────────────────────────────────────────
+
+    @Test
+    @DisplayName("RF-094: el alcance de una asignación de liga cubre toda la liga")
+    void alcanceDeLiga() {
+        iniciarSesion();
+        darPermiso(liga());
+
+        Autorizacion.AlcanceAutorizacion alcance = autorizacion.alcance(PERMISO);
+
+        assertThat(alcance.todaLaLiga()).isTrue();
+        assertThat(alcance.clubes()).isEmpty();
+        assertThat(alcance.propio()).isFalse();
+    }
+
+    @Test
+    @DisplayName("RF-094: el alcance une los clubes de varias asignaciones CLUB")
+    void alcanceUneLosClubes() {
+        iniciarSesion();
+        darPermiso(club(CLUB_PROPIO), club(CLUB_AJENO));
+
+        Autorizacion.AlcanceAutorizacion alcance = autorizacion.alcance(PERMISO);
+
+        assertThat(alcance.todaLaLiga()).isFalse();
+        assertThat(alcance.clubes()).containsExactlyInAnyOrder(CLUB_PROPIO, CLUB_AJENO);
+        assertThat(alcance.propio()).isFalse();
+    }
+
+    @Test
+    @DisplayName("RF-144: el alcance con ámbito PROPIO habilita es_titular y no aporta clubes")
+    void alcancePropio() {
+        iniciarSesion();
+        darPermiso(propio());
+
+        Autorizacion.AlcanceAutorizacion alcance = autorizacion.alcance(PERMISO);
+
+        assertThat(alcance.todaLaLiga()).isFalse();
+        assertThat(alcance.clubes()).isEmpty();
+        assertThat(alcance.propio()).isTrue();
+        verify(repositorio, never()).esTitularDeAlguna(anyCollection());
+    }
+
+    @Test
+    @DisplayName("RF-094: el alcance suma liga, club y propio de todas las asignaciones")
+    void alcanceMezcla() {
+        iniciarSesion();
+        darPermiso(new AsignacionPermiso("GLOBAL", null), new AsignacionPermiso("CLUB", null),
+                club(CLUB_PROPIO), club(CLUB_AJENO), propio());
+
+        Autorizacion.AlcanceAutorizacion alcance = autorizacion.alcance(PERMISO);
+
+        assertThat(alcance.todaLaLiga()).isFalse();
+        assertThat(alcance.clubes()).as("un ámbito desconocido no aporta y una asignación CLUB sin club tampoco")
+                .containsExactlyInAnyOrder(CLUB_PROPIO, CLUB_AJENO);
+        assertThat(alcance.propio()).isTrue();
+    }
+
+    @Test
+    @DisplayName("VAL-015: el alcance sin ninguna asignación que otorgue el permiso responde 403")
+    void alcanceSinPermiso() {
+        iniciarSesion();
+        darPermiso();
+
+        assertThatThrownBy(() -> autorizacion.alcance(PERMISO))
+                .isInstanceOfSatisfying(ReglaNegocioException.class, error -> {
+                    assertThat(error.estado()).isEqualTo(HttpStatus.FORBIDDEN);
+                    assertThat(error.codigo()).isEqualTo("VAL-015");
+                });
     }
 
     // ── Apoyo ─────────────────────────────────────────────────────────────────────────────────
