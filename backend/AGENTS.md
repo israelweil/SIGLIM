@@ -88,7 +88,9 @@ repositorio + prueba del servicio).
 - **Documentos:** se suben a AWS S3 desde `compartido.almacenamiento` y se leen con URL prefirmadas
   de 60 s (ADR-0013); en la tabla `documentos` se guardan bucket, clave y URL.
 - **Autorización:** cada método público de servicio empieza con
-  `autorizacion.exigir("modulo.recurso:ACCION", objetivo)` (ADR-0007). Nunca compares nombres de rol.
+  `autorizacion.exigir("modulo.recurso:ACCION", objetivo)` (ADR-0007). Los listados filtran en el
+  SQL con `autorizacion.alcance(permiso)` y la misma condición en el `COUNT`. Nunca compares nombres
+  de rol.
 - **Estados:** las transiciones se validan en el servicio con una máquina de estados explícita
   (DP-003) según el ERS §4.3 (partido, cédula, registro, expediente, cobro, publicación).
 - **Eventos:** efectos que forman parte de la operación crítica → oyente síncrono en la misma
