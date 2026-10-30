@@ -22,6 +22,7 @@ cp .env.example .env    # Windows: copy .env.example .env
 | `DB_USERNAME` / `DB_PASSWORD` | Usuario del pooler (`postgres.<ref>`) y contraseña de la base de datos |
 | `SUPABASE_URL` | `https://<ref>.supabase.co`, sin diagonal final; de aquí se derivan el JWKS y el emisor del JWT |
 | `SIGLIM_CORS_ORIGEN` | Orígenes del frontend permitidos, separados por coma (convenciones de API §5) |
+| `SIGLIM_LIGA_ID` | UUID de la liga activa (ADR-0011 §5); en `.env.example` está el de la semilla |
 
 El detalle y los valores de ejemplo están en [`.env.example`](.env.example). Si falta una variable o
 tiene un formato incorrecto, la aplicación no arranca y el error dice cuál es. Una prueba

@@ -32,6 +32,8 @@ spring:
 
 # Propiedades propias (SiglimPropiedades). Se validan al arrancar.
 siglim:
+  # Liga activa (ADR-0011 §5): los servicios filtran siempre por ella.
+  liga-id: ${SIGLIM_LIGA_ID}
   supabase:
     url: ${SUPABASE_URL}
   cors:

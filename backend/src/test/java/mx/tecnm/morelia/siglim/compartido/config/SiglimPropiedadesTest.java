@@ -9,6 +9,7 @@ import jakarta.validation.ValidatorFactory;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 import java.util.stream.Collectors;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -42,7 +43,8 @@ class SiglimPropiedadesTest {
         return new SiglimPropiedades(
                 new SiglimPropiedades.Supabase(urlSupabase),
                 new SiglimPropiedades.Cors(origenes),
-                almacenamiento("siglim-documentos-dev-abc123", null, null, DataSize.ofMegabytes(5)));
+                almacenamiento("siglim-documentos-dev-abc123", null, null, DataSize.ofMegabytes(5)),
+                UUID.fromString("a0000000-0000-4000-8000-000000000001"));
     }
 
     private static SiglimPropiedades.Almacenamiento almacenamiento(String bucket, String llave, String secreto,
@@ -113,6 +115,15 @@ class SiglimPropiedadesTest {
                 DataSize.ofMegabytes(5)))).isEmpty();
         assertThat(mensajes(almacenamiento("siglim-documentos-dev-abc123", "", "", DataSize.ofMegabytes(5))))
                 .isEmpty();
+    }
+
+    @Test
+    @DisplayName("ADR-0011: rechaza la configuración sin liga activa y lo dice")
+    void rechazaSinLigaActiva() {
+        var valida = propiedades("https://abcd.supabase.co", List.of("http://localhost:5173"));
+        var sinLiga = new SiglimPropiedades(valida.supabase(), valida.cors(), valida.almacenamiento(), null);
+
+        assertThat(mensajes(sinLiga)).contains("Define SIGLIM_LIGA_ID en backend/.env");
     }
 
     @Test

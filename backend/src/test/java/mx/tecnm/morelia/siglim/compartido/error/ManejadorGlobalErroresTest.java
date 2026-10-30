@@ -21,6 +21,7 @@ import org.springframework.test.web.servlet.assertj.MvcTestResult;
  */
 @WebMvcTest(controllers = ErroresPruebaController.class, properties = {
         "SUPABASE_URL=" + SeguridadPrueba.URL_SUPABASE,
+        "SIGLIM_LIGA_ID=a0000000-0000-4000-8000-000000000001",
         "SIGLIM_S3_BUCKET=siglim-documentos-prueba",
         "AWS_REGION=us-east-2",
         "SIGLIM_CORS_ORIGEN=" + SeguridadPrueba.ORIGEN_FRONTEND
@@ -62,6 +63,16 @@ class ManejadorGlobalErroresTest {
             esProblema(resultado, HttpStatus.CONFLICT, "VAL-004");
             assertThat(resultado).bodyJson().extractingPath("$.detail").asString().contains("Unidad Deportiva Morelos 2");
             assertThat(resultado).bodyJson().extractingPath("$.instance").isEqualTo(BASE + "/regla");
+        }
+
+        @Test
+        @DisplayName("RF-030: las extensiones de ReglaNegocioException llegan al nivel raíz del problema")
+        void reglaConExtensiones() {
+            MvcTestResult resultado = get(BASE + "/regla-aceptable");
+
+            esProblema(resultado, HttpStatus.CONFLICT, "RF-030");
+            assertThat(resultado).bodyJson().extractingPath("$.aceptable").isEqualTo(true);
+            assertThat(resultado).bodyJson().extractingPath("$.partidosAfectados[0].id").isEqualTo("partido-1");
         }
 
         @Test
