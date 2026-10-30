@@ -34,6 +34,28 @@ function montar(ruta: string) {
   )
 }
 
+function permiso(codigo: string, modulo: string) {
+  return { codigo, modulo, ambito: 'LIGA' as const, clubId: null }
+}
+
+const yoCapturista = {
+  perfil: {
+    id: 'perfil-capturista',
+    nombreMostrado: 'Leonardo López',
+    correo: null,
+  },
+  asignaciones: [],
+  permisos: [permiso('partidos.partido:CONSULTAR', 'M-08')],
+}
+
+function iniciarSesion() {
+  obtenerSesion.mockResolvedValue({
+    data: { session: { access_token: 'token-de-prueba' } },
+    error: null,
+  })
+  obtenerYo.mockResolvedValue(yoCapturista)
+}
+
 describe('router', () => {
   beforeEach(() => {
     obtenerSesion.mockReset()
@@ -135,5 +157,72 @@ describe('router', () => {
       'href',
       '/app',
     )
+  })
+
+  it('H-02.4: sin permiso del módulo, la URL directa muestra 403 y no la página', async () => {
+    iniciarSesion()
+
+    montar('/app/organizacion')
+
+    expect(
+      await screen.findByRole('heading', {
+        name: 'No tienes permiso para esta acción',
+      }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('navigation', { name: 'Menú Ejecutivo' }),
+    ).toBeInTheDocument()
+    expect(
+      screen.queryByRole('heading', { name: 'Organización' }),
+    ).not.toBeInTheDocument()
+    expect(
+      screen.queryByText('Módulo de la aplicación interna en construcción.'),
+    ).not.toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Volver al inicio' })).toHaveAttribute(
+      'href',
+      '/app',
+    )
+  })
+
+  it('H-02.4: con permiso del módulo, la URL directa muestra la página', async () => {
+    iniciarSesion()
+
+    montar('/app/partidos')
+
+    expect(
+      await screen.findByRole('heading', { name: 'Partidos' }),
+    ).toBeInTheDocument()
+    expect(
+      screen.queryByRole('heading', {
+        name: 'No tienes permiso para esta acción',
+      }),
+    ).not.toBeInTheDocument()
+  })
+
+  it('H-02.4: una subruta de un módulo sin permiso también muestra 403', async () => {
+    iniciarSesion()
+
+    montar('/app/organizacion/clubes')
+
+    expect(
+      await screen.findByRole('heading', {
+        name: 'No tienes permiso para esta acción',
+      }),
+    ).toBeInTheDocument()
+  })
+
+  it('H-02.4: con permiso, una subruta inexistente muestra 404 y no 403', async () => {
+    iniciarSesion()
+
+    montar('/app/partidos/inexistente')
+
+    expect(
+      await screen.findByRole('heading', { name: 'No encontramos lo que buscas' }),
+    ).toBeInTheDocument()
+    expect(
+      screen.queryByRole('heading', {
+        name: 'No tienes permiso para esta acción',
+      }),
+    ).not.toBeInTheDocument()
   })
 })

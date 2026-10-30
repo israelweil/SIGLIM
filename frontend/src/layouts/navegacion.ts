@@ -7,6 +7,7 @@ import {
   Settings,
   type LucideIcon,
 } from 'lucide-react'
+import { puedeVerModulo } from '@/features/seguridad/permisos'
 
 export type EnlacePortal = {
   nombre: string
@@ -61,21 +62,30 @@ export const seccionesApp: SeccionApp[] = [
 
 /**
  * Secciones que puede ver el usuario según los permisos de `GET /api/v1/yo`.
- * Inicio siempre está presente. `notificaciones.*` se ignora para que la campana
- * de F-09 no cree una sección del menú (H-01.3).
+ * Inicio siempre está presente (H-01.3).
  */
 export function seccionesPermitidas(
   permisos: readonly { codigo: string; modulo: string }[],
 ): SeccionApp[] {
-  const modulos = new Set(
-    permisos
-      .filter((permiso) => !permiso.codigo.startsWith('notificaciones.'))
-      .map((permiso) => permiso.modulo),
+  return seccionesApp.filter((seccion) =>
+    puedeVerModulo(permisos, seccion.modulos),
   )
+}
 
-  return seccionesApp.filter(
-    (seccion) =>
-      seccion.modulos.length === 0 ||
-      seccion.modulos.some((modulo) => modulos.has(modulo)),
+/**
+ * Sección del Menú Ejecutivo a la que pertenece una ruta de `/app`. Devuelve
+ * `undefined` para las rutas desconocidas, para que muestren la 404 y no la 403
+ * (H-02.4, VAL-024).
+ */
+export function seccionDeRuta(pathname: string): SeccionApp | undefined {
+  const inicio = seccionesApp.find(({ ruta }) => ruta === '/app')
+
+  if (pathname === '/app' || pathname === '/app/') {
+    return inicio
+  }
+
+  return seccionesApp.find(
+    ({ ruta }) =>
+      ruta !== '/app' && (pathname === ruta || pathname.startsWith(`${ruta}/`)),
   )
 }

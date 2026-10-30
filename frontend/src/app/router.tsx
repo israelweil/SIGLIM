@@ -82,8 +82,22 @@ export const rutas: RouteObject[] = [
           return { Component: AplicacionInterna }
         },
         children: [
-          ...paginasApp,
-          { path: '/app/*', element: <PaginaNoEncontrada rutaInicio="/app" /> },
+          /*
+           * RutaConPermiso es la barrera por módulo de todas las rutas de
+           * /app: las rutas nuevas deben colgar de aquí (H-02.4).
+           */
+          {
+            lazy: async () => {
+              const { RutaConPermiso } = await import('@/app/RutaConPermiso')
+
+              return { Component: RutaConPermiso }
+            },
+            HydrateFallback: CargandoPagina,
+            children: [
+              ...paginasApp,
+              { path: '/app/*', element: <PaginaNoEncontrada rutaInicio="/app" /> },
+            ],
+          },
         ],
       },
     ],
