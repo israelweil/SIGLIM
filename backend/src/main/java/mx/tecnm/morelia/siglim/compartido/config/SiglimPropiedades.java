@@ -9,6 +9,7 @@ import jakarta.validation.constraints.Pattern;
 import java.net.URI;
 import java.time.Duration;
 import java.util.List;
+import java.util.UUID;
 import org.hibernate.validator.constraints.time.DurationMax;
 import org.hibernate.validator.constraints.time.DurationMin;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -27,11 +28,13 @@ import org.springframework.validation.annotation.Validated;
  * @param supabase       proyecto de Supabase del que se derivan el JWKS y el emisor del JWT
  * @param cors           orígenes del frontend a los que se permite llamar a la API
  * @param almacenamiento bucket de AWS S3 de los documentos (ADR-0013)
+ * @param ligaId         liga activa: los servicios filtran siempre por ella (ADR-0011 §5)
  */
 @Validated
 @ConfigurationProperties("siglim")
 public record SiglimPropiedades(@Valid @NotNull Supabase supabase, @Valid @NotNull Cors cors,
-                                @Valid @NotNull Almacenamiento almacenamiento) {
+                                @Valid @NotNull Almacenamiento almacenamiento,
+                                @NotNull(message = "Define SIGLIM_LIGA_ID en backend/.env") UUID ligaId) {
 
     /**
      * Datos del proyecto de Supabase.
