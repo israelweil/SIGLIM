@@ -366,7 +366,7 @@ interfaz los rotule «no oficial».
   `PROGRAMADO` o `REPROGRAMADO` responde `409`, `codigo: "RF-030"`, `"aceptable": true` y
   `"partidosAfectados": […]`, sin guardar. Reenviado con `"confirmarPartidosAfectados": true`, se
   guarda (`201`). Los partidos **no se modifican**: se reprograman a mano. Desactivar una cancha con
-  partidos futuros sigue el mismo flujo en el `PATCH`.
+  partidos en curso o futuros sigue el mismo flujo en el `PATCH`.
 - Dos `DISPONIBLE` de la misma cancha no se traslapan: `409`, `codigo: "RF-029"` **[PROPUESTA]**. Un
   `BLOQUEO` puede traslaparse con cualquier registro.
 - `MANTENIMIENTO` se lee si existe, pero no se registra hasta B-12 (RF-031): `400 VALIDACION`.

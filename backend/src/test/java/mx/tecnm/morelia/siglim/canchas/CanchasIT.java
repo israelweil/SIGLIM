@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.catchThrowable;
 
+import java.time.Clock;
 import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -36,6 +37,9 @@ class CanchasIT extends BaseDatosPrueba {
 
     @Autowired
     private CanchaService servicio;
+
+    @Autowired
+    private Clock reloj;
 
     private PartidosPrueba partidos() {
         return new PartidosPrueba(jdbc);
@@ -224,8 +228,8 @@ class CanchasIT extends BaseDatosPrueba {
     }
 
     @Test
-    @DisplayName("RF-030: desactivar una cancha con partidos futuros pide confirmación (D8)")
-    void desactivarConPartidosFuturos() {
+    @DisplayName("RF-030: desactivar una cancha con partidos en curso o futuros pide confirmación (D8)")
+    void desactivarConPartidosPendientes() {
         iniciarSesionComoAdministrador();
         UUID cancha = nuevaCancha();
         partidos().programar(cancha, DIEZ);
@@ -235,6 +239,25 @@ class CanchasIT extends BaseDatosPrueba {
         assertThat(servicio.consultar(cancha).activa()).isTrue();
 
         assertThat(servicio.actualizar(cancha, desactivar(true)).activa()).isFalse();
+    }
+
+    @Test
+    @DisplayName("RF-030: desactivar una cancha avisa del partido cuyo bloque sigue en curso (D8)")
+    void desactivarAvisaDelBloqueEnCurso() {
+        iniciarSesionComoAdministrador();
+        UUID cancha = nuevaCancha();
+        OffsetDateTime ahora = OffsetDateTime.now(reloj);
+        UUID enCurso = partidos().programar(cancha, ahora.minusMinutes(30));
+        partidos().programar(cancha, ahora.minusHours(3));
+
+        assertThatThrownBy(() -> servicio.actualizar(cancha, desactivar(null)))
+                .isInstanceOfSatisfying(ReglaNegocioException.class, excepcion -> {
+                    error(HttpStatus.CONFLICT, "RF-030").accept(excepcion);
+                    assertThat((List<?>) excepcion.propiedades().get("partidosAfectados"))
+                            .as("solo el del bloque en curso; el otro terminó hace una hora")
+                            .extracting(partido -> ((PartidoEnCanchaDto) partido).id())
+                            .containsExactly(enCurso);
+                });
     }
 
     // ── Ocupación ─────────────────────────────────────────────────────────────────────────────

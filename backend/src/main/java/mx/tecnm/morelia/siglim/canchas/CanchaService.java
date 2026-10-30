@@ -119,7 +119,7 @@ public class CanchaService {
 
     /**
      * Edita una cancha, y la activa o desactiva con motivo (RF-027, RN-021). Desactivarla con partidos
-     * futuros sigue el flujo de dos pasos del bloqueo (D8, [PROPUESTA]).
+     * en curso o futuros sigue el flujo de dos pasos del bloqueo (D8, [PROPUESTA]).
      */
     @Transactional
     public CanchaDto actualizar(UUID id, ActualizarCanchaRequest peticion) {
@@ -143,7 +143,7 @@ public class CanchaService {
             if (!activa) {
                 afectados = partidos.listarProgramadosDesde(id, OffsetDateTime.now(reloj));
                 exigirConfirmacion(afectados, peticion.confirmarPartidosAfectados(),
-                        "Desactivar la cancha afecta a %d partido(s) futuros, que no se reprogramarán solos.");
+                        "Desactivar la cancha afecta a %d partido(s) en curso o futuros, que no se reprogramarán solos.");
             }
         }
 

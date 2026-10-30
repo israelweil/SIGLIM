@@ -50,7 +50,7 @@ class PartidosEnCanchaRepository {
     }
 
     List<PartidoEnCanchaDto> listarProgramadosDesde(UUID canchaId, OffsetDateTime desde) {
-        return jdbc.sql(SELECCION + PROGRAMADOS + " AND p.inicio >= CAST(:desde AS timestamptz)" + ORDEN)
+        return jdbc.sql(SELECCION + PROGRAMADOS + " AND p.fin_bloque > CAST(:desde AS timestamptz)" + ORDEN)
                 .param("canchaId", canchaId)
                 .param("desde", desde)
                 .query(PartidosEnCanchaRepository::aDto)
