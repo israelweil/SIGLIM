@@ -28,7 +28,8 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
  * ({@code application/problem+json}) con la extensión {@code codigo} (convenciones de API §3).
  *
  * <ul>
- *   <li>{@link ReglaNegocioException}: el estado y el código que eligió el servicio.</li>
+ *   <li>{@link ReglaNegocioException}: el estado y el código que eligió el servicio, más sus
+ *       extensiones ({@code aceptable}, {@code partidosAfectados}…).</li>
  *   <li>{@link RecursoNoEncontradoException}: 404 {@code NO_ENCONTRADO} (VAL-024).</li>
  *   <li>{@link ArchivoRechazadoException}: 400, 413 o 415 de la carga de documentos (§7);
  *       {@link ServicioNoDisponibleException}: 503 {@code SERVICIO_NO_DISPONIBLE}.</li>
@@ -57,7 +58,10 @@ public class ManejadorGlobalErrores extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(ReglaNegocioException.class)
     ResponseEntity<ProblemDetail> reglaDeNegocio(ReglaNegocioException error, HttpServletRequest peticion) {
-        return responder(new ErrorTraducido(error.estado(), error.codigo(), error.getMessage()), peticion);
+        ResponseEntity<ProblemDetail> respuesta =
+                responder(new ErrorTraducido(error.estado(), error.codigo(), error.getMessage()), peticion);
+        error.propiedades().forEach(respuesta.getBody()::setProperty);
+        return respuesta;
     }
 
     @ExceptionHandler(RecursoNoEncontradoException.class)

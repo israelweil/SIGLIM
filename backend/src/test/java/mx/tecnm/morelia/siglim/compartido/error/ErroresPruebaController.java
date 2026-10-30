@@ -3,6 +3,8 @@ package mx.tecnm.morelia.siglim.compartido.error;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import java.util.List;
+import java.util.Map;
 import org.postgresql.util.PSQLException;
 import org.postgresql.util.ServerErrorMessage;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -29,6 +31,13 @@ class ErroresPruebaController {
     String regla() {
         throw ReglaNegocioException.conflicto("VAL-004",
                 "La cancha «Unidad Deportiva Morelos 2» ya tiene el partido Halcones vs. Toros de 10:00 a 11:45.");
+    }
+
+    @GetMapping("/regla-aceptable")
+    String reglaAceptable() {
+        throw ReglaNegocioException.conflicto("RF-030", "El bloqueo afecta a 1 partido.")
+                .con("aceptable", true)
+                .con("partidosAfectados", List.of(Map.of("id", "partido-1")));
     }
 
     @GetMapping("/no-encontrado")

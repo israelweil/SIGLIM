@@ -66,6 +66,16 @@ class ManejadorGlobalErroresTest {
         }
 
         @Test
+        @DisplayName("RF-030: las extensiones de ReglaNegocioException llegan al nivel raíz del problema")
+        void reglaConExtensiones() {
+            MvcTestResult resultado = get(BASE + "/regla-aceptable");
+
+            esProblema(resultado, HttpStatus.CONFLICT, "RF-030");
+            assertThat(resultado).bodyJson().extractingPath("$.aceptable").isEqualTo(true);
+            assertThat(resultado).bodyJson().extractingPath("$.partidosAfectados[0].id").isEqualTo("partido-1");
+        }
+
+        @Test
         @DisplayName("VAL-024: RecursoNoEncontradoException responde 404 sin revelar qué se buscó")
         void noEncontrado() {
             MvcTestResult resultado = get(BASE + "/no-encontrado");
