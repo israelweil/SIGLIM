@@ -3,6 +3,9 @@ package mx.tecnm.morelia.siglim.seguridad;
 import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
+import mx.tecnm.morelia.siglim.compartido.error.ErroresTecnicos;
+import mx.tecnm.morelia.siglim.compartido.error.RecursoNoEncontradoException;
+import mx.tecnm.morelia.siglim.compartido.error.ReglaNegocioException;
 
 /**
  * Autoriza una operación por permiso y ámbito antes de ejecutarla, con denegación por defecto
@@ -76,6 +79,31 @@ public interface Autorizacion {
      *                         {@link #exigir(String, ObjetivoAutorizacion)}
      */
     AlcanceAutorizacion alcance(String permiso);
+
+    /**
+     * Excepción de la denegación por permiso: {@code 403 VAL-015}. Única fuente de este error, para
+     * que la implementación y el arnés de pruebas de los controladores (H-02.3) lancen exactamente
+     * la misma.
+     *
+     * <p>Refs: H-02.3, VAL-015, RNF-003
+     */
+    static ReglaNegocioException sinPermiso() {
+        return ReglaNegocioException.prohibida(ErroresTecnicos.SIN_PERMISO,
+                "Tu cuenta no tiene el permiso necesario para esta operación.");
+    }
+
+    /**
+     * Excepción de la denegación por ámbito: {@code 404}, igual que un recurso inexistente, para no
+     * revelar si existe (VAL-024). El texto, con el permiso, solo llega a la bitácora.
+     *
+     * <p>Refs: H-02.3, VAL-024
+     *
+     * @param permiso código {@code modulo.recurso:ACCION} que no alcanzó el objetivo
+     */
+    static RecursoNoEncontradoException fueraDeAmbito(String permiso) {
+        return new RecursoNoEncontradoException(
+                "El permiso " + permiso + " no alcanza el ámbito del recurso solicitado");
+    }
 
     /**
      * Alcance del usuario para un permiso: toda la liga, un conjunto de clubes y el ámbito propio.

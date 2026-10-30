@@ -110,6 +110,28 @@ repositorio + prueba del servicio).
 - **Unitarias** (obligatorias): reglas del servicio con Mockito, sin Spring ni BD. Nombre del
   método en español; `@DisplayName` con el ID del requisito.
 - **De controlador** (`@WebMvcTest` + `@MockitoBean`): códigos HTTP, validación y formato de error.
+  Las pruebas de seguridad de **cada endpoint** (convenciones de API §10) se generan con el arnés
+  `seguridad.ArnesAutorizacionEndpoint` (H-02.3): `401` sin token y con token inválido (sin tocar el
+  servicio), `403 VAL-015` y `404` fuera de ámbito idéntico a uno inexistente (VAL-024). La
+  denegación se simula en el doble del servicio con las fábricas `Autorizacion.sinPermiso()` y
+  `Autorizacion.fueraDeAmbito(...)`; que el servicio llame a `exigir` con el permiso y el objetivo
+  correctos lo prueba su prueba unitaria.
+
+  ```java
+  @TestFactory
+  @DisplayName("RNF-003: seguridad de GET /api/v1/temporadas/{id}")
+  Stream<DynamicTest> seguridadConsultar() {
+      return ArnesAutorizacionEndpoint.para(mvc)
+              .peticion(HttpMethod.GET, "/api/v1/temporadas/{id}", ID)
+              .dobles(servicio)                       // se reinician entre escenarios
+              .simularDenegacion(error -> given(servicio.consultar(ID)).willThrow(error))
+              .pruebas();                             // void: willThrow(error).given(servicio).cerrar(ID)
+  }
+  ```
+
+  Con cuerpo, `.cuerpoJson("{…}")` **válido** (si no, `@Valid` responde 400 antes del servicio). Un
+  endpoint que solo exige sesión, como `/yo`, usa `.soloSesion()`. Ejemplos completos en
+  `ArnesAutorizacionEndpointTest`.
 - **De integración con BD** (decisión del equipo del 22 oct 2026): **Testcontainers** con
   `postgres:17-alpine` (la versión de Supabase), clases `*IT` que corre failsafe en `mvnw verify`.
   Cargan la simulación de Supabase y todas las migraciones como `supabase/pruebas/ejecutar.sh`;
