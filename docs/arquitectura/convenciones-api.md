@@ -18,6 +18,7 @@ Versión 2.0 · 20 de octubre de 2026 · Alineado con el [ERS Rev. 0.4.1](../req
 | --- | --- | --- |
 | 1.0 | 7 de octubre de 2026 | Reglas generales, errores, paginación y portal del alcance de la Rev. 0.3. |
 | 2.0 | 20 de octubre de 2026 | Alcance de la Rev. 0.4.1: 14 módulos, permisos `modulo.recurso:ACCION` con ámbito, códigos HTTP por tipo de regla, traducción de errores de PostgreSQL, catálogo de recursos por módulo, documentos en AWS S3, pago simulado, notificaciones y portal sobre las vistas `v_publica_*`. |
+| 2.1 | 30 de octubre de 2026 | H-07.1: §6.6 con el detalle de una cancha, el permiso de consulta de la disponibilidad, la ocupación por rango y el `409` aceptable `RF-030`; §3.1 con las extensiones del problema. |
 
 ## Índice
 
@@ -150,7 +151,9 @@ propiedades de extensión: `codigo` (siempre) y `errores` (cuando hay campos se�
 
 Una advertencia que el usuario puede aceptar (localía, VAL-027, B) **no** es un error: el servicio
 responde `409` con `codigo: "VAL-027"` y `"aceptable": true`; la interfaz muestra la advertencia y
-reenvía la petición con `"motivoAceptacion"`.
+reenvía la petición con `"motivoAceptacion"`. Las extensiones del problema como `aceptable` las
+agrega el servicio con `ReglaNegocioException.con(nombre, valor)`. El bloqueo de una cancha con
+partidos (`RF-030`, §6.6) sigue este patrón y se acepta con `"confirmarPartidosAfectados": true`.
 
 ### 3.2 Traducción de los errores de PostgreSQL
 
@@ -350,12 +353,23 @@ interfaz los rotule «no oficial».
 
 | Método y ruta | Propósito | Permiso | RF | E |
 | --- | --- | --- | --- | --- |
-| `GET /canchas` · `POST` · `PATCH /canchas/{id}` | Catálogo con ubicación y propietario | `canchas.cancha:*` | RF-027 | N |
+| `GET /canchas` · `GET /canchas/{id}` · `POST` · `PATCH /canchas/{id}` | Catálogo con ubicación y propietario. `orden`: `nombre`, `creadoEn`. Activar o desactivar por `PATCH` con `activa` y `motivo` | `canchas.cancha:CONSULTAR` en los `GET`, `canchas.cancha:EDITAR` en `POST` y `PATCH` | RF-027 | N |
 | `GET /sedes` · `POST` · `PATCH` | Sedes | `canchas.cancha:EDITAR` | RF-028 | B |
-| `GET /canchas/{id}/disponibilidad?desde=&hasta=` · `POST` | Disponibilidad, bloqueos y mantenimiento con motivo | `canchas.cancha:EDITAR` | RF-029, RF-030, RF-031 | N · B |
-| `GET /canchas/{id}/ocupacion?fecha=` | Partidos y bloques del día (apoyo a la programación) | `canchas.cancha:CONSULTAR` | RF-032, RF-039 | N |
+| `GET /canchas/{id}/disponibilidad?desde=&hasta=` · `POST` | Disponibilidad, bloqueos y mantenimiento con motivo. El `POST` responde `{ disponibilidad, partidosAfectados }` | `canchas.cancha:CONSULTAR` en el `GET`, `canchas.cancha:EDITAR` en el `POST` | RF-029, RF-030, RF-031 | N · B |
+| `GET /canchas/{id}/ocupacion?desde=&hasta=` | Disponibilidad, bloqueos, mantenimiento y partidos no cancelados del rango (calendario semanal y apoyo a la programación) | `canchas.cancha:CONSULTAR` | RF-032, RF-039 | N |
 | `GET /canchas/{id}/horarios-club` · `PUT` | Horarios por categoría y comodato | `canchas.cancha:EDITAR` | RF-119 | B |
 | `GET /solicitudes-cancha` · `POST` · `POST …/{id}/resolucion` · `GET …/{id}/oficio` | Formatos 1 y 2 y su carta | `canchas.solicitud:*`, `canchas.oficio:GENERAR` | RF-116 a RF-118 | B |
+
+- `desde` y `hasta` son obligatorios en las consultas de disponibilidad y ocupación, con un rango de
+  31 días como máximo **[PROPUESTA]**. Sin ellos, o con un rango mayor, `400 VALIDACION`.
+- **Bloqueo sobre partidos (PEN-007, [PROPUESTA]).** Un `BLOQUEO` que se traslapa con partidos
+  `PROGRAMADO` o `REPROGRAMADO` responde `409`, `codigo: "RF-030"`, `"aceptable": true` y
+  `"partidosAfectados": […]`, sin guardar. Reenviado con `"confirmarPartidosAfectados": true`, se
+  guarda (`201`). Los partidos **no se modifican**: se reprograman a mano. Desactivar una cancha con
+  partidos futuros sigue el mismo flujo en el `PATCH`.
+- Dos `DISPONIBLE` de la misma cancha no se traslapan: `409`, `codigo: "RF-029"` **[PROPUESTA]**. Un
+  `BLOQUEO` puede traslaparse con cualquier registro.
+- `MANTENIMIENTO` se lee si existe, pero no se registra hasta B-12 (RF-031): `400 VALIDACION`.
 
 ### 6.7 M-07 Programación manual
 
