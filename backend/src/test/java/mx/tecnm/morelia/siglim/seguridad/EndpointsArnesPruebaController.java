@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import java.util.UUID;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,6 +31,30 @@ class EndpointsArnesPruebaController {
         Recurso crear(CrearRecursoRequest solicitud);
 
         void cerrar(UUID id);
+    }
+
+    /**
+     * Existe para que {@code SiglimApplicationTest} ({@code @SpringBootTest}) pueda crear este
+     * controlador, que el escaneo de componentes también encuentra allí. En {@code @WebMvcTest} la
+     * reemplaza el {@code @MockitoBean}.
+     */
+    @Component
+    static class ServicioArnesPruebaSinImplementar implements ServicioArnesPrueba {
+
+        @Override
+        public Recurso consultar(UUID id) {
+            throw new UnsupportedOperationException();
+        }
+
+        @Override
+        public Recurso crear(CrearRecursoRequest solicitud) {
+            throw new UnsupportedOperationException();
+        }
+
+        @Override
+        public void cerrar(UUID id) {
+            throw new UnsupportedOperationException();
+        }
     }
 
     record Recurso(UUID id, String nombre) {
