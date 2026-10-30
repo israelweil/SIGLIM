@@ -45,7 +45,9 @@ src/
   (`RutaProtegida` + `InternalLayout`). Registra rutas nuevas solo en `src/app/router.tsx`.
 - **Permisos:** el backend decide (VAL-015). El frontend oculta lo que el usuario no puede hacer
   con los permisos de `GET /api/v1/yo` y las `accionesPermitidas` de cada recurso, pero nunca es la
-  única barrera. Nunca condiciones por el nombre del rol.
+  única barrera. Usa `ConPermiso` (`@/features/seguridad/ConPermiso`) para ocultar acciones y
+  `RutaConPermiso` (`@/app/RutaConPermiso`) para bloquear la URL de un módulo; las páginas 403/404
+  de `pages/` son la salida visible (H-02.4). Nunca condiciones por el nombre del rol.
 - **Estilos:** solo utilidades de Tailwind con los tokens de `styles/index.css`
   (`bg-primary`, `text-text-muted`, `border-border`, `bg-surface-dark`…). **Prohibido** escribir
   colores HEX en componentes o crear archivos `.css` por componente.
