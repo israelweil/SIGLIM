@@ -130,6 +130,15 @@ public class SeguridadPrueba {
     }
 
     /**
+     * Token con reclamos válidos pero firmado con una llave que no está en el JWKS del proyecto: la
+     * cadena de seguridad debe rechazarlo con {@code 401}. Lo usa el arnés de H-02.3 desde otros
+     * paquetes de prueba.
+     */
+    public static String tokenFirmadoConLlaveAjena() {
+        return token(LLAVE_AJENA, reclamos -> { });
+    }
+
+    /**
      * Firma un token ES256 con reclamos de sesión válidos y permite alterarlos para probar rechazos.
      *
      * @param llave   llave privada con la que se firma

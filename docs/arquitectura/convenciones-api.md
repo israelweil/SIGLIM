@@ -542,6 +542,9 @@ El frontend mantiene un diccionario único `enum → texto` (por ejemplo, `PENDI
   dependencia; la especificación generada debe coincidir con este documento.
 - Cada endpoint tiene, como mínimo, pruebas de: caso feliz, `401`, `403` (sin permiso), `404`
   (fuera de ámbito) y el error de la regla principal con su `codigo` (RNF-003).
+  Las de `401`, `403` y `404` se generan con el arnés `ArnesAutorizacionEndpoint` (H-02.3,
+  `backend/src/test/java/.../seguridad/`) desde un `@TestFactory` de la prueba de controlador; ver
+  el ejemplo en `backend/AGENTS.md` (Pruebas).
 - Los nombres de las pruebas citan el ID del ERS: `VAL-004: rechaza cancha ocupada`.
 
 ## 11. Pendientes

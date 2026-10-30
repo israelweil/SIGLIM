@@ -5,9 +5,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 import mx.tecnm.morelia.siglim.compartido.contexto.UsuarioActual;
-import mx.tecnm.morelia.siglim.compartido.error.ErroresTecnicos;
-import mx.tecnm.morelia.siglim.compartido.error.RecursoNoEncontradoException;
-import mx.tecnm.morelia.siglim.compartido.error.ReglaNegocioException;
 import mx.tecnm.morelia.siglim.seguridad.AutorizacionRepositorio.AsignacionPermiso;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -61,8 +58,7 @@ class AutorizacionJdbc implements Autorizacion {
         if (!alcanzaElObjetivo(asignaciones, objetivo)) {
             // Igual que un recurso inexistente: no se revela si existe (VAL-024). El detalle solo
             // va a la bitácora.
-            throw new RecursoNoEncontradoException(
-                    "El permiso " + permiso + " no alcanza el ámbito del recurso solicitado");
+            throw Autorizacion.fueraDeAmbito(permiso);
         }
     }
 
@@ -99,8 +95,7 @@ class AutorizacionJdbc implements Autorizacion {
         List<AsignacionPermiso> asignaciones =
                 repositorio.listarAsignacionesDelPermiso(UsuarioActual.idRequerido(), permiso);
         if (asignaciones.isEmpty()) {
-            throw ReglaNegocioException.prohibida(ErroresTecnicos.SIN_PERMISO,
-                    "Tu cuenta no tiene el permiso necesario para esta operación.");
+            throw Autorizacion.sinPermiso();
         }
         return asignaciones;
     }
