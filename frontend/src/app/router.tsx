@@ -19,7 +19,7 @@ import { PaginaNoEncontrada } from '@/pages/PaginaNoEncontrada'
  * comparten `EnConstruccion`; cuando el módulo tenga sus pantallas reales, su
  * import apuntará a ellas y el fragmento se separará solo.
  */
-const paginasApp: RouteObject[] = seccionesApp.map(({ nombre, ruta }) => ({
+const paginasApp: RouteObject[] = seccionesApp.map(({ nombre, ruta, subsecciones }) => ({
   path: ruta,
   lazy: async () => {
     const { EnConstruccion } = await import('@/pages/EnConstruccion')
@@ -29,6 +29,7 @@ const paginasApp: RouteObject[] = seccionesApp.map(({ nombre, ruta }) => ({
         <EnConstruccion
           titulo={nombre}
           descripcion="Módulo de la aplicación interna en construcción."
+          subsecciones={subsecciones}
         />
       ),
     }
@@ -95,6 +96,17 @@ export const rutas: RouteObject[] = [
             HydrateFallback: CargandoPagina,
             children: [
               ...paginasApp,
+              {
+                path: '/app/programacion/canchas/:canchaId?',
+                lazy: async () => {
+                  const { PantallaCanchas } = await import(
+                    '@/features/canchas/PantallaCanchas'
+                  )
+
+                  return { Component: PantallaCanchas }
+                },
+                HydrateFallback: CargandoPagina,
+              },
               { path: '/app/*', element: <PaginaNoEncontrada rutaInicio="/app" /> },
             ],
           },

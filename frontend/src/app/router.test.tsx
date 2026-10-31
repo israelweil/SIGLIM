@@ -107,6 +107,36 @@ describe('router', () => {
     ).toBeInTheDocument()
   })
 
+  it('H-07.2: la sección Programación enlaza a Canchas solo con su permiso', async () => {
+    iniciarSesion()
+    obtenerYo.mockResolvedValue({
+      ...yoCapturista,
+      permisos: [permiso('canchas.cancha:CONSULTAR', 'M-06')],
+    })
+
+    montar('/app/programacion')
+
+    expect(await screen.findByRole('link', { name: /Canchas/ })).toHaveAttribute(
+      'href',
+      '/app/programacion/canchas',
+    )
+  })
+
+  it('H-07.2: con otro permiso del módulo no enlaza a Canchas y su URL responde 403', async () => {
+    iniciarSesion()
+    obtenerYo.mockResolvedValue({
+      ...yoCapturista,
+      permisos: [permiso('programacion.jornada:CONSULTAR', 'M-07')],
+    })
+
+    montar('/app/programacion/canchas')
+
+    expect(
+      await screen.findByRole('heading', { name: 'No tienes permiso para esta acción' }),
+    ).toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: /Canchas/ })).not.toBeInTheDocument()
+  })
+
   it('muestra la página 404 en una ruta inexistente', () => {
     montar('/ruta-que-no-existe')
 
