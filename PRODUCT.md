@@ -90,7 +90,7 @@ los conflictos, pero no genera calendarios.
 - ERS: [`docs/requisitos/ERS.md`](docs/requisitos/ERS.md). Arquitectura y ADR en
   `docs/arquitectura/`. Base de datos en `supabase/migrations/`.
 - Prototipo aprobado de las pantallas F-01 a F-35 en `docs/diseno-ui/pantallas/`, con sus
-  diferencias D-01 a D-12 y conflictos C-01 a C-08, que no se implementan.
+  diferencias (D-xx) de [`pantallas/README.md` §3](docs/diseno-ui/pantallas/README.md) y conflictos C-01 a C-08, que no se implementan.
 - **No existen** y no se deben inventar: logotipo oficial de la Liga, datos reales de clubes,
   jugadores o partidos, testimonios ni cifras de uso. Los datos de las capturas («Liga Apex»,
   «Halcones», «Temporada 2024/25») son de ejemplo.
