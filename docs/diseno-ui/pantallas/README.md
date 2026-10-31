@@ -112,6 +112,7 @@ cuando sea texto de ejemplo, se reemplaza por datos reales del backend.
 | D-10 | «Ver QR», «Pasarela federativa SPEI» | F-08, F-34 | Sin requisito de QR; el pago es solo simulado (DEC-37, ADR-0012) | Sin QR; rótulo «Pago simulado» |
 | D-11 | Cifras y nombres inventados («142 clubes», «18,000+ deportistas», «Estadio Unidad Dep. Cuauhtémoc», «Club Félix Ireta», «Indios de Morelia») | F-05, F-26, B-05 | Datos de ejemplo (AGENTS.md §3.6) | Datos reales del backend; el panel de F-05 sin estadísticas |
 | D-12 | `alert()` del navegador para confirmaciones | F-15, F-17, F-19, F-25, B-02, B-03, B-05 | Bloquea la página y no es accesible | Modal de confirmación del sistema de diseño |
+| D-13 | Rol del funcionario, filtro «Entidad afectada», nombre legible de la entidad, IP, navegador, folio, hash, «No repudio», tabla de valor anterior y nuevo, lote de 200, rótulos «No oficial» y nombres de módulo desplazados | F-14 | La auditoría no guarda esos datos, el contrato no los ofrece (convenciones de API §6.1) y el ERS tiene su propia lista de módulos (§2.2). Validar integridad y exportar ya están en D-05 y D-06 | Solo los campos y filtros del contrato, módulos con el nombre del ERS, lotes de 50 o 100 y `detalle` como pares clave-valor |
 
 ## 4. Preguntas del prototipo
 
