@@ -14,10 +14,20 @@ export type EnlacePortal = {
   ruta: string
 }
 
+export type SubseccionApp = {
+  nombre: string
+  ruta: string
+  /** Permiso que hace visible el enlace en la página de la sección. */
+  permiso: string
+  descripcion: string
+}
+
 export type SeccionApp = EnlacePortal & {
   icono: LucideIcon
   /** Módulos del ERS que dan acceso a la sección. Vacío = siempre visible. */
   modulos: readonly string[]
+  /** Pantallas a las que se entra desde la página de la sección; no van en el menú lateral. */
+  subsecciones?: readonly SubseccionApp[]
 }
 
 /** Navegación del portal público según F-01. */
@@ -49,6 +59,14 @@ export const seccionesApp: SeccionApp[] = [
     ruta: '/app/programacion',
     icono: CalendarDays,
     modulos: ['M-05', 'M-06', 'M-07', 'M-10'],
+    subsecciones: [
+      {
+        nombre: 'Canchas',
+        ruta: '/app/programacion/canchas',
+        permiso: 'canchas.cancha:CONSULTAR',
+        descripcion: 'Catálogo, disponibilidad y bloqueos.',
+      },
+    ],
   },
   { nombre: 'Partidos', ruta: '/app/partidos', icono: Goal, modulos: ['M-08'] },
   { nombre: 'Disciplina', ruta: '/app/disciplina', icono: Gavel, modulos: ['M-09'] },

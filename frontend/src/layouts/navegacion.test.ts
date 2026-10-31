@@ -1,5 +1,20 @@
 import { describe, expect, it } from 'vitest'
-import { seccionesPermitidas } from '@/layouts/navegacion'
+import { seccionDeRuta, seccionesApp, seccionesPermitidas } from '@/layouts/navegacion'
+
+describe('subsecciones', () => {
+  it('H-07.2: Programación ofrece Canchas con su permiso y la ruta queda en la sección', () => {
+    const programacion = seccionesApp.find(({ nombre }) => nombre === 'Programación')
+
+    expect(programacion?.subsecciones).toEqual([
+      expect.objectContaining({
+        nombre: 'Canchas',
+        ruta: '/app/programacion/canchas',
+        permiso: 'canchas.cancha:CONSULTAR',
+      }),
+    ])
+    expect(seccionDeRuta('/app/programacion/canchas/c1')?.nombre).toBe('Programación')
+  })
+})
 
 const permiso = (codigo: string, modulo: string) => ({ codigo, modulo })
 
