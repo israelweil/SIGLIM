@@ -1,11 +1,10 @@
 import type { Intervalo } from '@/features/canchas/tipos'
+import { ZONA_NEGOCIO } from '@/lib/zonaHoraria'
 
-/** Zona de negocio (convenciones de API §1). Todo cálculo de calendario se hace en ella. */
-const ZONA = 'America/Mexico_City'
 const MS_POR_MINUTO = 60_000
 
 const formatoPartes = new Intl.DateTimeFormat('en-CA', {
-  timeZone: ZONA,
+  timeZone: ZONA_NEGOCIO,
   year: 'numeric',
   month: '2-digit',
   day: '2-digit',
@@ -14,7 +13,7 @@ const formatoPartes = new Intl.DateTimeFormat('en-CA', {
   hourCycle: 'h23',
 })
 const formatoDesplazamiento = new Intl.DateTimeFormat('en-US', {
-  timeZone: ZONA,
+  timeZone: ZONA_NEGOCIO,
   timeZoneName: 'longOffset',
 })
 /* Una fecha sin hora se representa en UTC para que la zona de la máquina no la mueva. */
