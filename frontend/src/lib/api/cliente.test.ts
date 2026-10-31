@@ -117,6 +117,38 @@ describe('api', () => {
     ).resolves.toBeUndefined()
   })
 
+  it('RF-030: un 409 conserva aceptable y partidosAfectados en extensiones', async () => {
+    const partidosAfectados = [{ id: 'partido-1' }]
+    simularFetch(
+      respuestaProblema(409, {
+        title: 'Conflicto',
+        status: 409,
+        detail: 'El bloqueo afecta a 1 partido(s).',
+        codigo: 'RF-030',
+        aceptable: true,
+        partidosAfectados,
+      }),
+    )
+
+    await expect(api.post('canchas/c1/disponibilidad', {})).rejects.toMatchObject({
+      problema: {
+        codigo: 'RF-030',
+        aceptable: true,
+        extensiones: { partidosAfectados },
+      },
+    })
+  })
+
+  it('omite extensiones cuando el problema solo trae miembros conocidos', async () => {
+    simularFetch(
+      respuestaProblema(404, { title: 'No', status: 404, detail: 'No existe.', codigo: 'NO_ENCONTRADO' }),
+    )
+
+    const error = await api.get('canchas/c1').catch((motivo: ApiError) => motivo)
+
+    expect((error as ApiError).problema).not.toHaveProperty('extensiones')
+  })
+
   it('expone problema.codigo y errores en un 409', async () => {
     simularFetch(
       respuestaProblema(409, {
