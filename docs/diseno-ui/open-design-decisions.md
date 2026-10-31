@@ -22,7 +22,7 @@
   ícono equivalente de cada pantalla. Se eligió porque importa cada ícono por separado (el build
   solo incluye los usados), trae tipos de TypeScript y no depende de una fuente externa. Uso en
   [`frontend/AGENTS.md`](../../frontend/AGENTS.md).
-- **P-03**: ~~Aprobar el prototipo generado con Stitch~~. Aprobado por el equipo el 20 de octubre de 2026 ([`pantallas/`](pantallas/README.md)); falta validarlo con la Liga (PEN-014). Las diferencias D-01 a D-12 y las preguntas Q-UI-01 a Q-UI-04 (tres resueltas; Q-UI-02 depende de PEN-030) están en [`pantallas/README.md`](pantallas/README.md).
+- **P-03**: ~~Aprobar el prototipo generado con Stitch~~. Aprobado por el equipo el 20 de octubre de 2026 ([`pantallas/`](pantallas/README.md)); falta validarlo con la Liga (PEN-014). Las diferencias (D-xx, §3) y las preguntas Q-UI-01 a Q-UI-04 (tres resueltas; Q-UI-02 depende de PEN-030) están en [`pantallas/README.md`](pantallas/README.md).
 
 ## 4. Conflictos detectados entre el diseño de referencia y el ERS
 

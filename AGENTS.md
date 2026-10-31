@@ -40,7 +40,7 @@ menor autoridad: ver los conflictos C-01 a C-08 en
 > ⚠️ **Antes de programar:** la arquitectura, los ADR, el diccionario de datos, la migración y las
 > convenciones de API ya reflejan la Rev. 0.4.1. El prototipo de pantallas está aprobado por el
 > equipo ([`docs/diseno-ui/pantallas/`](docs/diseno-ui/pantallas/README.md) y
-> [`DESIGN.md`](DESIGN.md)); sus diferencias D-01 a D-12 con el ERS no se
+> [`DESIGN.md`](DESIGN.md)); sus diferencias (D-xx) con el ERS, en [`pantallas/README.md` §3](docs/diseno-ui/pantallas/README.md), no se
 > implementan. El trabajo se toma del **backlog v4**
 > ([`docs/planning/sprint-plan.md`](docs/planning/sprint-plan.md)): implementa solo historias de un
 > sprint y cita su clave (H-xx, T-xx) en la rama, el commit y el PR.
