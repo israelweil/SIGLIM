@@ -75,6 +75,14 @@ export const seccionesApp: SeccionApp[] = [
     ruta: '/app/administracion',
     icono: Settings,
     modulos: ['M-01', 'M-02', 'M-11', 'M-12', 'M-13'],
+    subsecciones: [
+      {
+        nombre: 'Auditoría',
+        ruta: '/app/administracion/auditoria',
+        permiso: 'auditoria.registro:CONSULTAR',
+        descripcion: 'Consulta de las operaciones críticas registradas.',
+      },
+    ],
   },
 ]
 
