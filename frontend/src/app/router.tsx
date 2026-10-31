@@ -107,6 +107,17 @@ export const rutas: RouteObject[] = [
                 },
                 HydrateFallback: CargandoPagina,
               },
+              {
+                path: '/app/administracion/auditoria',
+                lazy: async () => {
+                  const { PantallaAuditoria } = await import(
+                    '@/features/auditoria/PantallaAuditoria'
+                  )
+
+                  return { Component: PantallaAuditoria }
+                },
+                HydrateFallback: CargandoPagina,
+              },
               { path: '/app/*', element: <PaginaNoEncontrada rutaInicio="/app" /> },
             ],
           },

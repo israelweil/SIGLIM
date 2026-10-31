@@ -137,6 +137,36 @@ describe('router', () => {
     expect(screen.queryByRole('link', { name: /Canchas/ })).not.toBeInTheDocument()
   })
 
+  it('H-21.2: la sección Administración enlaza a Auditoría solo con su permiso', async () => {
+    iniciarSesion()
+    obtenerYo.mockResolvedValue({
+      ...yoCapturista,
+      permisos: [permiso('auditoria.registro:CONSULTAR', 'M-01')],
+    })
+
+    montar('/app/administracion')
+
+    expect(await screen.findByRole('link', { name: /Auditoría/ })).toHaveAttribute(
+      'href',
+      '/app/administracion/auditoria',
+    )
+  })
+
+  it('H-21.2: con otro permiso del módulo no enlaza a Auditoría y su URL responde 403', async () => {
+    iniciarSesion()
+    obtenerYo.mockResolvedValue({
+      ...yoCapturista,
+      permisos: [permiso('seguridad.rol:CONSULTAR', 'M-01')],
+    })
+
+    montar('/app/administracion/auditoria')
+
+    expect(
+      await screen.findByRole('heading', { name: 'No tienes permiso para esta acción' }),
+    ).toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: /Auditoría/ })).not.toBeInTheDocument()
+  })
+
   it('muestra la página 404 en una ruta inexistente', () => {
     montar('/ruta-que-no-existe')
 
