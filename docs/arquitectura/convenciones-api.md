@@ -19,6 +19,7 @@ Versión 2.0 · 20 de octubre de 2026 · Alineado con el [ERS Rev. 0.4.1](../req
 | 1.0 | 7 de octubre de 2026 | Reglas generales, errores, paginación y portal del alcance de la Rev. 0.3. |
 | 2.0 | 20 de octubre de 2026 | Alcance de la Rev. 0.4.1: 14 módulos, permisos `modulo.recurso:ACCION` con ámbito, códigos HTTP por tipo de regla, traducción de errores de PostgreSQL, catálogo de recursos por módulo, documentos en AWS S3, pago simulado, notificaciones y portal sobre las vistas `v_publica_*`. |
 | 2.1 | 30 de octubre de 2026 | H-07.1: §6.6 con el detalle de una cancha, el permiso de consulta de la disponibilidad, la ocupación por rango y el `409` aceptable `RF-030`; §3.1 con las extensiones del problema. |
+| 2.2 | 31 de octubre de 2026 | H-21.1: §6.1 con el detalle de la consulta de auditoría y `GET /auditoria/opciones-filtro`. |
 
 ## Índice
 
@@ -291,7 +292,40 @@ implementa hasta que su historia entre a un Sprint (AGENTS.md §3). Los permisos
 | `GET /avisos-privacidad/vigente` | Aviso de privacidad vigente | sesión | RF-097 | N |
 | `POST /personas/{id}/consentimientos` | Registrar consentimiento del titular o del tutor | `seguridad.consentimiento:REGISTRAR` | RF-097, VAL-025 | N |
 | `GET /solicitudes-arco` · `POST /solicitudes-arco` · `PATCH …/{id}` | Solicitudes ARCO | `seguridad.arco:GESTIONAR` | RF-098 | B |
-| `GET /auditoria?perfilId=&modulo=&accion=&desde=&hasta=` | Consultar auditoría | `auditoria.registro:CONSULTAR` | RF-134 | N |
+| `GET /auditoria?perfilId=&modulo=&accion=&desde=&hasta=` | Consultar auditoría. `tamano` por defecto 50. `orden`: `ocurridoEn` | `auditoria.registro:CONSULTAR` | RF-134 | N |
+| `GET /auditoria/opciones-filtro` | Perfiles, módulos y acciones presentes en la auditoría de la liga, para llenar los filtros; sin paginación | `auditoria.registro:CONSULTAR` | RF-134 | N |
+
+- **Ámbito de la auditoría [PROPUESTA].** La tabla no tiene club ni persona: solo el ámbito `LIGA` ve
+  filas. Con el permiso en ámbito `CLUB` o `PROPIO` la respuesta es `200` con página vacía y
+  `totalElementos = 0` (y listas vacías en las opciones), coherente con la política RLS `auditoria_leer`.
+- **Filtros de la auditoría.** `perfilId` es un UUID; `modulo` admite uno o varios `M-xx` separados por
+  coma; `accion`, una o varias con el formato `^[A-Z][A-Z0-9_]{0,79}$`. Un formato inválido responde
+  `400 VALIDACION`. Una acción bien formada que no existe devuelve una página vacía: no hay catálogo fijo.
+- **Fechas de la auditoría [PROPUESTA].** `desde` (incluido) y `hasta` (excluido) son opcionales y sin
+  rango máximo. Si vienen los dos y `desde >= hasta`: `400 VALIDACION`.
+- **Orden de la auditoría.** Por defecto `ocurridoEn,desc`; `ocurridoEn` es el único campo ordenable, con
+  `asc` o `desc` (sin dirección, `asc` (§4)), y el id desempata en la misma dirección. Otro campo: `400 VALIDACION`.
+- **Detalle.** Cada fila trae el `motivo` completo y el `detalle`; no existe `GET /auditoria/{id}`.
+- **Datos personales.** Cada fila devuelve `id`, `ocurridoEn`, `perfil`, `modulo`, `accion`, `entidad`,
+  `entidadId`, `motivo` y `detalle`. Del perfil solo salen `id` y `nombreMostrado`; si el registro no tiene
+  perfil, `perfil` se omite; también `entidadId`, `motivo` y `detalle` cuando están vacíos (§1). No se devuelve el rol: la auditoría no guarda con cuál actuó el usuario.
+  Las dos respuestas llevan `Cache-Control: no-store`.
+- **Solo lectura (RNF-015).** `POST`, `PUT`, `PATCH` y `DELETE` sobre `/auditoria` responden
+  `405 METODO_NO_PERMITIDO` con la cabecera `Allow`.
+
+```json
+{
+  "id": 1042,
+  "ocurridoEn": "2026-10-25T12:30:00-06:00",
+  "perfil": { "id": "…", "nombreMostrado": "Ana López" },
+  "modulo": "M-06",
+  "accion": "BLOQUEAR_CANCHA",
+  "entidad": "disponibilidad_canchas",
+  "entidadId": "…",
+  "motivo": "Riego de la cancha programado",
+  "detalle": { "tipo": "BLOQUEO" }
+}
+```
 
 ### 6.2 M-02 Temporadas y normativa
 
